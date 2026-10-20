@@ -61,6 +61,13 @@ export default {
 				en: 'Pagination moves through pages of a long list; a carousel shows one slide of a small set in place.',
 				ja: 'ページネーションは長い一覧のページを移動し、カルーセルは少数のスライドをその場で1枚ずつ見せる。'
 			}
+		},
+		{
+			id: 'stepper',
+			diff: {
+				en: 'Pagination moves through pages of results; a stepper shows the user’s place in a procedure with distinct steps.',
+				ja: 'ページネーションは検索結果などのページを行き来し、ステップナビゲーションは内容の異なる手順の中での現在地を示す。'
+			}
 		}
 	],
 	sources: [

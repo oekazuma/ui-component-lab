@@ -54,6 +54,13 @@ export default {
 				en: 'A list stacks items compactly in rows; cards give each item room for an image and actions.',
 				ja: 'リストは項目を行で詰めて並べ、カードは1件ごとに画像や操作を置く余裕がある。'
 			}
+		},
+		{
+			id: 'description-list',
+			diff: {
+				en: 'A list shows single items; a description list pairs each name with its value or explanation.',
+				ja: 'リストは項目を1つずつ並べ、説明リストは項目名と値や説明を組にして並べる。'
+			}
 		}
 	],
 	sources: [

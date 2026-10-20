@@ -46,6 +46,15 @@ export default {
 			}
 		}
 	],
+	related: [
+		{
+			id: 'number-input',
+			diff: {
+				en: 'A slider picks a rough position by dragging; a number input is better when the exact number matters.',
+				ja: 'スライダーはつまみで大まかな位置を選び、数値入力は正確な数値が大事なときに向いている。'
+			}
+		}
+	],
 	sources: [
 		{
 			label: 'WAI-ARIA APG: Slider Pattern',

@@ -60,6 +60,20 @@ export default {
 				en: 'A progress bar shows how far along a task is; a spinner only shows that something is happening.',
 				ja: 'プログレスバーは作業の進み具合を示し、スピナーは処理中であることだけを示す。'
 			}
+		},
+		{
+			id: 'meter',
+			diff: {
+				en: 'A progress bar shows how far a task has gone; a meter shows a measurement within a known range, such as disk usage.',
+				ja: 'プログレスバーは作業の進み具合を示し、メーターはディスク使用量のように決まった範囲の中の測定値を示す。'
+			}
+		},
+		{
+			id: 'stepper',
+			diff: {
+				en: 'A progress bar shows progress within one task; a stepper shows which step of a multi-page procedure the user is on.',
+				ja: 'プログレスバーは1つの作業の進み具合を示し、ステップナビゲーションは複数画面にまたがる手続きのどの段階にいるかを示す。'
+			}
 		}
 	],
 	sources: [

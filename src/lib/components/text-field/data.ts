@@ -38,15 +38,6 @@ export default {
 			action: { en: 'Moves the text cursor.', ja: '文字のカーソルを移動する。' }
 		}
 	],
-	variations: [
-		{
-			name: { en: 'Text area', ja: 'テキストエリア' },
-			description: {
-				en: 'A taller box for several lines of text, such as comments.',
-				ja: 'コメントなど、複数行の文章を入力する縦長の欄。'
-			}
-		}
-	],
 	usage: [
 		{
 			en: 'Do not use placeholder text in place of a label or hint.',
@@ -67,6 +58,20 @@ export default {
 			diff: {
 				en: 'A text field has no suggestions; a combobox adds a list of suggestions to choose from.',
 				ja: 'テキストフィールドには候補がなく、コンボボックスは選べる候補のリストが付く。'
+			}
+		},
+		{
+			id: 'textarea',
+			diff: {
+				en: 'A text field takes one short line; a text area takes several lines of free text.',
+				ja: 'テキストフィールドは短い1行を入力し、テキストエリアは複数行の文章を入力する。'
+			}
+		},
+		{
+			id: 'search-field',
+			diff: {
+				en: 'A search field is a text field for search terms, usually with a search button and a search landmark.',
+				ja: '検索ボックスは検索語を入れるためのテキストフィールドで、検索ボタンや検索のランドマークが付くことが多い。'
 			}
 		}
 	],

@@ -45,6 +45,13 @@ export default {
 				en: 'A button runs an action once; a toggle button keeps an on or off state.',
 				ja: 'ボタンは押すたびに操作を1回実行し、トグルボタンはオン・オフの状態を保つ。'
 			}
+		},
+		{
+			id: 'toolbar',
+			diff: {
+				en: 'A toggle button is one on/off button; a toolbar groups several buttons and moves between them with arrow keys.',
+				ja: 'トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーは複数のボタンをまとめて矢印キーで行き来させる。'
+			}
 		}
 	],
 	sources: [

@@ -68,6 +68,13 @@ export default {
 				en: 'A table compares several values per row in columns; a list shows one item per row without columns.',
 				ja: 'テーブルは1行の複数の値を列で比べ、リストは列を持たずに1行に1項目を並べる。'
 			}
+		},
+		{
+			id: 'description-list',
+			diff: {
+				en: 'A table compares values across rows and columns; a description list shows name–value pairs for one subject.',
+				ja: 'テーブルは行と列で値を比べ、説明リストは1つの対象について項目名と値の組を並べる。'
+			}
 		}
 	],
 	sources: [
