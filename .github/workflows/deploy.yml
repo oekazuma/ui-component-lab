@@ -1,17 +1,15 @@
-name: Deploy to GitHub Pages
+name: Build and deploy
 
+# PR では check と build だけを行い、GitHub Pages へのデプロイは main への push のときだけ行う
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
   pages: read
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
   build:
@@ -32,16 +30,22 @@ jobs:
 
       - run: pnpm build
 
-      - uses: actions/configure-pages@v6
+      - if: github.event_name == 'push'
+        uses: actions/configure-pages@v6
 
-      - uses: actions/upload-pages-artifact@v5
+      - if: github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v5
         with:
           path: build/
           include-hidden-files: true
 
   deploy:
+    if: github.event_name == 'push'
     needs: build
     runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     permissions:
       pages: write
       id-token: write
