@@ -90,6 +90,13 @@ export default {
 				en: 'A split button adds a menu of related actions beside the main button.',
 				ja: 'スプリットボタンは、主な操作のボタンの横に関連する操作のメニューが付く。'
 			}
+		},
+		{
+			id: 'file-upload',
+			diff: {
+				en: 'A button runs an action; a file upload’s button opens a file picker and keeps the chosen files as a form value.',
+				ja: 'ボタンは操作を実行し、ファイルアップロードのボタンはファイル選択画面を開いて、選んだファイルをフォームの値として持つ。'
+			}
 		}
 	],
 	sources: [

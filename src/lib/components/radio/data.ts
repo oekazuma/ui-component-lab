@@ -71,6 +71,13 @@ export default {
 				en: 'Radio buttons show every option at once; a select hides them in a list to save space.',
 				ja: 'ラジオボタンはすべての選択肢を常に見せ、セレクトはリストにしまって場所を取らない。'
 			}
+		},
+		{
+			id: 'listbox',
+			diff: {
+				en: 'Radio buttons show every option with its own label; a listbox scrolls and is one tab stop.',
+				ja: 'ラジオボタンは選択肢ごとにラベル付きで全部を見せ、リストボックスはスクロールでき Tab では1か所として扱われる。'
+			}
 		}
 	],
 	sources: [

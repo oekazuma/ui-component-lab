@@ -105,6 +105,13 @@ export default {
 				en: 'A menu button only opens the menu; a split button also runs a main action directly.',
 				ja: 'メニューボタンは押してもメニューを開くだけだが、スプリットボタンは主な操作を直接実行できる。'
 			}
+		},
+		{
+			id: 'toolbar',
+			diff: {
+				en: 'A menu hides actions in a list that opens on demand; a toolbar keeps a group of controls visible in a row.',
+				ja: 'メニューは操作を開いたリストにしまい、ツールバーは操作部品を1列に並べて常に見せる。'
+			}
 		}
 	],
 	sources: [

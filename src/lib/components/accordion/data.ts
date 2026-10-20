@@ -68,6 +68,13 @@ export default {
 				en: 'An accordion stacks sections vertically and can open several at once; tabs show one panel at a time side by side.',
 				ja: 'アコーディオンは縦に積んで複数を同時に開けるが、タブは横に並べて1枚ずつ表示する。'
 			}
+		},
+		{
+			id: 'tree-view',
+			diff: {
+				en: 'An accordion opens sections of content; a tree view opens nested items, such as folders, in several levels.',
+				ja: 'アコーディオンは内容のまとまりを開閉し、ツリービューはフォルダのような入れ子の項目を何段にも開閉する。'
+			}
 		}
 	],
 	sources: [

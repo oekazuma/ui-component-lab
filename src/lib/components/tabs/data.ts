@@ -65,6 +65,13 @@ export default {
 				en: 'Tabs show one panel at a time side by side; an accordion stacks sections vertically and can open several at once.',
 				ja: 'タブは横に並べて1枚ずつ表示し、アコーディオンは縦に積んで複数を同時に開ける。'
 			}
+		},
+		{
+			id: 'stepper',
+			diff: {
+				en: 'Tabs can be opened in any order; a stepper shows steps that are completed in a fixed order.',
+				ja: 'タブはどの順番でも開けるが、ステップナビゲーションの段階は決まった順に進める。'
+			}
 		}
 	],
 	sources: [

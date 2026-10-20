@@ -94,6 +94,13 @@ export default {
 				en: 'A combobox lets the user type and accept a value outside the list; a select only allows options from the list.',
 				ja: 'コンボボックスは文字を入力でき、リストにない値も使えるが、セレクトはリストの選択肢からしか選べない。'
 			}
+		},
+		{
+			id: 'search-field',
+			diff: {
+				en: 'A combobox suggests values to pick from while typing; a search field sends the typed words as they are.',
+				ja: 'コンボボックスは入力中に選べる候補を出し、検索ボックスは入力した語をそのまま送る。'
+			}
 		}
 	],
 	sources: [

@@ -82,6 +82,13 @@ export default {
 				en: 'A select only allows options from the list; a combobox also lets the user type a value outside it.',
 				ja: 'セレクトはリストの選択肢からしか選べないが、コンボボックスは文字を入力でき、リストにない値も使える。'
 			}
+		},
+		{
+			id: 'listbox',
+			diff: {
+				en: 'A select shows only the chosen option until opened; a listbox keeps several options visible all the time.',
+				ja: 'セレクトボックスは開くまで選んだ値しか見えず、リストボックスは複数の選択肢を常に見せておく。'
+			}
 		}
 	],
 	sources: [
