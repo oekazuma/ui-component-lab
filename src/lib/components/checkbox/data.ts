@@ -31,6 +31,16 @@ export default {
 		{ key: 'Tab', action: { en: 'Moves between checkboxes.', ja: 'チェックボックス間を移動する。' } },
 		{ key: 'Space', action: { en: 'Checks or unchecks the focused box.', ja: 'フォーカス中のチェックを付ける・外す。' } }
 	],
+	usage: [
+		{
+			en: 'Use it for choosing several options, or for a single on/off choice.',
+			ja: '複数の選択や、単独のオン・オフの選択に使う。'
+		},
+		{
+			en: 'Put the box to the left of its label.',
+			ja: 'ボックスはラベルの左に置く。'
+		}
+	],
 	related: [
 		{
 			id: 'radio',
@@ -51,6 +61,11 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Checkbox Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「チェックボックス」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/checkbox/',
 			checkedAt: '2026-10-20'
 		}
 	]

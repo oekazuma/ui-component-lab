@@ -70,6 +70,16 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Use it when there are many options. For a short list, a select is enough.',
+			ja: '選択肢が多いときに使う。少なければセレクトで足りる。'
+		},
+		{
+			en: 'There are two kinds: one that only filters a fixed list, and one that also accepts free text.',
+			ja: '決まった選択肢を絞り込むだけのものと、自由な入力も受け付けるものの2種類がある。'
+		}
+	],
 	related: [
 		{
 			id: 'text-field',
@@ -105,6 +115,11 @@ export default {
 		{
 			label: 'MUI: Autocomplete',
 			url: 'https://mui.com/material-ui/react-autocomplete/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「コンボボックス」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/combobox/',
 			checkedAt: '2026-10-20'
 		}
 	]

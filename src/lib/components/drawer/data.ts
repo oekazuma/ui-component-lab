@@ -50,6 +50,12 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Open it from a trigger such as a menu button, cover the page with an overlay, and include a close button.',
+			ja: 'メニューボタンなどから開き、背後にオーバーレイを敷き、閉じるボタンを付ける。'
+		}
+	],
 	related: [
 		{
 			id: 'modal',
@@ -68,6 +74,11 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Dialog (Modal) Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ドロワー」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/drawer/',
 			checkedAt: '2026-10-20'
 		}
 	]

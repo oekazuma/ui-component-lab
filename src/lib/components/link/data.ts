@@ -31,6 +31,16 @@ export default {
 		{ key: 'Tab', action: { en: 'Moves focus to the link.', ja: 'リンクにフォーカスを移す。' } },
 		{ key: 'Enter', action: { en: 'Follows the link.', ja: 'リンク先へ移動する。' } }
 	],
+	usage: [
+		{
+			en: 'Underline links. Do not use "here" alone as link text, or repeat "Details" for different destinations.',
+			ja: '下線を付ける。「こちら」だけのリンクや、行き先の違う「詳細」の繰り返しは避ける。'
+		},
+		{
+			en: 'Mark links that open a new tab or another site with an icon that has alternative text.',
+			ja: '新しいタブや外部サイトで開くリンクには、代替テキスト付きのアイコンを付ける。'
+		}
+	],
 	related: [
 		{
 			id: 'button',
@@ -44,6 +54,11 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Link Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/link/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「リンクテキスト」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/foundations/link-text/',
 			checkedAt: '2026-10-20'
 		}
 	]

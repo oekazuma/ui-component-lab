@@ -48,7 +48,7 @@
 		border-radius: var(--radius);
 		background: none;
 		color: var(--color-muted);
-		font-size: 0.8125rem;
+		font-size: 0.875rem;
 		cursor: pointer;
 	}
 

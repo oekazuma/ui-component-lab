@@ -3,10 +3,11 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'modal',
 	category: 'overlay',
-	names: { en: 'Modal (Dialog)', ja: 'モーダル（ダイアログ）' },
+	names: { en: 'Modal (Dialog)', ja: 'モーダルダイアログ' },
 	aliases: [
 		{ name: 'Dialog', source: 'Material Design 3', url: 'https://m3.material.io/components/dialogs/overview' },
-		{ name: 'Modal dialog', source: 'Atlassian Design System', url: 'https://atlassian.design/components/modal-dialog' }
+		{ name: 'Modal dialog', source: 'Atlassian Design System', url: 'https://atlassian.design/components/modal-dialog' },
+		{ name: 'モーダルダイアログ', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/modal-dialog/' }
 	],
 	summary: {
 		en: 'A window on top of the page that blocks the rest of the page until it is closed.',
@@ -39,6 +40,20 @@ export default {
 			}
 		},
 		{ key: 'Esc', action: { en: 'Closes the dialog.', ja: 'ダイアログを閉じる。' } }
+	],
+	usage: [
+		{
+			en: 'Use it to confirm a destructive action or to show a short, self-contained message.',
+			ja: '取り消せない操作の確認や、短く完結したメッセージに使う。'
+		},
+		{
+			en: 'Do not open it without a user action, and do not use it for forms, navigation menus or completion notices.',
+			ja: '利用者の操作なしに開かず、フォーム、ナビゲーションメニュー、完了の通知には使わない。'
+		},
+		{
+			en: 'Add a separate close button only when there are no action buttons.',
+			ja: '操作ボタンがないときだけ、別に閉じるボタンを置く。'
+		}
 	],
 	related: [
 		{
@@ -77,6 +92,11 @@ export default {
 		{
 			label: 'MDN: <dialog>',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「モーダルダイアログ」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/modal-dialog/',
 			checkedAt: '2026-10-20'
 		}
 	]

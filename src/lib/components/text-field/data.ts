@@ -3,10 +3,11 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'text-field',
 	category: 'input',
-	names: { en: 'Text field', ja: 'テキストフィールド' },
+	names: { en: 'Text field', ja: 'テキストフィールド（インプットテキスト）' },
 	aliases: [
 		{ name: 'Text input', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/text-input/usage/' },
-		{ name: 'Input', source: 'Ant Design', url: 'https://ant.design/components/input' }
+		{ name: 'Input', source: 'Ant Design', url: 'https://ant.design/components/input' },
+		{ name: 'インプットテキスト', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/input-text/' }
 	],
 	summary: {
 		en: 'A box where the user types a short piece of free text, such as a name.',
@@ -46,6 +47,20 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Do not use placeholder text in place of a label or hint.',
+			ja: 'プレースホルダーをラベルや補足説明の代わりにしない。'
+		},
+		{
+			en: 'Match the width of the field to the expected length of the input.',
+			ja: '入力欄の幅は、想定する入力の長さに合わせる。'
+		},
+		{
+			en: 'Error messages should say what is wrong and how to fix it.',
+			ja: 'エラーメッセージには、何が問題でどう直せばよいかを書く。'
+		}
+	],
 	related: [
 		{
 			id: 'combobox',
@@ -64,6 +79,11 @@ export default {
 		{
 			label: 'Ant Design: Input',
 			url: 'https://ant.design/components/input',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「インプットテキスト」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/input-text/',
 			checkedAt: '2026-10-20'
 		}
 	]

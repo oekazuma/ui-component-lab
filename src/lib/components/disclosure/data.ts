@@ -36,6 +36,16 @@ export default {
 			action: { en: 'Shows or hides the content.', ja: '内容を表示・非表示にする。' }
 		}
 	],
+	usage: [
+		{
+			en: 'Use it for supplementary content within a section, such as a transcript or a chart\'s data.',
+			ja: '文字起こしやグラフの元データなど、セクションの中の補足に使う。'
+		},
+		{
+			en: 'Make the title describe the content. Avoid vague text like "Show more", and do not switch it between "Open" and "Close".',
+			ja: 'タイトルには中身が分かる文言を使う。「もっと見る」のような曖昧な文言や、「開く」「閉じる」の切り替えは避ける。'
+		}
+	],
 	related: [
 		{
 			id: 'accordion',
@@ -59,6 +69,11 @@ export default {
 		{
 			label: 'Bootstrap: Collapse',
 			url: 'https://getbootstrap.com/docs/5.3/components/collapse/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ディスクロージャー」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/disclosure/',
 			checkedAt: '2026-10-20'
 		}
 	]

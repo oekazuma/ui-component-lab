@@ -6,7 +6,8 @@ export default {
 	names: { en: 'Menu', ja: 'メニュー' },
 	aliases: [
 		{ name: 'Menu button', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/menu-buttons/usage/' },
-		{ name: 'Dropdown', source: 'Ant Design', url: 'https://ant.design/components/dropdown' }
+		{ name: 'Dropdown', source: 'Ant Design', url: 'https://ant.design/components/dropdown' },
+		{ name: 'メニューリストボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/menu-list-box/' }
 	],
 	summary: {
 		en: 'A list of actions that pops up from a button.',
@@ -80,6 +81,16 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Open it on click, not on hover.',
+			ja: 'ホバーではなくクリックで開く。'
+		},
+		{
+			en: 'Align the panel with the left or right edge of its button.',
+			ja: 'パネルはボタンの左端か右端にそろえる。'
+		}
+	],
 	related: [
 		{
 			id: 'select',
@@ -115,6 +126,11 @@ export default {
 		{
 			label: 'Ant Design: Dropdown',
 			url: 'https://ant.design/components/dropdown',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「メニューリストボックス」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/menu-list-box/',
 			checkedAt: '2026-10-20'
 		}
 	]

@@ -40,6 +40,12 @@ export default {
 			action: { en: 'Turns the switch on or off.', ja: 'オン・オフを切り替える。' }
 		}
 	],
+	usage: [
+		{
+			en: 'Use it only for settings that take effect immediately. If a save or submit step is needed, use a checkbox.',
+			ja: 'すぐに反映される設定にだけ使う。保存や送信が必要なら、チェックボックスを使う。'
+		}
+	],
 	related: [
 		{
 			id: 'checkbox',
@@ -70,6 +76,11 @@ export default {
 		{
 			label: 'Carbon Design System: Toggle',
 			url: 'https://carbondesignsystem.com/components/toggle/usage/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「スイッチ」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/switch/',
 			checkedAt: '2026-10-20'
 		}
 	]

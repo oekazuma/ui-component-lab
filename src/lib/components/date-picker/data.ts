@@ -3,8 +3,10 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'date-picker',
 	category: 'input',
-	names: { en: 'Date picker', ja: 'デートピッカー' },
-	aliases: [],
+	names: { en: 'Date picker', ja: '日付ピッカー（デートピッカー）' },
+	aliases: [
+		{ name: '日付ピッカー／カレンダー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/date-picker/' }
+	],
 	summary: {
 		en: 'A field for entering a date, by typing or by choosing from a calendar.',
 		ja: '日付を入力する欄。直接入力するか、カレンダーから選ぶ。'
@@ -56,6 +58,16 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Open the calendar only from its button, not on focus or hover.',
+			ja: 'カレンダーはボタンからだけ開き、フォーカスやホバーでは開かない。'
+		},
+		{
+			en: 'For dates the user already knows, such as a birthday, let them type it instead of showing a calendar.',
+			ja: '誕生日のように本人が知っている日付は、カレンダーを出さずに入力してもらう。'
+		}
+	],
 	sources: [
 		{
 			label: 'MDN: <input type="date">',
@@ -65,6 +77,11 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Date Picker Dialog Example',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「日付ピッカー／カレンダー」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/date-picker/',
 			checkedAt: '2026-10-20'
 		}
 	]

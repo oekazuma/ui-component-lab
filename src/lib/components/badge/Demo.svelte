@@ -40,7 +40,7 @@
 		border-radius: 999px;
 		background: #b42318;
 		color: #fff;
-		font-size: 0.75rem;
+		font-size: 0.875rem;
 		font-weight: 700;
 		line-height: 1.25rem;
 		text-align: center;

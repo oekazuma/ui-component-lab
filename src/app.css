@@ -7,7 +7,8 @@
 	--color-border: #d3d7de;
 	--color-accent: #1f5fd1; /* on #fff: 5.9:1 */
 	--color-accent-text: #ffffff;
-	--color-focus: #1f5fd1;
+	--color-focus-inner: #ffd43d;
+	--color-focus-outer: #000000;
 	--radius: 6px;
 	--font:
 		system-ui, -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
@@ -33,9 +34,11 @@ a {
 	color: var(--color-accent);
 }
 
+/* 黄と黒の二重線で、どの背景色の上でもフォーカス位置が見えるようにする（デジタル庁デザインシステムを参考） */
 :focus-visible {
-	outline: 2px solid var(--color-focus);
+	outline: 2px solid var(--color-focus-outer);
 	outline-offset: 2px;
+	box-shadow: 0 0 0 2px var(--color-focus-inner);
 }
 
 button,

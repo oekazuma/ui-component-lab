@@ -3,9 +3,10 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'alert',
 	category: 'feedback',
-	names: { en: 'Alert', ja: 'アラート' },
+	names: { en: 'Alert', ja: 'アラート（ノティフィケーションバナー）' },
 	aliases: [
-		{ name: 'Inline notification', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/notification/usage/' }
+		{ name: 'Inline notification', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/notification/usage/' },
+		{ name: 'ノティフィケーションバナー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/notification-banner/' }
 	],
 	summary: {
 		en: 'An important message shown in the page, announced right away without interrupting what the user is doing.',
@@ -38,6 +39,16 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Tell types such as success, error, warning and information apart by icon and wording, not by color alone.',
+			ja: '成功、エラー、警告、情報などの種類は、色だけでなくアイコンと文言でも区別する。'
+		},
+		{
+			en: 'If it can be closed, keep it closed and provide a way to show it again.',
+			ja: '閉じられるようにする場合は、閉じた状態を保ち、もう一度表示する手段を用意する。'
+		}
+	],
 	related: [
 		{
 			id: 'toast',
@@ -63,6 +74,11 @@ export default {
 		{
 			label: 'Carbon Design System: Notification',
 			url: 'https://carbondesignsystem.com/components/notification/usage/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ノティフィケーションバナー」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/notification-banner/',
 			checkedAt: '2026-10-20'
 		}
 	]

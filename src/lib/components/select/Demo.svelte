@@ -4,8 +4,19 @@
 	let { lang }: { lang: Lang } = $props();
 
 	const text = {
-		en: { label: 'Fruit', placeholder: 'Choose one', selected: 'Selected:', options: ['Apple', 'Banana', 'Cherry', 'Grape'] },
-		ja: { label: '果物', placeholder: '選んでください', selected: '選択中:', options: ['りんご', 'バナナ', 'さくらんぼ', 'ぶどう'] }
+		en: {
+			label: 'Country',
+			placeholder: 'Choose one',
+			selected: 'Selected:',
+			options: ['Australia', 'Brazil', 'Canada', 'France', 'Germany', 'India', 'Japan', 'Kenya']
+		},
+		ja: {
+			label: '国',
+			placeholder: '選んでください',
+			selected: '選択中:',
+			// 5つ以下ならラジオボタンを使う（デジタル庁デザインシステム）ため、6つ以上にしている
+			options: ['オーストラリア', 'ブラジル', 'カナダ', 'フランス', 'ドイツ', 'インド', '日本', 'ケニア']
+		}
 	};
 
 	const uid = $props.id();

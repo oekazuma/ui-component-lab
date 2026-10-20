@@ -3,10 +3,11 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'select',
 	category: 'input',
-	names: { en: 'Select', ja: 'セレクト' },
+	names: { en: 'Select', ja: 'セレクトボックス' },
 	aliases: [
 		{ name: 'Pop-up button', source: 'Apple Human Interface Guidelines', url: 'https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons' },
-		{ name: 'Dropdown', source: 'Carbon Design System (custom-styled variant)', url: 'https://carbondesignsystem.com/components/dropdown/usage/' }
+		{ name: 'Dropdown', source: 'Carbon Design System (custom-styled variant)', url: 'https://carbondesignsystem.com/components/dropdown/usage/' },
+		{ name: 'セレクトボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/select/' }
 	],
 	summary: {
 		en: 'Lets the user pick one option from a list that opens on demand.',
@@ -54,6 +55,12 @@ export default {
 		},
 		{ key: 'Esc', action: { en: 'Closes the list without changing.', ja: '変更せずにリストを閉じる。' } }
 	],
+	usage: [
+		{
+			en: 'With five or fewer options, use radio buttons instead. Never use a select for two options.',
+			ja: '選択肢が5つ以下ならラジオボタンを使う。2択にはセレクトを使わない。'
+		}
+	],
 	related: [
 		{
 			id: 'radio',
@@ -91,6 +98,11 @@ export default {
 		{
 			label: 'MDN: <select>',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「セレクトボックス」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/select/',
 			checkedAt: '2026-10-20'
 		}
 	]

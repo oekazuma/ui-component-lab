@@ -43,7 +43,7 @@
 		border-radius: 4px;
 		background: var(--color-text);
 		color: var(--color-bg);
-		font-size: 0.8125rem;
+		font-size: 0.875rem;
 		line-height: 1.4;
 		text-align: center;
 		opacity: 0;

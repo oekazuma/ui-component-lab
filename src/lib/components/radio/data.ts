@@ -47,6 +47,16 @@ export default {
 		},
 		{ key: 'Space', action: { en: 'Chooses the focused option.', ja: 'フォーカス中の選択肢を選ぶ。' } }
 	],
+	usage: [
+		{
+			en: 'A selected radio button cannot be cleared, so add a choice such as "None of these" to optional questions.',
+			ja: '一度選ぶと選択を外せないため、任意の質問には「あてはまるものはない」などの選択肢を加える。'
+		},
+		{
+			en: 'Put the circle to the left of its label.',
+			ja: '丸はラベルの左に置く。'
+		}
+	],
 	related: [
 		{
 			id: 'checkbox',
@@ -72,6 +82,11 @@ export default {
 		{
 			label: 'Carbon Design System: Radio button',
 			url: 'https://carbondesignsystem.com/components/radio-button/usage/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ラジオボタン」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/radio/',
 			checkedAt: '2026-10-20'
 		}
 	]

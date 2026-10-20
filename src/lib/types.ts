@@ -26,6 +26,8 @@ export interface ComponentData {
 	behavior: Text[];
 	keyboard: { key: string; action: Text }[];
 	variations?: { name: Text; description: Text }[];
+	/** 使い分けや注意点。根拠にした資料は sources に載せる */
+	usage?: Text[];
 	/** 似ているが違う部品。diff に違いを一文で書く */
 	related?: { id: string; diff: Text }[];
 	sources: { label: string; url: string; checkedAt: string }[];

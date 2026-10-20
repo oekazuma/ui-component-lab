@@ -4,7 +4,10 @@ export default {
 	id: 'spinner',
 	category: 'feedback',
 	names: { en: 'Spinner', ja: 'スピナー' },
-	aliases: [{ name: 'Loading', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/loading/usage/' }],
+	aliases: [
+		{ name: 'Loading', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/loading/usage/' },
+		{ name: 'プログレスインジケーター', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/progress-indicator/' }
+	],
 	summary: {
 		en: 'A small rotating shape that shows something is loading, without saying how long it will take.',
 		ja: '読み込み中であることを示す、回転する小さな図形。終わるまでの時間は示さない。'
@@ -36,6 +39,12 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Use an animated indicator for loading the whole screen. For a small area, a static indicator is enough.',
+			ja: '動く表示は画面全体の読み込みに使い、一部の領域には動かない表示を使う。'
+		}
+	],
 	related: [
 		{
 			id: 'progress-bar',
@@ -56,6 +65,11 @@ export default {
 		{
 			label: 'Carbon Design System: Loading',
 			url: 'https://carbondesignsystem.com/components/loading/usage/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/progress-indicator/',
 			checkedAt: '2026-10-20'
 		}
 	]

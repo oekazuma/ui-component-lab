@@ -4,7 +4,9 @@ export default {
 	id: 'pagination',
 	category: 'navigation',
 	names: { en: 'Pagination', ja: 'ページネーション' },
-	aliases: [],
+	aliases: [
+		{ name: 'ページナビゲーション', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/page-navigation/' }
+	],
 	summary: {
 		en: 'Controls for moving between pages of a long list, such as search results.',
 		ja: '検索結果など長い一覧を複数のページに分け、ページ間を移動するための部品。'
@@ -46,6 +48,12 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'The Digital Agency Design System hides "Previous" and "Next" on the first and last pages instead of disabling them. This demo keeps them focusable with aria-disabled.',
+			ja: 'デジタル庁デザインシステムでは、最初と最後のページで「前へ」「次へ」を無効にせず非表示にする。このデモは aria-disabled にして、フォーカスできるまま残している。'
+		}
+	],
 	related: [
 		{
 			id: 'carousel',
@@ -64,6 +72,11 @@ export default {
 		{
 			label: 'Carbon Design System: Pagination',
 			url: 'https://carbondesignsystem.com/components/pagination/usage/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ページナビゲーション」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/page-navigation/',
 			checkedAt: '2026-10-20'
 		}
 	]

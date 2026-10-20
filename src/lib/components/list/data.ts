@@ -3,8 +3,10 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'list',
 	category: 'data',
-	names: { en: 'List', ja: 'リスト' },
-	aliases: [],
+	names: { en: 'List', ja: 'リスト（箇条書きリスト）' },
+	aliases: [
+		{ name: '箇条書きリスト', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/list/' }
+	],
 	summary: {
 		en: 'Items stacked vertically, one per row, often with an icon and a second line of detail.',
 		ja: '項目を1行に1つずつ縦に並べたもの。アイコンや補足の2行目が付くことが多い。'
@@ -32,6 +34,12 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'For pairs of names and values, use a description list.',
+			ja: '項目名と値の組には、説明リストを使う。'
+		}
+	],
 	related: [
 		{
 			id: 'table',
@@ -52,6 +60,11 @@ export default {
 		{
 			label: 'MUI: Lists',
 			url: 'https://mui.com/material-ui/react-list/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「箇条書きリスト」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/list/',
 			checkedAt: '2026-10-20'
 		}
 	]

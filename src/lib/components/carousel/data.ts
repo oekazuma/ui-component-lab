@@ -59,6 +59,16 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Do not autoplay. Let the user change slides.',
+			ja: '自動で再生せず、利用者の操作で切り替える。'
+		},
+		{
+			en: 'Do not put information that everyone must read in it, and keep one topic per carousel.',
+			ja: '必ず読んでほしい情報は載せず、1つのカルーセルには1つの話題だけを入れる。'
+		}
+	],
 	related: [
 		{
 			id: 'tabs',
@@ -79,6 +89,11 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Carousel (Slide Show or Image Rotator) Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「カルーセル」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/carousel/',
 			checkedAt: '2026-10-20'
 		}
 	]

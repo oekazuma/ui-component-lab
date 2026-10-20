@@ -55,6 +55,20 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Use one primary (filled) button per screen, and show priority by shape (filled, outline, text) as well as color.',
+			ja: '塗りのボタンは1画面に1つにし、優先度は色だけでなく形（塗り、枠線、テキスト）でも示す。'
+		},
+		{
+			en: 'Make the target at least 44 × 44 CSS px.',
+			ja: '押せる領域は 44 × 44 CSS px 以上にする。'
+		},
+		{
+			en: 'Avoid disabled buttons. If one is unavoidable, explain nearby what is needed to enable it.',
+			ja: '無効状態のボタンは避ける。使う場合は、押せるようになる条件を近くに書く。'
+		}
+	],
 	related: [
 		{
 			id: 'link',
@@ -87,6 +101,11 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Button Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ボタン」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/button/',
 			checkedAt: '2026-10-20'
 		}
 	]

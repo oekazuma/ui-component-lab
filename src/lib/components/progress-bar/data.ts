@@ -4,7 +4,9 @@ export default {
 	id: 'progress-bar',
 	category: 'feedback',
 	names: { en: 'Progress bar', ja: 'プログレスバー' },
-	aliases: [],
+	aliases: [
+		{ name: 'プログレスインジケーター', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/progress-indicator/' }
+	],
 	summary: {
 		en: 'A bar that fills up to show how much of a task, such as an upload, is done.',
 		ja: 'アップロードなどの作業がどこまで進んだかを、伸びていく棒で示す部品。'
@@ -45,6 +47,12 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Do not use it to show progress through the steps of a form. Use step navigation for that.',
+			ja: 'フォームの手順の進み具合を示すのには使わない。それにはステップナビゲーションを使う。'
+		}
+	],
 	related: [
 		{
 			id: 'spinner',
@@ -63,6 +71,11 @@ export default {
 		{
 			label: 'MUI: Progress',
 			url: 'https://mui.com/material-ui/react-progress/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/progress-indicator/',
 			checkedAt: '2026-10-20'
 		}
 	]

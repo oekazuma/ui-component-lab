@@ -37,6 +37,16 @@ export default {
 			action: { en: 'Uses the focused button.', ja: 'フォーカス中のボタンを押す。' }
 		}
 	],
+	usage: [
+		{
+			en: 'If the whole card is clickable, do not put links or buttons inside it.',
+			ja: 'カード全体を押せるようにするなら、中にリンクやボタンを置かない。'
+		},
+		{
+			en: 'Separate cards with an outline of at least 3:1 contrast instead of relying on a shadow alone.',
+			ja: '影だけに頼らず、背景とのコントラスト比 3:1 以上の枠線で区切る。'
+		}
+	],
 	related: [
 		{
 			id: 'list',
@@ -50,6 +60,11 @@ export default {
 		{
 			label: 'MUI: Card',
 			url: 'https://mui.com/material-ui/react-card/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「カード」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/card/',
 			checkedAt: '2026-10-20'
 		}
 	]

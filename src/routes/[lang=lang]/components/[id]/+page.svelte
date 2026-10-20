@@ -91,6 +91,17 @@
 	</table>
 </section>
 
+{#if data.usage?.length}
+	<section aria-labelledby="usage">
+		<h2 id="usage">{ui.usage}</h2>
+		<ul>
+			{#each data.usage as u (u.en)}
+				<li>{u[lang]}</li>
+			{/each}
+		</ul>
+	</section>
+{/if}
+
 {#if related.length}
 	<section aria-labelledby="related">
 		<h2 id="related">{ui.related}</h2>

@@ -5,7 +5,8 @@ export default {
 	category: 'data',
 	names: { en: 'Table', ja: 'テーブル' },
 	aliases: [
-		{ name: 'Data table', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/data-table/usage/' }
+		{ name: 'Data table', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/data-table/usage/' },
+		{ name: 'テーブル／データテーブル', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/table/' }
 	],
 	summary: {
 		en: 'Data arranged in rows and columns, with headings that explain each column.',
@@ -54,6 +55,12 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Do not use it for layout or for pairs of names and values. Use a description list for those.',
+			ja: 'レイアウトの目的や、項目名と値の組には使わない。項目名と値の組には説明リストを使う。'
+		}
+	],
 	related: [
 		{
 			id: 'list',
@@ -77,6 +84,11 @@ export default {
 		{
 			label: 'Carbon Design System: Data table',
 			url: 'https://carbondesignsystem.com/components/data-table/usage/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「テーブル／データテーブル」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/table/',
 			checkedAt: '2026-10-20'
 		}
 	]

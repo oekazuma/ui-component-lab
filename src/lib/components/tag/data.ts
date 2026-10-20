@@ -4,7 +4,11 @@ export default {
 	id: 'tag',
 	category: 'data',
 	names: { en: 'Tag', ja: 'タグ' },
-	aliases: [{ name: 'Chip', source: 'MUI', url: 'https://mui.com/material-ui/react-chip/' }],
+	aliases: [
+		{ name: 'Chip', source: 'MUI', url: 'https://mui.com/material-ui/react-chip/' },
+		{ name: 'チップタグ', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/chip-tag/' },
+		{ name: 'チップラベル', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/chip-label/' }
+	],
 	summary: {
 		en: 'A short keyword label used to categorize content or show an applied filter.',
 		ja: '内容の分類や、適用中の絞り込みを示す短いキーワードのラベル。'
@@ -46,6 +50,16 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'A removable chip shows a value the user chose or entered. Do not use it for removals that cannot be undone.',
+			ja: '× で外せるチップは、利用者が選んだ値や入力した値に使う。取り消せない削除には使わない。'
+		},
+		{
+			en: 'A display-only chip shows a status or category. Do not tell them apart by color alone.',
+			ja: '表示だけのチップは状態や分類に使い、色だけで区別しない。'
+		}
+	],
 	related: [
 		{
 			id: 'badge',
@@ -64,6 +78,11 @@ export default {
 		{
 			label: 'MUI: Chip',
 			url: 'https://mui.com/material-ui/react-chip/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「チップタグ」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/chip-tag/',
 			checkedAt: '2026-10-20'
 		}
 	]

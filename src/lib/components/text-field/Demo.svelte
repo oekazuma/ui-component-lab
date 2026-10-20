@@ -40,6 +40,6 @@
 	p {
 		margin: 0;
 		color: var(--color-muted);
-		font-size: 0.8125rem;
+		font-size: 0.875rem;
 	}
 </style>

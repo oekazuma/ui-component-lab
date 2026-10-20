@@ -40,6 +40,20 @@ export default {
 			action: { en: 'Opens or closes the focused section.', ja: 'フォーカス中の項目を開閉する。' }
 		}
 	],
+	usage: [
+		{
+			en: 'Do not use it just to save space or to hide important information.',
+			ja: 'スペースを節約するためだけに使ったり、重要な情報を隠したりしない。'
+		},
+		{
+			en: 'To collapse supplementary content within a single section, use a disclosure instead.',
+			ja: '1つのセクションの中の補足を畳むなら、ディスクロージャーを使う。'
+		},
+		{
+			en: 'Do not nest it inside a list, table, accordion or disclosure.',
+			ja: 'リスト、テーブル、アコーディオン、ディスクロージャーの中には入れない。'
+		}
+	],
 	related: [
 		{
 			id: 'disclosure',
@@ -65,6 +79,11 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Accordion Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/accordion/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「アコーディオン」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/accordion/',
 			checkedAt: '2026-10-20'
 		}
 	]

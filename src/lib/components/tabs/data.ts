@@ -45,6 +45,12 @@ export default {
 		{ key: 'Home', action: { en: 'Moves to the first tab.', ja: '最初のタブへ移る。' } },
 		{ key: 'End', action: { en: 'Moves to the last tab.', ja: '最後のタブへ移る。' } }
 	],
+	usage: [
+		{
+			en: 'Do not use tabs for site navigation, step-by-step flows, filtering, or content users need to compare side by side.',
+			ja: 'サイト内の移動、手順の進行、絞り込み、並べて比べたい内容には使わない。'
+		}
+	],
 	related: [
 		{
 			id: 'carousel',
@@ -70,6 +76,11 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Tabs Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/tabs/',
+			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「タブ」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/tab/',
 			checkedAt: '2026-10-20'
 		}
 	]
