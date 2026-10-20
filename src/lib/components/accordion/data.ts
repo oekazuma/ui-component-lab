@@ -42,6 +42,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'disclosure',
+			diff: {
+				en: 'An accordion is a set of disclosures stacked under headings; a disclosure is a single toggle on its own.',
+				ja: 'アコーディオンはディスクロージャーを見出し付きで縦に並べたもので、ディスクロージャーは単独の開閉部品。'
+			}
+		},
+		{
 			id: 'tabs',
 			diff: {
 				en: 'An accordion stacks sections vertically and can open several at once; tabs show one panel at a time side by side.',

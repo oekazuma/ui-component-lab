@@ -24,4 +24,11 @@ export const entries = Object.entries(dataModules)
 	})
 	.sort((a, b) => a.data.names.en.localeCompare(b.data.names.en));
 
+for (const { data } of entries) {
+	for (const r of data.related ?? []) {
+		if (!entries.some((e) => e.data.id === r.id))
+			throw new Error(`related id "${r.id}" in ${data.id} does not exist`);
+	}
+}
+
 export const getEntry = (id: string) => entries.find((e) => e.data.id === id);

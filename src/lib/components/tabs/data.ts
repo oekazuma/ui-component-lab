@@ -47,6 +47,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'carousel',
+			diff: {
+				en: 'Tabs let the user jump to any panel by its name; a carousel steps through slides in order with previous and next buttons.',
+				ja: 'タブは名前の付いたパネルへ直接切り替え、カルーセルは前後のボタンで順に切り替える。'
+			}
+		},
+		{
 			id: 'accordion',
 			diff: {
 				en: 'Tabs show one panel at a time side by side; an accordion stacks sections vertically and can open several at once.',

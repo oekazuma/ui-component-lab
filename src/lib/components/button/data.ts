@@ -55,6 +55,29 @@ export default {
 			}
 		}
 	],
+	related: [
+		{
+			id: 'link',
+			diff: {
+				en: 'A button runs an action on the current page; a link moves to another page or place.',
+				ja: 'ボタンは今のページで操作を実行し、リンクは別のページや場所へ移動する。'
+			}
+		},
+		{
+			id: 'toggle-button',
+			diff: {
+				en: 'A toggle button keeps an on or off state; a button runs its action once per press.',
+				ja: 'トグルボタンはオン・オフの状態を保ち、ボタンは押すたびに操作を1回実行する。'
+			}
+		},
+		{
+			id: 'split-button',
+			diff: {
+				en: 'A split button adds a menu of related actions beside the main button.',
+				ja: 'スプリットボタンは、主な操作のボタンの横に関連する操作のメニューが付く。'
+			}
+		}
+	],
 	sources: [
 		{
 			label: 'Open UI: Button',

@@ -54,6 +54,29 @@ export default {
 		},
 		{ key: 'Esc', action: { en: 'Closes the list without changing.', ja: '変更せずにリストを閉じる。' } }
 	],
+	related: [
+		{
+			id: 'radio',
+			diff: {
+				en: 'A select hides the options in a list to save space; radio buttons show every option at once.',
+				ja: 'セレクトは選択肢をリストにしまって場所を取らず、ラジオボタンはすべての選択肢を常に見せる。'
+			}
+		},
+		{
+			id: 'menu',
+			diff: {
+				en: 'A select keeps the chosen option as a form value; a menu runs an action when an item is chosen.',
+				ja: 'セレクトは選んだ選択肢をフォームの値として保持し、メニューは項目を選ぶと操作を実行する。'
+			}
+		},
+		{
+			id: 'combobox',
+			diff: {
+				en: 'A select only allows options from the list; a combobox also lets the user type a value outside it.',
+				ja: 'セレクトはリストの選択肢からしか選べないが、コンボボックスは文字を入力でき、リストにない値も使える。'
+			}
+		}
+	],
 	sources: [
 		{
 			label: 'Open UI: Select',

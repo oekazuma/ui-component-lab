@@ -19,7 +19,12 @@ const ui = {
 		checkedAt: 'Last checked',
 		backToList: 'All components',
 		switchLang: '日本語',
-		demo: 'Demo'
+		demo: 'Demo',
+		search: 'Search by name',
+		category: 'Category',
+		all: 'All',
+		count: (n: number) => `${n} ${n === 1 ? 'component' : 'components'}`,
+		noResults: 'No components match.'
 	},
 	ja: {
 		tagline: 'UIコンポーネントの名前・見た目・挙動を、その場で触って確かめられる図鑑です。',
@@ -37,9 +42,14 @@ const ui = {
 		checkedAt: '最終確認日',
 		backToList: 'コンポーネント一覧',
 		switchLang: 'English',
-		demo: 'デモ'
+		demo: 'デモ',
+		search: '名前で検索',
+		category: 'カテゴリ',
+		all: 'すべて',
+		count: (n: number) => `${n}件`,
+		noResults: '該当するコンポーネントはありません。'
 	}
-} satisfies Record<Lang, Record<string, string>>;
+} satisfies Record<Lang, Record<string, string | ((n: number) => string)>>;
 
 export const categoryNames: Record<Category, Record<Lang, string>> = {
 	action: { en: 'Action', ja: 'アクション' },

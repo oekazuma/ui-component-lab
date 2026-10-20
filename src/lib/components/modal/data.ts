@@ -40,6 +40,29 @@ export default {
 		},
 		{ key: 'Esc', action: { en: 'Closes the dialog.', ja: 'ダイアログを閉じる。' } }
 	],
+	related: [
+		{
+			id: 'alert',
+			diff: {
+				en: 'An alert dialog (a kind of modal) stops the user until they respond; an alert informs without interrupting.',
+				ja: 'アラートダイアログ（モーダルの一種）は応答するまで作業を止め、アラートは作業を中断させずに知らせる。'
+			}
+		},
+		{
+			id: 'drawer',
+			diff: {
+				en: 'A modal dialog appears in the middle of the screen; a drawer slides in from an edge as a tall panel.',
+				ja: 'モーダルは画面の中央に出て、ドロワーは端から縦長のパネルとしてすべり出る。'
+			}
+		},
+		{
+			id: 'popover',
+			diff: {
+				en: 'A modal blocks the page until it is closed; a popover leaves the page usable and closes on an outside click.',
+				ja: 'モーダルは閉じるまでページを操作できず、ポップオーバーは開いたままページを操作でき、外側のクリックで閉じる。'
+			}
+		}
+	],
 	sources: [
 		{
 			label: 'Open UI: Dialog',

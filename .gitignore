@@ -21,3 +21,6 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# pnpm (store created inside the repo by the sandboxed install)
+.pnpm-store
