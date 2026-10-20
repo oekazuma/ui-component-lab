@@ -1,32 +1,27 @@
-# UI Component Lab
+<p align="center">
+	<img src="src/lib/assets/logo.svg" alt="" width="80" height="80">
+</p>
 
-UIコンポーネントの名前・見た目・挙動を、その場で操作できるデモ付きで一覧する図鑑サイトです。英語と日本語に対応しています。
+<h1 align="center">UI Component Lab</h1>
 
-公開URL: https://oekazuma.github.io/ui-component-lab/
+<p align="center">A field guide to UI components. Learn their names and try how they behave, right on the page.<br>English and Japanese.</p>
 
-## 開発
+<p align="center"><a href="https://oekazuma.github.io/ui-component-lab/">oekazuma.github.io/ui-component-lab</a></p>
+
+## Development
 
 ```sh
 pnpm install
-pnpm dev      # http://localhost:5173/ui-component-lab/
-pnpm check    # 型・アクセシビリティの検査
-pnpm build    # build/ に静的ファイルを出力
-pnpm preview  # ビルド結果の確認
+pnpm dev
 ```
 
-SvelteKit（adapter-static）で全ページを prerender し、`main` への push で GitHub Actions が GitHub Pages へデプロイします。
+## Adding a component
 
-## コンポーネントの追加
+Create `src/lib/components/<id>/` with two files:
 
-`src/lib/components/<id>/` に次の2ファイルを置くと、一覧と詳細ページ（`/en/components/<id>/`、`/ja/components/<id>/`）に自動で載ります。
+- `data.ts`: names, aliases, behavior, keyboard and sources, in both languages
+- `Demo.svelte`: a minimal interactive demo
 
-- `data.ts`: 名前・別名・説明・挙動・キーボード操作・出典（`ComponentData` 型。英日の両方が必須）
-- `Demo.svelte`: `lang` を受け取る最小構成のデモ。リセットボタンは共通の枠側にあるため、デモ側での実装は不要です
+## License
 
-挙動とキーボード操作の記述は [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) と矛盾しないようにし、根拠にした資料を `sources` に確認日付きで記載します。
-
-## ライセンス
-
-コードは [MIT License](LICENSE) で公開しています。
-
-サイト上の説明文とデモはすべて自作です。名称や挙動の根拠にした資料は、各詳細ページに出典として記載しています。説明文の著作権は oekazuma に帰属します。
+[MIT](LICENSE)

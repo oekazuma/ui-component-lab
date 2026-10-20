@@ -2,6 +2,7 @@
 	import { homePath } from '#lib/paths.js';
 	import { page } from '$app/state';
 	import { siteName, t } from '#lib/i18n.js';
+	import logo from '#lib/assets/logo.svg';
 	import type { LayoutProps } from './$types';
 
 	let { children, params }: LayoutProps = $props();
@@ -12,7 +13,9 @@
 </script>
 
 <header>
-	<a class="site-name" href={homePath(params.lang)}>{siteName}</a>
+	<a class="site-name" href={homePath(params.lang)}>
+		<img src={logo} alt="" width="28" height="28" />{siteName}
+	</a>
 	<a href={otherHref} hreflang={other} lang={other}>{t(params.lang).switchLang}</a>
 </header>
 
@@ -33,6 +36,9 @@
 	}
 
 	.site-name {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 		color: inherit;
 		font-weight: 700;
 		text-decoration: none;
