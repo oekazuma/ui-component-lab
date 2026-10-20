@@ -1,0 +1,81 @@
+/* 装飾を抑えた共通スタイル。デモの挙動に目が向くよう色は最小限にする */
+:root {
+	--color-bg: #ffffff;
+	--color-surface: #f6f7f9;
+	--color-text: #1b1d22;
+	--color-muted: #555b66; /* on --color-bg: 7.0:1 */
+	--color-border: #d3d7de;
+	--color-accent: #1f5fd1; /* on #fff: 5.9:1 */
+	--color-accent-text: #ffffff;
+	--color-focus: #1f5fd1;
+	--radius: 6px;
+	--font:
+		system-ui, -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+
+	color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--color-bg);
+	color: var(--color-text);
+	font-family: var(--font);
+	line-height: 1.6;
+}
+
+a {
+	color: var(--color-accent);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+}
+
+button,
+input,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+/* デモ内で共通に使うボタン */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25em;
+	padding: 0.4em 0.9em;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	background: var(--color-bg);
+	cursor: pointer;
+}
+
+.btn:hover {
+	background: var(--color-surface);
+}
+
+.btn-primary {
+	border-color: var(--color-accent);
+	background: var(--color-accent);
+	color: var(--color-accent-text);
+}
+
+.btn-primary:hover {
+	background: #194fae;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
