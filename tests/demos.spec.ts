@@ -44,3 +44,18 @@ test('tooltip: stays open while the button has focus, even after the pointer lea
 	await page.mouse.move(0, 0, { steps: 5 });
 	await expect(tooltip).toHaveClass(/visible/);
 });
+
+test('spinner: fills the loading screen, then shows the comments', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/spinner/');
+	await demo.getByRole('button', { name: /comments/ }).click();
+	await expect(demo.locator('.spinner')).toBeVisible();
+	await expect(demo.getByRole('listitem')).toHaveCount(3);
+	await expect(demo.locator('.spinner')).toHaveCount(0);
+});
+
+test('spinner: stops spinning with the reduce-motion setting', async ({ page }) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	const demo = await openDemo(page, 'en/components/spinner/');
+	await demo.getByRole('button', { name: /comments/ }).click();
+	await expect(demo.locator('.spinner')).toHaveCSS('animation-name', 'none');
+});

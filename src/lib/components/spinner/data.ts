@@ -26,8 +26,12 @@ export default {
 			ja: '回る図形は飾りで、「読み込み中…」などの文を status の領域に入れてスクリーンリーダー利用者に伝える。'
 		},
 		{
-			en: 'With the reduce-motion setting, this demo spins more slowly.',
-			ja: '「視差効果を減らす」などの設定が有効なとき、このデモは回転を遅くする。'
+			en: 'In this demo, the box stands for a whole screen. The spinner fills it while the page loads, and the comments appear once loading finishes.',
+			ja: 'このデモでは、枠を1つの画面に見立てている。ページの読み込み中は枠全体にスピナーを出し、読み込みが終わるとコメントを表示する。'
+		},
+		{
+			en: 'With the reduce-motion setting, this demo stops the spinning, as the DADS implementation does. The “Loading…” text still tells the user what is happening.',
+			ja: '「視差効果を減らす」などの設定が有効なとき、このデモは DADS の実装と同じく回転を止める。処理中であることは「読み込み中…」の文で伝わる。'
 		}
 	],
 	keyboard: [
@@ -77,6 +81,11 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/progress-indicator/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: progress-indicator',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/progress-indicator',
 			checkedAt: '2026-10-21'
 		},
 		{
