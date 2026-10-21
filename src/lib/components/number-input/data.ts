@@ -24,8 +24,12 @@ export default {
 			ja: '数値を直接入力するか、矢印で増減させる。'
 		},
 		{
-			en: 'This demo uses the native `<input type="number">` with `min`, `max` and `step`. Values outside the range get a red border.',
-			ja: 'このデモはネイティブの `<input type="number">` に `min`・`max`・`step` を付けている。範囲外の値になると枠が赤くなる。'
+			en: 'This demo uses the native `<input type="number">` with `min`, `max` and `step`.',
+			ja: 'このデモはネイティブの `<input type="number">` に `min`・`max`・`step` を付けている。'
+		},
+		{
+			en: 'In this demo, a value outside the range, a decimal or anything that is not a number turns the border red and shows an error message below the field. The message is tied to the field with `aria-describedby`, and the field gets `aria-invalid="true"`.',
+			ja: 'このデモでは、範囲外の値や小数、数として読めない入力になると、枠が赤くなり、入力欄の下にエラー文が出る。エラー文は `aria-describedby` で入力欄と結び、入力欄には `aria-invalid="true"` を付ける。'
 		},
 		{
 			en: 'APG also defines Home / End for the minimum and maximum, but the native element uses them to move the text cursor.',

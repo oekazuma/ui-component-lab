@@ -4,12 +4,13 @@
 	let { lang }: { lang: Lang } = $props();
 
 	const text = {
-		en: { label: 'Quantity', hint: '1 to 10' },
-		ja: { label: '数量', hint: '1〜10' }
+		en: { label: 'Quantity', hint: '1 to 10', error: 'Enter a whole number from 1 to 10.' },
+		ja: { label: '数量', hint: '1〜10', error: '1から10までの整数を入力してください。' }
 	};
 
 	const uid = $props.id();
 	let value = $state(1);
+	let invalid = $state(false);
 </script>
 
 <!-- ネイティブの <input type="number"> は role="spinbutton" を持ち、↑↓ で増減できる -->
@@ -21,17 +22,23 @@
 		min="1"
 		max="10"
 		step="1"
-		aria-describedby="{uid}-hint"
+		aria-describedby={invalid ? `${uid}-hint ${uid}-error` : `${uid}-hint`}
+		aria-invalid={invalid}
 		bind:value
+		oninput={(e) => (invalid = !e.currentTarget.validity.valid)}
 	/>
 	<p id="{uid}-hint">{text[lang].hint}</p>
+	<!-- 色だけに頼らないよう、範囲外では枠の色に加えて文で伝える（WCAG 1.4.1、3.3.1） -->
+	{#if invalid}
+		<p id="{uid}-error" class="error">{text[lang].error}</p>
+	{/if}
 </div>
 
 <style>
 	.demo {
 		display: grid;
 		gap: 0.25rem;
-		width: 8rem;
+		width: min(100%, 12rem);
 	}
 
 	label {
@@ -45,7 +52,11 @@
 		background: var(--color-bg);
 	}
 
-	input:invalid {
+	input {
+		width: 8rem;
+	}
+
+	input[aria-invalid='true'] {
 		border-color: var(--color-danger);
 	}
 
@@ -53,5 +64,9 @@
 		margin: 0;
 		color: var(--color-muted);
 		font-size: 0.875rem;
+	}
+
+	.error {
+		color: var(--color-danger);
 	}
 </style>

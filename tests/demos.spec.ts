@@ -84,3 +84,16 @@ test('meter: describes the amount in words and says when it is almost full', asy
 	await expect(meter).toHaveAccessibleDescription('80 GB of 100 GB Almost full');
 	await expect(demo.getByText('Almost full')).toBeVisible();
 });
+
+test('number input: an out-of-range value gets an error message tied to the field', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/number-input/');
+	const input = demo.getByRole('spinbutton', { name: 'Quantity' });
+
+	await input.fill('11');
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await expect(input).toHaveAccessibleDescription(/1 to 10.*Enter a whole number from 1 to 10/);
+
+	await input.fill('5');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+	await expect(demo.getByText('Enter a whole number')).toHaveCount(0);
+});
