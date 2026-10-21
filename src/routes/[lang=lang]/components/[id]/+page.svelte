@@ -167,6 +167,10 @@
 		{#if data.misuse?.length}
 			<section aria-labelledby="misuse">
 				<h2 id="misuse">{ui.misuse}</h2>
+				<!-- ラベルを見て意味が分からない人のための説明。ラベルが 1 つもない部品では出さない -->
+				{#if data.misuse.some((m) => m.deceptive)}
+					<p class="deceptive-note"><dfn>{ui.deceptive}</dfn>{ui.deceptiveNote}</p>
+				{/if}
 				<ul class="misuse">
 					{#each data.misuse as m (m.pattern.en)}
 						<!-- 避けたい使い方（赤）と代わりの方法（緑）を色と記号の両方で分け、どちらの話かを一目で分かるようにする -->
@@ -429,6 +433,18 @@
 
 	.misuse dd {
 		margin: 0;
+	}
+
+	.deceptive-note {
+		margin: 0 0 1rem;
+		color: var(--color-muted);
+		font-size: 0.9375rem;
+	}
+
+	dfn {
+		color: var(--color-text);
+		font-style: normal;
+		font-weight: 700;
 	}
 
 	/* 見出しの帯も赤みなので、枠線だけでは溶け込む。塗りつぶして帯の中で目立たせる */

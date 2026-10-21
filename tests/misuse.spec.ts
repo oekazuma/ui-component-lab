@@ -53,3 +53,12 @@ test('misuse: the deceptive pattern label is filled and readable on the heading 
 	expect(style.bg).not.toBe(style.band);
 	expect(style.size).toBeGreaterThanOrEqual(13);
 });
+
+test('misuse: explains deceptive patterns only where the label appears', async ({ page }) => {
+	await page.goto('ja/components/checkbox/');
+	const section = page.getByRole('region', { name: '避けたい使い方' });
+	await expect(section.locator('dfn')).toHaveText('ディセプティブパターン');
+	await expect(section).toContainText('本人が望まない選択へ誘導する');
+	await page.goto('ja/components/carousel/');
+	await expect(page.getByRole('region', { name: '避けたい使い方' }).locator('dfn')).toHaveCount(0);
+});

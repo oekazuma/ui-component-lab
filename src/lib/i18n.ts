@@ -18,6 +18,8 @@ const ui = {
 		harm: 'Harm',
 		instead: 'Instead',
 		deceptive: 'Deceptive pattern',
+		deceptiveNote:
+			' (dark pattern): a design that tricks people into choices they did not intend. A design can fall into this even when its makers mean no harm.',
 		toc: 'On this page',
 		external: ' (opens another site)',
 		darkMode: 'Dark mode',
@@ -59,6 +61,8 @@ const ui = {
 		harm: '困ること',
 		instead: '代わりに',
 		deceptive: 'ディセプティブパターン',
+		deceptiveNote:
+			'（ダークパターン）は、利用者をだまして、本人が望まない選択へ誘導する使い方です。作り手に悪意がなくても、結果として当てはまることがあります。',
 		toc: 'このページの内容',
 		external: '（外部サイト）',
 		darkMode: 'ダークモード',
