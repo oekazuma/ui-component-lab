@@ -35,14 +35,6 @@
 	<DemoFrame {demo} {lang} label="{ui.demo}: {data.names[lang]}" />
 </section>
 
-<section aria-labelledby="source">
-	<h2 id="source">{ui.source}</h2>
-	<details>
-		<summary>{ui.showSource}</summary>
-		<pre><code>{page.source}</code></pre>
-	</details>
-</section>
-
 {#if data.aliases.length}
 	<section aria-labelledby="aliases">
 		<h2 id="aliases">{ui.aliases}</h2>
@@ -251,21 +243,5 @@
 	.checked {
 		color: var(--color-muted);
 		font-size: 0.875rem;
-	}
-
-	pre {
-		margin: 0.5rem 0 0;
-		padding: 0.75rem 1rem;
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius);
-		background: var(--color-surface);
-		font-size: 0.8125rem;
-		line-height: 1.5;
-		white-space: pre-wrap;
-		tab-size: 2;
-	}
-
-	summary {
-		cursor: pointer;
 	}
 </style>

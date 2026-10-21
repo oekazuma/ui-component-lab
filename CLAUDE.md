@@ -39,7 +39,6 @@ CI は PR ごとに上の 3 つを実行する。
 - 色は `src/app.css` のトークン（`--color-*`）を使う。エラーは `--color-danger`、アクセントのホバーは `--color-accent-hover`。トークンを足すときはコントラスト比をコメントに書く
 - 共通のクラスは `.btn`、`.btn-primary`、`.visually-hidden`（`src/app.css`）
 - デモの挙動を変えたら、同じコミットで data.ts の keyboard と behavior を直す。独自のキー操作を変えたときは `tests/keyboard.spec.ts` も直す
-- 詳細ページのソース表示では、行全体のコメントが除かれる（`src/lib/strip-comments.ts`）。読者に伝えたい説明は data.ts に書く
 
 ## コードの約束事
 
