@@ -76,8 +76,7 @@
 	}
 
 	[role='toolbar'] .btn {
-		justify-content: center;
-		width: 2.25rem;
+		width: 2.75rem;
 		padding: 0.25em;
 		font-family: Georgia, serif;
 	}

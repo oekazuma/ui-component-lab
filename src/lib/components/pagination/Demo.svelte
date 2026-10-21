@@ -41,7 +41,7 @@
 		{#each pages as n (n)}
 			<button
 				type="button"
-				class="btn num"
+				class="btn"
 				aria-label={text[lang].page(n)}
 				aria-current={n === current ? 'page' : undefined}
 				onclick={() => (current = n)}
@@ -77,11 +77,6 @@
 
 	.btn {
 		padding-inline: 0.6em;
-	}
-
-	.num {
-		min-width: 2.25em;
-		justify-content: center;
 	}
 
 	[aria-current='page'] {

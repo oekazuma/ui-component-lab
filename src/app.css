@@ -117,11 +117,14 @@ textarea {
 	color: inherit;
 }
 
-/* デモ内で共通に使うボタン */
+/* デモ内で共通に使うボタン。押せる範囲は 44 × 44 CSS px 以上にする（DADS ボタンのアクセシビリティ） */
 .btn {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.25em;
+	min-width: 2.75rem;
+	min-height: 2.75rem;
 	padding: 0.4em 0.9em;
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius);

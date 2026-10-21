@@ -97,3 +97,18 @@ test('number input: an out-of-range value gets an error message tied to the fiel
 	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
 	await expect(demo.getByText('Enter a whole number')).toHaveCount(0);
 });
+
+// DADS ボタンのアクセシビリティ: ターゲットサイズは 44 × 44 CSS px 以上
+for (const path of ['en/', 'ja/']) {
+	test(`buttons: every demo button is at least 44 × 44 px: ${path}`, async ({ page }) => {
+		await page.goto(path);
+		const small = await page.locator('.btn, [role="toolbar"] button').evaluateAll((els) =>
+			els
+				.filter((el) => el.getClientRects().length > 0)
+				.map((el) => ({ text: el.textContent!.trim(), ...el.getBoundingClientRect().toJSON() }))
+				.filter((r) => r.width < 44 || r.height < 44)
+				.map((r) => `${r.text}: ${Math.round(r.width)} × ${Math.round(r.height)}`)
+		);
+		expect(small).toEqual([]);
+	});
+}
