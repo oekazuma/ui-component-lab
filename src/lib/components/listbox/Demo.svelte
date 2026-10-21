@@ -7,14 +7,20 @@
 		en: {
 			label: 'Time zone',
 			selected: 'Selected:',
-			options: ['Auckland', 'Bangkok', 'Berlin', 'Cairo', 'Chicago', 'London', 'Mumbai', 'New York', 'Sydney', 'Tokyo']
+			cities: ['Chicago', 'New York', 'London', 'Berlin', 'Cairo', 'Mumbai', 'Bangkok', 'Tokyo', 'Sydney', 'Auckland']
 		},
 		ja: {
 			label: 'タイムゾーン',
 			selected: '選択中:',
-			options: ['オークランド', 'カイロ', 'シカゴ', 'シドニー', 'ニューヨーク', 'バンコク', 'ベルリン', 'ムンバイ', 'ロンドン', '東京']
+			cities: ['シカゴ', 'ニューヨーク', 'ロンドン', 'ベルリン', 'カイロ', 'ムンバイ', 'バンコク', '東京', 'シドニー', 'オークランド']
 		}
 	};
+	// OS の設定画面のように、UTC との時差（夏時間でないとき）の順に並べる。
+	// 文字入力での移動は選択肢の先頭の文字で探すので、時差を先に書くと「(」で始まって効かなくなる。都市名を先に置く
+	const offsets = ['−06:00', '−05:00', '±00:00', '+01:00', '+02:00', '+05:30', '+07:00', '+09:00', '+10:00', '+12:00'];
+	let options = $derived(
+		text[lang].cities.map((city, i) => (lang === 'ja' ? `${city}（UTC${offsets[i]}）` : `${city} (UTC${offsets[i]})`))
+	);
 
 	const uid = $props.id();
 	let value = $state('');
@@ -24,7 +30,7 @@
 <div class="demo">
 	<label for="{uid}-list">{text[lang].label}</label>
 	<select id="{uid}-list" size="5" bind:value>
-		{#each text[lang].options as option (option)}
+		{#each options as option (option)}
 			<option>{option}</option>
 		{/each}
 	</select>
@@ -35,7 +41,7 @@
 	.demo {
 		display: grid;
 		gap: 0.25rem;
-		width: min(100%, 14rem);
+		width: min(100%, 16rem);
 	}
 
 	label {

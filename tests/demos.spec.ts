@@ -694,3 +694,15 @@ test('select: the Japanese options are in gojūon order', async ({ page }) => {
 		'フランス'
 	]);
 });
+
+test('listbox: time zones with their UTC offsets, in offset order, still reachable by typing a letter', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/listbox/');
+	const list = demo.getByRole('listbox', { name: 'Time zone' });
+	const options = list.locator('option');
+	await expect(options).toHaveCount(10);
+	await expect(options.first()).toHaveText('Chicago (UTC−06:00)');
+	await expect(options.last()).toHaveText('Auckland (UTC+12:00)');
+	await list.focus();
+	await page.keyboard.press('t');
+	await expect(list).toHaveValue('Tokyo (UTC+09:00)');
+});

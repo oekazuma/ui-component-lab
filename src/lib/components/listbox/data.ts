@@ -28,6 +28,10 @@ export default {
 		{
 			en: 'This demo is a native `<select>` with the `size` attribute, so it does not open or close and browsers treat it as a listbox.',
 			ja: 'このデモは `size` 属性を付けたネイティブの `<select>` なので、開閉せず、ブラウザはリストボックスとして扱う。'
+		},
+		{
+			en: 'In this demo, the time zones are in order of their offset from UTC, as in OS settings. Each option starts with the city name rather than the offset, so typing a letter still jumps to it.',
+			ja: 'このデモでは、OS の設定画面のように、タイムゾーンを UTC との時差の順に並べている。選択肢は時差ではなく都市名から始めているので、文字を打って移動することもできる。'
 		}
 	],
 	keyboard: [
