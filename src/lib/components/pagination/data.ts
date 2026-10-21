@@ -90,6 +90,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'feed',
+			diff: {
+				en: 'Pagination splits the items into pages that people choose to move between; a feed adds the next articles in place as people read.',
+				ja: 'ページネーションは項目をページに分けて利用者が選んで移り、フィードは読み進めるとその場に次の記事を足す。'
+			}
+		},
+		{
 			id: 'carousel',
 			diff: {
 				en: 'Pagination moves through pages of a long list; a carousel shows one slide of a small set in place.',

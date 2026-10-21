@@ -917,3 +917,14 @@ test('skip link: hidden until Tab reaches it, then moves focus to the main conte
 	await page.keyboard.press('Tab');
 	await expect(demo.getByRole('link', { name: 'Read the full guide' })).toBeFocused();
 });
+
+test('feed: stops loading after nine posts and says so', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/feed/');
+	const articles = demo.getByRole('feed').getByRole('article');
+	for (const n of [3, 6, 9]) {
+		await expect(articles).toHaveCount(n);
+		await articles.last().focus();
+	}
+	await expect(demo.getByRole('status')).toHaveText('No more posts');
+	await expect(articles).toHaveCount(9);
+});

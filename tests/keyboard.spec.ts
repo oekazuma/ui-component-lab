@@ -379,3 +379,34 @@ test('data grid: one Tab stop, arrow keys stop at the edges, Home / End and Ctrl
 	await expect(cell(0, 0)).toBeFocused();
 	await expect(grid.locator('[tabindex="0"]')).toHaveCount(1);
 });
+
+test('feed: Page Down / Page Up move by article, the last one loads more, and Ctrl + End / Ctrl + Home leave the feed', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/feed/');
+	const feed = demo.getByRole('feed', { name: 'Neighborhood news' });
+	const articles = feed.getByRole('article');
+	await expect(articles).toHaveCount(3);
+	await expect(articles.first()).toHaveAttribute('aria-posinset', '1');
+	await expect(articles.first()).toHaveAttribute('aria-setsize', '3');
+
+	await articles.first().focus();
+	await page.keyboard.press('PageDown');
+	await expect(articles.nth(1)).toBeFocused();
+	await page.keyboard.press('PageUp');
+	await expect(articles.first()).toBeFocused();
+
+	// 最後の記事へ移ると続きを読み込む。読み込みの間は aria-busy を付ける
+	await page.keyboard.press('PageDown');
+	await page.keyboard.press('PageDown');
+	await expect(feed).toHaveAttribute('aria-busy', 'true');
+	await expect(articles).toHaveCount(6);
+	await expect(feed).toHaveAttribute('aria-busy', 'false');
+	await expect(articles.nth(5)).toHaveAttribute('aria-setsize', '6');
+	await page.keyboard.press('PageDown');
+	await expect(articles.nth(3)).toBeFocused();
+
+	await page.keyboard.press('Control+End');
+	await expect(demo.getByRole('button', { name: /^↺/ })).toBeFocused();
+	await articles.nth(1).focus();
+	await page.keyboard.press('Control+Home');
+	expect(await feed.evaluate((el) => !el.contains(document.activeElement) && !!(el.compareDocumentPosition(document.activeElement!) & Node.DOCUMENT_POSITION_PRECEDING))).toBe(true);
+});

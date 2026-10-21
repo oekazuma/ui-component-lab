@@ -59,6 +59,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'feed',
+			diff: {
+				en: 'A list shows a fixed set of items; a feed keeps loading more articles as people read and moves by article with Page Up and Page Down.',
+				ja: 'リストは決まった数の項目を並べ、フィードは読み進めると記事を読み込み続け、Page Up と Page Down で記事を移る。'
+			}
+		},
+		{
 			id: 'table',
 			diff: {
 				en: 'A list shows one item per row without columns; a table compares several values per row in columns.',
