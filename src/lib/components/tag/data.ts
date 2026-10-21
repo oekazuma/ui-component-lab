@@ -14,39 +14,61 @@ export default {
 		ja: '内容の分類や、適用中の絞り込みを示す短いキーワードのラベル。'
 	},
 	appearance: {
-		en: 'A small pill-shaped label with a short word. Removable tags have a small “×” at the end.',
-		ja: '短い単語の入った小さな角丸のラベル。外せるタグは末尾に小さな「×」がある。'
+		en: 'A small rounded label with a short word. Selectable tags look like pill-shaped buttons and change color with a check mark when chosen. Removable tags have a small “×” at the end.',
+		ja: '短い単語の入った小さな角丸のラベル。選べるタグは丸いボタンの形で、選ぶと色が変わりチェックの印が付く。外せるタグは末尾に小さな「×」がある。'
 	},
 	behavior: [
 		{
-			en: 'Read-only tags only label content; removable tags can be dismissed, for example to clear a filter.',
-			ja: '表示だけのタグは内容にラベルを付けるだけで、外せるタグは絞り込みの解除などに使う。'
+			en: 'Display-only tags (DADS chip labels) only label content with a status or category, such as “Open”, and are not interactive.',
+			ja: '表示だけのタグ（DADS のチップラベル）は、「受付中」のような状態や分類を示すだけで、操作できない。'
 		},
 		{
-			en: 'Each “×” is a button named after its tag, such as “Remove Red”.',
-			ja: '「×」はそれぞれボタンで、「赤を外す」のようにタグ名を含む名前を付ける。'
+			en: 'Selectable tags are toggle buttons with `aria-pressed`, so screen readers announce whether each one is chosen.',
+			ja: '選べるタグは `aria-pressed` を持つトグルボタンにし、選ばれているかどうかをスクリーンリーダーが読み上げる。'
+		},
+		{
+			en: 'Removable tags can be dismissed, for example to clear a filter. Each “×” is a button named after its tag, such as “Remove Red”.',
+			ja: '外せるタグは絞り込みの解除などに使う。「×」はそれぞれボタンで、「赤を外す」のようにタグ名を含む名前を付ける。'
 		},
 		{
 			en: 'After removing a tag, this demo moves focus to the next tag’s button (or the previous one if it was the last) so keyboard users do not lose their place.',
 			ja: 'このデモではタグを外したあと、キーボード利用者が迷わないよう、隣のタグのボタンにフォーカスを移す。'
+		},
+		{
+			en: 'In this demo, a chosen tag shows a check mark as well as a color change, so the choice is not shown by color alone.',
+			ja: 'このデモでは、選んだタグに色の変化だけでなくチェックの印も付け、選択を色だけで示さないようにしている。'
 		}
 	],
 	keyboard: [
-		{ key: 'Tab', action: { en: 'Moves between the remove buttons.', ja: '外すボタンの間を移動する。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between the selectable tags and the remove buttons. Display-only tags are skipped.', ja: '選べるタグと外すボタンの間を移動する。表示だけのタグには止まらない。' } },
 		{
 			key: 'Enter / Space',
 			action: {
-				en: 'Removes the tag and moves focus to the next one (or the previous one if it was the last).',
-				ja: 'タグを外し、隣のタグへフォーカスを移す。'
+				en: 'On a selectable tag, chooses it or clears the choice. On a remove button, removes the tag and moves focus to the next one (or the previous one if it was the last).',
+				ja: '選べるタグでは、選ぶか選択を外す。外すボタンでは、タグを外し、隣のタグへフォーカスを移す。'
 			}
 		}
 	],
 	variations: [
 		{
+			name: { en: 'Display-only tag', ja: '表示だけのタグ' },
+			description: {
+				en: 'Shows a status or category that the content already has. DADS calls it a chip label.',
+				ja: '内容がすでに持っている状態や分類を示すもの。DADS ではチップラベルと呼ぶ。'
+			}
+		},
+		{
 			name: { en: 'Selectable tag', ja: '選択できるタグ' },
 			description: {
 				en: 'Can be turned on or off, often to filter content on the page.',
 				ja: 'オン・オフを切り替えられるもの。ページ内の内容の絞り込みに使うことが多い。'
+			}
+		},
+		{
+			name: { en: 'Removable tag', ja: '外せるタグ' },
+			description: {
+				en: 'Shows a value the user chose or entered, with a “×” to remove it. DADS calls it a chip tag.',
+				ja: '利用者が選んだ値や入力した値を示し、「×」で外せるもの。DADS ではチップタグと呼ぶ。'
 			}
 		}
 	],
@@ -56,8 +78,8 @@ export default {
 			ja: '× で外せるチップは、利用者が選んだ値や入力した値に使う。取り消せない削除には使わない。'
 		},
 		{
-			en: 'A display-only chip shows a status or category.',
-			ja: '表示だけのチップは状態や分類に使う。'
+			en: 'A display-only chip shows a status or category. Do not use too many colors, and always write the meaning as text.',
+			ja: '表示だけのチップは状態や分類に使う。色を使いすぎず、意味は必ず文字で書く。'
 		}
 	],
 	misuse: [

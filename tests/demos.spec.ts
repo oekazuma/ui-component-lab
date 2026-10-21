@@ -417,3 +417,18 @@ test('badge: icon-only buttons carry the count in their names, cap it at 99+, an
 	await downloads.click();
 	await expect(demo.getByRole('button', { name: 'Downloads', exact: true }).locator('.badge')).toHaveCount(0);
 });
+
+test('tag: display-only chip labels next to selectable tags that toggle aria-pressed', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/tag/');
+	const notices = demo.getByRole('list', { name: 'Notices' });
+	await expect(notices.getByRole('listitem')).toHaveText([/Childcare subsidy\s*Open/, /Bicycle parking permit\s*Closed/]);
+	await expect(notices.getByRole('button')).toHaveCount(0);
+
+	const topics = demo.getByRole('group', { name: 'Topics' });
+	const health = topics.getByRole('button', { name: 'Health' });
+	await expect(health).toHaveAttribute('aria-pressed', 'false');
+	await health.click();
+	await expect(health).toHaveAttribute('aria-pressed', 'true');
+	await health.press('Space');
+	await expect(health).toHaveAttribute('aria-pressed', 'false');
+});
