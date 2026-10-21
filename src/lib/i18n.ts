@@ -27,7 +27,12 @@ const ui = {
 		category: 'Category',
 		all: 'All',
 		count: (n: number) => `${n} ${n === 1 ? 'component' : 'components'}`,
-		noResults: 'No components match.'
+		noResults: 'No components match.',
+		systems: 'Names by design system',
+		systemsLead:
+			'What each design system calls the components in this guide. Components with no other known name are not listed.',
+		nameInSystem: 'Name in the system',
+		componentHere: 'Component in this guide'
 	},
 	ja: {
 		tagline: 'UIコンポーネントの名前・見た目・挙動を、その場で触って確かめられる図鑑です。',
@@ -53,7 +58,12 @@ const ui = {
 		category: 'カテゴリ',
 		all: 'すべて',
 		count: (n: number) => `${n}件`,
-		noResults: '該当するコンポーネントはありません。'
+		noResults: '該当するコンポーネントはありません。',
+		systems: 'デザインシステム別の呼び名',
+		systemsLead:
+			'このサイトの部品を、各デザインシステムが何と呼んでいるかの一覧。ほかの呼び名が見つかっていない部品は載せていない。',
+		nameInSystem: 'そのシステムでの呼び名',
+		componentHere: 'このサイトでの部品'
 	}
 } satisfies Record<Lang, Record<string, string | ((n: number) => string)>>;
 

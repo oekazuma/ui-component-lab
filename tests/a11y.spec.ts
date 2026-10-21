@@ -2,7 +2,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
 // 一覧ページは全デモを描画するので、一覧2つと詳細2つで全デモの初期状態を見られる
-for (const path of ['en/', 'ja/', 'en/components/tabs/', 'ja/components/modal/']) {
+for (const path of ['en/', 'ja/', 'en/components/tabs/', 'ja/components/modal/', 'en/systems/', 'ja/systems/']) {
 	test(`no axe violations: ${path}`, async ({ page }) => {
 		await page.goto(path);
 		const { violations } = await new AxeBuilder({ page })

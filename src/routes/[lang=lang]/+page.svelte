@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { componentPath } from '#lib/paths.js';
+	import { componentPath, systemsPath } from '#lib/paths.js';
 	import DemoFrame from '#lib/DemoFrame.svelte';
 	import { categoryNames, siteName, t } from '#lib/i18n.js';
 	import { entries } from '#lib/registry.js';
@@ -28,6 +28,7 @@
 
 <h1 class="visually-hidden">{siteName}</h1>
 <p class="tagline">{ui.tagline}</p>
+<p class="systems-link"><a href={systemsPath(lang)}>{ui.systems}</a></p>
 
 <search class="filters">
 	<label class="query">
@@ -71,6 +72,10 @@
 	.tagline {
 		margin: 0 0 1.5rem;
 		color: var(--color-muted);
+	}
+
+	.systems-link {
+		margin: -1rem 0 1.5rem;
 	}
 
 	.filters {
