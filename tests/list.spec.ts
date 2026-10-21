@@ -20,3 +20,25 @@ test('detail: key labels are not smaller than 14px', async ({ page }) => {
 	const size = await page.locator('kbd').first().evaluate((k) => parseFloat(getComputedStyle(k).fontSize));
 	expect(size).toBeGreaterThanOrEqual(14);
 });
+
+test('list: category chips stay on one scrollable row on phones', async ({ page }) => {
+	await page.setViewportSize({ width: 375, height: 812 });
+	await page.goto('ja/');
+	const tops = await page.locator('.chip').evaluateAll((els) => els.map((e) => e.getBoundingClientRect().top));
+	expect(new Set(tops).size).toBe(1);
+	expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('systems: links to other sites say so', async ({ page }) => {
+	await page.goto('ja/systems/');
+	await expect(page.getByRole('link', { name: /外部サイト/ }).first()).toBeVisible();
+	await expect(page.getByRole('link', { name: 'タブ', exact: true }).first()).toBeVisible();
+});
+
+test('detail: a table of contents links to the sections on wide screens', async ({ page }) => {
+	await page.goto('ja/components/carousel/');
+	const toc = page.getByRole('navigation', { name: 'このページの内容' });
+	await expect(toc.getByRole('link', { name: '避けたい使い方' })).toHaveAttribute('href', '#misuse');
+	await page.setViewportSize({ width: 375, height: 812 });
+	await expect(toc).toBeHidden();
+});

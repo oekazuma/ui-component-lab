@@ -90,7 +90,25 @@
 		border: 0;
 	}
 
+	/* 狭い画面で折り返すと 4 行になりカードが押し下げられるので、1 行にして横にスクロールさせる。
+		フォーカスの線が切れないよう、上下左右に余白を取ってから負のマージンで位置を戻す */
+	@media (max-width: 40rem) {
+		/* fieldset は既定で中身の幅より縮まず、ページごと横にはみ出すため min-width を 0 にする */
+		fieldset {
+			min-width: 0;
+			flex-wrap: nowrap;
+			margin: -0.375rem -1rem;
+			padding: 0.375rem 1rem;
+			overflow-x: auto;
+			scrollbar-width: none;
+		}
+	}
+
+	/* 見えないラジオは絶対配置なので、ピルを基準にしてスクロールの枠の中に収める */
 	.chip {
+		position: relative;
+		flex-shrink: 0;
+		white-space: nowrap;
 		padding: 0.25em 0.9em;
 		border: 1px solid var(--color-border);
 		border-radius: 999px;

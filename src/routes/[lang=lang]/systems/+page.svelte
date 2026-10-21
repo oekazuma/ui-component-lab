@@ -41,7 +41,13 @@
 			<tbody>
 				{#each s.rows as { alias, data } (data.id + alias.name)}
 					<tr>
-						<td><a href={alias.url}>{alias.name}</a></td>
+						<td>
+							<a href={alias.url}>
+								{alias.name}<svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+									<path d="M4.5 2.5h5v5M9.5 2.5 3 9" />
+								</svg><span class="visually-hidden">（{ui.external}）</span>
+							</a>
+						</td>
 						<td><a href={componentPath(lang, data.id)}>{data.names[lang]}</a></td>
 					</tr>
 				{/each}
@@ -68,6 +74,14 @@
 	h2 {
 		margin: 0 0 0.5rem;
 		font-size: 1.125rem;
+	}
+
+	svg {
+		margin-left: 0.2em;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.5;
+		stroke-linecap: round;
 	}
 
 	table {
