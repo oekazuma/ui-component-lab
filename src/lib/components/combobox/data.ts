@@ -33,6 +33,18 @@ export default {
 			ja: '日本語入力などで変換している間は、矢印キー・Enter・Esc は変換の操作に使われ、候補の移動や決定には使われない。'
 		},
 		{
+			en: 'In this demo, the arrow button at the right end opens or closes the list of suggestions. As in the APG example, Tab skips it (`tabindex="-1"`): keyboard users open the list with ↓, and the button is there for pointer and touch users. Focus stays in the text field after pressing it.',
+			ja: 'このデモでは、右端の矢印のボタンで候補のリストを開閉する。APG の例と同じく、このボタンは Tab で止まらない（`tabindex="-1"`）。キーボードでは ↓ で開き、ボタンはマウスやタッチの利用者のために置いている。押したあともフォーカスは入力欄に残る。'
+		},
+		{
+			en: 'In this demo, the typed part of each suggestion is marked with `<mark>` and shown in bold.',
+			ja: 'このデモでは、候補のうち入力した文字に一致した部分を `<mark>` で示し、太字で表示する。'
+		},
+		{
+			en: 'In this demo, when nothing matches, the list stays closed and “No matching fruit” appears below the field instead. It is a `role="status"` live region, so screen readers announce it.',
+			ja: 'このデモでは、一致する候補がないとき、リストは開かず、代わりに欄の下に「該当する果物はありません」と出す。`role="status"` のライブリージョンなので、スクリーンリーダーが読み上げる。'
+		},
+		{
 			en: 'HTML can also make a simple combobox with `<input list>` and `<datalist>`, but how the list looks and works differs by browser.',
 			ja: 'HTML の `<input list>` と `<datalist>` でも簡易的なコンボボックスを作れるが、リストの見た目や動きはブラウザで異なる。'
 		}
@@ -123,7 +135,7 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Editable Combobox With List Autocomplete Example',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-list/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Open UI: Combobox (Explainer)',
@@ -133,12 +145,12 @@ export default {
 		{
 			label: 'MUI: Autocomplete',
 			url: 'https://mui.com/material-ui/react-autocomplete/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「コンボボックス」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/combobox/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

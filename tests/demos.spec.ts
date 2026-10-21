@@ -706,3 +706,33 @@ test('listbox: time zones with their UTC offsets, in offset order, still reachab
 	await page.keyboard.press('t');
 	await expect(list).toHaveValue('Tokyo (UTC+09:00)');
 });
+
+test('combobox: the button opens every option, the typed part is marked, and no match is announced', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/combobox/');
+	const input = demo.getByRole('combobox', { name: 'Fruit' });
+	const toggle = demo.getByRole('button', { name: 'Fruit' });
+	const options = demo.getByRole('option');
+	const status = demo.getByRole('status');
+	await expect(toggle).toHaveAttribute('tabindex', '-1');
+
+	await toggle.click();
+	await expect(input).toBeFocused();
+	await expect(input).toHaveAttribute('aria-expanded', 'true');
+	await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+	await expect(options).toHaveCount(10);
+	await toggle.click();
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+	await expect(input).toBeFocused();
+
+	await input.fill('ap');
+	await expect(options).toHaveText(['Apple', 'Apricot']);
+	await expect(options.locator('mark')).toHaveText(['Ap', 'Ap']);
+	await expect(status).toHaveText('');
+
+	await input.fill('zzz');
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+	await expect(status).toHaveText('No matching fruit');
+	await expect(status).toBeVisible();
+	await input.fill('');
+	await expect(status).toHaveText('');
+});
