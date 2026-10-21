@@ -1,4 +1,4 @@
-import { componentPath, homePath } from '#lib/paths.js';
+import { componentPath, homePath, systemsPath } from '#lib/paths.js';
 import { entries } from '#lib/registry.js';
 import { langs } from '#lib/types.js';
 import type { RequestHandler } from './$types';
@@ -9,6 +9,7 @@ export const prerender = true;
 export const GET: RequestHandler = ({ url }) => {
 	const paths = langs.flatMap((lang) => [
 		homePath(lang),
+		systemsPath(lang),
 		...entries.map(({ data }) => componentPath(lang, data.id))
 	]);
 	const body = `<?xml version="1.0" encoding="UTF-8"?>
