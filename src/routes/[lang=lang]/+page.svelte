@@ -3,7 +3,7 @@
 	import { categoryNames, siteName, t } from '#lib/i18n.js';
 	import { entries } from '#lib/registry.js';
 	import { filter } from '#lib/filter.svelte.js';
-	import { categories } from '#lib/types.js';
+	import { categories, type ComponentData } from '#lib/types.js';
 	import type { PageProps } from './$types';
 
 	let { params }: PageProps = $props();
@@ -21,6 +21,12 @@
 		observer.observe(thumb);
 		return () => observer.disconnect();
 	}
+
+	// 対応表では同じ呼び名をデザインシステムごとに並べるが、カードでは部品名と重なる呼び名や、同じ呼び名の繰り返しを出さない
+	const cardAliases = (d: ComponentData) =>
+		[...new Set(d.aliases.map((a) => a.name))].filter(
+			(name) => name.toLowerCase() !== d.names.en.toLowerCase() && name !== d.names.ja
+		);
 
 	let shown = $derived(
 		entries.filter(({ data }) => !filter.category || data.category === filter.category)
@@ -67,9 +73,9 @@
 					</a>
 				</h2>
 				<p class="summary">{data.summary[lang]}</p>
-				{#if data.aliases.length}
+				{#if cardAliases(data).length}
 					<p class="aliases">
-						{ui.aliases}: {data.aliases.map((a) => a.name).join(lang === 'ja' ? '、' : ', ')}
+						{ui.aliases}: {cardAliases(data).join(lang === 'ja' ? '、' : ', ')}
 					</p>
 				{/if}
 			</div>

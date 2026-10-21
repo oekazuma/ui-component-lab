@@ -90,3 +90,9 @@ test('list: thumbnails are not interactive, share one height, and the whole card
 	await page.mouse.click(box!.x + box!.width / 2, box!.y + box!.height / 2);
 	await expect(page).toHaveURL(/\/ja\/components\/accordion\/$/);
 });
+
+test('list: a card leaves out aliases that repeat the component name or each other', async ({ page }) => {
+	await page.goto('en/');
+	const card = page.locator('li', { has: page.getByRole('link', { name: 'Range slider', exact: true }) });
+	await expect(card.locator('.aliases')).toHaveText('Also known as: Slider (Multi-Thumb)');
+});
