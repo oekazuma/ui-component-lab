@@ -31,8 +31,8 @@ export default {
 			ja: 'ボタンのないトーストは数秒で消える。「元に戻す」などのボタンを含むトーストは、キーボード利用者が間に合わないことがあるため、利用者が閉じるまで残す。'
 		},
 		{
-			en: 'In this demo, Undo puts the message back in the inbox. Undo and Close return focus to the Archive message button.',
-			ja: 'このデモでは、「元に戻す」でメッセージが受信トレイに戻る。「元に戻す」と「閉じる」を押すと、フォーカスは「メッセージをアーカイブ」のボタンへ戻る。'
+			en: 'In this demo, Undo puts the message back in the inbox. Undo and Close return focus to the Archive message button. When the inbox is empty, that button is marked `aria-disabled` rather than `disabled`, so focus stays on it.',
+			ja: 'このデモでは、「元に戻す」でメッセージが受信トレイに戻る。「元に戻す」と「閉じる」を押すと、フォーカスは「メッセージをアーカイブ」のボタンへ戻る。受信トレイが空になると、そのボタンは `disabled` ではなく `aria-disabled` で押せないことを示し、フォーカスが外れないようにしている。'
 		},
 		{
 			en: 'Important information, such as form errors, belongs in an alert rather than a toast.',
