@@ -310,3 +310,15 @@ test('stepper: an optional step is shown as skipped, finished steps are buttons,
 	await expect(done).toBeFocused();
 	await expect(demo.getByRole('button', { name: /^Applicant/ })).toHaveCount(0);
 });
+
+test('link: a new-tab link says so, a file link gives its type and size, and hover thickens the underline', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/link/');
+	const newTab = demo.getByRole('link', { name: /opens in a new tab$/ });
+	await expect(newTab).toHaveAttribute('target', '_blank');
+	await expect(demo.getByRole('link', { name: /\(PNG, 42 KB\)$/ })).toHaveAttribute('href', /og\.png$/);
+
+	const button = demo.getByRole('link', { name: 'button' });
+	await expect(button).toHaveCSS('text-decoration-thickness', '1px');
+	await button.hover();
+	await expect(button).toHaveCSS('text-decoration-thickness', '3px');
+});

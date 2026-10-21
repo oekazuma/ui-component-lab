@@ -10,8 +10,8 @@ export default {
 		ja: '別のページや、同じページ内の別の場所へ移動するための文字や画像。'
 	},
 	appearance: {
-		en: 'Text in the accent color, usually underlined. It often changes color or underline on hover.',
-		ja: 'アクセントカラーの文字で、多くは下線が付く。マウスを乗せると色や下線が変わることが多い。'
+		en: 'Text in the accent color, usually underlined. It often changes color or underline on hover, and links already visited often have a different color.',
+		ja: 'アクセントカラーの文字で、多くは下線が付く。マウスを乗せると色や下線が変わることが多く、訪問済みのリンクは別の色になることが多い。'
 	},
 	behavior: [
 		{
@@ -23,8 +23,12 @@ export default {
 			ja: '新しいタブで開く・アドレスをコピーする・履歴で戻るといった操作も、ブラウザが用意している。'
 		},
 		{
-			en: 'The link in this demo goes to the Button page of this site.',
-			ja: 'このデモのリンクは、このサイトのボタンのページへ移動する。'
+			en: 'In this demo, the link in the sentence goes to the Button page of this site. The second link opens the Digital Agency’s page in a new tab with `target="_blank"`, and its icon has `role="img"` and an `aria-label` that says so. The third link opens this site’s preview image, with the file type and size in the link text.',
+			ja: 'このデモでは、文中のリンクはこのサイトのボタンのページへ移動する。2つ目のリンクは `target="_blank"` でデジタル庁のページを新しいタブで開き、そのことをアイコンの `role="img"` と `aria-label` で伝える。3つ目のリンクはこのサイトの紹介画像を開き、ファイルの形式と大きさをリンクの文言に含めている。'
+		},
+		{
+			en: 'In this demo, hovering thickens the underline and darkens the color, and visited links turn purple. The weight and size of the text stay the same, so the surrounding text does not move.',
+			ja: 'このデモでは、マウスを乗せると下線が太くなって色が濃くなり、訪問済みのリンクは紫になる。文字の太さや大きさは変えないので、周りの文字は動かない。'
 		}
 	],
 	keyboard: [
@@ -35,6 +39,14 @@ export default {
 		{
 			en: 'Mark links that open a new tab or another site with an icon that has alternative text.',
 			ja: '新しいタブや外部サイトで開くリンクには、代替テキスト付きのアイコンを付ける。'
+		},
+		{
+			en: 'For links to files such as PDFs, put the file type and size in the link text, for example “Brochure (PDF, 100 KB)”.',
+			ja: 'PDF などのファイルへのリンクには、「紹介パンフレット（PDF:100KB）」のように形式と大きさをリンクの文言に含める。'
+		},
+		{
+			en: 'Give visited links their own color so users can see which pages they have already opened, especially on pages with many links.',
+			ja: '訪問済みのリンクには別の色を付け、すでに開いたページが分かるようにする。リンクの多いページでは特に役立つ。'
 		}
 	],
 	misuse: [
@@ -97,7 +109,12 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「リンクテキスト」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/foundations/link-text/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: link',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/link',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Understanding Success Criterion 1.4.1: Use of Color (WCAG 2.2)',
