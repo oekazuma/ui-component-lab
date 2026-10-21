@@ -41,12 +41,43 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Tell types such as success, error, warning and information apart by icon and wording, not by color alone.',
-			ja: '成功、エラー、警告、情報などの種類は、色だけでなくアイコンと文言でも区別する。'
-		},
-		{
 			en: 'If it can be closed, keep it closed and provide a way to show it again.',
 			ja: '閉じられるようにする場合は、閉じた状態を保ち、もう一度表示する手段を用意する。'
+		}
+	],
+	misuse: [
+		{
+			pattern: { en: 'Showing the type of message by color alone', ja: 'メッセージの種類を色だけで示す' },
+			harm: {
+				en: 'People with low vision or color vision deficiency, many older people, and anyone on a monochrome or limited-color display cannot tell an error from a success, so they can miss what the message means.',
+				ja: '弱視や色覚に特性のある人、色を見分けにくくなった高齢の人、白黒や色数の少ない画面で見ている人には、エラーか成功かが分からず、メッセージの意味を受け取れない。'
+			},
+			instead: {
+				en: 'Pair the color with an icon and words that name the type, such as “Error:” or “Done:”.',
+				ja: '色に加えて、種類を表すアイコンと「エラー：」「完了：」のような文言を添える。'
+			}
+		},
+		{
+			pattern: { en: 'Showing alerts one after another', ja: 'アラートを次々と出す' },
+			harm: {
+				en: 'Every alert interrupts the user. Frequent interruptions make the page harder to use for people with visual or cognitive disabilities, and a stream of notices breaks anyone’s concentration.',
+				ja: 'アラートは出るたびに利用者の作業に割り込む。頻繁に割り込まれると、視覚や認知に障害のある人には使いにくくなる。通知が多いと、だれでも集中が途切れる。'
+			},
+			instead: {
+				en: 'Use an alert only for what the user needs to know now. Combine related messages into one, and show the rest in the page without role="alert".',
+				ja: 'アラートは今すぐ知る必要があることだけに使う。関連するメッセージは1つにまとめ、それ以外は role="alert" を付けずにページに載せる。'
+			}
+		},
+		{
+			pattern: { en: 'Removing the alert automatically after a few seconds', ja: '数秒で自動で消す' },
+			harm: {
+				en: 'People who need more time to find and read content, such as screen reader users and people with low vision or cognitive disabilities, can lose the message before they finish reading it.',
+				ja: 'スクリーンリーダーの利用者や、弱視や認知に障害のある人など、内容を見つけて読むのに時間がかかる人は、読み終える前にメッセージを見失うことがある。'
+			},
+			instead: {
+				en: 'Keep the alert until it is no longer needed or the user closes it.',
+				ja: '不要になるか、利用者が閉じるまで表示しておく。'
+			}
 		}
 	],
 	related: [
@@ -69,7 +100,17 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Alert Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/alert/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Understanding Success Criterion 1.4.1: Use of Color (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Understanding Success Criterion 2.2.1: Timing Adjustable (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Carbon Design System: Notification',
@@ -80,6 +121,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ノティフィケーションバナー」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/notification-banner/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
+			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

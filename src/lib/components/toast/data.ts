@@ -35,6 +35,37 @@ export default {
 		{ key: 'Enter / Space', action: { en: 'Runs the action that shows the toast.', ja: 'トーストを出す操作を実行する。' } },
 		{ key: 'Esc', action: { en: 'Dismisses the toast.', ja: 'トーストを消す。' } }
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Putting information that cannot be found elsewhere only in a toast that disappears',
+				ja: 'ほかで確かめられない情報を、消えるトーストだけで伝える'
+			},
+			harm: {
+				en: 'A notice in a corner of the screen is easy to miss. People who need more time to find and read content, such as screen reader users and people with low vision or cognitive disabilities, may lose it before they finish reading.',
+				ja: '画面の隅の通知は気づかれずに見過ごされやすい。スクリーンリーダーの利用者や、弱視や認知に障害のある人など、内容を見つけて読むのに時間がかかる人は、読み終える前に見失うことがある。'
+			},
+			instead: {
+				en: 'Use a toast only for results the user can also check elsewhere, such as an archived message that appears in the archive. Otherwise use an alert in the page, or keep the toast until the user closes it.',
+				ja: 'トーストは、アーカイブしたメッセージがアーカイブ一覧に並ぶように、ほかでも確かめられる結果だけに使う。そうでないものは、ページの中のアラートで伝えるか、利用者が閉じるまで残す。'
+			}
+		},
+		{
+			pattern: {
+				en: 'Popping up made-up activity such as “Someone in Tokyo just bought this”',
+				ja: '「東京の方がたった今購入しました」のような作り物の通知を出す'
+			},
+			harm: {
+				en: 'Users come to believe a product is more popular or trusted than it is, and buy or sign up without weighing it for themselves.',
+				ja: '利用者は商品が実際より人気があり信頼されていると思い込み、自分で比べて考えないまま購入や申し込みに進む。'
+			},
+			instead: {
+				en: 'Show purchase or viewing counts only when they come from real records, and use toasts to report the result of the user’s own action.',
+				ja: '購入数や閲覧数は、実際の記録に基づくときだけ示す。トーストは利用者自身の操作の結果を知らせるのに使う。'
+			},
+			deceptive: true
+		}
+	],
 	related: [
 		{
 			id: 'alert',
@@ -59,6 +90,21 @@ export default {
 			label: 'Carbon Design System: Notification',
 			url: 'https://carbondesignsystem.com/components/notification/usage/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Understanding Success Criterion 2.2.1: Timing Adjustable (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deceptive Patterns: Fake social proof',
+			url: 'https://www.deceptive.design/types/fake-social-proof',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
+			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

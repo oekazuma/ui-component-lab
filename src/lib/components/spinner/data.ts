@@ -39,10 +39,17 @@ export default {
 			}
 		}
 	],
-	usage: [
+	misuse: [
 		{
-			en: 'Use an animated indicator for loading the whole screen. For a small area, a static indicator is enough.',
-			ja: '動く表示は画面全体の読み込みに使い、一部の領域には動かない表示を使う。'
+			pattern: { en: 'Spinning while only part of the screen is loading', ja: '画面の一部の読み込み中に回し続ける' },
+			harm: {
+				en: 'A part of the screen that keeps moving draws the eye, and the user can no longer concentrate on the rest of the page.',
+				ja: '動き続ける部分に目を奪われ、利用者が画面のほかの部分に集中できなくなる。'
+			},
+			instead: {
+				en: 'Keep animated indicators for times when the whole screen is loading. For a small area, show a static indicator such as an hourglass icon with a “Loading…” label.',
+				ja: '動く表示は画面全体が読み込み中のときに限る。一部の領域には、砂時計のアイコンと「読み込み中」の文のような動かない表示を使う。'
+			}
 		}
 	],
 	related: [
@@ -68,9 +75,14 @@ export default {
 			checkedAt: '2026-10-20'
 		},
 		{
-			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター」をもとに作成',
+			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター（概要）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/progress-indicator/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
+			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
