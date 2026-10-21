@@ -105,6 +105,13 @@ export default {
 				en: 'A link moves to any page or place; a back to top button only returns to the top of the current page.',
 				ja: 'リンクはどのページや場所へも移れ、スクロールトップボタンは今のページの先頭へ戻るだけ。'
 			}
+		},
+		{
+			id: 'skip-link',
+			diff: {
+				en: 'An ordinary link is always visible; a skip link is a link to a place on the same page that stays hidden until it gets focus.',
+				ja: 'ふつうのリンクは常に見えており、スキップリンクは同じページの中の場所へのリンクで、フォーカスが来るまで隠れている。'
+			}
 		}
 	],
 	sources: [

@@ -97,6 +97,13 @@ export default {
 				en: 'A back to top button is a button for one job, returning to the top, that often floats over the page; a button runs any action in its place in the layout.',
 				ja: 'スクロールトップボタンは先頭へ戻ることだけを受け持ち、ページの上に浮かぶことが多い。ボタンはレイアウトの中の決まった場所で、さまざまな操作を実行する。'
 			}
+		},
+		{
+			id: 'skip-link',
+			diff: {
+				en: 'A back to top button returns to the top after reading; a skip link at the very top jumps past the header to the main content.',
+				ja: 'スクロールトップボタンは読み進めたあとに先頭へ戻り、スキップリンクはページの先頭からヘッダーを飛ばして本文へ移る。'
+			}
 		}
 	],
 	sources: [

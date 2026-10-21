@@ -18,7 +18,8 @@ test('skip link: the first Tab reaches it and it moves focus to the main content
 	await page.goto('ja/');
 	await page.waitForLoadState('networkidle');
 	await page.keyboard.press('Tab');
-	const skip = page.getByRole('link', { name: '本文へ移動' });
+	// 一覧のスキップリンクのデモにも同じ名前のリンクがあるので、サイトのものを行き先で選ぶ
+	const skip = page.locator('a[href="#main"]');
 	await expect(skip).toBeFocused();
 	await expect(skip).toBeVisible();
 	await page.keyboard.press('Enter');

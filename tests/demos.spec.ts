@@ -890,3 +890,30 @@ test('back to top: starts partway down, returns the article to its start and foc
 	await article.evaluate((el) => el.scrollTo(0, el.scrollHeight));
 	await expect(button).toBeVisible();
 });
+
+test('skip link: hidden until Tab reaches it, then moves focus to the main content of the demo page', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/skip-link/');
+	const skip = demo.getByRole('link', { name: 'Skip to main content' });
+	const frame = (await demo.boundingBox())!;
+	const inside = async () => {
+		const b = (await skip.boundingBox())!;
+		return b.y >= frame.y && b.y + b.height <= frame.y + frame.height;
+	};
+	expect(await inside()).toBe(false);
+
+	// デモの直前に Tab の起点を置く
+	await demo.locator('.page').evaluate((el) => {
+		const start = document.createElement('button');
+		el.before(start);
+		start.focus();
+	});
+	await page.keyboard.press('Tab');
+	await expect(skip).toBeFocused();
+	expect(await inside()).toBe(true);
+
+	await page.keyboard.press('Enter');
+	await expect(demo.locator('.page [tabindex="-1"]')).toBeFocused();
+	await expect(page.locator('#main')).not.toBeFocused();
+	await page.keyboard.press('Tab');
+	await expect(demo.getByRole('link', { name: 'Read the full guide' })).toBeFocused();
+});
