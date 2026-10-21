@@ -37,7 +37,8 @@
 			</label>
 		{/each}
 	</fieldset>
-	<p class="count" aria-live="polite">{shown.length ? ui.count(shown.length) : ui.noResults}</p>
+	<!-- 件数は画面では見せないが、絞り込みの結果を読み上げで伝えるために残す -->
+	<p class="count" class:visually-hidden={shown.length} aria-live="polite">{shown.length ? ui.count(shown.length) : ui.noResults}</p>
 </div>
 
 <ul class="grid">
