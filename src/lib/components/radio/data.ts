@@ -35,7 +35,7 @@ export default {
 	],
 	keyboard: [
 		{
-			key: 'Tab',
+			key: 'Tab / Shift + Tab',
 			action: {
 				en: 'Moves into the group (to the chosen option, or to the first one if none is chosen) and out of it.',
 				ja: 'グループ（選ばれている選択肢。どれも選ばれていなければ最初の選択肢）へ入る、またはグループから出る。'

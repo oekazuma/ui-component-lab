@@ -36,7 +36,7 @@ export default {
 		}
 	],
 	keyboard: [
-		{ key: 'Tab', action: { en: 'Focusing the element shows the tooltip.', ja: '要素にフォーカスするとツールチップが出る。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Focusing the element shows the tooltip.', ja: '要素にフォーカスするとツールチップが出る。' } },
 		{
 			key: 'Esc',
 			action: {

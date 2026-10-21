@@ -36,10 +36,10 @@ export default {
 	],
 	keyboard: [
 		{
-			key: 'Tab',
+			key: 'Tab / Shift + Tab',
 			action: {
-				en: 'Moves focus into the tab list (to the selected tab), then to the panel.',
-				ja: 'タブリスト（選択中のタブ）にフォーカスし、次に押すとパネルへ移る。'
+				en: 'Moves focus into the tab list (to the selected tab), then to the panel. Shift + Tab goes back the same way.',
+				ja: 'タブリスト（選択中のタブ）にフォーカスし、次に押すとパネルへ移る。Shift + Tab では同じ順に戻る。'
 			}
 		},
 		{

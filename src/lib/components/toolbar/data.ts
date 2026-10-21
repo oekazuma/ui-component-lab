@@ -35,7 +35,7 @@ export default {
 		}
 	],
 	keyboard: [
-		{ key: 'Tab', action: { en: 'Moves focus into or out of the toolbar.', ja: 'ツールバーへ、またはツールバーから移動する。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus into or out of the toolbar.', ja: 'ツールバーへ、またはツールバーから移動する。' } },
 		{
 			key: 'Enter / Space',
 			action: {

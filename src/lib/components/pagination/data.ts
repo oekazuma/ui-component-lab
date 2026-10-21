@@ -39,7 +39,7 @@ export default {
 	],
 	keyboard: [
 		{
-			key: 'Tab',
+			key: 'Tab / Shift + Tab',
 			action: { en: 'Moves between the page controls.', ja: 'ページ番号や「前へ」「次へ」の間を移動する。' }
 		},
 		{

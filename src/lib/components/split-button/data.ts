@@ -39,7 +39,7 @@ export default {
 	],
 	keyboard: [
 		{
-			key: 'Tab',
+			key: 'Tab / Shift + Tab',
 			action: {
 				en: 'Moves between the main button and the arrow button.',
 				ja: '本体のボタンと矢印のボタンの間を移動する。'

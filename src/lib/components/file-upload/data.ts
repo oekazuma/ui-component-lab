@@ -44,7 +44,7 @@ export default {
 				ja: 'ファイル選択ボタンでは選択画面を開き、解除ボタンではそのファイルを外す。'
 			}
 		},
-		{ key: 'Tab', action: { en: 'Moves between the buttons.', ja: 'ボタンの間を移動する。' } }
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between the buttons.', ja: 'ボタンの間を移動する。' } }
 	],
 	usage: [
 		{

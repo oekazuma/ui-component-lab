@@ -32,7 +32,7 @@ export default {
 		}
 	],
 	keyboard: [
-		{ key: 'Tab', action: { en: 'Moves between checkboxes.', ja: 'チェックボックス間を移動する。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between checkboxes.', ja: 'チェックボックス間を移動する。' } },
 		{ key: 'Space', action: { en: 'Checks or unchecks the focused box.', ja: 'フォーカス中のチェックを付ける・外す。' } }
 	],
 	usage: [

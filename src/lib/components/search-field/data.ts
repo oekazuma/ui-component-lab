@@ -37,7 +37,7 @@ export default {
 			key: 'Esc',
 			action: { en: 'Clears the text (depends on the browser).', ja: '入力を消す（ブラウザによる）。' }
 		},
-		{ key: 'Tab', action: { en: 'Moves to the search button.', ja: '検索ボタンへ移動する。' } }
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between the box and the search button.', ja: '入力欄と検索ボタンの間を移動する。' } }
 	],
 	variations: [
 		{

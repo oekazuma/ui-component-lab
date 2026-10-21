@@ -77,10 +77,10 @@ export default {
 			}
 		},
 		{
-			key: 'Tab',
+			key: 'Tab / Shift + Tab',
 			action: {
-				en: 'Closes the menu and moves on to the next element.',
-				ja: 'メニューを閉じ、次の要素へ移る。'
+				en: 'Closes the menu and moves on to the next element. Shift + Tab goes back to the menu button.',
+				ja: 'メニューを閉じ、次の要素へ移る。Shift + Tab では開いたボタンへ戻る。'
 			}
 		}
 	],

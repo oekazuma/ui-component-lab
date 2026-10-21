@@ -32,7 +32,7 @@ export default {
 		}
 	],
 	keyboard: [
-		{ key: 'Tab', action: { en: 'Moves focus to the link.', ja: 'リンクにフォーカスを移す。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus to the link.', ja: 'リンクにフォーカスを移す。' } },
 		{ key: 'Enter', action: { en: 'Follows the link.', ja: 'リンク先へ移動する。' } }
 	],
 	usage: [

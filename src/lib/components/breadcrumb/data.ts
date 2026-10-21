@@ -31,7 +31,7 @@ export default {
 	],
 	keyboard: [
 		{
-			key: 'Tab',
+			key: 'Tab / Shift + Tab',
 			action: {
 				en: 'Moves between the links. The current page is not a link, so focus skips it.',
 				ja: 'リンク間を移動する。今のページはリンクではないので、フォーカスは止まらない。'
