@@ -52,7 +52,7 @@ export default {
 	usage: [
 		{
 			en: 'Separate cards with an outline of at least 3:1 contrast instead of relying on a shadow alone.',
-			ja: '影だけに頼らず、背景とのコントラスト比 3:1 以上の枠線で区切る。'
+			ja: '影だけに頼らず、背景とのコントラスト比3:1以上の枠線で区切る。'
 		},
 		{
 			en: 'A card has a container with a visible outline and a title. A label for a category, an image, text, and a sub area with links or buttons can be added. When the title is a link, underline it.',

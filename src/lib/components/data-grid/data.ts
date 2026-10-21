@@ -19,11 +19,11 @@ export default {
 	behavior: [
 		{
 			en: 'The whole grid is a single Tab stop, and the arrow keys move between cells (roving tabindex). Tab leaves the grid instead of visiting every cell.',
-			ja: 'グリッド全体で Tab キーが止まるのは 1 か所だけで、セルの間は矢印キーで移る（ロービングタブインデックス）。Tab キーではすべてのセルを回らずに、グリッドの外へ出る。'
+			ja: 'グリッド全体で Tab キーが止まるのは1か所だけで、セルの間は矢印キーで移る（ロービングタブインデックス）。Tab キーではすべてのセルを回らずに、グリッドの外へ出る。'
 		},
 		{
 			en: 'Every data cell can take focus. A cell that holds a single control that does not use the arrow keys, such as a checkbox, passes focus to that control; a cell that holds only text takes focus itself.',
-			ja: 'データのセルはすべてフォーカスを受け取る。チェックボックスのように矢印キーを使わない部品を 1 つだけ持つセルでは、その部品にフォーカスを渡す。文字だけのセルは、セル自体がフォーカスを受け取る。'
+			ja: 'データのセルはすべてフォーカスを受け取る。チェックボックスのように矢印キーを使わない部品を1つだけ持つセルでは、その部品にフォーカスを渡す。文字だけのセルは、セル自体がフォーカスを受け取る。'
 		},
 		{
 			en: 'The arrow keys stop at the edges. Unlike a layout grid, a data grid does not wrap from the end of one row to the start of the next, which the APG says would be disorienting.',
@@ -87,7 +87,7 @@ export default {
 			name: { en: 'Editable cells', ja: '編集できるセル' },
 			description: {
 				en: 'Enter or F2 starts editing the focused cell, and Esc returns to moving between cells. While editing, the arrow keys move the text cursor instead of the focus.',
-				ja: 'Enter か F2 でフォーカスしたセルの編集を始め、Esc でセル間の移動に戻る。編集している間、矢印キーはセルを移らずに文字のカーソルを動かす。'
+				ja: 'Enter か F2でフォーカスしたセルの編集を始め、Esc でセル間の移動に戻る。編集している間、矢印キーはセルを移らずに文字のカーソルを動かす。'
 			}
 		},
 		{
@@ -105,7 +105,7 @@ export default {
 		},
 		{
 			en: 'Arrow keys inside a cell belong to the grid, so a cell should not hold a control that needs them, such as a text field or a combobox, unless it is entered with Enter or F2 first.',
-			ja: 'セルの中の矢印キーはグリッドの移動に使われる。テキスト入力欄やコンボボックスのように矢印キーを使う部品は、Enter や F2 で入ってから操作する作りでない限り、セルに置かない。'
+			ja: 'セルの中の矢印キーはグリッドの移動に使われる。テキスト入力欄やコンボボックスのように矢印キーを使う部品は、Enter や F2で入ってから操作する作りでない限り、セルに置かない。'
 		}
 	],
 	related: [

@@ -80,7 +80,7 @@ export default {
 			},
 			harm: {
 				en: 'Keyboard-only users have to Tab through the items one by one, which makes reaching the end a long task. It is hard to find an item seen earlier, and the scroll bar no longer shows how much is left.',
-				ja: 'キーボードだけで操作する人は項目を 1 つずつ Tab キーで進むしかなく、終わりまで行くのに長くかかる。前に見た項目を探し直しにくく、スクロールバーからは残りの量が分からなくなる。'
+				ja: 'キーボードだけで操作する人は項目を1つずつ Tab キーで進むしかなく、終わりまで行くのに長くかかる。前に見た項目を探し直しにくく、スクロールバーからは残りの量が分からなくなる。'
 			},
 			instead: {
 				en: 'For lists where people look for a particular item, split the results into pages and show the current page among the others.',

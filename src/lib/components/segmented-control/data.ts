@@ -10,24 +10,24 @@ export default {
 	],
 	summary: {
 		en: 'A row of joined buttons of equal width where exactly one is selected, used to switch between closely related options or views.',
-		ja: '同じ幅のボタンをつなげて横に並べ、そのうち 1 つだけを選ぶ部品。近い関係にある選択肢や表示を切り替える。'
+		ja: '同じ幅のボタンをつなげて横に並べ、そのうち1つだけを選ぶ部品。近い関係にある選択肢や表示を切り替える。'
 	},
 	appearance: {
 		en: 'A single bar divided into a few segments with short labels, such as Day, Week, Month, and Year. The selected segment is filled in, and the content under the bar follows it.',
-		ja: '1 本のバーを数個の区画に分け、「日」「週」「月」「年」のような短いラベルを付けたもの。選んでいる区画は塗りつぶされ、バーの下の内容がそれに合わせて変わる。'
+		ja: '1本のバーを数個の区画に分け、「日」「週」「月」「年」のような短いラベルを付けたもの。選んでいる区画は塗りつぶされ、バーの下の内容がそれに合わせて変わる。'
 	},
 	behavior: [
 		{
 			en: 'Exactly one segment is selected at all times, and choosing another moves the selection to it. The first segment is usually selected at the start.',
-			ja: '選ばれている区画は常に 1 つで、別の区画を選ぶと選択がそちらへ移る。最初はふつう、先頭の区画を選んでおく。'
+			ja: '選ばれている区画は常に1つで、別の区画を選ぶと選択がそちらへ移る。最初はふつう、先頭の区画を選んでおく。'
 		},
 		{
 			en: 'The whole control is a single Tab stop, and the arrow keys move the selection between segments.',
-			ja: '部品全体で Tab キーが止まるのは 1 か所だけで、区画の間は矢印キーで選択を移す。'
+			ja: '部品全体で Tab キーが止まるのは1か所だけで、区画の間は矢印キーで選択を移す。'
 		},
 		{
 			en: 'This demo is a group of native radio buttons in a `<fieldset>`, styled as segments. The browser keeps exactly one selected and handles the arrow keys and the Tab stop. The `<legend>` gives the group its name and is visually hidden.',
-			ja: 'このデモは、`<fieldset>` の中のネイティブのラジオボタンを区画の見た目にしたもの。選ぶのは常に 1 つにすること、矢印キー、Tab キーで止まる場所は、ブラウザが受け持つ。グループの名前は `<legend>` で付け、見た目には隠している。'
+			ja: 'このデモは、`<fieldset>` の中のネイティブのラジオボタンを区画の見た目にしたもの。選ぶのは常に1つにすること、矢印キー、Tab キーで止まる場所は、ブラウザが受け持つ。グループの名前は `<legend>` で付け、見た目には隠している。'
 		},
 		{
 			en: 'In this demo, the selected period changes the step count shown under the control.',
@@ -112,7 +112,7 @@ export default {
 		{
 			pattern: {
 				en: 'Putting many segments in one control',
-				ja: '1 つの部品に、多くの区画を並べる'
+				ja: '1つの部品に、多くの区画を並べる'
 			},
 			harm: {
 				en: 'Too many segments are hard to take in and take a long time to move through.',
@@ -120,13 +120,13 @@ export default {
 			},
 			instead: {
 				en: 'Keep it to about five segments on a phone and five to seven on a wide screen. For more options, use a select or radio buttons.',
-				ja: 'スマートフォンでは 5 つ程度、広い画面でも 5〜7 つ程度までにする。選択肢がそれより多いなら、セレクトボックスやラジオボタンにする。'
+				ja: 'スマートフォンでは5つ程度、広い画面でも5〜7つ程度までにする。選択肢がそれより多いなら、セレクトボックスやラジオボタンにする。'
 			}
 		},
 		{
 			pattern: {
 				en: 'Mixing text segments and icon segments in one control',
-				ja: '1 つの部品に、文字の区画とアイコンの区画を混ぜる'
+				ja: '1つの部品に、文字の区画とアイコンの区画を混ぜる'
 			},
 			harm: {
 				en: 'The control looks disjointed and confusing.',
@@ -134,7 +134,7 @@ export default {
 			},
 			instead: {
 				en: 'Use only text or only icons in each control.',
-				ja: '1 つの部品の中では、文字だけかアイコンだけにそろえる。'
+				ja: '1つの部品の中では、文字だけかアイコンだけにそろえる。'
 			}
 		}
 	],
@@ -150,14 +150,14 @@ export default {
 			id: 'radio',
 			diff: {
 				en: 'A segmented control shows a few short choices as joined buttons in one row; radio buttons list choices with round markers and can hold longer labels.',
-				ja: 'セグメンテッドコントロールは少しの短い選択肢をつながったボタンとして 1 列に並べ、ラジオボタンは丸い印を付けて選択肢を並べ、長いラベルも置ける。'
+				ja: 'セグメンテッドコントロールは少しの短い選択肢をつながったボタンとして1列に並べ、ラジオボタンは丸い印を付けて選択肢を並べ、長いラベルも置ける。'
 			}
 		},
 		{
 			id: 'toggle-button',
 			diff: {
 				en: 'A segmented control picks one of several segments; a toggle button turns a single option on or off.',
-				ja: 'セグメンテッドコントロールは複数の区画から 1 つを選び、トグルボタンは 1 つの機能をオンかオフにする。'
+				ja: 'セグメンテッドコントロールは複数の区画から1つを選び、トグルボタンは1つの機能をオンかオフにする。'
 			}
 		}
 	],

@@ -28,7 +28,7 @@ export default {
 		},
 		{
 			en: 'A radio button cannot be cleared once chosen, so there is also a hidden “No rating” option for 0 stars, chosen at first. When focus is on it, the whole row of stars gets a focus ring.',
-			ja: 'ラジオボタンは一度選ぶと外せないので、0 にあたる見えない「評価なし」の選択肢も置き、最初はそれを選んでおく。そこにフォーカスがあるときは、星の並び全体にフォーカスの枠を出す。'
+			ja: 'ラジオボタンは一度選ぶと外せないので、0にあたる見えない「評価なし」の選択肢も置き、最初はそれを選んでおく。そこにフォーカスがあるときは、星の並び全体にフォーカスの枠を出す。'
 		},
 		{
 			en: 'Chosen stars differ in shape (★ and ☆) as well as color, and the score is written below in words.',
@@ -58,7 +58,7 @@ export default {
 			name: { en: 'Half stars', ja: '半分の星' },
 			description: {
 				en: 'Allows scores such as 3.5, by choosing the left or right half of a star.',
-				ja: '星の左半分か右半分を選んで、3.5 のような点数も付けられるもの。'
+				ja: '星の左半分か右半分を選んで、3.5のような点数も付けられるもの。'
 			}
 		},
 		{

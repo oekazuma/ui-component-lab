@@ -73,7 +73,7 @@ export default {
 		},
 		{
 			en: 'One link is usually enough. Each extra skip link adds clutter.',
-			ja: 'たいていは 1 つで足りる。増やすほど、リンクがごちゃごちゃする。'
+			ja: 'たいていは1つで足りる。増やすほど、リンクがごちゃごちゃする。'
 		},
 		{
 			en: 'Do not put it inside a `<nav>` or inside the header. Place it right after the opening `<body>` tag, or right after a cookie banner if there is one.',

@@ -98,7 +98,7 @@ export default {
 		{
 			pattern: {
 				en: 'Putting many callouts on one page',
-				ja: '1 つのページに注釈ブロックをいくつも置く'
+				ja: '1つのページに注釈ブロックをいくつも置く'
 			},
 			harm: {
 				en: 'The more it is used, the less it works at setting information apart for readers.',

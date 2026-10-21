@@ -150,7 +150,7 @@ export default {
 			id: 'table-of-contents',
 			diff: {
 				en: 'Tabs show one panel at a time and hide the others; a table of contents links to sections that are all on the page at once.',
-				ja: 'タブはパネルを 1 つずつ見せてほかを隠し、目次はすべて同時にページにある節へのリンクを並べる。'
+				ja: 'タブはパネルを1つずつ見せてほかを隠し、目次はすべて同時にページにある節へのリンクを並べる。'
 			}
 		}
 	],

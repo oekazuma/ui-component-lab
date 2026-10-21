@@ -7,11 +7,11 @@ export default {
 	aliases: [{ name: 'Splitter', source: 'Ant Design', url: 'https://ant.design/components/splitter' }],
 	summary: {
 		en: 'A movable divider between two panes that changes how much room each pane gets.',
-		ja: '2 つのペインの間にある動かせる区切り。動かすと、それぞれのペインの広さが変わる。'
+		ja: '2つのペインの間にある動かせる区切り。動かすと、それぞれのペインの広さが変わる。'
 	},
 	appearance: {
 		en: 'A thin line between two side-by-side panes, often with a small grip in the middle. The pointer turns into a double arrow over it.',
-		ja: '横に並んだ 2 つのペインの間の細い線で、中央に小さなつまみがあることが多い。ポインターを重ねると左右の矢印の形に変わる。'
+		ja: '横に並んだ2つのペインの間の細い線で、中央に小さなつまみがあることが多い。ポインターを重ねると左右の矢印の形に変わる。'
 	},
 	behavior: [
 		{
@@ -28,11 +28,11 @@ export default {
 		},
 		{
 			en: 'In this demo, the Contents pane is the primary pane, and its width is the value, as a percentage of the window from 0 (collapsed) to 80. The arrow keys move it by 10. Clicking or tapping the splitter without moving it collapses or restores the pane, like Enter.',
-			ja: 'このデモでは、目次のペインが主ペインで、その幅をウィンドウに対する % で値にしている。0（畳んだ状態）から 80 まで動き、矢印キーでは 10 ずつ動く。区切りを動かさずにクリックやタップすると、Enter と同じく目次を畳む・戻す。'
+			ja: 'このデモでは、目次のペインが主ペインで、その幅をウィンドウに対する % で値にしている。0（畳んだ状態）から80まで動き、矢印キーでは10ずつ動く。区切りを動かさずにクリックやタップすると、Enter と同じく目次を畳む・戻す。'
 		},
 		{
 			en: 'In this demo, F6 to move between panes, which the APG lists as optional, is left out.',
-			ja: 'このデモでは、APG で任意とされている、F6 でペインの間を移る操作は省いている。'
+			ja: 'このデモでは、APG で任意とされている、F6でペインの間を移る操作は省いている。'
 		}
 	],
 	keyboard: [
@@ -63,7 +63,7 @@ export default {
 			name: { en: 'Fixed splitter', ja: '固定のスプリッター' },
 			description: {
 				en: 'Switches between two positions only, such as open and collapsed. It has Enter but no arrow keys.',
-				ja: '開いた状態と畳んだ状態のように、2 つの位置だけを切り替えるもの。Enter はあるが、矢印キーの操作はない。'
+				ja: '開いた状態と畳んだ状態のように、2つの位置だけを切り替えるもの。Enter はあるが、矢印キーの操作はない。'
 			}
 		},
 		{
@@ -92,7 +92,7 @@ export default {
 			},
 			instead: {
 				en: 'Let the splitter take focus and move with the arrow keys and Enter, and give a single click or tap a job too, such as collapsing and restoring the pane or buttons with preset sizes.',
-				ja: '区切りをフォーカスできるようにして矢印キーと Enter で動かせるようにし、1 回のクリックやタップでもできる操作を用意する。ペインを畳む・戻す、決まった大きさにするボタンなど。'
+				ja: '区切りをフォーカスできるようにして矢印キーと Enter で動かせるようにし、1回のクリックやタップでもできる操作を用意する。ペインを畳む・戻す、決まった大きさにするボタンなど。'
 			}
 		}
 	],

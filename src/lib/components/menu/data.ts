@@ -112,7 +112,7 @@ export default {
 			},
 			instead: {
 				en: 'Open the menu on click or tap. If it must open on hover, wait about 0.3 to 0.5 seconds after the pointer stops before showing it.',
-				ja: 'メニューはクリックやタップで開く。どうしてもホバーで開くなら、マウスが止まってから 0.3〜0.5 秒ほど待って表示する。'
+				ja: 'メニューはクリックやタップで開く。どうしてもホバーで開くなら、マウスが止まってから0.3〜0.5秒ほど待って表示する。'
 			}
 		}
 	],
@@ -149,7 +149,7 @@ export default {
 			id: 'menubar',
 			diff: {
 				en: 'A menu opens from a single button and closes after use; a menubar stays visible and holds several menus side by side.',
-				ja: 'メニューは 1 つのボタンから開き、使い終わると閉じる。メニューバーは常に表示され、複数のメニューを横に並べて持つ。'
+				ja: 'メニューは1つのボタンから開き、使い終わると閉じる。メニューバーは常に表示され、複数のメニューを横に並べて持つ。'
 			}
 		},
 		{

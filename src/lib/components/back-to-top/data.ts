@@ -50,7 +50,7 @@ export default {
 		},
 		{
 			en: 'Nielsen Norman Group takes a different view: most people do not know shortcuts such as the Home key, so for pages longer than about four screens it suggests one button per page in the lower right corner, labeled in words, and small enough not to cover content. It also suggests showing it only once people have scrolled a few screens and start scrolling back up, and notes that other techniques, such as navigation at the bottom of the page or sticky menus, may work better.',
-			ja: 'Nielsen Norman Group は、Home キーのような方法を知らない人が多いとして、画面およそ 4 つ分より長いページに向けて、ページに 1 つだけ右下の隅に置き、文字のラベルを付け、内容を覆わない小ささにすることを勧めている。何画面か下までスクロールして上へ戻ろうとしたときに初めて出すことも提案し、ページ下部のナビゲーションや固定のメニューなど、ほかの方法のほうが合う場合もあるとしている。'
+			ja: 'Nielsen Norman Group は、Home キーのような方法を知らない人が多いとして、画面およそ4つ分より長いページに向けて、ページに1つだけ右下の隅に置き、文字のラベルを付け、内容を覆わない小ささにすることを勧めている。何画面か下までスクロールして上へ戻ろうとしたときに初めて出すことも提案し、ページ下部のナビゲーションや固定のメニューなど、ほかの方法のほうが合う場合もあるとしている。'
 		}
 	],
 	misuse: [

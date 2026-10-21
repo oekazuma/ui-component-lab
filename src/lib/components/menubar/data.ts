@@ -11,7 +11,7 @@ export default {
 	},
 	appearance: {
 		en: 'A row of short words such as File, Edit, and View along the top of an app or window. Choosing one drops down a list of commands under it.',
-		ja: 'アプリやウィンドウの上部に、「ファイル」「編集」「表示」のような短い語が横に並ぶ。1 つを選ぶと、その下に操作の一覧が出る。'
+		ja: 'アプリやウィンドウの上部に、「ファイル」「編集」「表示」のような短い語が横に並ぶ。1つを選ぶと、その下に操作の一覧が出る。'
 	},
 	behavior: [
 		{
@@ -20,7 +20,7 @@ export default {
 		},
 		{
 			en: 'The whole menubar is a single Tab stop, and the arrow keys move between its items (roving tabindex).',
-			ja: 'メニューバー全体で Tab キーが止まるのは 1 か所だけで、項目の間は矢印キーで移る（ロービングタブインデックス）。'
+			ja: 'メニューバー全体で Tab キーが止まるのは1か所だけで、項目の間は矢印キーで移る（ロービングタブインデックス）。'
 		},
 		{
 			en: 'While a submenu is open, ← and → close it and open the submenu of the item next to it.',
@@ -91,7 +91,7 @@ export default {
 			name: { en: 'Checkbox and radio items', ja: 'チェックとラジオの項目' },
 			description: {
 				en: 'Submenus can hold on/off items (`menuitemcheckbox`) and pick-one items (`menuitemradio`), whose state is given by `aria-checked`.',
-				ja: 'サブメニューには、オンとオフを切り替える項目（`menuitemcheckbox`）や、1 つを選ぶ項目（`menuitemradio`）も置ける。状態は `aria-checked` で示す。'
+				ja: 'サブメニューには、オンとオフを切り替える項目（`menuitemcheckbox`）や、1つを選ぶ項目（`menuitemradio`）も置ける。状態は `aria-checked` で示す。'
 			}
 		},
 		{
@@ -117,7 +117,7 @@ export default {
 			id: 'menu',
 			diff: {
 				en: 'A menubar stays visible and holds several menus side by side; a menu opens from a single button and closes after use.',
-				ja: 'メニューバーは常に表示され、複数のメニューを横に並べて持つ。メニューは 1 つのボタンから開き、使い終わると閉じる。'
+				ja: 'メニューバーは常に表示され、複数のメニューを横に並べて持つ。メニューは1つのボタンから開き、使い終わると閉じる。'
 			}
 		},
 		{

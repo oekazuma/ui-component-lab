@@ -61,7 +61,7 @@ export default {
 		},
 		{
 			en: 'Leave enough space around it (at least 8 px in lists and 16 px between sections) so separate items do not look like one.',
-			ja: '別々の項目が1つに見えないよう、周りに十分な余白をとる（リストでは 8px 以上、セクションの間では 16px 以上）。'
+			ja: '別々の項目が1つに見えないよう、周りに十分な余白をとる（リストでは8px 以上、セクションの間では16px 以上）。'
 		},
 		{
 			en: 'Use `<hr>` for a change of topic within a section. Sections and headings already mark their own boundaries, so the line between sections, like any purely visual line, is a CSS border.',

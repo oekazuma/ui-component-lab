@@ -66,7 +66,7 @@ export default {
 		{
 			pattern: {
 				en: 'Opening the palette with a single character key, such as / or K on its own',
-				ja: '/ や K だけのように、1 文字のキーでパレットを開く'
+				ja: '/ や K だけのように、1文字のキーでパレットを開く'
 			},
 			harm: {
 				en: 'People who use speech input can open it by accident, because what they say is typed as letters. Keyboard users who press a key by mistake, including people with limited dexterity, lose their place when focus jumps to the palette.',
@@ -74,7 +74,7 @@ export default {
 			},
 			instead: {
 				en: 'Use a shortcut with a modifier key, such as ⌘K or Ctrl + K. If a single character key is used, let people turn it off or change it to include a modifier key.',
-				ja: '⌘K や Ctrl + K のように、修飾キーを含むショートカットにする。1 文字のキーを使うなら、無効にしたり修飾キーを含むキーに変えたりできるようにする。'
+				ja: '⌘K や Ctrl + K のように、修飾キーを含むショートカットにする。1文字のキーを使うなら、無効にしたり修飾キーを含むキーに変えたりできるようにする。'
 			}
 		}
 	],

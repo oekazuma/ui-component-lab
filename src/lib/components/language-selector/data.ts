@@ -90,7 +90,7 @@ export default {
 		{
 			pattern: {
 				en: 'Labeling the selector only with words in one language, such as “Select language”',
-				ja: '選ぶ部品のラベルを、「言語を選択」のような 1 つの言語の言葉だけにする'
+				ja: '選ぶ部品のラベルを、「言語を選択」のような1つの言語の言葉だけにする'
 			},
 			harm: {
 				en: 'People who do not read that language cannot tell that this is where to change the language.',

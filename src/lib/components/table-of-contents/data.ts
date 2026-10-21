@@ -72,7 +72,7 @@ export default {
 		},
 		{
 			en: 'If there are several on one page, give each title its own `id` so the `aria-labelledby` values do not clash.',
-			ja: '1 つのページに複数置くときは、`aria-labelledby` が重ならないよう、タイトルにそれぞれ別の `id` を付ける。'
+			ja: '1つのページに複数置くときは、`aria-labelledby` が重ならないよう、タイトルにそれぞれ別の `id` を付ける。'
 		}
 	],
 	misuse: [
@@ -101,7 +101,7 @@ export default {
 			},
 			instead: {
 				en: 'Limit the table of contents to the top one or two levels.',
-				ja: '目次に含める見出しを、上の 1〜2 階層に絞る。'
+				ja: '目次に含める見出しを、上の1〜2階層に絞る。'
 			}
 		}
 	],
@@ -110,14 +110,14 @@ export default {
 			id: 'breadcrumb',
 			diff: {
 				en: 'A table of contents lists the sections within one page; a breadcrumb shows where the page sits among the pages of the site.',
-				ja: '目次は 1 つのページの中の節を並べ、パンくずリストはサイトのページの階層の中で今のページの位置を示す。'
+				ja: '目次は1つのページの中の節を並べ、パンくずリストはサイトのページの階層の中で今のページの位置を示す。'
 			}
 		},
 		{
 			id: 'tabs',
 			diff: {
 				en: 'A table of contents links to sections that are all on the page at once; tabs show one panel at a time and hide the others.',
-				ja: '目次はすべて同時にページにある節へのリンクで、タブはパネルを 1 つずつ見せてほかを隠す。'
+				ja: '目次はすべて同時にページにある節へのリンクで、タブはパネルを1つずつ見せてほかを隠す。'
 			}
 		}
 	],

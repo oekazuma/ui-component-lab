@@ -65,7 +65,7 @@ export default {
 		},
 		{
 			en: 'Make the target at least 44 × 44 CSS px.',
-			ja: '押せる領域は 44 × 44 CSS px 以上にする。'
+			ja: '押せる領域は44 × 44 CSS px 以上にする。'
 		}
 	],
 	misuse: [

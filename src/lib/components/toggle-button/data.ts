@@ -72,7 +72,7 @@ export default {
 			id: 'segmented-control',
 			diff: {
 				en: 'A toggle button turns a single option on or off; a segmented control picks one of several segments.',
-				ja: 'トグルボタンは 1 つの機能をオンかオフにし、セグメンテッドコントロールは複数の区画から 1 つを選ぶ。'
+				ja: 'トグルボタンは1つの機能をオンかオフにし、セグメンテッドコントロールは複数の区画から1つを選ぶ。'
 			}
 		}
 	],

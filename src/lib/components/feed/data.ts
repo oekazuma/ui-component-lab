@@ -7,7 +7,7 @@ export default {
 	aliases: [],
 	summary: {
 		en: 'A stream of articles that loads more as the reader scrolls, read one article at a time.',
-		ja: '読み進めると続きが読み込まれる、記事の連なり。記事を 1 つずつ読んでいく。'
+		ja: '読み進めると続きが読み込まれる、記事の連なり。記事を1つずつ読んでいく。'
 	},
 	appearance: {
 		en: 'A column of posts, each with a title and a few lines of text. New posts appear at the bottom as the reader nears the end, often after a short loading message.',
@@ -28,7 +28,7 @@ export default {
 		},
 		{
 			en: 'In this demo, loading waits a moment, in place of fetching from a server, and adds three posts at a time. It stops after nine posts and says “No more posts”. `aria-setsize` is the number of posts loaded so far.',
-			ja: 'このデモでは、サーバーから取得する代わりに少し待ってから、3 件ずつ投稿を足す。9 件で読み込みを止め、「これ以上の投稿はありません」と表示する。`aria-setsize` は、その時点で読み込んだ投稿の数にしている。'
+			ja: 'このデモでは、サーバーから取得する代わりに少し待ってから、3件ずつ投稿を足す。9件で読み込みを止め、「これ以上の投稿はありません」と表示する。`aria-setsize` は、その時点で読み込んだ投稿の数にしている。'
 		},
 		{
 			en: 'In this demo, Ctrl + End and Ctrl + Home move to the nearest element that can take focus after or before the feed, even outside the demo.',
@@ -76,7 +76,7 @@ export default {
 			},
 			harm: {
 				en: 'The stream of new articles keeps people from ever reaching the footer, so information such as contact details or return policies is out of reach. Keyboard-only users have to Tab through the articles one by one, which makes reaching the end a long task.',
-				ja: '新しい記事が次々と足されるので、フッターにたどり着けず、連絡先や返品の条件などの情報を見られない。キーボードだけで操作する人は記事を 1 つずつ Tab キーで進むしかなく、終わりまで行くのに長くかかる。'
+				ja: '新しい記事が次々と足されるので、フッターにたどり着けず、連絡先や返品の条件などの情報を見られない。キーボードだけで操作する人は記事を1つずつ Tab キーで進むしかなく、終わりまで行くのに長くかかる。'
 			},
 			instead: {
 				en: 'Stop loading automatically after a set number of articles and add a “Load more” button, so the footer can be reached. Also support Ctrl + End to move past the feed.',
@@ -90,7 +90,7 @@ export default {
 			},
 			harm: {
 				en: 'People looking for a particular item find it hard to get back to one they saw earlier, since “on page 3” is easier to remember than a spot on a very long page. The scroll bar also stops showing how much is left.',
-				ja: '特定のものを探している人は、前に見た項目へ戻りにくい。「3 ページ目にあった」は覚えやすいが、とても長いページの中の位置は覚えにくい。スクロールバーからも、残りがどれだけあるか分からなくなる。'
+				ja: '特定のものを探している人は、前に見た項目へ戻りにくい。「3ページ目にあった」は覚えやすいが、とても長いページの中の位置は覚えにくい。スクロールバーからも、残りがどれだけあるか分からなくなる。'
 			},
 			instead: {
 				en: 'Split the results into pages, and offer sorting and filtering to narrow them down.',

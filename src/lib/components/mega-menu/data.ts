@@ -9,11 +9,11 @@ export default {
 	],
 	summary: {
 		en: 'A wide panel that opens from a site’s horizontal menu and shows all the pages in one section at once.',
-		ja: 'サイトの水平メニューから開く幅の広いパネル。1 つのカテゴリの中のページをまとめて見せる。'
+		ja: 'サイトの水平メニューから開く幅の広いパネル。1つのカテゴリの中のページをまとめて見せる。'
 	},
 	appearance: {
 		en: 'A row of section names across the top of a site. Choosing one opens a wide panel under the row, with the section’s own page and a short description on one side and its pages in several columns on the other.',
-		ja: 'サイトの上部にカテゴリ名が横に並ぶ。1 つを選ぶとその下に幅の広いパネルが開き、片側にカテゴリのページへのリンクと短い説明、もう片側にカテゴリの中のページが何列かに並ぶ。'
+		ja: 'サイトの上部にカテゴリ名が横に並ぶ。1つを選ぶとその下に幅の広いパネルが開き、片側にカテゴリのページへのリンクと短い説明、もう片側にカテゴリの中のページが何列かに並ぶ。'
 	},
 	behavior: [
 		{
@@ -22,7 +22,7 @@ export default {
 		},
 		{
 			en: 'Only one panel is open at a time; opening another closes the first.',
-			ja: '開くパネルは常に 1 つで、別のパネルを開くと前のパネルは閉じる。'
+			ja: '開くパネルは常に1つで、別のパネルを開くと前のパネルは閉じる。'
 		},
 		{
 			en: 'Esc closes the panel and returns focus to its button. Moving focus out of the navigation or clicking outside it also closes the panel.',

@@ -34,7 +34,7 @@ export default {
 		},
 		{
 			en: 'In this demo, 0 and 100 under the ends of the track show the range. Screen readers already announce the range from the slider role, so these numbers are hidden from them with `aria-hidden`.',
-			ja: 'このデモでは、溝の両端の下に 0 と 100 を出して範囲を示す。範囲はスクリーンリーダーが slider の役割から読み上げるので、この数字は `aria-hidden` で読み上げから外している。'
+			ja: 'このデモでは、溝の両端の下に0と100を出して範囲を示す。範囲はスクリーンリーダーが slider の役割から読み上げるので、この数字は `aria-hidden` で読み上げから外している。'
 		}
 	],
 	keyboard: [
@@ -84,7 +84,7 @@ export default {
 			id: 'range-slider',
 			diff: {
 				en: 'A slider has one knob that picks a single value; a range slider has two knobs that pick the lowest and highest values.',
-				ja: 'スライダーは 1 つのつまみで 1 つの値を選び、範囲スライダーは 2 つのつまみで下限と上限を選ぶ。'
+				ja: 'スライダーは1つのつまみで1つの値を選び、範囲スライダーは2つのつまみで下限と上限を選ぶ。'
 			}
 		},
 		{

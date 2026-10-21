@@ -13,7 +13,7 @@ export default {
 	},
 	appearance: {
 		en: 'A box with a thick border in the error color at the top of the page, above other notices and sometimes above the header itself. It holds a large title that names the danger, the time it was updated, a short description, and sometimes one link button in the center.',
-		ja: 'ページの上部、ほかのお知らせよりも上（ヘッダーよりも上のこともある）にある、エラーの色の太い枠線で囲んだ箱。危険の内容を表す大きなタイトル、更新日時、短い説明が入り、中央にリンクのボタンが 1 つ付くこともある。'
+		ja: 'ページの上部、ほかのお知らせよりも上（ヘッダーよりも上のこともある）にある、エラーの色の太い枠線で囲んだ箱。危険の内容を表す大きなタイトル、更新日時、短い説明が入り、中央にリンクのボタンが1つ付くこともある。'
 	},
 	behavior: [
 		{
@@ -60,7 +60,7 @@ export default {
 		},
 		{
 			en: 'Give it at most one link, and put the details on the linked page.',
-			ja: 'リンクは 1 つまでにし、詳しい説明はリンク先のページに書く。'
+			ja: 'リンクは1つまでにし、詳しい説明はリンク先のページに書く。'
 		}
 	],
 	misuse: [
@@ -89,7 +89,7 @@ export default {
 			},
 			instead: {
 				en: 'Keep the description to about 100 Japanese characters, structured with headings or a list if needed, and link to a page with the details.',
-				ja: '説明は全角 100 文字程度までにし、必要なら見出しや箇条書きで整理して、詳細はリンク先のページに書く。'
+				ja: '説明は全角100文字程度までにし、必要なら見出しや箇条書きで整理して、詳細はリンク先のページに書く。'
 			}
 		}
 	],

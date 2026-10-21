@@ -13,7 +13,7 @@ export default {
 	},
 	appearance: {
 		en: 'A full-width list of tall rows, one link or group per row, inside a panel that covers part of the screen. Groups open in place or slide to a second list, and section names in bold separate the parts.',
-		ja: 'パネルの中に、1 行に 1 つのリンクかまとまりを置いた、幅いっぱいの高い行が縦に並ぶ。まとまりはその場で開くか次の一覧へすべって移り、太字のセクション名で部分を分ける。'
+		ja: 'パネルの中に、1行に1つのリンクかまとまりを置いた、幅いっぱいの高い行が縦に並ぶ。まとまりはその場で開くか次の一覧へすべって移り、太字のセクション名で部分を分ける。'
 	},
 	behavior: [
 		{
@@ -30,7 +30,7 @@ export default {
 		},
 		{
 			en: 'In this demo, links end with › and groups end with + or −, so the two kinds of rows look clearly different.',
-			ja: 'このデモでは、リンクの行の端に ›、まとまりの行の端に + か − を付け、2 種類の行の見た目をはっきり分けている。'
+			ja: 'このデモでは、リンクの行の端に ›、まとまりの行の端に + か − を付け、2種類の行の見た目をはっきり分けている。'
 		},
 		{
 			en: 'In this demo, only the menu itself is shown, without the hamburger menu button and the drawer. Choosing a link shows where it would go instead of leaving the page.',
@@ -98,11 +98,11 @@ export default {
 		{
 			pattern: {
 				en: 'Mixing the sliding type and the accordion type in one menu',
-				ja: '1 つのメニューに、スライド型とアコーディオン型を混ぜる'
+				ja: '1つのメニューに、スライド型とアコーディオン型を混ぜる'
 			},
 			harm: {
 				en: 'People have to deal with two different ways of opening groups, which makes the menu complicated to use.',
-				ja: 'まとまりの開き方が 2 通りになり、利用者にとって操作が複雑になる。'
+				ja: 'まとまりの開き方が2通りになり、利用者にとって操作が複雑になる。'
 			},
 			instead: {
 				en: 'Choose one type for the whole menu. Use the sliding type when there is a second level or many items.',

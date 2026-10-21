@@ -24,7 +24,7 @@ export default {
 		},
 		{
 			en: 'The badge itself is hidden from screen readers; the count is put into the name of the button it belongs to, such as “Notifications, 3 unread”. A capped count goes into the name as shown, “99+”, so that voice control users can say what they see.',
-			ja: 'バッジ自体はスクリーンリーダーから隠し、件数は「通知 3件の未読」のように持ち主のボタンの名前に含める。頭打ちにした件数は見えているとおり「99+」と名前に入れ、音声で操作する人が見たままの言葉で呼べるようにする。'
+			ja: 'バッジ自体はスクリーンリーダーから隠し、件数は「通知3件の未読」のように持ち主のボタンの名前に含める。頭打ちにした件数は見えているとおり「99+」と名前に入れ、音声で操作する人が見たままの言葉で呼べるようにする。'
 		},
 		{
 			en: 'In this demo, the buttons show only an icon, so each gets its name from `aria-label`. A dot carries no number, so the name says “new” instead.',

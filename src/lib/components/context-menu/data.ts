@@ -23,7 +23,7 @@ export default {
 		},
 		{
 			en: 'From the keyboard, Shift + F10 opens it on the focused item, as in Windows. It then opens at the bottom left of the item, where the browser’s own menu would appear.',
-			ja: 'キーボードでは、Windows と同じく Shift + F10 で、フォーカスしている項目のメニューを開く。そのときは、ブラウザ既定のメニューと同じく項目の左下に出る。'
+			ja: 'キーボードでは、Windows と同じく Shift + F10で、フォーカスしている項目のメニューを開く。そのときは、ブラウザ既定のメニューと同じく項目の左下に出る。'
 		},
 		{
 			en: 'Inside, it works like any APG menu: focus moves to the first item, the arrow keys move between items, and Esc closes it and returns focus to the item it was opened on.',
@@ -68,7 +68,7 @@ export default {
 			key: 'Menu key',
 			action: {
 				en: 'Same as Shift + F10, on keyboards that have it.',
-				ja: 'メニューキーのあるキーボードでは、Shift + F10 と同じ。'
+				ja: 'メニューキーのあるキーボードでは、Shift + F10と同じ。'
 			}
 		},
 		{
@@ -126,7 +126,7 @@ export default {
 			},
 			instead: {
 				en: 'Keep it to a few items that fit the item, and move rarely used actions elsewhere. Carbon suggests no more than 12.',
-				ja: 'その項目に合う少しの操作に絞り、あまり使わない操作は別の場所に移す。Carbon は 12 項目までを目安にしている。'
+				ja: 'その項目に合う少しの操作に絞り、あまり使わない操作は別の場所に移す。Carbon は12項目までを目安にしている。'
 			}
 		}
 	],

@@ -11,16 +11,16 @@ export default {
 	],
 	summary: {
 		en: 'A slider with two knobs on one track that picks the lowest and highest values of a range.',
-		ja: '1 本の溝に 2 つのつまみがあり、範囲の下限と上限を選ぶスライダー。'
+		ja: '1本の溝に2つのつまみがあり、範囲の下限と上限を選ぶスライダー。'
 	},
 	appearance: {
 		en: 'A horizontal line with two round knobs. The part of the line between the knobs is filled with the accent color, and the chosen range is often written above it.',
-		ja: '横線の上に丸いつまみが 2 つある。つまみの間の線はアクセントカラーで塗られ、選んだ範囲が上に書かれることが多い。'
+		ja: '横線の上に丸いつまみが2つある。つまみの間の線はアクセントカラーで塗られ、選んだ範囲が上に書かれることが多い。'
 	},
 	behavior: [
 		{
 			en: 'Each knob is a separate `slider` that is in the Tab order and has the keys of a single slider. The Tab order stays the same wherever the knobs are.',
-			ja: 'つまみはそれぞれ独立した `slider` で、Tab キーの順に入り、1 つのスライダーと同じキー操作を持つ。つまみがどこにあっても、Tab キーの順は変わらない。'
+			ja: 'つまみはそれぞれ独立した `slider` で、Tab キーの順に入り、1つのスライダーと同じキー操作を持つ。つまみがどこにあっても、Tab キーの順は変わらない。'
 		},
 		{
 			en: 'The knobs cannot pass each other. The lower knob’s `aria-valuemax` is the upper knob’s value, the upper knob’s `aria-valuemin` is the lower knob’s value, and both are updated whenever a knob moves.',
@@ -32,7 +32,7 @@ export default {
 		},
 		{
 			en: 'In this demo, clicking or tapping the track moves the nearer knob to that point, and keeping the pointer down drags it. Page Up and Page Down move 10 steps, as in the APG example.',
-			ja: 'このデモでは、溝をクリックやタップすると近いほうのつまみがそこへ動き、押したまま動かすとドラッグになる。APG の例と同じく、Page Up と Page Down は 10 刻み動かす。'
+			ja: 'このデモでは、溝をクリックやタップすると近いほうのつまみがそこへ動き、押したまま動かすとドラッグになる。APG の例と同じく、Page Up と Page Down は10刻み動かす。'
 		},
 		{
 			en: 'In this demo, the range written above the track and the numbers at its ends are hidden from screen readers with `aria-hidden`, because each knob already announces its value.',
@@ -42,15 +42,15 @@ export default {
 	keyboard: [
 		{
 			key: '→ / ↑',
-			action: { en: 'Increases the focused knob by one step.', ja: 'フォーカスしたつまみの値を 1 刻み増やす。' }
+			action: { en: 'Increases the focused knob by one step.', ja: 'フォーカスしたつまみの値を1刻み増やす。' }
 		},
 		{
 			key: '← / ↓',
-			action: { en: 'Decreases the focused knob by one step.', ja: 'フォーカスしたつまみの値を 1 刻み減らす。' }
+			action: { en: 'Decreases the focused knob by one step.', ja: 'フォーカスしたつまみの値を1刻み減らす。' }
 		},
 		{
 			key: 'Page Up / Page Down',
-			action: { en: 'Increases / decreases the focused knob by 10 steps.', ja: 'フォーカスしたつまみの値を 10 刻み増やす・減らす。' }
+			action: { en: 'Increases / decreases the focused knob by 10 steps.', ja: 'フォーカスしたつまみの値を10刻み増やす・減らす。' }
 		},
 		{
 			key: 'Home / End',
@@ -61,7 +61,7 @@ export default {
 		},
 		{
 			key: 'Tab / Shift + Tab',
-			action: { en: 'Moves between the two knobs, lower first.', ja: '2 つのつまみの間を移る。下のつまみが先。' }
+			action: { en: 'Moves between the two knobs, lower first.', ja: '2つのつまみの間を移る。下のつまみが先。' }
 		}
 	],
 	usage: [
@@ -71,7 +71,7 @@ export default {
 		},
 		{
 			en: 'The Carbon Design System pairs the range slider with two number inputs, so the exact minimum and maximum can also be typed.',
-			ja: 'Carbon Design System は、範囲スライダーに 2 つの数値入力を添え、正確な最小値と最大値を入力することもできるようにしている。'
+			ja: 'Carbon Design System は、範囲スライダーに2つの数値入力を添え、正確な最小値と最大値を入力することもできるようにしている。'
 		},
 		{
 			en: 'Some touch-based assistive technologies cannot operate sliders yet, so test on touch devices before relying on one.',
@@ -82,7 +82,7 @@ export default {
 		{
 			pattern: {
 				en: 'Letting the two knobs move only by dragging',
-				ja: '2 つのつまみをドラッグでしか動かせない作りにする'
+				ja: '2つのつまみをドラッグでしか動かせない作りにする'
 			},
 			harm: {
 				en: 'People who cannot drag precisely, and people who use a trackball, head pointer, eye-gaze system or speech-controlled pointer, find dragging hard and error-prone.',
@@ -99,7 +99,7 @@ export default {
 			id: 'slider',
 			diff: {
 				en: 'A range slider has two knobs that pick the lowest and highest values; a slider has one knob that picks a single value.',
-				ja: '範囲スライダーは 2 つのつまみで下限と上限を選び、スライダーは 1 つのつまみで 1 つの値を選ぶ。'
+				ja: '範囲スライダーは2つのつまみで下限と上限を選び、スライダーは1つのつまみで1つの値を選ぶ。'
 			}
 		}
 	],
