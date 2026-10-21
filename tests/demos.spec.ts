@@ -458,3 +458,28 @@ test('description list: each row has a Change link named after its row, and fits
 	await expect(demo.locator('dd.actions a .visually-hidden')).toHaveCount(4);
 	expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
 });
+
+test('table: price and storage both sort, and aria-sort moves to the one sorted column', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/table/');
+	const table = demo.getByRole('table', { name: /Plan prices.*sortable/ });
+	const plans = table.locator('tbody th');
+	const sorted = table.locator('th[aria-sort]');
+	await expect(sorted).toHaveCount(0);
+
+	const price = table.getByRole('button', { name: 'Price / month' });
+	const storage = table.getByRole('button', { name: 'Storage' });
+	await expect(storage).toHaveCSS('text-decoration-line', 'underline');
+
+	await price.click();
+	await expect(sorted).toHaveCount(1);
+	await expect(table.getByRole('columnheader', { name: 'Price / month' })).toHaveAttribute('aria-sort', 'ascending');
+	await expect(plans).toHaveText(['Free', 'Personal', 'Photo', 'Team']);
+
+	await storage.click();
+	await expect(sorted).toHaveCount(1);
+	await expect(table.getByRole('columnheader', { name: 'Storage' })).toHaveAttribute('aria-sort', 'ascending');
+	await expect(plans).toHaveText(['Free', 'Personal', 'Team', 'Photo']);
+	await storage.click();
+	await expect(table.getByRole('columnheader', { name: 'Storage' })).toHaveAttribute('aria-sort', 'descending');
+	await expect(plans).toHaveText(['Photo', 'Team', 'Personal', 'Free']);
+});
