@@ -19,6 +19,12 @@ test('tabs: arrow keys, End and Home move focus and selection', async ({ page })
 	await page.keyboard.press('Home');
 	await expect(profile).toBeFocused();
 	await expect(profile).toHaveAttribute('aria-selected', 'true');
+
+	// 端では反対の端へ回る
+	await page.keyboard.press('ArrowLeft');
+	await expect(security).toBeFocused();
+	await page.keyboard.press('ArrowRight');
+	await expect(profile).toBeFocused();
 });
 
 test('menu: Shift+Tab from an item closes the menu and returns to the button', async ({ page }) => {

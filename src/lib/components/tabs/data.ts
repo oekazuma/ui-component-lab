@@ -28,6 +28,10 @@ export default {
 		{
 			en: 'In this demo, moving focus with the arrow keys also selects the tab (automatic activation).',
 			ja: 'このデモでは、矢印キーでフォーカスを移すと同時にタブが選択される（自動アクティベーション）。'
+		},
+		{
+			en: 'In this demo, hidden panels stay in the page, so a switch turned on under “Notifications” is still on after you visit another tab.',
+			ja: 'このデモでは、隠したパネルもページに残すので、「通知」で入れたスイッチはほかのタブを見たあとも入ったまま。'
 		}
 	],
 	keyboard: [
@@ -40,9 +44,49 @@ export default {
 		},
 		{
 			key: '← / →',
-			action: { en: 'Moves to the previous / next tab and selects it.', ja: '前・次のタブへ移って選択する。' }
+			action: {
+				en: 'Moves to the previous / next tab and selects it. From the last tab, → moves to the first; from the first, ← moves to the last.',
+				ja: '前・次のタブへ移って選択する。最後のタブで → を押すと最初へ、最初のタブで ← を押すと最後へ回る。'
+			}
 		},
 		{ key: 'Home / End', action: { en: 'Moves to the first / last tab and selects it.', ja: '最初・最後のタブへ移って選択する。' } }
+	],
+	variations: [
+		{
+			name: { en: 'Tab-key navigation', ja: 'Tab キーナビゲーション' },
+			description: {
+				en: 'Each tab is a link to its panel, without the ARIA tab roles, and the Tab key moves through the tabs like any links. The Digital Agency Design System uses this for information and government service sites.',
+				ja: '各タブはパネルへのリンクで、ARIA のタブのロールを使わず、Tab キーで普通のリンクと同じように移る。デジタル庁デザインシステムは、情報提供サイトや行政サービスのサイトにこの型を使う。'
+			}
+		},
+		{
+			name: { en: 'Arrow-key navigation', ja: '矢印キーナビゲーション' },
+			description: {
+				en: 'Follows the APG Tabs pattern with `role="tab"`, as in this demo. The Digital Agency Design System uses this for web applications and admin screens.',
+				ja: 'このデモのように `role="tab"` を使い、APG の Tabs パターンに従う型。デジタル庁デザインシステムは、ウェブアプリケーションや管理画面にこの型を使う。'
+			}
+		},
+		{
+			name: { en: 'Link list', ja: 'リンクリスト' },
+			description: {
+				en: 'Each tab is a separate page. The tab for the current page has `aria-current="page"` and no `href`.',
+				ja: 'タブごとに別のページになっているもの。今のページのタブには `aria-current="page"` を付け、`href` を省く。'
+			}
+		},
+		{
+			name: { en: 'Manual activation', ja: '手動アクティベーション' },
+			description: {
+				en: 'The arrow keys only move focus, and Enter or Space shows the focused tab’s panel. Use it when showing a panel takes time, such as loading its content.',
+				ja: '矢印キーではフォーカスだけが移り、Enter か Space でそのタブのパネルを表示する。内容の読み込みなど、パネルの表示に時間がかかるときに使う。'
+			}
+		},
+		{
+			name: { en: 'Vertical tabs', ja: '縦並びのタブ' },
+			description: {
+				en: 'The tabs are stacked on the left or right of the panel. The tab list gets `aria-orientation="vertical"`, and ↑ / ↓ move between tabs.',
+				ja: 'パネルの左か右にタブを縦に並べるもの。タブリストに `aria-orientation="vertical"` を付け、↑ / ↓ でタブ間を移る。'
+			}
+		}
 	],
 	usage: [
 		{
@@ -98,12 +142,17 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Tabs Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/tabs/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「タブ」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/tab/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: tab',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/tab',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

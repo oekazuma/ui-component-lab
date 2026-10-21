@@ -277,3 +277,14 @@ test('pagination: names the nav after the results and shortens far pages with an
 	await expect(nav.getByRole('button', { name: 'Page 5' })).toHaveAttribute('aria-current', 'page');
 	await expect(demo.getByText('Showing results 41–50 of 100')).toBeVisible();
 });
+
+test('tabs: a switch in a panel keeps its state while another tab is shown', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/tabs/');
+	await demo.getByRole('tab', { name: 'Notifications' }).click();
+	const email = demo.getByRole('switch', { name: 'Email notifications' });
+	await email.check();
+	await demo.getByRole('tab', { name: 'Security' }).click();
+	await expect(email).toBeHidden();
+	await demo.getByRole('tab', { name: 'Notifications' }).click();
+	await expect(email).toBeChecked();
+});

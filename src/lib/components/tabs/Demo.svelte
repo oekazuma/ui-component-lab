@@ -8,17 +8,19 @@
 			label: 'Account settings',
 			tabs: [
 				['Profile', 'Name and photo.'],
-				['Notifications', 'Email and push settings.'],
+				['Notifications', 'Choose how you are notified.'],
 				['Security', 'Password and sign-in methods.']
-			]
+			],
+			switches: ['Email notifications', 'Push notifications']
 		},
 		ja: {
 			label: 'アカウント設定',
 			tabs: [
 				['プロフィール', '名前と写真の設定です。'],
-				['通知', 'メールとプッシュ通知の設定です。'],
+				['通知', '通知の受け取り方を選びます。'],
 				['セキュリティ', 'パスワードとログイン方法の設定です。']
-			]
+			],
+			switches: ['メール通知', 'プッシュ通知']
 		}
 	};
 
@@ -68,7 +70,16 @@
 			tabindex="0"
 			hidden={selected !== i}
 		>
-			{body}
+			<p>{body}</p>
+			{#if i === 1}
+				<!-- 隠したパネルも DOM に残すので、ほかのタブへ移ってもスイッチの状態は保たれる -->
+				{#each text[lang].switches as label (label)}
+					<label class="switch">
+						{label}
+						<input type="checkbox" role="switch" />
+					</label>
+				{/each}
+			{/if}
 		</div>
 	{/each}
 </div>
@@ -101,7 +112,59 @@
 	}
 
 	[role='tabpanel'] {
+		display: grid;
+		gap: 0.5rem;
 		padding: 0.75rem 0.25rem;
 		font-size: 0.9375rem;
+	}
+
+	[role='tabpanel'][hidden] {
+		display: none;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.switch {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.5rem;
+		cursor: pointer;
+	}
+
+	input {
+		appearance: none;
+		position: relative;
+		flex: none;
+		width: 2.75rem;
+		height: 1.5rem;
+		margin: 0;
+		border: 1px solid var(--color-muted);
+		border-radius: 999px;
+		background: var(--color-surface);
+		cursor: pointer;
+	}
+
+	input::before {
+		content: '';
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: calc(1.5rem - 6px);
+		height: calc(1.5rem - 6px);
+		border-radius: 50%;
+		background: var(--color-muted);
+	}
+
+	input:checked {
+		border-color: var(--color-accent);
+		background: var(--color-accent);
+	}
+
+	input:checked::before {
+		background: var(--color-accent-text);
+		translate: 1.25rem 0;
 	}
 </style>
