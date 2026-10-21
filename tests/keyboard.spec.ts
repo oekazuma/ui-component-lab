@@ -158,3 +158,35 @@ test('carousel: previous and next keep focus on the button and wrap around', asy
 	await expect(demo).toContainText('4 / 4');
 	await expect(demo.locator('[aria-live="polite"]').getByRole('tabpanel')).toHaveCount(1);
 });
+
+test('toolbar: arrow keys move across both groups and wrap; Space chooses one alignment', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/toolbar/');
+	const underline = demo.getByRole('button', { name: 'Underline' });
+	const left = demo.getByRole('radio', { name: 'Align left' });
+	const center = demo.getByRole('radio', { name: 'Align center' });
+	const right = demo.getByRole('radio', { name: 'Align right' });
+	const bold = demo.getByRole('button', { name: 'Bold' });
+	await expect(demo.getByRole('radiogroup', { name: 'Text alignment' })).toBeVisible();
+	await expect(left).toHaveAttribute('aria-checked', 'true');
+
+	await underline.focus();
+	await page.keyboard.press('ArrowRight');
+	await expect(left).toBeFocused();
+	await page.keyboard.press('ArrowRight');
+	await expect(center).toBeFocused();
+	await expect(center).toHaveAttribute('aria-checked', 'false');
+	await page.keyboard.press('Space');
+	await expect(center).toHaveAttribute('aria-checked', 'true');
+	await expect(left).toHaveAttribute('aria-checked', 'false');
+
+	await page.keyboard.press('End');
+	await expect(right).toBeFocused();
+	await page.keyboard.press('ArrowRight');
+	await expect(bold).toBeFocused();
+	await page.keyboard.press('ArrowLeft');
+	await expect(right).toBeFocused();
+	await page.keyboard.press('Home');
+	await expect(bold).toBeFocused();
+	await expect(bold).toHaveAttribute('tabindex', '0');
+	await expect(demo.locator('[role="toolbar"] [tabindex="0"]')).toHaveCount(1);
+});

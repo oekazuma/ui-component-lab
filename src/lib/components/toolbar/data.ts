@@ -13,8 +13,8 @@ export default {
 		ja: '文字の書式ボタンのように、関係する操作部品を1列にまとめたもの。'
 	},
 	appearance: {
-		en: 'A strip of small icon buttons, sometimes with dividers between groups. Pressed buttons stay highlighted.',
-		ja: '小さなアイコンのボタンが帯状に並び、グループの間に区切り線が入ることもある。押した状態のボタンは色が変わったままになる。'
+		en: 'A strip of small icon buttons, sometimes with dividers between groups. Pressed buttons stay highlighted. In this demo, a divider separates the text style buttons from the alignment buttons, and on a narrow screen the strip wraps onto two rows.',
+		ja: '小さなアイコンのボタンが帯状に並び、グループの間に区切り線が入ることもある。押した状態のボタンは色が変わったままになる。このデモでは、文字の飾りのボタンと揃え方のボタンの間に区切り線があり、狭い画面では2段に折り返す。'
 	},
 	behavior: [
 		{
@@ -26,15 +26,31 @@ export default {
 			ja: 'Tab で戻ってくると、最後にフォーカスしていたボタンに戻る（ロービング `tabindex`）。'
 		},
 		{
-			en: 'This demo’s buttons are toggle buttons that use `aria-pressed`.',
-			ja: 'このデモのボタンは `aria-pressed` を使ったトグルボタン。'
+			en: 'In this demo, Bold, Italic and Underline are toggle buttons that use `aria-pressed`, so any number of them can be on.',
+			ja: 'このデモの「太字」「斜体」「下線」は `aria-pressed` を使ったトグルボタンで、いくつでも同時にオンにできる。'
+		},
+		{
+			en: 'In this demo, the alignment buttons are a `radiogroup` of `role="radio"` buttons with `aria-checked`, so exactly one is chosen. Moving focus onto one does not choose it.',
+			ja: 'このデモの揃え方のボタンは、`role="radio"` と `aria-checked` を持つボタンの `radiogroup` で、選べるのは常に1つ。フォーカスを移しただけでは選ばれない。'
 		}
 	],
 	keyboard: [
 		{ key: 'Tab', action: { en: 'Moves focus into or out of the toolbar.', ja: 'ツールバーへ、またはツールバーから移動する。' } },
-		{ key: '← / →', action: { en: 'Moves to the previous or next button (wraps around).', ja: '前後のボタンへ移る（端から反対の端へ回る）。' } },
-		{ key: 'Home / End', action: { en: 'Moves to the first or last button.', ja: '最初または最後のボタンへ移る。' } },
-		{ key: 'Enter / Space', action: { en: 'Presses the focused button.', ja: 'フォーカス中のボタンを押す。' } }
+		{
+			key: 'Enter / Space',
+			action: {
+				en: 'Turns the focused style button on or off, or chooses the focused alignment.',
+				ja: 'フォーカス中の飾りのボタンをオン・オフする。揃え方のボタンでは、その揃え方を選ぶ。'
+			}
+		},
+		{
+			key: '← / →',
+			action: {
+				en: 'Moves to the previous or next button, across the divider (wraps around).',
+				ja: '区切り線をまたいで、前後のボタンへ移る（端から反対の端へ回る）。'
+			}
+		},
+		{ key: 'Home / End', action: { en: 'Moves to the first or last button.', ja: '最初または最後のボタンへ移る。' } }
 	],
 	usage: [
 		{
@@ -82,7 +98,12 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Toolbar Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'WAI-ARIA APG: Toolbar Example',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/examples/toolbar/',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Open UI: Toolbar Element (Explainer)',
