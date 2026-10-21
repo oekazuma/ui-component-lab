@@ -28,8 +28,7 @@ export default {
 		}
 	],
 	keyboard: [
-		{ key: 'Space', action: { en: 'Presses or releases the button.', ja: 'ボタンを押す・戻す。' } },
-		{ key: 'Enter', action: { en: 'Presses or releases the button.', ja: 'ボタンを押す・戻す。' } }
+		{ key: 'Enter / Space', action: { en: 'Presses or releases the button.', ja: 'ボタンを押す・戻す。' } }
 	],
 	related: [
 		{

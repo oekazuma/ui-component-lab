@@ -35,8 +35,8 @@ export default {
 		{
 			key: 'Tab / Shift + Tab',
 			action: {
-				en: 'Moves between focusable elements inside the dialog only.',
-				ja: 'ダイアログ内の要素の間だけを移動する。'
+				en: 'Moves between the dialog’s controls. The page behind cannot be reached, though focus may move to the browser’s own controls.',
+				ja: 'ダイアログ内の要素の間を移動する。背後のページには移らないが、ブラウザ自体の操作部分には移ることがある。'
 			}
 		},
 		{ key: 'Esc', action: { en: 'Closes the dialog.', ja: 'ダイアログを閉じる。' } }

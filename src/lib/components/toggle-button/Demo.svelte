@@ -34,7 +34,7 @@
 	}
 
 	[aria-pressed='true']:hover {
-		background: #194fae;
+		background: var(--color-accent-hover);
 	}
 
 	p {

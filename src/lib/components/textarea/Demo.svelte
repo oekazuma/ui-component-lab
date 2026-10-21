@@ -54,7 +54,7 @@
 	}
 
 	.over {
-		color: #c4002b;
+		color: var(--color-danger);
 		font-weight: 700;
 	}
 </style>

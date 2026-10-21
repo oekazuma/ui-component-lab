@@ -10,6 +10,16 @@
 
 	const uid = $props.id();
 	let visible = $state(false);
+
+	// ホバーで出たときはフォーカスが別の場所にあるため、表示中だけ document で Esc を受ける（WCAG 1.4.13）
+	$effect(() => {
+		if (!visible) return;
+		const onkeydown = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') visible = false;
+		};
+		document.addEventListener('keydown', onkeydown);
+		return () => document.removeEventListener('keydown', onkeydown);
+	});
 </script>
 
 <!-- APG Tooltip（作業中のパターン）: フォーカスかホバーで表示し、Esc で消す。ツールチップ自体はフォーカスを受けない -->
@@ -20,7 +30,6 @@
 	onmouseleave={() => (visible = false)}
 	onfocusin={() => (visible = true)}
 	onfocusout={() => (visible = false)}
-	onkeydown={(e) => e.key === 'Escape' && (visible = false)}
 >
 	<button type="button" class="btn" aria-describedby="{uid}-tip">{text[lang].button}</button>
 	<span id="{uid}-tip" role="tooltip" class:visible>{text[lang].tip}</span>

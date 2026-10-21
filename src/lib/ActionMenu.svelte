@@ -22,6 +22,7 @@
 	let open = $state(false);
 	let button: HTMLButtonElement;
 	let menu: HTMLUListElement;
+	let wrap: HTMLDivElement;
 
 	const menuItems = () => [...menu.querySelectorAll<HTMLElement>('[role="menuitem"]')];
 
@@ -40,8 +41,21 @@
 		if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
 			e.preventDefault();
 			show(e.key === 'ArrowDown' ? 0 : -1);
+		} else if (e.key === 'Escape' && open) {
+			e.preventDefault();
+			open = false;
 		}
 	}
+
+	// 開いている間だけ、メニューの外を押したら閉じる（45 個のデモが同じページにあるので常設しない）
+	$effect(() => {
+		if (!open) return;
+		const onpointerdown = (e: PointerEvent) => {
+			if (!wrap.contains(e.target as Node)) open = false;
+		};
+		document.addEventListener('pointerdown', onpointerdown);
+		return () => document.removeEventListener('pointerdown', onpointerdown);
+	});
 
 	function onMenuKeydown(e: KeyboardEvent) {
 		const els = menuItems();
@@ -53,15 +67,19 @@
 		} else if (e.key === 'Escape') {
 			e.preventDefault();
 			close();
+		} else if (e.key === 'Tab') {
+			// preventDefault しない: フォーカスはそのまま次へ移す
+			open = false;
 		}
 	}
 </script>
 
 <div
+	bind:this={wrap}
 	class="menu-wrap"
 	onfocusout={(e) => {
-		// Tab やメニュー外のクリックでフォーカスが外へ出たら閉じる
-		if (!e.currentTarget.contains(e.relatedTarget as Node | null)) open = false;
+		// Tab で外の要素へ移ったら閉じる。Safari はクリックでボタンにフォーカスしないため relatedTarget が null になる。null では閉じず、外側のクリックは上の pointerdown で扱う
+		if (e.relatedTarget && !wrap.contains(e.relatedTarget as Node)) open = false;
 	}}
 >
 	<button

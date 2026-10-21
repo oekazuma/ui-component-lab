@@ -57,8 +57,8 @@ export default {
 		{
 			id: 'toggle-button',
 			diff: {
-				en: 'A toggle button is one on/off button; a toolbar groups several buttons and moves between them with arrow keys.',
-				ja: 'トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーは複数のボタンをまとめて矢印キーで行き来させる。'
+				en: 'A toolbar groups several buttons and moves between them with arrow keys; a toggle button is a single on/off button that can sit inside one.',
+				ja: 'ツールバーは複数のボタンをまとめて矢印キーで行き来させる。トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーの中に置くこともある。'
 			}
 		}
 	],

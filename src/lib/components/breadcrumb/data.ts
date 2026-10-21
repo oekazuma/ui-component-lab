@@ -17,8 +17,8 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'Each name except the last links to that level of the site.',
-			ja: '最後以外の名前は、それぞれの階層のページへのリンクになっている。'
+			en: 'Each name links to that level of the site; the last one is the current page.',
+			ja: 'それぞれの名前はその階層のページへのリンクで、最後の名前は今いるページを示す。'
 		},
 		{
 			en: 'The current page is marked with aria-current="page".',

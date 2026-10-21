@@ -49,7 +49,7 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Do not use it to show progress through the steps of a form. Use step navigation for that.',
+			en: 'Do not use it to show progress through the steps of a form. Use a stepper for that.',
 			ja: 'フォームの手順の進み具合を示すのには使わない。それにはステップナビゲーションを使う。'
 		}
 	],

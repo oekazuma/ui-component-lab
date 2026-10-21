@@ -36,8 +36,8 @@ export default {
 		{
 			key: 'A–Z',
 			action: {
-				en: 'Jumps to an option starting with the typed characters.',
-				ja: '入力した文字で始まる選択肢へ移る。'
+				en: 'Jumps to an option starting with the typed letter. It matches typed letters only, not IME input.',
+				ja: '入力した英字で始まる選択肢へ移る。日本語入力（IME）では働かないため、日本語版のデモの選択肢では試せない。'
 			}
 		}
 	],

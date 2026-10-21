@@ -80,6 +80,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ファイルアップロード／ドロップエリア」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/file-upload/usage/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'WCAG 2.2: Understanding SC 2.5.7 Dragging Movements',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

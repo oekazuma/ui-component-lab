@@ -70,8 +70,8 @@ export default {
 		{
 			id: 'search-field',
 			diff: {
-				en: 'A search field is a text field for search terms, usually with a search button and a search landmark.',
-				ja: '検索ボックスは検索語を入れるためのテキストフィールドで、検索ボタンや検索のランドマークが付くことが多い。'
+				en: 'A text field takes any short text; a search field is one made for search terms, usually with a search button and a search landmark.',
+				ja: 'テキストフィールドは短い文字列全般に使う。検索ボックスは検索語のための形で、検索ボタンや検索のランドマークが付くことが多い。'
 			}
 		}
 	],

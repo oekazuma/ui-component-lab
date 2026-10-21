@@ -25,5 +25,8 @@
 		"#lib/*": "./src/lib/*"
 	},
 	"packageManager": "pnpm@10.34.7",
+	"engines": {
+		"node": ">=24"
+	},
 	"license": "MIT"
 }

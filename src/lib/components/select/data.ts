@@ -40,7 +40,7 @@ export default {
 			}
 		},
 		{
-			key: 'Space / Enter',
+			key: 'Enter / Space',
 			action: {
 				en: 'Opens the list, or confirms the highlighted option.',
 				ja: 'リストを開く。開いているときは選択中の項目を確定する。'
@@ -49,8 +49,8 @@ export default {
 		{
 			key: 'A–Z',
 			action: {
-				en: 'Jumps to an option starting with the typed character.',
-				ja: '入力した文字で始まる選択肢に移る。'
+				en: 'Jumps to an option starting with the typed letter. It matches typed letters only, not IME input.',
+				ja: '入力した英字で始まる選択肢へ移る。日本語入力（IME）では働かないため、日本語版のデモの選択肢では試せない。'
 			}
 		},
 		{ key: 'Esc', action: { en: 'Closes the list without changing.', ja: '変更せずにリストを閉じる。' } }

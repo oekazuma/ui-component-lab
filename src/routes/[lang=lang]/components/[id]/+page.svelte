@@ -85,7 +85,7 @@
 		</thead>
 		<tbody>
 			{#each data.keyboard as k (k.key)}
-				<tr><td><kbd>{k.key}</kbd></td><td>{k.action[lang]}</td></tr>
+				<tr><td>{#if k.key === '—'}—{:else}<kbd>{k.key}</kbd>{/if}</td><td>{k.action[lang]}</td></tr>
 			{/each}
 		</tbody>
 	</table>
