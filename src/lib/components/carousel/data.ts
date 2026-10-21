@@ -61,12 +61,21 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Do not autoplay. Let the user change slides.',
-			ja: '自動で再生せず、利用者の操作で切り替える。'
-		},
-		{
 			en: 'Do not put information that everyone must read in it, and keep one topic per carousel.',
 			ja: '必ず読んでほしい情報は載せず、1つのカルーセルには1つの話題だけを入れる。'
+		}
+	],
+	misuse: [
+		{
+			pattern: { en: 'Advancing slides automatically', ja: 'スライドを自動で切り替える' },
+			harm: {
+				en: 'Continuous motion pulls attention away from the rest of the page. People with cognitive or attention disabilities, and people who read slowly or have trouble following moving content, can find the page hard or impossible to use.',
+				ja: '動き続ける表示に注意を奪われ、ページのほかの部分を読めなくなる。認知障害や注意欠如のある人、読むのに時間がかかる人、動くものを目で追いにくい人には、ページが使いにくくなったり使えなくなったりする。'
+			},
+			instead: {
+				en: 'Let users change slides themselves. If slides must rotate, provide a button that stops rotation, and pause while focus or the pointer is on the carousel.',
+				ja: 'スライドは利用者の操作で切り替える。どうしても自動で切り替えるなら、止めるボタンを置き、フォーカスやマウスがカルーセル上にある間は止める。'
+			}
 		}
 	],
 	related: [
@@ -90,6 +99,16 @@ export default {
 			label: 'WAI-ARIA APG: Carousel (Slide Show or Image Rotator) Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Understanding Success Criterion 2.2.2: Pause, Stop, Hide (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「カルーセル（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/carousel/usage/',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「カルーセル」をもとに作成',

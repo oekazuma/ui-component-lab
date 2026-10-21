@@ -28,6 +28,17 @@ export interface ComponentData {
 	variations?: { name: Text; description: Text }[];
 	/** 使い分けや注意点。根拠にした資料は sources に載せる */
 	usage?: Text[];
+	/** 避けたい使い方。根拠にした資料は sources に載せる */
+	misuse?: {
+		/** どういう使い方か */
+		pattern: Text;
+		/** 誰がどう困るか。出典に書かれている内容に限る */
+		harm: Text;
+		/** 代わりにどうするか */
+		instead: Text;
+		/** 利用者をだまして望まない選択に誘導するもの（ディセプティブパターン）なら true */
+		deceptive?: true;
+	}[];
 	/** 似ているが違う部品。diff に違いを一文で書く */
 	related?: { id: string; diff: Text }[];
 	sources: { label: string; url: string; checkedAt: string }[];

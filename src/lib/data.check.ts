@@ -38,6 +38,7 @@ for (const d of all) {
 		['behavior', d.behavior.map((b) => b.en)],
 		['keyboard', d.keyboard.map((k) => k.key)],
 		['usage', (d.usage ?? []).map((u) => u.en)],
+		['misuse', (d.misuse ?? []).map((m) => m.pattern.en)],
 		['related', (d.related ?? []).map((r) => r.id)],
 		['sources', d.sources.map((s) => s.url)]
 	];
@@ -74,6 +75,7 @@ for (const d of all) {
 		...d.behavior,
 		...d.keyboard.map((k) => k.action),
 		...(d.usage ?? []),
+		...(d.misuse ?? []).flatMap((m) => [m.pattern, m.harm, m.instead]),
 		...(d.related ?? []).map((r) => r.diff),
 		...(d.variations ?? []).flatMap((v) => [v.name, v.description])
 	];

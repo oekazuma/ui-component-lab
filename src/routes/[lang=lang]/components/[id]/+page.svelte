@@ -105,6 +105,28 @@
 	</section>
 {/if}
 
+{#if data.misuse?.length}
+	<section aria-labelledby="misuse">
+		<h2 id="misuse">{ui.misuse}</h2>
+		<ul class="misuse">
+			{#each data.misuse as m (m.pattern.en)}
+				<li>
+					<h3>
+						{m.pattern[lang]}
+						{#if m.deceptive}<span class="deceptive">{ui.deceptive}</span>{/if}
+					</h3>
+					<dl>
+						<dt>{ui.harm}</dt>
+						<dd>{m.harm[lang]}</dd>
+						<dt>{ui.instead}</dt>
+						<dd>{m.instead[lang]}</dd>
+					</dl>
+				</li>
+			{/each}
+		</ul>
+	</section>
+{/if}
+
 {#if related.length}
 	<section aria-labelledby="related">
 		<h2 id="related">{ui.related}</h2>
@@ -174,6 +196,34 @@
 
 	dd {
 		margin: 0 0 0.5rem;
+	}
+
+	.misuse {
+		display: grid;
+		gap: 1rem;
+		padding: 0;
+		list-style: none;
+	}
+
+	.misuse li {
+		padding-left: 0.75rem;
+		border-left: 3px solid var(--color-border);
+	}
+
+	h3 {
+		margin: 0 0 0.25rem;
+		font-size: 1rem;
+	}
+
+	.deceptive {
+		margin-left: 0.4em;
+		padding: 0 0.5em;
+		border: 1px solid var(--color-danger);
+		border-radius: 999px;
+		color: var(--color-danger);
+		font-size: 0.75rem;
+		font-weight: 400;
+		white-space: nowrap;
 	}
 
 	table {
