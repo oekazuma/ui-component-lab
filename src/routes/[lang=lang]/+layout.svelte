@@ -10,6 +10,10 @@
 	let other = $derived(params.lang === 'en' ? 'ja' : 'en');
 	// 同じページの別言語版。pathname は base を含むのでそのまま使える
 	let otherHref = $derived(page.url.pathname.replace(`/${params.lang}/`, `/${other}/`));
+	// <html lang> は prerender 時に hooks.server.ts が入れる。言語切替はクライアント側の遷移なので、ここで追従させる
+	$effect(() => {
+		document.documentElement.lang = params.lang;
+	});
 </script>
 
 <header>

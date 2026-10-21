@@ -9,13 +9,14 @@
 		label
 	}: { demo: Component<{ lang: Lang }>; lang: Lang; label: string } = $props();
 
-	// key を変えてデモを作り直すことで、各デモに個別のリセット処理を書かずに初期状態へ戻す
+	// key を変えてデモを作り直すことで、各デモに個別のリセット処理を書かずに初期状態へ戻す。
+	// 言語切替はクライアント側の遷移でデモが残るため、lang もキーに含めて前の言語の状態を捨てる
 	let generation = $state(0);
 </script>
 
 <div class="frame" role="group" aria-label={label}>
 	<div class="stage">
-		{#key generation}
+		{#key `${lang}-${generation}`}
 			<Demo {lang} />
 		{/key}
 	</div>
