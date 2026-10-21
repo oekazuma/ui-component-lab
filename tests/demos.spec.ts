@@ -514,3 +514,19 @@ test('avatar: a photo, a photo that fails and falls back to the initial, and a d
 	await expect(byline.locator('img')).toHaveAttribute('alt', '');
 	expect(noise).toEqual([]);
 });
+
+test('divider: sections are split by borders, <hr> marks a change of topic in text, and inset lines sit inside the padding', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/divider/');
+	const box = demo.locator('.demo');
+	const hr = box.locator('hr');
+	await expect(hr).toHaveCount(1);
+	await expect(box.locator('section hr + p')).toHaveCount(1);
+	await expect(box.locator('section + section')).toHaveCSS('border-top-style', 'solid');
+
+	const outer = (await box.boundingBox())!;
+	const full = (await box.locator('section + section').boundingBox())!;
+	const inset = (await box.locator('.inset li + li').first().boundingBox())!;
+	expect(Math.round(full.width)).toBe(Math.round(outer.width - 2));
+	expect(inset.x).toBeGreaterThan(full.x + 8);
+	expect(inset.width).toBeLessThan(full.width - 16);
+});

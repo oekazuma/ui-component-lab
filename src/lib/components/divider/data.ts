@@ -23,8 +23,16 @@ export default {
 			ja: '操作する部品ではない。'
 		},
 		{
-			en: 'In this demo, the lines between sections are `<hr>`, which screen readers announce as a separator. The vertical lines between links are only decoration and are hidden from screen readers.',
-			ja: 'このデモでは、セクションの間の線は `<hr>` で、スクリーンリーダーは区切りとして読み上げる。リンクの間の縦線は飾りなので、読み上げないようにしている。'
+			en: '`<hr>` is announced by screen readers as a separator. It marks a change of topic within the text of one section, such as from opening hours to parking.',
+			ja: '`<hr>` はスクリーンリーダーが区切りとして読み上げる。1つのセクションの文章の中で、営業時間から駐車場の話へ移るような話題の切り替わりに使う。'
+		},
+		{
+			en: 'In this demo, the lines between sections are CSS borders, because the headings already show where each section starts. They run edge to edge (full width), while the lines between the notification channels stay inside the padding (inset).',
+			ja: 'このデモでは、セクションの間の線は CSS の border にしている。見出しでセクションの始まりがすでに伝わるため。セクションの間の線は枠の端から端まで（全幅）引き、通知の項目の間の線は余白の内側（インセット）に引いている。'
+		},
+		{
+			en: 'In this demo, the vertical lines between links are only decoration and are hidden from screen readers.',
+			ja: 'このデモでは、リンクの間の縦線は飾りなので、読み上げないようにしている。'
 		}
 	],
 	keyboard: [
@@ -56,8 +64,8 @@ export default {
 			ja: '別々の項目が1つに見えないよう、周りに十分な余白をとる（リストでは 8px 以上、セクションの間では 16px 以上）。'
 		},
 		{
-			en: 'Use `<hr>` for a change of topic. For a purely visual line, use a CSS border instead.',
-			ja: '話題の切り替わりには `<hr>` を使う。見た目だけの線なら CSS の border を使う。'
+			en: 'Use `<hr>` for a change of topic within a section. Sections and headings already mark their own boundaries, so the line between sections, like any purely visual line, is a CSS border.',
+			ja: 'セクションの中の話題の切り替わりには `<hr>` を使う。セクションと見出しはそれだけで区切りが伝わるので、セクションの間の線は、見た目だけの線と同じく CSS の border にする。'
 		}
 	],
 	sources: [
@@ -67,9 +75,19 @@ export default {
 			checkedAt: '2026-10-20'
 		},
 		{
+			label: 'HTML Standard: The hr element',
+			url: 'https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element',
+			checkedAt: '2026-10-21'
+		},
+		{
 			label: 'デジタル庁デザインシステムウェブサイト「ディバイダー」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/divider/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ディバイダー（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/divider/usage/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
