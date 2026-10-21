@@ -530,3 +530,51 @@ test('divider: sections are split by borders, <hr> marks a change of topic in te
 	expect(inset.x).toBeGreaterThan(full.x + 8);
 	expect(inset.width).toBeLessThan(full.width - 16);
 });
+
+test('text field: marked required, not cut off at the limit, and errors on submit say what to fix', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/text-field/');
+	const input = demo.getByRole('textbox', { name: 'Display name (required)' });
+	const save = demo.getByRole('button', { name: 'Save' });
+	await expect(input).not.toHaveAttribute('maxlength');
+
+	await save.click();
+	await expect(input).toBeFocused();
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await expect(input).toHaveAccessibleDescription(/^Enter a display name\. Shown on your profile/);
+
+	await input.fill('a'.repeat(23));
+	await expect(input).toHaveValue('a'.repeat(23));
+	await save.click();
+	await expect(input).toHaveAccessibleDescription(/^Display name must be 20 characters or less \(you entered 23\)\./);
+
+	await input.fill('Aiko');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+	await save.click();
+	await expect(demo.getByRole('status')).toHaveText('Saved');
+});
+
+test('textarea: the counter warns past the limit, and submitting then gives an error with the count', async ({ page }) => {
+	const demo = await openDemo(page, 'ja/components/textarea/', /^デモ:/);
+	const box = demo.getByRole('textbox', { name: 'ご意見（200文字以内）' });
+	const send = demo.getByRole('button', { name: '送信' });
+
+	await box.fill('あ'.repeat(201));
+	await expect(box).toHaveValue('あ'.repeat(201));
+	await expect(demo.getByText('1文字超えています')).toBeVisible();
+	await expect(box).not.toHaveAttribute('aria-invalid', 'true');
+
+	await send.click();
+	await expect(box).toBeFocused();
+	await expect(box).toHaveAttribute('aria-invalid', 'true');
+	await expect(box).toHaveAccessibleDescription(/^＊入力できる文字数を超えています。（入力文字数201文字）/);
+
+	await box.fill('よかったです');
+	await expect(box).not.toHaveAttribute('aria-invalid', 'true');
+	await send.click();
+	await expect(demo.getByRole('status')).toHaveText('送信しました');
+
+	await page.goto('en/components/textarea/');
+	await page.waitForLoadState('networkidle');
+	await page.getByRole('textbox', { name: /^Feedback/ }).fill('a'.repeat(199));
+	await expect(page.getByText('1 character left')).toBeVisible();
+});

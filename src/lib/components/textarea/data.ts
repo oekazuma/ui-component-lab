@@ -26,12 +26,16 @@ export default {
 			ja: '見えている行数より長くなると、欄の中でスクロールする。'
 		},
 		{
-			en: 'This demo shows the remaining characters and lets you type past the limit, showing how many characters are over instead of cutting the text off.',
-			ja: 'このデモは残りの文字数を表示する。上限を超えても入力は止めず、何文字超えているかを示す。'
+			en: 'This demo shows the remaining characters and lets you type past the limit, showing how many characters are over instead of cutting the text off with `maxlength`.',
+			ja: 'このデモは残りの文字数を表示する。`maxlength` で打ち切らず、上限を超えても入力は止めずに、何文字超えているかを示す。'
+		},
+		{
+			en: 'In this demo, pressing Send while the text is over the limit shows an error with the number of characters entered, links it with `aria-describedby`, sets `aria-invalid`, and moves focus to the box. After the first send, the error updates as you type and disappears once the text fits.',
+			ja: 'このデモでは、上限を超えたまま「送信」を押すと、入力文字数入りのエラーを出して `aria-describedby` でつなぎ、`aria-invalid` を付けて、フォーカスを欄へ移す。一度送信したあとは、入力に合わせてエラーが変わり、上限内に収まると消える。'
 		}
 	],
 	keyboard: [
-		{ key: 'Tab', action: { en: 'Moves focus into or out of the box.', ja: '入力欄へ、または入力欄から移動する。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus into or out of the box.', ja: '入力欄へ、または入力欄から移動する。' } },
 		{ key: 'Enter', action: { en: 'Inserts a line break.', ja: '改行する。' } },
 		{
 			key: '← / → / ↑ / ↓',
@@ -46,6 +50,10 @@ export default {
 		{
 			en: 'Put the character limit in the label. For limits of more than about 20 characters, always show a counter.',
 			ja: '文字数の上限はラベルに書く。上限がおよそ20文字を超えるなら、文字数のカウンターを常に表示する。'
+		},
+		{
+			en: 'When the text is too long, give the number of characters entered in the error, such as “You entered 201 characters”, so people can tell how much to cut.',
+			ja: '上限を超えたときは「（入力文字数201文字）」のように入力した文字数をエラーに書き、どれだけ削ればよいか分かるようにする。'
 		},
 		{
 			en: 'Set the height to match the expected length of the answer.',
@@ -91,12 +99,22 @@ export default {
 		{
 			label: 'GOV.UK Design System: Character count',
 			url: 'https://design-system.service.gov.uk/components/character-count/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「テキストエリア」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/textarea/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「テキストエリア（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/textarea/usage/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: textarea',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/textarea',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

@@ -14,8 +14,8 @@ export default {
 		ja: '名前など、短い文字列を自由に入力する欄。'
 	},
 	appearance: {
-		en: 'A rectangle with a border or an underline, with a label above it. Hint or error text often appears below.',
-		ja: '枠線または下線のある長方形で、上にラベルがある。下に補足やエラーの文が出ることが多い。'
+		en: 'A rectangle with a border or an underline, with a label above it. A required field has a mark such as “(required)” next to the label. Hint text often sits between the label and the field, and error text appears below the field.',
+		ja: '枠線または下線のある長方形で、上にラベルがある。入力が必須の欄はラベルの横に「※必須」などの表示がある。ラベルと欄の間に補足の文が、欄の下にエラーの文が出ることが多い。'
 	},
 	behavior: [
 		{
@@ -29,10 +29,15 @@ export default {
 		{
 			en: 'Hint text is linked with `aria-describedby` so screen readers read it with the label.',
 			ja: '補足の文は `aria-describedby` でつなぎ、スクリーンリーダーがラベルと一緒に読み上げるようにする。'
+		},
+		{
+			en: 'In this demo, the field has no `maxlength`, so text past 20 characters is not cut off. Pressing Save with the field empty or too long shows an error below the field, links it with `aria-describedby`, sets `aria-invalid`, and moves focus to the field. After the first save, the error updates as you type and disappears once the value is fixed.',
+			ja: 'このデモでは `maxlength` を付けていないので、20文字を超えても入力は切れない。空のまま、または長すぎるまま「保存」を押すと、欄の下にエラーの文を出して `aria-describedby` でつなぎ、`aria-invalid` を付けて、フォーカスを欄へ移す。一度保存したあとは、入力に合わせてエラーが変わり、直すと消える。'
 		}
 	],
 	keyboard: [
-		{ key: 'Tab', action: { en: 'Moves focus into or out of the field.', ja: '入力欄へ、または入力欄から移動する。' } },
+		{ key: 'Enter', action: { en: 'Submits the form (Save in this demo).', ja: 'フォームを送信する（このデモでは「保存」）。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus into or out of the field.', ja: '入力欄へ、または入力欄から移動する。' } },
 		{
 			key: '← / → / Home / End',
 			action: { en: 'Moves the text cursor.', ja: '文字のカーソルを移動する。' }
@@ -44,8 +49,16 @@ export default {
 			ja: '入力欄の幅は、想定する入力の長さに合わせる。'
 		},
 		{
-			en: 'Error messages should say what is wrong and how to fix it.',
-			ja: 'エラーメッセージには、何が問題でどう直せばよいかを書く。'
+			en: 'Mark required fields in words next to the label, such as “(required)”, not with color alone.',
+			ja: '入力が必須の欄は、ラベルの横に「※必須」のような文字で示し、色だけに頼らない。'
+		},
+		{
+			en: 'Error messages should say what is wrong and how to fix it. Show them when the form is submitted, not while typing or when focus leaves the field.',
+			ja: 'エラーメッセージには、何が問題でどう直せばよいかを書く。エラーは送信したときに出し、入力中やフォーカスが外れたときには出さない。'
+		},
+		{
+			en: 'Do not cut off input with `maxlength`. Let people type past the limit, and say in the error how many characters they entered.',
+			ja: '`maxlength` で入力を打ち切らない。上限を超えても入力させ、エラーで入力した文字数を伝える。'
 		}
 	],
 	misuse: [
@@ -102,6 +115,21 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「インプットテキスト」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/input-text/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「インプットテキスト（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/input-text/usage/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: input-text',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/input-text',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Character count',
+			url: 'https://design-system.service.gov.uk/components/character-count/',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'GOV.UK Design System: Text input',
