@@ -10,7 +10,13 @@
 			label: 'Files',
 			opened: (name) => `Opened ${name}`,
 			tree: [
-				{ name: 'Documents', children: [{ name: 'report.pdf' }, { name: 'budget.xlsx' }] },
+				{
+					name: 'Documents',
+					children: [
+						{ name: '2026', children: [{ name: 'report.pdf' }, { name: 'budget.xlsx' }] },
+						{ name: 'notes.txt' }
+					]
+				},
 				{ name: 'Pictures', children: [{ name: 'cat.png' }, { name: 'trip.jpg' }] },
 				{ name: 'readme.txt' }
 			]
@@ -19,7 +25,13 @@
 			label: 'ファイル',
 			opened: (name) => `${name} を開きました`,
 			tree: [
-				{ name: '書類', children: [{ name: '報告書.pdf' }, { name: '予算.xlsx' }] },
+				{
+					name: '書類',
+					children: [
+						{ name: '2026年', children: [{ name: '報告書.pdf' }, { name: '予算.xlsx' }] },
+						{ name: 'メモ.txt' }
+					]
+				},
 				{ name: '写真', children: [{ name: 'ねこ.png' }, { name: '旅行.jpg' }] },
 				{ name: 'はじめに.txt' }
 			]
@@ -30,6 +42,7 @@
 	const expanded = new SvelteSet<string>();
 	let focused = $state('0');
 	let opened = $state('');
+	let current = $state('');
 	const els: Record<string, HTMLElement> = {};
 
 	// 画面に見えている項目を上から順に並べたもの。↑↓ の移動先はここから選ぶ
@@ -52,7 +65,10 @@
 	}
 
 	function activate(key: string, node: Node) {
-		if (!node.children) opened = text[lang].opened(node.name);
+		if (!node.children) {
+			opened = text[lang].opened(node.name);
+			current = key;
+		}
 		else if (expanded.has(key)) expanded.delete(key);
 		else expanded.add(key);
 	}
@@ -102,6 +118,7 @@
 			bind:this={els[key]}
 			role="treeitem"
 			aria-expanded={node.children ? expanded.has(key) : undefined}
+			aria-current={current === key ? 'true' : undefined}
 			tabindex={focused === key ? 0 : -1}
 		>
 			<!-- キーボードでは tree 全体の keydown で操作するため、ここはマウス用のクリックだけを持つ -->
@@ -152,6 +169,7 @@
 	.row {
 		display: block;
 		padding: 0.15em 0.4em;
+		border-left: 3px solid transparent;
 		border-radius: var(--radius);
 		cursor: pointer;
 	}
@@ -166,6 +184,12 @@
 		outline: 2px solid var(--color-focus-outer);
 		outline-offset: 2px;
 		box-shadow: 0 0 0 2px var(--color-focus-inner);
+	}
+
+	/* 開いているファイルは左の縦線と太字で示す（APG Navigation Treeview の例） */
+	[aria-current='true'] > .row {
+		border-left: 3px solid var(--color-accent);
+		font-weight: 700;
 	}
 
 	.row:hover {

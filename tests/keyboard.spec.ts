@@ -208,3 +208,24 @@ test('menu: arrow keys wrap at both ends and skip the separator before the destr
 	await page.keyboard.press('ArrowUp');
 	await expect(item('Duplicate')).toBeFocused();
 });
+
+test('tree view: arrow keys reach a file in the third level and the opened file is marked current', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/tree-view/');
+	const item = (name: string) => demo.getByRole('treeitem', { name, exact: true });
+
+	await item('Documents').focus();
+	await page.keyboard.press('ArrowRight');
+	await page.keyboard.press('ArrowRight');
+	await expect(item('2026')).toBeFocused();
+	await page.keyboard.press('ArrowRight');
+	await page.keyboard.press('ArrowRight');
+	await expect(item('report.pdf')).toBeFocused();
+	await page.keyboard.press('Enter');
+	await expect(item('report.pdf')).toHaveAttribute('aria-current', 'true');
+
+	await page.keyboard.press('ArrowLeft');
+	await expect(item('2026')).toBeFocused();
+	await item('budget.xlsx').click();
+	await expect(demo.locator('[aria-current]')).toHaveCount(1);
+	await expect(item('budget.xlsx')).toHaveAttribute('aria-current', 'true');
+});

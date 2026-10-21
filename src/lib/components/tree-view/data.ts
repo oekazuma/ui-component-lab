@@ -13,8 +13,8 @@ export default {
 		ja: 'ファイル管理のフォルダのように入れ子になったリストで、枝ごとに開閉できる部品。'
 	},
 	appearance: {
-		en: 'Items indented by level, with a triangle or folder icon on items that have children. Opening one shows its children indented below it.',
-		ja: '階層ごとに字下げされた項目が並び、子を持つ項目には三角やフォルダのアイコンが付く。開くと子の項目が一段下げて表示される。'
+		en: 'Items indented by level, with a triangle or folder icon on items that have children. Opening one shows its children indented below it. The open file is marked with a bar on its left and bold text.',
+		ja: '階層ごとに字下げされた項目が並び、子を持つ項目には三角やフォルダのアイコンが付く。開くと子の項目が一段下げて表示される。開いているファイルは左の縦線と太字で示される。'
 	},
 	behavior: [
 		{
@@ -22,12 +22,16 @@ export default {
 			ja: 'フォルダをクリックすると開閉し、ファイルをクリックすると開く。'
 		},
 		{
+			en: 'The open file has `aria-current="true"`, so screen readers announce it as current. Only one item has it at a time.',
+			ja: '開いているファイルには `aria-current="true"` を付け、スクリーンリーダーで「現在の項目」と読み上げられるようにする。付くのは常に1つだけ。'
+		},
+		{
 			en: 'The whole tree is a single Tab stop; the arrow keys move between visible items.',
 			ja: 'ツリー全体で Tab の止まる場所は1か所だけで、見えている項目の間は矢印キーで移る。'
 		},
 		{
-			en: 'This demo leaves out two APG keys: jumping by typing and * to open all siblings.',
-			ja: 'このデモでは APG にある、文字入力での移動と * での一括展開を省いている。'
+			en: 'In this demo, jumping by typing a name and * to open all siblings are left out. APG recommends typing to jump especially for trees with more than seven top-level items, and lists * as optional; this tree has three top-level items and few files, so the arrow keys reach every item quickly.',
+			ja: 'このデモでは、名前の文字を打って移る操作と、* での一括展開を省いている。APG は文字入力での移動を特に最上位の項目が7つを超える木に勧め、* は任意としている。この木は最上位が3つでファイルも少なく、矢印キーだけで素早くたどれる。'
 		}
 	],
 	keyboard: [
@@ -47,7 +51,13 @@ export default {
 			}
 		},
 		{ key: 'Home / End', action: { en: 'Moves to the first or last visible item.', ja: '最初または最後の見えている項目へ移る。' } },
-		{ key: 'Enter', action: { en: 'Opens a file, or opens or closes a folder.', ja: 'ファイルを開く。フォルダでは開閉する。' } }
+		{
+			key: 'Enter',
+			action: {
+				en: 'Opens a file and marks it as current, or opens or closes a folder.',
+				ja: 'ファイルを開き、現在の項目にする。フォルダでは開閉する。'
+			}
+		}
 	],
 	usage: [
 		{
@@ -68,7 +78,12 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Tree View Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/treeview/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'WAI-ARIA APG: Navigation Treeview Example',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/treeview/examples/treeview-navigation/',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Carbon Design System: Tree view',
