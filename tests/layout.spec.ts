@@ -3,9 +3,14 @@ import { expect, test } from '@playwright/test';
 test('footer: links to the systems index, the repository and the license', async ({ page }) => {
 	await page.goto('ja/components/tabs/');
 	const footer = page.getByRole('contentinfo');
-	await expect(footer.getByRole('link', { name: 'デザインシステム別の呼び名' })).toBeVisible();
-	await expect(footer.getByRole('link', { name: /GitHub.*外部サイト/ })).toBeVisible();
-	await expect(footer.getByRole('link', { name: /MIT/ })).toBeVisible();
+	await expect(footer.getByRole('link', { name: 'デザインシステムごとの名前の対応表' })).toBeVisible();
+	// GitHub とライセンスはアイコンだけのリンク。読み上げ用の名前と、マウスを乗せたときの説明があることを見る
+	for (const name of [/GitHub.*外部サイト/, /MIT.*外部サイト/]) {
+		const link = footer.getByRole('link', { name });
+		await expect(link).toBeVisible();
+		await expect(link.locator('svg')).toBeVisible();
+		await expect(link).toHaveAttribute('title', /.+/);
+	}
 	await expect(footer).toContainText('出典');
 });
 
@@ -43,4 +48,10 @@ test('toc: marks the last section once the page is scrolled to the end', async (
 	const toc = page.getByRole('navigation', { name: 'このページの内容' });
 	await expect(toc.getByRole('link', { name: '出典' })).toHaveAttribute('aria-current', 'location');
 	await expect(toc.locator('[aria-current]')).toHaveCount(1);
+});
+
+test('systems: the page title says it is a table of names', async ({ page }) => {
+	await page.goto('en/systems/');
+	await expect(page.getByRole('heading', { level: 1 })).toHaveText('Component names across design systems');
+	await expect(page).toHaveTitle(/Component names across design systems/);
 });

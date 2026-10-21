@@ -19,7 +19,7 @@ const ui = {
 		instead: 'Instead',
 		deceptive: 'Deceptive pattern',
 		toc: 'On this page',
-		external: '(opens another site)',
+		external: ' (opens another site)',
 		darkMode: 'Dark mode',
 		skipToContent: 'Skip to content',
 		repository: 'Source on GitHub',
@@ -36,7 +36,7 @@ const ui = {
 		all: 'All',
 		count: (n: number) => `${n} ${n === 1 ? 'component' : 'components'}`,
 		noResults: 'No components match.',
-		systems: 'Names by design system',
+		systems: 'Component names across design systems',
 		systemsLead:
 			'What each design system calls the components in this guide. Components with no other known name are not listed.',
 		nameInSystem: 'Name in the system',
@@ -75,7 +75,7 @@ const ui = {
 		all: 'すべて',
 		count: (n: number) => `${n}件`,
 		noResults: '該当するコンポーネントはありません。',
-		systems: 'デザインシステム別の呼び名',
+		systems: 'デザインシステムごとの名前の対応表',
 		systemsLead:
 			'このサイトの部品を、各デザインシステムが何と呼んでいるかの一覧。ほかの呼び名が見つかっていない部品は載せていない。',
 		nameInSystem: 'そのシステムでの呼び名',
