@@ -20,7 +20,12 @@
 	$effect(() => () => clearTimeout(timer));
 </script>
 
-<svelte:window onkeydown={(e) => e.key === 'Escape' && (shown = false)} />
+<!-- トーストはフォーカスを受けないので window で Esc を受ける。他の部品が処理済みの Esc と IME 変換中の Esc は無視する -->
+<svelte:window
+	onkeydown={(e) => {
+		if (e.key === 'Escape' && shown && !e.defaultPrevented && !e.isComposing) shown = false;
+	}}
+/>
 
 <button type="button" class="btn" onclick={show}>{text[lang].button}</button>
 <!-- ライブリージョンは最初から置いておき、中身だけを差し替える（後から作ると読み上げられないことがある） -->

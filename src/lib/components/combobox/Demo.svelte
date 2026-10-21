@@ -54,8 +54,9 @@
 				else open = false;
 				break;
 			case 'Escape':
-				if (expanded) open = false;
-				else value = '';
+				// 閉じているときだけ入力欄を空にする。空にすると全候補が一致するため、open も必ず落とす
+				if (!expanded) value = '';
+				open = false;
 				active = -1;
 				break;
 			case 'ArrowLeft':
@@ -84,7 +85,10 @@
 			active = -1;
 		}}
 		{onkeydown}
-		onblur={() => (open = false)}
+		onblur={() => {
+			open = false;
+			active = -1;
+		}}
 	/>
 	<ul id="{uid}-list" role="listbox" aria-label={text[lang].label} hidden={!expanded}>
 		{#each suggestions as option, i (option)}
