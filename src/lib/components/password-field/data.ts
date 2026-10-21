@@ -103,8 +103,8 @@ export default {
 				ja: '`maxlength` で長さを打ち切る'
 			},
 			harm: {
-				en: 'A password pasted or filled in by a password manager is cut off without any message, so people do not know that the saved password is not the one they meant.',
-				ja: '貼り付けたパスワードや、パスワードマネージャーが入れたパスワードが、何の知らせもなく途中で切れる。利用者は、意図したものと違うパスワードになったことに気づけない。'
+				en: 'A password pasted or filled in by a password manager is cut off, and nothing tells people that it was.',
+				ja: '貼り付けたパスワードや、パスワードマネージャーが入れたパスワードが途中で切れても、利用者には何の知らせもない。'
 			},
 			instead: {
 				en: 'Do not set a maximum. If one is truly needed, let people type past it and say so in an error message.',

@@ -10,8 +10,8 @@ export default {
 		ja: 'SMS やメール、アプリで届いた短いコードを入れて、本人であることを1回だけ確かめる欄。'
 	},
 	appearance: {
-		en: 'A short text box with a label such as “Security code” and a hint saying where the code was sent. Some services draw one box for each digit instead.',
-		ja: '「確認コード」のようなラベルと、コードの送り先を伝える補足の文が付いた短い入力欄。数字1桁ごとに枠を並べる作りもある。'
+		en: 'A short text box with a label such as “Security code” and a hint saying how the code was sent. Some services draw one box for each digit instead.',
+		ja: '「確認コード」のようなラベルと、コードをどの方法で送ったかを伝える補足の文が付いた短い入力欄。数字1桁ごとに枠を並べる作りもある。'
 	},
 	behavior: [
 		{
@@ -47,8 +47,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Say in the hint where the code was sent and how many digits it has.',
-			ja: '補足の文で、コードの送り先と桁数を伝える。'
+			en: 'Say in the hint how the code was sent and how many digits it has. When people are signing in, do not show the phone number it was sent to.',
+			ja: '補足の文で、コードをどの方法で送ったかと桁数を伝える。ログインのときは、送り先の電話番号を見せない。'
 		},
 		{
 			en: 'Messages can take a few minutes to arrive. Offer a way to get a new code, and say what to do if the person cannot use their phone.',
@@ -80,8 +80,8 @@ export default {
 				ja: '`autocomplete="off"` で自動入力を止める'
 			},
 			harm: {
-				en: 'It removes a feature that many people depend on. People with motor impairments, who benefit from typing less, have to type the whole code.',
-				ja: '多くの人が頼りにしている機能がなくなる。入力が減ると助かる、運動機能に障害のある人も、コードをすべて手で入力することになる。'
+				en: 'The phone or browser can no longer offer the code from the message, so people with motor impairments, who are helped by typing less, have to type all of it.',
+				ja: 'スマートフォンやブラウザが、届いたコードを入力の候補に出せなくなる。入力が減ると助かる、運動機能に障害のある人も、コードをすべて手で入力することになる。'
 			},
 			instead: {
 				en: 'Set `autocomplete="one-time-code"` so the browser or phone can fill in the code from the message.',

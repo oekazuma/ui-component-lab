@@ -93,6 +93,13 @@ export default {
 				en: 'A slider picks a rough position by dragging; a number input is better when the exact number matters.',
 				ja: 'スライダーはつまみで大まかな位置を選び、数値入力は正確な数値が大事なときに向いている。'
 			}
+		},
+		{
+			id: 'rating',
+			diff: {
+				en: 'A slider chooses any value along a track by moving a knob; a rating chooses one of a few scores, such as 1 to 5 stars, each a separate option.',
+				ja: 'スライダーは、つまみを溝に沿って動かして、範囲内の値を選ぶ。評価は、星1〜5のような少しの点数から、選択肢を1つ選ぶ。'
+			}
 		}
 	],
 	sources: [

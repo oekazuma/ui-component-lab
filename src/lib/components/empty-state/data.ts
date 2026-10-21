@@ -84,8 +84,8 @@ export default {
 			ja: '次にする操作は1つに絞る。1つの画面に空の状態がいくつも出るときは、目立ちにくいボタンにして、画面が主ボタンだらけにならないようにする。'
 		},
 		{
-			en: 'Match the tone to the situation. Avoid jokes, especially when something went wrong.',
-			ja: '場面に合った口調にする。とくに問題が起きたときは冗談を避ける。'
+			en: 'Match the tone to the situation. Do not joke when something went wrong.',
+			ja: '場面に合った口調にする。問題が起きたときは冗談を言わない。'
 		}
 	],
 	misuse: [
@@ -95,8 +95,8 @@ export default {
 				ja: 'まだ読み込み中なのに「データがありません」と出す'
 			},
 			harm: {
-				en: 'People who see the message and then watch content appear stop trusting the app. Impatient people believe there is nothing and leave before the content arrives.',
-				ja: '「ない」と出たあとに内容が現れるのを見た人は、アプリを信用しなくなる。待てない人は、本当に何もないと思い込み、内容が届く前に離れてしまう。'
+				en: 'People who see the message and then watch content appear stop trusting the app. Impatient people believe there is nothing, move on before it loads, and never finish what they came to do.',
+				ja: '「ない」と出たあとに内容が現れるのを見た人は、アプリを信用しなくなる。待てない人は、本当に何もないと思い込んで内容が届く前に先へ進み、やろうとしていたことを終えられない。'
 			},
 			instead: {
 				en: 'Show a loading indicator while loading, and show the empty state only after loading has finished with nothing to show.',
@@ -105,8 +105,8 @@ export default {
 		},
 		{
 			pattern: {
-				en: 'Leaving the area blank, or saying only that it is empty',
-				ja: '何も表示しない、または空であることだけを伝える'
+				en: 'Leaving the area completely blank',
+				ja: '何も表示せず、空白のままにする'
 			},
 			harm: {
 				en: 'People who filter or search cannot tell whether the system is still working, failed, or found nothing, and run the same search again and again. New users miss the chance to learn what the area is for and how to start.',
@@ -131,6 +131,13 @@ export default {
 			diff: {
 				en: 'An empty state stands in for missing content and points to the next step; an alert is a message that interrupts to report something important.',
 				ja: '空の状態は、ない内容の代わりに置き、次の操作を示す。アラートは、大事なことを知らせるために割り込んで出る通知。'
+			}
+		},
+		{
+			id: 'search-field',
+			diff: {
+				en: 'An empty state is what appears in place of the results when a search finds nothing; a search field is where the search terms are typed.',
+				ja: '空の状態は、検索で何も見つからなかったときに結果の代わりに出る表示。検索ボックスは、検索語を入力する欄。'
 			}
 		}
 	],

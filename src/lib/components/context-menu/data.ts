@@ -107,8 +107,8 @@ export default {
 				ja: '操作をコンテキストメニューの中にしか置かない'
 			},
 			harm: {
-				en: 'A context menu is hidden until it is opened, so people may not know it is there.',
-				ja: 'コンテキストメニューは開くまで見えないので、あることに気づかない人がいる。'
+				en: 'Nothing on screen shows that a right-click does anything, so some people never find the actions.',
+				ja: '右クリックで何かできることが画面のどこにも示されないので、操作を見つけられない人がいる。'
 			},
 			instead: {
 				en: 'Make every action in the context menu available in the main interface too, such as a visible “⋯” button, a toolbar or the menu bar.',
@@ -121,8 +121,8 @@ export default {
 				ja: 'コンテキストメニューに項目をたくさん入れる'
 			},
 			harm: {
-				en: 'A long context menu is hard to scan and may need scrolling.',
-				ja: '長いコンテキストメニューは、目で追いにくく、スクロールが要ることもある。'
+				en: 'People have to read down a long list to find an action, and may have to scroll through it.',
+				ja: '操作を探すのに長い一覧を上から読むことになり、スクロールが要ることもある。'
 			},
 			instead: {
 				en: 'Keep it to a few items that fit the item, and move rarely used actions elsewhere. Carbon suggests no more than 12.',

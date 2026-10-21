@@ -109,6 +109,13 @@ export default {
 				en: 'A search field sends the typed words as they are; a combobox suggests values to pick from while typing.',
 				ja: '検索ボックスは入力した語をそのまま送り、コンボボックスは入力中に選べる候補を出す。'
 			}
+		},
+		{
+			id: 'empty-state',
+			diff: {
+				en: 'A search field is where the search terms are typed; an empty state is what appears in place of the results when the search finds nothing.',
+				ja: '検索ボックスは、検索語を入力する欄。空の状態は、検索で何も見つからなかったときに結果の代わりに出る表示。'
+			}
 		}
 	],
 	sources: [

@@ -86,6 +86,13 @@ export default {
 				en: 'A rating is a radio group drawn as stars, where the choices are ordered scores; radio buttons list choices with their own labels.',
 				ja: '評価は、選択肢が順に並んだ点数になっているラジオボタンのグループを星の形で見せたもの。ラジオボタンは選択肢をそれぞれのラベル付きで並べる。'
 			}
+		},
+		{
+			id: 'slider',
+			diff: {
+				en: 'A rating chooses one of a few scores, such as 1 to 5 stars, each a separate option; a slider chooses any value along a track by moving a knob.',
+				ja: '評価は、星1〜5のような少しの点数から、選択肢を1つ選ぶ。スライダーは、つまみを溝に沿って動かして、範囲内の値を選ぶ。'
+			}
 		}
 	],
 	sources: [
