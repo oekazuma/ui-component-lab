@@ -43,6 +43,36 @@ export default {
 			ja: '狭い画面では、横にスクロールさせず折り返して表示する。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Listing the pages the user visited, in the order visited',
+				ja: '利用者が見てきたページを、見た順に並べる'
+			},
+			harm: {
+				en: 'The trail grows long, repetitive and confusing, and it does nothing for people who land on a deep page directly from an outside link.',
+				ja: '並びが長く重複が多くなって分かりにくく、外部のリンクから深い階層のページに直接来た人には何の手がかりにもならない。'
+			},
+			instead: {
+				en: 'Show where the current page sits in the site’s hierarchy. Leave going back through history to the browser’s Back button.',
+				ja: 'サイトの階層の中で今のページがどこにあるかを示す。たどってきた順に戻る操作は、ブラウザの「戻る」に任せる。'
+			}
+		},
+		{
+			pattern: {
+				en: 'Using a breadcrumb in place of the global or section navigation',
+				ja: 'グローバルナビゲーションやセクション内のナビゲーションの代わりに、パンくずリストだけを置く'
+			},
+			harm: {
+				en: 'Users lose easy access to the other pages in the same section.',
+				ja: '利用者が、同じセクションのほかのページへ移りにくくなる。'
+			},
+			instead: {
+				en: 'Keep the global and section navigation, and add the breadcrumb alongside them.',
+				ja: 'グローバルナビゲーションやセクション内のナビゲーションは残し、パンくずリストはそれに添えて置く。'
+			}
+		}
+	],
 	sources: [
 		{
 			label: 'WAI-ARIA APG: Breadcrumb Pattern',
@@ -53,6 +83,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「パンくずナビゲーション」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/breadcrumb/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Nielsen Norman Group: Breadcrumbs: 11 Design Guidelines for Desktop and Mobile',
+			url: 'https://www.nngroup.com/articles/breadcrumbs/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

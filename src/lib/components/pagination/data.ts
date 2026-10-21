@@ -57,6 +57,22 @@ export default {
 			ja: 'デジタル庁デザインシステムでは、最初と最後のページで「前へ」「次へ」を無効にせず非表示にする。このデモは aria-disabled にして、フォーカスできるまま残している。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Loading more items automatically as the user nears the bottom, instead of splitting them into pages',
+				ja: 'ページに分けず、下端に近づくと続きを自動で読み込む'
+			},
+			harm: {
+				en: 'Keyboard users run into problems. It is hard to find an item seen earlier, and the scroll bar no longer shows how much is left.',
+				ja: 'キーボードで操作する人が使いにくくなる。前に見た項目を探し直しにくく、スクロールバーからは残りの量が分からなくなる。'
+			},
+			instead: {
+				en: 'For lists where people look for a particular item, split the results into pages and show the current page among the others.',
+				ja: '目的の項目を探す一覧では、結果をページに分け、今どのページにいるかを示す。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'carousel',
@@ -88,6 +104,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ページナビゲーション」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/page-navigation/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Nielsen Norman Group: Infinite Scrolling Is Not for Every Website',
+			url: 'https://www.nngroup.com/articles/infinite-scrolling/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

@@ -66,6 +66,37 @@ export default {
 			ja: '読み込み待ちのような一時的な状態にはプログレスインジケーターを、順番に並んだページの行き来にはページネーションを使う。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Asking in a later step for information the user already entered in an earlier step',
+				ja: '前の段階で入力した内容を、後の段階でもう一度入力させる'
+			},
+			harm: {
+				en: 'People with cognitive, learning or memory disabilities have to recall earlier answers. They may make mistakes or give up on the process.',
+				ja: '認知障害や学習障害、記憶に困難のある人は、前に入力した内容を思い出さなければならない。入力を誤ったり、手続きをあきらめたりすることがある。'
+			},
+			instead: {
+				en: 'Fill in what the user already entered, or let them choose it, for example with a "Same as shipping address" checkbox.',
+				ja: '入力済みの内容をあらかじめ入れておくか、選べるようにする。例えば「お届け先と同じ」のチェックボックスを置く。'
+			}
+		},
+		{
+			pattern: {
+				en: 'Making cancellation or account deletion take many more steps than signing up',
+				ja: '申し込みは少ない段階で済むのに、解約や退会には多くの段階を踏ませる'
+			},
+			harm: {
+				en: 'Users who want to leave are kept away from it. Some give up and keep paying for a service they no longer need.',
+				ja: 'やめたい利用者が、その操作から遠ざけられる。あきらめて、もう要らないサービスに払い続ける人も出る。'
+			},
+			instead: {
+				en: 'Let users cancel in about as many steps as it took to sign up, and show the way to cancel where they can find it.',
+				ja: '申し込みと同じくらいの段階数で解約できるようにし、解約の入り口を見つけやすい場所に置く。'
+			},
+			deceptive: true
+		}
+	],
 	related: [
 		{
 			id: 'tabs',
@@ -115,6 +146,21 @@ export default {
 		{
 			label: 'Apple Human Interface Guidelines: Steppers',
 			url: 'https://developer.apple.com/design/human-interface-guidelines/steppers',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Understanding Success Criterion 3.3.7: Redundant Entry (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deceptive Patterns: Hard to cancel',
+			url: 'https://www.deceptive.design/types/hard-to-cancel',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
+			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
 		}
 	]

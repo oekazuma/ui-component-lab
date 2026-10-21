@@ -50,6 +50,22 @@ export default {
 			ja: 'サイト内の移動、手順の進行、絞り込み、並べて比べたい内容には使わない。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Switching panels on focus alone when a panel takes time to appear',
+				ja: '表示に時間がかかるパネルを、フォーカスを移しただけで切り替える'
+			},
+			harm: {
+				en: 'Focus moves slowly from tab to tab, which makes it much harder for keyboard users to move through the tab list.',
+				ja: 'タブ間のフォーカスの移動が遅くなり、キーボードで操作する人がタブの並びを効率よく移動しにくくなる。'
+			},
+			instead: {
+				en: 'Switch the panel only when the user presses Enter or Space (manual activation), or load the panel content in advance.',
+				ja: 'Enter や Space を押したときだけパネルを切り替える（手動アクティベーション）か、パネルの内容を先に読み込んでおく。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'carousel',
