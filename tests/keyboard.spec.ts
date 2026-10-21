@@ -410,3 +410,38 @@ test('feed: Page Down / Page Up move by article, the last one loads more, and Ct
 	await page.keyboard.press('Control+Home');
 	expect(await feed.evaluate((el) => !el.contains(document.activeElement) && !!(el.compareDocumentPosition(document.activeElement!) & Node.DOCUMENT_POSITION_PRECEDING))).toBe(true);
 });
+
+test('range slider: each thumb stops at the other, and the limits move with it', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/range-slider/');
+	const low = demo.getByRole('slider', { name: 'Minimum price' });
+	const high = demo.getByRole('slider', { name: 'Maximum price' });
+	await expect(low).toHaveAttribute('aria-valuenow', '100');
+	await expect(low).toHaveAttribute('aria-valuetext', '$100');
+	await expect(low).toHaveAttribute('aria-valuemax', '300');
+
+	await low.focus();
+	await page.keyboard.press('ArrowRight');
+	await expect(low).toHaveAttribute('aria-valuenow', '110');
+	await expect(high).toHaveAttribute('aria-valuemin', '110');
+	await page.keyboard.press('ArrowDown');
+	await expect(low).toHaveAttribute('aria-valuenow', '100');
+	await page.keyboard.press('End');
+	await expect(low).toHaveAttribute('aria-valuenow', '300');
+	await page.keyboard.press('ArrowUp');
+	await expect(low).toHaveAttribute('aria-valuenow', '300');
+
+	// 重なっても Tab の順は変わらない
+	await page.keyboard.press('Tab');
+	await expect(high).toBeFocused();
+	await page.keyboard.press('PageUp');
+	await expect(high).toHaveAttribute('aria-valuenow', '400');
+	await expect(low).toHaveAttribute('aria-valuemax', '400');
+	await page.keyboard.press('Home');
+	await expect(high).toHaveAttribute('aria-valuenow', '300');
+	await page.keyboard.press('End');
+	await expect(high).toHaveAttribute('aria-valuenow', '500');
+	await page.keyboard.press('Shift+Tab');
+	await page.keyboard.press('PageDown');
+	await page.keyboard.press('Home');
+	await expect(low).toHaveAttribute('aria-valuenow', '0');
+});

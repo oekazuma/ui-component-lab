@@ -74,6 +74,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'range-slider',
+			diff: {
+				en: 'A slider has one knob that picks a single value; a range slider has two knobs that pick the lowest and highest values.',
+				ja: 'スライダーは 1 つのつまみで 1 つの値を選び、範囲スライダーは 2 つのつまみで下限と上限を選ぶ。'
+			}
+		},
+		{
 			id: 'number-input',
 			diff: {
 				en: 'A slider picks a rough position by dragging; a number input is better when the exact number matters.',

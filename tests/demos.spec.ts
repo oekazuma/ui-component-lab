@@ -928,3 +928,33 @@ test('feed: stops loading after nine posts and says so', async ({ page }) => {
 	await expect(demo.getByRole('status')).toHaveText('No more posts');
 	await expect(articles).toHaveCount(9);
 });
+
+test('range slider: clicking the track moves the nearer thumb there', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/range-slider/');
+	const low = demo.getByRole('slider', { name: 'Minimum price' });
+	const high = demo.getByRole('slider', { name: 'Maximum price' });
+	const track = (await demo.locator('.rail').boundingBox())!;
+
+	await page.mouse.click(track.x + track.width * 0.9, track.y + track.height / 2);
+	await expect(high).toHaveAttribute('aria-valuenow', '450');
+	await expect(high).toBeFocused();
+	await page.mouse.click(track.x + track.width * 0.1, track.y + track.height / 2);
+	await expect(low).toHaveAttribute('aria-valuenow', '50');
+	await expect(high).toHaveAttribute('aria-valuenow', '450');
+});
+
+test('range slider: dragging a thumb moves it and it stops at the other thumb', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/range-slider/');
+	const high = demo.getByRole('slider', { name: 'Maximum price' });
+	const track = (await demo.locator('.rail').boundingBox())!;
+	const y = track.y + track.height / 2;
+	const thumb = (await high.boundingBox())!;
+
+	await page.mouse.move(thumb.x + thumb.width / 2, y);
+	await page.mouse.down();
+	await page.mouse.move(track.x + track.width * 0.7, y, { steps: 5 });
+	await expect(high).toHaveAttribute('aria-valuenow', '350');
+	await page.mouse.move(track.x, y, { steps: 5 });
+	await page.mouse.up();
+	await expect(high).toHaveAttribute('aria-valuenow', '100');
+});
