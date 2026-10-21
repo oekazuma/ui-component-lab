@@ -14,8 +14,8 @@ export default {
 		ja: '申請など複数画面にまたがる手続きの段階と、今どの段階にいるかを示す部品。'
 	},
 	appearance: {
-		en: 'Numbered circles in a row (or column) with a name under each. Finished steps show a check mark and the current one is highlighted.',
-		ja: '番号の付いた丸が横（または縦）に並び、それぞれに名前が付く。終わった段階にはチェックが付き、現在の段階は強調される。'
+		en: 'Numbered circles in a row (or column) with a name under each. Finished steps show a check mark, skipped steps a dashed circle with “Skipped”, and the current one is highlighted.',
+		ja: '番号の付いた丸が横（または縦）に並び、それぞれに名前が付く。終わった段階にはチェックが、スキップした段階には点線の丸と「スキップ」が付き、現在の段階は強調される。'
 	},
 	behavior: [
 		{
@@ -23,16 +23,35 @@ export default {
 			ja: '「次へ」などのボタンで手続きを進めると、表示が切り替わる。'
 		},
 		{
-			en: 'In this demo, the steps themselves are not interactive. The current step is marked with `aria-current="step"`, and finished steps have hidden text saying so.',
-			ja: 'このデモでは段階の表示そのものは操作できない。現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添えている。'
+			en: 'The current step is marked with `aria-current="step"`, and finished steps have hidden text saying so. Hidden text before the steps tells screen reader users the overall progress, such as “4 steps in total; reached step 2”.',
+			ja: '現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添える。段階の並びの前には「全4ステップ中、2ステップ目まで到達済み」のような全体の進み具合を、読み上げ用の文で置く。'
+		},
+		{
+			en: 'In this demo, every step already reached is a button, so you can go back to a finished step and return. The current step and steps not yet reached are plain text.',
+			ja: 'このデモでは、一度たどり着いた段階はボタンになり、終わった段階へ戻ってまた先へ進める。現在の段階とまだ着いていない段階はただの文字。'
+		},
+		{
+			en: 'In this demo, “Documents” is optional and there is nothing to attach, so moving past it marks it as skipped. The state is shown in words, not only by the dashed circle.',
+			ja: 'このデモでは「添付書類」は任意で、添付する操作もないため、先へ進むとスキップ扱いになる。状態は点線の丸だけでなく文字でも示す。'
+		},
+		{
+			en: 'In this demo, the last step’s button says “Submit” instead of “Next”. After submitting, focus moves to the confirmation message.',
+			ja: 'このデモでは、最後の段階のボタンは「次へ」ではなく「申請する」になる。申請すると、受付の文へフォーカスが移る。'
 		}
 	],
 	keyboard: [
 		{
-			key: '—',
+			key: 'Tab / Shift + Tab',
 			action: {
-				en: 'None for the step display. The demo’s Back and Next buttons use Tab and Enter / Space.',
-				ja: '段階の表示にはない。デモの「戻る」「次へ」は Tab と Enter / Space で操作する。'
+				en: 'Moves through the step buttons and the Back and Next buttons.',
+				ja: '段階のボタンと「戻る」「次へ」の間を移る。'
+			}
+		},
+		{
+			key: 'Enter / Space',
+			action: {
+				en: 'On a step button, goes to that step. Also presses Back, Next and Submit.',
+				ja: '段階のボタンでは、その段階へ移る。「戻る」「次へ」「申請する」もこのキーで押す。'
 			}
 		}
 	],
@@ -47,8 +66,8 @@ export default {
 		{
 			name: { en: 'Clickable steps', ja: '段階へ移動できるもの' },
 			description: {
-				en: 'Finished steps are links or buttons so the user can go back to them.',
-				ja: '終わった段階をリンクやボタンにして、戻れるようにしたもの。'
+				en: 'Finished steps are links or buttons so the user can go back to them, as in this demo. With links, the Digital Agency Design System wraps the steps in a `<nav>` with an `aria-label`.',
+				ja: 'このデモのように、終わった段階をリンクやボタンにして戻れるようにしたもの。リンクにする場合、デジタル庁デザインシステムは全体を `aria-label` 付きの `<nav>` で囲む。'
 			}
 		}
 	],
@@ -142,6 +161,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ステップナビゲーション」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/step-navigation/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: step-navigation',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/step-navigation',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Apple Human Interface Guidelines: Steppers',

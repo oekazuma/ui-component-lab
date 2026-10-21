@@ -288,3 +288,25 @@ test('tabs: a switch in a panel keeps its state while another tab is shown', asy
 	await demo.getByRole('tab', { name: 'Notifications' }).click();
 	await expect(email).toBeChecked();
 });
+
+test('stepper: an optional step is shown as skipped, finished steps are buttons, and the last step submits', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/stepper/');
+	const next = demo.getByRole('button', { name: 'Next' });
+	const step = (name: string) => demo.getByRole('listitem').filter({ hasText: name });
+	await next.click();
+	await next.click();
+	await next.click();
+	await expect(step('Documents')).toContainText('Skipped');
+	await expect(step('Review')).toHaveAttribute('aria-current', 'step');
+	await expect(demo.getByText('4 steps in total; reached step 4')).toBeAttached();
+
+	await demo.getByRole('button', { name: /^Applicant/ }).click();
+	await expect(step('Applicant')).toHaveAttribute('aria-current', 'step');
+	await expect(step('Documents')).toContainText('Skipped');
+	await demo.getByRole('button', { name: /^Review/ }).click();
+
+	await demo.getByRole('button', { name: 'Submit' }).click();
+	const done = demo.getByText('Your application has been submitted.');
+	await expect(done).toBeFocused();
+	await expect(demo.getByRole('button', { name: /^Applicant/ })).toHaveCount(0);
+});
