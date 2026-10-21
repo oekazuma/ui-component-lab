@@ -81,3 +81,16 @@ test('language switch: updates <html lang> and resets the demo state', async ({ 
 	await expect(page.locator('html')).toHaveAttribute('lang', 'ja');
 	await expect(page.getByRole('group', { name: /^デモ:/ }).locator('[role="status"]')).toHaveText('');
 });
+
+test('tooltip: Escape hides a focus-opened tooltip and focus stays on the button', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/tooltip/');
+	const button = demo.getByRole('button', { name: 'Copy link' });
+	const tooltip = demo.locator('[role="tooltip"]');
+
+	await button.focus();
+	await expect(tooltip).toHaveClass(/visible/);
+
+	await page.keyboard.press('Escape');
+	await expect(tooltip).not.toHaveClass(/visible/);
+	await expect(button).toBeFocused();
+});

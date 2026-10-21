@@ -9,13 +9,16 @@
 	};
 
 	const uid = $props.id();
-	let visible = $state(false);
+	// ホバーとフォーカスを別々に持ち、どちらかが続いている間は出しておく（WCAG 1.4.13 Persistent）
+	let hovered = $state(false);
+	let focused = $state(false);
+	let visible = $derived(hovered || focused);
 
 	// ホバーで出たときはフォーカスが別の場所にあるため、表示中だけ document で Esc を受ける（WCAG 1.4.13）
 	$effect(() => {
 		if (!visible) return;
 		const onkeydown = (e: KeyboardEvent) => {
-			if (e.key === 'Escape') visible = false;
+			if (e.key === 'Escape') hovered = focused = false;
 		};
 		document.addEventListener('keydown', onkeydown);
 		return () => document.removeEventListener('keydown', onkeydown);
@@ -26,10 +29,10 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <span
 	class="wrap"
-	onmouseenter={() => (visible = true)}
-	onmouseleave={() => (visible = false)}
-	onfocusin={() => (visible = true)}
-	onfocusout={() => (visible = false)}
+	onmouseenter={() => (hovered = true)}
+	onmouseleave={() => (hovered = false)}
+	onfocusin={() => (focused = true)}
+	onfocusout={() => (focused = false)}
 >
 	<button type="button" class="btn" aria-describedby="{uid}-tip">{text[lang].button}</button>
 	<span id="{uid}-tip" role="tooltip" class:visible>{text[lang].tip}</span>
@@ -61,6 +64,16 @@
 		transition:
 			opacity 0.1s,
 			visibility 0s 0.1s;
+	}
+
+	/* ボタンとの隙間を透明な帯で埋める。ポインターが隙間を通っても .wrap の中にいる扱いになり、ツールチップへ移れる（WCAG 1.4.13 Hoverable） */
+	[role='tooltip']::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		height: 0.4rem;
 	}
 
 	/* 表示は少し遅らせ、消すときはすぐ消す */

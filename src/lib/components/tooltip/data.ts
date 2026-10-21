@@ -15,8 +15,12 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'Appears after a short delay on hover or keyboard focus, and disappears when the pointer leaves or focus moves away.',
-			ja: 'マウスを乗せるかキーボードでフォーカスすると少し遅れて表示され、ポインターが離れるかフォーカスが移ると消える。'
+			en: 'Appears after a short delay on hover or keyboard focus. It stays while the pointer is over the element or the tooltip, or while the element has focus, and disappears once neither is true.',
+			ja: 'マウスを乗せるかキーボードでフォーカスすると少し遅れて表示される。ポインターが要素かツールチップの上にある間と、要素にフォーカスがある間は表示し続け、どちらも終わると消える。'
+		},
+		{
+			en: 'In this demo, the gap between the button and the tooltip also counts as part of the button, so the pointer can move onto the tooltip without it disappearing.',
+			ja: 'このデモでは、ボタンとツールチップの間の隙間もボタンの一部として扱い、ポインターをツールチップへ動かしても消えないようにしている。'
 		},
 		{
 			en: 'It never receives focus, so it should not contain links or buttons.',
@@ -33,7 +37,13 @@ export default {
 	],
 	keyboard: [
 		{ key: 'Tab', action: { en: 'Focusing the element shows the tooltip.', ja: '要素にフォーカスするとツールチップが出る。' } },
-		{ key: 'Esc', action: { en: 'Hides the tooltip.', ja: 'ツールチップを消す。' } }
+		{
+			key: 'Esc',
+			action: {
+				en: 'Hides the tooltip without moving focus or the pointer.',
+				ja: 'フォーカスやポインターを動かさずに、ツールチップを消す。'
+			}
+		}
 	],
 	misuse: [
 		{
