@@ -620,3 +620,24 @@ test('checkbox: a single terms checkbox starts unchecked and gives an error tied
 	// トッピングのグループはそのまま残る
 	await expect(demo.getByRole('group', { name: 'Toppings' }).getByRole('checkbox')).toHaveCount(4);
 });
+
+test('date picker: min is set to today in the browser, with a hint on the year and an example', async ({ page }) => {
+	// ビルドした日付が HTML に残らないよう、min はブラウザで入れる
+	const html = await (await page.request.get('en/components/date-picker/')).text();
+	expect(html).not.toMatch(/min="\d{4}-/);
+
+	const demo = await openDemo(page, 'en/components/date-picker/');
+	const input = demo.getByLabel('Check-in date');
+	const today = await page.evaluate(() => {
+		const d = new Date();
+		return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+	});
+	await expect(input).toHaveAttribute('min', today);
+	await expect(input).toHaveAccessibleDescription(/Western calendar.*For example, October 21, 2026/);
+
+	await input.fill('2020-01-01');
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await expect(input).toHaveAccessibleDescription(/^Choose today or a later date\./);
+	await input.fill(today);
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+});

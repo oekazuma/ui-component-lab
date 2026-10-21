@@ -27,6 +27,14 @@ export default {
 		{
 			en: 'Earliest and latest dates can be limited with `min` and `max`.',
 			ja: '選べる日付の範囲は `min` と `max` で制限できる。'
+		},
+		{
+			en: 'In this demo, `min` is today, so earlier days cannot be picked from the calendar. It is set in the browser when the page opens, because a date written into the page when it was built would go out of date. An earlier date can still be typed in, so once a whole date is entered, an error appears below the field.',
+			ja: 'このデモでは `min` を今日にしているので、カレンダーでは今日より前の日を選べない。ページを作った時点の日付が残らないよう、`min` はページを開いたときにブラウザで入れる。直接入力では前の日付も入れられるので、日付を入れ終えた時点で欄の下にエラーを出す。'
+		},
+		{
+			en: 'The hint between the label and the field says which dates can be chosen, that the year is in the Western calendar, and gives an example of a whole date. It is linked with `aria-describedby`, and no placeholder text is used.',
+			ja: 'ラベルと欄の間の補足の文で、選べる日付と、年は西暦で入れることを伝え、年月日の入力例を示す。補足は `aria-describedby` でつなぎ、プレースホルダーは使わない。'
 		}
 	],
 	keyboard: [
@@ -38,7 +46,7 @@ export default {
 			}
 		},
 		{
-			key: '← / → / Tab',
+			key: '← / →',
 			action: {
 				en: 'Moves between the year, month, and day parts (in Chrome).',
 				ja: '年・月・日の間を移動する（Chrome の場合）。'
@@ -47,9 +55,23 @@ export default {
 		{
 			key: '0–9',
 			action: { en: 'Types the number for the focused part.', ja: 'フォーカス中の部分に数字を入力する。' }
+		},
+		{
+			key: 'Tab / Shift + Tab',
+			action: {
+				en: 'Moves between the year, month, and day parts, then out of the field (in Chrome).',
+				ja: '年・月・日の間を移動し、端からは入力欄の外へ出る（Chrome の場合）。'
+			}
 		}
 	],
 	variations: [
+		{
+			name: { en: 'Separate fields', ja: '年・月・日に分けた欄' },
+			description: {
+				en: 'Year, month and day are separate text fields, each with its own label and `inputmode="numeric"`. DADS calls this the Separated type, and the single field the Consolidated type. A field can be left out when it is not needed, such as for a year and month only.',
+				ja: '年・月・日をそれぞれラベル付きの別の入力欄にし、`inputmode="numeric"` を付けたもの。DADS ではこれを Separated タイプ、1つの欄にまとめたものを Consolidated タイプと呼ぶ。年月だけのように、要らない欄は省ける。'
+			}
+		},
 		{
 			name: { en: 'Calendar dialog', ja: 'カレンダーのダイアログ' },
 			description: {
@@ -59,6 +81,10 @@ export default {
 		}
 	],
 	usage: [
+		{
+			en: 'Say in the hint that the year is in the Western calendar and give an example of a whole date. Do not use placeholder text.',
+			ja: '補足の文で、年は西暦で入れることを伝え、年月日の入力例を示す。プレースホルダーは使わない。'
+		},
 		{
 			en: 'Open the calendar only from its button, not on focus or hover.',
 			ja: 'カレンダーはボタンからだけ開き、フォーカスやホバーでは開かない。'
@@ -104,6 +130,11 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「日付ピッカー／カレンダー（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/date-picker/usage/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: date-picker',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/date-picker',
 			checkedAt: '2026-10-21'
 		}
 	]
