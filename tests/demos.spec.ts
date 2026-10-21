@@ -112,3 +112,13 @@ for (const path of ['en/', 'ja/']) {
 		expect(small).toEqual([]);
 	});
 }
+
+test('menu and split button: the menu takes its name from the button that opens it', async ({ page }) => {
+	let demo = await openDemo(page, 'en/components/menu/');
+	await demo.getByRole('button', { name: 'Actions' }).click();
+	await expect(demo.getByRole('menu', { name: 'Actions' })).toBeVisible();
+
+	demo = await openDemo(page, 'en/components/split-button/');
+	await demo.getByRole('button', { name: 'More save options' }).click();
+	await expect(demo.getByRole('menu', { name: 'More save options' })).toBeVisible();
+});

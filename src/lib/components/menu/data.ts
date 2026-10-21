@@ -29,6 +29,10 @@ export default {
 		{
 			en: 'Pressing Esc, pressing Tab, or clicking outside closes the menu without running anything.',
 			ja: 'Esc や Tab を押すか、外側をクリックすると、何も実行せずに閉じる。'
+		},
+		{
+			en: 'The `role="menu"` element takes its name from the button with `aria-labelledby`, so screen readers say which menu opened.',
+			ja: '`role="menu"` の要素は `aria-labelledby` で開くボタンを指して名前を得る。スクリーンリーダーは、どのメニューが開いたかを読み上げる。'
 		}
 	],
 	keyboard: [

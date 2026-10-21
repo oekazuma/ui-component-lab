@@ -84,6 +84,7 @@
 >
 	<button
 		bind:this={button}
+		id="{uid}-button"
 		type="button"
 		class={['btn', className]}
 		aria-haspopup="menu"
@@ -95,7 +96,15 @@
 	>
 		{@render trigger()}
 	</button>
-	<ul bind:this={menu} id="{uid}-menu" role="menu" hidden={!open} onkeydown={onMenuKeydown}>
+	<!-- APG Menu Button: メニューの名前は開くボタンから取る -->
+	<ul
+		bind:this={menu}
+		id="{uid}-menu"
+		role="menu"
+		aria-labelledby="{uid}-button"
+		hidden={!open}
+		onkeydown={onMenuKeydown}
+	>
 		{#each items as item (item)}
 			<li role="none">
 				<button

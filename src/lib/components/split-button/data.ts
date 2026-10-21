@@ -25,6 +25,10 @@ export default {
 			ja: '矢印を押すと他の操作のメニューが開き、選ぶとその操作を実行してメニューが閉じる。'
 		},
 		{
+			en: 'The menu points to the arrow button with `aria-labelledby`, so it is named after the button’s label (in this demo, “More save options”).',
+			ja: 'メニューは `aria-labelledby` で矢印のボタンを指し、ボタンのラベル（このデモでは「その他の保存方法」）を名前にする。'
+		},
+		{
 			en: 'The two parts are separate buttons, each reached with Tab.',
 			ja: '2つの部分は別々のボタンで、それぞれ Tab でフォーカスできる。'
 		}
