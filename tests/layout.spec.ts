@@ -55,3 +55,55 @@ test('systems: the page title says it is a table of names', async ({ page }) => 
 	await expect(page.getByRole('heading', { level: 1 })).toHaveText('Component names across design systems');
 	await expect(page).toHaveTitle(/Component names across design systems/);
 });
+
+test('systems: no horizontal scroll on phones in Japanese', async ({ page }) => {
+	await page.setViewportSize({ width: 375, height: 812 });
+	await page.goto('ja/systems/');
+	expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
+});
+
+test('systems: every table splits its columns the same way', async ({ page }) => {
+	await page.goto('ja/systems/');
+	const widths = await page.locator('thead th:first-child').evaluateAll((ths) => ths.map((th) => Math.round(th.getBoundingClientRect().width)));
+	expect(new Set(widths).size).toBe(1);
+});
+
+test('systems: a list at the top jumps to each design system', async ({ page }) => {
+	await page.goto('ja/systems/');
+	const index = page.getByRole('navigation', { name: 'デザインシステムの一覧' });
+	const first = index.getByRole('link').nth(1);
+	const href = await first.getAttribute('href');
+	expect(href).toMatch(/^#/);
+	await expect(page.locator(href!)).toHaveCount(1);
+});
+
+test('list: an empty result offers to clear the search and category', async ({ page }) => {
+	await page.goto('ja/');
+	await page.waitForLoadState('networkidle');
+	await page.locator('.chip', { hasText: '入力' }).click();
+	await page.locator('header input').fill('zzzz');
+	await page.getByRole('button', { name: '条件をクリア' }).click();
+	await expect(page.locator('header input')).toHaveValue('');
+	await expect(page.locator('header input')).toBeFocused();
+	await expect(page.getByRole('radio', { name: 'すべて' })).toBeChecked();
+	expect(await page.locator('.grid > li').count()).toBeGreaterThan(40);
+});
+
+test('external links: the arrow stays on the same line as the last character', async ({ page }) => {
+	await page.setViewportSize({ width: 375, height: 812 });
+	await page.goto('ja/systems/');
+	const apart = await page.locator('td a:has(svg)').evaluateAll((links) =>
+		links.filter((a) => {
+			const svg = a.querySelector('svg')!.getBoundingClientRect();
+			const walker = document.createTreeWalker(a, NodeFilter.SHOW_TEXT);
+			let last: Text | null = null;
+			for (let n = walker.nextNode(); n; n = walker.nextNode()) if (n.textContent!.trim() && !n.parentElement!.closest('.visually-hidden')) last = n as Text;
+			const range = document.createRange();
+			range.setStart(last!, last!.length - 1);
+			range.setEnd(last!, last!.length);
+			const rects = range.getClientRects();
+			return Math.abs(rects[rects.length - 1].bottom - svg.bottom) > 8;
+		}).map((a) => a.textContent)
+	);
+	expect(apart).toEqual([]);
+});

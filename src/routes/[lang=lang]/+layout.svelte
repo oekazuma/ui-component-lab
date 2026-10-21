@@ -39,6 +39,7 @@
 				<path d="m20 20-4-4" />
 			</svg>
 			<input
+				id="site-search"
 				type="search"
 				autocomplete="off"
 				placeholder={t(params.lang).search}

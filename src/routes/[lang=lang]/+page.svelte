@@ -12,6 +12,13 @@
 	let lang = $derived(params.lang);
 	let ui = $derived(t(lang));
 
+	// 押したボタンは消えるので、続けて打ち直せるようヘッダーの検索欄へフォーカスを移す
+	function clear() {
+		filter.query = '';
+		filter.category = '';
+		document.getElementById('site-search')?.focus();
+	}
+
 	let shown = $derived(
 		entries.filter(
 			({ data }) =>
@@ -39,6 +46,9 @@
 	</fieldset>
 	<!-- 件数は画面では見せないが、絞り込みの結果を読み上げで伝えるために残す -->
 	<p class="count" class:visually-hidden={shown.length} aria-live="polite">{shown.length ? ui.count(shown.length) : ui.noResults}</p>
+	{#if !shown.length}
+		<button type="button" class="btn" onclick={clear}>{ui.clearFilters}</button>
+	{/if}
 </div>
 
 <ul class="grid">
@@ -136,6 +146,10 @@
 		outline: 2px solid var(--color-focus-outer);
 		outline-offset: 2px;
 		box-shadow: 0 0 0 2px var(--color-focus-inner);
+	}
+
+	.filters .btn {
+		justify-self: start;
 	}
 
 	.count {

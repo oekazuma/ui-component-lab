@@ -107,7 +107,7 @@
 				<h2 id="aliases">{ui.aliases}</h2>
 				<ul>
 					{#each data.aliases as alias (alias.name + alias.source)}
-						<li><strong>{alias.name}</strong> — <ExternalLink href={alias.url} label={ui.external}>{alias.source}</ExternalLink></li>
+						<li><strong>{alias.name}</strong> — <ExternalLink href={alias.url} text={alias.source} label={ui.external} /></li>
 					{/each}
 				</ul>
 			</section>
@@ -205,7 +205,7 @@
 			<ul>
 				{#each data.sources as s (s.url)}
 					<li>
-						<ExternalLink href={s.url} label={ui.external}>{s.label}</ExternalLink>
+						<ExternalLink href={s.url} text={s.label} label={ui.external} />
 						<span class="checked">({ui.checkedAt}: <time datetime={s.checkedAt}>{s.checkedAt}</time>)</span>
 					</li>
 				{/each}

@@ -32,6 +32,15 @@
 <h1>{ui.systems}</h1>
 <p class="lead">{ui.systemsLead}</p>
 
+<nav class="index" aria-labelledby="index">
+	<h2 id="index" class="visually-hidden">{ui.systemsIndex}</h2>
+	<ul>
+		{#each systems as s, i (s.name)}
+			<li><a href="#sys-{i}">{s.name}</a> <span class="n">{s.rows.length}</span></li>
+		{/each}
+	</ul>
+</nav>
+
 {#each systems as s, i (s.name)}
 	<section aria-labelledby="sys-{i}">
 		<h2 id="sys-{i}">{s.name}</h2>
@@ -42,7 +51,7 @@
 			<tbody>
 				{#each s.rows as { alias, data } (data.id + alias.name)}
 					<tr>
-						<td><ExternalLink href={alias.url} label={ui.external}>{alias.name}</ExternalLink></td>
+						<td><ExternalLink href={alias.url} text={alias.name} label={ui.external} /></td>
 						<td><a href={componentPath(lang, data.id)}>{data.names[lang]}</a></td>
 					</tr>
 				{/each}
@@ -71,7 +80,25 @@
 		font-size: 1.125rem;
 	}
 
+	.index ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem 1.25rem;
+		max-width: 48rem;
+		margin: 0 0 2rem;
+		padding: 0;
+		list-style: none;
+		font-size: 0.9375rem;
+	}
+
+	.n {
+		color: var(--color-muted);
+		font-size: 0.8125rem;
+	}
+
+	/* 表ごとに中身で列幅が変わると並べたときにがたつくので、どの表も半分ずつにする */
 	table {
+		table-layout: fixed;
 		width: 100%;
 		border-collapse: collapse;
 	}
