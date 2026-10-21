@@ -27,8 +27,8 @@ export default {
 			ja: '選べるのはリストにある値だけで、自由入力はできない。'
 		},
 		{
-			en: 'This demo uses the native <select> element, so the list looks different on each OS and browser.',
-			ja: 'このデモはネイティブの <select> 要素を使っているため、リストの見た目は OS やブラウザで異なる。'
+			en: 'This demo uses the native `<select>` element, so the list looks different on each OS and browser.',
+			ja: 'このデモはネイティブの `<select>` 要素を使っているため、リストの見た目は OS やブラウザで異なる。'
 		}
 	],
 	keyboard: [

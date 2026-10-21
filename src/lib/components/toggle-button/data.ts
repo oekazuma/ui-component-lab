@@ -19,8 +19,8 @@ export default {
 			ja: '押すたびに、押された状態と押されていない状態が入れ替わる。'
 		},
 		{
-			en: 'The label stays the same; the pressed state is shown by the style and announced through aria-pressed.',
-			ja: 'ラベルは変えず、押されているかどうかは見た目と aria-pressed で伝える。'
+			en: 'The label stays the same; the pressed state is shown by the style and announced through `aria-pressed`.',
+			ja: 'ラベルは変えず、押されているかどうかは見た目と `aria-pressed` で伝える。'
 		},
 		{
 			en: 'Several toggle buttons can be grouped, for example Bold, Italic, and Underline.',
@@ -33,16 +33,16 @@ export default {
 	misuse: [
 		{
 			pattern: {
-				en: 'Toggling aria-pressed while also changing the label, such as Play to Pause',
-				ja: 'aria-pressed を切り替えながら、ラベルも変える（「再生」を「一時停止」にするなど）'
+				en: 'Toggling `aria-pressed` while also changing the label, such as Play to Pause',
+				ja: '`aria-pressed` を切り替えながら、ラベルも変える（「再生」を「一時停止」にするなど）'
 			},
 			harm: {
 				en: 'A button whose label has just changed to Pause is also marked as pressed, so the label and the state contradict each other and confuse people.',
 				ja: 'ラベルが「一時停止」に変わったボタンが「押されている」状態にもなり、ラベルと状態が食い違って混乱を招く。'
 			},
 			instead: {
-				en: 'Change only one of them. For Bold or Mute, keep the label fixed and show the state with aria-pressed. For Play and Pause, where people using voice input say the label they see, change the label and make it an ordinary button without aria-pressed.',
-				ja: '変えるのはどちらか一方だけにする。太字やミュートは、ラベルを変えずに状態を aria-pressed で伝える。再生と一時停止のように、音声入力の人が見えているラベルを口にする場面では、ラベルを変え、aria-pressed のない普通のボタンにする。'
+				en: 'Change only one of them. For Bold or Mute, keep the label fixed and show the state with `aria-pressed`. For Play and Pause, where people using voice input say the label they see, change the label and make it an ordinary button without `aria-pressed`.',
+				ja: '変えるのはどちらか一方だけにする。太字やミュートは、ラベルを変えずに状態を `aria-pressed` で伝える。再生と一時停止のように、音声入力の人が見えているラベルを口にする場面では、ラベルを変え、`aria-pressed` のない普通のボタンにする。'
 			}
 		}
 	],

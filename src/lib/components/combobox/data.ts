@@ -29,8 +29,8 @@ export default {
 			ja: '矢印キーで候補を選んでいる間も、キーボードのフォーカスは入力欄に残る。'
 		},
 		{
-			en: 'HTML can also make a simple combobox with <input list> and <datalist>, but how the list looks and works differs by browser.',
-			ja: 'HTML の <input list> と <datalist> でも簡易的なコンボボックスを作れるが、リストの見た目や動きはブラウザで異なる。'
+			en: 'HTML can also make a simple combobox with `<input list>` and `<datalist>`, but how the list looks and works differs by browser.',
+			ja: 'HTML の `<input list>` と `<datalist>` でも簡易的なコンボボックスを作れるが、リストの見た目や動きはブラウザで異なる。'
 		}
 	],
 	keyboard: [

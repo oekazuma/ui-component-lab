@@ -18,6 +18,7 @@ CI は PR ごとに上の 3 つを実行する。
 
 - `export default { ... } satisfies ComponentData;` の形にする（型は `src/lib/types.ts`）。`id` はディレクトリ名と同じにする
 - 文言は `{ en, ja }` の両方を書き、同じ内容にする
+- 文中の HTML 要素・属性・ARIA の名前は `` `aria-pressed` `` のようにバッククォートで囲む（詳細ページでコードとして表示される）。名前と概要には使わない（タイトルやメタタグにそのまま出る）
 - `related` は双方向に張る。`diff` は自分の側を主語にした一文にする
 - 出典の `checkedAt` は、実際に開いて確かめた日を `YYYY-MM-DD` で書く。まとめて書き換えない
 - デジタル庁デザインシステム（DADS）をもとにした内容は、出典のラベルを `デジタル庁デザインシステムウェブサイト「<ページ名>」をもとに作成` にする（利用規約の出典表示）。別名の `source` は `src/lib/data.check.ts` の `designSystems` にある名前から選ぶ（DADS は `デジタル庁デザインシステム`）。新しいデザインシステムを足すときは一覧にも加える
@@ -36,7 +37,7 @@ CI は PR ごとに上の 3 つを実行する。
 - イベントリスナーは要素に付ける。document や window に付けるのは、ポップアップが開いている間だけにする。`$effect` で付けて、片付けの関数で外す（例: `src/lib/ActionMenu.svelte`、`tooltip/Demo.svelte`）。常設してよいのは toast の `<svelte:window>` だけ
 - タイマーは `$effect` の片付けで止める（例: `toast/Demo.svelte`）
 - `svelte-ignore` を使うときは、1 行上に理由を書く
-- 色は `src/app.css` のトークン（`--color-*`）を使う。エラーは `--color-danger`、アクセントのホバーは `--color-accent-hover`。トークンを足すときはコントラスト比をコメントに書く
+- 色は `src/app.css` のトークン（`--color-*`）を使う。ダークモードではトークンの値が切り替わるので、色を直に書くとダークモードで読めなくなる。エラーは `--color-danger`（その上の文字は `--color-danger-text`）、薄い背景のエラー表示は `--color-danger-surface` と `--color-danger-on-surface`、アクセントのホバーは `--color-accent-hover`。トークンを足すときはライトとダークの両方に値を書き、コントラスト比をコメントに書く
 - 共通のクラスは `.btn`、`.btn-primary`、`.visually-hidden`（`src/app.css`）
 - デモの挙動を変えたら、同じコミットで data.ts の keyboard と behavior を直す。独自のキー操作を変えたときは `tests/keyboard.spec.ts` も直す
 

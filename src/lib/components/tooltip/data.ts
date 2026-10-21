@@ -23,8 +23,8 @@ export default {
 			ja: 'ツールチップ自体はフォーカスを受けないため、リンクやボタンを入れてはいけない。'
 		},
 		{
-			en: 'The element points to the tooltip with aria-describedby, so screen readers read it as a description.',
-			ja: '要素から aria-describedby でツールチップを参照し、スクリーンリーダーに説明として読ませる。'
+			en: 'The element points to the tooltip with `aria-describedby`, so screen readers read it as a description.',
+			ja: '要素から `aria-describedby` でツールチップを参照し、スクリーンリーダーに説明として読ませる。'
 		},
 		{
 			en: 'The APG Tooltip pattern is still marked as work in progress.',

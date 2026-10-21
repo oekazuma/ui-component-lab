@@ -25,8 +25,8 @@ export default {
 			ja: '操作する部品ではなく、見るだけのもの。'
 		},
 		{
-			en: 'This demo uses the native <progress> element with a <label>. Only the completion is announced, to avoid reading out every step.',
-			ja: 'このデモはネイティブの <progress> 要素と <label> を使っている。途中の割合をすべて読み上げないよう、完了だけを知らせる。'
+			en: 'This demo uses the native `<progress>` element with a `<label>`. Only the completion is announced, to avoid reading out every step.',
+			ja: 'このデモはネイティブの `<progress>` 要素と `<label>` を使っている。途中の割合をすべて読み上げないよう、完了だけを知らせる。'
 		}
 	],
 	keyboard: [

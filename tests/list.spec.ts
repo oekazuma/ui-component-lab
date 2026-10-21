@@ -42,3 +42,20 @@ test('detail: a table of contents links to the sections on wide screens', async 
 	await page.setViewportSize({ width: 375, height: 812 });
 	await expect(toc).toBeHidden();
 });
+
+test('detail: code in descriptions is shown as code', async ({ page }) => {
+	await page.goto('en/components/alert-dialog/');
+	await expect(page.getByRole('region', { name: 'Behavior' }).locator('code', { hasText: 'role="alertdialog"' })).toBeVisible();
+});
+
+test('detail: alias and source links say they open another site', async ({ page }) => {
+	await page.goto('en/components/tabs/');
+	await expect(page.getByRole('region', { name: 'Also known as' }).getByRole('link', { name: /opens another site/ }).first()).toBeVisible();
+	await expect(page.getByRole('region', { name: 'Sources' }).getByRole('link', { name: /opens another site/ }).first()).toBeVisible();
+});
+
+test('ja: lines break between phrases, and dates do not wrap', async ({ page }) => {
+	await page.goto('ja/components/tabs/');
+	expect(await page.evaluate(() => getComputedStyle(document.body).wordBreak)).toBe('auto-phrase');
+	expect(await page.locator('.checked').first().evaluate((e) => getComputedStyle(e).whiteSpace)).toBe('nowrap');
+});

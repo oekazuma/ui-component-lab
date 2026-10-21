@@ -23,8 +23,8 @@ export default {
 			ja: 'レイアウトがすぐに出るので待ち時間が短く感じられ、内容が届いたときに画面がずれにくい。'
 		},
 		{
-			en: 'The gray shapes are hidden from assistive technology, and the area is marked aria-busy while loading.',
-			ja: '灰色の図形は支援技術から隠し、読み込み中の領域には aria-busy を付ける。'
+			en: 'The gray shapes are hidden from assistive technology, and the area is marked `aria-busy` while loading.',
+			ja: '灰色の図形は支援技術から隠し、読み込み中の領域には `aria-busy` を付ける。'
 		}
 	],
 	keyboard: [

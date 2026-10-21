@@ -23,8 +23,8 @@ export default {
 			ja: '「次へ」などのボタンで手続きを進めると、表示が切り替わる。'
 		},
 		{
-			en: 'In this demo, the steps themselves are not interactive. The current step is marked with aria-current="step", and finished steps have hidden text saying so.',
-			ja: 'このデモでは段階の表示そのものは操作できない。現在の段階には aria-current="step" を付け、終わった段階には読み上げ用の「完了」を添えている。'
+			en: 'In this demo, the steps themselves are not interactive. The current step is marked with `aria-current="step"`, and finished steps have hidden text saying so.',
+			ja: 'このデモでは段階の表示そのものは操作できない。現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添えている。'
 		}
 	],
 	keyboard: [

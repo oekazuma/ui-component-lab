@@ -21,8 +21,8 @@ export default {
 			ja: '番号を選ぶとそのページを表示し、「前へ」「次へ」で1ページずつ移動する。'
 		},
 		{
-			en: 'The current page is marked with aria-current="page", and the whole control sits in a nav landmark.',
-			ja: '今のページは aria-current="page" で示し、全体を nav ランドマークで囲む。'
+			en: 'The current page is marked with `aria-current="page"`, and the whole control sits in a nav landmark.',
+			ja: '今のページは `aria-current="page"` で示し、全体を nav ランドマークで囲む。'
 		},
 		{
 			en: 'Websites often use links to separate URLs; this demo uses buttons because it swaps content on the same screen.',
@@ -53,8 +53,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'The Digital Agency Design System hides "Previous" and "Next" on the first and last pages instead of disabling them. This demo keeps them focusable with aria-disabled.',
-			ja: 'デジタル庁デザインシステムでは、最初と最後のページで「前へ」「次へ」を無効にせず非表示にする。このデモは aria-disabled にして、フォーカスできるまま残している。'
+			en: 'The Digital Agency Design System hides "Previous" and "Next" on the first and last pages instead of disabling them. This demo keeps them focusable with `aria-disabled`.',
+			ja: 'デジタル庁デザインシステムでは、最初と最後のページで「前へ」「次へ」を無効にせず非表示にする。このデモは `aria-disabled` にして、フォーカスできるまま残している。'
 		}
 	],
 	misuse: [

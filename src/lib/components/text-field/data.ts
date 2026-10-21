@@ -27,8 +27,8 @@ export default {
 			ja: 'ラベルは常に見えるようにする。placeholder は入力を始めると消えるため、ラベルの代わりにはしない。'
 		},
 		{
-			en: 'Hint text is linked with aria-describedby so screen readers read it with the label.',
-			ja: '補足の文は aria-describedby でつなぎ、スクリーンリーダーがラベルと一緒に読み上げるようにする。'
+			en: 'Hint text is linked with `aria-describedby` so screen readers read it with the label.',
+			ja: '補足の文は `aria-describedby` でつなぎ、スクリーンリーダーがラベルと一緒に読み上げるようにする。'
 		}
 	],
 	keyboard: [

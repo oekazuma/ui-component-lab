@@ -22,12 +22,12 @@ export default {
 			ja: 'セル自体は操作できない。スクリーンリーダーはセルを移動するとき、対応する列と行の見出しを読み上げる。'
 		},
 		{
-			en: 'A sortable column has a button in its heading, and aria-sort tells which way it is sorted.',
-			ja: '並べ替えできる列は見出しにボタンを置き、aria-sort で並び順を伝える。'
+			en: 'A sortable column has a button in its heading, and `aria-sort` tells which way it is sorted.',
+			ja: '並べ替えできる列は見出しにボタンを置き、`aria-sort` で並び順を伝える。'
 		},
 		{
-			en: 'Native <table>, <caption>, and <th scope> give the structure without extra ARIA.',
-			ja: 'ネイティブの <table>・<caption>・<th scope> を使えば、ARIA を足さずに構造が伝わる。'
+			en: 'Native `<table>`, `<caption>`, and `<th scope>` give the structure without extra ARIA.',
+			ja: 'ネイティブの `<table>`・`<caption>`・`<th scope>` を使えば、ARIA を足さずに構造が伝わる。'
 		}
 	],
 	keyboard: [
@@ -65,12 +65,12 @@ export default {
 		{
 			pattern: { en: 'Using a table to lay out the page', ja: 'ページのレイアウトにテーブルを使う' },
 			harm: {
-				en: 'Screen readers read a table in source order, which can differ from the visual order, so people using a screen reader or a keyboard may meet the content in a confusing order. Markup such as <th> or <caption> can make a screen reader present it as a data table. When people with low vision enlarge text in fixed-size cells, it can overflow and need horizontal scrolling.',
-				ja: 'スクリーンリーダーはソースの順に読むため、見た目の順とずれることがあり、スクリーンリーダーやキーボードを使う人には分かりにくい順で伝わる。<th> や <caption> があると、データの表として読み上げられることがある。弱視の人が文字を拡大すると、大きさを固定したセルから内容がはみ出し、横スクロールが必要になることがある。'
+				en: 'Screen readers read a table in source order, which can differ from the visual order, so people using a screen reader or a keyboard may meet the content in a confusing order. Markup such as `<th>` or `<caption>` can make a screen reader present it as a data table. When people with low vision enlarge text in fixed-size cells, it can overflow and need horizontal scrolling.',
+				ja: 'スクリーンリーダーはソースの順に読むため、見た目の順とずれることがあり、スクリーンリーダーやキーボードを使う人には分かりにくい順で伝わる。`<th>` や `<caption>` があると、データの表として読み上げられることがある。弱視の人が文字を拡大すると、大きさを固定したセルから内容がはみ出し、横スクロールが必要になることがある。'
 			},
 			instead: {
-				en: 'Lay out the page with CSS (grid or flexbox) and keep <table> for data compared across rows and columns.',
-				ja: 'レイアウトは CSS（grid や flexbox）で組み、<table> は行と列で比べるデータにだけ使う。'
+				en: 'Lay out the page with CSS (grid or flexbox) and keep `<table>` for data compared across rows and columns.',
+				ja: 'レイアウトは CSS（grid や flexbox）で組み、`<table>` は行と列で比べるデータにだけ使う。'
 			}
 		}
 	],

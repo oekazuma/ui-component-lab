@@ -21,8 +21,8 @@ export default {
 			ja: '項目にチェックボックスやスイッチを置いたり、詳細ページへのリンクにしたりすることもある。'
 		},
 		{
-			en: 'A native <ul> or <ol> lets screen readers announce how many items there are.',
-			ja: 'ネイティブの <ul> や <ol> にすると、スクリーンリーダーが項目数を読み上げる。'
+			en: 'A native `<ul>` or `<ol>` lets screen readers announce how many items there are.',
+			ja: 'ネイティブの `<ul>` や `<ol>` にすると、スクリーンリーダーが項目数を読み上げる。'
 		}
 	],
 	keyboard: [

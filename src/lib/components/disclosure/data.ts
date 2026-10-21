@@ -26,8 +26,8 @@ export default {
 			ja: '補足の説明など、多くの人には不要な追加情報をしまっておくのに使う。'
 		},
 		{
-			en: 'This demo uses the native <details> and <summary> elements, which handle the toggling and keyboard support.',
-			ja: 'このデモはネイティブの <details> と <summary> 要素を使っており、開閉とキーボード操作はブラウザが受け持つ。'
+			en: 'This demo uses the native `<details>` and `<summary>` elements, which handle the toggling and keyboard support.',
+			ja: 'このデモはネイティブの `<details>` と `<summary>` 要素を使っており、開閉とキーボード操作はブラウザが受け持つ。'
 		}
 	],
 	keyboard: [

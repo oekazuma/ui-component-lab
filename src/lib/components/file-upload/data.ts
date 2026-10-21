@@ -24,8 +24,8 @@ export default {
 			ja: 'ボタンを押すと OS のファイル選択画面が開く。'
 		},
 		{
-			en: 'Dropping files on the dashed box also chooses them. This demo uses the native <input type="file"> and handles drops on the surrounding box.',
-			ja: '点線の枠にファイルを落としても選べる。このデモはネイティブの <input type="file"> を使い、周りの枠へのドロップも受け付けている。'
+			en: 'Dropping files on the dashed box also chooses them. This demo uses the native `<input type="file">` and handles drops on the surrounding box.',
+			ja: '点線の枠にファイルを落としても選べる。このデモはネイティブの `<input type="file">` を使い、周りの枠へのドロップも受け付けている。'
 		},
 		{
 			en: 'Each chosen file can be removed from the list. Removing moves focus back to the file button.',
@@ -63,8 +63,8 @@ export default {
 				ja: '正確にドラッグできない人や、トラックボール、ヘッドポインター、視線入力、音声で動かすポインターを使う人には、ドラッグが難しく、誤りやすい。'
 			},
 			instead: {
-				en: 'Always provide a file button (<input type="file">) next to the drop area, so files can be chosen with a click or the keyboard.',
-				ja: 'ドロップエリアのそばにファイル選択ボタン（<input type="file">）を必ず置き、クリックやキーボードでも選べるようにする。'
+				en: 'Always provide a file button (`<input type="file">`) next to the drop area, so files can be chosen with a click or the keyboard.',
+				ja: 'ドロップエリアのそばにファイル選択ボタン（`<input type="file">`）を必ず置き、クリックやキーボードでも選べるようにする。'
 			}
 		}
 	],

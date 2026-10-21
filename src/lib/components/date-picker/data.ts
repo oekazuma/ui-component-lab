@@ -21,8 +21,8 @@ export default {
 			ja: '年・月・日は直接入力することも、カレンダーから選ぶこともできる。'
 		},
 		{
-			en: 'This demo uses the native <input type="date">, so the display format and calendar depend on the browser and language settings; the value is always yyyy-mm-dd.',
-			ja: 'このデモはネイティブの <input type="date"> を使っているため、表示形式やカレンダーはブラウザと言語設定で変わる。値は常に yyyy-mm-dd になる。'
+			en: 'This demo uses the native `<input type="date">`, so the display format and calendar depend on the browser and language settings; the value is always yyyy-mm-dd.',
+			ja: 'このデモはネイティブの `<input type="date">` を使っているため、表示形式やカレンダーはブラウザと言語設定で変わる。値は常に yyyy-mm-dd になる。'
 		},
 		{
 			en: 'Earliest and latest dates can be limited with min and max.',

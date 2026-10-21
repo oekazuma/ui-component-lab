@@ -23,8 +23,8 @@ export default {
 			ja: '操作する部品ではない。'
 		},
 		{
-			en: 'In this demo, the lines between sections are <hr>, which screen readers announce as a separator. The vertical lines between links are only decoration and are hidden from screen readers.',
-			ja: 'このデモでは、セクションの間の線は <hr> で、スクリーンリーダーは区切りとして読み上げる。リンクの間の縦線は飾りなので、読み上げないようにしている。'
+			en: 'In this demo, the lines between sections are `<hr>`, which screen readers announce as a separator. The vertical lines between links are only decoration and are hidden from screen readers.',
+			ja: 'このデモでは、セクションの間の線は `<hr>` で、スクリーンリーダーは区切りとして読み上げる。リンクの間の縦線は飾りなので、読み上げないようにしている。'
 		}
 	],
 	keyboard: [
@@ -56,8 +56,8 @@ export default {
 			ja: '別々の項目が1つに見えないよう、周りに十分な余白をとる（リストでは 8px 以上、セクションの間では 16px 以上）。'
 		},
 		{
-			en: 'Use <hr> for a change of topic. For a purely visual line, use a CSS border instead.',
-			ja: '話題の切り替わりには <hr> を使う。見た目だけの線なら CSS の border を使う。'
+			en: 'Use `<hr>` for a change of topic. For a purely visual line, use a CSS border instead.',
+			ja: '話題の切り替わりには `<hr>` を使う。見た目だけの線なら CSS の border を使う。'
 		}
 	],
 	sources: [

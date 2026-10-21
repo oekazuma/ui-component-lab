@@ -19,8 +19,8 @@ export default {
 			ja: '「アーカイブしました」のように操作のあとに表示され、フォーカスは動かさない。'
 		},
 		{
-			en: 'It is announced through a live region (role="status") that is already on the page before the message is added.',
-			ja: 'メッセージを入れる前からページにあるライブリージョン（role="status"）で読み上げる。'
+			en: 'It is announced through a live region (`role="status"`) that is already on the page before the message is added.',
+			ja: 'メッセージを入れる前からページにあるライブリージョン（`role="status"`）で読み上げる。'
 		},
 		{
 			en: 'Disappears after a few seconds (5 seconds in this demo). Toasts with buttons should not disappear by themselves, because keyboard users may not reach them in time.',

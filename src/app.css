@@ -8,7 +8,10 @@
 	--color-accent: #1f5fd1; /* on #fff: 5.9:1 */
 	--color-accent-text: #ffffff;
 	--color-accent-hover: #194fae; /* #fff on it: 7.6:1 */
-	--color-danger: #b42318; /* on --color-bg: 6.6:1, on --color-surface: 6.1:1, #fff on it: 6.6:1 */
+	--color-danger: #b42318; /* on --color-bg: 6.6:1, on --color-surface: 6.1:1 */
+	--color-danger-text: #ffffff; /* on --color-danger: 6.6:1 */
+	--color-danger-surface: #fef3f2;
+	--color-danger-on-surface: #8a1c12; /* on --color-danger-surface: 8.6:1 */
 	--color-focus-inner: #ffd43d;
 	--color-focus-outer: #000000;
 	--radius: 6px;
@@ -16,6 +19,46 @@
 		system-ui, -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
 
 	color-scheme: light;
+}
+
+/* ダークモード。ヘッダーのボタンで選んだ値（data-theme）を優先し、選んでいなければ OS の設定に従う。
+	同じ値を 2 か所に書くのは、メディアクエリの中と外でセレクタを共有できないため */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		--color-bg: #16181d;
+		--color-surface: #1f2228;
+		--color-text: #e8eaee; /* on --color-bg: 14.7:1, on --color-surface: 13.2:1 */
+		--color-muted: #a4abb8; /* on --color-bg: 7.7:1, on --color-surface: 6.9:1 */
+		--color-border: #3b404b;
+		--color-accent: #8ab4ff; /* on --color-bg: 8.5:1, on --color-surface: 7.6:1 */
+		--color-accent-text: #10131a; /* on --color-accent: 8.9:1 */
+		--color-accent-hover: #a9c7ff; /* --color-accent-text on it: 10.9:1 */
+		--color-danger: #ff8f80; /* on --color-bg: 8.0:1, on --color-surface: 7.2:1 */
+		--color-danger-text: #1a0b08; /* on --color-danger: 8.7:1 */
+		--color-danger-surface: #3b1a16;
+		--color-danger-on-surface: #ffb3a8; /* on --color-danger-surface: 9.1:1 */
+		--color-focus-outer: #ffffff;
+
+		color-scheme: dark;
+	}
+}
+
+:root[data-theme='dark'] {
+	--color-bg: #16181d;
+	--color-surface: #1f2228;
+	--color-text: #e8eaee;
+	--color-muted: #a4abb8;
+	--color-border: #3b404b;
+	--color-accent: #8ab4ff;
+	--color-accent-text: #10131a;
+	--color-accent-hover: #a9c7ff;
+	--color-danger: #ff8f80;
+	--color-danger-text: #1a0b08;
+	--color-danger-surface: #3b1a16;
+	--color-danger-on-surface: #ffb3a8;
+	--color-focus-outer: #ffffff;
+
+	color-scheme: dark;
 }
 
 *,
@@ -32,8 +75,23 @@ body {
 	line-height: 1.6;
 }
 
+/* 日本語は文節の切れ目で改行する（対応していないブラウザでは従来どおり文字単位で折り返す） */
+:lang(ja) {
+	word-break: auto-phrase;
+}
+
 a {
 	color: var(--color-accent);
+}
+
+/* data.ts の文中で `…` で囲んだ部分（CodeText.svelte）。既定の monospace だけを指定すると 13px 基準になり小さすぎる */
+code {
+	padding: 0.1em 0.3em;
+	border-radius: 4px;
+	background: var(--color-surface);
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.875em;
+	overflow-wrap: anywhere;
 }
 
 /* 黄と黒の二重線で、どの背景色の上でもフォーカス位置が見えるようにする（デジタル庁デザインシステムを参考） */

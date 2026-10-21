@@ -57,8 +57,8 @@ export default {
 				ja: '正確にドラッグできない人や、トラックボール、ヘッドポインター、視線入力、音声で動かすポインターを使う人には、ドラッグが難しく、誤りやすい。'
 			},
 			instead: {
-				en: 'Let people also set the value by clicking or tapping the track and with the arrow keys. A native <input type="range"> already supports both.',
-				ja: 'トラックのクリックやタップ、矢印キーでも値を変えられるようにする。ネイティブの <input type="range"> はどちらにも対応している。'
+				en: 'Let people also set the value by clicking or tapping the track and with the arrow keys. A native `<input type="range">` already supports both.',
+				ja: 'トラックのクリックやタップ、矢印キーでも値を変えられるようにする。ネイティブの `<input type="range">` はどちらにも対応している。'
 			}
 		}
 	],

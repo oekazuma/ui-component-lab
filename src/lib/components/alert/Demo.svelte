@@ -35,8 +35,8 @@
 		border: 1px solid var(--color-danger);
 		border-left-width: 4px;
 		border-radius: var(--radius);
-		background: #fef3f2;
-		color: #8a1c12;
+		background: var(--color-danger-surface);
+		color: var(--color-danger-on-surface);
 		font-size: 0.9375rem;
 	}
 </style>

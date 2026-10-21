@@ -23,8 +23,8 @@ export default {
 			ja: 'カード全体をリンクにするなら、中に別のボタンやリンクを置かない。このデモはボタンがあるため、操作できるのはボタンだけにしている。'
 		},
 		{
-			en: 'Each card is an <article> named by its heading.',
-			ja: '各カードは見出しを名前にした <article> にする。'
+			en: 'Each card is an `<article>` named by its heading.',
+			ja: '各カードは見出しを名前にした `<article>` にする。'
 		}
 	],
 	keyboard: [

@@ -23,12 +23,12 @@ export default {
 			ja: 'Enter またはボタンで検索を実行する。'
 		},
 		{
-			en: 'This demo wraps the form in a <search> element, which marks it as a search landmark so screen reader users can jump to it.',
-			ja: 'このデモはフォームを <search> 要素で囲んでいる。検索のランドマークになり、スクリーンリーダーの利用者が直接移動できる。'
+			en: 'This demo wraps the form in a `<search>` element, which marks it as a search landmark so screen reader users can jump to it.',
+			ja: 'このデモはフォームを `<search>` 要素で囲んでいる。検索のランドマークになり、スクリーンリーダーの利用者が直接移動できる。'
 		},
 		{
-			en: 'It uses <input type="search">, so in Chrome, Esc clears the text.',
-			ja: '<input type="search"> を使っているので、Chrome では Esc で入力を消せる。'
+			en: 'It uses `<input type="search">`, so in Chrome, Esc clears the text.',
+			ja: '`<input type="search">` を使っているので、Chrome では Esc で入力を消せる。'
 		}
 	],
 	keyboard: [
@@ -65,8 +65,8 @@ export default {
 				ja: 'スクリーンリーダーはプレースホルダーをラベルとして扱わず、読み上げないものもあるため、スクリーンリーダーの利用者には何の欄か伝わらないことがある。入力を始めると文字も消える。'
 			},
 			instead: {
-				en: 'Give the field a name with <label>, such as “Search this site”. If the design has no room for a visible label, keep the <label> and hide it visually instead of relying on placeholder text.',
-				ja: '<label> で「サイト内検索」などの名前を付ける。見た目にラベルを出せないデザインでも、<label> は残して見た目だけ隠し、プレースホルダーには頼らない。'
+				en: 'Give the field a name with `<label>`, such as “Search this site”. If the design has no room for a visible label, keep the `<label>` and hide it visually instead of relying on placeholder text.',
+				ja: '`<label>` で「サイト内検索」などの名前を付ける。見た目にラベルを出せないデザインでも、`<label>` は残して見た目だけ隠し、プレースホルダーには頼らない。'
 			}
 		}
 	],

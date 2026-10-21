@@ -18,8 +18,8 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'Content added to a role="alert" element is read out by screen readers without moving focus.',
-			ja: 'role="alert" の要素に中身を入れると、フォーカスを動かさずにスクリーンリーダーが読み上げる。'
+			en: 'Content added to a `role="alert"` element is read out by screen readers without moving focus.',
+			ja: '`role="alert"` の要素に中身を入れると、フォーカスを動かさずにスクリーンリーダーが読み上げる。'
 		},
 		{
 			en: 'An alert that is already on the page when it loads is not announced.',
@@ -64,8 +64,8 @@ export default {
 				ja: 'アラートは出るたびに利用者の作業に割り込む。頻繁に割り込まれると、視覚や認知に障害のある人には使いにくくなる。通知が多いと、だれでも集中が途切れる。'
 			},
 			instead: {
-				en: 'Use an alert only for what the user needs to know now. Combine related messages into one, and show the rest in the page without role="alert".',
-				ja: 'アラートは今すぐ知る必要があることだけに使う。関連するメッセージは1つにまとめ、それ以外は role="alert" を付けずにページに載せる。'
+				en: 'Use an alert only for what the user needs to know now. Combine related messages into one, and show the rest in the page without `role="alert"`.',
+				ja: 'アラートは今すぐ知る必要があることだけに使う。関連するメッセージは1つにまとめ、それ以外は `role="alert"` を付けずにページに載せる。'
 			}
 		},
 		{

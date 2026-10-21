@@ -24,8 +24,8 @@ export default {
 			ja: '数値を直接入力するか、矢印で増減させる。'
 		},
 		{
-			en: 'This demo uses the native <input type="number"> with min, max and step. Values outside the range get a red border.',
-			ja: 'このデモはネイティブの <input type="number"> に min・max・step を付けている。範囲外の値になると枠が赤くなる。'
+			en: 'This demo uses the native `<input type="number">` with min, max and step. Values outside the range get a red border.',
+			ja: 'このデモはネイティブの `<input type="number">` に min・max・step を付けている。範囲外の値になると枠が赤くなる。'
 		},
 		{
 			en: 'APG also defines Home / End for the minimum and maximum, but the native element uses them to move the text cursor.',
@@ -43,8 +43,8 @@ export default {
 			ja: '数量のように小刻みに増減する値に使う。'
 		},
 		{
-			en: 'Some design systems avoid type="number": scrolling can change the value by accident, and some browsers accept letters like “e”. A text input with inputmode="numeric" is an alternative.',
-			ja: 'type="number" を避けるデザインシステムもある。スクロールで値が変わってしまうことがあり、ブラウザによっては「e」などの文字も入るためである。代わりに inputmode="numeric" を付けたテキスト入力を使う方法がある。'
+			en: 'Some design systems avoid `type="number"`: scrolling can change the value by accident, and some browsers accept letters like “e”. A text input with `inputmode="numeric"` is an alternative.',
+			ja: '`type="number"` を避けるデザインシステムもある。スクロールで値が変わってしまうことがあり、ブラウザによっては「e」などの文字も入るためである。代わりに `inputmode="numeric"` を付けたテキスト入力を使う方法がある。'
 		}
 	],
 	misuse: [
@@ -58,8 +58,8 @@ export default {
 				ja: '数値入力は、符号を増減できる数量として扱う。郵便番号やカード番号を入れている人が、ページのスクロールなど別の操作のつもりで番号を誤って変えてしまうことがある。数字以外の文字を入れても、何が誤りかがはっきり示されない。'
 			},
 			instead: {
-				en: 'Use a text input with inputmode="numeric" and a matching autocomplete value, such as autocomplete="postal-code".',
-				ja: 'inputmode="numeric" を付けたテキスト入力を使い、autocomplete="postal-code" のように内容に合う autocomplete を付ける。'
+				en: 'Use a text input with `inputmode="numeric"` and a matching autocomplete value, such as `autocomplete="postal-code"`.',
+				ja: '`inputmode="numeric"` を付けたテキスト入力を使い、`autocomplete="postal-code"` のように内容に合う autocomplete を付ける。'
 			}
 		}
 	],

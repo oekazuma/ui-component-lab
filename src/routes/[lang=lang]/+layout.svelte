@@ -3,8 +3,9 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { filter } from '#lib/filter.svelte.js';
-	import { siteName, t } from '#lib/i18n.js';
-	import logo from '#lib/assets/logo.svg';
+	import { t } from '#lib/i18n.js';
+	import SiteHeader from '#lib/SiteHeader.svelte';
+	import ThemeToggle from '#lib/ThemeToggle.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { children, params }: LayoutProps = $props();
@@ -25,10 +26,7 @@
 	};
 </script>
 
-<header>
-	<a class="site-name" href={homePath(params.lang)}>
-		<img src={logo} alt="" width="28" height="28" />{siteName}
-	</a>
+<SiteHeader home={homePath(params.lang)}>
 	<search>
 		<label>
 			<span class="visually-hidden">{t(params.lang).search}</span>
@@ -45,33 +43,21 @@
 			/>
 		</label>
 	</search>
-	<a href={otherHref} hreflang={other} lang={other}>{t(params.lang).switchLang}</a>
-</header>
+	<div class="actions">
+		<ThemeToggle label={t(params.lang).darkMode} />
+		<a href={otherHref} hreflang={other} lang={other}>{t(params.lang).switchLang}</a>
+	</div>
+</SiteHeader>
 
 <main>
 	{@render children()}
 </main>
 
 <style>
-	header {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		gap: 0.75rem 1rem;
-		max-width: 72rem;
-		margin: 0 auto;
-		padding: 1rem;
-		border-bottom: 1px solid var(--color-border);
-	}
-
-	.site-name {
+	.actions {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
-		color: inherit;
-		font-weight: 700;
-		text-decoration: none;
+		gap: 1rem;
 	}
 
 	search {
@@ -83,7 +69,7 @@
 		display: block;
 	}
 
-	svg {
+	label svg {
 		position: absolute;
 		top: 50%;
 		left: 0.75rem;

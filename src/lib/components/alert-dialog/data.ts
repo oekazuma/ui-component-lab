@@ -15,8 +15,8 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'It has role="alertdialog", so screen readers announce its title and message as soon as it opens.',
-			ja: 'role="alertdialog" を持ち、開くとスクリーンリーダーがタイトルと本文をすぐに読み上げる。'
+			en: 'It has `role="alertdialog"`, so screen readers announce its title and message as soon as it opens.',
+			ja: '`role="alertdialog"` を持ち、開くとスクリーンリーダーがタイトルと本文をすぐに読み上げる。'
 		},
 		{
 			en: 'When it opens, focus goes to the least destructive button; in this demo, “Keep editing”.',

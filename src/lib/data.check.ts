@@ -80,6 +80,13 @@ for (const d of all) {
 		...(d.variations ?? []).flatMap((v) => [v.name, v.description])
 	];
 	for (const t of texts) if (!t.en.trim() || !t.ja.trim()) errors.push(`${d.id}: empty text`);
+
+	// 文中のコードは `…` で囲む（CodeText.svelte）。閉じ忘れると以降がすべてコードとして表示される
+	for (const t of texts)
+		for (const s of [t.en, t.ja]) if (s.split('`').length % 2 === 0) errors.push(`${d.id}: unbalanced backtick in ${s}`);
+	// 名前と概要はページのタイトルや説明文（メタタグ）にもそのまま出るので、` を使わない
+	for (const s of [d.names.en, d.names.ja, d.summary.en, d.summary.ja])
+		if (s.includes('`')) errors.push(`${d.id}: backtick in name or summary`);
 }
 
 if (errors.length) throw new Error(errors.join('\n'));

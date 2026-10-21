@@ -26,8 +26,8 @@ export default {
 			ja: '選択肢をクリックするか、矢印キーで移ると選ばれる。'
 		},
 		{
-			en: 'This demo is a native <select> with the size attribute, so it does not open or close and browsers treat it as a listbox.',
-			ja: 'このデモは size 属性を付けたネイティブの <select> なので、開閉せず、ブラウザはリストボックスとして扱う。'
+			en: 'This demo is a native `<select>` with the size attribute, so it does not open or close and browsers treat it as a listbox.',
+			ja: 'このデモは size 属性を付けたネイティブの `<select>` なので、開閉せず、ブラウザはリストボックスとして扱う。'
 		}
 	],
 	keyboard: [
@@ -45,8 +45,8 @@ export default {
 		{
 			name: { en: 'Multi-select', ja: '複数選択' },
 			description: {
-				en: 'Several options can be chosen. In the APG pattern, Space toggles the focused option. With a native <select>, add the multiple attribute (keys differ by browser).',
-				ja: '複数の選択肢を選べるもの。APG のパターンでは Space でフォーカス中の選択肢の選択を切り替える。ネイティブの <select> では multiple 属性を付ける（キー操作はブラウザによって異なる）。'
+				en: 'Several options can be chosen. In the APG pattern, Space toggles the focused option. With a native `<select>`, add the multiple attribute (keys differ by browser).',
+				ja: '複数の選択肢を選べるもの。APG のパターンでは Space でフォーカス中の選択肢の選択を切り替える。ネイティブの `<select>` では multiple 属性を付ける（キー操作はブラウザによって異なる）。'
 			}
 		}
 	],

@@ -22,12 +22,12 @@ export default {
 			ja: 'ツールバー全体で Tab の止まる場所は1か所だけで、中のボタンの間は矢印キーで移る。'
 		},
 		{
-			en: 'When the user tabs back in, focus returns to the last focused button (roving tabindex).',
-			ja: 'Tab で戻ってくると、最後にフォーカスしていたボタンに戻る（ロービング tabindex）。'
+			en: 'When the user tabs back in, focus returns to the last focused button (roving `tabindex`).',
+			ja: 'Tab で戻ってくると、最後にフォーカスしていたボタンに戻る（ロービング `tabindex`）。'
 		},
 		{
-			en: 'This demo’s buttons are toggle buttons that use aria-pressed.',
-			ja: 'このデモのボタンは aria-pressed を使ったトグルボタン。'
+			en: 'This demo’s buttons are toggle buttons that use `aria-pressed`.',
+			ja: 'このデモのボタンは `aria-pressed` を使ったトグルボタン。'
 		}
 	],
 	keyboard: [
@@ -42,8 +42,8 @@ export default {
 			ja: 'ツールバーとしてまとめるのは、操作部品が3つ以上あるときだけにする。'
 		},
 		{
-			en: 'Give the toolbar a label with aria-label so its purpose is announced.',
-			ja: 'aria-label でツールバーに名前を付け、何のための操作群か読み上げられるようにする。'
+			en: 'Give the toolbar a label with `aria-label` so its purpose is announced.',
+			ja: '`aria-label` でツールバーに名前を付け、何のための操作群か読み上げられるようにする。'
 		}
 	],
 	misuse: [

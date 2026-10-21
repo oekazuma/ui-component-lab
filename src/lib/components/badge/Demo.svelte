@@ -39,7 +39,7 @@
 		padding: 0 0.3rem;
 		border-radius: 999px;
 		background: var(--color-danger);
-		color: #fff;
+		color: var(--color-danger-text);
 		font-size: 0.875rem;
 		font-weight: 700;
 		line-height: 1.25rem;

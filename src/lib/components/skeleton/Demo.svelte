@@ -84,7 +84,13 @@
 	}
 
 	.bone {
-		background: linear-gradient(90deg, #e3e6eb 25%, #eef0f3 50%, #e3e6eb 75%) 0 0 / 200% 100%;
+		background: linear-gradient(
+				90deg,
+				var(--color-border) 25%,
+				color-mix(in srgb, var(--color-border), var(--color-surface)) 50%,
+				var(--color-border) 75%
+			)
+			0 0 / 200% 100%;
 		animation: shimmer 1.2s linear infinite;
 	}
 

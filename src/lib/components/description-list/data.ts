@@ -23,8 +23,8 @@ export default {
 			ja: '操作する部品ではなく、読むためのもの。'
 		},
 		{
-			en: 'This demo uses <dl> with a <dt> (name) and <dd> (value) in each row, so screen readers can treat them as pairs.',
-			ja: 'このデモは <dl> を使い、各行を <dt>（項目名）と <dd>（値）で書いている。スクリーンリーダーが組として扱える。'
+			en: 'This demo uses `<dl>` with a `<dt>` (name) and `<dd>` (value) in each row, so screen readers can treat them as pairs.',
+			ja: 'このデモは `<dl>` を使い、各行を `<dt>`（項目名）と `<dd>`（値）で書いている。スクリーンリーダーが組として扱える。'
 		}
 	],
 	keyboard: [

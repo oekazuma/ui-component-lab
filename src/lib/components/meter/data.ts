@@ -26,8 +26,8 @@ export default {
 			ja: '操作する部品ではなく、値を示すだけのもの。'
 		},
 		{
-			en: 'This demo uses the native <meter> with low, high and optimum, so the browser colors the bar by range. Use the buttons to change the value.',
-			ja: 'このデモはネイティブの <meter> に low・high・optimum を付けているため、ブラウザが範囲に応じて棒の色を変える。ボタンで値を変えられる。'
+			en: 'This demo uses the native `<meter>` with low, high and optimum, so the browser colors the bar by range. Use the buttons to change the value.',
+			ja: 'このデモはネイティブの `<meter>` に low・high・optimum を付けているため、ブラウザが範囲に応じて棒の色を変える。ボタンで値を変えられる。'
 		}
 	],
 	keyboard: [

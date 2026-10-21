@@ -29,8 +29,8 @@ export default {
 			ja: 'ナビゲーションメニュー、絞り込み、カートなどに使う。'
 		},
 		{
-			en: 'This demo is a native modal <dialog> styled to sit at the right edge.',
-			ja: 'このデモはネイティブのモーダル <dialog> を右端に寄せたもの。'
+			en: 'This demo is a native modal `<dialog>` styled to sit at the right edge.',
+			ja: 'このデモはネイティブのモーダル `<dialog>` を右端に寄せたもの。'
 		}
 	],
 	keyboard: [

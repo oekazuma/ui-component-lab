@@ -30,8 +30,8 @@ export default {
 			ja: 'ラベルは設定の名前を表し、状態が変わってもラベルの文言は変えない。'
 		},
 		{
-			en: 'This demo is a native checkbox with role="switch", styled to look like a switch.',
-			ja: 'このデモはネイティブのチェックボックスに role="switch" を付け、スイッチの見た目にしている。'
+			en: 'This demo is a native checkbox with `role="switch"`, styled to look like a switch.',
+			ja: 'このデモはネイティブのチェックボックスに `role="switch"` を付け、スイッチの見た目にしている。'
 		}
 	],
 	keyboard: [

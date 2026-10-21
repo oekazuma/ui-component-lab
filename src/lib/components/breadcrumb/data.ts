@@ -21,8 +21,8 @@ export default {
 			ja: 'それぞれの名前はその階層のページへのリンクで、最後の名前は今いるページを示す。'
 		},
 		{
-			en: 'The current page is marked with aria-current="page".',
-			ja: '今のページは aria-current="page" で示す。'
+			en: 'The current page is marked with `aria-current="page"`.',
+			ja: '今のページは `aria-current="page"` で示す。'
 		},
 		{
 			en: 'In this demo the links do not navigate; they show where they would go.',

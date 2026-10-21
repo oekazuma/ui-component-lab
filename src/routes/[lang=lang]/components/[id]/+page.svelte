@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { componentPath, homePath } from '#lib/paths.js';
+	import CodeText from '#lib/CodeText.svelte';
 	import DemoFrame from '#lib/DemoFrame.svelte';
+	import ExternalLink from '#lib/ExternalLink.svelte';
 	import { categoryNames, t } from '#lib/i18n.js';
 	import { getEntry } from '#lib/registry.js';
 	import type { PageProps } from './$types';
@@ -69,7 +71,7 @@
 				<h2 id="aliases">{ui.aliases}</h2>
 				<ul>
 					{#each data.aliases as alias (alias.name + alias.source)}
-						<li><strong>{alias.name}</strong> — <a href={alias.url}>{alias.source}</a></li>
+						<li><strong>{alias.name}</strong> — <ExternalLink href={alias.url} label={ui.external}>{alias.source}</ExternalLink></li>
 					{/each}
 				</ul>
 			</section>
@@ -77,7 +79,7 @@
 
 		<section aria-labelledby="appearance">
 			<h2 id="appearance">{ui.appearance}</h2>
-			<p>{data.appearance[lang]}</p>
+			<p><CodeText text={data.appearance[lang]} /></p>
 		</section>
 
 		{#if data.variations?.length}
@@ -85,8 +87,8 @@
 				<h2 id="variations">{ui.variations}</h2>
 				<dl>
 					{#each data.variations as v (v.name.en)}
-						<dt>{v.name[lang]}</dt>
-						<dd>{v.description[lang]}</dd>
+						<dt><CodeText text={v.name[lang]} /></dt>
+						<dd><CodeText text={v.description[lang]} /></dd>
 					{/each}
 				</dl>
 			</section>
@@ -96,7 +98,7 @@
 			<h2 id="behavior">{ui.behavior}</h2>
 			<ul>
 				{#each data.behavior as b (b.en)}
-					<li>{b[lang]}</li>
+					<li><CodeText text={b[lang]} /></li>
 				{/each}
 			</ul>
 		</section>
@@ -109,7 +111,7 @@
 				</thead>
 				<tbody>
 					{#each data.keyboard as k (k.key)}
-						<tr><td>{#if k.key === '—'}—{:else}<kbd>{k.key}</kbd>{/if}</td><td>{k.action[lang]}</td></tr>
+						<tr><td>{#if k.key === '—'}—{:else}<kbd>{k.key}</kbd>{/if}</td><td><CodeText text={k.action[lang]} /></td></tr>
 					{/each}
 				</tbody>
 			</table>
@@ -120,7 +122,7 @@
 				<h2 id="usage">{ui.usage}</h2>
 				<ul>
 					{#each data.usage as u (u.en)}
-						<li>{u[lang]}</li>
+						<li><CodeText text={u[lang]} /></li>
 					{/each}
 				</ul>
 			</section>
@@ -133,14 +135,14 @@
 					{#each data.misuse as m (m.pattern.en)}
 						<li>
 							<h3>
-								{m.pattern[lang]}
+								<CodeText text={m.pattern[lang]} />
 								{#if m.deceptive}<span class="deceptive">{ui.deceptive}</span>{/if}
 							</h3>
 							<dl>
 								<dt>{ui.harm}</dt>
-								<dd>{m.harm[lang]}</dd>
+								<dd><CodeText text={m.harm[lang]} /></dd>
 								<dt>{ui.instead}</dt>
-								<dd>{m.instead[lang]}</dd>
+								<dd><CodeText text={m.instead[lang]} /></dd>
 							</dl>
 						</li>
 					{/each}
@@ -155,7 +157,7 @@
 					{#each related as r (r.id)}
 						<li>
 							<a href={componentPath(lang, r.id)}>{r.names[lang]}</a>:
-							{r.diff[lang]}
+							<CodeText text={r.diff[lang]} />
 						</li>
 					{/each}
 				</ul>
@@ -167,7 +169,7 @@
 			<ul>
 				{#each data.sources as s (s.url)}
 					<li>
-						<a href={s.url}>{s.label}</a>
+						<ExternalLink href={s.url} label={ui.external}>{s.label}</ExternalLink>
 						<span class="checked">({ui.checkedAt}: <time datetime={s.checkedAt}>{s.checkedAt}</time>)</span>
 					</li>
 				{/each}
@@ -330,8 +332,10 @@
 		white-space: nowrap;
 	}
 
+	/* 確認日は「2026-」と「10-20」に分かれると読みにくいので折り返さない */
 	.checked {
 		color: var(--color-muted);
+		white-space: nowrap;
 		font-size: 0.875rem;
 	}
 </style>
