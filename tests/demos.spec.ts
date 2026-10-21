@@ -873,3 +873,20 @@ test('table of contents: a link scrolls only the article, focuses its heading, a
 	await article.evaluate((el) => el.scrollTo(0, el.scrollHeight));
 	await expect(toc.getByRole('link').last()).toHaveAttribute('aria-current', 'location');
 });
+
+test('back to top: starts partway down, returns the article to its start and focuses its heading', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/back-to-top/');
+	const article = demo.getByRole('region', { name: 'Article' });
+	const button = demo.getByRole('button', { name: 'Back to top', exact: true });
+	const before = await page.evaluate(() => scrollY);
+
+	await expect(button).toBeVisible();
+	await button.click();
+	await expect(article.getByRole('heading', { level: 3 })).toBeFocused();
+	await expect(button).toBeHidden();
+	expect(await article.evaluate((el) => el.scrollTop)).toBe(0);
+	expect(await page.evaluate(() => scrollY)).toBe(before);
+
+	await article.evaluate((el) => el.scrollTo(0, el.scrollHeight));
+	await expect(button).toBeVisible();
+});

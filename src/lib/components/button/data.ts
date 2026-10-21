@@ -142,6 +142,13 @@ export default {
 				en: 'A button runs an action; a file upload’s button opens a file picker and keeps the chosen files as a form value.',
 				ja: 'ボタンは操作を実行し、ファイルアップロードのボタンはファイル選択画面を開いて、選んだファイルをフォームの値として持つ。'
 			}
+		},
+		{
+			id: 'back-to-top',
+			diff: {
+				en: 'A button runs any action in its place in the layout; a back to top button only returns to the top and often floats over the page.',
+				ja: 'ボタンはレイアウトの中の決まった場所でさまざまな操作を実行し、スクロールトップボタンは先頭へ戻ることだけを受け持ち、ページの上に浮かぶことが多い。'
+			}
 		}
 	],
 	sources: [

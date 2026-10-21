@@ -98,6 +98,13 @@ export default {
 				en: 'A link moves to another page or place; a button runs an action on the current page.',
 				ja: 'リンクは別のページや場所へ移動し、ボタンは今のページで操作を実行する。'
 			}
+		},
+		{
+			id: 'back-to-top',
+			diff: {
+				en: 'A link moves to any page or place; a back to top button only returns to the top of the current page.',
+				ja: 'リンクはどのページや場所へも移れ、スクロールトップボタンは今のページの先頭へ戻るだけ。'
+			}
 		}
 	],
 	sources: [
