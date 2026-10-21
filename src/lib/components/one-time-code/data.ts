@@ -73,20 +73,6 @@ export default {
 				en: 'Use one field. If the design needs separate boxes, make a paste into the first box fill all of them.',
 				ja: '1つの欄にする。どうしても枠を分けるなら、最初の枠への貼り付けですべての枠が埋まるようにする。'
 			}
-		},
-		{
-			pattern: {
-				en: 'Turning off autofill with `autocomplete="off"`',
-				ja: '`autocomplete="off"` で自動入力を止める'
-			},
-			harm: {
-				en: 'The phone or browser can no longer offer the code from the message, so people with motor impairments, who are helped by typing less, have to type all of it.',
-				ja: 'スマートフォンやブラウザが、届いたコードを入力の候補に出せなくなる。入力が減ると助かる、運動機能に障害のある人も、コードをすべて手で入力することになる。'
-			},
-			instead: {
-				en: 'Set `autocomplete="one-time-code"` so the browser or phone can fill in the code from the message.',
-				ja: '`autocomplete="one-time-code"` を付け、ブラウザやスマートフォンが届いたコードを入力できるようにする。'
-			}
 		}
 	],
 	related: [
