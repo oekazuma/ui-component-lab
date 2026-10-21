@@ -24,7 +24,7 @@ export default {
 		},
 		{
 			en: 'The badge itself is hidden from screen readers; the count is put into the name of the button it belongs to, such as “Notifications, 3 unread”.',
-			ja: 'バッジ自体はスクリーンリーダーから隠し、件数は「通知 未読3件」のように持ち主のボタンの名前に含める。'
+			ja: 'バッジ自体はスクリーンリーダーから隠し、件数は「通知 3件の未読」のように持ち主のボタンの名前に含める。'
 		}
 	],
 	keyboard: [
