@@ -641,3 +641,16 @@ test('date picker: min is set to today in the browser, with a hint on the year a
 	await input.fill(today);
 	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
 });
+
+test('slider: shows the minimum and maximum under the ends of the track', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/slider/');
+	const r = (await demo.getByRole('slider', { name: 'Volume' }).boundingBox())!;
+	// 値の範囲は slider の役割が読み上げるので、見た目だけの文字にする
+	const lo = demo.locator('[aria-hidden="true"]').getByText('0', { exact: true });
+	const hi = demo.locator('[aria-hidden="true"]').getByText('100', { exact: true });
+	const l = (await lo.boundingBox())!;
+	const h = (await hi.boundingBox())!;
+	expect(Math.abs(l.x - r.x)).toBeLessThan(2);
+	expect(Math.abs(h.x + h.width - (r.x + r.width))).toBeLessThan(2);
+	expect(l.y).toBeGreaterThan(r.y + r.height / 2);
+});

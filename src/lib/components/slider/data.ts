@@ -16,8 +16,8 @@ export default {
 		ja: 'つまみを溝に沿って動かし、範囲内の数値を選ぶ部品。'
 	},
 	appearance: {
-		en: 'A horizontal line with a round knob. The part of the line before the knob is often filled with the accent color.',
-		ja: '横線の上に丸いつまみがある。つまみより手前の線はアクセントカラーで塗られることが多い。'
+		en: 'A horizontal line with a round knob. The part of the line before the knob is often filled with the accent color. The minimum and maximum values are often shown at the two ends.',
+		ja: '横線の上に丸いつまみがある。つまみより手前の線はアクセントカラーで塗られることが多い。両端に最小値と最大値が書かれることも多い。'
 	},
 	behavior: [
 		{
@@ -31,6 +31,10 @@ export default {
 		{
 			en: 'The value moves in fixed steps; this demo uses steps of 5.',
 			ja: '値は決まった刻みで変わる。このデモは5刻み。'
+		},
+		{
+			en: 'In this demo, 0 and 100 under the ends of the track show the range. Screen readers already announce the range from the slider role, so these numbers are hidden from them with `aria-hidden`.',
+			ja: 'このデモでは、溝の両端の下に 0 と 100 を出して範囲を示す。範囲はスクリーンリーダーが slider の役割から読み上げるので、この数字は `aria-hidden` で読み上げから外している。'
 		}
 	],
 	keyboard: [
@@ -44,6 +48,12 @@ export default {
 				en: 'Changes the value by a larger amount (depends on the browser).',
 				ja: '値を大きめに増減する（ブラウザによる）。'
 			}
+		}
+	],
+	usage: [
+		{
+			en: 'Show the minimum and maximum next to the ends of the track, so people can tell the range without trying the slider.',
+			ja: '最小値と最大値を溝の両端に示し、動かしてみなくても範囲が分かるようにする。'
 		}
 	],
 	misuse: [
@@ -81,6 +91,11 @@ export default {
 			label: 'MDN: <input type="range">',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/range',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Carbon Design System: Slider',
+			url: 'https://carbondesignsystem.com/components/slider/usage/',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Understanding Success Criterion 2.5.7: Dragging Movements (WCAG 2.2)',
