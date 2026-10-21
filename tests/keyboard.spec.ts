@@ -288,3 +288,30 @@ test('menubar: Tab from a submenu closes it and leaves the menubar', async ({ pa
 	await expect(demo.getByRole('menubar')).not.toContainText('Undo');
 	expect(await demo.getByRole('menubar').evaluate((el) => el.contains(document.activeElement))).toBe(false);
 });
+
+test('mega menu: Escape closes the panel and returns focus to its button', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/mega-menu/');
+	const living = demo.getByRole('button', { name: 'Living' });
+
+	await living.focus();
+	await page.keyboard.press('Enter');
+	await expect(living).toHaveAttribute('aria-expanded', 'false');
+	await page.keyboard.press('Space');
+	await expect(living).toHaveAttribute('aria-expanded', 'true');
+	await page.keyboard.press('Tab');
+	await expect(demo.getByRole('link', { name: 'All about living' })).toBeFocused();
+	await page.keyboard.press('Escape');
+	await expect(living).toBeFocused();
+	await expect(living).toHaveAttribute('aria-expanded', 'false');
+	await expect(demo.getByRole('link', { name: 'Tax' })).toBeHidden();
+});
+
+test('mega menu: moving focus out of the navigation closes the panel', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/mega-menu/');
+	const health = demo.getByRole('button', { name: 'Health' });
+
+	await health.click();
+	await demo.getByRole('link', { name: 'Emergency care' }).focus();
+	await page.keyboard.press('Tab');
+	await expect(health).toHaveAttribute('aria-expanded', 'false');
+});

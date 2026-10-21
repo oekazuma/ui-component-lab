@@ -151,6 +151,13 @@ export default {
 				en: 'A menu opens from a single button and closes after use; a menubar stays visible and holds several menus side by side.',
 				ja: 'メニューは 1 つのボタンから開き、使い終わると閉じる。メニューバーは常に表示され、複数のメニューを横に並べて持つ。'
 			}
+		},
+		{
+			id: 'mega-menu',
+			diff: {
+				en: 'A menu lists a few actions in a narrow column; a mega menu shows many navigation links in a wide panel.',
+				ja: 'メニューは少しの操作を細い列に並べ、メガメニューは多くのナビゲーションのリンクを幅の広いパネルで見せる。'
+			}
 		}
 	],
 	sources: [

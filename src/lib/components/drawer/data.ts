@@ -117,6 +117,13 @@ export default {
 				en: 'A drawer is the panel that slides in from the edge; a mobile menu is the navigation placed inside it.',
 				ja: 'ドロワーは端からすべり出るパネルで、モバイルメニューはその中に入れるナビゲーション。'
 			}
+		},
+		{
+			id: 'mega-menu',
+			diff: {
+				en: 'A drawer slides in from the edge of the screen and covers the page; a mega menu drops down under the horizontal menu on wide screens.',
+				ja: 'ドロワーは画面の端からすべり出てページを覆い、メガメニューは広い画面で水平メニューの下に開く。'
+			}
 		}
 	],
 	sources: [

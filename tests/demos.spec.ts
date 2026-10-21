@@ -798,3 +798,19 @@ test('mobile menu: sections open in place, and links and sections use different 
 	await nav.getByRole('link', { name: 'Moving in or out' }).click();
 	await expect(demo.locator('[role="status"]')).toHaveText('Going to: Moving in or out');
 });
+
+test('mega menu: a panel lists the section page and all its pages, and opening another closes it', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/mega-menu/');
+	const living = demo.getByRole('button', { name: 'Living' });
+	const children = demo.getByRole('button', { name: 'Children' });
+
+	await expect(living).toHaveAttribute('aria-expanded', 'true');
+	await expect(demo.getByRole('link', { name: 'All about living' })).toBeVisible();
+	await expect(demo.locator(`#${await living.getAttribute('aria-controls')}`).getByRole('link')).toHaveCount(7);
+	await children.click();
+	await expect(living).toHaveAttribute('aria-expanded', 'false');
+	await expect(children).toHaveAttribute('aria-expanded', 'true');
+
+	await page.mouse.click(1, 1);
+	await expect(children).toHaveAttribute('aria-expanded', 'false');
+});

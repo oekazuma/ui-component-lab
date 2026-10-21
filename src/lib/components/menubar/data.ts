@@ -155,6 +155,13 @@ export default {
 				en: 'A menubar item opens a list of commands; a tab shows its own panel of content in place.',
 				ja: 'メニューバーの項目は操作の一覧を開き、タブはその場で自分のパネルの内容を見せる。'
 			}
+		},
+		{
+			id: 'mega-menu',
+			diff: {
+				en: 'A menubar holds an app’s commands and is moved through with the arrow keys; a mega menu shows a site’s pages in a wide panel and is used with buttons and the Tab key.',
+				ja: 'メニューバーはアプリの操作をまとめ、矢印キーで移る。メガメニューはサイトのページを幅の広いパネルで見せ、ボタンと Tab キーで操作する。'
+			}
 		}
 	],
 	sources: [
