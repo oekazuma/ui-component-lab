@@ -51,8 +51,8 @@ export default {
 				ja: '確認ダイアログだけを安全策にする、日常的な操作にも確認を出す'
 			},
 			harm: {
-				en: 'When confirmations appear often, people stop reading them and press the confirm button out of habit, so the dialog no longer prevents mistakes; people still delete things such as their account by accident even after several confirmations.',
-				ja: '確認がたびたび出ると、利用者は読まずに反射的に確定のボタンを押すようになり、誤操作を防げなくなる。何度確認しても、アカウントなどを誤って削除してしまう。'
+				en: 'When confirmations appear often, people stop reading them and press the confirm button out of habit, so the dialog no longer prevents mistakes; people can still delete things such as their account by accident even after several confirmations.',
+				ja: '確認がたびたび出ると、利用者は読まずに反射的に確定のボタンを押すようになり、誤操作を防げなくなる。何度確認しても、アカウントなどを誤って削除してしまうことがある。'
 			},
 			instead: {
 				en: 'Keep confirmations for actions that destroy work or cost money, say exactly what will happen, and label the buttons with their outcome, such as “Delete file” and “Keep file”. Wherever possible, let people undo or restore instead.',

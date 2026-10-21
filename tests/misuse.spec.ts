@@ -8,6 +8,7 @@ test('misuse: carousel shows the section with labels', async ({ page }) => {
 	await expect(section).toContainText('代わりに');
 });
 
+// divider には根拠のある項目が見つかっていない。項目を足したら、項目のない別の部品に替える
 test('misuse: section is absent without entries', async ({ page }) => {
 	await page.goto('en/components/divider/');
 	await expect(page.getByRole('heading', { name: 'Misuses to avoid' })).toHaveCount(0);
@@ -19,4 +20,15 @@ test('misuse: labels follow the language switch', async ({ page }) => {
 	await page.getByRole('link', { name: 'English' }).click();
 	await expect(page.getByRole('heading', { name: 'Misuses to avoid' })).toBeVisible();
 	await expect(page.getByRole('region', { name: 'Misuses to avoid' })).toContainText('Harm');
+});
+
+test('misuse: usage section disappears once every note moved to misuse', async ({ page }) => {
+	await page.goto('en/components/spinner/');
+	await expect(page.getByRole('heading', { name: 'Misuses to avoid' })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Usage notes' })).toHaveCount(0);
+});
+
+test('misuse: checkbox demo explains why it starts with a box checked', async ({ page }) => {
+	await page.goto('ja/components/checkbox/');
+	await expect(page.getByRole('region', { name: '挙動' })).toContainText('このデモでは');
 });
