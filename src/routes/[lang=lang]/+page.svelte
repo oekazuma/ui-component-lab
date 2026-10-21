@@ -21,11 +21,6 @@
 	);
 </script>
 
-<svelte:head>
-	<title>{siteName}</title>
-	<meta name="description" content={ui.tagline} />
-</svelte:head>
-
 <h1 class="visually-hidden">{siteName}</h1>
 <p class="tagline">{ui.tagline}</p>
 <p class="systems-link"><a href={systemsPath(lang)}>{ui.systems}</a></p>

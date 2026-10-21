@@ -10,10 +10,6 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{siteName}</title>
-</svelte:head>
-
 <main>
 	<h1>{siteName}</h1>
 	<ul>

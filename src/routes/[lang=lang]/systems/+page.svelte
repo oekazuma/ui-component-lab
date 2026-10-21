@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { componentPath, homePath } from '#lib/paths.js';
-	import { siteName, t } from '#lib/i18n.js';
+	import { t } from '#lib/i18n.js';
 	import { entries } from '#lib/registry.js';
 	import type { PageProps } from './$types';
 
@@ -23,11 +23,6 @@
 			.toSorted((a, b) => b.rows.length - a.rows.length || a.name.localeCompare(b.name))
 	);
 </script>
-
-<svelte:head>
-	<title>{ui.systems} | {siteName}</title>
-	<meta name="description" content={ui.systemsLead} />
-</svelte:head>
 
 <p class="back">
 	<a href={homePath(lang)}>← {ui.backToList}</a>
