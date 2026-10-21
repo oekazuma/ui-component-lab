@@ -31,6 +31,14 @@ export default {
 		{
 			en: 'This demo is a native modal `<dialog>` styled to sit at the right edge.',
 			ja: 'このデモはネイティブのモーダル `<dialog>` を右端に寄せたもの。'
+		},
+		{
+			en: 'In this demo, `closedby="any"` also closes the drawer when the dimmed background is clicked. Browsers that do not support `closedby` ignore it, and the drawer then closes only with the close button or Esc.',
+			ja: 'このデモでは `closedby="any"` により、暗くした背景をクリックしても閉じる。`closedby` に対応していないブラウザはこれを無視し、閉じるボタンか Esc でだけ閉じる。'
+		},
+		{
+			en: 'In this demo, the choices take effect only when “Apply” is pressed, and the button that opens the drawer then shows how many filters are on. Closing it any other way drops the choices made since it opened.',
+			ja: 'このデモでは、選んだ条件は「適用」を押したときに反映され、開くボタンに件数が出る。ほかの方法で閉じると、開いてから選んだ内容は取り消される。'
 		}
 	],
 	keyboard: [
@@ -45,8 +53,24 @@ export default {
 		{
 			key: 'Esc',
 			action: {
-				en: 'Closes the drawer and returns focus to the button.',
-				ja: 'ドロワーを閉じ、ボタンにフォーカスを戻す。'
+				en: 'Closes the drawer without applying and returns focus to the button.',
+				ja: '適用せずにドロワーを閉じ、ボタンにフォーカスを戻す。'
+			}
+		}
+	],
+	variations: [
+		{
+			name: { en: 'Left or right', ja: '左・右' },
+			description: {
+				en: 'Slides in from the left or right edge over part of the page. This demo opens from the right.',
+				ja: 'ページの左端か右端から、ページの一部に重ねて出る。このデモは右から開く。'
+			}
+		},
+		{
+			name: { en: 'Full screen', ja: '全面' },
+			description: {
+				en: 'Covers the whole screen instead of sliding in over part of it.',
+				ja: 'ページの一部ではなく、画面全体を覆って出る。'
 			}
 		}
 	],
@@ -96,6 +120,16 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ドロワー」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/drawer/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ドロワー（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/drawer/usage/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'MDN: <dialog> closedby',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Nielsen Norman Group: Hamburger Menus and Hidden Navigation Hurt UX Metrics',

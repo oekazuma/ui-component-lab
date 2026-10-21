@@ -193,3 +193,25 @@ test('alert dialog: Discard empties the note; Keep editing and Esc leave it', as
 	await expect(open).toBeFocused();
 	await expect(demo.locator('[role="status"]')).toHaveText('Discarded');
 });
+
+test('drawer: Apply sets the count on the button; a backdrop click closes without applying', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/drawer/');
+	const drawer = page.getByRole('dialog', { name: 'Filters' });
+	await demo.getByRole('button', { name: 'Filters' }).click();
+	await drawer.getByLabel('In stock').check();
+	await drawer.getByLabel('Free shipping').check();
+	await drawer.getByRole('button', { name: 'Apply' }).click();
+	await expect(drawer).toBeHidden();
+	const open = demo.getByRole('button', { name: 'Filters (2)' });
+	await expect(open).toBeFocused();
+
+	await open.click();
+	await drawer.getByLabel('On sale').check();
+	const box = (await drawer.boundingBox())!;
+	await page.mouse.click(box.x / 2, box.y + box.height / 2);
+	await expect(drawer).toBeHidden();
+	await expect(open).toBeVisible();
+	await open.click();
+	await expect(drawer.getByLabel('On sale')).not.toBeChecked();
+	await expect(drawer.getByLabel('In stock')).toBeChecked();
+});
