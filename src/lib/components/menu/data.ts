@@ -158,6 +158,13 @@ export default {
 				en: 'A menu lists a few actions in a narrow column; a mega menu shows many navigation links in a wide panel.',
 				ja: 'メニューは少しの操作を細い列に並べ、メガメニューは多くのナビゲーションのリンクを幅の広いパネルで見せる。'
 			}
+		},
+		{
+			id: 'language-selector',
+			diff: {
+				en: 'A menu holds actions and is moved through with the arrow keys; a language selector is a button and a list of links moved through with Tab.',
+				ja: 'メニューは操作をまとめて矢印キーで移り、ランゲージセレクターはボタンとリンクの一覧で Tab キーで移る。'
+			}
 		}
 	],
 	sources: [

@@ -115,13 +115,15 @@ test('language: the header button opens a list of languages and switches', async
 test('language: Escape closes the list and returns focus to the button', async ({ page }) => {
 	await page.goto('en/');
 	await page.waitForLoadState('networkidle');
-	const button = page.getByRole('button', { name: /Language/ });
+	// 一覧のランゲージセレクターのデモにも「Language」のボタンがあるので、ヘッダーの中に絞る
+	const header = page.getByRole('banner');
+	const button = header.getByRole('button', { name: /Language/ });
 	await button.click();
-	await page.getByRole('link', { name: '日本語' }).focus();
+	await header.getByRole('link', { name: '日本語' }).focus();
 	await page.keyboard.press('Escape');
 	await expect(button).toHaveAttribute('aria-expanded', 'false');
 	await expect(button).toBeFocused();
-	await expect(page.getByRole('link', { name: '日本語' })).toBeHidden();
+	await expect(header.getByRole('link', { name: '日本語' })).toBeHidden();
 });
 
 test('language: on phones the switcher stays on the first header row with the logo', async ({ page }) => {

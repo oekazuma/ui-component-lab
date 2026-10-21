@@ -110,6 +110,13 @@ export default {
 				en: 'A select shows only the chosen option until opened; a listbox keeps several options visible all the time.',
 				ja: 'セレクトボックスは開くまで選んだ値しか見えず、リストボックスは複数の選択肢を常に見せておく。'
 			}
+		},
+		{
+			id: 'language-selector',
+			diff: {
+				en: 'A select keeps the chosen option as a form value; a language selector lists links to each language’s version of the page.',
+				ja: 'セレクトボックスは選んだ選択肢をフォームの値として保持し、ランゲージセレクターはページの各言語版へのリンクを並べる。'
+			}
 		}
 	],
 	sources: [

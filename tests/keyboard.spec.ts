@@ -315,3 +315,29 @@ test('mega menu: moving focus out of the navigation closes the panel', async ({ 
 	await page.keyboard.press('Tab');
 	await expect(health).toHaveAttribute('aria-expanded', 'false');
 });
+
+test('language selector: opens with Enter, a language changes the demo page, and Escape returns focus', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/language-selector/');
+	const button = demo.getByRole('button', { name: 'Language', exact: true });
+	const japanese = demo.getByRole('link', { name: '日本語' });
+
+	// 閉じている一覧は hidden なので、役割ではなく属性で探す
+	await expect(demo.locator('a[lang="en"]')).toHaveAttribute('aria-current', 'true');
+	await button.focus();
+	await page.keyboard.press('Enter');
+	await expect(button).toHaveAttribute('aria-expanded', 'true');
+	await page.keyboard.press('Tab');
+	await expect(japanese).toBeFocused();
+	await expect(japanese).toHaveAttribute('lang', 'ja');
+	await page.keyboard.press('Enter');
+	await expect(button).toBeFocused();
+	await expect(button).toHaveAttribute('aria-expanded', 'false');
+	await expect(demo.locator('.content')).toHaveAttribute('lang', 'ja');
+	await expect(demo.locator('a[lang="ja"]')).toHaveAttribute('aria-current', 'true');
+
+	await page.keyboard.press('Space');
+	await page.keyboard.press('Tab');
+	await page.keyboard.press('Escape');
+	await expect(button).toBeFocused();
+	await expect(button).toHaveAttribute('aria-expanded', 'false');
+});
