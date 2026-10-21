@@ -1038,3 +1038,22 @@ test('rating: starts with no rating, and choosing a star says the value in words
 	await page.keyboard.press('ArrowRight');
 	await expect(demo.getByRole('radio', { name: '5 stars' })).toBeChecked();
 });
+
+test('empty state: says there is nothing yet, then that a search found nothing, and Clear search brings the list back', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/empty-state/');
+	await expect(demo.getByRole('heading', { name: 'No projects yet' })).toBeVisible();
+	await expect(demo.getByRole('searchbox')).toHaveCount(0);
+
+	await demo.getByRole('button', { name: 'Create sample projects' }).click();
+	await expect(demo.getByRole('listitem')).toHaveCount(3);
+	const search = demo.getByRole('searchbox', { name: 'Filter projects' });
+	await expect(search).toBeFocused();
+
+	await search.fill('zzz');
+	await expect(demo.getByRole('heading', { name: 'No projects match “zzz”' })).toBeVisible();
+	await expect(demo.getByRole('status')).toHaveText('No projects match “zzz”');
+	await demo.getByRole('button', { name: 'Clear search' }).click();
+	await expect(demo.getByRole('listitem')).toHaveCount(3);
+	await expect(search).toBeFocused();
+	await expect(search).toHaveValue('');
+});

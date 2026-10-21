@@ -57,6 +57,13 @@ export default {
 				en: 'A skeleton previews the layout of the content; a spinner is one shape that only shows something is loading.',
 				ja: 'スケルトンは内容のレイアウトを先に見せ、スピナーは読み込み中であることだけを1つの図形で示す。'
 			}
+		},
+		{
+			id: 'empty-state',
+			diff: {
+				en: 'A skeleton fills the space while content is still loading; an empty state appears after loading has finished with nothing to show.',
+				ja: 'スケルトンは、まだ読み込んでいる間に場所を埋める。空の状態は、読み込みが終わって表示するものがないときに出す。'
+			}
 		}
 	],
 	sources: [

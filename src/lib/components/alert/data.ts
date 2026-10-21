@@ -116,6 +116,13 @@ export default {
 				en: 'An alert carries ordinary important messages and can stay up for a long time; an emergency banner warns about urgent danger and cannot be closed.',
 				ja: 'アラートはふだんの重要なお知らせを伝えて長く載せておけ、緊急時バナーは差し迫った危険を知らせて閉じられない。'
 			}
+		},
+		{
+			id: 'empty-state',
+			diff: {
+				en: 'An alert interrupts to report something important; an empty state stands in for missing content and points to the next step.',
+				ja: 'アラートは大事なことを知らせるために割り込んで出る。空の状態は、ない内容の代わりに置き、次の操作を示す。'
+			}
 		}
 	],
 	sources: [
