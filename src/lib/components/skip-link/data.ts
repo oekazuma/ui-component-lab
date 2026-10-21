@@ -57,8 +57,8 @@ export default {
 		{
 			name: { en: 'Always visible', ja: '常に表示' },
 			description: {
-				en: 'A skip link that is always shown at the top of the page. It is the easiest to notice, but takes up space.',
-				ja: 'ページの上部に常に表示しておくもの。最も気づきやすいが、場所を取る。'
+				en: 'A skip link that is always shown as ordinary text at the top of the page. It is the easiest to build and sighted keyboard users can see it, but some designers avoid it because it can look out of place to people who do not need it.',
+				ja: 'ページの上部に、ふつうの文字のリンクとして常に表示しておくもの。いちばん簡単に作れ、画面を見ながらキーボードを使う人にも見えるが、必要のない人には目障りだとして避けるデザイナーもいる。'
 			}
 		}
 	],
@@ -114,8 +114,8 @@ export default {
 		{
 			id: 'link',
 			diff: {
-				en: 'A skip link is a link to a place on the same page that stays hidden until it gets focus; an ordinary link is always visible.',
-				ja: 'スキップリンクは同じページの中の場所へのリンクで、フォーカスが来るまで隠れている。ふつうのリンクは常に見えている。'
+				en: 'A skip link is a link to a place on the same page that usually stays hidden until it gets focus; an ordinary link is always visible.',
+				ja: 'スキップリンクは同じページの中の場所へのリンクで、多くはフォーカスが来るまで隠れている。ふつうのリンクは常に見えている。'
 			}
 		},
 		{

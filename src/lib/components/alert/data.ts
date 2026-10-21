@@ -106,8 +106,8 @@ export default {
 		{
 			id: 'callout',
 			diff: {
-				en: 'An alert tells the user something important and is announced right away; a callout sets apart helpful extra information and stays quiet.',
-				ja: 'アラートは重要なことを知らせてすぐに読み上げられ、注釈ブロックは役立つ補足を区別して見せるだけで読み上げで割り込まない。'
+				en: 'An alert tells the user something important, and content added to it is announced right away; a callout sets apart helpful extra information and is never announced on its own.',
+				ja: 'アラートは重要なことを知らせ、中身を入れるとすぐに読み上げられる。注釈ブロックは役立つ補足を区別して見せるだけで、ひとりでに読み上げられることはない。'
 			}
 		},
 		{

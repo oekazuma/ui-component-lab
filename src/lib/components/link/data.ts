@@ -109,8 +109,8 @@ export default {
 		{
 			id: 'skip-link',
 			diff: {
-				en: 'An ordinary link is always visible; a skip link is a link to a place on the same page that stays hidden until it gets focus.',
-				ja: 'ふつうのリンクは常に見えており、スキップリンクは同じページの中の場所へのリンクで、フォーカスが来るまで隠れている。'
+				en: 'An ordinary link is always visible; a skip link is a link to a place on the same page that usually stays hidden until it gets focus.',
+				ja: 'ふつうのリンクは常に見えており、スキップリンクは同じページの中の場所へのリンクで、多くはフォーカスが来るまで隠れている。'
 			}
 		}
 	],

@@ -13,8 +13,8 @@ export default {
 		ja: '周りの文章と区別して、手続きの助けになる補足や具体例を載せるブロック。'
 	},
 	appearance: {
-		en: 'A paragraph inside a border, sometimes with a light background, a short title, or an icon. Some have a thick border only on the left edge.',
-		ja: '枠線で囲んだ段落。薄い背景色や短いタイトル、アイコンが付くこともある。左端の線だけを太くしたものもある。'
+		en: 'A paragraph inside a border, sometimes with a light background or a short title. Some have a thick border only on the left edge.',
+		ja: '枠線で囲んだ段落。薄い背景色や短いタイトルが付くこともある。左端の線だけを太くしたものもある。'
 	},
 	behavior: [
 		{
@@ -55,10 +55,10 @@ export default {
 			}
 		},
 		{
-			name: { en: 'With an icon and a disclosure', ja: 'アイコンとディスクロージャー付き' },
+			name: { en: 'Left border with a disclosure', ja: '左端の線とディスクロージャー' },
 			description: {
-				en: 'A thick left border and an icon, with a disclosure inside that folds away extra information people can skip.',
-				ja: '左端の線を太くしてアイコンを付け、中のディスクロージャーに、読まなくても進められる補足を畳んでおくもの。'
+				en: 'A thick left border, with a disclosure inside that folds away extra information people can skip.',
+				ja: '左端の線を太くし、中のディスクロージャーに、読まなくても進められる補足を畳んでおくもの。'
 			}
 		}
 	],
@@ -87,7 +87,7 @@ export default {
 				ja: '全員が必ず読む必要のある情報を、注釈ブロックにだけ書く'
 			},
 			harm: {
-				en: 'On a busy page, or next to other eye-catching elements, some people do not notice the block at all.',
+				en: 'On a busy page, or next to other eye-catching elements, some people do not notice the block.',
 				ja: '要素の多いページや、ほかに目立つ要素が近くにある場所では、このブロックに気づかない人がいる。'
 			},
 			instead: {
@@ -114,8 +114,8 @@ export default {
 		{
 			id: 'alert',
 			diff: {
-				en: 'A callout sets apart helpful extra information and stays quiet; an alert tells the user something important and is announced right away.',
-				ja: '注釈ブロックは役立つ補足を区別して見せるだけで読み上げで割り込まず、アラートは重要なことを知らせてすぐに読み上げられる。'
+				en: 'A callout sets apart helpful extra information and is never announced on its own; an alert tells the user something important, and content added to it is announced right away.',
+				ja: '注釈ブロックは役立つ補足を区別して見せるだけで、ひとりでに読み上げられることはない。アラートは重要なことを知らせ、中身を入れるとすぐに読み上げられる。'
 			}
 		},
 		{

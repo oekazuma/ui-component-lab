@@ -97,8 +97,8 @@ export default {
 				ja: 'その言語を読めない人には、ここで言語を変えられることが分からない。'
 			},
 			instead: {
-				en: 'Add a widely recognized icon such as a globe. The Digital Agency Design System also labels the button “Language” in English, whatever the current language.',
-				ja: '地球のような広く知られたアイコンを添える。デジタル庁デザインシステムは、ボタンのラベルを今の言語にかかわらず英語の「Language」にしている。'
+				en: 'Add an icon that does not depend on one language, such as a globe. The Digital Agency Design System puts a globe icon on the button and labels it “Language” in English, whatever the current language.',
+				ja: '地球のような、特定の言語に頼らないアイコンを添える。デジタル庁デザインシステムは、ボタンに地球のアイコンを付け、ラベルを今の言語にかかわらず英語の「Language」にしている。'
 			}
 		},
 		{
@@ -107,8 +107,8 @@ export default {
 				ja: '`<select>` で選択肢を選んだとたんに、その言語のページへ移る'
 			},
 			harm: {
-				en: 'A change of page that people did not ask for confuses those who do not easily notice the change or are easily distracted by it, such as people with visual or cognitive disabilities.',
-				ja: '求めていないページの移動は、視覚や認知に障害のある人など、変化に気づきにくい人や変化に気を取られやすい人を混乱させる。'
+				en: 'People with visual or cognitive disabilities may not notice that the page has changed, or may be thrown off by the change.',
+				ja: '視覚や認知に障害のある人は、ページが変わったことに気づけなかったり、変化に戸惑ったりする。'
 			},
 			instead: {
 				en: 'Use links to each language, or put a button next to the `<select>` that moves to the chosen language when pressed.',
@@ -127,8 +127,8 @@ export default {
 		{
 			id: 'menu',
 			diff: {
-				en: 'A language selector is a button and a list of links moved through with Tab; a menu holds actions and is moved through with the arrow keys.',
-				ja: 'ランゲージセレクターはボタンとリンクの一覧で Tab キーで移り、メニューは操作をまとめ、矢印キーで移る。'
+				en: 'A language selector lists links to the same page in other languages; a menu lists actions to run on the current page.',
+				ja: 'ランゲージセレクターは同じページの別の言語版へのリンクを並べ、メニューは今のページで実行する操作を並べる。'
 			}
 		}
 	],

@@ -162,8 +162,8 @@ export default {
 		{
 			id: 'language-selector',
 			diff: {
-				en: 'A menu holds actions and is moved through with the arrow keys; a language selector is a button and a list of links moved through with Tab.',
-				ja: 'メニューは操作をまとめて矢印キーで移り、ランゲージセレクターはボタンとリンクの一覧で Tab キーで移る。'
+				en: 'A menu lists actions to run on the current page; a language selector lists links to the same page in other languages.',
+				ja: 'メニューは今のページで実行する操作を並べ、ランゲージセレクターは同じページの別の言語版へのリンクを並べる。'
 			}
 		}
 	],

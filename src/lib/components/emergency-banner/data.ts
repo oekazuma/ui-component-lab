@@ -12,8 +12,8 @@ export default {
 		ja: '人の命や財産に関わる緊急の出来事を知らせるため、サイトの上部を占めて表示するバナー。'
 	},
 	appearance: {
-		en: 'A box with a thick border in the error color at the very top of the page, above the header and other notices. It holds a large title that names the danger, the time it was updated, a short description, and sometimes one link button in the center.',
-		ja: 'ページの最上部、ヘッダーやほかのお知らせよりも上にある、エラーの色の太い枠線で囲んだ箱。危険の内容を表す大きなタイトル、更新日時、短い説明が入り、中央にリンクのボタンが 1 つ付くこともある。'
+		en: 'A box with a thick border in the error color at the top of the page, above other notices and sometimes above the header itself. It holds a large title that names the danger, the time it was updated, a short description, and sometimes one link button in the center.',
+		ja: 'ページの上部、ほかのお知らせよりも上（ヘッダーよりも上のこともある）にある、エラーの色の太い枠線で囲んだ箱。危険の内容を表す大きなタイトル、更新日時、短い説明が入り、中央にリンクのボタンが 1 つ付くこともある。'
 	},
 	behavior: [
 		{
@@ -37,8 +37,8 @@ export default {
 			ja: '押せるのはボタンだけで、バナーのほかの部分はリンクにしない。'
 		},
 		{
-			en: 'In this demo, the button shows where it would go instead of leaving the page. On a real site it often opens the details in a new tab, marked with an icon that has alternative text.',
-			ja: 'このデモでは、ボタンを押してもページを移らず、行き先を表示する。実際のサイトでは、詳細を新しいタブで開くことが多く、そのことを代替テキスト付きのアイコンで示す。'
+			en: 'In this demo, the button shows where it would go instead of leaving the page. If the link opens the details in a new tab, the Digital Agency Design System example marks this with an icon that has alternative text.',
+			ja: 'このデモでは、ボタンを押してもページを移らず、行き先を表示する。リンク先を新しいタブで開く場合、デジタル庁デザインシステムの実装例は、そのことを代替テキスト付きのアイコンで示す。'
 		}
 	],
 	keyboard: [
@@ -84,7 +84,7 @@ export default {
 				ja: 'バナーの説明に長い文章を書く'
 			},
 			harm: {
-				en: 'Flat text in a banner cannot get detailed information across accurately.',
+				en: 'It is hard to get detailed information across accurately with flat text in a banner.',
 				ja: 'バナーの平たい文字だけでは、詳しい情報を正しく伝えるのが難しい。'
 			},
 			instead: {

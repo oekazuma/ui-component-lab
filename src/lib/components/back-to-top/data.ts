@@ -21,8 +21,8 @@ export default {
 			ja: '押すと、ページの先頭までスクロールして戻る。'
 		},
 		{
-			en: 'The browser already does the same with the Home key, and on many phones by tapping the top edge of the screen.',
-			ja: '同じことは、ブラウザが Home キーで、多くのスマートフォンでは画面の上端をタップすることで、すでに用意している。'
+			en: 'The browser already does the same with the Home key, and Safari on iPhone does it when the status bar at the top of the screen is tapped.',
+			ja: '同じことは、ブラウザが Home キーで、iPhone の Safari では画面上端のステータスバーをタップすることで、すでに用意している。'
 		},
 		{
 			en: 'In this demo, the article scrolls inside its own box so the page stays still, and it starts partway down. The button stays in the lower right of the box, appears only after scrolling about half the height of the box, and moves focus to the article’s title when pressed, so the next Tab starts from the top instead of from the hidden button.',
@@ -49,23 +49,23 @@ export default {
 			ja: 'デジタル庁デザインシステムは、この部品の使用を推奨していない。アクセシビリティの問題がある一方で、ブラウザでも先頭へ戻れるため使いやすさは上がらない、という理由による。それでも使う場合は、不利益を受ける人がいることを踏まえて慎重に使う。'
 		},
 		{
-			en: 'Nielsen Norman Group suggests it for pages longer than about four screens: one button per page in the lower right corner, labeled in words, shown only after people scroll well down, and small enough not to cover content.',
-			ja: 'Nielsen Norman Group は、画面およそ 4 つ分より長いページに向けて、ページに 1 つだけ右下の隅に置き、文字のラベルを付け、十分に下までスクロールしてから出し、内容を覆わない小ささにすることを勧めている。'
+			en: 'Nielsen Norman Group takes a different view: most people do not know shortcuts such as the Home key, so for pages longer than about four screens it suggests one button per page in the lower right corner, labeled in words, and small enough not to cover content. It also suggests showing it only once people have scrolled a few screens and start scrolling back up, and notes that other techniques, such as navigation at the bottom of the page or sticky menus, may work better.',
+			ja: 'Nielsen Norman Group は、Home キーのような方法を知らない人が多いとして、画面およそ 4 つ分より長いページに向けて、ページに 1 つだけ右下の隅に置き、文字のラベルを付け、内容を覆わない小ささにすることを勧めている。何画面か下までスクロールして上へ戻ろうとしたときに初めて出すことも提案し、ページ下部のナビゲーションや固定のメニューなど、ほかの方法のほうが合う場合もあるとしている。'
 		}
 	],
 	misuse: [
 		{
 			pattern: {
-				en: 'Fixing the button on screen over the content',
-				ja: 'ボタンを内容の上に重ねて、画面に固定する'
+				en: 'Keeping the button fixed over the content at all times',
+				ja: 'ボタンを内容の上に重ねて、常に画面に固定しておく'
 			},
 			harm: {
 				en: 'A fixed button always hides part of the content, which gets in the way of reading, especially for people who zoom in.',
 				ja: '固定したボタンは常に内容の一部を隠し、特に画面を拡大して見ている人の閲覧を妨げる。'
 			},
 			instead: {
-				en: 'Consider leaving it out, since the Home key and the browser already return to the top. If you add it, show it only after people scroll well down and keep it small.',
-				ja: 'Home キーやブラウザの機能で先頭へ戻れるので、置かないことを検討する。置くなら、十分に下までスクロールしてから出し、小さくする。'
+				en: 'Consider leaving it out, since the Home key and the browser already return to the top. If you add it, show it only once people have scrolled a few screens and start scrolling back up, and keep it small.',
+				ja: 'Home キーやブラウザの機能で先頭へ戻れるので、置かないことを検討する。置くなら、何画面か下までスクロールして上へ戻ろうとしたときに初めて出し、小さくする。'
 			}
 		},
 		{
