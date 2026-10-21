@@ -15,16 +15,20 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'Updates when the count changes and disappears at zero; in this demo, opening the notifications clears it.',
-			ja: '件数が変わると更新され、0になると消える。このデモでは通知を開くと消える。'
+			en: 'Updates when the count changes and disappears at zero; in this demo, pressing a button clears its badge.',
+			ja: '件数が変わると更新され、0になると消える。このデモではボタンを押すとバッジが消える。'
 		},
 		{
-			en: 'Large numbers are shortened, such as “99+”.',
-			ja: '大きな数は「99+」のように省略する。'
+			en: 'Large numbers are capped, such as “99+” for 120.',
+			ja: '大きな数は、120件を「99+」とするように頭打ちにする。'
 		},
 		{
-			en: 'The badge itself is hidden from screen readers; the count is put into the name of the button it belongs to, such as “Notifications, 3 unread”.',
-			ja: 'バッジ自体はスクリーンリーダーから隠し、件数は「通知 3件の未読」のように持ち主のボタンの名前に含める。'
+			en: 'The badge itself is hidden from screen readers; the count is put into the name of the button it belongs to, such as “Notifications, 3 unread”. A capped count goes into the name as shown, “99+”, so that voice control users can say what they see.',
+			ja: 'バッジ自体はスクリーンリーダーから隠し、件数は「通知 3件の未読」のように持ち主のボタンの名前に含める。頭打ちにした件数は見えているとおり「99+」と名前に入れ、音声で操作する人が見たままの言葉で呼べるようにする。'
+		},
+		{
+			en: 'In this demo, the buttons show only an icon, so each gets its name from `aria-label`. A dot carries no number, so the name says “new” instead.',
+			ja: 'このデモのボタンはアイコンだけなので、名前は `aria-label` で付ける。ドットには数がないため、名前に「新着あり」と入れる。'
 		}
 	],
 	keyboard: [
@@ -37,6 +41,13 @@ export default {
 		}
 	],
 	variations: [
+		{
+			name: { en: 'Count', ja: '件数' },
+			description: {
+				en: 'A number, capped at a maximum such as “99+”. It is usually hidden at zero.',
+				ja: '数字を入れるもの。「99+」のように上限で頭打ちにし、0のときはふつう隠す。'
+			}
+		},
 		{
 			name: { en: 'Dot', ja: 'ドット' },
 			description: {
@@ -56,9 +67,14 @@ export default {
 	],
 	sources: [
 		{
+			label: 'Understanding Success Criterion 2.5.3: Label in Name (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html',
+			checkedAt: '2026-10-21'
+		},
+		{
 			label: 'MUI: Badge',
 			url: 'https://mui.com/material-ui/react-badge/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

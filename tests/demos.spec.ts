@@ -402,3 +402,18 @@ test('skeleton: tells assistive technology when loading starts and ends, with a 
 	await expect(demo.locator('.bone')).toHaveCount(0);
 	await expect(demo.getByText('Aiko Tanaka')).toBeVisible();
 });
+
+test('badge: icon-only buttons carry the count in their names, cap it at 99+, and use a dot', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/badge/');
+	const messages = demo.getByRole('button', { name: 'Messages, 99+ unread' });
+	await expect(messages).toContainText('99+');
+	const downloads = demo.getByRole('button', { name: 'Downloads, new' });
+	await expect(downloads.locator('.badge')).toHaveText('');
+	await expect(downloads.locator('.badge')).toBeVisible();
+	await expect(demo.getByRole('button', { name: 'Notifications, 3 unread' })).toContainText('3');
+
+	await messages.click();
+	await expect(demo.getByRole('button', { name: 'Messages', exact: true })).not.toContainText('99+');
+	await downloads.click();
+	await expect(demo.getByRole('button', { name: 'Downloads', exact: true }).locator('.badge')).toHaveCount(0);
+});
