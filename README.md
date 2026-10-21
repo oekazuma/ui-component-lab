@@ -4,7 +4,7 @@
 
 <h1 align="center">UI Component Lab</h1>
 
-<p align="center">A field guide to UI components. Learn their names and try how they behave, right on the page.<br>English and Japanese.</p>
+<p align="center">What’s that UI called? Learn the name and the behavior by trying it.<br>English and Japanese.</p>
 
 <p align="center"><a href="https://oekazuma.github.io/ui-component-lab/">oekazuma.github.io/ui-component-lab</a></p>
 

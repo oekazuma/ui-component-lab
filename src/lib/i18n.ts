@@ -4,7 +4,7 @@ export const siteName = 'UI Component Lab';
 
 const ui = {
 	en: {
-		tagline: 'A field guide to UI components: names, looks, and behavior you can try in place.',
+		tagline: 'What’s that UI called? Learn the name and the behavior by trying it.',
 		details: 'Details',
 		reset: 'Reset',
 		aliases: 'Also known as',
@@ -35,7 +35,7 @@ const ui = {
 		componentHere: 'Component in this guide'
 	},
 	ja: {
-		tagline: 'UIコンポーネントの名前・見た目・挙動を、その場で触って確かめられる図鑑です。',
+		tagline: 'そのUI、なんて名前？ 呼び方と動きを、触って覚えよう。',
 		details: '詳細を見る',
 		reset: 'リセット',
 		aliases: '別名',

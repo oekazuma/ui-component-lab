@@ -1,6 +1,6 @@
 # UI Component Lab
 
-UI コンポーネントの名前と挙動を英日で引ける図鑑。SvelteKit 3 と Svelte 5（runes）で全ページをプリレンダーし、GitHub Pages の `/ui-component-lab` に置く。
+UIコンポーネントの名前と動きを、英日で試して確かめられるサイト。SvelteKit 3 と Svelte 5（runes）で全ページをプリレンダーし、GitHub Pages の `/ui-component-lab` に置く。
 
 ## 確認コマンド
 
