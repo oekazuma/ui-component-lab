@@ -336,3 +336,34 @@ test('breadcrumb: five levels, the current page is plain text, and its long name
 	expect(await current.evaluate((el) => el.getClientRects().length)).toBeGreaterThan(1);
 	expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
 });
+
+test('toast: with Undo and Close it stays until dismissed, and every press is announced again', async ({ page }) => {
+	await page.clock.install();
+	const demo = await openDemo(page, 'en/components/toast/');
+	const archive = demo.getByRole('button', { name: 'Archive message' });
+	const status = demo.getByRole('status');
+
+	await archive.click();
+	await expect(status).toHaveText('Message archived');
+	await expect(demo.getByText('2 messages in the inbox')).toBeVisible();
+	await page.clock.fastForward(10_000);
+	await expect(demo.getByRole('button', { name: 'Undo' })).toBeVisible();
+
+	// 同じ文のままだとスクリーンリーダーは読み直さないので、押すたびに中身の要素を作り直していることを見る
+	await status.locator('span').evaluate((s) => (s.dataset.mark = 'old'));
+	await archive.click();
+	await expect(status.locator('span')).toHaveCount(1);
+	await expect(status.locator('span[data-mark]')).toHaveCount(0);
+	await expect(demo.getByText('1 message in the inbox')).toBeVisible();
+
+	await demo.getByRole('button', { name: 'Undo' }).click();
+	await expect(demo.getByText('2 messages in the inbox')).toBeVisible();
+	await expect(status).toHaveText('');
+	await expect(archive).toBeFocused();
+
+	await archive.click();
+	await demo.getByRole('button', { name: 'Close' }).click();
+	await expect(demo.getByRole('button', { name: 'Undo' })).toHaveCount(0);
+	await expect(archive).toBeFocused();
+	await expect(demo.getByText('1 message in the inbox')).toBeVisible();
+});

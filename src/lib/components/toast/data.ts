@@ -19,12 +19,20 @@ export default {
 			ja: '「アーカイブしました」のように操作のあとに表示され、フォーカスは動かさない。'
 		},
 		{
-			en: 'It is announced through a live region (`role="status"`) that is already on the page before the message is added.',
-			ja: 'メッセージを入れる前からページにあるライブリージョン（`role="status"`）で読み上げる。'
+			en: 'It is announced through a live region (`role="status"`) that is already on the page before the message is added. The buttons are kept outside the live region so that only the message is read.',
+			ja: 'メッセージを入れる前からページにあるライブリージョン（`role="status"`）で読み上げる。ボタンまで読み上げないよう、ボタンはライブリージョンの外に置く。'
 		},
 		{
-			en: 'Disappears after a few seconds (5 seconds in this demo). Toasts with buttons should not disappear by themselves, because keyboard users may not reach them in time.',
-			ja: '数秒で消える（このデモは5秒）。ボタンを含むトーストは、キーボード利用者が間に合わないため自動で消さない。'
+			en: 'Repeating the same message is not read again, so the message element is created anew each time the toast is shown.',
+			ja: '同じ文を入れ直しても読み上げられないため、表示するたびにメッセージの要素を作り直す。'
+		},
+		{
+			en: 'A toast without buttons disappears after a few seconds. A toast with buttons, such as Undo, stays until the user closes it, because keyboard users may not reach the buttons in time.',
+			ja: 'ボタンのないトーストは数秒で消える。「元に戻す」などのボタンを含むトーストは、キーボード利用者が間に合わないことがあるため、利用者が閉じるまで残す。'
+		},
+		{
+			en: 'In this demo, Undo puts the message back in the inbox. Undo and Close return focus to the Archive message button.',
+			ja: 'このデモでは、「元に戻す」でメッセージが受信トレイに戻る。「元に戻す」と「閉じる」を押すと、フォーカスは「メッセージをアーカイブ」のボタンへ戻る。'
 		},
 		{
 			en: 'Important information, such as form errors, belongs in an alert rather than a toast.',
@@ -32,8 +40,25 @@ export default {
 		}
 	],
 	keyboard: [
-		{ key: 'Enter / Space', action: { en: 'Runs the action that shows the toast.', ja: 'トーストを出す操作を実行する。' } },
+		{ key: 'Enter / Space', action: { en: 'Runs the action that shows the toast, or uses the focused button in the toast.', ja: 'トーストを出す操作を実行する。トーストの中のボタンにフォーカスがあれば、そのボタンを押す。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves to the Undo and Close buttons in the toast, in page order.', ja: 'ページの並び順で、トーストの中の「元に戻す」と「閉じる」のボタンへ移動する。' } },
 		{ key: 'Esc', action: { en: 'Dismisses the toast.', ja: 'トーストを消す。' } }
+	],
+	variations: [
+		{
+			name: { en: 'Message only', ja: 'メッセージだけ' },
+			description: {
+				en: 'Shows one line of text and disappears on its own after a few seconds.',
+				ja: '1行の文だけを表示し、数秒で自動で消えるもの。'
+			}
+		},
+		{
+			name: { en: 'With an action', ja: '操作付き' },
+			description: {
+				en: 'Adds a button such as Undo, and a Close button. It does not disappear on its own.',
+				ja: '「元に戻す」などのボタンと閉じるボタンを添えたもの。自動では消さない。'
+			}
+		}
 	],
 	misuse: [
 		{
@@ -84,7 +109,7 @@ export default {
 		{
 			label: 'MUI: Snackbar',
 			url: 'https://mui.com/material-ui/react-snackbar/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Carbon Design System: Notification',
