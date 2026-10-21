@@ -9,53 +9,110 @@ export default {
 		{ name: 'Image rotator', source: 'WAI-ARIA APG', url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/' }
 	],
 	summary: {
-		en: 'Shows a set of slides one at a time, with buttons to move to the previous or next one.',
-		ja: '複数のスライドを1枚ずつ表示し、ボタンで前後のスライドへ切り替える部品。'
+		en: 'Shows a set of slides one at a time, with buttons to choose a slide or move to the previous or next one.',
+		ja: '複数のスライドを1枚ずつ表示し、ボタンでスライドを選んだり前後へ切り替えたりする部品。'
 	},
 	appearance: {
-		en: 'A wide panel showing one image or card, with arrow buttons at the sides and small dots below that show which slide is visible.',
-		ja: '1枚の画像やカードを表示する横長の枠で、左右に矢印のボタン、下に今どのスライドかを示す小さな点が並ぶ。'
+		en: 'A heading above a wide panel showing one slide. Below it are numbered buttons with the current one highlighted, previous and next arrow buttons with the position as text, such as "1 / 4", and an All slides toggle that lists the rest.',
+		ja: '見出しの下に、1枚のスライドを表示する横長の枠がある。その下に、表示中のものが強調された番号のボタンと、「1 / 4」のように今の位置を文字で示す前後の矢印のボタン、残りのスライドを一覧にする「すべてのスライド」が並ぶ。'
 	},
 	behavior: [
 		{
-			en: 'The previous and next buttons switch slides; this demo wraps around from the last slide to the first.',
-			ja: '前後のボタンでスライドが切り替わる。このデモは最後のスライドから最初に戻る。'
+			en: 'Pressing a numbered button shows that slide. The numbered buttons are tabs (`role="tab"` in a `tablist`), and `aria-selected` marks the slide being shown.',
+			ja: '番号のボタンを押すと、そのスライドが表示される。番号のボタンはタブ（`tablist` の中の `role="tab"`）で、表示中のスライドを `aria-selected` で示す。'
 		},
 		{
-			en: 'Switching slides does not move focus off the button, and the new slide is announced through a live region.',
-			ja: '切り替えてもフォーカスはボタンに残り、新しいスライドはライブリージョンで読み上げられる。'
+			en: 'Only the selected numbered button is in the Tab order; the arrow keys move between them and show each slide as focus moves (automatic activation).',
+			ja: 'Tab キーで止まる番号のボタンは選択中のものだけで、矢印キーで移ると同時にそのスライドが表示される（自動アクティベーション）。'
 		},
 		{
-			en: 'If slides rotate automatically, there must be a button to stop rotation, and rotation stops while the carousel has focus or the mouse is over it.',
-			ja: '自動で切り替わる場合は止めるボタンが必要で、フォーカスやマウスがカルーセル上にある間は切り替えを止める。'
+			en: 'The previous and next buttons wrap around from the last slide to the first. Focus stays on the button, and the new slide is announced through a live region (`aria-live="polite"`).',
+			ja: '前後のボタンは最後のスライドから最初に戻る。フォーカスはボタンに残り、新しいスライドはライブリージョン（`aria-live="polite"`）で読み上げられる。'
+		},
+		{
+			en: 'The carousel is a region named by its visible heading (`aria-labelledby`), and each slide takes its name from its own heading.',
+			ja: 'カルーセルは見えている見出しを名前にした領域（`aria-labelledby`）で、各スライドの名前もスライドの見出しから取る。'
+		},
+		{
+			en: 'All slides is a `<details>` element that lists the other slides, starting from the one after the slide being shown.',
+			ja: '「すべてのスライド」は `<details>` 要素で、表示中のスライドの次から順に、ほかのスライドを一覧にする。'
+		},
+		{
+			en: 'In this demo, which is the container type, slides use text instead of images, the Learn more links do not navigate, and the numbered buttons and the previous and next buttons are shown together at every width.',
+			ja: 'このデモはコンテナタイプで、スライドを画像ではなく文字で作り、「詳しく見る」のリンクは移動しない。番号のボタンと前後のボタンは、どの幅でも両方を表示する。'
 		}
 	],
 	keyboard: [
 		{
-			key: 'Tab',
-			action: { en: 'Moves between the carousel buttons.', ja: 'カルーセルのボタン間を移動する。' }
+			key: 'Tab / Shift + Tab',
+			action: {
+				en: 'Moves through the link in the slide, the selected numbered button, the previous and next buttons, and All slides.',
+				ja: 'スライドのリンク、選択中の番号のボタン、前後のボタン、「すべてのスライド」の順に移動する。'
+			}
 		},
 		{
 			key: 'Enter / Space',
 			action: {
-				en: 'Shows the previous or next slide, keeping focus on the button.',
-				ja: '前または次のスライドを表示する。フォーカスはボタンに残る。'
+				en: 'On the previous or next button, shows that slide and keeps focus on the button. On All slides, opens or closes the list.',
+				ja: '前後のボタンでは、前または次のスライドを表示し、フォーカスはボタンに残る。「すべてのスライド」では一覧を開閉する。'
+			}
+		},
+		{
+			key: '← / →',
+			action: {
+				en: 'On the numbered buttons, moves to the previous / next number and shows its slide. Wraps around at either end.',
+				ja: '番号のボタンで、前・次の番号へ移り、そのスライドを表示する。端では反対の端へ戻る。'
+			}
+		},
+		{
+			key: 'Home / End',
+			action: {
+				en: 'On the numbered buttons, moves to the first / last number and shows its slide.',
+				ja: '番号のボタンで、最初・最後の番号へ移り、そのスライドを表示する。'
 			}
 		}
 	],
 	variations: [
 		{
-			name: { en: 'Auto-rotating', ja: '自動再生' },
+			name: { en: 'Key visual type', ja: '打ち出しタイプ' },
 			description: {
-				en: 'Changes slides on a timer, with a stop/start button placed first inside the carousel.',
-				ja: '一定時間ごとにスライドが切り替わるもの。停止・再開のボタンをカルーセル内の最初に置く。'
+				en: 'Placed at the top of a page to show what the site is about. Used only when the page `<title>` can serve as its heading.',
+				ja: 'ページの最上部に置き、ウェブサイトの主題を示すもの。ページの `<title>` 要素が見出しの役目を果たせる場合だけに使う。'
 			}
 		},
 		{
-			name: { en: 'Tabbed', ja: 'タブ付き' },
+			name: { en: 'Container type', ja: 'コンテナタイプ' },
 			description: {
-				en: 'The dots are tabs that jump to a specific slide and follow the Tabs keyboard pattern.',
-				ja: '下の点がタブになっていて、特定のスライドへ直接移動できるもの。キー操作はタブと同じ。'
+				en: 'Groups content on one topic, such as news, with a heading placed before it.',
+				ja: '「新着情報」のような1つの話題のまとまりに使い、前に見出しを置くもの。'
+			}
+		},
+		{
+			name: { en: 'Multiple and single', ja: 'マルチとシングル' },
+			description: {
+				en: 'A multiple carousel has 2 to 6 slides. A single one has only one slide and no controls for switching, and is used only for the key visual type.',
+				ja: 'マルチはスライドを2〜6枚にする。シングルはスライドが1枚だけで切り替えの操作部品を出さず、打ち出しタイプだけで使う。'
+			}
+		},
+		{
+			name: { en: 'Standard size', ja: '標準サイズ' },
+			description: {
+				en: 'Beside the slide, a next area shows a small version of the next slide as a Next slide button. Numbered buttons below show the position.',
+				ja: 'スライドの横に、次のスライドの縮小画像を「次のスライド」ボタンとして示す領域を置く。下の番号のボタンで位置を示す。'
+			}
+		},
+		{
+			name: { en: 'Narrow size', ja: '幅狭サイズ' },
+			description: {
+				en: 'For narrow content areas, down to 320 px. There is no next area; previous and next buttons with the position as text, such as "1 / 4", take its place.',
+				ja: 'コンテンツ領域が狭いとき（320px まで）の型。次のスライドを示す領域はなく、代わりに「1 / 4」のような位置の表示と前後のボタンを置く。'
+			}
+		},
+		{
+			name: { en: 'Auto-rotating', ja: '自動再生' },
+			description: {
+				en: 'Changes slides on a timer, with a stop/start button placed first inside the carousel. The Digital Agency Design System carousel does not rotate automatically.',
+				ja: '一定時間ごとにスライドが切り替わるもの。停止・再開のボタンをカルーセル内の最初に置く。デジタル庁デザインシステムのカルーセルは自動では切り替わらない。'
 			}
 		}
 	],
@@ -63,6 +120,10 @@ export default {
 		{
 			en: 'Keep one topic per carousel.',
 			ja: '1つのカルーセルには1つの話題だけを入れる。'
+		},
+		{
+			en: 'Keep the text on each slide short and explain the details on the linked page.',
+			ja: 'スライドの文字は短くし、詳しいことはリンク先で説明する。'
 		}
 	],
 	misuse: [
@@ -95,8 +156,8 @@ export default {
 				ja: '点を押すと何が出るのかを前もって知ることができない。点は特にスマートフォンで見落としやすい。'
 			},
 			instead: {
-				en: 'Use previous and next buttons, or give each slide a control that names or shows its content, such as a label or thumbnail. Make the controls large enough to read and select.',
-				ja: '前後のボタンで切り替えるか、スライドごとにラベルやサムネイルなど中身が分かる操作部品を付ける。操作部品は読めて押せる大きさにする。'
+				en: 'Use previous and next buttons, or give each slide a control that names or shows its content, such as a label or thumbnail. Numbers show the position but not the content, so also offer a list of all slides. Make the controls large enough to read and select.',
+				ja: '前後のボタンで切り替えるか、スライドごとにラベルやサムネイルなど中身が分かる操作部品を付ける。番号は位置を示すだけで中身は分からないので、すべてのスライドの一覧も用意する。操作部品は読めて押せる大きさにする。'
 			}
 		}
 	],
@@ -104,8 +165,8 @@ export default {
 		{
 			id: 'tabs',
 			diff: {
-				en: 'A carousel steps through slides in order with previous and next buttons; tabs let the user jump to any panel by its name.',
-				ja: 'カルーセルは前後のボタンで順に切り替え、タブは名前の付いたパネルへ直接切り替える。'
+				en: 'A carousel picks slides by number or steps through them with previous and next buttons; tabs let the user jump to any panel by its name.',
+				ja: 'カルーセルは番号でスライドを選ぶか前後のボタンで順に切り替え、タブは名前の付いたパネルへ直接切り替える。'
 			}
 		},
 		{
@@ -130,7 +191,12 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Carousel (Slide Show or Image Rotator) Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'WAI-ARIA APG: Auto-Rotating Image Carousel with Tabs for Slide Control Example',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-2-tablist/',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Understanding Success Criterion 2.2.2: Pause, Stop, Hide (WCAG 2.2)',
@@ -145,7 +211,17 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「カルーセル」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/carousel/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「カルーセル（アクセシビリティ）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/carousel/accessibility/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: carousel',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/carousel',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

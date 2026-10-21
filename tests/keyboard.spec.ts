@@ -114,3 +114,47 @@ test('combobox: arrow keys and Enter during IME composition are left to the IME'
 	await expect(input).toHaveValue('ap');
 	await expect(input).toHaveAttribute('aria-expanded', 'true');
 });
+
+test('carousel: arrow keys, End and Home on the slide numbers move focus and show the slide', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/carousel/');
+	const tab = (n: number) => demo.getByRole('tab', { name: `Slide ${n}` });
+	const shown = demo.getByRole('tabpanel');
+
+	await tab(1).focus();
+	await page.keyboard.press('ArrowRight');
+	await expect(tab(2)).toBeFocused();
+	await expect(tab(2)).toHaveAttribute('aria-selected', 'true');
+	await expect(tab(2)).toHaveAttribute('tabindex', '0');
+	await expect(tab(1)).toHaveAttribute('tabindex', '-1');
+	await expect(shown).toHaveAttribute('id', (await tab(2).getAttribute('aria-controls'))!);
+
+	await page.keyboard.press('End');
+	await expect(tab(4)).toBeFocused();
+	await page.keyboard.press('ArrowRight');
+	await expect(tab(1)).toBeFocused();
+	await page.keyboard.press('ArrowLeft');
+	await expect(tab(4)).toBeFocused();
+	await page.keyboard.press('Home');
+	await expect(tab(1)).toBeFocused();
+	await expect(tab(1)).toHaveAttribute('aria-selected', 'true');
+	await expect(demo).toContainText('1 / 4');
+});
+
+test('carousel: previous and next keep focus on the button and wrap around', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/carousel/');
+	const next = demo.getByRole('button', { name: 'Next slide' });
+	const prev = demo.getByRole('button', { name: 'Previous slide' });
+
+	await next.focus();
+	await page.keyboard.press('Enter');
+	await expect(next).toBeFocused();
+	await expect(demo).toContainText('2 / 4');
+	await expect(demo.getByRole('tab', { name: 'Slide 2' })).toHaveAttribute('aria-selected', 'true');
+
+	await prev.focus();
+	await page.keyboard.press('Space');
+	await page.keyboard.press('Space');
+	await expect(prev).toBeFocused();
+	await expect(demo).toContainText('4 / 4');
+	await expect(demo.locator('[aria-live="polite"]').getByRole('tabpanel')).toHaveCount(1);
+});

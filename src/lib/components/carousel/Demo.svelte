@@ -5,94 +5,249 @@
 
 	const text = {
 		en: {
-			label: 'Featured trips',
+			heading: 'Upcoming events',
+			choose: 'Choose a slide',
+			slide: 'Slide ',
 			prev: 'Previous slide',
 			next: 'Next slide',
-			of: (n: number, total: number) => `${n} of ${total}`,
-			slides: ['Mountain hiking', 'Island hopping', 'City food tour']
+			of: (n: number, total: number) => `Slide ${n} of ${total}`,
+			more: 'Learn more',
+			all: 'All slides',
+			slides: [
+				['Recycling workshop', 'Third Saturday of every other month'],
+				['Local food fair', 'Weekends, April to July'],
+				['Historic sites stamp rally', 'Until November 30'],
+				['Group health checkups', 'Applications open June 1']
+			]
 		},
 		ja: {
-			label: 'おすすめの旅',
+			heading: '開催中のイベント',
+			choose: 'スライド選択',
+			slide: 'スライド',
 			prev: '前のスライド',
 			next: '次のスライド',
 			of: (n: number, total: number) => `${total}枚中${n}枚目`,
-			slides: ['山歩き', '島めぐり', '街の食べ歩き']
+			more: '詳しく見る',
+			all: 'すべてのスライド',
+			slides: [
+				['リサイクル工作教室', '偶数月の第3土曜日'],
+				['地産地消フェア', '4月から7月の毎週末'],
+				['歴史名所スタンプラリー', '11月30日まで'],
+				['合同健康診断', '6月1日から受付']
+			]
 		}
 	};
-	const colors = ['#d8e8d4', '#d4e4f0', '#f3e2cf'];
 
+	const uid = $props.id();
 	let current = $state(0);
-	let total = $derived(text[lang].slides.length);
+	let tabEls: HTMLButtonElement[] = $state([]);
+	let slides = $derived(text[lang].slides);
+	let total = $derived(slides.length);
+	// DADS の「すべてのスライド」と同じく、表示中の次から一周する順に並べ、表示中のものは除く
+	let others = $derived([...slides.keys()].slice(current + 1).concat([...slides.keys()].slice(0, current)));
+
+	// WAI-ARIA APG Carousel（タブ付き）: 番号のボタンは Tabs の自動アクティベーションに従い、矢印キーで移動と同時に選ぶ
+	function onkeydown(e: KeyboardEvent) {
+		const next = {
+			ArrowRight: (current + 1) % total,
+			ArrowLeft: (current - 1 + total) % total,
+			Home: 0,
+			End: total - 1
+		}[e.key];
+		if (next === undefined) return;
+		e.preventDefault();
+		current = next;
+		tabEls[next].focus();
+	}
 </script>
 
-<!-- APG Carousel（自動再生なし）: 前後のボタンで1枚ずつ切り替え、切り替えを aria-live で伝える -->
-<section class="carousel" aria-roledescription="carousel" aria-label={text[lang].label}>
-	<div class="slides" aria-live="polite">
-		{#each text[lang].slides as slide, i (slide)}
+{#snippet body(i: number, headingId?: string)}
+	<h4 id={headingId}>{slides[i][0]}</h4>
+	<p class="period">{slides[i][1]}</p>
+	<a href="#{uid}-heading" onclick={(e) => e.preventDefault()}>
+		{text[lang].more}<span class="visually-hidden">: {slides[i][0]}</span>
+	</a>
+{/snippet}
+
+<!-- 名前の付いた <section> が region になる。aria-roledescription は APG に従い「carousel」と読ませる -->
+<section class="carousel" aria-labelledby="{uid}-heading" aria-roledescription="carousel">
+	<h3 id="{uid}-heading">{text[lang].heading}</h3>
+	<!-- 自動再生しないので polite。前後のボタンを押してもフォーカスは動かないため、新しいスライドはここで伝える -->
+	<div class="slides" id="{uid}-slides" aria-live="polite" aria-atomic="false">
+		{#each slides as [title], i (title)}
 			<div
-				role="group"
-				aria-roledescription="slide"
-				aria-label={text[lang].of(i + 1, total)}
+				class="slide"
+				role="tabpanel"
+				id="{uid}-slide-{i}"
+				aria-labelledby="{uid}-title-{i}"
 				hidden={i !== current}
-				style:background={colors[i]}
 			>
-				{slide}
+				{@render body(i, `${uid}-title-${i}`)}
 			</div>
 		{/each}
 	</div>
 	<div class="controls">
-		<button type="button" class="btn" aria-label={text[lang].prev} onclick={() => (current = (current - 1 + total) % total)}>
-			<span aria-hidden="true">‹</span>
-		</button>
-		<span class="dots" aria-hidden="true">
-			{#each text[lang].slides as slide, i (slide)}
-				<span class:active={i === current}></span>
+		<div role="tablist" aria-label={text[lang].choose}>
+			{#each slides as [title], i (title)}
+				<button
+					bind:this={tabEls[i]}
+					type="button"
+					class="btn"
+					role="tab"
+					aria-selected={i === current}
+					aria-controls="{uid}-slide-{i}"
+					tabindex={i === current ? 0 : -1}
+					onclick={() => (current = i)}
+					{onkeydown}
+				>
+					<span class="visually-hidden">{text[lang].slide}</span>{i + 1}
+				</button>
 			{/each}
-		</span>
-		<button type="button" class="btn" aria-label={text[lang].next} onclick={() => (current = (current + 1) % total)}>
-			<span aria-hidden="true">›</span>
-		</button>
+		</div>
+		<div class="pager">
+			<button
+				type="button"
+				class="btn"
+				aria-label={text[lang].prev}
+				aria-controls="{uid}-slides"
+				onclick={() => (current = (current - 1 + total) % total)}
+			>
+				<span aria-hidden="true">‹</span>
+			</button>
+			<span aria-hidden="true">{current + 1} / {total}</span>
+			<span class="visually-hidden">{text[lang].of(current + 1, total)}</span>
+			<button
+				type="button"
+				class="btn"
+				aria-label={text[lang].next}
+				aria-controls="{uid}-slides"
+				onclick={() => (current = (current + 1) % total)}
+			>
+				<span aria-hidden="true">›</span>
+			</button>
+		</div>
 	</div>
+	<details>
+		<summary>{text[lang].all}</summary>
+		<ul>
+			{#each others as i (i)}
+				<li class="slide">
+					<span class="number" aria-hidden="true">{i + 1}</span>
+					{@render body(i)}
+				</li>
+			{/each}
+		</ul>
+	</details>
 </section>
 
 <style>
 	.carousel {
-		width: min(100%, 16rem);
+		width: min(100%, 32rem);
 	}
 
-	[role='group'] {
-		display: grid;
-		place-items: center;
-		height: 6rem;
+	h3 {
+		margin: 0 0 0.5rem;
+		font-size: 1rem;
+	}
+
+	h4 {
+		margin: 0;
+		font-size: 1.125rem;
+		line-height: 1.4;
+	}
+
+	/* 画像の代わりに、上辺の帯と余白で横長のお知らせに見せる */
+	.slide {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 0.25rem;
+		aspect-ratio: 2 / 1;
+		padding: 1rem 1.25rem;
+		border: 1px solid var(--color-border);
+		border-top: 6px solid var(--color-accent);
 		border-radius: var(--radius);
-		color: #1b1d22;
-		font-weight: 700;
+		background: var(--color-bg);
 	}
 
-	[role='group'][hidden] {
+	.slide[hidden] {
 		display: none;
+	}
+
+	.period {
+		margin: 0;
+		color: var(--color-muted);
+		font-size: 0.875rem;
+	}
+
+	/* 押せる範囲を縦にも広げて 24 × 24 CSS px 以上にする（WCAG 2.5.8） */
+	a {
+		display: inline-block;
+		padding-block: 0.25rem;
+		font-size: 0.9375rem;
 	}
 
 	.controls {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
+		gap: 0.5rem;
 		margin-top: 0.5rem;
 	}
 
-	.dots {
+	[role='tablist'],
+	.pager {
 		display: flex;
-		gap: 0.4rem;
+		align-items: center;
+		gap: 0.25rem;
 	}
 
-	.dots span {
-		width: 0.5rem;
-		height: 0.5rem;
-		border: 1px solid var(--color-muted);
-		border-radius: 50%;
+	.pager {
+		gap: 0.5rem;
+		font-variant-numeric: tabular-nums;
 	}
 
-	.dots .active {
-		background: var(--color-muted);
+	[role='tab'] {
+		padding: 0;
+	}
+
+	[role='tab'][aria-selected='true'] {
+		border-color: var(--color-accent);
+		background: var(--color-accent);
+		color: var(--color-accent-text);
+		font-weight: 700;
+	}
+
+	details {
+		margin-top: 0.5rem;
+	}
+
+	summary {
+		color: var(--color-accent);
+		cursor: pointer;
+	}
+
+	ul {
+		display: grid;
+		gap: 0.5rem;
+		margin: 0.5rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	ul .slide {
+		aspect-ratio: auto;
+		padding-left: 3rem;
+	}
+
+	.number {
+		position: absolute;
+		top: 0.75rem;
+		left: 1rem;
+		color: var(--color-muted);
+		font-weight: 700;
 	}
 </style>
