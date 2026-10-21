@@ -90,6 +90,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'command-palette',
+			diff: {
+				en: 'A search field sends the typed words and shows the results on a page; a command palette narrows a list as you type and goes straight to the chosen item.',
+				ja: '検索ボックスは入力した語を送って結果をページに出し、コマンドパレットは入力に合わせて一覧を絞り込み、選んだものへ直接移る。'
+			}
+		},
+		{
 			id: 'text-field',
 			diff: {
 				en: 'A search field is a text field for search terms, usually with a search button and a search landmark.',

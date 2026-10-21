@@ -476,3 +476,43 @@ test('window splitter: arrow keys resize the contents pane, Enter collapses and 
 	await expect(splitter).toHaveAttribute('aria-valuenow', '10');
 	await expect(splitter).toBeFocused();
 });
+
+test('command palette: the button opens it, typing narrows the commands, arrows move, and Enter runs one', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/command-palette/');
+	const button = demo.getByRole('button', { name: 'Commands' });
+	const dialog = page.getByRole('dialog', { name: 'Commands' });
+	const input = dialog.getByRole('combobox');
+
+	await button.click();
+	await expect(input).toBeFocused();
+	await input.fill('save');
+	await expect(dialog.getByRole('option')).toHaveText(['Save', 'Save as…']);
+	await expect(dialog.getByRole('option', { name: 'Save', exact: true })).toHaveAttribute('aria-selected', 'true');
+	await page.keyboard.press('ArrowDown');
+	const saveAs = dialog.getByRole('option', { name: 'Save as…' });
+	await expect(input).toHaveAttribute('aria-activedescendant', (await saveAs.getAttribute('id'))!);
+	await page.keyboard.press('ArrowDown');
+	await expect(dialog.getByRole('option', { name: 'Save', exact: true })).toHaveAttribute('aria-selected', 'true');
+	await page.keyboard.press('ArrowUp');
+	await page.keyboard.press('Enter');
+
+	await expect(dialog).toBeHidden();
+	await expect(button).toBeFocused();
+	await expect(demo.getByRole('status')).toHaveText('Ran: Save as…');
+});
+
+test('command palette: Escape closes it without running anything, and no match says so', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/command-palette/');
+	const button = demo.getByRole('button', { name: 'Commands' });
+	const dialog = page.getByRole('dialog', { name: 'Commands' });
+
+	await button.focus();
+	await page.keyboard.press('Enter');
+	await dialog.getByRole('combobox').fill('zzz');
+	await expect(dialog).toContainText('No matching commands');
+	await page.keyboard.press('Enter');
+	await page.keyboard.press('Escape');
+	await expect(dialog).toBeHidden();
+	await expect(button).toBeFocused();
+	await expect(demo.getByRole('status')).toHaveText('');
+});

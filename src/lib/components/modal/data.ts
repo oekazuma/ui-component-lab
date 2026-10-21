@@ -104,6 +104,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'command-palette',
+			diff: {
+				en: 'A modal can hold any content; a command palette is a modal dialog that holds only a search field and a list of commands.',
+				ja: 'モーダルはどんな内容でも持て、コマンドパレットは検索欄と操作の一覧だけを持つモーダルダイアログ。'
+			}
+		},
+		{
 			id: 'alert-dialog',
 			diff: {
 				en: 'A modal is any dialog that blocks the page; an alert dialog is the kind used for an urgent message that needs a response.',

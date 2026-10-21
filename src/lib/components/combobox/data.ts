@@ -105,6 +105,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'command-palette',
+			diff: {
+				en: 'A combobox puts the chosen value into the field; a command palette puts a combobox in a dialog and runs or opens the chosen item.',
+				ja: 'コンボボックスは選んだ値を入力欄に入れる。コマンドパレットはコンボボックスをダイアログに入れ、選んだものを実行したり開いたりする。'
+			}
+		},
+		{
 			id: 'text-field',
 			diff: {
 				en: 'A combobox adds a list of suggestions to a text field.',
