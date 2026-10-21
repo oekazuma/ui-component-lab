@@ -241,3 +241,14 @@ test('button: real labels from low to high priority, left to right, with an unde
 	await buttons.nth(1).click();
 	await expect(demo.getByRole('status')).toHaveText('“Save draft” was pressed');
 });
+
+test('menu: an icon-only overflow button opens a menu lined up with its right edge', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/menu/');
+	const button = demo.getByRole('button', { name: 'More options for report.pdf' });
+	await button.click();
+	const menu = demo.getByRole('menu', { name: 'More options for report.pdf' });
+	await expect(menu.getByRole('menuitem', { name: 'Download' })).toBeFocused();
+	const b = (await button.boundingBox())!;
+	const m = (await menu.boundingBox())!;
+	expect(Math.abs(b.x + b.width - (m.x + m.width))).toBeLessThan(1);
+});

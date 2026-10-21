@@ -41,7 +41,7 @@ test('menu: clicking an item reports it and closes the menu', async ({ page }) =
 	await demo.getByRole('menuitem', { name: 'Duplicate' }).click();
 
 	await expect(demo.locator('[role="status"]')).toHaveText('Chosen: Duplicate');
-	await expect(demo.locator('[role="menu"]')).toBeHidden();
+	await expect(demo.locator('[role="menu"]').first()).toBeHidden();
 });
 
 test('tooltip: Escape hides a hover-opened tooltip', async ({ page }) => {
@@ -189,4 +189,22 @@ test('toolbar: arrow keys move across both groups and wrap; Space chooses one al
 	await expect(bold).toBeFocused();
 	await expect(bold).toHaveAttribute('tabindex', '0');
 	await expect(demo.locator('[role="toolbar"] [tabindex="0"]')).toHaveCount(1);
+});
+
+test('menu: arrow keys wrap at both ends and skip the separator before the destructive item', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/menu/');
+	const trigger = demo.getByRole('button', { name: 'Actions' });
+	const menu = demo.getByRole('menu', { name: 'Actions' });
+	const item = (name: string) => menu.getByRole('menuitem', { name });
+
+	await trigger.focus();
+	await page.keyboard.press('ArrowUp');
+	await expect(item('Move to trash')).toBeFocused();
+	await expect(menu.getByRole('separator')).toHaveCount(1);
+	await page.keyboard.press('ArrowDown');
+	await expect(item('Rename')).toBeFocused();
+	await page.keyboard.press('ArrowUp');
+	await expect(item('Move to trash')).toBeFocused();
+	await page.keyboard.press('ArrowUp');
+	await expect(item('Duplicate')).toBeFocused();
 });

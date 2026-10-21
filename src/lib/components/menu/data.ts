@@ -33,6 +33,14 @@ export default {
 		{
 			en: 'The `role="menu"` element takes its name from the button with `aria-labelledby`, so screen readers say which menu opened.',
 			ja: '`role="menu"` の要素は `aria-labelledby` で開くボタンを指して名前を得る。スクリーンリーダーは、どのメニューが開いたかを読み上げる。'
+		},
+		{
+			en: 'In this demo, a `role="separator"` line sets the destructive item apart at the end of each menu. Arrow keys skip over the line.',
+			ja: 'このデモでは、`role="separator"` の区切り線で、取り消しにくい操作をメニューの最後に離して置いている。矢印キーは区切り線を飛ばして移る。'
+		},
+		{
+			en: 'In this demo, the file row has an icon-only “⋯” overflow button whose name comes from `aria-label`. Its menu lines up with the button’s right edge so it stays inside the row.',
+			ja: 'このデモのファイルの行には、`aria-label` で名前を付けた「⋯」アイコンだけのオーバーフローボタンがある。そのメニューは、行からはみ出さないようボタンの右端にそろえる。'
 		}
 	],
 	keyboard: [
@@ -46,15 +54,15 @@ export default {
 		{
 			key: '↓',
 			action: {
-				en: 'On the button, opens the menu at the first item. In the menu, moves to the next item.',
-				ja: 'ボタンではメニューを開いて最初の項目へ。メニュー内では次の項目へ移る。'
+				en: 'On the button, opens the menu at the first item. In the menu, moves to the next item; from the last item it goes back to the first.',
+				ja: 'ボタンではメニューを開いて最初の項目へ。メニュー内では次の項目へ移り、最後の項目からは最初の項目へ回る。'
 			}
 		},
 		{
 			key: '↑',
 			action: {
-				en: 'On the button, opens the menu at the last item. In the menu, moves to the previous item.',
-				ja: 'ボタンではメニューを開いて最後の項目へ。メニュー内では前の項目へ移る。'
+				en: 'On the button, opens the menu at the last item. In the menu, moves to the previous item; from the first item it goes to the last.',
+				ja: 'ボタンではメニューを開いて最後の項目へ。メニュー内では前の項目へ移り、最初の項目からは最後の項目へ回る。'
 			}
 		},
 		{
@@ -80,8 +88,8 @@ export default {
 		{
 			name: { en: 'Overflow menu', ja: 'オーバーフローメニュー' },
 			description: {
-				en: 'Opened from an icon-only “⋯” button, often in table rows or cards to hold extra actions.',
-				ja: '「⋯」アイコンだけのボタンから開くもの。表の行やカードで、追加の操作をしまうのに使う。'
+				en: 'Opened from an icon-only “⋯” button, often in table rows or cards to hold extra actions. The button needs a name such as “More options for report.pdf”.',
+				ja: '「⋯」アイコンだけのボタンから開くもの。表の行やカードで、追加の操作をしまうのに使う。ボタンには「report.pdf のその他の操作」のような名前を付ける。'
 			}
 		}
 	],
@@ -89,6 +97,10 @@ export default {
 		{
 			en: 'Align the panel with the left or right edge of its button.',
 			ja: 'パネルはボタンの左端か右端にそろえる。'
+		},
+		{
+			en: 'Group related actions with dividers, and set high-impact actions such as deleting apart from the rest with a divider.',
+			ja: '関係する操作を区切り線でまとめ、削除のように影響の大きい操作は区切り線でほかの操作から離す。'
 		}
 	],
 	misuse: [
@@ -141,7 +153,12 @@ export default {
 		{
 			label: 'Carbon Design System: Menu buttons',
 			url: 'https://carbondesignsystem.com/components/menu-buttons/usage/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Carbon Design System: Menu',
+			url: 'https://carbondesignsystem.com/components/menu/usage/',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Ant Design: Dropdown',

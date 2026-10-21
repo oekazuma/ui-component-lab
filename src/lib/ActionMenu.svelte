@@ -9,7 +9,8 @@
 		label,
 		class: className
 	}: {
-		items: string[];
+		/** null は区切り線。危険な操作をほかの項目から離すのに使う */
+		items: (string | null)[];
 		onselect: (item: string) => void;
 		/** ボタンの中身 */
 		trigger: Snippet;
@@ -105,20 +106,24 @@
 		hidden={!open}
 		onkeydown={onMenuKeydown}
 	>
-		{#each items as item (item)}
-			<li role="none">
-				<button
-					type="button"
-					role="menuitem"
-					tabindex="-1"
-					onclick={() => {
-						onselect(item);
-						close();
-					}}
-				>
-					{item}
-				</button>
-			</li>
+		{#each items as item, i (item ?? `separator-${i}`)}
+			{#if item === null}
+				<li role="separator"></li>
+			{:else}
+				<li role="none">
+					<button
+						type="button"
+						role="menuitem"
+						tabindex="-1"
+						onclick={() => {
+							onselect(item);
+							close();
+						}}
+					>
+						{item}
+					</button>
+				</li>
+			{/if}
 		{/each}
 	</ul>
 </div>
@@ -153,6 +158,11 @@
 		text-align: left;
 		white-space: nowrap;
 		cursor: pointer;
+	}
+
+	[role='separator'] {
+		margin: 0.25rem 0;
+		border-top: 1px solid var(--color-border);
 	}
 
 	[role='menuitem']:hover,
