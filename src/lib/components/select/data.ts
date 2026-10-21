@@ -61,6 +61,23 @@ export default {
 			ja: '選択肢が5つ以下ならラジオボタンを使う。2択にはセレクトを使わない。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Giving a select a misleading label and hiding the option to decline among the other options',
+				ja: 'セレクトに紛らわしいラベルを付け、断るための選択肢をほかの選択肢の間に紛れ込ませる'
+			},
+			harm: {
+				en: 'People scan a label instead of reading every word, and choose what it seems to ask for. In one known case, a list that asked people to select their country of residence actually decided travel insurance, and the option to decline insurance sat between two country names. People who simply picked their country bought insurance without meaning to.',
+				ja: '人はラベルを一語ずつ読まずに流し読みし、求められているように見えるものを選ぶ。実際にあった例では、居住国を選ぶよう促す一覧が実は旅行保険の申し込みを決めるもので、保険を断る選択肢は2つの国名の間に置かれていた。国を選んだだけの人が、意図せず保険を買うことになった。'
+			},
+			instead: {
+				en: 'Ask each decision as its own question with its own label. For a yes-or-no choice such as adding insurance, use radio buttons so both options are visible side by side.',
+				ja: '決めることごとに、ラベルの付いた別の質問にする。保険を付けるかどうかのような2択は、両方の選択肢が並んで見えるラジオボタンにする。'
+			},
+			deceptive: true
+		}
+	],
 	related: [
 		{
 			id: 'radio',
@@ -111,6 +128,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「セレクトボックス」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/select/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Deceptive Patterns: Trick wording',
+			url: 'https://www.deceptive.design/types/trick-wording',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

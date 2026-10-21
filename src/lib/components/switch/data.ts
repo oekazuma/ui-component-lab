@@ -46,6 +46,23 @@ export default {
 			ja: 'すぐに反映される設定にだけ使う。保存や送信が必要なら、チェックボックスを使う。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Turning marketing or sharing settings on in advance',
+				ja: 'メール配信や情報の共有などの設定を最初からオンにしておく'
+			},
+			harm: {
+				en: 'People tend to go with an option that has already been chosen for them. Anyone who scrolls past without noticing the setting goes on unaware of what it means, and leaves it on without ever having chosen it.',
+				ja: '人は、あらかじめ選ばれている選択肢をそのまま受け入れやすい。気づかずに先へ進んだ人は、その意味を知らないまま、自分で選んでいない設定をオンのまま使い続けることになる。'
+			},
+			instead: {
+				en: 'Start these settings off and let people turn them on themselves. Say in the label what turning it on does.',
+				ja: 'こうした設定は最初はオフにし、利用者が自分でオンにできるようにする。オンにすると何が起きるかはラベルに書く。'
+			},
+			deceptive: true
+		}
+	],
 	related: [
 		{
 			id: 'checkbox',
@@ -82,6 +99,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「スイッチ」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/switch/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Deceptive Patterns: Preselection',
+			url: 'https://www.deceptive.design/types/preselection',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

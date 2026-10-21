@@ -39,12 +39,28 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Use it for counts that go up and down in small steps, such as a quantity. Do not use it for numbers that are really codes, such as postal codes or card numbers.',
-			ja: '数量のように小刻みに増減する値に使う。郵便番号やカード番号のように、数字でできた符号には使わない。'
+			en: 'Use it for counts that go up and down in small steps, such as a quantity.',
+			ja: '数量のように小刻みに増減する値に使う。'
 		},
 		{
 			en: 'Some design systems avoid type="number": scrolling can change the value by accident, and some browsers accept letters like “e”. A text input with inputmode="numeric" is an alternative.',
 			ja: 'type="number" を避けるデザインシステムもある。スクロールで値が変わってしまうことがあり、ブラウザによっては「e」などの文字も入るためである。代わりに inputmode="numeric" を付けたテキスト入力を使う方法がある。'
+		}
+	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Using a number input for codes such as postal codes or card numbers',
+				ja: '郵便番号やカード番号のような数字の符号に数値入力を使う'
+			},
+			harm: {
+				en: 'People can change the value by accident while trying to do something else, such as scrolling the page. If they type something that is not a number, they get no clear message about what is wrong.',
+				ja: 'ページのスクロールなど別の操作のつもりで、値を誤って増減させてしまうことがある。数字以外を入力しても、何が誤りかがはっきり示されない。'
+			},
+			instead: {
+				en: 'Use a text input with inputmode="numeric" and a matching autocomplete value, such as autocomplete="postal-code".',
+				ja: 'inputmode="numeric" を付けたテキスト入力を使い、autocomplete="postal-code" のように内容に合う autocomplete を付ける。'
+			}
 		}
 	],
 	related: [

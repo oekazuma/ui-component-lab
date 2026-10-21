@@ -48,12 +48,24 @@ export default {
 			ja: '文字数の上限はラベルに書く。上限がおよそ20文字を超えるなら、文字数のカウンターを常に表示する。'
 		},
 		{
-			en: 'Do not let the limit become visible only through an error. When the text is too long, say so in an error message along with the current count.',
-			ja: 'エラーが出て初めて上限が分かる作りにしない。超えたときは、入力済みの文字数とあわせてエラーで知らせる。'
-		},
-		{
 			en: 'Set the height to match the expected length of the answer.',
 			ja: '高さは想定する回答の長さに合わせる。'
+		}
+	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Revealing the character limit only through an error',
+				ja: '文字数の上限をエラーで初めて知らせる'
+			},
+			harm: {
+				en: 'The person writing cannot tell how many characters are allowed until an error appears, and some error messages do not give the limit even then.',
+				ja: '書いている人は、エラーが出るまで何文字まで入力できるか分からない。エラーが出ても、何文字まで許されるのか分からないこともある。'
+			},
+			instead: {
+				en: 'Put the limit in the label, and show a counter when the limit is more than about 20 characters. When the text is too long, say so in the error together with the current count.',
+				ja: '上限はラベルに書き、およそ20文字を超えるなら文字数のカウンターも表示する。超えたときは、入力済みの文字数とあわせてエラーで知らせる。'
+			}
 		}
 	],
 	related: [

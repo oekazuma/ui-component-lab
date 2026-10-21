@@ -46,6 +46,22 @@ export default {
 			}
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Letting the value change only by dragging the thumb',
+				ja: 'つまみのドラッグでしか値を変えられない作りにする'
+			},
+			harm: {
+				en: 'People who cannot drag precisely, and people who use a trackball, head pointer, eye-gaze system or speech-controlled pointer, find dragging hard and error-prone.',
+				ja: '正確にドラッグできない人や、トラックボール、ヘッドポインター、視線入力、音声で動かすポインターを使う人には、ドラッグが難しく、誤りやすい。'
+			},
+			instead: {
+				en: 'Let people also set the value by clicking or tapping the track and with the arrow keys. A native <input type="range"> already supports both.',
+				ja: 'トラックのクリックやタップ、矢印キーでも値を変えられるようにする。ネイティブの <input type="range"> はどちらにも対応している。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'number-input',
@@ -65,6 +81,11 @@ export default {
 			label: 'MDN: <input type="range">',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/range',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Understanding Success Criterion 2.5.7: Dragging Movements (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

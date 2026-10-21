@@ -44,16 +44,28 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Always provide a file button. Not everyone can drag, so a drop area alone is not enough (WCAG 2.2, 2.5.7 Dragging Movements).',
-			ja: 'ファイル選択ボタンを必ず置く。ドラッグできない人もいるため、ドロップエリアだけの作りにはしない（WCAG 2.2 の 2.5.7「ドラッグ動作」）。'
-		},
-		{
 			en: 'Show the chosen files as a numbered list with the name, the size and a remove button, and say “No file selected” when there are none.',
 			ja: '選んだファイルは番号付きリストにし、各行にファイル名・大きさ・解除ボタンを置く。何も選んでいないときは「未選択」と表示する。'
 		},
 		{
 			en: 'The accept attribute only narrows what the file picker shows. Check the files on the server too.',
 			ja: 'accept 属性はファイル選択画面での絞り込みにすぎない。サーバー側でもファイルを確かめる。'
+		}
+	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Offering only a drop area for choosing files',
+				ja: 'ファイルの選択をドロップエリアだけにする'
+			},
+			harm: {
+				en: 'People who cannot drag precisely, and people who use a trackball, head pointer, eye-gaze system or speech-controlled pointer, find dragging hard and error-prone.',
+				ja: '正確にドラッグできない人や、トラックボール、ヘッドポインター、視線入力、音声で動かすポインターを使う人には、ドラッグが難しく、誤りやすい。'
+			},
+			instead: {
+				en: 'Always provide a file button (<input type="file">) next to the drop area, so files can be chosen with a click or the keyboard.',
+				ja: 'ドロップエリアのそばにファイル選択ボタン（<input type="file">）を必ず置き、クリックやキーボードでも選べるようにする。'
+			}
 		}
 	],
 	related: [

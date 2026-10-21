@@ -56,8 +56,24 @@ export default {
 			ja: '選択肢が5つを超えるなら Home / End、7つを超えるなら文字入力での移動にも対応させる。'
 		},
 		{
-			en: 'Selection that follows focus is only for single selection. It helps in some cases but can make the listbox much harder to use in others.',
-			ja: 'フォーカスの移動と同時に選ぶ作りは単一選択に限る。役に立つ場面もあるが、かえってひどく使いにくくなる場面もある。'
+			en: 'Selection that follows focus is only for single selection.',
+			ja: 'フォーカスの移動と同時に選ぶ作りは単一選択に限る。'
+		}
+	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Making selection follow focus when each selection starts a slow update',
+				ja: 'フォーカスの移動と同時に選び、選ぶたびに時間のかかる読み込みを始める'
+			},
+			harm: {
+				en: 'Each arrow key press makes keyboard and screen reader users wait. Reaching an option far down the list, or listening through the options, becomes slow and tedious.',
+				ja: '矢印キーを押すたびに、キーボードやスクリーンリーダーの利用者が待たされる。離れた選択肢にたどり着くのも、選択肢を順に聞いていくのも、時間がかかって煩わしい。'
+			},
+			instead: {
+				en: 'If selecting an option takes time, let focus move without selecting, and select with Enter or Space.',
+				ja: '選ぶと時間がかかるなら、フォーカスの移動だけでは選ばず、Enter や Space で選ぶようにする。'
+			}
 		}
 	],
 	related: [
@@ -86,6 +102,11 @@ export default {
 			label: 'MDN: <select>',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'WAI-ARIA APG: Developing a Keyboard Interface',
+			url: 'https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

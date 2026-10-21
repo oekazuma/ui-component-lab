@@ -57,6 +57,22 @@ export default {
 			ja: '丸はラベルの左に置く。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Selecting an option in advance',
+				ja: '選択肢をあらかじめ選んでおく'
+			},
+			harm: {
+				en: 'People become more likely to miss that they still had a question to answer, and to submit the wrong answer.',
+				ja: '答えていない質問があることに気づきにくくなり、誤った回答のまま送信しやすくなる。'
+			},
+			instead: {
+				en: 'Show the group with nothing selected. For an optional question, add a choice such as “None of these” instead of preselecting one.',
+				ja: '最初はどれも選ばれていない状態で表示する。任意の質問なら、初期選択の代わりに「あてはまるものはない」などの選択肢を加える。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'checkbox',
@@ -95,6 +111,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ラジオボタン」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/radio/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'GOV.UK Design System: Radios',
+			url: 'https://design-system.service.gov.uk/components/radios/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

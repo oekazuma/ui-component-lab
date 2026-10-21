@@ -41,6 +41,52 @@ export default {
 			ja: 'ボックスはラベルの左に置く。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Checking consent or marketing boxes in advance',
+				ja: '同意やメール配信のチェックを最初からオンにしておく'
+			},
+			harm: {
+				en: 'People tend to go with an option that has already been chosen for them. Anyone who scrolls past without noticing the setting goes on unaware of what it means, and can end up agreeing to things they never intended, such as recurring payments.',
+				ja: '人は、あらかじめ選ばれている選択肢をそのまま受け入れやすい。気づかずに先へ進んだ人は、その意味を知らないまま、定期的な支払いのような意図しない内容に同意してしまうことがある。'
+			},
+			instead: {
+				en: 'Show these boxes unchecked, so that agreement only comes from people checking them themselves, and say in the label exactly what they agree to.',
+				ja: 'チェックは外した状態で表示し、利用者が自分でオンにしたときだけ同意とする。何に同意するのかはラベルに具体的に書く。'
+			},
+			deceptive: true
+		},
+		{
+			pattern: {
+				en: 'Wording an opt-out checkbox with double negatives',
+				ja: 'オプトアウトのチェックボックスを二重否定の文言にする'
+			},
+			harm: {
+				en: 'People scan labels instead of reading every word. When the wording is confusing, the label seems to say one thing while it means another, and people take an action they did not intend.',
+				ja: '人はラベルを一語ずつ読まずに流し読みする。文言が紛らわしいと、書いてあることと違う意味に受け取り、意図しない操作をしてしまう。'
+			},
+			instead: {
+				en: 'Write the label as a plain statement of what checking the box does, such as “Email me about new features”.',
+				ja: '「新機能のお知らせをメールで受け取る」のように、オンにすると何が起きるかをそのまま書く。'
+			},
+			deceptive: true
+		},
+		{
+			pattern: {
+				en: 'Checking answers to a question in advance',
+				ja: '質問の回答をあらかじめチェックしておく'
+			},
+			harm: {
+				en: 'People become more likely to miss that they still had a question to answer, and to submit the wrong answer.',
+				ja: '答えていない質問があることに気づきにくくなり、誤った回答のまま送信しやすくなる。'
+			},
+			instead: {
+				en: 'Show every option unchecked and let people choose.',
+				ja: 'すべての選択肢をチェックなしで表示し、利用者に選んでもらう。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'radio',
@@ -67,6 +113,21 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「チェックボックス」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/checkbox/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Deceptive Patterns: Preselection',
+			url: 'https://www.deceptive.design/types/preselection',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deceptive Patterns: Trick wording',
+			url: 'https://www.deceptive.design/types/trick-wording',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Checkboxes',
+			url: 'https://design-system.service.gov.uk/components/checkboxes/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

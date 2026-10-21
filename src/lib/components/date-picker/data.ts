@@ -62,10 +62,22 @@ export default {
 		{
 			en: 'Open the calendar only from its button, not on focus or hover.',
 			ja: 'カレンダーはボタンからだけ開き、フォーカスやホバーでは開かない。'
-		},
+		}
+	],
+	misuse: [
 		{
-			en: 'For dates the user already knows, such as a birthday, let them type it instead of showing a calendar.',
-			ja: '誕生日のように本人が知っている日付は、カレンダーを出さずに入力してもらう。'
+			pattern: {
+				en: 'Making people pick a date they already know, such as a birthday, from a calendar',
+				ja: '誕生日のように本人が知っている日付を、カレンダーから選ばせる'
+			},
+			harm: {
+				en: 'Calendar pickers work for dates within a year. For a date far in the past they take too much navigation, which slows people down.',
+				ja: 'カレンダーは1年以内の日付に向く。遠い過去の日付では何度もめくる必要があり、入力に時間がかかる。'
+			},
+			instead: {
+				en: 'Let people type the date directly, and do not add a calendar button for dates they already know, such as a birthday or a card expiry date.',
+				ja: '日付は直接入力してもらい、生年月日やカードの有効期限のように本人が知っている日付にはカレンダーのボタンを置かない。'
+			}
 		}
 	],
 	sources: [
@@ -83,6 +95,16 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「日付ピッカー／カレンダー」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/date-picker/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Nielsen Norman Group: Date-Input Form Fields: UX Design Guidelines',
+			url: 'https://www.nngroup.com/articles/date-input/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「日付ピッカー／カレンダー（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/date-picker/usage/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

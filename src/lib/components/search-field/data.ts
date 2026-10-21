@@ -52,10 +52,22 @@ export default {
 		{
 			en: 'Use it for searching across a whole site. To filter rows of a table, use table controls instead.',
 			ja: 'サイト全体を横断する検索に使う。表の行を絞り込むのには使わず、表の操作部品を使う。'
-		},
+		}
+	],
+	misuse: [
 		{
-			en: 'Give it a label. Placeholder text such as “Search” does not count as one.',
-			ja: 'ラベルを付ける。「検索」などのプレースホルダーはラベルの代わりにならない。'
+			pattern: {
+				en: 'Naming the field only with placeholder text such as “Search”',
+				ja: '「検索」などのプレースホルダーだけで欄の名前を示す'
+			},
+			harm: {
+				en: 'Screen readers do not treat placeholder text as a label, and not all of them announce it, so screen reader users may not learn what the field is for. The text also disappears once typing starts.',
+				ja: 'スクリーンリーダーはプレースホルダーをラベルとして扱わず、読み上げないものもあるため、スクリーンリーダーの利用者には何の欄か伝わらないことがある。入力を始めると文字も消える。'
+			},
+			instead: {
+				en: 'Give the field a name with <label>, such as “Search this site”. If the design has no room for a visible label, keep the <label> and hide it visually instead of relying on placeholder text.',
+				ja: '<label> で「サイト内検索」などの名前を付ける。見た目にラベルを出せないデザインでも、<label> は残して見た目だけ隠し、プレースホルダーには頼らない。'
+			}
 		}
 	],
 	related: [
@@ -89,6 +101,16 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「検索ボックス」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/search-box/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'W3C WAI Tutorials: Form Instructions',
+			url: 'https://www.w3.org/WAI/tutorials/forms/instructions/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Text input',
+			url: 'https://design-system.service.gov.uk/components/text-input/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
