@@ -45,8 +45,8 @@ export default {
 			ja: 'ヘッダーとページの見出しの間に置く。'
 		},
 		{
-			en: 'Page names cannot be kept short, so let the trail wrap when it is wider than the content area, also on narrow screens. The Digital Agency Design System allows a single line that scrolls sideways on phones when many pages have long trails, so the breadcrumb does not push the content down; in that case, also put a wrapping breadcrumb at the bottom of the page, above the footer.',
-			ja: 'ページ名の長さは制御できないので、コンテンツの幅を超えたら折り返す。狭い画面でも同じ。デジタル庁デザインシステムは、長いパンくずリストになるページが多いときに限り、コンテンツを押し下げないようスマートフォンで折り返さず横にスクロールさせる形も認めている。その場合は、ページ下部のフッターの上にも折り返すパンくずリストを置く。'
+			en: 'Page names cannot be kept short, so let the trail wrap when it is wider than the content area, also on narrow screens. The Digital Agency Design System allows a single line that scrolls sideways on phones when many pages have long trails, so the breadcrumb does not push the content down; in that case, also put a wrapping breadcrumb at the bottom of the page, above the footer. Nielsen Norman Group instead advises against trails that wrap, and suggests showing only the last level or two on phones.',
+			ja: 'ページ名の長さは制御できないので、コンテンツの幅を超えたら折り返す。狭い画面でも同じ。デジタル庁デザインシステムは、長いパンくずリストになるページが多いときに限り、コンテンツを押し下げないようスマートフォンで折り返さず横にスクロールさせる形も認めている。その場合は、ページ下部のフッターの上にも折り返すパンくずリストを置く。一方 Nielsen Norman Group は、複数行に折り返すパンくずリストを避け、スマートフォンでは最後の1〜2階層だけを見せる方法を挙げている。'
 		}
 	],
 	misuse: [
