@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { componentIds } from './component-ids';
 
 const shortcut = process.platform === 'darwin' ? 'Meta+k' : 'Control+k';
 
@@ -27,7 +28,7 @@ test('search: the header button opens it, arrows move, Escape closes back to the
 	await button.click();
 	const dialog = page.getByRole('dialog', { name: 'Search by name' });
 	const input = dialog.getByRole('combobox');
-	await expect(dialog.getByRole('option')).toHaveCount(46);
+	await expect(dialog.getByRole('option')).toHaveCount(componentIds.length);
 	await page.keyboard.press('ArrowDown');
 	const second = dialog.getByRole('option').nth(1);
 	await expect(input).toHaveAttribute('aria-activedescendant', (await second.getAttribute('id'))!);
