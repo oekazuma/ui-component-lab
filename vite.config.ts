@@ -15,7 +15,9 @@ export default defineConfig({
 				// GitHub Pages のプロジェクトサイト（https://oekazuma.github.io/ui-component-lab/）
 				base: '/ui-component-lab',
 				// 404.html は任意の階層の URL で返されるため、相対パスだと _app/ を解決できない
-				relative: false
+				relative: false,
+				// prerender 時の url.origin。hreflang・canonical・sitemap は絶対 URL が必要
+				origin: 'https://oekazuma.github.io'
 			}
 		})
 	]
