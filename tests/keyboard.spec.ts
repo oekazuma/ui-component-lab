@@ -235,3 +235,56 @@ test('tree view: arrow keys reach a file in the third level and the opened file 
 	await expect(demo.locator('[aria-current]')).toHaveCount(1);
 	await expect(item('budget.xlsx')).toHaveAttribute('aria-current', 'true');
 });
+
+test('menubar: arrow keys move along the bar, open a submenu and move to the next submenu', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/menubar/');
+	const bar = (name: string) => demo.getByRole('menubar').getByRole('menuitem', { name, exact: true });
+	const menu = (name: string) => demo.getByRole('menu', { name });
+
+	await bar('File').focus();
+	await page.keyboard.press('ArrowLeft');
+	await expect(bar('View')).toBeFocused();
+	await expect(bar('View')).toHaveAttribute('tabindex', '0');
+	await expect(bar('File')).toHaveAttribute('tabindex', '-1');
+	await page.keyboard.press('Home');
+	await expect(bar('File')).toBeFocused();
+	await page.keyboard.press('End');
+	await expect(bar('View')).toBeFocused();
+	await page.keyboard.press('ArrowRight');
+	await expect(bar('File')).toBeFocused();
+
+	await page.keyboard.press('ArrowDown');
+	await expect(bar('File')).toHaveAttribute('aria-expanded', 'true');
+	await expect(menu('File').getByRole('menuitem', { name: 'New' })).toBeFocused();
+	await page.keyboard.press('ArrowUp');
+	await expect(menu('File').getByRole('menuitem', { name: 'Save' })).toBeFocused();
+
+	await page.keyboard.press('ArrowRight');
+	await expect(bar('File')).toHaveAttribute('aria-expanded', 'false');
+	await expect(menu('Edit').getByRole('menuitem', { name: 'Undo' })).toBeFocused();
+	await page.keyboard.press('ArrowLeft');
+	await expect(menu('File').getByRole('menuitem', { name: 'New' })).toBeFocused();
+
+	await page.keyboard.press('Escape');
+	await expect(bar('File')).toBeFocused();
+	await expect(bar('File')).toHaveAttribute('aria-expanded', 'false');
+
+	await page.keyboard.press('ArrowUp');
+	await expect(menu('File').getByRole('menuitem', { name: 'Save' })).toBeFocused();
+	await page.keyboard.press('Enter');
+	await expect(bar('File')).toBeFocused();
+	await expect(demo.locator('[role="status"]')).toHaveText('Chosen: File > Save');
+	await expect(demo.getByRole('menu')).toHaveCount(0);
+});
+
+test('menubar: Tab from a submenu closes it and leaves the menubar', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/menubar/');
+	const edit = demo.getByRole('menubar').getByRole('menuitem', { name: 'Edit', exact: true });
+
+	await edit.click();
+	await expect(demo.getByRole('menu', { name: 'Edit' }).getByRole('menuitem', { name: 'Undo' })).toBeFocused();
+	await page.keyboard.press('Tab');
+	await expect(edit).toHaveAttribute('aria-expanded', 'false');
+	await expect(demo.getByRole('menubar')).not.toContainText('Undo');
+	expect(await demo.getByRole('menubar').evaluate((el) => el.contains(document.activeElement))).toBe(false);
+});

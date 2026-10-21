@@ -131,6 +131,13 @@ export default {
 				en: 'Tabs can be opened in any order; a stepper shows steps that are completed in a fixed order.',
 				ja: 'タブはどの順番でも開けるが、ステップナビゲーションの段階は決まった順に進める。'
 			}
+		},
+		{
+			id: 'menubar',
+			diff: {
+				en: 'A tab shows its own panel of content in place; a menubar item opens a list of commands.',
+				ja: 'タブはその場で自分のパネルの内容を見せ、メニューバーの項目は操作の一覧を開く。'
+			}
 		}
 	],
 	sources: [

@@ -144,6 +144,13 @@ export default {
 				en: 'A menu button opens a short list of actions right under itself; a hamburger menu button opens the site’s navigation links.',
 				ja: 'メニューボタンは自分のすぐ下に操作の短い一覧を開き、ハンバーガーメニューボタンはサイトのナビゲーションのリンクを開く。'
 			}
+		},
+		{
+			id: 'menubar',
+			diff: {
+				en: 'A menu opens from a single button and closes after use; a menubar stays visible and holds several menus side by side.',
+				ja: 'メニューは 1 つのボタンから開き、使い終わると閉じる。メニューバーは常に表示され、複数のメニューを横に並べて持つ。'
+			}
 		}
 	],
 	sources: [
