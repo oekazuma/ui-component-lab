@@ -94,3 +94,23 @@ test('tooltip: Escape hides a focus-opened tooltip and focus stays on the button
 	await expect(tooltip).not.toHaveClass(/visible/);
 	await expect(button).toBeFocused();
 });
+
+// Playwright では IME の変換を再現できないため、変換中を示す isComposing を付けた keydown を送る
+test('combobox: arrow keys and Enter during IME composition are left to the IME', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/combobox/');
+	const input = demo.getByRole('combobox');
+
+	await input.fill('ap');
+	await expect(input).toHaveAttribute('aria-expanded', 'true');
+
+	await input.dispatchEvent('keydown', { key: 'ArrowDown', isComposing: true, bubbles: true });
+	await expect(input).not.toHaveAttribute('aria-activedescendant');
+	await input.dispatchEvent('keydown', { key: 'Escape', isComposing: true, bubbles: true });
+	await expect(input).toHaveAttribute('aria-expanded', 'true');
+
+	await page.keyboard.press('ArrowDown');
+	await expect(input).toHaveAttribute('aria-activedescendant', /option-0$/);
+	await input.dispatchEvent('keydown', { key: 'Enter', isComposing: true, bubbles: true });
+	await expect(input).toHaveValue('ap');
+	await expect(input).toHaveAttribute('aria-expanded', 'true');
+});

@@ -29,6 +29,10 @@ export default {
 			ja: '矢印キーで候補を選んでいる間も、キーボードのフォーカスは入力欄に残る。'
 		},
 		{
+			en: 'While text is still being composed with an input method (such as for Japanese), the arrow keys, Enter and Esc go to the input method and do not move through or choose suggestions.',
+			ja: '日本語入力などで変換している間は、矢印キー・Enter・Esc は変換の操作に使われ、候補の移動や決定には使われない。'
+		},
+		{
 			en: 'HTML can also make a simple combobox with `<input list>` and `<datalist>`, but how the list looks and works differs by browser.',
 			ja: 'HTML の `<input list>` と `<datalist>` でも簡易的なコンボボックスを作れるが、リストの見た目や動きはブラウザで異なる。'
 		}

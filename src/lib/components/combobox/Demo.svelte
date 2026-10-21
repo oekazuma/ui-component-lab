@@ -34,6 +34,9 @@
 
 	// APG「Editable Combobox With List Autocomplete」のキー操作に合わせる
 	function onkeydown(e: KeyboardEvent) {
+		// 日本語入力の変換中の ↓ や Enter は IME の操作なので横取りしない。
+		// Safari は変換を確定する Enter で isComposing が false になるため、keyCode 229 も見る
+		if (e.isComposing || e.keyCode === 229) return;
 		const n = suggestions.length;
 		if (!n && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) return;
 		switch (e.key) {
