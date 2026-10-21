@@ -25,6 +25,14 @@ export default {
 			ja: '今のページは `aria-current="page"` で示し、全体を `<nav>` ランドマークで囲む。'
 		},
 		{
+			en: 'The `<nav>` is labelled with what it pages through, such as “Search results”. Screen readers already announce it as navigation, so a label like “Pagination” would only repeat the role.',
+			ja: '`<nav>` のラベルには「検索結果」のように何のページかを書く。スクリーンリーダーはナビゲーションであることを読み上げるので、「ページネーション」のようなラベルは役割の繰り返しになる。'
+		},
+		{
+			en: 'Only the first and last pages and the pages next to the current one are shown; the pages in between become “…”. The “…” is plain text, not a button.',
+			ja: '最初と最後のページ、今のページとその前後だけを出し、間のページは「…」にする。「…」はボタンではなく、ただの文字。'
+		},
+		{
 			en: 'Websites often use links to separate URLs; this demo uses buttons because it swaps content on the same screen.',
 			ja: 'Web サイトではページごとの URL へのリンクにすることが多い。このデモは同じ画面の中身を入れ替えるため、ボタンにしている。'
 		}
@@ -43,6 +51,13 @@ export default {
 		}
 	],
 	variations: [
+		{
+			name: { en: 'Previous and next with a counter', ja: '前後とカウンターだけの型' },
+			description: {
+				en: 'Only “Previous page” and “Next page” with the position, such as “5 / 24”, between them and no page numbers. The Digital Agency Design System uses this form, as text, outlined or arrow-only buttons.',
+				ja: 'ページ番号を並べず、「前のページ」「次のページ」と、その間の「5 / 24」のような現在位置だけを置くもの。デジタル庁デザインシステムはこの形で、テキスト型・アウトライン型・矢印型がある。'
+			}
+		},
 		{
 			name: { en: 'Table pagination', ja: '表のページ送り' },
 			description: {
@@ -93,7 +108,7 @@ export default {
 		{
 			label: 'GOV.UK Design System: Pagination',
 			url: 'https://design-system.service.gov.uk/components/pagination/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Carbon Design System: Pagination',
@@ -103,7 +118,12 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ページナビゲーション」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/page-navigation/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: page-navigation',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/page-navigation',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Nielsen Norman Group: Infinite Scrolling Is Not for Every Website',

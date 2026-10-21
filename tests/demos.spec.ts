@@ -260,3 +260,20 @@ test('split button: the menu lines up with the right edge of the button group', 
 	const m = (await demo.getByRole('menu').boundingBox())!;
 	expect(Math.abs(g.x + g.width - (m.x + m.width))).toBeLessThan(1);
 });
+
+test('pagination: names the nav after the results and shortens far pages with an ellipsis', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/pagination/');
+	const nav = demo.getByRole('navigation', { name: 'Search results' });
+	const pages = nav.getByRole('button', { name: /^Page \d+$/ });
+	await expect(pages).toHaveText(['1', '2', '10']);
+	await expect(nav.getByText('…')).toHaveCount(1);
+
+	await nav.getByRole('button', { name: 'Next' }).click();
+	await nav.getByRole('button', { name: 'Next' }).click();
+	await nav.getByRole('button', { name: 'Next' }).click();
+	await nav.getByRole('button', { name: 'Next' }).click();
+	await expect(pages).toHaveText(['1', '4', '5', '6', '10']);
+	await expect(nav.getByText('…')).toHaveCount(2);
+	await expect(nav.getByRole('button', { name: 'Page 5' })).toHaveAttribute('aria-current', 'page');
+	await expect(demo.getByText('Showing results 41–50 of 100')).toBeVisible();
+});
