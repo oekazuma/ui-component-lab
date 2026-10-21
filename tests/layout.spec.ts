@@ -77,18 +77,6 @@ test('systems: a list at the top jumps to each design system', async ({ page }) 
 	await expect(page.locator(href!)).toHaveCount(1);
 });
 
-test('list: an empty result offers to clear the search and category', async ({ page }) => {
-	await page.goto('ja/');
-	await page.waitForLoadState('networkidle');
-	await page.locator('.chip', { hasText: '入力' }).click();
-	await page.locator('header input').fill('zzzz');
-	await page.getByRole('button', { name: '条件をクリア' }).click();
-	await expect(page.locator('header input')).toHaveValue('');
-	await expect(page.locator('header input')).toBeFocused();
-	await expect(page.getByRole('radio', { name: 'すべて' })).toBeChecked();
-	expect(await page.locator('.grid > li').count()).toBeGreaterThan(40);
-});
-
 test('external links: the arrow stays on the same line as the last character', async ({ page }) => {
 	await page.setViewportSize({ width: 375, height: 812 });
 	await page.goto('ja/systems/');

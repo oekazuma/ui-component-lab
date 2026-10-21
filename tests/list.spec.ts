@@ -17,7 +17,7 @@ test('list: the card link is named after the component', async ({ page }) => {
 
 test('detail: key labels are not smaller than 14px', async ({ page }) => {
 	await page.goto('en/components/tabs/');
-	const size = await page.locator('kbd').first().evaluate((k) => parseFloat(getComputedStyle(k).fontSize));
+	const size = await page.locator('main kbd').first().evaluate((k) => parseFloat(getComputedStyle(k).fontSize));
 	expect(size).toBeGreaterThanOrEqual(14);
 });
 

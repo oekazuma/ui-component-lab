@@ -34,7 +34,7 @@ CI は PR ごとに上の 3 つを実行する。
 - id は `$props.id()` から作る。一覧ページではすべてのデモが同時に描画されるため、固定の id は衝突する
 - リセットは `DemoFrame.svelte` が `{#key}` で作り直して行うので、デモにリセット処理は書かない。言語を切り替えたときも作り直される
 - ネイティブ要素で足りるならそれを使い、何をブラウザに任せているかをコメントに書く（例: `modal/Demo.svelte`）。独自のキー操作には、従う APG のパターン名をコメントで添える
-- イベントリスナーは要素に付ける。document や window に付けるのは、ポップアップが開いている間だけにする。`$effect` で付けて、片付けの関数で外す（例: `src/lib/ActionMenu.svelte`、`tooltip/Demo.svelte`）。常設してよいのは toast の `<svelte:window>` だけ
+- イベントリスナーは要素に付ける。document や window に付けるのは、ポップアップが開いている間だけにする。`$effect` で付けて、片付けの関数で外す（例: `src/lib/ActionMenu.svelte`、`tooltip/Demo.svelte`）。常設してよいのは toast の `<svelte:window>` と、検索を開くショートカット（`src/lib/SearchPalette.svelte`）だけ
 - タイマーは `$effect` の片付けで止める（例: `toast/Demo.svelte`）
 - `svelte-ignore` を使うときは、1 行上に理由を書く
 - 色は `src/app.css` のトークン（`--color-*`）を使う。ダークモードではトークンの値が切り替わるので、色を直に書くとダークモードで読めなくなる。エラーは `--color-danger`（その上の文字は `--color-danger-text`）、薄い背景のエラー表示は `--color-danger-surface` と `--color-danger-on-surface`、アクセントのホバーは `--color-accent-hover`。トークンを足すときはライトとダークの両方に値を書き、コントラスト比をコメントに書く

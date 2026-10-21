@@ -18,3 +18,10 @@ export const matches = (data: ComponentData, query: string) => {
 		normalize(s).includes(q)
 	);
 };
+
+/** 部品名ではなく別名で一致したとき、その別名を返す（候補に「別名: …」と添えるため） */
+export const matchedAlias = (data: ComponentData, query: string) => {
+	const q = normalize(query);
+	if (!q || [data.id, data.names.en, data.names.ja].some((s) => normalize(s).includes(q))) return undefined;
+	return data.aliases.find((a) => normalize(a.name).includes(q))?.name;
+};
