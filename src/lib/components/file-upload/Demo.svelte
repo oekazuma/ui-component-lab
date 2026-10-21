@@ -85,6 +85,8 @@
 <style>
 	.demo {
 		display: grid;
+		/* 自動幅の列はファイル入力の最小幅（ボタン＋ファイル名）より縮まず、カードからはみ出すため 0 まで縮める */
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.25rem;
 		width: min(100%, 22rem);
 	}
