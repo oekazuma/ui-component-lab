@@ -322,3 +322,15 @@ test('link: a new-tab link says so, a file link gives its type and size, and hov
 	await button.hover();
 	await expect(button).toHaveCSS('text-decoration-thickness', '3px');
 });
+
+test('breadcrumb: five levels, the current page is plain text, and its long name wraps on phones', async ({ page }) => {
+	await page.setViewportSize({ width: 375, height: 800 });
+	const demo = await openDemo(page, 'en/components/breadcrumb/');
+	const nav = demo.getByRole('navigation', { name: 'Breadcrumb' });
+	await expect(nav.getByRole('listitem')).toHaveCount(5);
+	await expect(nav.getByRole('link')).toHaveCount(4);
+	const current = nav.locator('[aria-current="page"]');
+	await expect(current).toHaveJSProperty('tagName', 'SPAN');
+	expect(await current.evaluate((el) => el.getClientRects().length)).toBeGreaterThan(1);
+	expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
+});
