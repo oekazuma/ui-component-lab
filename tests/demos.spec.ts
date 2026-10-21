@@ -782,3 +782,19 @@ test('hamburger menu: the Menu button opens a named menu with a Close button, an
 	await expect(dialog).toBeHidden();
 	await expect(open).toBeFocused();
 });
+
+test('mobile menu: sections open in place, and links and sections use different end icons', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/mobile-menu/');
+	const nav = demo.getByRole('navigation', { name: 'Menu' });
+	const services = nav.locator('summary', { hasText: 'Services' });
+
+	await expect(nav.getByRole('link', { name: 'Moving in or out' })).toBeHidden();
+	await services.click();
+	await expect(nav.getByRole('link', { name: 'Moving in or out' })).toBeVisible();
+	const linkIcon = await nav.getByRole('link', { name: 'Home' }).evaluate((el) => getComputedStyle(el, '::after').content);
+	const sectionIcon = await services.evaluate((el) => getComputedStyle(el, '::after').content);
+	expect(linkIcon).not.toBe(sectionIcon);
+
+	await nav.getByRole('link', { name: 'Moving in or out' }).click();
+	await expect(demo.locator('[role="status"]')).toHaveText('Going to: Moving in or out');
+});

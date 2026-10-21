@@ -110,6 +110,13 @@ export default {
 				en: 'A drawer is the panel that slides in from the edge; a hamburger menu button is the button that often opens it.',
 				ja: 'ドロワーは端からすべり出るパネルで、ハンバーガーメニューボタンはそれを開くことが多いボタン。'
 			}
+		},
+		{
+			id: 'mobile-menu',
+			diff: {
+				en: 'A drawer is the panel that slides in from the edge; a mobile menu is the navigation placed inside it.',
+				ja: 'ドロワーは端からすべり出るパネルで、モバイルメニューはその中に入れるナビゲーション。'
+			}
 		}
 	],
 	sources: [

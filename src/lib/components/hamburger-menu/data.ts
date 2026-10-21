@@ -120,6 +120,13 @@ export default {
 				en: 'A hamburger menu button opens the site’s navigation links; a menu button opens a short list of actions right under itself.',
 				ja: 'ハンバーガーメニューボタンはサイトのナビゲーションのリンクを開き、メニューボタンは自分のすぐ下に操作の短い一覧を開く。'
 			}
+		},
+		{
+			id: 'mobile-menu',
+			diff: {
+				en: 'A hamburger menu button is the button that opens the menu; the mobile menu is the list of links shown once it opens.',
+				ja: 'ハンバーガーメニューボタンはメニューを開くボタンで、モバイルメニューは開いたときに出るリンクの一覧。'
+			}
 		}
 	],
 	sources: [
