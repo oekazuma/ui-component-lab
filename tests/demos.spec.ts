@@ -215,3 +215,19 @@ test('drawer: Apply sets the count on the button; a backdrop click closes withou
 	await expect(drawer.getByLabel('On sale')).not.toBeChecked();
 	await expect(drawer.getByLabel('In stock')).toBeChecked();
 });
+
+test('popover: Tab goes through its link and out, and it stays open', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/popover/');
+	const button = demo.getByRole('button', { name: 'About shipping' });
+	const pop = page.getByRole('dialog', { name: 'How shipping is calculated' });
+	await button.focus();
+	await page.keyboard.press('Enter');
+	await expect(pop).toBeVisible();
+	await page.keyboard.press('Tab');
+	await expect(pop.getByRole('link', { name: 'Shipping fees by region' })).toBeFocused();
+	await page.keyboard.press('Tab');
+	await expect(pop.getByRole('button', { name: 'Close' })).toBeFocused();
+	await page.keyboard.press('Tab');
+	expect(await pop.evaluate((el) => el.contains(document.activeElement))).toBe(false);
+	await expect(pop).toBeVisible();
+});

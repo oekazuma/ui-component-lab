@@ -31,15 +31,23 @@ export default {
 		{
 			en: 'This demo uses the HTML `popover` attribute; where CSS anchor positioning is not supported, it opens in the middle of the screen.',
 			ja: 'このデモは HTML の `popover` 属性を使っている。CSS のアンカー配置に対応していないブラウザでは、画面の中央に出る。'
+		},
+		{
+			en: 'In this demo, it explains the shipping fee in an order summary, and holds a link to more details and a Close button.',
+			ja: 'このデモでは、注文内容の送料の決まり方を説明し、詳しい説明へのリンクと「閉じる」ボタンを持つ。'
+		},
+		{
+			en: 'Moving focus out of it does not close it; it stays open until the button, an outside click or Esc closes it.',
+			ja: 'フォーカスが外へ出ても閉じない。ボタン、外側のクリック、Esc のどれかで閉じるまで開いたまま。'
 		}
 	],
 	keyboard: [
 		{ key: 'Enter / Space', action: { en: 'Opens or closes the popover.', ja: 'ポップオーバーを開閉する。' } },
 		{
-			key: 'Tab',
+			key: 'Tab / Shift + Tab',
 			action: {
-				en: 'From the button, moves into the popover’s contents.',
-				ja: 'ボタンから、ポップオーバーの中身へ移動する。'
+				en: 'From the button, moves into the popover’s contents, then on to the rest of the page. The popover stays open after focus leaves it.',
+				ja: 'ボタンから、ポップオーバーの中身へ、さらにページの続きへ移動する。フォーカスが外へ出てもポップオーバーは開いたまま。'
 			}
 		},
 		{
@@ -80,7 +88,7 @@ export default {
 		{
 			label: 'Carbon Design System: Toggletip',
 			url: 'https://carbondesignsystem.com/components/toggletip/usage/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
