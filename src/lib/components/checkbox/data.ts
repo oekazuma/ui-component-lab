@@ -23,12 +23,20 @@ export default {
 			ja: '子の一部だけが選ばれているとき、親のチェックボックスは中間状態になる。親を押すと子をすべて選ぶ。'
 		},
 		{
+			en: 'The WAI-ARIA APG mixed-state example goes further: the parent cycles through unchecked, mixed and checked, and the mixed step brings back the last partial selection. This demo, like the DADS example, only checks or unchecks all.',
+			ja: 'WAI-ARIA APG の中間状態の例では、親を押すたびにオフ・中間・オンを順に切り替え、中間に戻ったときは直前の一部だけの選択を復元する。このデモは DADS の例と同じく、すべて選ぶか、すべて外すだけにしている。'
+		},
+		{
 			en: 'In this demo, Cheese starts checked so the mixed state is visible right away. In a real form, leave answers unchecked (see Misuses to avoid).',
 			ja: 'このデモでは、中間状態をすぐ見せるために「チーズ」を選んだ状態から始める。実際のフォームでは回答をあらかじめ選んでおかない（避けたい使い方を参照）。'
 		},
 		{
 			en: 'Related checkboxes are grouped with a `<fieldset>` and `<legend>` so the group has a name.',
 			ja: '関連するチェックボックスは `<fieldset>` と `<legend>` でまとめ、グループに名前を付ける。'
+		},
+		{
+			en: 'In this demo, the single “I agree to the terms of use” checkbox starts unchecked. Pressing Apply without checking it shows an error below it, links the error with `aria-describedby`, sets `aria-invalid`, and moves focus to the checkbox. Checking it removes the error.',
+			ja: 'このデモでは、単独の「利用規約に同意する」はチェックなしで始まる。チェックを付けずに「申し込む」を押すと、下にエラーの文を出して `aria-describedby` でつなぎ、`aria-invalid` を付けて、フォーカスをチェックボックスへ移す。チェックを付けるとエラーは消える。'
 		}
 	],
 	keyboard: [
@@ -43,6 +51,10 @@ export default {
 		{
 			en: 'Put the box to the left of its label.',
 			ja: 'ボックスはラベルの左に置く。'
+		},
+		{
+			en: 'When a single checkbox has to be checked to go on, such as agreeing to terms, say in the error what to do, such as “Select if you agree to the terms of use”.',
+			ja: '利用規約への同意のように、単独のチェックボックスにチェックがないと先へ進めないときは、「利用規約に同意する場合は、チェックを付けてください」のように、どうすればよいかをエラーに書く。'
 		}
 	],
 	misuse: [
@@ -114,9 +126,24 @@ export default {
 			checkedAt: '2026-10-20'
 		},
 		{
+			label: 'WAI-ARIA APG: Checkbox (Mixed-State) Example',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/examples/checkbox-mixed/',
+			checkedAt: '2026-10-21'
+		},
+		{
 			label: 'デジタル庁デザインシステムウェブサイト「チェックボックス」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/checkbox/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「チェックボックス（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/checkbox/usage/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: checkbox',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/checkbox',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Deceptive Patterns: Preselection',

@@ -601,3 +601,22 @@ test('toast: a message-only toast hides itself after 5 seconds, but not while th
 	await expect(status).toHaveText('');
 	await expect(demo.getByText('Share link: https://example.com/s/8f3k (copied)')).toBeVisible();
 });
+
+test('checkbox: a single terms checkbox starts unchecked and gives an error tied to it when left unchecked', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/checkbox/');
+	const terms = demo.getByRole('checkbox', { name: 'I agree to the terms of use' });
+	const apply = demo.getByRole('button', { name: 'Apply' });
+	await expect(terms).not.toBeChecked();
+
+	await apply.click();
+	await expect(terms).toBeFocused();
+	await expect(terms).toHaveAttribute('aria-invalid', 'true');
+	await expect(terms).toHaveAccessibleDescription('Select if you agree to the terms of use.');
+
+	await page.keyboard.press('Space');
+	await expect(terms).not.toHaveAttribute('aria-invalid', 'true');
+	await apply.click();
+	await expect(demo.getByRole('status')).toHaveText('Application sent');
+	// トッピングのグループはそのまま残る
+	await expect(demo.getByRole('group', { name: 'Toppings' }).getByRole('checkbox')).toHaveCount(4);
+});
