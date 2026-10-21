@@ -35,6 +35,36 @@ export default {
 		{ key: 'Tab', action: { en: 'Focusing the element shows the tooltip.', ja: '要素にフォーカスするとツールチップが出る。' } },
 		{ key: 'Esc', action: { en: 'Hides the tooltip.', ja: 'ツールチップを消す。' } }
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Putting information needed to finish a task only in a tooltip',
+				ja: '作業を終えるのに必要な情報を、ツールチップにだけ書く'
+			},
+			harm: {
+				en: 'Tooltips usually do not appear on touchscreens, mouse-only ones cannot be reached by keyboard, and they are hard to notice, so people may never find the information. They also have to remember it after it disappears.',
+				ja: 'タッチ画面ではふつう表示されず、マウスでしか出ないものはキーボードで使う人に届かない。目印がなく気づきにくいため情報に行き着けないこともあり、消えたあとは覚えておく必要がある。'
+			},
+			instead: {
+				en: 'Show information such as input requirements on the page itself, and label icons with visible text. Use a tooltip only for supplementary hints.',
+				ja: '入力の条件など作業に必要な情報はページに直接書き、アイコンには見える文字のラベルを付ける。ツールチップは補足のヒントにだけ使う。'
+			}
+		},
+		{
+			pattern: {
+				en: 'Making a tooltip that cannot be dismissed, vanishes when the pointer moves onto it, or disappears on a timer',
+				ja: '消す手段がない、ポインターを乗せると消える、時間で消えるツールチップにする'
+			},
+			harm: {
+				en: 'People using screen magnification cannot see what the tooltip covers, people with a large pointer cannot read text hidden under it, and people with low vision or cognitive disabilities may lose the text before they finish reading.',
+				ja: '画面を拡大して使う人は、ツールチップが覆った部分を見られない。大きなポインターを使う人は、ポインターの下に隠れた文字を読めない。弱視や認知障害のある人は、読み終える前に文字が消えてしまうことがある。'
+			},
+			instead: {
+				en: 'Let Esc hide the tooltip without moving the pointer or focus, keep it open while the pointer is over the tooltip itself, and keep it visible until the pointer or focus leaves.',
+				ja: 'ポインターやフォーカスを動かさずに Esc で消せるようにし、ツールチップ自体にポインターを乗せても消えないようにし、ポインターやフォーカスが離れるまで表示し続ける。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'popover',
@@ -49,6 +79,16 @@ export default {
 			label: 'WAI-ARIA APG: Tooltip Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Nielsen Norman Group: Tooltip Guidelines',
+			url: 'https://www.nngroup.com/articles/tooltip-guidelines/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Understanding Success Criterion 1.4.13: Content on Hover or Focus (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

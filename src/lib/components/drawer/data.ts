@@ -56,6 +56,22 @@ export default {
 			ja: 'メニューボタンなどから開き、背後にオーバーレイを敷き、閉じるボタンを付ける。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Hiding the main navigation in a drawer on desktop screens',
+				ja: 'デスクトップの画面でも、主なナビゲーションをドロワーの中だけに隠す'
+			},
+			harm: {
+				en: 'People find the site’s content less often, take longer to complete tasks, and find the site harder to use than when the navigation is visible; the drop is largest on desktop.',
+				ja: 'ナビゲーションが見えている場合より、利用者がコンテンツを見つけにくくなり、作業に時間がかかり、使いにくいと感じる。この差はデスクトップで特に大きい。'
+			},
+			instead: {
+				en: 'On desktop, show the top-level links across the top or down the side of the page. On phones, show up to four top-level links directly; if there are more, put the rest in the drawer and add links to important pages within the page.',
+				ja: 'デスクトップでは、最上位のリンクをページの上部か横に並べて見せる。スマートフォンでは最上位のリンクが4つまでなら直接見せ、それより多いときは残りをドロワーに入れ、重要なページへのリンクをページ内にも置く。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'modal',
@@ -80,6 +96,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ドロワー」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/drawer/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Nielsen Norman Group: Hamburger Menus and Hidden Navigation Hurt UX Metrics',
+			url: 'https://www.nngroup.com/articles/hamburger-menus/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

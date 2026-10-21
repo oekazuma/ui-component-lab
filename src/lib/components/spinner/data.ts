@@ -75,7 +75,7 @@ export default {
 			checkedAt: '2026-10-20'
 		},
 		{
-			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター（概要）」をもとに作成',
+			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/progress-indicator/',
 			checkedAt: '2026-10-21'
 		},
