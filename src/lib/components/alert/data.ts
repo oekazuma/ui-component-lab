@@ -109,6 +109,13 @@ export default {
 				en: 'An alert tells the user something important and is announced right away; a callout sets apart helpful extra information and stays quiet.',
 				ja: 'アラートは重要なことを知らせてすぐに読み上げられ、注釈ブロックは役立つ補足を区別して見せるだけで読み上げで割り込まない。'
 			}
+		},
+		{
+			id: 'emergency-banner',
+			diff: {
+				en: 'An alert carries ordinary important messages and can stay up for a long time; an emergency banner warns about urgent danger and cannot be closed.',
+				ja: 'アラートはふだんの重要なお知らせを伝えて長く載せておけ、緊急時バナーは差し迫った危険を知らせて閉じられない。'
+			}
 		}
 	],
 	sources: [

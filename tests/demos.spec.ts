@@ -842,3 +842,15 @@ test('callout: a bordered block of examples that is not announced like an alert'
 	await expect(callout).not.toHaveCSS('border-style', 'none');
 	await expect(demo.locator('[role="alert"], [role="status"], [aria-live]')).toHaveCount(0);
 });
+
+test('emergency banner: an article with a specific heading, a time, one link, and no close button', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/emergency-banner/');
+	const banner = demo.getByRole('article');
+	await expect(banner.getByRole('heading', { level: 3 })).toHaveText(/^Emergency: .+Minami/);
+	await expect(banner.locator('time[datetime]')).toHaveCount(1);
+	await expect(banner.getByRole('button')).toHaveCount(0);
+	await expect(banner.getByRole('link')).toHaveCount(1);
+
+	await banner.getByRole('link').click();
+	await expect(demo.locator('[role="status"]')).toContainText('evacuation shelters');
+});
