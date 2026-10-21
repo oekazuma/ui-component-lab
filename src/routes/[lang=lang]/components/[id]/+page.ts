@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import { definePageMetaTags } from 'svelte-meta-tags';
 import { entries as components, getEntry } from '#lib/registry.js';
 import { stripComments } from '#lib/strip-comments.js';
 import { langs } from '#lib/types.js';
@@ -17,5 +18,12 @@ export const load: PageLoad = async ({ params }) => {
 	const entry = getEntry(params.id);
 	if (!entry) error(404);
 	const source = stripComments(await sources[`/src/lib/components/${params.id}/Demo.svelte`]());
-	return { entry, source };
+	return {
+		entry,
+		source,
+		...definePageMetaTags({
+			title: entry.data.names[params.lang],
+			description: entry.data.summary[params.lang]
+		})
+	};
 };

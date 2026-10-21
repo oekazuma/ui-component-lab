@@ -1,11 +1,6 @@
 <script lang="ts">
 	import { homePath } from '#lib/paths.js';
-	import { siteName } from '#lib/i18n.js';
 </script>
-
-<svelte:head>
-	<title>404 | {siteName}</title>
-</svelte:head>
 
 <main>
 	<h1>404</h1>

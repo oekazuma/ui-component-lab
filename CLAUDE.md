@@ -46,3 +46,4 @@ CI は PR ごとに上の 3 つを実行する。
 - コメントは日本語で書き、処理の説明より理由を書く
 - `ponytail:` コメントは、意図して簡略にした箇所と、見直すきっかけを示す
 - インデントはタブ、文字列はシングルクォート、末尾カンマなし
+- `<title>` やメタタグは各ページの +page.ts で `definePageMetaTags` に title と description を渡す。<svelte:head> には書かない（svelte-meta-tags がルートのレイアウトでまとめて出す）

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { componentPath, homePath } from '#lib/paths.js';
 	import DemoFrame from '#lib/DemoFrame.svelte';
-	import { categoryNames, siteName, t } from '#lib/i18n.js';
+	import { categoryNames, t } from '#lib/i18n.js';
 	import { getEntry } from '#lib/registry.js';
 	import type { PageProps } from './$types';
 
@@ -16,11 +16,6 @@
 		})
 	);
 </script>
-
-<svelte:head>
-	<title>{data.names[lang]} | {siteName}</title>
-	<meta name="description" content={data.summary[lang]} />
-</svelte:head>
 
 <p class="back">
 	<a href={homePath(lang)}>← {ui.backToList}</a>
