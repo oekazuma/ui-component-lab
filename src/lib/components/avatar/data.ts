@@ -36,11 +36,29 @@ export default {
 			}
 		}
 	],
+	misuse: [
+		{
+			pattern: { en: 'Showing an avatar with no name anywhere', ja: '名前をどこにも示さずにアバターだけを置く' },
+			harm: {
+				en: 'People who have difficulty seeing the picture and use a screen reader or braille cannot get information that exists only in the picture, so they cannot tell whose avatar it is.',
+				ja: '画像を見て内容をつかむことが難しく、スクリーンリーダーや点字を使う人には、画像にしかない情報が届かない。誰のアバターなのかが分からない。'
+			},
+			instead: {
+				en: 'Give the avatar the person’s name as alternative text, or show the name next to it and mark the avatar as decorative.',
+				ja: 'アバターに名前を代替テキストとして付ける。隣に名前を表示するなら、アバターは飾り扱いにする。'
+			}
+		}
+	],
 	sources: [
 		{
 			label: 'MUI: Avatar',
 			url: 'https://mui.com/material-ui/react-avatar/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Understanding Success Criterion 1.1.1: Non-text Content (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

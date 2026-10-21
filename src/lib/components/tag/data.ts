@@ -56,8 +56,36 @@ export default {
 			ja: '× で外せるチップは、利用者が選んだ値や入力した値に使う。取り消せない削除には使わない。'
 		},
 		{
-			en: 'A display-only chip shows a status or category. Do not tell them apart by color alone.',
-			ja: '表示だけのチップは状態や分類に使い、色だけで区別しない。'
+			en: 'A display-only chip shows a status or category.',
+			ja: '表示だけのチップは状態や分類に使う。'
+		}
+	],
+	misuse: [
+		{
+			pattern: { en: 'Telling statuses or categories apart only by the tag’s color', ja: '状態や分類の違いをタグの色だけで示す' },
+			harm: {
+				en: 'People with color vision deficiency, many older people and people with partial sight, and anyone on a monochrome display cannot get information that is shown only by color.',
+				ja: '色覚に特性のある人、色が見分けにくい高齢者や弱視の人、白黒の画面を使う人には、色だけで示した情報が伝わらない。'
+			},
+			instead: {
+				en: 'Write the status or category as a word in the tag, and add an icon if it helps.',
+				ja: 'タグの中に状態や分類を言葉で書き、必要ならアイコンも添える。'
+			}
+		},
+		{
+			pattern: {
+				en: 'Labeling items “Only a few left” or “Popular” when that is not true',
+				ja: '事実でないのに「残りわずか」「人気」のタグを付ける'
+			},
+			harm: {
+				en: 'Users believe stock is about to run out or that many others want the item, so they decide in a hurry without comparing options and misjudge its value.',
+				ja: '利用者は在庫がなくなりそうだ、ほかの人も欲しがっていると思い込み、選択肢を比べないまま急いで決めてしまい、商品の価値を見誤る。'
+			},
+			instead: {
+				en: 'Show stock or popularity tags only when they come from real data, such as the actual stock count.',
+				ja: '在庫や人気のタグは、実際の在庫数など本当のデータにもとづくときだけ表示する。'
+			},
+			deceptive: true
 		}
 	],
 	related: [
@@ -88,6 +116,21 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「チップラベル」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/chip-label/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Understanding Success Criterion 1.4.1: Use of Color (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deceptive Patterns: Fake scarcity',
+			url: 'https://www.deceptive.design/types/fake-scarcity',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
+			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
 		}
 	]

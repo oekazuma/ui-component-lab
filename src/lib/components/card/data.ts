@@ -39,12 +39,39 @@ export default {
 	],
 	usage: [
 		{
-			en: 'If the whole card is clickable, do not put links or buttons inside it.',
-			ja: 'カード全体を押せるようにするなら、中にリンクやボタンを置かない。'
-		},
-		{
 			en: 'Separate cards with an outline of at least 3:1 contrast instead of relying on a shadow alone.',
 			ja: '影だけに頼らず、背景とのコントラスト比 3:1 以上の枠線で区切る。'
+		}
+	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Putting links or buttons inside a card that is itself a link',
+				ja: 'カード全体をリンクにしたうえで、中にリンクやボタンを置く'
+			},
+			harm: {
+				en: 'Screen readers do not announce a control nested inside another one: it can be reached with Tab, but its name and role are not read, so it is an empty stop. This affects blind users and people with motor disabilities.',
+				ja: '操作部品の中に入れ子になった操作部品は、スクリーンリーダーが読み上げない。Tab で移動はできても名前も役割も伝わらず、何もない場所に止まったようになる。目の見えない人や運動障害のある人が困る。'
+			},
+			instead: {
+				en: 'If the card needs its own buttons or links, make only the heading a link and leave the rest of the card unlinked.',
+				ja: 'カードの中にボタンやリンクが要るなら、見出しだけをリンクにし、カード全体はリンクにしない。'
+			}
+		},
+		{
+			pattern: {
+				en: 'Making an ad card look the same as the content cards around it',
+				ja: '広告のカードを、周りの記事のカードと同じ見た目で並べる'
+			},
+			harm: {
+				en: 'Users mistake the ad for content or a regular control and click it without meaning to, sometimes ending up on a page or sign-up they did not intend.',
+				ja: '利用者は広告を記事やふつうの操作と思い込んで押してしまい、意図しないページや申し込みに進むことがある。'
+			},
+			instead: {
+				en: 'Label the card as an ad in text, such as “Ad” or “Sponsored”, and give it a look that sets it apart from content cards.',
+				ja: '「広告」「PR」のように広告だと文字で示し、記事のカードと見分けられる見た目にする。'
+			},
+			deceptive: true
 		}
 	],
 	related: [
@@ -66,6 +93,21 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「カード」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/card/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「カード（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/card/usage/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deque University: Interactive controls must not be nested',
+			url: 'https://dequeuniversity.com/rules/axe/4.10/nested-interactive',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deceptive Patterns: Disguised ads',
+			url: 'https://www.deceptive.design/types/disguised-ads',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

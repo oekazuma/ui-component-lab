@@ -57,8 +57,21 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Do not use it for layout or for pairs of names and values. Use a description list for those.',
-			ja: 'レイアウトの目的や、項目名と値の組には使わない。項目名と値の組には説明リストを使う。'
+			en: 'For pairs of names and values, use a description list.',
+			ja: '項目名と値の組には、説明リストを使う。'
+		}
+	],
+	misuse: [
+		{
+			pattern: { en: 'Using a table to lay out the page', ja: 'ページのレイアウトにテーブルを使う' },
+			harm: {
+				en: 'Screen readers read a table in source order, which can differ from the visual order, so people using a screen reader or a keyboard may meet the content in a confusing order. Markup such as <th> or <caption> can make a screen reader present it as a data table. When people with low vision enlarge text in fixed-size cells, it can overflow and need horizontal scrolling.',
+				ja: 'スクリーンリーダーはソースの順に読むため、見た目の順とずれることがあり、スクリーンリーダーやキーボードを使う人には分かりにくい順で伝わる。<th> や <caption> があると、データの表として読み上げられることがある。弱視の人が文字を拡大すると、大きさを固定したセルから内容がはみ出し、横スクロールが必要になることがある。'
+			},
+			instead: {
+				en: 'Lay out the page with CSS (grid or flexbox) and keep <table> for data compared across rows and columns.',
+				ja: 'レイアウトは CSS（grid や flexbox）で組み、<table> は行と列で比べるデータにだけ使う。'
+			}
 		}
 	],
 	related: [
@@ -97,6 +110,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「テーブル／データテーブル」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/table/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'WebAIM: Creating Accessible Tables',
+			url: 'https://webaim.org/techniques/tables/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

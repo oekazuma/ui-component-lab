@@ -45,8 +45,21 @@ export default {
 			ja: '作業の進み具合には使わない。それにはプログレスバーを使う。'
 		},
 		{
-			en: 'The maximum must mean something, like the size of the disk. Show the number as text too, since color alone does not tell everyone the state.',
-			ja: '最大値には意味が必要（ディスクの容量など）。色だけでは状態が伝わらない人もいるため、数値も文字で示す。'
+			en: 'The maximum must mean something, like the size of the disk.',
+			ja: '最大値には意味が必要（ディスクの容量など）。'
+		}
+	],
+	misuse: [
+		{
+			pattern: { en: 'Showing whether the value is good or bad only by the bar’s color', ja: '値の良し悪しを棒の色だけで示す' },
+			harm: {
+				en: 'People with color vision deficiency, many older people and people with partial sight, and anyone on a monochrome display cannot get information that is shown only by color.',
+				ja: '色覚に特性のある人、色が見分けにくい高齢者や弱視の人、白黒の画面を使う人には、色だけで示した情報が伝わらない。'
+			},
+			instead: {
+				en: 'Show the value as text next to the bar, and add a word for the state when it matters, such as “Almost full”.',
+				ja: '棒の横に数値を文字で示し、必要なら「もうすぐいっぱい」のように状態も言葉で添える。'
+			}
 		}
 	],
 	related: [
@@ -68,6 +81,11 @@ export default {
 			label: 'MDN: <meter>',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meter',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Understanding Success Criterion 1.4.1: Use of Color (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
