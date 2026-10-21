@@ -4,7 +4,9 @@ export default {
 	id: 'mega-menu',
 	category: 'navigation',
 	names: { en: 'Mega menu', ja: 'メガメニュー' },
-	aliases: [],
+	aliases: [
+		{ name: 'メガメニュー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/mega-menu/' }
+	],
 	summary: {
 		en: 'A wide panel that opens from a site’s horizontal menu and shows all the pages in one section at once.',
 		ja: 'サイトの水平メニューから開く幅の広いパネル。1 つのカテゴリの中のページをまとめて見せる。'

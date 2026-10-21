@@ -4,7 +4,9 @@ export default {
 	id: 'mobile-menu',
 	category: 'navigation',
 	names: { en: 'Mobile menu', ja: 'モバイルメニュー' },
-	aliases: [],
+	aliases: [
+		{ name: 'モバイルメニュー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/mobile-menu/' }
+	],
 	summary: {
 		en: 'The site’s navigation links stacked in a column for small touch screens, opened from a hamburger menu button.',
 		ja: '小さなタッチスクリーン向けに、サイトのナビゲーションのリンクを縦に並べたメニュー。ハンバーガーメニューボタンから開く。'

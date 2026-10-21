@@ -4,7 +4,9 @@ export default {
 	id: 'hamburger-menu',
 	category: 'action',
 	names: { en: 'Hamburger menu button', ja: 'ハンバーガーメニューボタン' },
-	aliases: [],
+	aliases: [
+		{ name: 'ハンバーガーメニューボタン', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/hamburger-menu-button/' }
+	],
 	summary: {
 		en: 'A button with three stacked lines that opens the site’s menu, mainly on phones.',
 		ja: '3本線のアイコンが付いた、サイトのメニューを開くボタン。主にスマートフォンで使う。'
