@@ -98,6 +98,20 @@ export default {
 				en: 'A text field takes any short text; a search field is one made for search terms, usually with a search button and a search landmark.',
 				ja: 'テキストフィールドは短い文字列全般に使う。検索ボックスは検索語のための形で、検索ボタンや検索のランドマークが付くことが多い。'
 			}
+		},
+		{
+			id: 'password-field',
+			diff: {
+				en: 'A text field always shows what is typed; a password field hides it and has a button to show it.',
+				ja: 'テキストフィールドは入力した文字を常に見せる。パスワード入力は文字を隠し、表示するボタンが付く。'
+			}
+		},
+		{
+			id: 'one-time-code',
+			diff: {
+				en: 'A text field takes any short text; a one-time code field is one set up for a code sent to the user, with a number keypad and autofill from the message.',
+				ja: 'テキストフィールドは短い文字列全般に使う。確認コードの入力は、届いたコードのために整えた形で、数字のキーボードと、届いたメッセージからの自動入力が付く。'
+			}
 		}
 	],
 	sources: [

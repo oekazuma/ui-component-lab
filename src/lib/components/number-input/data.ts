@@ -81,6 +81,13 @@ export default {
 				en: 'Some systems (such as Apple) call the − / + buttons of a number input a “stepper”. Here, stepper means the step indicator of a multi-page procedure.',
 				ja: 'Apple などは数値入力の − / + ボタンを「Stepper」と呼ぶ。このサイトの Stepper は、複数画面の手続きの段階を示すステップナビゲーションのこと。'
 			}
+		},
+		{
+			id: 'one-time-code',
+			diff: {
+				en: 'A number input is for a quantity that goes up and down; a one-time code is a string of digits, so it uses a text field with `inputmode="numeric"`.',
+				ja: '数値入力は増減させる量に使う。確認コードは数字の並びなので、`inputmode="numeric"` を付けたテキスト入力にする。'
+			}
 		}
 	],
 	sources: [

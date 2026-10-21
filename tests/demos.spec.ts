@@ -977,3 +977,53 @@ test('window splitter: dragging resizes the panes, and a click without moving co
 	await splitter.click();
 	await expect(splitter).toHaveAttribute('aria-valuenow', '50');
 });
+
+test('password field: Show reveals the text and becomes Hide, and saving hides it again', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/password-field/');
+	const input = demo.getByLabel('Password', { exact: true });
+	const toggle = demo.getByRole('button', { name: 'Show password' });
+
+	await expect(input).toHaveAttribute('type', 'password');
+	await expect(input).toHaveAttribute('autocomplete', 'new-password');
+	await expect(toggle).not.toHaveAttribute('aria-pressed');
+	await input.fill('correct horse');
+	await toggle.click();
+	await expect(input).toHaveAttribute('type', 'text');
+	await expect(demo.getByRole('button', { name: 'Hide password' })).toHaveText('Hide');
+	await expect(demo.locator('[aria-live="polite"]')).toHaveText('Your password is visible');
+
+	await demo.getByRole('button', { name: 'Save' }).click();
+	await expect(input).toHaveAttribute('type', 'password');
+	await expect(demo.getByRole('button', { name: 'Show password' })).toBeVisible();
+});
+
+test('password field: a short password shows an error tied to the field', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/password-field/');
+	const input = demo.getByLabel('Password', { exact: true });
+
+	await input.fill('short');
+	await demo.getByRole('button', { name: 'Save' }).click();
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await expect(input).toHaveAccessibleDescription(/at least 8 characters/);
+	await expect(input).toBeFocused();
+});
+
+test('one-time code: one field takes a pasted code with a space, and a short code shows an error', async ({ page, context }) => {
+	await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+	const demo = await openDemo(page, 'en/components/one-time-code/');
+	const input = demo.getByLabel('Security code');
+
+	await expect(input).toHaveAttribute('autocomplete', 'one-time-code');
+	await expect(input).toHaveAttribute('inputmode', 'numeric');
+	await page.evaluate(() => navigator.clipboard.writeText('123 456'));
+	await input.focus();
+	await page.keyboard.press('ControlOrMeta+V');
+	await expect(input).toHaveValue('123 456');
+	await demo.getByRole('button', { name: 'Continue' }).click();
+	await expect(demo.getByRole('status')).toHaveText('Code accepted');
+
+	await input.fill('1234');
+	await demo.getByRole('button', { name: 'Continue' }).click();
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await expect(input).toHaveAccessibleDescription(/6 numbers/);
+});
