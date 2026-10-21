@@ -73,3 +73,14 @@ test('alert: names the type in words and replaces the message on every press', a
 	await expect(alert.locator('p')).toHaveCount(1);
 	await expect(alert.locator('p[data-mark]')).toHaveCount(0);
 });
+
+test('meter: describes the amount in words and says when it is almost full', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/meter/');
+	const meter = demo.getByRole('meter');
+	await expect(meter).toHaveAccessibleDescription(/^40 GB of 100 GB$/);
+
+	const add = demo.getByRole('button', { name: 'Add 10 GB' });
+	for (let i = 0; i < 4; i++) await add.click();
+	await expect(meter).toHaveAccessibleDescription('80 GB of 100 GB Almost full');
+	await expect(demo.getByText('Almost full')).toBeVisible();
+});

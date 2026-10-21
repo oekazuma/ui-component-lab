@@ -28,6 +28,10 @@ export default {
 		{
 			en: 'This demo uses the native `<meter>` with low, high and optimum, so the browser colors the bar by range. Use the buttons to change the value.',
 			ja: 'このデモはネイティブの `<meter>` に low・high・optimum を付けているため、ブラウザが範囲に応じて棒の色を変える。ボタンで値を変えられる。'
+		},
+		{
+			en: 'In this demo, the bar is also described in words: the visible “40 GB of 100 GB” text is tied to the `<meter>` with `aria-describedby`, and past 70 GB it adds “Almost full” (“Full” at 100 GB). A screen reader otherwise reads only the percentage.',
+			ja: 'このデモでは、棒の内容を言葉でも示す。見えている「40GB / 100GB」の文を `aria-describedby` で `<meter>` と結び、70GB を超えると「もうすぐいっぱいです」（100GB では「いっぱいです」）を添える。結ばないと、スクリーンリーダーは割合しか読まない。'
 		}
 	],
 	keyboard: [
