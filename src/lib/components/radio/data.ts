@@ -25,6 +25,10 @@ export default {
 			ja: '一度選ぶと、どれも選ばれていない状態には戻せない。'
 		},
 		{
+			en: 'In this demo, nothing is chosen at first. Tab then moves to the first option, and Space chooses it.',
+			ja: 'このデモでは、最初はどれも選ばれていない。このとき Tab では最初の選択肢へ移り、Space で選ぶ。'
+		},
+		{
 			en: 'Tab moves into the group as one stop; arrow keys move between the options and choose them at the same time.',
 			ja: 'Tab ではグループ全体が1か所として扱われ、グループ内は矢印キーで移動すると同時に選ばれる。'
 		}
@@ -33,8 +37,8 @@ export default {
 		{
 			key: 'Tab',
 			action: {
-				en: 'Moves into the group (to the chosen option) and out of it.',
-				ja: 'グループ（選ばれている選択肢）へ入る、またはグループから出る。'
+				en: 'Moves into the group (to the chosen option, or to the first one if none is chosen) and out of it.',
+				ja: 'グループ（選ばれている選択肢。どれも選ばれていなければ最初の選択肢）へ入る、またはグループから出る。'
 			}
 		},
 		{

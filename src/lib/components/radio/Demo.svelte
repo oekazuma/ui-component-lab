@@ -9,7 +9,7 @@
 	};
 
 	const uid = $props.id();
-	let selected = $state(0);
+	let selected = $state<number>();
 </script>
 
 <!-- 同じ name を持つネイティブのラジオボタンは、矢印キーでの移動と選択をブラウザが受け持つ -->
