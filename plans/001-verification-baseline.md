@@ -82,7 +82,7 @@ This repo is a bilingual (en/ja) field guide to UI components. Its whole value i
 | Search check alone | `node src/lib/search.check.ts` | prints `ok`, exit 0 |
 | Build | `pnpm build` | exit 0, ends with `✔ done` |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm` instead (same version, 10.34.7). If `node_modules` is missing and install is impossible offline, `node_modules/.bin/svelte-kit sync && node_modules/.bin/svelte-check --tsconfig ./tsconfig.json --fail-on-warnings` is equivalent to the svelte-check part.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`) instead (same version, 10.34.7). If `node_modules` is missing and install is impossible offline, `node_modules/.bin/svelte-kit sync && node_modules/.bin/svelte-check --tsconfig ./tsconfig.json --fail-on-warnings` is equivalent to the svelte-check part.
 
 ## Scope
 

@@ -64,7 +64,7 @@ The related links to change (exact text at `f32e56a`):
 | Build | `pnpm build` | exit 0, `✔ done` |
 | E2E (outside the sandbox only) | `pnpm build && pnpm test:e2e` | all pass |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm` (with `--store-dir "$TMPDIR/pnpm10-store/v10"` for install). Headless Chromium cannot launch inside the Claude sandbox, so leave `test:e2e` to the maintainer.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`) (with `--store-dir "$TMPDIR/pnpm10-store/v10"` for install). Headless Chromium cannot launch inside the Claude sandbox, so leave `test:e2e` to the maintainer.
 
 ## Scope
 

@@ -61,7 +61,7 @@ The deploy workflow uses movable major tags (`@v7`) for six actions, one of them
 | Checks | `pnpm check` | exit 0 |
 | Install with engines | `pnpm install --frozen-lockfile` | exit 0 on Node 24 |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm`.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`).
 
 ## Scope
 

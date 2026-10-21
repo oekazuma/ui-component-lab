@@ -77,7 +77,7 @@ The site (https://oekazuma.github.io/ui-component-lab/) is a bilingual field gui
 | Checks | `pnpm check` | exit 0, 0 errors and 0 warnings, `ok` lines |
 | Build | `pnpm build` | exit 0, `✔ done` |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm`.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`).
 
 ## Scope
 

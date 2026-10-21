@@ -75,7 +75,7 @@ UI Component Lab (bilingual en/ja) records what other design systems call each c
 | Checks | `pnpm check` | exit 0, 0 errors / 0 warnings, `ok` lines |
 | Build | `pnpm build` | exit 0, `✔ done` |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm` (with `--store-dir "$TMPDIR/pnpm10-store/v10"` for install). `pnpm test:e2e` cannot run in the Claude sandbox. Update the spec and leave the run to the maintainer.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`) (with `--store-dir "$TMPDIR/pnpm10-store/v10"` for install). `pnpm test:e2e` cannot run in the Claude sandbox. Update the spec and leave the run to the maintainer.
 
 ## Scope
 

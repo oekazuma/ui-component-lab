@@ -59,7 +59,7 @@ This site exists to show correct, accessible UI components. Today nothing checks
 | E2E | `pnpm test:e2e` | all tests pass |
 | Checks | `pnpm check` | exit 0 |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm`. If it complains about the store location, pass `--store-dir "$TMPDIR/pnpm10-store/v10"`. If `playwright install` cannot download (blocked network) and revision 1248 is not cached, STOP.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`). If it complains about the store location, pass `--store-dir "$TMPDIR/pnpm10-store/v10"`. If `playwright install` cannot download (blocked network) and revision 1248 is not cached, STOP.
 
 ## Scope
 

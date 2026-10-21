@@ -145,7 +145,7 @@ Conventions: Svelte 5 runes, `$effect` returning a cleanup function (existing ex
 | Build | `pnpm build` | exit 0, `✔ done` |
 | Preview (manual check) | `pnpm preview` | serves `http://localhost:4173/ui-component-lab/` |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm`.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`).
 
 ## Scope
 

@@ -50,7 +50,7 @@ If any ✓ fact is false, STOP.
 | Checks | `pnpm check` | exit 0 |
 | Confirm facts | `grep -n 'fail-on-warnings\|data.check\|test:e2e' package.json; grep -c 'color-danger\|color-accent-hover' src/app.css` | 3 matching lines; count ≥ 3 |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm`.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`).
 
 ## Scope
 

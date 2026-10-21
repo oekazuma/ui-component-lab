@@ -155,7 +155,7 @@ Sources are `{ label, url, checkedAt: 'YYYY-MM-DD' }`. Sources from the Digital 
 | Checks (includes data.check.ts) | `pnpm check` | exit 0, 0 errors and 0 warnings, two `ok` lines |
 | Build | `pnpm build` | exit 0, `✔ done` |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm`.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`).
 
 ## Scope
 

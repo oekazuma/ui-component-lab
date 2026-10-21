@@ -29,8 +29,8 @@ The maintainer approved all three as drafts. The image and the SVG are ready-mad
 ## Current state
 
 - Ready-made assets (read-only; copy them):
-  - `/Users/oe.kazuma/localRepo/oss/ui-component-lab/.claude/worktrees/improve-deep-863007/plans/assets/og.png`: 1200×630 PNG, about 43 KB, approved.
-  - `/Users/oe.kazuma/localRepo/oss/ui-component-lab/.claude/worktrees/improve-deep-863007/plans/assets/make-og.mjs`: the script that rendered it with `@resvg/resvg-js` and macOS Hiragino fonts. For reference only. **Do not add it or resvg to the repo.**
+  - `plans/assets/og.png`: 1200×630 PNG, about 43 KB, approved.
+  - `plans/assets/make-og.mjs`: the script that rendered it with `@resvg/resvg-js` and macOS Hiragino fonts. For reference only. **Do not add it or resvg to the repo.**
 - `src/lib/assets/logo.svg` today (the old toggle logo). It is used as the favicon (`src/routes/+layout.svelte`), in the header (`src/routes/[lang=lang]/+layout.svelte`), and in `README.md` (`<img src="src/lib/assets/logo.svg" …>`):
   ```svg
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="UI Component Lab">
@@ -67,7 +67,7 @@ The maintainer approved all three as drafts. The image and the SVG are ready-mad
 | Checks | `pnpm check` | exit 0, 0 errors / 0 warnings, three `ok` lines |
 | Build | `pnpm build` | exit 0, `✔ done` |
 
-If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use `/Users/oe.kazuma/Library/pnpm/bin/pnpm` (with `--store-dir "$TMPDIR/pnpm10-store/v10"` for install). Do not run `pnpm test:e2e` inside the Claude sandbox; Chromium can't launch there.
+If `pnpm` on PATH fails with a vite-plus "Failed to resolve package manager" error, use a standalone pnpm binary (one from `which -a pnpm` that is not under `vite-plus`) (with `--store-dir "$TMPDIR/pnpm10-store/v10"` for install). Do not run `pnpm test:e2e` inside the Claude sandbox; Chromium can't launch there.
 
 ## Scope
 
@@ -111,7 +111,7 @@ This is the same drawing as `plans/assets/logo-a.svg`, with the `<g fill>` wrapp
 
 ### Step 3: OG image
 
-1. `cp /Users/oe.kazuma/localRepo/oss/ui-component-lab/.claude/worktrees/improve-deep-863007/plans/assets/og.png static/og.png`
+1. `cp plans/assets/og.png static/og.png`
 2. `src/routes/+layout.ts`: make `load` take `{ url }`, and add the image:
    ```ts
    import { asset } from '$app/paths';
