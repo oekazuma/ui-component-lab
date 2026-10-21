@@ -74,6 +74,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'window-splitter',
+			diff: {
+				en: 'A slider picks a value that is used somewhere else; a window splitter is moved to resize the two panes on either side of it.',
+				ja: 'スライダーはほかの場所で使う値を選び、ウィンドウスプリッターは動かして両側のペインの大きさを変える。'
+			}
+		},
+		{
 			id: 'range-slider',
 			diff: {
 				en: 'A slider has one knob that picks a single value; a range slider has two knobs that pick the lowest and highest values.',

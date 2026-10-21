@@ -958,3 +958,22 @@ test('range slider: dragging a thumb moves it and it stops at the other thumb', 
 	await page.mouse.up();
 	await expect(high).toHaveAttribute('aria-valuenow', '100');
 });
+
+test('window splitter: dragging resizes the panes, and a click without moving collapses and restores', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/window-splitter/');
+	const splitter = demo.getByRole('separator', { name: 'Contents' });
+	const win = (await demo.locator('.window').boundingBox())!;
+	const bar = (await splitter.boundingBox())!;
+	const y = bar.y + bar.height / 2;
+
+	await page.mouse.move(bar.x + bar.width / 2, y);
+	await page.mouse.down();
+	await page.mouse.move(win.x + win.width * 0.5, y, { steps: 5 });
+	await page.mouse.up();
+	await expect(splitter).toHaveAttribute('aria-valuenow', '50');
+
+	await splitter.click();
+	await expect(splitter).toHaveAttribute('aria-valuenow', '0');
+	await splitter.click();
+	await expect(splitter).toHaveAttribute('aria-valuenow', '50');
+});

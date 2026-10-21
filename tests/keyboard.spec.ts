@@ -445,3 +445,34 @@ test('range slider: each thumb stops at the other, and the limits move with it',
 	await page.keyboard.press('Home');
 	await expect(low).toHaveAttribute('aria-valuenow', '0');
 });
+
+test('window splitter: arrow keys resize the contents pane, Enter collapses and restores it', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/window-splitter/');
+	const splitter = demo.getByRole('separator', { name: 'Contents' });
+	const pane = demo.locator(`#${await splitter.getAttribute('aria-controls')}`);
+	await expect(splitter).toHaveAttribute('aria-orientation', 'vertical');
+	await expect(splitter).toHaveAttribute('aria-valuenow', '30');
+
+	await splitter.focus();
+	const before = (await pane.boundingBox())!.width;
+	await page.keyboard.press('ArrowRight');
+	await expect(splitter).toHaveAttribute('aria-valuenow', '40');
+	expect((await pane.boundingBox())!.width).toBeGreaterThan(before);
+	await page.keyboard.press('ArrowLeft');
+	await expect(splitter).toHaveAttribute('aria-valuenow', '30');
+
+	await page.keyboard.press('End');
+	await expect(splitter).toHaveAttribute('aria-valuenow', '80');
+	await page.keyboard.press('Enter');
+	await expect(splitter).toHaveAttribute('aria-valuenow', '0');
+	await expect(pane).toBeHidden();
+	await page.keyboard.press('Enter');
+	await expect(splitter).toHaveAttribute('aria-valuenow', '80');
+	await expect(pane).toBeVisible();
+
+	await page.keyboard.press('Home');
+	await expect(splitter).toHaveAttribute('aria-valuenow', '0');
+	await page.keyboard.press('ArrowRight');
+	await expect(splitter).toHaveAttribute('aria-valuenow', '10');
+	await expect(splitter).toBeFocused();
+});
