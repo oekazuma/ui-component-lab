@@ -578,3 +578,26 @@ test('textarea: the counter warns past the limit, and submitting then gives an e
 	await page.getByRole('textbox', { name: /^Feedback/ }).fill('a'.repeat(199));
 	await expect(page.getByText('1 character left')).toBeVisible();
 });
+
+test('toast: a message-only toast hides itself after 5 seconds, but not while the pointer is on it', async ({ page }) => {
+	await page.clock.install();
+	const demo = await openDemo(page, 'en/components/toast/');
+	const status = demo.getByRole('status');
+	const toast = demo.locator('.region');
+
+	await demo.getByRole('button', { name: 'Copy link' }).click();
+	await expect(status).toHaveText('Link copied');
+	await expect(toast.getByRole('button')).toHaveCount(0);
+	// トーストが消えても、コピーしたことはページの中で確かめられる
+	await expect(demo.getByText('Share link: https://example.com/s/8f3k (copied)')).toBeVisible();
+
+	await toast.hover();
+	await page.clock.fastForward(10_000);
+	await expect(status).toHaveText('Link copied');
+	await page.mouse.move(0, 0);
+	await page.clock.fastForward(4000);
+	await expect(status).toHaveText('Link copied');
+	await page.clock.fastForward(1500);
+	await expect(status).toHaveText('');
+	await expect(demo.getByText('Share link: https://example.com/s/8f3k (copied)')).toBeVisible();
+});
