@@ -29,6 +29,10 @@ export default {
 		{
 			en: 'It uses `<input type="search">`, so in Chrome, Esc clears the text.',
 			ja: '`<input type="search">` を使っているので、Chrome では Esc で入力を消せる。'
+		},
+		{
+			en: 'In this demo, the magnifying glass at the start of the box is decorative. The label already names the field, so the icon is hidden from screen readers with `aria-hidden`.',
+			ja: 'このデモでは、入力欄の先頭の虫眼鏡は飾りとして置いている。欄の名前はラベルが伝えるので、アイコンは `aria-hidden` で読み上げから外している。'
 		}
 	],
 	keyboard: [
@@ -45,6 +49,20 @@ export default {
 			description: {
 				en: 'A menu next to the box narrows what to search, such as news or documents only.',
 				ja: '入力欄の横のメニューで、お知らせだけ・資料だけのように検索する範囲を絞る。'
+			}
+		},
+		{
+			name: { en: 'With advanced search', ja: '詳細検索付き' },
+			description: {
+				en: 'A disclosure titled “Advanced search” below the box holds more conditions, such as the kind of content and the sort order. While it is closed, the current conditions can be shown as text.',
+				ja: '入力欄の下の「詳細検索」のディスクロージャーに、探す種類や並び順などの条件をまとめたもの。閉じている間も、今の条件を文で示せる。'
+			}
+		},
+		{
+			name: { en: 'With popular searches', ja: 'よくある検索付き' },
+			description: {
+				en: 'A row of buttons for frequently searched words, labeled “Popular searches”, below the box. Pressing one searches for that word.',
+				ja: '入力欄の下に「よくある検索」として、よく探される語のボタンを並べたもの。押すとその語で検索する。'
 			}
 		}
 	],
@@ -100,7 +118,12 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「検索ボックス」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/search-box/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: search-box',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/search-box',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'W3C WAI Tutorials: Form Instructions',

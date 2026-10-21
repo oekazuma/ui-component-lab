@@ -666,3 +666,17 @@ test('switch: turning it on shows the completed tasks right away', async ({ page
 	await sw.press('Space');
 	await expect(tasks).toHaveCount(2);
 });
+
+test('search field: a decorative magnifying glass sits at the start of the box, clear of the text', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/search-field/');
+	const input = demo.getByRole('searchbox', { name: 'Search the site' });
+	const icon = demo.locator('svg');
+	await expect(icon).toHaveAttribute('aria-hidden', 'true');
+	const i = (await input.boundingBox())!;
+	const s = (await icon.boundingBox())!;
+	expect(s.x).toBeGreaterThan(i.x);
+	expect(s.y).toBeGreaterThan(i.y);
+	expect(s.y + s.height).toBeLessThan(i.y + i.height);
+	const padding = await input.evaluate((el) => parseFloat(getComputedStyle(el).paddingInlineStart));
+	expect(i.x + padding).toBeGreaterThanOrEqual(s.x + s.width);
+});
