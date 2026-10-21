@@ -3,10 +3,8 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'menubar',
 	category: 'navigation',
-	names: { en: 'Menubar', ja: 'メニューバー（水平メニュー）' },
-	aliases: [
-		{ name: '水平メニュー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/horizontal-menu/' }
-	],
+	names: { en: 'Menubar', ja: 'メニューバー' },
+	aliases: [],
 	summary: {
 		en: 'A row of menus that always stays visible, where each item opens a list of commands.',
 		ja: '常に表示されている横並びのメニューの列。項目ごとに操作の一覧を開く。'
@@ -29,8 +27,8 @@ export default {
 			ja: 'サブメニューを開いている間は、← と → でそれを閉じ、隣の項目のサブメニューを開く。'
 		},
 		{
-			en: 'Choosing a command runs it, closes the submenu, and returns focus to the menubar item.',
-			ja: '操作を選ぶとそれを実行し、サブメニューを閉じて、メニューバーの項目にフォーカスを戻す。'
+			en: 'Choosing a command runs it and closes the submenu. In this demo, focus then returns to the menubar item.',
+			ja: '操作を選ぶとそれを実行し、サブメニューを閉じる。このデモでは、そのあとメニューバーの項目にフォーカスを戻す。'
 		},
 		{
 			en: 'In this demo, the commands only show which one was chosen. Moving to an item by typing its first letter, which the APG lists as optional, is left out.',
@@ -90,13 +88,6 @@ export default {
 	],
 	variations: [
 		{
-			name: { en: 'Site navigation (horizontal menu)', ja: 'サイトのナビゲーション（水平メニュー）' },
-			description: {
-				en: 'A row of a site’s main sections, which the Digital Agency Design System calls a horizontal menu. It does not use `role="menubar"`: items that go to a page are links, items that open a submenu are buttons with `aria-expanded`, and the Tab key moves through them. `aria-current` marks the current page. See also the mega menu.',
-				ja: 'サイトの主なカテゴリを横に並べたもので、デジタル庁デザインシステムは水平メニューと呼ぶ。`role="menubar"` は使わず、ページへ移る項目はリンク、サブメニューを開く項目は `aria-expanded` を持つボタンにして、Tab キーで順に移る。今のページは `aria-current` で示す。メガメニューも参照。'
-			}
-		},
-		{
 			name: { en: 'Checkbox and radio items', ja: 'チェックとラジオの項目' },
 			description: {
 				en: 'Submenus can hold on/off items (`menuitemcheckbox`) and pick-one items (`menuitemradio`), whose state is given by `aria-checked`.',
@@ -113,32 +104,12 @@ export default {
 	],
 	usage: [
 		{
-			en: 'For a site’s navigation, use links and disclosure buttons instead of `role="menubar"`. The menubar pattern needs complex keyboard behavior that typical site navigation does not, and few sites need it.',
-			ja: 'サイトのナビゲーションには `role="menubar"` を使わず、リンクと開閉ボタン（ディスクロージャー）で作る。メニューバーのパターンは、一般的なサイトのナビゲーションには要らない複雑なキー操作を必要とし、それが要るサイトは少ない。'
+			en: 'For a site’s navigation, use links and disclosure buttons instead of `role="menubar"`. The menubar pattern needs complex keyboard behavior that typical site navigation does not, and few sites need it. The Digital Agency Design System’s horizontal menu is this kind of site navigation, not a menubar: items that go to a page are links, and items that open a submenu are buttons with `aria-expanded`. See the mega menu.',
+			ja: 'サイトのナビゲーションには `role="menubar"` を使わず、リンクと開閉ボタン（ディスクロージャー）で作る。メニューバーのパターンは、一般的なサイトのナビゲーションには要らない複雑なキー操作を必要とし、それが要るサイトは少ない。デジタル庁デザインシステムの水平メニューはメニューバーではなくこの種のサイトのナビゲーションで、ページへ移る項目はリンク、サブメニューを開く項目は `aria-expanded` を持つボタンにする。メガメニューも参照。'
 		},
 		{
 			en: 'Add “…” to the label of a command that opens a dialog, as in “Open…”.',
 			ja: 'ダイアログを開く操作は、「開く…」のようにラベルの最後に「…」を付ける。'
-		},
-		{
-			en: 'In a site’s horizontal menu, label each item with the name of the page it goes to, not vague words such as “Details” or “More”. To switch between views of one subject, such as overview, specifications, and reviews, use tabs instead.',
-			ja: 'サイトの水平メニューでは、項目のラベルに行き先のページ名を使い、「詳細」「その他」のようなあいまいな言葉を避ける。概要・仕様・レビューのように同じ主題の内容を切り替えるなら、タブを使う。'
-		}
-	],
-	misuse: [
-		{
-			pattern: {
-				en: 'Putting many items in a site’s horizontal menu',
-				ja: 'サイトの水平メニューに、多くの項目を並べる'
-			},
-			harm: {
-				en: 'People have a harder time finding the page they are looking for.',
-				ja: '利用者が、目的のページを見つけにくくなる。'
-			},
-			instead: {
-				en: 'Sort out the items and, where needed, group them into levels that open from a few top-level items.',
-				ja: '項目を整理し、必要なら階層に分けて、少ない最上位の項目から開くようにする。'
-			}
 		}
 	],
 	related: [

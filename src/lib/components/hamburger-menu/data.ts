@@ -56,14 +56,14 @@ export default {
 	],
 	variations: [
 		{
-			name: { en: 'Icon and label side by side', ja: 'デスクトップ・モバイル共通' },
+			name: { en: 'Desktop and mobile (label beside the icon)', ja: 'デスクトップ・モバイル共通（文字をアイコンの横に置く）' },
 			description: {
 				en: 'A wide button with the word “Menu” to the right of the icon, as in this demo. The Digital Agency Design System uses this type as a rule.',
 				ja: 'このデモのように、アイコンの右に「メニュー」の文字を並べた横長のボタン。デジタル庁デザインシステムは原則としてこの型を使う。'
 			}
 		},
 		{
-			name: { en: 'Label under the icon', ja: 'モバイル条件付き' },
+			name: { en: 'Mobile conditional (label under the icon)', ja: 'モバイル条件付き（文字をアイコンの下に置く）' },
 			description: {
 				en: 'A nearly square button with the word “Menu” under the icon, for headers too short of space for the side-by-side type. The word follows the page language, such as “MENU” and “CLOSE” on English pages.',
 				ja: 'アイコンの下に「メニュー」の文字を置いた、正方形に近いボタン。ヘッダーに横長の型を置く場所がないときだけ使う。文字はページの言語に合わせ、英語のページでは「MENU」「CLOSE」にする。'

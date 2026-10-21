@@ -53,7 +53,7 @@ export default {
 	],
 	variations: [
 		{
-			name: { en: 'Standard (sliding) type', ja: 'スタンダードタイプ' },
+			name: { en: 'Standard (sliding) type', ja: 'スタンダードタイプ（スライド型）' },
 			description: {
 				en: 'Choosing a group slides in a second list with a Back button at the top. Suits menus with a second level or many items.',
 				ja: 'まとまりを選ぶと、上に戻るボタンを置いた第二階層の一覧がすべって出る。第二階層がある場合や、項目が多い場合に向く。'
@@ -88,8 +88,8 @@ export default {
 			ja: 'リンクを示すアイコンと、まとまりを示すアイコンを混ぜるのはできるだけ避ける。どうしても混ぜるなら、このデモのように形をはっきり変える。'
 		},
 		{
-			en: 'Separate sections with bold section names, and add a divider or a section icon when the sections differ a lot.',
-			ja: 'セクションは太字のセクション名で分け、内容が大きく違うセクションの間には区切り線やセクションアイコンを足す。'
+			en: 'Separate sections with bold section names. Put a divider between sections whose content differs a lot, and add a section icon as a supporting cue when the sections need to stand out more.',
+			ja: 'セクションは太字のセクション名で分ける。内容が大きく違うセクションの間には区切り線を入れ、セクションをさらにはっきり見せたいときは、セクションアイコンを補助として足す。'
 		}
 	],
 	misuse: [

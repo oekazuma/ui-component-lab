@@ -19,7 +19,7 @@
 |---|---|---|---|---|
 | hamburger-menu | Hamburger menu button / ハンバーガーメニューボタン | action | drawer、menu | DADS hamburger-menu-button |
 | mobile-menu | Mobile menu / モバイルメニュー | navigation | drawer、hamburger-menu | DADS mobile-menu |
-| menubar | Menubar / メニューバー（水平メニュー） | navigation | menu、tabs | APG Menu and Menubar、DADS horizontal-menu |
+| menubar | Menubar / メニューバー | navigation | menu、tabs | APG Menu and Menubar、DADS horizontal-menu |
 | mega-menu | Mega menu / メガメニュー | navigation | menubar、menu、drawer | DADS mega-menu、APG Disclosure Navigation |
 | segmented-control | Segmented control / セグメンテッドコントロール | input | tabs、radio、toggle-button | Apple HIG、Ant Design Segmented、Carbon Content switcher |
 

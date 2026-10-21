@@ -60,6 +60,10 @@ export default {
 	],
 	usage: [
 		{
+			en: 'Label each section name with the name of the page it leads to, not vague words such as “Details” or “More”. To switch between views of one subject, such as overview, specifications, and reviews, use tabs instead.',
+			ja: 'カテゴリ名には行き先のページ名を使い、「詳細」「その他」のようなあいまいな言葉を避ける。概要・仕様・レビューのように同じ主題の内容を切り替えるなら、タブを使う。'
+		},
+		{
 			en: 'Use it on desktop screens to list the pages under each section of the horizontal menu. On phones, use the hamburger menu button and the mobile menu instead.',
 			ja: 'デスクトップの画面で、水平メニューの各カテゴリの下にあるページを一覧にするのに使う。スマートフォンでは、代わりにハンバーガーメニューボタンとモバイルメニューを使う。'
 		},
@@ -93,12 +97,23 @@ export default {
 				ja: 'パネルに、カテゴリの中のページを一部だけ並べる'
 			},
 			harm: {
-				en: 'People take the panel to be the full list of the section’s pages, so they do not notice the pages that are left out.',
-				ja: '利用者はパネルに出ているものがカテゴリのページのすべてだと受け取り、並んでいないページに気づけない。'
+				en: 'People assume the panel lists every page in the section, so pages left out go unnoticed.',
+				ja: 'パネルがそのカテゴリの全ページだと思われ、載っていないページはあることに気づかれない。'
 			},
 			instead: {
 				en: 'List every page of that level in the panel. If they cannot all fit, use another way to navigate instead of a mega menu.',
 				ja: 'その階層のページはすべてパネルに並べる。すべてを並べられないなら、メガメニューを使わずにほかのナビゲーションにする。'
+			}
+		},
+		{
+			pattern: { en: 'Putting many section names in the horizontal menu', ja: '水平メニューに、多くのカテゴリ名を並べる' },
+			harm: {
+				en: 'People have a harder time finding the page they are looking for.',
+				ja: '利用者が、目的のページを見つけにくくなる。'
+			},
+			instead: {
+				en: 'Sort out the sections and, where needed, add levels so that each section name opens its pages in the panel.',
+				ja: 'カテゴリを整理し、必要なら階層に分けて、カテゴリ名からパネルでその中のページを開くようにする。'
 			}
 		}
 	],
@@ -126,6 +141,11 @@ export default {
 		}
 	],
 	sources: [
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「水平メニュー」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/horizontal-menu/',
+			checkedAt: '2026-10-22'
+		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「メガメニュー」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/mega-menu/',
