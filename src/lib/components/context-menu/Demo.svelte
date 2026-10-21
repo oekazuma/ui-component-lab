@@ -28,7 +28,8 @@
 </script>
 
 <!-- 右クリックや Mac の Control + クリック、Windows のメニューキーで起きる contextmenu イベントを、ブラウザ既定のメニューを止めて受ける。
-	Shift + F10 で contextmenu を起こさない環境（macOS など）もあるので、キーは keydown でも受ける（APG Menu で例に挙がるキー）。
+	Shift + F10 で contextmenu を起こさない環境（macOS など）もあるので、Shift + F10 は keydown でも受ける（APG Menu で例に挙がるキー）。
+	メニューキーは keydown で受けない。Windows では keyup で contextmenu が起き、keydown で開くとフォーカス先の項目の上にブラウザのメニューが出るため。
 	メニューの中身は「⋯」ボタンの APG Menu Button と共有し、右クリックできない人にも同じ操作を見える場所に用意する -->
 <div class="demo">
 	<p class="hint">{text[lang].hint}</p>
@@ -44,7 +45,7 @@
 						menus[i].openAt(e.clientX, e.clientY, e.currentTarget);
 					}}
 					onkeydown={(e) => {
-						if (e.key !== 'ContextMenu' && !(e.shiftKey && e.key === 'F10')) return;
+						if (!(e.shiftKey && e.key === 'F10')) return;
 						e.preventDefault();
 						// キーで開いたときは、ブラウザ既定のメニューと同じく要素の左下に出す
 						const r = e.currentTarget.getBoundingClientRect();
