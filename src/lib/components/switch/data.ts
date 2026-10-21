@@ -32,6 +32,10 @@ export default {
 		{
 			en: 'This demo is a native checkbox with `role="switch"`, styled to look like a switch.',
 			ja: 'このデモはネイティブのチェックボックスに `role="switch"` を付け、スイッチの見た目にしている。'
+		},
+		{
+			en: 'In this demo, the switch sets whether the task list shows completed tasks. Turning it on shows them in the list right away, with no save button.',
+			ja: 'このデモでは、スイッチでタスクの一覧に完了したタスクを出すかどうかを決める。オンにすると、保存ボタンを押さなくても、すぐ一覧に表示される。'
 		}
 	],
 	keyboard: [
@@ -40,10 +44,19 @@ export default {
 			action: { en: 'Turns the switch on or off.', ja: 'オン・オフを切り替える。' }
 		}
 	],
+	variations: [
+		{
+			name: { en: 'Two options (mode switch)', ja: '2択型（モードスイッチ）' },
+			description: {
+				en: 'Switches between two named options, such as list view and calendar view, or Celsius and Fahrenheit, with a label on each side. In the DADS example, each label is a `<button role="switch">`, and pressing either one flips the state.',
+				ja: 'リスト表示とカレンダー表示、摂氏と華氏のような名前のある2つの選択肢を、左右にラベルを置いて切り替えるもの。DADS の例では左右のラベルがそれぞれ `<button role="switch">` で、どちらを押しても状態が入れ替わる。'
+			}
+		}
+	],
 	usage: [
 		{
-			en: 'Use it only for settings that take effect immediately. If a save or submit step is needed, use a checkbox.',
-			ja: 'すぐに反映される設定にだけ使う。保存や送信が必要なら、チェックボックスを使う。'
+			en: 'Use it only for settings that take effect immediately and whose result can be seen on the spot. If a save or submit step is needed, or the result cannot be seen right away, use a checkbox or radio buttons.',
+			ja: 'すぐに反映され、結果をその場で目で確かめられる設定にだけ使う。保存や送信が必要なときや、結果がすぐには見えないときは、チェックボックスかラジオボタンを使う。'
 		}
 	],
 	misuse: [
@@ -98,7 +111,12 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「スイッチ」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/switch/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: switch',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/switch',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Deceptive Patterns: Preselection',

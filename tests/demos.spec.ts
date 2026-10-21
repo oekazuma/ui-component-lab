@@ -654,3 +654,15 @@ test('slider: shows the minimum and maximum under the ends of the track', async 
 	expect(Math.abs(h.x + h.width - (r.x + r.width))).toBeLessThan(2);
 	expect(l.y).toBeGreaterThan(r.y + r.height / 2);
 });
+
+test('switch: turning it on shows the completed tasks right away', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/switch/');
+	const sw = demo.getByRole('switch', { name: 'Show completed tasks' });
+	const tasks = demo.getByRole('list', { name: 'Tasks' }).getByRole('listitem');
+	await expect(sw).not.toBeChecked();
+	await expect(tasks).toHaveCount(2);
+	await sw.check();
+	await expect(tasks).toHaveCount(4);
+	await sw.press('Space');
+	await expect(tasks).toHaveCount(2);
+});
