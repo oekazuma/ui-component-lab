@@ -38,7 +38,7 @@
 		height: 1.25rem;
 		padding: 0 0.3rem;
 		border-radius: 999px;
-		background: #b42318;
+		background: var(--color-danger);
 		color: #fff;
 		font-size: 0.875rem;
 		font-weight: 700;

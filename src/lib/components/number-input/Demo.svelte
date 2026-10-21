@@ -46,7 +46,7 @@
 	}
 
 	input:invalid {
-		border-color: #c4002b;
+		border-color: var(--color-danger);
 	}
 
 	p {
