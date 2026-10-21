@@ -3,9 +3,9 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'list',
 	category: 'data',
-	names: { en: 'List', ja: 'リスト（箇条書きリスト）' },
+	names: { en: 'List', ja: 'リスト' },
 	aliases: [
-		{ name: '箇条書きリスト', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/list/' }
+		{ name: 'リソースリスト', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/resource-list/' }
 	],
 	summary: {
 		en: 'Items stacked vertically, one per row, often with an icon and a second line of detail.',
@@ -21,23 +21,40 @@ export default {
 			ja: '項目にチェックボックスやスイッチを置いたり、詳細ページへのリンクにしたりすることもある。'
 		},
 		{
+			en: 'In this demo, only the title of each item is a link, so other buttons can still be added to the item. If the whole row is a link, it must not contain other links or buttons.',
+			ja: 'このデモでは、各項目のタイトルだけをリンクにし、項目にほかのボタンを足せるようにしている。行全体をリンクにするなら、中にほかのリンクやボタンを置かない。'
+		},
+		{
+			en: 'In this demo, the links do not go anywhere.',
+			ja: 'このデモでは、リンクを押しても移動しない。'
+		},
+		{
 			en: 'A native `<ul>` or `<ol>` lets screen readers announce how many items there are.',
 			ja: 'ネイティブの `<ul>` や `<ol>` にすると、スクリーンリーダーが項目数を読み上げる。'
 		}
 	],
 	keyboard: [
 		{
-			key: '—',
+			key: 'Tab / Shift + Tab',
 			action: {
-				en: 'None for a plain list. Controls inside items use their own keys.',
-				ja: '文字だけのリストにはない。項目の中の操作部品は、それぞれのキー操作に従う。'
+				en: 'Moves between the links and controls in the items. A list of plain text has no keys of its own.',
+				ja: '項目の中のリンクや操作部品の間を移動する。文字だけのリストには、リスト自体のキー操作はない。'
 			}
-		}
+		},
+		{ key: 'Enter', action: { en: 'Follows the focused link.', ja: 'フォーカス中のリンクを開く。' } }
 	],
 	usage: [
 		{
-			en: 'For pairs of names and values, use a description list.',
-			ja: '項目名と値の組には、説明リストを使う。'
+			en: 'DADS calls a list of items that each have several parts, such as a title, supporting text, links or choices, a resource list. A list of titles only is a bulleted list (箇条書きリスト).',
+			ja: 'タイトル・補足の文・リンク・選択肢など、いくつかの情報を持つ項目の一覧を、DADS ではリソースリストと呼ぶ。タイトルだけを並べるものは箇条書きリストにあたる。'
+		},
+		{
+			en: 'DADS uses `<ul>` for every bulleted list, including numbered ones, and writes the numbers as text. Numbers made by `<ol>` cannot be copied and shift when items are added or removed.',
+			ja: 'DADS は番号付きのものも含めて箇条書きリストをすべて `<ul>` で書き、項目番号は地の文字として書く。`<ol>` の番号はコピーできず、項目を足したり消したりするとずれるため。'
+		},
+		{
+			en: 'For pairs of names and values, use a description list. To compare values across items, use a table.',
+			ja: '項目名と値の組には、説明リストを使う。項目の間で値を比べるなら、テーブルを使う。'
 		}
 	],
 	related: [
@@ -72,7 +89,22 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「箇条書きリスト」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/list/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「箇条書きリスト（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/list/usage/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「リソースリスト」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/resource-list/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: resource-list',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/resource-list',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

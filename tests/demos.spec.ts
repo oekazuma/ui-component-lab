@@ -483,3 +483,13 @@ test('table: price and storage both sort, and aria-sort moves to the one sorted 
 	await expect(table.getByRole('columnheader', { name: 'Storage' })).toHaveAttribute('aria-sort', 'descending');
 	await expect(plans).toHaveText(['Photo', 'Team', 'Personal', 'Free']);
 });
+
+test('list: each item title is a link, like a DADS resource list', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/list/');
+	const items = demo.getByRole('listitem');
+	await expect(items).toHaveCount(3);
+	for (const item of await items.all()) await expect(item.getByRole('link')).toHaveCount(1);
+	await expect(items.first().getByRole('link')).toHaveText('Meeting notes');
+	await page.goto('ja/components/list/');
+	await expect(page.getByRole('region', { name: '別名' }).getByText('リソースリスト')).toBeVisible();
+});

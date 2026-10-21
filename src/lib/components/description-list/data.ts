@@ -55,7 +55,7 @@ export default {
 		},
 		{
 			en: 'Use a table when values need to be compared across rows and columns. Use a plain list when there are no names.',
-			ja: '行と列で値を比べるならテーブルを、項目名がなく並べるだけなら箇条書きリストを使う。'
+			ja: '行と列で値を比べるならテーブルを、項目名がなく並べるだけならリストを使う。'
 		}
 	],
 	related: [
