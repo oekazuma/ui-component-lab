@@ -66,6 +66,12 @@
 		border-end-start-radius: 0;
 	}
 
+	/* メニューは本体より幅が広いので、矢印のボタンの右端（グループの右端）にそろえて、本体の下へ広げる */
+	.split :global(.menu-wrap [role='menu']) {
+		right: 0;
+		left: auto;
+	}
+
 	p {
 		min-height: 1.6em;
 		margin: 0;

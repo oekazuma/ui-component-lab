@@ -252,3 +252,11 @@ test('menu: an icon-only overflow button opens a menu lined up with its right ed
 	const m = (await menu.boundingBox())!;
 	expect(Math.abs(b.x + b.width - (m.x + m.width))).toBeLessThan(1);
 });
+
+test('split button: the menu lines up with the right edge of the button group', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/split-button/');
+	await demo.getByRole('button', { name: 'More save options' }).click();
+	const g = (await demo.getByRole('group', { name: 'Save' }).boundingBox())!;
+	const m = (await demo.getByRole('menu').boundingBox())!;
+	expect(Math.abs(g.x + g.width - (m.x + m.width))).toBeLessThan(1);
+});

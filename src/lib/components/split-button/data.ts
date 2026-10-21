@@ -31,6 +31,10 @@ export default {
 		{
 			en: 'The two parts are separate buttons, each reached with Tab.',
 			ja: '2つの部分は別々のボタンで、それぞれ Tab でフォーカスできる。'
+		},
+		{
+			en: 'In this demo, the menu lines up with the right edge of the arrow button, which is also the right edge of the whole split button.',
+			ja: 'このデモでは、メニューを矢印のボタンの右端、つまりスプリットボタン全体の右端にそろえて出す。'
 		}
 	],
 	keyboard: [
@@ -67,6 +71,22 @@ export default {
 			}
 		}
 	],
+	variations: [
+		{
+			name: { en: 'Runs the chosen action', ja: '選んだ操作をすぐ実行する' },
+			description: {
+				en: 'Choosing a menu item runs that action at once, and the main button keeps its own action. This demo works this way.',
+				ja: 'メニューの項目を選ぶとその操作をすぐ実行し、本体のボタンの操作は変わらない。このデモはこの型。'
+			}
+		},
+		{
+			name: { en: 'Changes the main action', ja: '本体の操作を切り替える' },
+			description: {
+				en: 'Choosing a menu item only makes it the main button’s action and label; pressing the main button then runs it.',
+				ja: 'メニューの項目を選ぶと、本体のボタンの操作とラベルがそれに替わるだけで、実行は本体を押したときに行う。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'menu',
@@ -87,12 +107,12 @@ export default {
 		{
 			label: 'Carbon Design System: Menu buttons (Combo button)',
 			url: 'https://carbondesignsystem.com/components/menu-buttons/usage/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'MUI: Button Group (Split button)',
 			url: 'https://mui.com/material-ui/react-button-group/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'WAI-ARIA APG: Menu Button Pattern',
