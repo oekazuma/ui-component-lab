@@ -105,6 +105,13 @@ export default {
 				en: 'Radio buttons list choices with round markers and can hold longer labels; a segmented control shows a few short choices as joined buttons in one row.',
 				ja: 'ラジオボタンは丸い印を付けて選択肢を並べ、長いラベルも置ける。セグメンテッドコントロールは少しの短い選択肢をつながったボタンとして 1 列に並べる。'
 			}
+		},
+		{
+			id: 'rating',
+			diff: {
+				en: 'Radio buttons list choices with their own labels; a rating is a radio group drawn as a row of stars for an ordered score.',
+				ja: 'ラジオボタンは選択肢をそれぞれのラベル付きで並べる。評価は、順に並んだ点数を選ぶラジオボタンのグループを、星の列として見せたもの。'
+			}
 		}
 	],
 	sources: [

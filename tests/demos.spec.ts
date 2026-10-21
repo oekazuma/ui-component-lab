@@ -1027,3 +1027,14 @@ test('one-time code: one field takes a pasted code with a space, and a short cod
 	await expect(input).toHaveAttribute('aria-invalid', 'true');
 	await expect(input).toHaveAccessibleDescription(/6 numbers/);
 });
+
+test('rating: starts with no rating, and choosing a star says the value in words', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/rating/');
+	await expect(demo.getByRole('radio', { name: 'No rating' })).toBeChecked();
+
+	await demo.locator('label', { hasText: '4 stars' }).click();
+	await expect(demo.getByRole('radio', { name: '4 stars' })).toBeChecked();
+	await expect(demo.getByText('4 out of 5 stars')).toBeVisible();
+	await page.keyboard.press('ArrowRight');
+	await expect(demo.getByRole('radio', { name: '5 stars' })).toBeChecked();
+});
