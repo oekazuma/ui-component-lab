@@ -210,7 +210,7 @@
 		border-left: 3px solid var(--color-border);
 	}
 
-	h3 {
+	.misuse h3 {
 		margin: 0 0 0.25rem;
 		font-size: 1rem;
 	}

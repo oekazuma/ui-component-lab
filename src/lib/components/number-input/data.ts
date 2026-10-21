@@ -54,8 +54,8 @@ export default {
 				ja: '郵便番号やカード番号のような数字の符号に数値入力を使う'
 			},
 			harm: {
-				en: 'People can change the value by accident while trying to do something else, such as scrolling the page. If they type something that is not a number, they get no clear message about what is wrong.',
-				ja: 'ページのスクロールなど別の操作のつもりで、値を誤って増減させてしまうことがある。数字以外を入力しても、何が誤りかがはっきり示されない。'
+				en: 'A number input treats the code as a quantity to step up or down. Someone entering a postal or card number can change it by accident while doing something else, such as scrolling the page, and if they type a character that is not a digit, they get no clear message about what is wrong.',
+				ja: '数値入力は、符号を増減できる数量として扱う。郵便番号やカード番号を入れている人が、ページのスクロールなど別の操作のつもりで番号を誤って変えてしまうことがある。数字以外の文字を入れても、何が誤りかがはっきり示されない。'
 			},
 			instead: {
 				en: 'Use a text input with inputmode="numeric" and a matching autocomplete value, such as autocomplete="postal-code".',
@@ -88,7 +88,7 @@ export default {
 		{
 			label: 'MDN: <input type="number">',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Open UI: Number (Input)',
@@ -98,7 +98,7 @@ export default {
 		{
 			label: 'GOV.UK Design System: Text input (Numbers)',
 			url: 'https://design-system.service.gov.uk/components/text-input/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
