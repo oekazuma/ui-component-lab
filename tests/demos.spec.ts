@@ -389,3 +389,16 @@ test('progress bar: starts indeterminate, can be canceled, and names itself afte
 	await expect(status).toHaveText('Upload complete');
 	await expect(start).not.toHaveAttribute('aria-disabled', 'true');
 });
+
+test('skeleton: tells assistive technology when loading starts and ends, with a placeholder for the image', async ({ page }) => {
+	await page.clock.install();
+	const demo = await openDemo(page, 'en/components/skeleton/');
+	const status = demo.getByRole('status');
+	await demo.getByRole('button', { name: 'Reload' }).click();
+	await expect(status).toHaveText('Loading profile…');
+	await expect(demo.locator('.bone.image')).toBeVisible();
+	await page.clock.fastForward(2000);
+	await expect(status).toHaveText('Profile loaded');
+	await expect(demo.locator('.bone')).toHaveCount(0);
+	await expect(demo.getByText('Aiko Tanaka')).toBeVisible();
+});

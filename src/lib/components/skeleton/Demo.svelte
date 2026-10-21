@@ -5,8 +5,20 @@
 	let { lang }: { lang: Lang } = $props();
 
 	const text = {
-		en: { reload: 'Reload', name: 'Aiko Tanaka', bio: 'Designer in Osaka. Likes coffee and typography.' },
-		ja: { reload: '再読み込み', name: '田中 愛子', bio: '大阪のデザイナー。コーヒーと文字組みが好き。' }
+		en: {
+			reload: 'Reload',
+			name: 'Aiko Tanaka',
+			bio: 'Designer in Osaka. Likes coffee and typography.',
+			loading: 'Loading profile…',
+			loaded: 'Profile loaded'
+		},
+		ja: {
+			reload: '再読み込み',
+			name: '田中 愛子',
+			bio: '大阪のデザイナー。コーヒーと文字組みが好き。',
+			loading: 'プロフィールを読み込み中…',
+			loaded: 'プロフィールを読み込みました'
+		}
 	};
 
 	let loading = $state(true);
@@ -25,15 +37,20 @@
 </script>
 
 <div class="demo">
+	<!-- 灰色の図形は見た目だけなので、読み込みの始まりと終わりは別の文で伝える。
+		aria-busy の領域の中に置くと読み上げが保留されることがあるので、外に置く -->
+	<p class="visually-hidden" role="status">{loading ? text[lang].loading : text[lang].loaded}</p>
 	<!-- 読み込み中は aria-busy にし、灰色の図形は支援技術から隠す -->
 	<div class="profile" aria-busy={loading}>
 		{#if loading}
+			<span class="bone image" aria-hidden="true"></span>
 			<span class="bone avatar" aria-hidden="true"></span>
 			<span class="lines" aria-hidden="true">
 				<span class="bone line short"></span>
 				<span class="bone line"></span>
 			</span>
 		{:else}
+			<span class="image filled" aria-hidden="true"></span>
 			<span class="avatar filled" aria-hidden="true">{text[lang].name.at(0)}</span>
 			<span class="lines">
 				<strong>{text[lang].name}</strong>
@@ -53,11 +70,22 @@
 	}
 
 	.profile {
-		display: flex;
+		display: grid;
+		grid-template-columns: auto 1fr;
 		align-items: center;
 		gap: 0.75rem;
 		width: 100%;
-		min-height: 3.5rem;
+	}
+
+	/* 画像の入る場所。読み込み後も同じ大きさにして、届いたときに下の行がずれないようにする */
+	.image {
+		grid-column: 1 / -1;
+		height: 5rem;
+		border-radius: var(--radius);
+	}
+
+	.image.filled {
+		background: linear-gradient(135deg, var(--color-accent), var(--color-success-surface));
 	}
 
 	.avatar {
