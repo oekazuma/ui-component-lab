@@ -72,6 +72,13 @@ export default {
 				en: 'A popover leaves the page usable and closes on an outside click; a modal blocks the page until it is closed.',
 				ja: 'ポップオーバーは開いたままページを操作でき、外側のクリックで閉じる。モーダルは閉じるまでページを操作できない。'
 			}
+		},
+		{
+			id: 'context-menu',
+			diff: {
+				en: 'A popover is a panel of any content next to its button; a context menu lists actions for an item and opens where it is right-clicked.',
+				ja: 'ポップオーバーは、ボタンの隣に好きな内容を出すパネル。コンテキストメニューは項目に対する操作を並べ、右クリックした場所に開く。'
+			}
 		}
 	],
 	sources: [

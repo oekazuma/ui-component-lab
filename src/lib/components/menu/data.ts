@@ -165,6 +165,13 @@ export default {
 				en: 'A menu lists actions to run on the current page; a language selector lists links to the same page in other languages.',
 				ja: 'メニューは今のページで実行する操作を並べ、ランゲージセレクターは同じページの別の言語版へのリンクを並べる。'
 			}
+		},
+		{
+			id: 'context-menu',
+			diff: {
+				en: 'A menu opens from a visible button; a context menu opens where an item is right-clicked and has no visible trigger.',
+				ja: 'メニューは見えるボタンから開く。コンテキストメニューは項目を右クリックした場所に開き、開くための見えるボタンがない。'
+			}
 		}
 	],
 	sources: [

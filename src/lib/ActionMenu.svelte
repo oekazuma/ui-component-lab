@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tick, type Snippet } from 'svelte';
 
-	// Menu と Split button のデモで共有する、APG「Menu Button」パターンのメニュー
+	// Menu、Split button、Context menu のデモで共有する、APG「Menu Button」パターンのメニュー
 	let {
 		items,
 		onselect,
@@ -24,18 +24,32 @@
 	let button: HTMLButtonElement;
 	let menu: HTMLUListElement;
 	let wrap: HTMLDivElement;
+	// コンテキストメニューとして開いたときの位置（.menu-wrap からの px）と、閉じたときにフォーカスを戻す要素
+	let at = $state<{ left: number; top: number }>();
+	let returnTo: HTMLElement | undefined;
 
 	const menuItems = () => [...menu.querySelectorAll<HTMLElement>('[role="menuitem"]')];
 
-	async function show(index: number) {
+	async function show(index: number, from?: HTMLElement, position?: { left: number; top: number }) {
+		at = position;
+		returnTo = from;
 		open = true;
 		await tick();
 		menuItems().at(index)?.focus();
 	}
 
+	/** 同じメニューを、画面上の (x, y) にコンテキストメニューとして開く。閉じると from へフォーカスを戻す */
+	export async function openAt(x: number, y: number, from: HTMLElement) {
+		const r = wrap.getBoundingClientRect();
+		await show(0, from, { left: x - r.left, top: y - r.top });
+		// 画面の右端で開くと横にはみ出すので、はみ出した分だけ左へ寄せる
+		const over = menu.getBoundingClientRect().right - document.documentElement.clientWidth;
+		if (over > 0 && at) at.left -= over + 8;
+	}
+
 	function close() {
 		open = false;
-		button.focus();
+		(returnTo ?? button).focus();
 	}
 
 	function onButtonKeydown(e: KeyboardEvent) {
@@ -104,6 +118,10 @@
 		role="menu"
 		aria-labelledby="{uid}-button"
 		hidden={!open}
+		style:left={at && `${at.left}px`}
+		style:right={at && 'auto'}
+		style:top={at && `${at.top}px`}
+		style:margin={at && '0'}
 		onkeydown={onMenuKeydown}
 	>
 		{#each items as item, i (item ?? `separator-${i}`)}

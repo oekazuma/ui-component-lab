@@ -516,3 +516,43 @@ test('command palette: Escape closes it without running anything, and no match s
 	await expect(button).toBeFocused();
 	await expect(demo.getByRole('status')).toHaveText('');
 });
+
+test('context menu: right-click opens it at the pointer, and Escape returns focus to the file', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/context-menu/');
+	const file = demo.getByRole('button', { name: 'report.pdf', exact: true });
+	const box = (await file.boundingBox())!;
+
+	await file.click({ button: 'right', position: { x: 20, y: 10 } });
+	const menu = demo.getByRole('menu', { name: 'More options for report.pdf' });
+	await expect(demo.getByRole('menuitem', { name: 'Download' })).toBeFocused();
+	const m = (await menu.boundingBox())!;
+	expect(Math.abs(m.x - (box.x + 20))).toBeLessThan(2);
+	expect(Math.abs(m.y - (box.y + 10))).toBeLessThan(2);
+
+	await page.keyboard.press('Escape');
+	await expect(menu).toBeHidden();
+	await expect(file).toBeFocused();
+});
+
+test('context menu: Shift + F10 opens it on the focused file, arrows move, and Enter runs an item', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/context-menu/');
+	const file = demo.getByRole('button', { name: 'photo.jpg', exact: true });
+
+	await file.focus();
+	await page.keyboard.press('Shift+F10');
+	await expect(demo.getByRole('menuitem', { name: 'Download' })).toBeFocused();
+	await page.keyboard.press('ArrowUp');
+	await expect(demo.getByRole('menuitem', { name: 'Delete' })).toBeFocused();
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('Enter');
+	await expect(demo.getByRole('status')).toHaveText('Chosen: Share (photo.jpg)');
+	await expect(file).toBeFocused();
+	await expect(demo.getByRole('menu')).toHaveCount(0);
+});
+
+test('context menu: the same actions are on a visible ⋯ button', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/context-menu/');
+	await demo.getByRole('button', { name: 'More options for report.pdf' }).click();
+	await expect(demo.getByRole('menuitem')).toHaveText(['Download', 'Share', 'Delete']);
+});
