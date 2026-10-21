@@ -3,20 +3,19 @@
 	import DemoFrame from '#lib/DemoFrame.svelte';
 	import { categoryNames, siteName, t } from '#lib/i18n.js';
 	import { entries } from '#lib/registry.js';
+	import { filter } from '#lib/filter.svelte.js';
 	import { matches } from '#lib/search.js';
-	import { categories, type Category } from '#lib/types.js';
+	import { categories } from '#lib/types.js';
 	import type { PageProps } from './$types';
 
 	let { params }: PageProps = $props();
 	let lang = $derived(params.lang);
 	let ui = $derived(t(lang));
 
-	// ponytail: 絞り込み状態は URL に載せない（prerender のため searchParams を読めない）。共有したくなったら replaceState で同期する
-	let query = $state('');
-	let category = $state<Category | ''>('');
 	let shown = $derived(
 		entries.filter(
-			({ data }) => (!category || data.category === category) && matches(data, query)
+			({ data }) =>
+				(!filter.category || data.category === filter.category) && matches(data, filter.query)
 		)
 	);
 </script>
@@ -25,20 +24,21 @@
 <p class="tagline">{ui.tagline}</p>
 <p class="systems-link"><a href={systemsPath(lang)}>{ui.systems}</a></p>
 
-<search class="filters">
-	<label class="query">
-		{ui.search}
-		<input type="search" autocomplete="off" bind:value={query} />
-	</label>
+<div class="filters">
+	<!-- 見た目はピルだが中身はネイティブのラジオボタン。矢印キーでの移動と、選択中の読み上げはブラウザに任せる -->
 	<fieldset>
-		<legend>{ui.category}</legend>
-		<label><input type="radio" name="category" value="" bind:group={category} />{ui.all}</label>
+		<legend class="visually-hidden">{ui.category}</legend>
+		<label class="chip">
+			<input class="visually-hidden" type="radio" name="category" value="" bind:group={filter.category} />{ui.all}
+		</label>
 		{#each categories as c (c)}
-			<label><input type="radio" name="category" value={c} bind:group={category} />{categoryNames[c][lang]}</label>
+			<label class="chip">
+				<input class="visually-hidden" type="radio" name="category" value={c} bind:group={filter.category} />{categoryNames[c][lang]}
+			</label>
 		{/each}
 	</fieldset>
 	<p class="count" aria-live="polite">{shown.length ? ui.count(shown.length) : ui.noResults}</p>
-</search>
+</div>
 
 <ul class="grid">
 	{#each shown as { data, demo } (data.id)}
@@ -79,41 +79,43 @@
 		margin-bottom: 1.5rem;
 	}
 
-	.query {
-		display: grid;
-		gap: 0.25rem;
-		max-width: 24rem;
-		font-size: 0.875rem;
-	}
-
-	.query input {
-		padding: 0.4em 0.5em;
-		border: 1px solid var(--color-muted);
-		border-radius: var(--radius);
-		font-size: 1rem;
-	}
-
 	fieldset {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.25rem 1rem;
+		gap: 0.5rem;
 		margin: 0;
 		padding: 0;
 		border: 0;
+	}
+
+	.chip {
+		padding: 0.25em 0.9em;
+		border: 1px solid var(--color-border);
+		border-radius: 999px;
+		background: var(--color-bg);
 		font-size: 0.9375rem;
-	}
-
-	legend {
-		margin-bottom: 0.25rem;
-		padding: 0;
-		font-size: 0.875rem;
-	}
-
-	fieldset label {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.25em;
 		cursor: pointer;
+	}
+
+	.chip:hover {
+		background: var(--color-surface);
+	}
+
+	.chip:has(:checked) {
+		border-color: var(--color-accent);
+		background: var(--color-accent);
+		color: var(--color-accent-text);
+	}
+
+	.chip:has(:checked):hover {
+		background: var(--color-accent-hover);
+	}
+
+	/* ラジオ本体は 1px に縮めているので、フォーカスリングはピル側に出す（app.css の :focus-visible と同じ線） */
+	.chip:has(:focus-visible) {
+		outline: 2px solid var(--color-focus-outer);
+		outline-offset: 2px;
+		box-shadow: 0 0 0 2px var(--color-focus-inner);
 	}
 
 	.count {
