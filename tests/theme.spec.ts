@@ -40,3 +40,15 @@ test('404: has the site header with a way home and the theme button', async ({ p
 	await expect(page.getByRole('banner').getByRole('link', { name: 'UI Component Lab' })).toBeVisible();
 	await expect(page.getByRole('button', { name: /Dark mode/ })).toBeVisible();
 });
+
+test('theme: the button shows a sun in light mode and a moon in dark mode', async ({ page }) => {
+	await page.emulateMedia({ colorScheme: 'light' });
+	await page.goto('ja/');
+	await page.waitForLoadState('networkidle');
+	const button = page.getByRole('button', { name: 'ダークモード' });
+	await expect(button.locator('.sun')).toBeVisible();
+	await expect(button.locator('.moon')).toBeHidden();
+	await button.click();
+	await expect(button.locator('.moon')).toBeVisible();
+	await expect(button.locator('.sun')).toBeHidden();
+});
