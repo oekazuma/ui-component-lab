@@ -79,6 +79,15 @@ export default {
 			}
 		}
 	],
+	related: [
+		{
+			id: 'table-of-contents',
+			diff: {
+				en: 'A breadcrumb shows where the page sits among the pages of the site; a table of contents lists the sections within one page.',
+				ja: 'パンくずリストはサイトのページの階層の中で今のページの位置を示し、目次は 1 つのページの中の節を並べる。'
+			}
+		}
+	],
 	sources: [
 		{
 			label: 'WAI-ARIA APG: Breadcrumb Pattern',

@@ -854,3 +854,22 @@ test('emergency banner: an article with a specific heading, a time, one link, an
 	await banner.getByRole('link').click();
 	await expect(demo.locator('[role="status"]')).toContainText('evacuation shelters');
 });
+
+test('table of contents: a link scrolls only the article, focuses its heading, and is marked current', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/table-of-contents/');
+	const toc = demo.getByRole('navigation', { name: 'Contents' });
+	const article = demo.getByRole('region', { name: 'Article' });
+	const before = await page.evaluate(() => scrollY);
+
+	await expect(toc.getByRole('link').first()).toHaveAttribute('aria-current', 'location');
+	await toc.getByRole('link', { name: 'Where to go' }).click();
+	await expect(article.getByRole('heading', { name: 'Where to go' })).toBeFocused();
+	await expect(toc.getByRole('link', { name: 'Where to go' })).toHaveAttribute('aria-current', 'location');
+	await expect(toc.locator('[aria-current]')).toHaveCount(1);
+	expect(await article.evaluate((el) => el.scrollTop)).toBeGreaterThan(0);
+	expect(await page.evaluate(() => scrollY)).toBe(before);
+
+	// 最後の節は上端まで届かないことがあるので、末尾まで送ったら最後の節とする
+	await article.evaluate((el) => el.scrollTo(0, el.scrollHeight));
+	await expect(toc.getByRole('link').last()).toHaveAttribute('aria-current', 'location');
+});

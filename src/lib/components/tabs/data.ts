@@ -145,6 +145,13 @@ export default {
 				en: 'Tabs switch between separate panels, each with its own content; a segmented control switches between closely related options or views of the same content.',
 				ja: 'タブはそれぞれ別の内容を持つパネルを切り替え、セグメンテッドコントロールは近い関係にある選択肢や同じ内容の表示を切り替える。'
 			}
+		},
+		{
+			id: 'table-of-contents',
+			diff: {
+				en: 'Tabs show one panel at a time and hide the others; a table of contents links to sections that are all on the page at once.',
+				ja: 'タブはパネルを 1 つずつ見せてほかを隠し、目次はすべて同時にページにある節へのリンクを並べる。'
+			}
 		}
 	],
 	sources: [
