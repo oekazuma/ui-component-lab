@@ -68,6 +68,13 @@ export default {
 				en: 'Closes the list. If it is already closed, clears the field.',
 				ja: 'リストを閉じる。閉じているときは入力欄を空にする。'
 			}
+		},
+		{
+			key: '← / → / Home / End',
+			action: {
+				en: 'Moves the text cursor and removes the highlight from the suggestions.',
+				ja: '入力欄の中でカーソルを動かし、候補の選択を外す。'
+			}
 		}
 	],
 	usage: [

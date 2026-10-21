@@ -29,8 +29,7 @@ export default {
 	],
 	keyboard: [
 		{ key: 'Tab', action: { en: 'Moves focus to the button.', ja: 'ボタンにフォーカスを移す。' } },
-		{ key: 'Enter', action: { en: 'Activates the button.', ja: 'ボタンを実行する。' } },
-		{ key: 'Space', action: { en: 'Activates the button.', ja: 'ボタンを実行する。' } }
+		{ key: 'Enter / Space', action: { en: 'Activates the button.', ja: 'ボタンを実行する。' } }
 	],
 	variations: [
 		{

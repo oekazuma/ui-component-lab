@@ -35,8 +35,11 @@ export default {
 			action: { en: 'Moves between the page controls.', ja: 'ページ番号や「前へ」「次へ」の間を移動する。' }
 		},
 		{
-			key: 'Enter',
-			action: { en: 'Goes to the focused page.', ja: 'フォーカス中のページへ移動する。' }
+			key: 'Enter / Space',
+			action: {
+				en: 'Goes to the focused page. Space works because this demo uses buttons; page links respond to Enter only.',
+				ja: 'フォーカス中のページへ移動する。このデモはボタンなので Space でも動く。ページへのリンクの場合は Enter だけで動く。'
+			}
 		}
 	],
 	variations: [

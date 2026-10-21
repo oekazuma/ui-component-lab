@@ -27,7 +27,7 @@ export default {
 			ja: '「×」はそれぞれボタンで、「赤を外す」のようにタグ名を含む名前を付ける。'
 		},
 		{
-			en: 'After removing a tag, this demo moves focus to the next tag’s button so keyboard users do not lose their place.',
+			en: 'After removing a tag, this demo moves focus to the next tag’s button (or the previous one if it was the last) so keyboard users do not lose their place.',
 			ja: 'このデモではタグを外したあと、キーボード利用者が迷わないよう、隣のタグのボタンにフォーカスを移す。'
 		}
 	],
@@ -36,7 +36,7 @@ export default {
 		{
 			key: 'Enter / Space',
 			action: {
-				en: 'Removes the tag and moves focus to the next one.',
+				en: 'Removes the tag and moves focus to the next one (or the previous one if it was the last).',
 				ja: 'タグを外し、隣のタグへフォーカスを移す。'
 			}
 		}

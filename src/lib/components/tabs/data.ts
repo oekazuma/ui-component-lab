@@ -42,8 +42,7 @@ export default {
 			key: '← / →',
 			action: { en: 'Moves to the previous / next tab and selects it.', ja: '前・次のタブへ移って選択する。' }
 		},
-		{ key: 'Home', action: { en: 'Moves to the first tab.', ja: '最初のタブへ移る。' } },
-		{ key: 'End', action: { en: 'Moves to the last tab.', ja: '最後のタブへ移る。' } }
+		{ key: 'Home / End', action: { en: 'Moves to the first / last tab and selects it.', ja: '最初・最後のタブへ移って選択する。' } }
 	],
 	usage: [
 		{
