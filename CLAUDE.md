@@ -29,7 +29,7 @@ CI は PR ごとに上の 3 つを実行する。
 ### Demo.svelte
 
 - props は `let { lang }: { lang: Lang } = $props();` とし、文言はファイル内の `const text = { en: {...}, ja: {...} }` に置く
-- id は `$props.id()` から作る。一覧ページでは 45 個のデモが同時に描画されるため、固定の id は衝突する
+- id は `$props.id()` から作る。一覧ページではすべてのデモが同時に描画されるため、固定の id は衝突する
 - リセットは `DemoFrame.svelte` が `{#key}` で作り直して行うので、デモにリセット処理は書かない。言語を切り替えたときも作り直される
 - ネイティブ要素で足りるならそれを使い、何をブラウザに任せているかをコメントに書く（例: `modal/Demo.svelte`）。独自のキー操作には、従う APG のパターン名をコメントで添える
 - イベントリスナーは要素に付ける。document や window に付けるのは、ポップアップが開いている間だけにする。`$effect` で付けて、片付けの関数で外す（例: `src/lib/ActionMenu.svelte`、`tooltip/Demo.svelte`）。常設してよいのは toast の `<svelte:window>` だけ
