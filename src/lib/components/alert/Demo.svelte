@@ -32,7 +32,7 @@
 	p {
 		margin: 0;
 		padding: 0.6em 0.9em;
-		border: 1px solid #b42318;
+		border: 1px solid var(--color-danger);
 		border-left-width: 4px;
 		border-radius: var(--radius);
 		background: #fef3f2;
