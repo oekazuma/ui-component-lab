@@ -5,7 +5,7 @@
 
 	const text = {
 		en: { label: 'Notifications', unread: (n: number) => `Notifications, ${n} unread` },
-		ja: { label: '通知', unread: (n: number) => `通知 未読${n}件` }
+		ja: { label: '通知', unread: (n: number) => `通知 ${n}件の未読` }
 	};
 
 	let count = $state(3);
