@@ -432,3 +432,19 @@ test('tag: display-only chip labels next to selectable tags that toggle aria-pre
 	await health.press('Space');
 	await expect(health).toHaveAttribute('aria-pressed', 'false');
 });
+
+test('card: cards in a grid with linked headings and category labels, and an ad card marked as such', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/card/');
+	const cards = demo.getByRole('article');
+	await expect(cards).toHaveCount(3);
+	for (const card of await cards.all()) await expect(card.getByRole('heading').getByRole('link')).toBeVisible();
+	await expect(cards.nth(0)).toContainText('Travel');
+	const ad = demo.getByRole('article', { name: /Autumn hotel sale/ });
+	await expect(ad.getByText('Ad', { exact: true })).toBeVisible();
+	await expect(ad).toHaveCSS('border-style', 'dashed');
+	const [a, b] = await Promise.all([cards.nth(0).boundingBox(), cards.nth(1).boundingBox()]);
+	expect(a!.y).toBe(b!.y);
+
+	await page.setViewportSize({ width: 375, height: 800 });
+	expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
+});
