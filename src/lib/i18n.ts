@@ -5,7 +5,6 @@ export const siteName = 'UI Component Lab';
 const ui = {
 	en: {
 		tagline: 'What’s that UI called? Learn the name and the behavior by trying it.',
-		details: 'Details',
 		reset: 'Reset',
 		aliases: 'Also known as',
 		appearance: 'How to recognize it',
@@ -38,7 +37,6 @@ const ui = {
 	},
 	ja: {
 		tagline: 'そのUI、なんて名前？ 呼び方と動きを、触って覚えよう。',
-		details: '詳細を見る',
 		reset: 'リセット',
 		aliases: '別名',
 		appearance: '見分けるポイント',

@@ -174,12 +174,14 @@
 
 	section {
 		max-width: 48rem;
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 	}
 
 	h2 {
-		margin: 0 0 0.5rem;
-		font-size: 1.125rem;
+		margin: 0 0 0.75rem;
+		padding-bottom: 0.25rem;
+		border-bottom: 1px solid var(--color-border);
+		font-size: 1.375rem;
 	}
 
 	dt {
@@ -203,8 +205,14 @@
 	}
 
 	.misuse h3 {
-		margin: 0 0 0.25rem;
-		font-size: 1rem;
+		margin: 0 0 0.5rem;
+		font-size: 1.0625rem;
+	}
+
+	/* 項目の見出しと同じ太字にすると階層が読み取れないので、ラベルは小さく灰色にする */
+	.misuse dt {
+		color: var(--color-muted);
+		font-size: 0.8125rem;
 	}
 
 	.deceptive {
@@ -231,12 +239,14 @@
 		vertical-align: top;
 	}
 
+	/* 既定の等幅フォントは 13px 基準で em が効くため小さくなりすぎる。本文の書体で rem 指定にする */
 	kbd {
 		padding: 0.05em 0.4em;
+		font-family: inherit;
 		border: 1px solid var(--color-border);
 		border-radius: 4px;
 		background: var(--color-surface);
-		font-size: 0.875em;
+		font-size: 0.875rem;
 		white-space: nowrap;
 	}
 

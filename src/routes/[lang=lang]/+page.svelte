@@ -45,21 +45,22 @@
 	{#each shown as { data, demo } (data.id)}
 		<li class="card">
 			<DemoFrame {demo} {lang} label="{ui.demo}: {data.names[lang]}" />
-			<h2>
-				{data.names.en}
-				{#if lang === 'ja'}<span class="sub">{data.names.ja}</span>{/if}
-			</h2>
-			<p class="summary">{data.summary[lang]}</p>
-			{#if data.aliases.length}
-				<ul class="aliases" aria-label={ui.aliases}>
-					{#each data.aliases as alias (alias.name + alias.source)}
-						<li>{alias.name}</li>
-					{/each}
-				</ul>
-			{/if}
-			<a class="more" href={componentPath(lang, data.id)}>
-				{ui.details}<span class="visually-hidden">: {data.names[lang]}</span>
-			</a>
+			<!-- デモは操作できる部品を含むので、カード全体はリンクにしない。
+				リンクは見出しに付け、::after でデモの下の文字の部分だけを押せる範囲に広げる -->
+			<div class="body">
+				<h2>
+					<a href={componentPath(lang, data.id)}>
+						{data.names.en}
+						{#if lang === 'ja'}<span class="sub">{data.names.ja}</span>{/if}
+					</a>
+				</h2>
+				<p class="summary">{data.summary[lang]}</p>
+				{#if data.aliases.length}
+					<p class="aliases">
+						{ui.aliases}: {data.aliases.map((a) => a.name).join(lang === 'ja' ? '、' : ', ')}
+					</p>
+				{/if}
+			</div>
 		</li>
 	{/each}
 </ul>
@@ -140,9 +141,51 @@
 		gap: 0.5rem;
 	}
 
+	.body {
+		position: relative;
+		display: grid;
+		flex: 1;
+		align-content: start;
+		gap: 0.375rem;
+		margin: 0 -0.5rem;
+		padding: 0.5rem;
+		border-radius: var(--radius);
+	}
+
+	.body:hover {
+		background: var(--color-surface);
+	}
+
+	/* リンク自体は 1 行だけなので、フォーカスの線は押せる範囲全体に出す */
+	.body:has(a:focus-visible) {
+		outline: 2px solid var(--color-focus-outer);
+		outline-offset: 2px;
+		box-shadow: 0 0 0 2px var(--color-focus-inner);
+	}
+
 	h2 {
-		margin: 0.25rem 0 0;
+		margin: 0;
 		font-size: 1.125rem;
+	}
+
+	h2 a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	h2 a::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+	}
+
+	h2 a:focus-visible {
+		outline: none;
+		box-shadow: none;
+	}
+
+	.body:hover h2 a {
+		text-decoration: underline;
 	}
 
 	.sub {
@@ -157,24 +200,8 @@
 	}
 
 	.aliases {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.375rem;
 		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.aliases li {
-		padding: 0 0.5em;
-		border: 1px solid var(--color-border);
-		border-radius: 999px;
 		color: var(--color-muted);
 		font-size: 0.875rem;
-	}
-
-	.more {
-		margin-top: auto;
-		font-size: 0.9375rem;
 	}
 </style>
