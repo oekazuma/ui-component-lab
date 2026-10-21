@@ -58,10 +58,10 @@ export default {
 			}
 		},
 		{
-			id: 'modal',
+			id: 'alert-dialog',
 			diff: {
-				en: 'An alert informs without interrupting; an alert dialog (a kind of modal) stops the user until they respond.',
-				ja: 'アラートは作業を中断させずに知らせ、アラートダイアログ（モーダルの一種）は応答するまで作業を止める。'
+				en: 'An alert informs without interrupting; an alert dialog stops the user until they respond.',
+				ja: 'アラートは作業を中断させずに知らせ、アラートダイアログは応答するまで作業を止める。'
 			}
 		}
 	],

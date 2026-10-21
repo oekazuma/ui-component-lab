@@ -57,10 +57,10 @@ export default {
 	],
 	related: [
 		{
-			id: 'alert',
+			id: 'alert-dialog',
 			diff: {
-				en: 'An alert dialog (a kind of modal) stops the user until they respond; an alert informs without interrupting.',
-				ja: 'アラートダイアログ（モーダルの一種）は応答するまで作業を止め、アラートは作業を中断させずに知らせる。'
+				en: 'A modal is any dialog that blocks the page; an alert dialog is the kind used for an urgent message that needs a response.',
+				ja: 'モーダルは背後のページを止めるダイアログ全般で、アラートダイアログはそのうち応答が必要な緊急のメッセージに使うもの。'
 			}
 		},
 		{
