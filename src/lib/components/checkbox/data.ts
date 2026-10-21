@@ -27,8 +27,8 @@ export default {
 			ja: 'このデモでは、中間状態をすぐ見せるために「チーズ」を選んだ状態から始める。実際のフォームでは回答をあらかじめ選んでおかない（避けたい使い方を参照）。'
 		},
 		{
-			en: 'Related checkboxes are grouped with a fieldset and legend so the group has a name.',
-			ja: '関連するチェックボックスは fieldset と legend でまとめ、グループに名前を付ける。'
+			en: 'Related checkboxes are grouped with a `<fieldset>` and `<legend>` so the group has a name.',
+			ja: '関連するチェックボックスは `<fieldset>` と `<legend>` でまとめ、グループに名前を付ける。'
 		}
 	],
 	keyboard: [

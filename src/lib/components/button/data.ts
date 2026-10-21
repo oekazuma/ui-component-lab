@@ -71,8 +71,8 @@ export default {
 				ja: '入力が終わるまで送信ボタンを無効にしておく'
 			},
 			harm: {
-				en: 'People can see the button but cannot tell why it does not respond, so they get stuck or give up. A disabled button cannot be reached with Tab, so people using a screen reader with a keyboard have trouble finding where it is.',
-				ja: 'ボタンは見えているのに押せない理由が分からず、操作が止まったり、途中でやめたりしてしまう。disabled のボタンは Tab で到達できないため、スクリーンリーダーとキーボードを使う人はボタンの位置をつかみにくい。'
+				en: 'People can see the button but cannot tell why it does not respond, so they get stuck or give up. A `disabled` button cannot be reached with Tab, so people using a screen reader with a keyboard have trouble finding where it is.',
+				ja: 'ボタンは見えているのに押せない理由が分からず、操作が止まったり、途中でやめたりしてしまう。`disabled` のボタンは Tab で到達できないため、スクリーンリーダーとキーボードを使う人はボタンの位置をつかみにくい。'
 			},
 			instead: {
 				en: 'Keep the button enabled. Mark required fields, and if it is pressed too early, explain what is missing with an error message. If it must be disabled, state the condition for enabling it right next to the button.',

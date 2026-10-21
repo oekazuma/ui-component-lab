@@ -24,8 +24,8 @@ export default {
 			ja: '数値を直接入力するか、矢印で増減させる。'
 		},
 		{
-			en: 'This demo uses the native `<input type="number">` with min, max and step. Values outside the range get a red border.',
-			ja: 'このデモはネイティブの `<input type="number">` に min・max・step を付けている。範囲外の値になると枠が赤くなる。'
+			en: 'This demo uses the native `<input type="number">` with `min`, `max` and `step`. Values outside the range get a red border.',
+			ja: 'このデモはネイティブの `<input type="number">` に `min`・`max`・`step` を付けている。範囲外の値になると枠が赤くなる。'
 		},
 		{
 			en: 'APG also defines Home / End for the minimum and maximum, but the native element uses them to move the text cursor.',

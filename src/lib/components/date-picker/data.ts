@@ -25,8 +25,8 @@ export default {
 			ja: 'このデモはネイティブの `<input type="date">` を使っているため、表示形式やカレンダーはブラウザと言語設定で変わる。値は常に yyyy-mm-dd になる。'
 		},
 		{
-			en: 'Earliest and latest dates can be limited with min and max.',
-			ja: '選べる日付の範囲は min と max で制限できる。'
+			en: 'Earliest and latest dates can be limited with `min` and `max`.',
+			ja: '選べる日付の範囲は `min` と `max` で制限できる。'
 		}
 	],
 	keyboard: [

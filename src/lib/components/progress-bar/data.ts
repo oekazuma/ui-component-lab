@@ -42,8 +42,8 @@ export default {
 		{
 			name: { en: 'Indeterminate', ja: '不確定' },
 			description: {
-				en: 'Shows that work is ongoing without knowing how long it will take, often as a moving stripe. Made by leaving out the value attribute.',
-				ja: '終わるまでの時間が分からないときに、動く帯などで作業中であることだけを示すもの。value 属性を省くとこの状態になる。'
+				en: 'Shows that work is ongoing without knowing how long it will take, often as a moving stripe. Made by leaving out the `value` attribute.',
+				ja: '終わるまでの時間が分からないときに、動く帯などで作業中であることだけを示すもの。`value` 属性を省くとこの状態になる。'
 			}
 		}
 	],

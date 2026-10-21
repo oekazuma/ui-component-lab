@@ -48,8 +48,8 @@ export default {
 			ja: '選んだファイルは番号付きリストにし、各行にファイル名・大きさ・解除ボタンを置く。何も選んでいないときは「未選択」と表示する。'
 		},
 		{
-			en: 'The accept attribute only narrows what the file picker shows. Check the files on the server too.',
-			ja: 'accept 属性はファイル選択画面での絞り込みにすぎない。サーバー側でもファイルを確かめる。'
+			en: 'The `accept` attribute only narrows what the file picker shows. Check the files on the server too.',
+			ja: '`accept` 属性はファイル選択画面での絞り込みにすぎない。サーバー側でもファイルを確かめる。'
 		}
 	],
 	misuse: [

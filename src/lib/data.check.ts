@@ -84,6 +84,11 @@ for (const d of all) {
 	// 文中のコードは `…` で囲む（CodeText.svelte）。閉じ忘れると以降がすべてコードとして表示される
 	for (const t of texts)
 		for (const s of [t.en, t.ja]) if (s.split('`').length % 2 === 0) errors.push(`${d.id}: unbalanced backtick in ${s}`);
+	// 「〇〇 属性」「the 〇〇 attribute」と書いたら、属性名はコードとして囲む
+	for (const t of texts)
+		for (const s of [t.en, t.ja])
+			for (const m of s.matchAll(/(?<![`\w-])([a-z][a-z-]*) (?:attribute|属性)/g))
+				if (!['HTML', 'the', 'an', 'a'].includes(m[1])) errors.push(`${d.id}: wrap the attribute name in backticks: ${m[1]}`);
 	// 名前と概要はページのタイトルや説明文（メタタグ）にもそのまま出るので、` を使わない
 	for (const s of [d.names.en, d.names.ja, d.summary.en, d.summary.ja])
 		if (s.includes('`')) errors.push(`${d.id}: backtick in name or summary`);

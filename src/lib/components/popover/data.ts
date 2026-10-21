@@ -29,8 +29,8 @@ export default {
 			ja: 'モーダルと違い、開いている間もページの他の部分を操作できる。'
 		},
 		{
-			en: 'This demo uses the HTML popover attribute; where CSS anchor positioning is not supported, it opens in the middle of the screen.',
-			ja: 'このデモは HTML の popover 属性を使っている。CSS のアンカー配置に対応していないブラウザでは、画面の中央に出る。'
+			en: 'This demo uses the HTML `popover` attribute; where CSS anchor positioning is not supported, it opens in the middle of the screen.',
+			ja: 'このデモは HTML の `popover` 属性を使っている。CSS のアンカー配置に対応していないブラウザでは、画面の中央に出る。'
 		}
 	],
 	keyboard: [

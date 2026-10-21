@@ -23,8 +23,8 @@ export default {
 			ja: 'クリックまたは Tab でフォーカスするとカーソルが出て、文字を入力できる。'
 		},
 		{
-			en: 'The label stays visible; placeholder text disappears when typing starts, so it should not replace the label.',
-			ja: 'ラベルは常に見えるようにする。placeholder は入力を始めると消えるため、ラベルの代わりにはしない。'
+			en: 'The label stays visible; `placeholder` text disappears when typing starts, so it should not replace the label.',
+			ja: 'ラベルは常に見えるようにする。`placeholder` は入力を始めると消えるため、ラベルの代わりにはしない。'
 		},
 		{
 			en: 'Hint text is linked with `aria-describedby` so screen readers read it with the label.',
