@@ -341,3 +341,41 @@ test('language selector: opens with Enter, a language changes the demo page, and
 	await expect(button).toBeFocused();
 	await expect(button).toHaveAttribute('aria-expanded', 'false');
 });
+
+test('data grid: one Tab stop, arrow keys stop at the edges, Home / End and Ctrl + Home / End jump', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/data-grid/');
+	const grid = demo.getByRole('grid', { name: 'Tasks' });
+	const cell = (row: number, col: number) => grid.locator('tbody tr').nth(row).locator('td').nth(col);
+	const done = (row: number) => cell(row, 2).getByRole('checkbox');
+
+	await expect(grid.locator('[tabindex="0"]')).toHaveCount(1);
+	await cell(0, 0).focus();
+	await page.keyboard.press('ArrowLeft');
+	await expect(cell(0, 0)).toBeFocused();
+	await page.keyboard.press('ArrowRight');
+	await expect(cell(0, 1)).toBeFocused();
+	await expect(cell(0, 1)).toHaveAttribute('tabindex', '0');
+	await expect(cell(0, 0)).toHaveAttribute('tabindex', '-1');
+	await page.keyboard.press('ArrowUp');
+	await expect(cell(0, 1)).toBeFocused();
+
+	// チェックボックスのある列ではセルではなくチェックボックスにフォーカスし、Space で切り替える
+	await page.keyboard.press('End');
+	await expect(done(0)).toBeFocused();
+	await page.keyboard.press('ArrowRight');
+	await expect(done(0)).toBeFocused();
+	await page.keyboard.press('Space');
+	await expect(done(0)).toBeChecked();
+	await page.keyboard.press('ArrowDown');
+	await expect(done(1)).toBeFocused();
+	await page.keyboard.press('Home');
+	await expect(cell(1, 0)).toBeFocused();
+
+	await page.keyboard.press('Control+End');
+	await expect(done(4)).toBeFocused();
+	await page.keyboard.press('ArrowDown');
+	await expect(done(4)).toBeFocused();
+	await page.keyboard.press('Control+Home');
+	await expect(cell(0, 0)).toBeFocused();
+	await expect(grid.locator('[tabindex="0"]')).toHaveCount(1);
+});

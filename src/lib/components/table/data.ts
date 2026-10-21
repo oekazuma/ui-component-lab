@@ -58,8 +58,8 @@ export default {
 		{
 			name: { en: 'Data grid', ja: 'データグリッド' },
 			description: {
-				en: 'An interactive table where arrow keys move between cells, used when cells can be edited or selected.',
-				ja: 'セルを編集・選択できる表で、矢印キーでセル間を移動するもの。'
+				en: 'An interactive table where arrow keys move between cells, used when cells can be edited or selected. This site describes it as its own component, the data grid.',
+				ja: 'セルを編集・選択できる表で、矢印キーでセル間を移動するもの。このサイトでは別の部品「グリッド」として説明している。'
 			}
 		}
 	],
@@ -87,6 +87,13 @@ export default {
 		}
 	],
 	related: [
+		{
+			id: 'data-grid',
+			diff: {
+				en: 'A table is for reading, and only the controls inside it are in the Tab order; a data grid lets people move between cells with the arrow keys and operate them.',
+				ja: 'テーブルは読むための表で、中の操作できる要素だけが Tab キーの順に入る。グリッドは矢印キーでセルを移って操作できる。'
+			}
+		},
 		{
 			id: 'list',
 			diff: {
