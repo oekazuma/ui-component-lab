@@ -29,6 +29,10 @@ export default {
 		{
 			en: 'This demo uses the native `<select>` element, so the list looks different on each OS and browser.',
 			ja: 'このデモはネイティブの `<select>` 要素を使っているため、リストの見た目は OS やブラウザで異なる。'
+		},
+		{
+			en: 'In this demo, the options are in alphabetical order in English and in gojūon (Japanese syllabary) order in Japanese, so people can guess where an option is.',
+			ja: 'このデモでは、選択肢を英語版はアルファベット順、日本語版は五十音順に並べ、どこにあるか見当を付けやすくしている。'
 		}
 	],
 	keyboard: [

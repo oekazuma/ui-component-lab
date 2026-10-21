@@ -680,3 +680,17 @@ test('search field: a decorative magnifying glass sits at the start of the box, 
 	const padding = await input.evaluate((el) => parseFloat(getComputedStyle(el).paddingInlineStart));
 	expect(i.x + padding).toBeGreaterThanOrEqual(s.x + s.width);
 });
+
+test('select: the Japanese options are in gojūon order', async ({ page }) => {
+	const demo = await openDemo(page, 'ja/components/select/', /^デモ:/);
+	await expect(demo.getByRole('combobox', { name: '国' }).locator('option:not([disabled])')).toHaveText([
+		'インド',
+		'オーストラリア',
+		'カナダ',
+		'ケニア',
+		'ドイツ',
+		'日本',
+		'ブラジル',
+		'フランス'
+	]);
+});
