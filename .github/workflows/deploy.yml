@@ -1,6 +1,6 @@
 name: Build and deploy
 
-# PR では check と build だけを行い、GitHub Pages へのデプロイは main への push のときだけ行う
+# PR では check・build・E2E テストだけを行い、GitHub Pages へのデプロイは main への push のときだけ行う
 on:
   push:
     branches: [main]
