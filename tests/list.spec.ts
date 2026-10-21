@@ -59,3 +59,34 @@ test('ja: lines break between phrases, and dates do not wrap', async ({ page }) 
 	expect(await page.evaluate(() => getComputedStyle(document.body).wordBreak)).toBe('auto-phrase');
 	expect(await page.locator('.checked').first().evaluate((e) => getComputedStyle(e).whiteSpace)).toBe('nowrap');
 });
+
+test('list: thumbnails are not interactive, share one height, and the whole card opens the page', async ({ page }) => {
+	await page.goto('ja/');
+	await page.waitForLoadState('networkidle');
+	const cards = page.locator('.grid > li');
+	const count = await cards.count();
+	await expect(page.locator('.grid .thumb[inert]')).toHaveCount(count);
+	const heights = await page.locator('.grid .thumb').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().height)));
+	expect(new Set(heights).size).toBe(1);
+	// 縮めた中身がどれも枠の内側に収まる（カルーセルのように背の高いデモも含む）
+	const overflowing = await page.locator('.grid .thumb').evaluateAll((thumbs) =>
+		thumbs
+			.filter((t) => {
+				const outer = t.getBoundingClientRect();
+				const inner = t.firstElementChild!.getBoundingClientRect();
+				return inner.top < outer.top - 1 || inner.bottom > outer.bottom + 1 || inner.left < outer.left - 1 || inner.right > outer.right + 1;
+			})
+			.map((t) => t.closest('li')!.querySelector('h2')!.textContent!.trim())
+	);
+	expect(overflowing).toEqual([]);
+	// カードの中で Tab が止まるのはリンク 1 つだけ
+	const stops = await page.locator('.grid').evaluate((grid) =>
+		[...grid.querySelectorAll<HTMLElement>('a, button, input, select, textarea, summary, [tabindex]')].filter(
+			(e) => !e.closest('[inert]') && e.tabIndex >= 0
+		).length
+	);
+	expect(stops).toBe(count);
+	const box = await cards.first().locator('.thumb').boundingBox();
+	await page.mouse.click(box!.x + box!.width / 2, box!.y + box!.height / 2);
+	await expect(page).toHaveURL(/\/ja\/components\/accordion\/$/);
+});

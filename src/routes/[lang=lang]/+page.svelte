@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { componentPath, systemsPath } from '#lib/paths.js';
-	import DemoFrame from '#lib/DemoFrame.svelte';
 	import { categoryNames, siteName, t } from '#lib/i18n.js';
 	import { entries } from '#lib/registry.js';
 	import { filter } from '#lib/filter.svelte.js';
@@ -10,6 +9,18 @@
 	let { params }: PageProps = $props();
 	let lang = $derived(params.lang);
 	let ui = $derived(t(lang));
+
+	// 背の高いデモ（カルーセルなど）も枠に収まるよう、デモごとに縮める倍率を決める。
+	// 上限を 3 分の 2 にするのは、中身の幅を枠の 1.5 倍で描いているため（それ以上大きいと横にはみ出す）
+	function fit(inner: HTMLElement) {
+		const thumb = inner.parentElement!;
+		const observer = new ResizeObserver(() => {
+			inner.style.scale = String(Math.min(2 / 3, (thumb.clientHeight - 16) / inner.offsetHeight));
+		});
+		observer.observe(inner);
+		observer.observe(thumb);
+		return () => observer.disconnect();
+	}
 
 	let shown = $derived(
 		entries.filter(({ data }) => !filter.category || data.category === filter.category)
@@ -38,11 +49,16 @@
 </div>
 
 <ul class="grid">
-	{#each shown as { data, demo } (data.id)}
+	{#each shown as { data, demo: Demo } (data.id)}
 		<li class="card">
-			<DemoFrame {demo} {lang} label="{ui.demo}: {data.names[lang]}" />
-			<!-- デモは操作できる部品を含むので、カード全体はリンクにしない。
-				リンクは見出しに付け、::after でデモの下の文字の部分だけを押せる範囲に広げる -->
+			<!-- 一覧のデモは見た目を見せるだけのサムネイル。inert で操作もフォーカスも読み上げも止め、試すのは詳細ページで行う。
+				同じ大きさの枠に縮めて入れるので、中身の多いデモでもカードの並びが崩れない -->
+			<div class="thumb" inert>
+				<div class="thumb-inner" {@attach fit}>
+					<Demo {lang} />
+				</div>
+			</div>
+			<!-- サムネイルの中に操作できる部品がなくなったので、見出しのリンクを ::after でカード全体に広げる -->
 			<div class="body">
 				<h2>
 					<a href={componentPath(lang, data.id)}>
@@ -150,28 +166,54 @@
 	}
 
 	.card {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		overflow: hidden;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius);
+	}
+
+	.card:hover {
+		border-color: var(--color-muted);
+	}
+
+	/* デモを 3 分の 2 に縮め、どれも同じ高さの枠に収める。はみ出す分は枠で切る */
+	.thumb {
+		position: relative;
+		height: 10rem;
+		overflow: hidden;
+		border-bottom: 1px solid var(--color-border);
+		background: var(--color-surface);
+	}
+
+	/* overflow: hidden の枠の中では、枠より背の高い中身を grid で中央に寄せられない（上端に寄る）。
+		中心を枠の中心に合わせてから、その中心を基準に縮める */
+	.thumb-inner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: grid;
+		place-items: center;
+		width: 150%;
+		translate: -50% -50%;
+		scale: 0.667;
 	}
 
 	.body {
-		position: relative;
 		display: grid;
 		flex: 1;
 		align-content: start;
 		gap: 0.375rem;
-		margin: 0 -0.5rem;
-		padding: 0.5rem;
-		border-radius: var(--radius);
+		padding: 0.75rem 1rem 1rem;
 	}
 
-	.body:hover {
+	.card:hover .body {
 		background: var(--color-surface);
 	}
 
 	/* リンク自体は 1 行だけなので、フォーカスの線は押せる範囲全体に出す */
-	.body:has(a:focus-visible) {
+	.card:has(a:focus-visible) {
 		outline: 2px solid var(--color-focus-outer);
 		outline-offset: 2px;
 		box-shadow: 0 0 0 2px var(--color-focus-inner);
@@ -198,7 +240,7 @@
 		box-shadow: none;
 	}
 
-	.body:hover h2 a {
+	.card:hover h2 a {
 		text-decoration: underline;
 	}
 

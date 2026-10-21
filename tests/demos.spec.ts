@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { componentIds } from './component-ids';
 import { openDemo } from './open-demo.ts';
 
 test('radio: starts with nothing chosen; Tab reaches the first option and Space chooses it', async ({ page }) => {
@@ -98,11 +99,12 @@ test('number input: an out-of-range value gets an error message tied to the fiel
 	await expect(demo.getByText('Enter a whole number')).toHaveCount(0);
 });
 
-// DADS ボタンのアクセシビリティ: ターゲットサイズは 44 × 44 CSS px 以上
-for (const path of ['en/', 'ja/']) {
-	test(`buttons: every demo button is at least 44 × 44 px: ${path}`, async ({ page }) => {
-		await page.goto(path);
-		const small = await page.locator('.btn, [role="toolbar"] button').evaluateAll((els) =>
+// DADS ボタンのアクセシビリティ: ターゲットサイズは 44 × 44 CSS px 以上。
+// 一覧ページのデモは縮めたサムネイルなので、詳細ページで測る
+for (const id of componentIds) {
+	test(`buttons: every demo button is at least 44 × 44 px: ${id}`, async ({ page }) => {
+		await page.goto(`en/components/${id}/`);
+		const small = await page.locator('main .btn, main [role="toolbar"] button').evaluateAll((els) =>
 			els
 				.filter((el) => el.getClientRects().length > 0)
 				.map((el) => ({ text: el.textContent!.trim(), ...el.getBoundingClientRect().toJSON() }))

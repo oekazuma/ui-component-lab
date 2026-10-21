@@ -16,7 +16,7 @@
 	});
 </script>
 
-<!-- 一覧ページはデモごとに操作できる部品があり、ヘッダーの先へ進むまでに何度も Tab を押すので、先頭に飛ばす手段を置く -->
+<!-- ヘッダーには検索・テーマ・言語のボタンが並ぶので、本文へ先に移る手段を置く -->
 <a class="skip" href="#main">{t(params.lang).skipToContent}</a>
 
 <SiteHeader home={homePath(params.lang)}>
