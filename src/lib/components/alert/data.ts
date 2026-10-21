@@ -26,6 +26,14 @@ export default {
 			ja: 'ページを読み込んだ時点ですでにあるアラートは読み上げられない。'
 		},
 		{
+			en: 'In this demo, the message is rebuilt each time Save is pressed, because putting the same text in again is not read out.',
+			ja: 'このデモでは、同じ文を入れ直しても読み上げられないため、「保存」を押すたびにメッセージを作り直している。'
+		},
+		{
+			en: 'In this demo, the type is given in words (“Error:”) as well as by color and the icon, so the icon is hidden from screen readers to avoid reading it twice.',
+			ja: 'このデモでは、色とアイコンに加えて「エラー：」の文字で種類を示す。読み上げが重ならないよう、アイコンはスクリーンリーダーから隠している。'
+		},
+		{
 			en: 'It should not disappear on its own, so the user has time to read it.',
 			ja: '読む時間を確保するため、自動で消さない。'
 		}

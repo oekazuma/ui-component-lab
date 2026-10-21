@@ -59,3 +59,17 @@ test('spinner: stops spinning with the reduce-motion setting', async ({ page }) 
 	await demo.getByRole('button', { name: /comments/ }).click();
 	await expect(demo.locator('.spinner')).toHaveCSS('animation-name', 'none');
 });
+
+test('alert: names the type in words and replaces the message on every press', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/alert/');
+	const save = demo.getByRole('button', { name: 'Save' });
+	const alert = demo.getByRole('alert');
+
+	await save.click();
+	await expect(alert).toHaveText(/^\s*Error: Could not save/);
+	// 同じ文のままだとスクリーンリーダーは読み直さないので、押すたびに中身の要素を作り直していることを見る
+	await alert.locator('p').evaluate((p) => (p.dataset.mark = 'old'));
+	await save.click();
+	await expect(alert.locator('p')).toHaveCount(1);
+	await expect(alert.locator('p[data-mark]')).toHaveCount(0);
+});
