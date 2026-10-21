@@ -102,6 +102,13 @@ export default {
 				en: 'An alert informs without interrupting; an alert dialog stops the user until they respond.',
 				ja: 'アラートは作業を中断させずに知らせ、アラートダイアログは応答するまで作業を止める。'
 			}
+		},
+		{
+			id: 'callout',
+			diff: {
+				en: 'An alert tells the user something important and is announced right away; a callout sets apart helpful extra information and stays quiet.',
+				ja: 'アラートは重要なことを知らせてすぐに読み上げられ、注釈ブロックは役立つ補足を区別して見せるだけで読み上げで割り込まない。'
+			}
 		}
 	],
 	sources: [

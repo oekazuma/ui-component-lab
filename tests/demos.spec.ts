@@ -833,3 +833,12 @@ test('segmented control: arrow keys move the single selection and the figure fol
 	await demo.getByText('Month', { exact: true }).click();
 	await expect(segment('Month')).toBeChecked();
 });
+
+test('callout: a bordered block of examples that is not announced like an alert', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/callout/');
+	const callout = demo.locator('.callout');
+	await expect(callout).toContainText('Examples of ID documents');
+	await expect(callout.getByRole('listitem')).toHaveCount(3);
+	await expect(callout).not.toHaveCSS('border-style', 'none');
+	await expect(demo.locator('[role="alert"], [role="status"], [aria-live]')).toHaveCount(0);
+});
