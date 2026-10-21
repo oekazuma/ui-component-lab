@@ -79,8 +79,8 @@ export default {
 				ja: 'ページに分けず、下端に近づくと続きを自動で読み込む'
 			},
 			harm: {
-				en: 'Keyboard users run into problems. It is hard to find an item seen earlier, and the scroll bar no longer shows how much is left.',
-				ja: 'キーボードで操作する人が使いにくくなる。前に見た項目を探し直しにくく、スクロールバーからは残りの量が分からなくなる。'
+				en: 'Keyboard-only users have to Tab through the items one by one, which makes reaching the end a long task. It is hard to find an item seen earlier, and the scroll bar no longer shows how much is left.',
+				ja: 'キーボードだけで操作する人は項目を 1 つずつ Tab キーで進むしかなく、終わりまで行くのに長くかかる。前に見た項目を探し直しにくく、スクロールバーからは残りの量が分からなくなる。'
 			},
 			instead: {
 				en: 'For lists where people look for a particular item, split the results into pages and show the current page among the others.',
@@ -133,9 +133,14 @@ export default {
 			checkedAt: '2026-10-21'
 		},
 		{
+			label: 'Nielsen Norman Group: Infinite Scrolling: When to Use It, When to Avoid It',
+			url: 'https://www.nngroup.com/articles/infinite-scrolling-tips/',
+			checkedAt: '2026-10-22'
+		},
+		{
 			label: 'Nielsen Norman Group: Infinite Scrolling Is Not for Every Website',
 			url: 'https://www.nngroup.com/articles/infinite-scrolling/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;
