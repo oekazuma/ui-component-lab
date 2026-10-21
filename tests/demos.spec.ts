@@ -736,3 +736,18 @@ test('combobox: the button opens every option, the typed part is marked, and no 
 	await input.fill('');
 	await expect(status).toHaveText('');
 });
+
+test('accordion: question headings, the first one open, and a list and a link in the bodies', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/accordion/');
+	const header = (name: string) => demo.getByRole('heading', { name }).getByRole('button');
+	await expect(header('How long does shipping take?')).toHaveAttribute('aria-expanded', 'true');
+	await expect(header('Can I return an item?')).toHaveAttribute('aria-expanded', 'false');
+	await expect(header('How can I pay?')).toHaveAttribute('aria-expanded', 'false');
+	await expect(demo.getByRole('region', { name: 'How long does shipping take?' })).toBeVisible();
+
+	await header('How can I pay?').click();
+	await expect(demo.getByRole('region', { name: 'How can I pay?' }).getByRole('listitem')).toHaveCount(3);
+	await header('Can I return an item?').click();
+	await page.keyboard.press('Tab');
+	await expect(demo.getByRole('region', { name: 'Can I return an item?' }).getByRole('link', { name: 'Request a return' })).toBeFocused();
+});

@@ -28,6 +28,10 @@ export default {
 		{
 			en: 'Some accordions allow only one open section at a time; this demo lets each section open independently.',
 			ja: '同時に1つしか開けないものもある。このデモでは各項目を独立して開閉できる。'
+		},
+		{
+			en: 'In this demo, the headings are questions, and the first section starts open. The sections hold a paragraph, a link and a list; Tab reaches the link only while its section is open.',
+			ja: 'このデモでは、見出しを質問の形にし、先頭の項目を開いた状態で始める。項目の中には段落、リンク、リストを置いている。リンクには、その項目が開いている間だけ Tab で移れる。'
 		}
 	],
 	keyboard: [
@@ -41,6 +45,14 @@ export default {
 		}
 	],
 	usage: [
+		{
+			en: 'Write each heading as a short summary of its content, such as a question in an FAQ.',
+			ja: '見出しには、よくある質問なら「会員登録の手順は？」のように、中身を要約した文を書く。'
+		},
+		{
+			en: 'Decide whether sections start open or closed. Opening the first one shows that the ones after it are collapsed in the same way.',
+			ja: '項目を開いた状態で始めるか、閉じた状態で始めるかを決める。先頭の項目を開いておくと、続く項目も同じように畳まれていることが伝わる。'
+		},
 		{
 			en: 'To collapse supplementary content within a single section, use a disclosure instead.',
 			ja: '1つのセクションの中の補足を畳むなら、ディスクロージャーを使う。'
@@ -128,6 +140,16 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「アコーディオン」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/accordion/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「アコーディオン（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/accordion/usage/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: accordion',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/accordion',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
