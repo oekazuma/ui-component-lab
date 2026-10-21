@@ -28,6 +28,10 @@ export default {
 			ja: '点線の枠にファイルを落としても選べる。このデモはネイティブの `<input type="file">` を使い、周りの枠へのドロップも受け付けている。'
 		},
 		{
+			en: 'In this demo, every file is checked for its type (PDF, PNG or JPEG) and size (up to 10 MB), whether it was chosen with the button or dropped. A file that fails stays in the list with an error message under its name, and an error message for the whole field appears under the number of chosen files.',
+			ja: 'このデモでは、ボタンで選んだファイルもドロップしたファイルも、形式（PDF・PNG・JPEG）と大きさ（10MBまで）を確かめる。条件に合わないファイルは一覧に残し、ファイル名の下にエラー文を出す。選んだ件数の下には、全体のエラー文を出す。'
+		},
+		{
 			en: 'Each chosen file can be removed from the list. Removing moves focus back to the file button.',
 			ja: '選んだファイルは1件ずつ解除できる。解除するとフォーカスはファイル選択ボタンに戻る。'
 		}
@@ -48,8 +52,8 @@ export default {
 			ja: '選んだファイルは番号付きリストにし、各行にファイル名・大きさ・解除ボタンを置く。何も選んでいないときは「未選択」と表示する。'
 		},
 		{
-			en: 'The `accept` attribute only narrows what the file picker shows. Check the files on the server too.',
-			ja: '`accept` 属性はファイル選択画面での絞り込みにすぎない。サーバー側でもファイルを確かめる。'
+			en: 'The `accept` attribute only narrows what the file picker shows, and does not apply to dropped files. Check the type and size in the page, and on the server too.',
+			ja: '`accept` 属性はファイル選択画面での絞り込みにすぎず、ドロップしたファイルには効かない。ページの中で形式と大きさを確かめ、サーバー側でも確かめる。'
 		}
 	],
 	misuse: [

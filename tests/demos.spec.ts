@@ -122,3 +122,35 @@ test('menu and split button: the menu takes its name from the button that opens 
 	await demo.getByRole('button', { name: 'More save options' }).click();
 	await expect(demo.getByRole('menu', { name: 'More save options' })).toBeVisible();
 });
+
+test('file upload: dropped files are checked for type and size, with an error on each row', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/file-upload/');
+	const dataTransfer = await page.evaluateHandle(() => {
+		const dt = new DataTransfer();
+		dt.items.add(new File(['memo'], 'notes.txt', { type: 'text/plain' }));
+		dt.items.add(new File([new Uint8Array(11 * 1024 * 1024)], 'scan.pdf', { type: 'application/pdf' }));
+		dt.items.add(new File([new Uint8Array(2048)], 'photo.PNG', { type: 'image/png' }));
+		return dt;
+	});
+	await demo.locator('.drop').dispatchEvent('drop', { dataTransfer });
+
+	const rows = demo.getByRole('listitem');
+	await expect(rows).toHaveCount(3);
+	await expect(rows.nth(0)).toContainText('Only PDF, PNG or JPEG files can be chosen.');
+	await expect(rows.nth(1)).toContainText('scan.pdf (11 MB)');
+	await expect(rows.nth(1)).toContainText('This file is larger than 10 MB.');
+	await expect(rows.nth(2)).toHaveText(/^photo\.PNG \(2 KB\)\s*Remove/);
+	await expect(demo.getByText('Some of the chosen files have errors.', { exact: false })).toBeVisible();
+});
+
+test('file upload: a file chosen with the button is also checked for size', async ({ page }) => {
+	const demo = await openDemo(page, 'ja/components/file-upload/', /^デモ:/);
+	await demo.locator('input[type="file"]').setInputFiles({
+		name: 'scan.pdf',
+		mimeType: 'application/pdf',
+		buffer: Buffer.alloc(11 * 1024 * 1024)
+	});
+	const row = demo.getByRole('listitem');
+	await expect(row).toContainText('scan.pdf（11MB）');
+	await expect(row).toContainText('ファイルサイズが10MBを超えています。');
+});
