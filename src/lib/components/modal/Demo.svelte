@@ -5,72 +5,44 @@
 
 	const text = {
 		en: {
-			open: 'Delete file…',
-			title: 'Delete this file?',
-			body: 'This action cannot be undone.',
-			cancel: 'Cancel',
-			confirm: 'Delete',
-			result: { cancel: 'Canceled', confirm: 'Deleted' }
+			open: 'Show receipt number',
+			title: 'Your receipt number',
+			number: '2026-1021-0042',
+			body: 'Keep this number. You will need it to check the status of your application.',
+			close: 'Close'
 		},
 		ja: {
-			open: 'ファイルを削除…',
-			title: 'このファイルを削除しますか？',
-			body: 'この操作は取り消せません。',
-			cancel: 'キャンセル',
-			confirm: '削除',
-			result: { cancel: 'キャンセルしました', confirm: '削除しました' }
+			open: '受付番号を表示',
+			title: 'あなたの受付番号',
+			number: '2026-1021-0042',
+			body: '申請の状況を確かめるときに必要です。控えておいてください。',
+			close: '閉じる'
 		}
 	};
 
 	const uid = $props.id();
 	let dialog: HTMLDialogElement;
-	let result = $state<'cancel' | 'confirm'>();
-
-	// ネイティブの <dialog> の showModal() が、背景の操作無効化・Esc で閉じる・フォーカス復帰を担う
-	function open() {
-		// Esc で閉じたときは returnValue が更新されないため、前回の値を消しておく
-		dialog.returnValue = '';
-		dialog.showModal();
-	}
 </script>
 
-<div class="demo">
-	<button type="button" class="btn" onclick={open}>{text[lang].open}</button>
-	<p role="status">{result ? text[lang].result[result] : ''}</p>
+<!-- ネイティブの <dialog> の showModal() が、背景の操作無効化・Esc で閉じる・フォーカス復帰を担う -->
+<button type="button" class="btn" onclick={() => dialog.showModal()}>{text[lang].open}</button>
 
-	<dialog
-		bind:this={dialog}
-		aria-labelledby="{uid}-title"
-		aria-describedby="{uid}-body"
-		onclose={() => (result = dialog.returnValue === 'confirm' ? 'confirm' : 'cancel')}
-	>
-		<h2 id="{uid}-title">{text[lang].title}</h2>
-		<p id="{uid}-body">{text[lang].body}</p>
-		<form method="dialog" class="actions">
-			<button class="btn" value="cancel">{text[lang].cancel}</button>
-			<button class="btn btn-primary" value="confirm">{text[lang].confirm}</button>
-		</form>
-	</dialog>
-</div>
+<dialog bind:this={dialog} aria-labelledby="{uid}-title" aria-describedby="{uid}-number {uid}-body">
+	<h2 id="{uid}-title">{text[lang].title}</h2>
+	<p id="{uid}-number" class="number">{text[lang].number}</p>
+	<p id="{uid}-body">{text[lang].body}</p>
+	<!-- 操作ボタンがないので閉じるボタンだけを置く。ボタンが1つのときは中央に置く（DADS ボタンの使い方） -->
+	<form method="dialog" class="actions">
+		<button class="btn">{text[lang].close}</button>
+	</form>
+</dialog>
 
 <style>
-	.demo {
-		text-align: center;
-	}
-
-	p[role='status'] {
-		min-height: 1.6em;
-		margin: 0.75rem 0 0;
-		color: var(--color-muted);
-		font-size: 0.875rem;
-	}
-
 	dialog {
 		width: min(calc(100% - 2rem), 24rem);
 		padding: 1.25rem;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
-		text-align: left;
 	}
 
 	dialog::backdrop {
@@ -82,10 +54,20 @@
 		font-size: 1.125rem;
 	}
 
+	p {
+		margin: 0;
+	}
+
+	.number {
+		margin-bottom: 0.5rem;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+
 	.actions {
 		display: flex;
-		justify-content: flex-end;
-		gap: 0.5rem;
+		justify-content: center;
 		margin-top: 1rem;
 	}
 </style>

@@ -14,8 +14,8 @@ export default {
 		ja: 'ページの上に重ねて表示し、閉じるまで背後のページを操作できなくするウィンドウ。'
 	},
 	appearance: {
-		en: 'A box in the middle of the screen over a dimmed background, usually with a title, a message, and buttons such as Cancel and OK.',
-		ja: '暗くした背景の上、画面中央に箱が出る。タイトル、本文、「キャンセル」「OK」などのボタンを持つことが多い。'
+		en: 'A box in the middle of the screen over a dimmed background, usually with a title, a message, and buttons such as Cancel and OK. This demo is a short message with a receipt number and a single Close button in the center.',
+		ja: '暗くした背景の上、画面中央に箱が出る。タイトル、本文、「キャンセル」「OK」などのボタンを持つことが多い。このデモは受付番号を知らせる短いメッセージで、中央に「閉じる」ボタンだけがある。'
 	},
 	behavior: [
 		{
@@ -29,6 +29,10 @@ export default {
 		{
 			en: 'When it closes, focus returns to the element that opened it.',
 			ja: '閉じると、開くきっかけになった要素にフォーカスが戻る。'
+		},
+		{
+			en: 'In this demo, the message is complete in itself and asks for no decision, so the only button is Close, and focus moves to it when the dialog opens. For confirming a destructive action, see the alert dialog.',
+			ja: 'このデモのメッセージはダイアログの中で完結し、判断を求めないので、ボタンは「閉じる」だけで、開くとそこにフォーカスが移る。取り消せない操作の確認は、アラートダイアログを参照。'
 		}
 	],
 	keyboard: [
@@ -53,6 +57,10 @@ export default {
 		{
 			en: 'Add a separate close button only when there are no action buttons.',
 			ja: '操作ボタンがないときだけ、別に閉じるボタンを置く。'
+		},
+		{
+			en: 'When the dialog has only one button, place it in the center.',
+			ja: 'ダイアログのボタンが1つだけのときは、中央に置く。'
 		}
 	],
 	misuse: [
@@ -136,7 +144,12 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「モーダルダイアログ」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/modal-dialog/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ボタン（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/button/usage/',
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',

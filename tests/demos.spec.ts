@@ -154,3 +154,42 @@ test('file upload: a file chosen with the button is also checked for size', asyn
 	await expect(row).toContainText('scan.pdf（11MB）');
 	await expect(row).toContainText('ファイルサイズが10MBを超えています。');
 });
+
+test('modal: a short notice with a single centered Close button that returns focus', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/modal/');
+	const open = demo.getByRole('button', { name: 'Show receipt number' });
+	await open.click();
+	const dialog = page.getByRole('dialog', { name: 'Your receipt number' });
+	await expect(dialog.getByRole('button')).toHaveCount(1);
+	const close = dialog.getByRole('button', { name: 'Close' });
+	await expect(close).toBeFocused();
+	const d = (await dialog.boundingBox())!;
+	const c = (await close.boundingBox())!;
+	expect(Math.abs(c.x + c.width / 2 - (d.x + d.width / 2))).toBeLessThan(2);
+	await page.keyboard.press('Enter');
+	await expect(dialog).toBeHidden();
+	await expect(open).toBeFocused();
+});
+
+test('alert dialog: Discard empties the note; Keep editing and Esc leave it', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/alert-dialog/');
+	const note = demo.getByRole('textbox', { name: 'Note' });
+	const open = demo.getByRole('button', { name: 'Discard note…' });
+	const dialog = page.getByRole('alertdialog');
+	await note.fill('Buy milk');
+
+	await open.click();
+	await expect(dialog.getByRole('button', { name: 'Keep editing' })).toBeFocused();
+	await page.keyboard.press('Escape');
+	await expect(note).toHaveValue('Buy milk');
+
+	await open.click();
+	await dialog.getByRole('button', { name: 'Keep editing' }).click();
+	await expect(note).toHaveValue('Buy milk');
+
+	await open.click();
+	await dialog.getByRole('button', { name: 'Discard' }).click();
+	await expect(note).toHaveValue('');
+	await expect(open).toBeFocused();
+	await expect(demo.locator('[role="status"]')).toHaveText('Discarded');
+});

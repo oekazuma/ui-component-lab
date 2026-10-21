@@ -10,8 +10,8 @@ export default {
 		ja: '緊急のメッセージで作業を中断させ、応答を待つモーダルダイアログ。'
 	},
 	appearance: {
-		en: 'Looks like a modal dialog: a box over a dimmed page with a short title, a message and two buttons, one of them for the risky action.',
-		ja: 'モーダルダイアログと同じく、暗くした背景の上に箱が出る。短いタイトルと本文、危険な操作のボタンを含む2つのボタンを持つ。'
+		en: 'Looks like a modal dialog: a box over a dimmed page with a short title, a message and two buttons, one of them for the risky action. In this demo, “Discard” is the same filled button as other main actions; the safer “Keep editing” is on the left and “Discard” on the right.',
+		ja: 'モーダルダイアログと同じく、暗くした背景の上に箱が出る。短いタイトルと本文、危険な操作のボタンを含む2つのボタンを持つ。このデモの「破棄」は、ほかの主な操作と同じ塗りのボタンで、安全な「編集を続ける」を左、「破棄」を右に置く。'
 	},
 	behavior: [
 		{
@@ -25,6 +25,10 @@ export default {
 		{
 			en: 'Like any modal, the page behind cannot be used until it closes, and focus then returns to the button that opened it.',
 			ja: '他のモーダルと同じく、閉じるまで背後のページは使えず、閉じると開いたボタンにフォーカスが戻る。'
+		},
+		{
+			en: 'In this demo, the note stays on the page and the dialog only asks for confirmation. “Discard” empties the note; “Keep editing” or Esc leaves it as it was.',
+			ja: 'このデモでは、メモ欄はページに置いたままで、ダイアログは確認だけをする。「破棄」を選ぶとメモが空になり、「編集を続ける」か Esc ではそのまま残る。'
 		}
 	],
 	keyboard: [
@@ -98,6 +102,11 @@ export default {
 			checkedAt: '2026-10-21'
 		},
 		{
+			label: 'WAI-ARIA APG: Alert Dialog Example',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/examples/alertdialog/',
+			checkedAt: '2026-10-21'
+		},
+		{
 			label: 'MDN: ARIA alertdialog role',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role',
 			checkedAt: '2026-10-21'
@@ -110,6 +119,11 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「モーダルダイアログ」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/modal-dialog/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ボタン（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/button/usage/',
 			checkedAt: '2026-10-21'
 		},
 		{
