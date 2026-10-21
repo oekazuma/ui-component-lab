@@ -62,7 +62,7 @@ export default {
 			ja: '各段階の状態（完了・現在・スキップ・エラー）を表示する。'
 		},
 		{
-			en: 'For a short wait such as loading, use a progress indicator. For moving between pages in a sequence, use pagination.',
+			en: 'For a short wait such as loading, use a progress bar. For moving between pages in a sequence, use pagination.',
 			ja: '読み込み待ちのような一時的な状態にはプログレスインジケーターを、順番に並んだページの行き来にはページネーションを使う。'
 		}
 	],
@@ -111,6 +111,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ステップナビゲーション」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/step-navigation/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Apple Human Interface Guidelines: Steppers',
+			url: 'https://developer.apple.com/design/human-interface-guidelines/steppers',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

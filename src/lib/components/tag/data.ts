@@ -84,6 +84,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「チップタグ」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/chip-tag/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「チップラベル」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/chip-label/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
