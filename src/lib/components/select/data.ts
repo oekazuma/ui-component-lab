@@ -6,7 +6,7 @@ export default {
 	names: { en: 'Select', ja: 'セレクトボックス' },
 	aliases: [
 		{ name: 'Pop-up button', source: 'Apple Human Interface Guidelines', url: 'https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons' },
-		{ name: 'Dropdown', source: 'Carbon Design System (custom-styled variant)', url: 'https://carbondesignsystem.com/components/dropdown/usage/' },
+		{ name: 'Dropdown', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/dropdown/usage/' },
 		{ name: 'セレクトボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/select/' }
 	],
 	summary: {

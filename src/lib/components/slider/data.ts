@@ -7,7 +7,7 @@ export default {
 	aliases: [
 		{
 			name: 'Range',
-			source: 'HTML (<input type="range">)',
+			source: 'HTML',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/range'
 		}
 	],
