@@ -33,7 +33,7 @@ export default {
 	keyboard: [
 		{
 			key: 'Tab / Shift + Tab',
-			action: { en: 'Moves between headings and content.', ja: '見出しと内容の間を移動する。' }
+			action: { en: 'Moves between the headings, and into any focusable elements inside open sections.', ja: '見出しの間を移動する。開いた項目の中にフォーカスできる要素があれば、そこにも移る。' }
 		},
 		{
 			key: 'Enter / Space',

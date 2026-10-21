@@ -45,11 +45,15 @@ export default {
 			}
 		},
 		{
-			key: '↓ / ↑',
+			key: '↑ / ↓',
 			action: {
-				en: 'On the arrow, opens the menu. In the menu, moves between items.',
-				ja: '矢印ではメニューを開く。メニュー内では項目を移動する。'
+				en: 'On the arrow, opens the menu: ↓ focuses the first item, ↑ the last. In the menu, moves between items.',
+				ja: '矢印では、↓ で最初の項目、↑ で最後の項目にフォーカスしてメニューを開く。メニュー内では項目を移動する。'
 			}
+		},
+		{
+			key: 'Home / End',
+			action: { en: 'In the menu, moves to the first / last item.', ja: 'メニュー内で最初・最後の項目へ移る。' }
 		},
 		{
 			key: 'Esc',
