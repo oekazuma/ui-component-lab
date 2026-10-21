@@ -32,3 +32,12 @@ test('misuse: checkbox demo explains why it starts with a box checked', async ({
 	await page.goto('ja/components/checkbox/');
 	await expect(page.getByRole('region', { name: '挙動' })).toContainText('このデモでは');
 });
+
+test('misuse: each entry sets the avoided use and the alternative apart', async ({ page }) => {
+	await page.goto('ja/components/carousel/');
+	const entry = page.locator('.misuse > li').first();
+	const bg = (sel: string) => entry.locator(sel).evaluate((e) => getComputedStyle(e).backgroundColor);
+	const [dont, harm, instead] = [await bg('h3'), await bg('.harm'), await bg('.instead')];
+	expect(new Set([dont, harm, instead]).size).toBe(3);
+	await expect(entry.locator('.instead dt')).toHaveText('代わりに');
+});

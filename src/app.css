@@ -12,6 +12,8 @@
 	--color-danger-text: #ffffff; /* on --color-danger: 6.6:1 */
 	--color-danger-surface: #fef3f2;
 	--color-danger-on-surface: #8a1c12; /* on --color-danger-surface: 8.6:1 */
+	--color-success-surface: #ecfdf3; /* --color-text on it: 16.0:1 */
+	--color-success-on-surface: #085d3a; /* on --color-success-surface: 7.6:1 */
 	--color-focus-inner: #ffd43d;
 	--color-focus-outer: #000000;
 	--radius: 6px;
@@ -37,6 +39,8 @@
 		--color-danger-text: #1a0b08; /* on --color-danger: 8.7:1 */
 		--color-danger-surface: #3b1a16;
 		--color-danger-on-surface: #ffb3a8; /* on --color-danger-surface: 9.1:1 */
+		--color-success-surface: #12291f; /* --color-text on it: 12.8:1 */
+		--color-success-on-surface: #8ee6b5; /* on --color-success-surface: 10.4:1 */
 		--color-focus-outer: #ffffff;
 
 		color-scheme: dark;
@@ -56,6 +60,8 @@
 	--color-danger-text: #1a0b08;
 	--color-danger-surface: #3b1a16;
 	--color-danger-on-surface: #ffb3a8;
+	--color-success-surface: #12291f;
+	--color-success-on-surface: #8ee6b5;
 	--color-focus-outer: #ffffff;
 
 	color-scheme: dark;

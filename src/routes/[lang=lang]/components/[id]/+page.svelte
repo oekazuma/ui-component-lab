@@ -169,16 +169,27 @@
 				<h2 id="misuse">{ui.misuse}</h2>
 				<ul class="misuse">
 					{#each data.misuse as m (m.pattern.en)}
+						<!-- 避けたい使い方（赤）と代わりの方法（緑）を色と記号の両方で分け、どちらの話かを一目で分かるようにする -->
 						<li>
 							<h3>
-								<CodeText text={m.pattern[lang]} />
-								{#if m.deceptive}<span class="deceptive">{ui.deceptive}</span>{/if}
+								<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" /></svg>
+								<span>
+									<CodeText text={m.pattern[lang]} />
+									{#if m.deceptive}<span class="deceptive">{ui.deceptive}</span>{/if}
+								</span>
 							</h3>
 							<dl>
-								<dt>{ui.harm}</dt>
-								<dd><CodeText text={m.harm[lang]} /></dd>
-								<dt>{ui.instead}</dt>
-								<dd><CodeText text={m.instead[lang]} /></dd>
+								<div class="harm">
+									<dt>{ui.harm}</dt>
+									<dd><CodeText text={m.harm[lang]} /></dd>
+								</div>
+								<div class="instead">
+									<dt>
+										<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5" /></svg>
+										{ui.instead}
+									</dt>
+									<dd><CodeText text={m.instead[lang]} /></dd>
+								</div>
 							</dl>
 						</li>
 					{/each}
@@ -352,19 +363,72 @@
 	}
 
 	.misuse li {
-		padding-left: 0.75rem;
-		border-left: 3px solid var(--color-border);
+		overflow: hidden;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius);
 	}
 
 	.misuse h3 {
-		margin: 0 0 0.5rem;
+		display: flex;
+		gap: 0.5rem;
+		margin: 0;
+		padding: 0.625rem 1rem;
+		background: var(--color-danger-surface);
 		font-size: 1.0625rem;
+		line-height: 1.5;
 	}
 
-	/* 項目の見出しと同じ太字にすると階層が読み取れないので、ラベルは小さく灰色にする */
+	.misuse svg {
+		flex-shrink: 0;
+		margin-top: 0.3em;
+		fill: none;
+		stroke-width: 2.25;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	.misuse h3 svg {
+		stroke: var(--color-danger-on-surface);
+	}
+
+	.misuse dl {
+		margin: 0;
+	}
+
+	.harm,
+	.instead {
+		padding: 0.75rem 1rem;
+	}
+
+	.harm {
+		background: var(--color-bg);
+	}
+
+	.instead {
+		border-top: 1px solid var(--color-border);
+		background: var(--color-success-surface);
+	}
+
 	.misuse dt {
+		display: flex;
+		gap: 0.375rem;
+		align-items: center;
+		margin-bottom: 0.125rem;
 		color: var(--color-muted);
-		font-size: 0.8125rem;
+		font-size: 0.875rem;
+	}
+
+	.instead dt {
+		color: var(--color-success-on-surface);
+	}
+
+	.instead dt svg {
+		margin-top: 0;
+		stroke: currentColor;
+	}
+
+	.misuse dd {
+		margin: 0;
 	}
 
 	.deceptive {
