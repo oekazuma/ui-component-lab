@@ -103,6 +103,13 @@ export default {
 				en: 'A drawer slides in from an edge and is often tall; a modal dialog appears in the middle of the screen.',
 				ja: 'ドロワーは端からすべり出る縦長のパネルで、モーダルは画面の中央に出る。'
 			}
+		},
+		{
+			id: 'hamburger-menu',
+			diff: {
+				en: 'A drawer is the panel that slides in from the edge; a hamburger menu button is the button that often opens it.',
+				ja: 'ドロワーは端からすべり出るパネルで、ハンバーガーメニューボタンはそれを開くことが多いボタン。'
+			}
 		}
 	],
 	sources: [

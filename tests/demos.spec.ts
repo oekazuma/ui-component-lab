@@ -764,3 +764,21 @@ test('disclosure: a closed note for an exception sits under a form field', async
 	await summary.click();
 	await expect(demo.getByText(/^Leave the postal code blank/)).toBeVisible();
 });
+
+test('hamburger menu: the Menu button opens a named menu with a Close button, and Escape returns focus', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/hamburger-menu/');
+	const open = demo.getByRole('button', { name: 'Menu', exact: true });
+	const dialog = page.getByRole('dialog', { name: 'Menu' });
+
+	await open.click();
+	await expect(dialog).toBeVisible();
+	await expect(dialog.getByRole('button', { name: 'Close' })).toBeVisible();
+	await dialog.getByRole('link', { name: 'News' }).click();
+	await expect(dialog).toBeHidden();
+	await expect(demo.locator('[role="status"]')).toHaveText('Going to: News');
+
+	await open.click();
+	await page.keyboard.press('Escape');
+	await expect(dialog).toBeHidden();
+	await expect(open).toBeFocused();
+});

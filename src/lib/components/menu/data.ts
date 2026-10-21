@@ -137,6 +137,13 @@ export default {
 				en: 'A menu hides actions in a list that opens on demand; a toolbar keeps a group of controls visible in a row.',
 				ja: 'メニューは操作を開いたリストにしまい、ツールバーは操作部品を1列に並べて常に見せる。'
 			}
+		},
+		{
+			id: 'hamburger-menu',
+			diff: {
+				en: 'A menu button opens a short list of actions right under itself; a hamburger menu button opens the site’s navigation links.',
+				ja: 'メニューボタンは自分のすぐ下に操作の短い一覧を開き、ハンバーガーメニューボタンはサイトのナビゲーションのリンクを開く。'
+			}
 		}
 	],
 	sources: [
