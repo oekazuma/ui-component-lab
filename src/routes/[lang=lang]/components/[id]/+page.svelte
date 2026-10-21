@@ -35,7 +35,41 @@
 			.filter(([, shown]) => shown)
 			.map(([id]) => id)
 	);
+
+	// 画面の上 3 割に入った見出しを「今読んでいる節」とする。
+	// ponytail: 上へ戻るときは見出しが上端の帯に入るまで前の節のまま。気になるなら見出しの位置をスクロールごとに比べる
+	let current = $state('');
+	// 最後の節の見出しは、ページの終わりまでスクロールしても上の帯に届かないことがある。本文の終わりが見えたら最後の節とする
+	let atEnd = $state(false);
+	let end: HTMLElement;
+	let shown = $derived(atEnd ? toc.at(-1) : current);
+	$effect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const e of entries) if (e.isIntersecting) current = e.target.id;
+			},
+			{ rootMargin: '0px 0px -70% 0px' }
+		);
+		for (const id of toc) {
+			const heading = document.getElementById(id);
+			if (heading) observer.observe(heading);
+		}
+		const endObserver = new IntersectionObserver(([e]) => (atEnd = e.isIntersecting));
+		endObserver.observe(end);
+		return () => {
+			observer.disconnect();
+			endObserver.disconnect();
+		};
+	});
 </script>
+
+{#snippet tocLinks()}
+	<ul>
+		{#each toc as id (id)}
+			<li><a href="#{id}" aria-current={id === shown ? 'location' : undefined}>{ui[id]}</a></li>
+		{/each}
+	</ul>
+{/snippet}
 
 <p class="back">
 	<a href={homePath(lang)}>← {ui.backToList}</a>
@@ -53,11 +87,7 @@
 <div class="layout">
 	<nav class="toc" aria-labelledby="toc">
 		<p id="toc">{ui.toc}</p>
-		<ul>
-			{#each toc as id (id)}
-				<li><a href="#{id}">{ui[id]}</a></li>
-			{/each}
-		</ul>
+		{@render tocLinks()}
 	</nav>
 
 	<div class="content">
@@ -65,6 +95,12 @@
 			<h2 id="demo" class="visually-hidden">{ui.demo}</h2>
 			<DemoFrame {demo} {lang} label="{ui.demo}: {data.names[lang]}" />
 		</section>
+
+		<!-- 狭い画面では右の目次を出さないので、デモの下に開閉式で置く -->
+		<details class="toc-mobile">
+			<summary>{ui.toc}</summary>
+			{@render tocLinks()}
+		</details>
 
 		{#if data.aliases.length}
 			<section aria-labelledby="aliases">
@@ -175,6 +211,7 @@
 				{/each}
 			</ul>
 		</section>
+		<div bind:this={end}></div>
 	</div>
 </div>
 
@@ -207,13 +244,39 @@
 		}
 	}
 
+	.toc-mobile {
+		max-width: 48rem;
+		margin: -1rem 0 2rem;
+		padding: 0.5rem 0.75rem;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius);
+		font-size: 0.9375rem;
+	}
+
+	.toc-mobile summary {
+		color: var(--color-muted);
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	.toc-mobile ul {
+		margin-top: 0.5rem;
+	}
+
+	@media (min-width: 64rem) {
+		.toc-mobile {
+			display: none;
+		}
+	}
+
 	.toc p {
 		margin: 0 0 0.5rem;
 		color: var(--color-muted);
 		font-weight: 700;
 	}
 
-	.toc ul {
+	.toc ul,
+	.toc-mobile ul {
 		display: grid;
 		gap: 0.375rem;
 		margin: 0;
@@ -221,12 +284,19 @@
 		list-style: none;
 	}
 
-	.toc a {
+	.toc a,
+	.toc-mobile a {
 		color: inherit;
 	}
 
-	.toc a:hover {
+	.toc a:hover,
+	.toc-mobile a:hover {
 		color: var(--color-accent);
+	}
+
+	.toc a[aria-current] {
+		color: var(--color-accent);
+		font-weight: 700;
 	}
 	.back {
 		margin: 0 0 1rem;

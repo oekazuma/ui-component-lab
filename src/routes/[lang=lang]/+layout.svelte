@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	import { filter } from '#lib/filter.svelte.js';
 	import { t } from '#lib/i18n.js';
+	import SiteFooter from '#lib/SiteFooter.svelte';
 	import SiteHeader from '#lib/SiteHeader.svelte';
 	import ThemeToggle from '#lib/ThemeToggle.svelte';
 	import type { LayoutProps } from './$types';
@@ -25,6 +26,9 @@
 		if (page.url.pathname !== home) goto(home, { reset: false }).then(() => scrollTo(0, 0));
 	};
 </script>
+
+<!-- 一覧ページはデモごとに操作できる部品があり、ヘッダーの先へ進むまでに何度も Tab を押すので、先頭に飛ばす手段を置く -->
+<a class="skip" href="#main">{t(params.lang).skipToContent}</a>
 
 <SiteHeader home={homePath(params.lang)}>
 	<search>
@@ -49,9 +53,11 @@
 	</div>
 </SiteHeader>
 
-<main>
+<main id="main" tabindex="-1">
 	{@render children()}
 </main>
+
+<SiteFooter lang={params.lang} />
 
 <style>
 	.actions {
@@ -99,6 +105,28 @@
 			flex-basis: 100%;
 			order: 1;
 		}
+	}
+
+	/* フォーカスが来たときだけ画面に出す */
+	.skip {
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		z-index: 1;
+		padding: 0.5rem 1rem;
+		border-radius: var(--radius);
+		background: var(--color-bg);
+		translate: 0 -200%;
+	}
+
+	.skip:focus {
+		translate: 0;
+	}
+
+	/* スキップリンクで移ったときのフォーカス先。読み始める位置を示すだけなので枠は出さない */
+	main:focus {
+		outline: none;
+		box-shadow: none;
 	}
 
 	main {
