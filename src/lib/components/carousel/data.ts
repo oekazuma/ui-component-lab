@@ -61,8 +61,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Do not put information that everyone must read in it, and keep one topic per carousel.',
-			ja: '必ず読んでほしい情報は載せず、1つのカルーセルには1つの話題だけを入れる。'
+			en: 'Keep one topic per carousel.',
+			ja: '1つのカルーセルには1つの話題だけを入れる。'
 		}
 	],
 	misuse: [
@@ -75,6 +75,28 @@ export default {
 			instead: {
 				en: 'Let users change slides themselves. If slides must rotate, provide a button that stops rotation, and pause while focus or the pointer is on the carousel.',
 				ja: 'スライドは利用者の操作で切り替える。どうしても自動で切り替えるなら、止めるボタンを置き、フォーカスやマウスがカルーセル上にある間は止める。'
+			}
+		},
+		{
+			pattern: { en: 'Putting must-read information only in a carousel', ja: '必ず読んでほしい情報をカルーセルにだけ載せる' },
+			harm: {
+				en: 'Many people scroll past a carousel, so slides after the first often go unseen. Someone who sees only one slide can get the wrong idea about the organization.',
+				ja: 'カルーセルを読み飛ばす人が多く、2枚目以降のスライドは見られないことが多い。1枚しか見なかった人は、その組織について誤った印象を持つことがある。'
+			},
+			instead: {
+				en: 'Also place important information elsewhere on the page or in the site navigation, or use a single static image instead of a carousel.',
+				ja: '大事な情報はページのほかの場所やサイトのナビゲーションにも置く。または、カルーセルをやめて1枚の固定した画像にする。'
+			}
+		},
+		{
+			pattern: { en: 'Using small dots as the only way to pick a slide', ja: 'スライドを選ぶ手段を小さな点だけにする' },
+			harm: {
+				en: 'People cannot tell what a dot will show before selecting it, and dots are easy to miss, especially on mobile.',
+				ja: '点を押すと何が出るのかを前もって知ることができない。点は特にスマートフォンで見落としやすい。'
+			},
+			instead: {
+				en: 'Use previous and next buttons, or give each slide a control that names or shows its content, such as a label or thumbnail. Make the controls large enough to read and select.',
+				ja: '前後のボタンで切り替えるか、スライドごとにラベルやサムネイルなど中身が分かる操作部品を付ける。操作部品は読めて押せる大きさにする。'
 			}
 		}
 	],
@@ -95,6 +117,16 @@ export default {
 		}
 	],
 	sources: [
+		{
+			label: 'Nielsen Norman Group: Carousel Usability: Designing an Effective UI for Websites with Content Overload',
+			url: 'https://www.nngroup.com/articles/designing-effective-carousels/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
+			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
+			checkedAt: '2026-10-21'
+		},
 		{
 			label: 'WAI-ARIA APG: Carousel (Slide Show or Image Rotator) Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/',

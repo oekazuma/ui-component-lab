@@ -42,16 +42,37 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Do not use it just to save space or to hide important information.',
-			ja: 'スペースを節約するためだけに使ったり、重要な情報を隠したりしない。'
-		},
-		{
 			en: 'To collapse supplementary content within a single section, use a disclosure instead.',
 			ja: '1つのセクションの中の補足を畳むなら、ディスクロージャーを使う。'
 		},
 		{
 			en: 'Do not nest it inside a list, table, accordion or disclosure.',
 			ja: 'リスト、テーブル、アコーディオン、ディスクロージャーの中には入れない。'
+		}
+	],
+	misuse: [
+		{
+			pattern: { en: 'Collapsing information that most users need', ja: '多くの利用者が必要とする情報を閉じた項目に入れる' },
+			harm: {
+				en: 'People have to open sections one by one to find what they need, which adds clicks, and they can miss essential information.',
+				ja: '必要な情報を探すために項目を1つずつ開くことになり、操作が増えるうえ、大事な情報を見落とすことがある。'
+			},
+			instead: {
+				en: 'Show information that most people need directly on the page, even if the page gets longer. Use an accordion for content where each person needs only some of the sections.',
+				ja: '多くの人が必要とする情報は、ページが長くなってもそのまま表示する。アコーディオンは、人によって必要な項目が違う内容に使う。'
+			}
+		},
+		{
+			pattern: { en: 'Putting fees or contract terms inside a collapsed section', ja: '料金や契約の条件を閉じた項目の中に入れる' },
+			harm: {
+				en: 'People agree to a purchase or contract without seeing the costs or conditions. They may pay for things they did not choose, or find out about a fee only after they have been charged.',
+				ja: '費用や条件を見ないまま購入や契約に同意してしまう。選んでいないものにお金を払ったり、請求されてから手数料に気づいたりする。'
+			},
+			instead: {
+				en: 'Show the total cost and the renewal and cancellation terms in the open, next to the button that confirms the purchase or agreement.',
+				ja: '合計の金額と、自動更新や解約の条件は、購入や同意を確定するボタンの近くに、開いた状態で表示する。'
+			},
+			deceptive: true
 		}
 	],
 	related: [
@@ -78,6 +99,21 @@ export default {
 		}
 	],
 	sources: [
+		{
+			label: 'Nielsen Norman Group: Accordions on Desktop: When and How to Use',
+			url: 'https://www.nngroup.com/articles/accordions-on-desktop/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'FTC Staff Report: Bringing Dark Patterns to Light (2022)',
+			url: 'https://www.ftc.gov/system/files/ftc_gov/pdf/P214800%20Dark%20Patterns%20Report%209.14.2022%20-%20FINAL.pdf',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deceptive Patterns: Sneaking',
+			url: 'https://www.deceptive.design/types/sneaking',
+			checkedAt: '2026-10-21'
+		},
 		{
 			label: 'Open UI: Accordion',
 			url: 'https://open-ui.org/components/accordion.research',
