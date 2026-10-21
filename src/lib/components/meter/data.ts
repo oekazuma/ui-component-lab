@@ -8,7 +8,7 @@ export default {
 		{ name: 'Meter', source: 'React Aria', url: 'https://react-aria.adobe.com/Meter' },
 		{
 			name: 'Gauge',
-			source: 'HTML (<meter>)',
+			source: 'HTML',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meter'
 		}
 	],

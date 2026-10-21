@@ -11,6 +11,25 @@ for (const id of readdirSync(dir)) {
 const byId = new Map(all.map((d) => [d.id, d]));
 const errors: string[] = [];
 
+// 別名の source はこの一覧から選ぶ。表記がそろっていないとデザインシステム別の索引で別物として並ぶ
+const designSystems = [
+	'デジタル庁デザインシステム',
+	'Carbon Design System',
+	'Ant Design',
+	'React Aria',
+	'WAI-ARIA APG',
+	'MUI',
+	'Apple Human Interface Guidelines',
+	'Open UI',
+	'GOV.UK Design System',
+	'Bootstrap',
+	'Material Design 3',
+	'HTML',
+	'Fluent UI React v9',
+	'Atlassian Design System',
+	'Angular Material'
+];
+
 for (const d of all) {
 	// 詳細ページの {#each} のキーと同じ式。重複すると本番でもハイドレーションで落ちる
 	const keyed: [string, string[]][] = [
@@ -44,6 +63,8 @@ for (const d of all) {
 	}
 	for (const url of [...d.sources.map((s) => s.url), ...d.aliases.map((a) => a.url)])
 		if (!url.startsWith('https://')) errors.push(`${d.id}: non-https url ${url}`);
+	for (const a of d.aliases)
+		if (!designSystems.includes(a.source)) errors.push(`${d.id}: unknown alias source ${a.source}`);
 
 	// 英日の両方を埋める（Text 型は空文字を防げない）
 	const texts = [
