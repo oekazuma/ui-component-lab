@@ -448,3 +448,13 @@ test('card: cards in a grid with linked headings and category labels, and an ad 
 	await page.setViewportSize({ width: 375, height: 800 });
 	expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
 });
+
+test('description list: each row has a Change link named after its row, and fits a phone screen', async ({ page }) => {
+	await page.setViewportSize({ width: 375, height: 800 });
+	const demo = await openDemo(page, 'en/components/description-list/');
+	// 見えている文字は「Change」だけで、どの行かは読み上げ用の隠れた文字で補う
+	for (const name of ['Change name', 'Change date of birth', 'Change email', 'Change address'])
+		await expect(demo.getByRole('link', { name, exact: true })).toHaveText(name);
+	await expect(demo.locator('dd.actions a .visually-hidden')).toHaveCount(4);
+	expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
+});

@@ -19,16 +19,34 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'It is not interactive. It is used for reading.',
-			ja: '操作する部品ではなく、読むためのもの。'
+			en: 'The list itself is not interactive; it is used for reading. On a confirmation page, each row can have a link such as “Change” that goes back to the question.',
+			ja: 'リスト自体は操作する部品ではなく、読むためのもの。確認画面では、行ごとに設問へ戻る「変更」などのリンクを置くことがある。'
 		},
 		{
-			en: 'This demo uses `<dl>` with a `<dt>` (name) and `<dd>` (value) in each row, so screen readers can treat them as pairs.',
-			ja: 'このデモは `<dl>` を使い、各行を `<dt>`（項目名）と `<dd>`（値）で書いている。スクリーンリーダーが組として扱える。'
+			en: 'This demo uses `<dl>` with a `<dt>` (name) and `<dd>` (value) in each row, so screen readers can treat them as pairs. The link goes in another `<dd>` in the same row.',
+			ja: 'このデモは `<dl>` を使い、各行を `<dt>`（項目名）と `<dd>`（値）で書いている。スクリーンリーダーが組として扱える。リンクは同じ行の別の `<dd>` に置く。'
+		},
+		{
+			en: 'Each link shows only “Change”, and visually hidden text adds the row name, so it is read as “Change name” even out of context, such as in a list of links.',
+			ja: 'リンクの見た目は「変更」だけにし、見えない文字で項目名を補って、リンクの一覧などで単独で読まれても「氏名を変更」と伝わるようにする。'
+		},
+		{
+			en: 'In this demo, the Change links do not go anywhere. On narrow screens, the name moves above the value.',
+			ja: 'このデモでは、「変更」のリンクを押しても移動しない。狭い画面では、項目名を値の上に出す。'
 		}
 	],
 	keyboard: [
-		{ key: '—', action: { en: 'None.', ja: 'なし。' } }
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between the Change links.', ja: '「変更」のリンクの間を移動する。' } },
+		{ key: 'Enter', action: { en: 'Follows the focused link.', ja: 'フォーカス中のリンクを開く。' } }
+	],
+	variations: [
+		{
+			name: { en: 'With row actions', ja: '行ごとの操作付き' },
+			description: {
+				en: 'Adds a link such as “Change” at the end of each row. Rows with missing answers get a link to the question in the value instead.',
+				ja: '各行の末尾に「変更」などのリンクを添えたもの。回答のない行には、値の場所に設問へのリンクを置く。'
+			}
+		}
 	],
 	usage: [
 		{
@@ -65,7 +83,12 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「説明リスト」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/description-list/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Summary list',
+			url: 'https://design-system.service.gov.uk/components/summary-list/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
