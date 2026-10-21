@@ -431,14 +431,18 @@
 		margin: 0;
 	}
 
+	/* 見出しの帯も赤みなので、枠線だけでは溶け込む。塗りつぶして帯の中で目立たせる */
 	.deceptive {
-		margin-left: 0.4em;
-		padding: 0 0.5em;
-		border: 1px solid var(--color-danger);
+		display: inline-block;
+		margin-left: 0.5em;
+		padding: 0.1em 0.6em;
 		border-radius: 999px;
-		color: var(--color-danger);
-		font-size: 0.75rem;
-		font-weight: 400;
+		background: var(--color-danger);
+		color: var(--color-danger-text);
+		font-size: 0.8125rem;
+		font-weight: 700;
+		line-height: 1.5;
+		vertical-align: 0.1em;
 		white-space: nowrap;
 	}
 

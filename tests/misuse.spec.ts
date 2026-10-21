@@ -41,3 +41,15 @@ test('misuse: each entry sets the avoided use and the alternative apart', async 
 	expect(new Set([dont, harm, instead]).size).toBe(3);
 	await expect(entry.locator('.instead dt')).toHaveText('代わりに');
 });
+
+test('misuse: the deceptive pattern label is filled and readable on the heading band', async ({ page }) => {
+	await page.goto('ja/components/checkbox/');
+	const badge = page.locator('.deceptive').first();
+	const style = await badge.evaluate((e) => {
+		const s = getComputedStyle(e);
+		return { bg: s.backgroundColor, size: parseFloat(s.fontSize), band: getComputedStyle(e.closest('h3')!).backgroundColor };
+	});
+	expect(style.bg).not.toBe('rgba(0, 0, 0, 0)');
+	expect(style.bg).not.toBe(style.band);
+	expect(style.size).toBeGreaterThanOrEqual(13);
+});
