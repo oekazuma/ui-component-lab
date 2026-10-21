@@ -367,3 +367,25 @@ test('toast: with Undo and Close it stays until dismissed, and every press is an
 	await expect(archive).toBeFocused();
 	await expect(demo.getByText('1 message in the inbox')).toBeVisible();
 });
+
+test('progress bar: starts indeterminate, can be canceled, and names itself after the result', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/progress-bar/');
+	const start = demo.getByRole('button', { name: 'Start upload' });
+	const cancel = demo.getByRole('button', { name: 'Cancel' });
+	const status = demo.getByRole('status');
+
+	await start.click();
+	await expect(demo.getByRole('progressbar', { name: 'Uploading photo.jpg' })).not.toHaveAttribute('value');
+	await expect(status).toHaveText('Upload started');
+	await expect(start).toHaveAttribute('aria-disabled', 'true');
+	await expect(demo.getByRole('progressbar')).toHaveAttribute('value', /^[1-9]/);
+	await cancel.click();
+	await expect(status).toHaveText('Upload canceled');
+	await expect(demo.getByRole('progressbar', { name: 'Upload of photo.jpg canceled' })).toBeVisible();
+	await expect(cancel).toHaveAttribute('aria-disabled', 'true');
+
+	await start.click();
+	await expect(demo.getByRole('progressbar', { name: 'Uploaded photo.jpg' })).toHaveAttribute('value', '100', { timeout: 10_000 });
+	await expect(status).toHaveText('Upload complete');
+	await expect(start).not.toHaveAttribute('aria-disabled', 'true');
+});
