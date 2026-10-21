@@ -83,12 +83,21 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Open it on click, not on hover.',
-			ja: 'ホバーではなくクリックで開く。'
-		},
-		{
 			en: 'Align the panel with the left or right edge of its button.',
 			ja: 'パネルはボタンの左端か右端にそろえる。'
+		}
+	],
+	misuse: [
+		{
+			pattern: { en: 'Opening the menu as soon as the pointer passes over it', ja: 'マウスが上を通っただけでメニューを開く' },
+			harm: {
+				en: 'Moving the pointer past the button on the way to something else opens a menu nobody asked for. The open menu can cover the page, so people have to close it before they can reach what they came for.',
+				ja: 'ほかの場所へマウスを動かす途中で、望んでいないメニューが開く。開いたメニューがページの内容を覆い、目的の場所へ進む前に閉じる手間がかかる。'
+			},
+			instead: {
+				en: 'Open the menu on click or tap. If it must open on hover, wait about 0.3 to 0.5 seconds after the pointer stops before showing it.',
+				ja: 'メニューはクリックやタップで開く。どうしてもホバーで開くなら、マウスが止まってから 0.3〜0.5 秒ほど待って表示する。'
+			}
 		}
 	],
 	related: [
@@ -139,6 +148,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「メニューリストボックス」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/menu-list-box/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Nielsen Norman Group: Timing Guidelines for Exposing Hidden Content',
+			url: 'https://www.nngroup.com/articles/timing-exposing-content/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

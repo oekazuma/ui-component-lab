@@ -46,6 +46,22 @@ export default {
 			ja: 'aria-label でツールバーに名前を付け、何のための操作群か読み上げられるようにする。'
 		}
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Placing a Delete button right next to frequently used buttons',
+				ja: '「削除」ボタンを、よく使うボタンのすぐ隣に置く'
+			},
+			harm: {
+				en: 'People mistake it for the neighboring button and press Delete by accident, which can lose their data.',
+				ja: '隣のボタンと取り違えて「削除」を誤って押し、データを失うことがある。'
+			},
+			instead: {
+				en: 'Put space or a divider between Delete and the other buttons, or move it to a separate group at the end of the toolbar.',
+				ja: '「削除」とほかのボタンの間に余白や区切り線を入れるか、ツールバーの端の別のグループに分けて置く。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'menu',
@@ -72,6 +88,11 @@ export default {
 			label: 'Open UI: Toolbar Element (Explainer)',
 			url: 'https://open-ui.org/components/toolbar.explainer/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
+			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

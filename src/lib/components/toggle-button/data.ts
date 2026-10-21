@@ -30,6 +30,22 @@ export default {
 	keyboard: [
 		{ key: 'Enter / Space', action: { en: 'Presses or releases the button.', ja: 'ボタンを押す・戻す。' } }
 	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Toggling aria-pressed while also changing the label, such as Play to Pause',
+				ja: 'aria-pressed を切り替えながら、ラベルも変える（「再生」を「一時停止」にするなど）'
+			},
+			harm: {
+				en: 'A button whose label has just changed to Pause is also marked as pressed, so the label and the state contradict each other and confuse people.',
+				ja: 'ラベルが「一時停止」に変わったボタンが「押されている」状態にもなり、ラベルと状態が食い違って混乱を招く。'
+			},
+			instead: {
+				en: 'Change only one of them. For Bold or Mute, keep the label fixed and show the state with aria-pressed. For Play and Pause, where people using voice input say the label they see, change the label and make it an ordinary button without aria-pressed.',
+				ja: '変えるのはどちらか一方だけにする。太字やミュートは、ラベルを変えずに状態を aria-pressed で伝える。再生と一時停止のように、音声入力の人が見えているラベルを口にする場面では、ラベルを変え、aria-pressed のない普通のボタンにする。'
+			}
+		}
+	],
 	related: [
 		{
 			id: 'switch',
@@ -57,12 +73,17 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Button Pattern (Toggle button)',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'MUI: Toggle Button',
 			url: 'https://mui.com/material-ui/react-toggle-button/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Inclusive Components: Toggle Buttons',
+			url: 'https://inclusive-components.design/toggle-button/',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;

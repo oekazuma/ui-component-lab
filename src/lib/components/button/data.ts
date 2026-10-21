@@ -62,10 +62,52 @@ export default {
 		{
 			en: 'Make the target at least 44 × 44 CSS px.',
 			ja: '押せる領域は 44 × 44 CSS px 以上にする。'
+		}
+	],
+	misuse: [
+		{
+			pattern: {
+				en: 'Disabling the submit button until the form is complete',
+				ja: '入力が終わるまで送信ボタンを無効にしておく'
+			},
+			harm: {
+				en: 'People can see the button but cannot tell why it does not respond, so they get stuck or give up. A disabled button cannot be reached with Tab, so people using a screen reader with a keyboard have trouble finding where it is.',
+				ja: 'ボタンは見えているのに押せない理由が分からず、操作が止まったり、途中でやめたりしてしまう。disabled のボタンは Tab で到達できないため、スクリーンリーダーとキーボードを使う人はボタンの位置をつかみにくい。'
+			},
+			instead: {
+				en: 'Keep the button enabled. Mark required fields, and if it is pressed too early, explain what is missing with an error message. If it must be disabled, state the condition for enabling it right next to the button.',
+				ja: 'ボタンは押せるままにし、必須の項目に印を付ける。早く押されたら、足りない項目をエラーメッセージで案内する。どうしても無効にするなら、押せるようになる条件をボタンのすぐ近くに書く。'
+			}
 		},
 		{
-			en: 'Avoid disabled buttons. If one is unavoidable, explain nearby what is needed to enable it.',
-			ja: '無効状態のボタンは避ける。使う場合は、押せるようになる条件を近くに書く。'
+			pattern: {
+				en: 'Emphasizing the Agree button and making Disagree hard to notice',
+				ja: '「同意する」ボタンを目立たせ、「同意しない」ボタンを目立たなくする'
+			},
+			harm: {
+				en: 'People are steered toward the choice that suits the provider, such as agreeing to the use of their personal data, and may end up “agreeing” to something they never really consented to.',
+				ja: '個人情報の利用への同意のように、提供する側に都合のよい選択へ誘導される。本人が納得して同意していないのに、同意したことになりかねない。'
+			},
+			instead: {
+				en: 'Give both choices the same size and the same button style, and let the labels alone tell them apart.',
+				ja: '「同意する」と「同意しない」を同じ大きさ、同じ種類のボタンにし、違いはラベルだけで示す。'
+			},
+			deceptive: true
+		},
+		{
+			pattern: {
+				en: 'Wording the decline button to make people feel guilty',
+				ja: '断るボタンの文言で後ろめたさを感じさせる'
+			},
+			harm: {
+				en: 'Turning down the offer is made to feel shameful, so people are pressured into choices they would not otherwise make.',
+				ja: '断ることを恥ずかしく感じるように仕向けられ、本来なら選ばない選択をしてしまう。'
+			},
+			instead: {
+				en: 'Label the decline button with a neutral description of what happens, such as “Not now” or “Don’t subscribe”.',
+				ja: '「今はしない」「登録しない」のように、押すと何が起きるかだけを中立な言葉で書く。'
+			},
+			deceptive: true
 		}
 	],
 	related: [
@@ -112,7 +154,22 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ボタン」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/button/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ボタン（アクセシビリティ）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/button/accessibility/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
+			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deceptive Patterns: Confirmshaming',
+			url: 'https://www.deceptive.design/types/confirmshaming',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
