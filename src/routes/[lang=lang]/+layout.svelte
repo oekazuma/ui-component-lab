@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	import { filter } from '#lib/filter.svelte.js';
 	import { t } from '#lib/i18n.js';
+	import LangSwitcher from '#lib/LangSwitcher.svelte';
 	import SiteFooter from '#lib/SiteFooter.svelte';
 	import SiteHeader from '#lib/SiteHeader.svelte';
 	import ThemeToggle from '#lib/ThemeToggle.svelte';
@@ -11,9 +12,6 @@
 
 	let { children, params }: LayoutProps = $props();
 
-	let other = $derived(params.lang === 'en' ? 'ja' : 'en');
-	// 同じページの別言語版。pathname は base を含むのでそのまま使える
-	let otherHref = $derived(page.url.pathname.replace(`/${params.lang}/`, `/${other}/`));
 	// <html lang> は prerender 時に hooks.server.ts が入れる。言語切替はクライアント側の遷移なので、ここで追従させる
 	$effect(() => {
 		document.documentElement.lang = params.lang;
@@ -50,7 +48,7 @@
 	</search>
 	<div class="actions">
 		<ThemeToggle label={t(params.lang).darkMode} />
-		<a href={otherHref} hreflang={other} lang={other}>{t(params.lang).switchLang}</a>
+		<LangSwitcher lang={params.lang} label={t(params.lang).language} />
 	</div>
 </SiteHeader>
 

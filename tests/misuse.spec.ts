@@ -17,6 +17,7 @@ test('misuse: section is absent without entries', async ({ page }) => {
 test('misuse: labels follow the language switch', async ({ page }) => {
 	await page.goto('ja/components/carousel/');
 	await page.waitForLoadState('networkidle');
+	await page.getByRole('button', { name: /言語/ }).click();
 	await page.getByRole('link', { name: 'English' }).click();
 	await expect(page.getByRole('heading', { name: 'Misuses to avoid' })).toBeVisible();
 	await expect(page.getByRole('region', { name: 'Misuses to avoid' })).toContainText('Harm');

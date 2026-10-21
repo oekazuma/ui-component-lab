@@ -81,6 +81,7 @@ test('language switch: updates <html lang> and resets the demo state', async ({ 
 	await demo.getByRole('menuitem', { name: 'Rename' }).click();
 	await expect(demo.locator('[role="status"]')).toHaveText('Chosen: Rename');
 
+	await page.getByRole('button', { name: /Language/ }).click();
 	await page.locator('a[hreflang="ja"]').click();
 	await page.waitForURL(/\/ja\/components\/menu\/$/);
 

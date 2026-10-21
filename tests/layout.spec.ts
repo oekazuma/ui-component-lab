@@ -107,3 +107,38 @@ test('external links: the arrow stays on the same line as the last character', a
 	);
 	expect(apart).toEqual([]);
 });
+
+test('language: the header button opens a list of languages and switches', async ({ page }) => {
+	await page.goto('ja/components/tabs/');
+	await page.waitForLoadState('networkidle');
+	const button = page.getByRole('button', { name: /言語/ });
+	await expect(button).toHaveAttribute('aria-expanded', 'false');
+	await expect(button).toContainText('日本語');
+	await button.click();
+	await expect(button).toHaveAttribute('aria-expanded', 'true');
+	await expect(page.getByRole('link', { name: '日本語' })).toHaveAttribute('aria-current', 'true');
+	await page.getByRole('link', { name: 'English' }).click();
+	await page.waitForURL(/\/en\/components\/tabs\/$/);
+	await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+	await expect(page.getByRole('button', { name: /Language/ })).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('language: Escape closes the list and returns focus to the button', async ({ page }) => {
+	await page.goto('en/');
+	await page.waitForLoadState('networkidle');
+	const button = page.getByRole('button', { name: /Language/ });
+	await button.click();
+	await page.getByRole('link', { name: '日本語' }).focus();
+	await page.keyboard.press('Escape');
+	await expect(button).toHaveAttribute('aria-expanded', 'false');
+	await expect(button).toBeFocused();
+	await expect(page.getByRole('link', { name: '日本語' })).toBeHidden();
+});
+
+test('language: on phones the switcher stays on the first header row with the logo', async ({ page }) => {
+	await page.setViewportSize({ width: 375, height: 812 });
+	await page.goto('ja/');
+	const logo = await page.getByRole('banner').getByRole('link', { name: 'UI Component Lab' }).boundingBox();
+	const button = await page.getByRole('button', { name: /言語/ }).boundingBox();
+	expect(Math.abs(logo!.y + logo!.height / 2 - (button!.y + button!.height / 2))).toBeLessThan(8);
+});
