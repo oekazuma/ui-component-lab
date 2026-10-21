@@ -231,3 +231,13 @@ test('popover: Tab goes through its link and out, and it stays open', async ({ p
 	expect(await pop.evaluate((el) => el.contains(document.activeElement))).toBe(false);
 	await expect(pop).toBeVisible();
 });
+
+test('button: real labels from low to high priority, left to right, with an underlined text button', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/button/');
+	const buttons = demo.locator('.row button');
+	await expect(buttons).toHaveText(['Cancel', 'Save draft', 'Submit']);
+	await expect(buttons.nth(0)).toHaveCSS('text-decoration-line', 'underline');
+	await expect(buttons.nth(2)).toHaveClass(/btn-primary/);
+	await buttons.nth(1).click();
+	await expect(demo.getByRole('status')).toHaveText('“Save draft” was pressed');
+});

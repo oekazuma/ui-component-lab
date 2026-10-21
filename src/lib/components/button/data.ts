@@ -10,8 +10,8 @@ export default {
 		ja: 'フォームの送信やダイアログを開くなど、操作を実行する部品。'
 	},
 	appearance: {
-		en: 'A short label (sometimes with an icon) inside a clickable area, usually with a background or border. The most important action is often filled with the accent color.',
-		ja: '短いラベル（アイコン付きのこともある）を、背景色や枠線のある押せる領域で囲んだ形。最も重要な操作はアクセントカラーで塗りつぶされることが多い。'
+		en: 'A short label (sometimes with an icon) inside a clickable area, usually with a background or border. The most important action is often filled with the accent color. In this demo, “Cancel”, “Save draft” and “Submit” sit in a row as a text button, an outline button and a filled button.',
+		ja: '短いラベル（アイコン付きのこともある）を、背景色や枠線のある押せる領域で囲んだ形。最も重要な操作はアクセントカラーで塗りつぶされることが多い。このデモでは「キャンセル」「下書き保存」「送信する」を、テキストボタン、アウトラインボタン、塗りボタンとして横に並べている。'
 	},
 	behavior: [
 		{
@@ -33,24 +33,24 @@ export default {
 	],
 	variations: [
 		{
-			name: { en: 'Primary', ja: 'プライマリ' },
+			name: { en: 'Filled (primary)', ja: '塗りボタン（プライマリ）' },
 			description: {
-				en: 'Filled with the accent color. Used for the main action of a screen.',
-				ja: 'アクセントカラーで塗りつぶしたもの。画面の主な操作に使う。'
+				en: 'Filled with the accent color, with a white label. Used for the main action of a screen.',
+				ja: 'アクセントカラーで塗りつぶし、ラベルを白にしたもの。画面の主な操作に使う。'
 			}
 		},
 		{
-			name: { en: 'Secondary', ja: 'セカンダリ' },
+			name: { en: 'Outline (secondary)', ja: 'アウトラインボタン（セカンダリ）' },
 			description: {
-				en: 'Outlined or lightly filled. Used next to a primary button for alternative actions.',
-				ja: '枠線だけ、または薄い背景のもの。プライマリの隣で代わりの操作に使う。'
+				en: 'A colored border and label on a white background. Used next to a filled button for alternative actions.',
+				ja: '白い背景に、色の付いた枠線とラベルのもの。塗りボタンの隣で代わりの操作に使う。'
 			}
 		},
 		{
-			name: { en: 'Ghost', ja: 'ゴースト' },
+			name: { en: 'Text (tertiary)', ja: 'テキストボタン（ターシャリ）' },
 			description: {
-				en: 'Text only, with no border or background. Used for low-emphasis actions.',
-				ja: '枠線も背景もない文字だけのもの。目立たせなくてよい操作に使う。'
+				en: 'No border or background; the colored label is underlined so it still reads as something to press. Used for low-emphasis actions. Some design systems call it a ghost button.',
+				ja: '枠線も背景もなく、色の付いたラベルに下線を引いて押せることを示すもの。目立たせなくてよい操作に使う。ゴーストボタンと呼ぶデザインシステムもある。'
 			}
 		}
 	],
@@ -58,6 +58,10 @@ export default {
 		{
 			en: 'Use one primary (filled) button per screen, and show priority by shape (filled, outline, text) as well as color.',
 			ja: '塗りのボタンは1画面に1つにし、優先度は色だけでなく形（塗り、枠線、テキスト）でも示す。'
+		},
+		{
+			en: 'When buttons sit side by side, put the most important one on the right and the least important on the left, so actions such as Cancel or Back go on the left. A single button in a modal dialog goes in the center.',
+			ja: 'ボタンを横に並べるときは、最も優先度の高いボタンを右端に、低いボタンを左に置き、「キャンセル」「戻る」のような操作は左にする。モーダルダイアログのボタンが1つだけなら中央に置く。'
 		},
 		{
 			en: 'Make the target at least 44 × 44 CSS px.',
@@ -154,6 +158,11 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ボタン」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/button/',
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ボタン（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/button/usage/',
 			checkedAt: '2026-10-21'
 		},
 		{
