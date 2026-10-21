@@ -19,12 +19,16 @@ export default {
 			ja: '写真がないときや読み込めないときは、頭文字や汎用のアイコンで代わりに表示する。'
 		},
 		{
-			en: 'If the person’s name is already next to it, the avatar is decorative; otherwise it needs the name as alternative text.',
-			ja: '隣に名前があるならアバターは飾り扱いにし、ないなら名前を代替テキストとして付ける。'
+			en: 'If the person’s name is already next to it, the avatar is decorative (`alt=""`), so the name is not read twice; otherwise it needs the name as alternative text.',
+			ja: '隣に名前があるならアバターは飾り扱い（`alt=""`）にして、名前が2回読み上げられないようにする。ないなら名前を代替テキストとして付ける。'
 		},
 		{
-			en: 'In this demo the initials are hidden from screen readers and each full name is read instead.',
-			ja: 'このデモでは頭文字をスクリーンリーダーから隠し、代わりにフルネームを読ませている。'
+			en: 'In this demo, the member list shows no names, so the photo has the name as its `alt`, and each initial is hidden from screen readers with the full name read instead. In the line below, the name is shown next to the photo, so the photo is decorative.',
+			ja: 'このデモのメンバー一覧には名前が見えていないので、写真の `alt` に名前を入れ、頭文字はスクリーンリーダーから隠して代わりにフルネームを読ませている。下の行では写真の隣に名前があるので、写真は飾り扱いにしている。'
+		},
+		{
+			en: 'In this demo, the second photo is an empty data URL that fails to load without a network request, and the `error` event switches it to the initial.',
+			ja: 'このデモでは、2人目の写真を、通信せずに読み込みに失敗する空の data URL にしている。`error` イベントで頭文字に切り替わる。'
 		}
 	],
 	keyboard: [
@@ -53,7 +57,7 @@ export default {
 		{
 			label: 'MUI: Avatar',
 			url: 'https://mui.com/material-ui/react-avatar/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
 		},
 		{
 			label: 'Understanding Success Criterion 1.1.1: Non-text Content (WCAG 2.2)',

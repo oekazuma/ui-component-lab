@@ -493,3 +493,24 @@ test('list: each item title is a link, like a DADS resource list', async ({ page
 	await page.goto('ja/components/list/');
 	await expect(page.getByRole('region', { name: '別名' }).getByText('リソースリスト')).toBeVisible();
 });
+
+test('avatar: a photo, a photo that fails and falls back to the initial, and a decorative one next to a name, with no console noise', async ({ page }) => {
+	const noise: string[] = [];
+	page.on('console', (m) => ['error', 'warning'].includes(m.type()) && noise.push(m.text()));
+	page.on('response', (r) => r.status() >= 400 && noise.push(`${r.status()} ${r.url()}`));
+	const demo = await openDemo(page, 'en/components/avatar/');
+
+	const members = demo.getByRole('list', { name: 'Project members' });
+	const photo = members.getByRole('img', { name: 'Aiko Tanaka' });
+	await expect(photo).toBeVisible();
+	expect(await photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+	const fallback = members.getByRole('listitem').nth(1);
+	await expect(fallback.locator('img')).toHaveCount(0);
+	await expect(fallback).toHaveText(/B\s*Ben Carter/);
+	await expect(fallback.locator('.avatar')).toHaveAttribute('aria-hidden', 'true');
+
+	const byline = demo.locator('.byline');
+	await expect(byline).toContainText('Aiko Tanaka');
+	await expect(byline.locator('img')).toHaveAttribute('alt', '');
+	expect(noise).toEqual([]);
+});
