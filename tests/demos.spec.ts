@@ -751,3 +751,16 @@ test('accordion: question headings, the first one open, and a list and a link in
 	await page.keyboard.press('Tab');
 	await expect(demo.getByRole('region', { name: 'Can I return an item?' }).getByRole('link', { name: 'Request a return' })).toBeFocused();
 });
+
+test('disclosure: a closed note for an exception sits under a form field', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/disclosure/');
+	const field = demo.getByRole('textbox', { name: 'Postal code' });
+	const summary = demo.locator('summary', { hasText: 'If you live outside Japan' });
+	await expect(demo.locator('details')).not.toHaveAttribute('open');
+	const f = (await field.boundingBox())!;
+	const s = (await summary.boundingBox())!;
+	expect(s.y).toBeGreaterThanOrEqual(f.y + f.height);
+
+	await summary.click();
+	await expect(demo.getByText(/^Leave the postal code blank/)).toBeVisible();
+});

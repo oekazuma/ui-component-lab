@@ -28,6 +28,10 @@ export default {
 		{
 			en: 'This demo uses the native `<details>` and `<summary>` elements, which handle the toggling and keyboard support.',
 			ja: 'このデモはネイティブの `<details>` と `<summary>` 要素を使っており、開閉とキーボード操作はブラウザが受け持つ。'
+		},
+		{
+			en: 'In this demo, the disclosure sits under a postal code field and explains what to do for people who live outside Japan, an exception that most people filling in the form do not need.',
+			ja: 'このデモでは、郵便番号の欄の下にディスクロージャーを置き、海外に住む人向けの入力方法を畳んでいる。フォームに記入するほとんどの人には要らない、例外の説明にあたる。'
 		}
 	],
 	keyboard: [
@@ -38,8 +42,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Use it for supplementary content within a section, such as a transcript or a chart\'s data.',
-			ja: '文字起こしやグラフの元データなど、セクションの中の補足に使う。'
+			en: 'Use it for supplementary content within a section, such as a note on an exception under a form field, the data behind a chart, or the transcript of a video.',
+			ja: '申し込みフォームの欄の下に置く例外の説明、グラフの元データの表、動画の文字起こしなど、セクションの中の補足に使う。'
 		},
 		{
 			en: 'Make the title describe the content. Avoid vague text like "Show more", and do not switch it between "Open" and "Close".',
@@ -109,7 +113,12 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ディスクロージャー」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/disclosure/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステム HTML 実装例: disclosure',
+			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/disclosure',
+			checkedAt: '2026-10-21'
 		}
 	]
 } satisfies ComponentData;
