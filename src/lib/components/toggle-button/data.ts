@@ -67,6 +67,13 @@ export default {
 				en: 'A toggle button is one on/off button; a toolbar groups several buttons and moves between them with arrow keys.',
 				ja: 'トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーは複数のボタンをまとめて矢印キーで行き来させる。'
 			}
+		},
+		{
+			id: 'segmented-control',
+			diff: {
+				en: 'A toggle button turns a single option on or off; a segmented control picks one of several segments.',
+				ja: 'トグルボタンは 1 つの機能をオンかオフにし、セグメンテッドコントロールは複数の区画から 1 つを選ぶ。'
+			}
 		}
 	],
 	sources: [

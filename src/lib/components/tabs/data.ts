@@ -138,6 +138,13 @@ export default {
 				en: 'A tab shows its own panel of content in place; a menubar item opens a list of commands.',
 				ja: 'タブはその場で自分のパネルの内容を見せ、メニューバーの項目は操作の一覧を開く。'
 			}
+		},
+		{
+			id: 'segmented-control',
+			diff: {
+				en: 'Tabs switch between separate panels, each with its own content; a segmented control switches between closely related options or views of the same content.',
+				ja: 'タブはそれぞれ別の内容を持つパネルを切り替え、セグメンテッドコントロールは近い関係にある選択肢や同じ内容の表示を切り替える。'
+			}
 		}
 	],
 	sources: [

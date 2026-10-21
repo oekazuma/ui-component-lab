@@ -98,6 +98,13 @@ export default {
 				en: 'Radio buttons show every option with its own label; a listbox scrolls and is one tab stop.',
 				ja: 'ラジオボタンは選択肢ごとにラベル付きで全部を見せ、リストボックスはスクロールでき Tab では1か所として扱われる。'
 			}
+		},
+		{
+			id: 'segmented-control',
+			diff: {
+				en: 'Radio buttons list choices with round markers and can hold longer labels; a segmented control shows a few short choices as joined buttons in one row.',
+				ja: 'ラジオボタンは丸い印を付けて選択肢を並べ、長いラベルも置ける。セグメンテッドコントロールは少しの短い選択肢をつながったボタンとして 1 列に並べる。'
+			}
 		}
 	],
 	sources: [

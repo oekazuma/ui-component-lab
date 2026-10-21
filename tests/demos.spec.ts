@@ -814,3 +814,22 @@ test('mega menu: a panel lists the section page and all its pages, and opening a
 	await page.mouse.click(1, 1);
 	await expect(children).toHaveAttribute('aria-expanded', 'false');
 });
+
+test('segmented control: arrow keys move the single selection and the figure follows', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/segmented-control/');
+	const group = demo.getByRole('group', { name: 'Period' });
+	const segment = (name: string) => group.getByRole('radio', { name });
+
+	await expect(segment('Day')).toBeChecked();
+	await segment('Day').focus();
+	await page.keyboard.press('ArrowRight');
+	await expect(segment('Week')).toBeChecked();
+	await expect(demo).toContainText('Average per day this week');
+	await page.keyboard.press('ArrowLeft');
+	await page.keyboard.press('ArrowLeft');
+	await expect(segment('Year')).toBeChecked();
+	await expect(group.locator(':checked')).toHaveCount(1);
+
+	await demo.getByText('Month', { exact: true }).click();
+	await expect(segment('Month')).toBeChecked();
+});
