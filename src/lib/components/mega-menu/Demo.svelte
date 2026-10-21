@@ -62,9 +62,10 @@
 	let nav: HTMLElement;
 	let buttons: HTMLButtonElement[] = $state([]);
 
-	// 開いている間だけ、ナビゲーションの外を押したら閉じる
+	// 開いている間だけ、ナビゲーションの外を押したら閉じる。
+	// 一覧ページのサムネイル（inert）は開いたまま閉じられないので、付けると常設になる。そこでは付けない
 	$effect(() => {
-		if (open === null) return;
+		if (open === null || nav.closest('[inert]')) return;
 		const onpointerdown = (e: PointerEvent) => {
 			if (!nav.contains(e.target as Node)) open = null;
 		};
