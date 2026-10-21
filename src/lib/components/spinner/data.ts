@@ -38,8 +38,8 @@ export default {
 		{
 			key: '—',
 			action: {
-				en: 'None. The demo’s load button uses Enter / Space.',
-				ja: 'なし。デモの読み込みボタンは Enter / Space で押せる。'
+				en: 'None. The demo’s button that opens the comments page uses Enter / Space.',
+				ja: 'なし。デモのコメントのページを開くボタンは Enter / Space で押せる。'
 			}
 		}
 	],
