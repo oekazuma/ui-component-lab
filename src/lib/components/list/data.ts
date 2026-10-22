@@ -45,12 +45,12 @@ export default {
 	],
 	usage: [
 		{
-			en: 'DADS calls a list of items that each have several parts, such as a title, supporting text, links or choices, a resource list. A list of titles only is a bulleted list (箇条書きリスト).',
-			ja: 'タイトル・補足の文・リンク・選択肢など、いくつかの情報を持つ項目の一覧を、DADS ではリソースリストと呼びます。タイトルだけを並べるものは箇条書きリストにあたります。'
+			en: 'The Digital Agency Design System calls a list of items that each have several parts, such as a title, supporting text, links or choices, a resource list. A list of titles only is a bulleted list (箇条書きリスト).',
+			ja: 'タイトル・補足の文・リンク・選択肢など、いくつかの情報を持つ項目の一覧を、デジタル庁デザインシステムではリソースリストと呼びます。タイトルだけを並べるものは箇条書きリストにあたります。'
 		},
 		{
-			en: 'DADS uses `<ul>` for every bulleted list, including numbered ones, and writes the numbers as text. Numbers made by `<ol>` cannot be copied and shift when items are added or removed. The GOV.UK Design System, by contrast, uses a numbered list made with `<ol>` when the order of the items matters.',
-			ja: 'DADS は番号付きのものも含めて箇条書きリストをすべて `<ul>` で書き、項目番号は地の文字として書きます。`<ol>` の番号はコピーできず、項目を足したり消したりするとずれるためです。一方 GOV.UK Design System は、項目の順番に意味があるときは `<ol>` で番号付きリストにします。'
+			en: 'The Digital Agency Design System uses `<ul>` for every bulleted list, including numbered ones, and writes the numbers as text. Numbers made by `<ol>` cannot be copied and shift when items are added or removed. The GOV.UK Design System, by contrast, uses a numbered list made with `<ol>` when the order of the items matters.',
+			ja: 'デジタル庁デザインシステムは番号付きのものも含めて箇条書きリストをすべて `<ul>` で書き、項目番号は地の文字として書きます。`<ol>` の番号はコピーできず、項目を足したり消したりするとずれるためです。一方 GOV.UK Design System は、項目の順番に意味があるときは `<ol>` で番号付きリストにします。'
 		},
 		{
 			en: 'For pairs of names and values, use a description list. To compare values across items, use a table.',

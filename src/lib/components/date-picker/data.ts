@@ -68,8 +68,8 @@ export default {
 		{
 			name: { en: 'Separate fields', ja: '年・月・日に分けた欄' },
 			description: {
-				en: 'Year, month and day are separate text fields, each with its own label and `inputmode="numeric"`. GOV.UK’s date input works this way. DADS calls this the Separated type, and the single field the Consolidated type, and lets a field be left out when it is not needed, such as for a year and month only.',
-				ja: '年・月・日をそれぞれラベル付きの別の入力欄にし、`inputmode="numeric"` を付けたものです。GOV.UK の日付入力もこの形です。DADS ではこれを Separated タイプ、1つの欄にまとめたものを Consolidated タイプと呼び、年月だけのように要らない欄は省けるとしています。'
+				en: 'Year, month and day are separate text fields, each with its own label and `inputmode="numeric"`. GOV.UK’s date input works this way. The Digital Agency Design System calls this the Separated type, and the single field the Consolidated type, and lets a field be left out when it is not needed, such as for a year and month only.',
+				ja: '年・月・日をそれぞれラベル付きの別の入力欄にし、`inputmode="numeric"` を付けたものです。GOV.UK の日付入力もこの形です。デジタル庁デザインシステムではこれを Separated タイプ、1つの欄にまとめたものを Consolidated タイプと呼び、年月だけのように要らない欄は省けるとしています。'
 			}
 		},
 		{
@@ -82,12 +82,12 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Give an example of a whole date in the hint. Show the format in the hint rather than as placeholder text, which disappears once people start typing. DADS also has the hint say that the year is in the Western calendar.',
-			ja: '補足の文で年月日の入力例を示します。プレースホルダーは入力を始めると消えてしまうので、形式はプレースホルダーではなく補足の文で示します。DADS では、年は西暦で入れることも補足の文で伝えます。'
+			en: 'Give an example of a whole date in the hint. Show the format in the hint rather than as placeholder text, which disappears once people start typing. The Digital Agency Design System also has the hint say that the year is in the Western calendar.',
+			ja: '補足の文で年月日の入力例を示します。プレースホルダーは入力を始めると消えてしまうので、形式はプレースホルダーではなく補足の文で示します。デジタル庁デザインシステムでは、年は西暦で入れることも補足の文で伝えます。'
 		},
 		{
-			en: 'The WAI-ARIA APG example and DADS open the calendar only from its button, and DADS says not to open it on focus or hover. Carbon also opens it when the field gets focus.',
-			ja: 'WAI-ARIA APG の例と DADS はカレンダーをボタンからだけ開き、DADS はフォーカスやホバーで開かないよう求めています。Carbon は欄にフォーカスしたときにも開きます。'
+			en: 'The WAI-ARIA APG example and the Digital Agency Design System open the calendar only from its button, and the Digital Agency Design System says not to open it on focus or hover. Carbon also opens it when the field gets focus.',
+			ja: 'WAI-ARIA APG の例とデジタル庁デザインシステムはカレンダーをボタンからだけ開き、デジタル庁デザインシステムはフォーカスやホバーで開かないよう求めています。Carbon は欄にフォーカスしたときにも開きます。'
 		}
 	],
 	misuse: [

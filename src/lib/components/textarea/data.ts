@@ -48,12 +48,12 @@ export default {
 			ja: '自由記述は書くのに大きな手間がかかります。簡単な質問に分ける、「その他」を選んだ人にだけ尋ねるなどして、先に質問の範囲を絞ります。'
 		},
 		{
-			en: 'Tell people the character limit before they start typing. DADS puts it in the label and shows a counter for limits of more than about 20 characters. GOV.UK states the limit in a count message below the box, and uses a character count only when there is a good reason to limit the text.',
-			ja: '文字数の上限は入力を始める前に伝えます。DADS は上限をラベルに書き、上限がおよそ20文字を超えるなら文字数のカウンターを表示します。GOV.UK は欄の下の文字数の表示で上限を伝え、文字数を制限する十分な理由があるときだけ文字数のカウンターを使います。'
+			en: 'Tell people the character limit before they start typing. The Digital Agency Design System puts it in the label and shows a counter for limits of more than about 20 characters. GOV.UK states the limit in a count message below the box, and uses a character count only when there is a good reason to limit the text.',
+			ja: '文字数の上限は入力を始める前に伝えます。デジタル庁デザインシステムは上限をラベルに書き、上限がおよそ20文字を超えるなら文字数のカウンターを表示します。GOV.UK は欄の下の文字数の表示で上限を伝え、文字数を制限する十分な理由があるときだけ文字数のカウンターを使います。'
 		},
 		{
-			en: 'When the text is too long, DADS gives the number of characters entered in the error, such as “You entered 201 characters”, so people can tell how much to cut. GOV.UK gives the limit in the error, such as “Job description must be 350 characters or less”, and the count message below the box says that too many characters have been entered.',
-			ja: '上限を超えたとき、DADS は「（入力文字数201文字）」のように入力した文字数をエラーに書き、どれだけ削ればよいか分かるようにします。GOV.UK は「職務内容は350文字以内で入力してください」のように上限をエラーに書き、欄の下の表示で文字数が多すぎることを知らせます。'
+			en: 'When the text is too long, the Digital Agency Design System gives the number of characters entered in the error, such as “You entered 201 characters”, so people can tell how much to cut. GOV.UK gives the limit in the error, such as “Job description must be 350 characters or less”, and the count message below the box says that too many characters have been entered.',
+			ja: '上限を超えたとき、デジタル庁デザインシステムは「（入力文字数201文字）」のように入力した文字数をエラーに書き、どれだけ削ればよいか分かるようにします。GOV.UK は「職務内容は350文字以内で入力してください」のように上限をエラーに書き、欄の下の表示で文字数が多すぎることを知らせます。'
 		},
 		{
 			en: 'Set the height to match the expected length of the answer.',

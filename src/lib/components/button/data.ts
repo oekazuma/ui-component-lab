@@ -61,7 +61,7 @@ export default {
 		},
 		{
 			en: 'When buttons sit side by side, the Digital Agency Design System puts the most important one on the right and the least important on the left, so actions such as Cancel or Back go on the left, and it centers a single button in a modal dialog. Carbon puts the primary button on the left on full pages and on the right in dialogs and wizards, and GOV.UK aligns the primary button with the left edge of the form.',
-			ja: 'ボタンを横に並べるとき、デジタル庁デザインシステムは最も優先度の高いボタンを右端に、低いボタンを左に置き、「キャンセル」「戻る」のような操作を左にします。ボタンが1つだけのモーダルダイアログでは、DADS はそのボタンを中央に置きます。Carbon はページ全体では主なボタンを左に、ダイアログやウィザードでは右に置き、GOV.UK は主なボタンをフォームの左端にそろえます。'
+			ja: 'ボタンを横に並べるとき、デジタル庁デザインシステムは最も優先度の高いボタンを右端に、低いボタンを左に置き、「キャンセル」「戻る」のような操作を左にします。ボタンが1つだけのモーダルダイアログでは、デジタル庁デザインシステムはそのボタンを中央に置きます。Carbon はページ全体では主なボタンを左に、ダイアログやウィザードでは右に置き、GOV.UK は主なボタンをフォームの左端にそろえます。'
 		},
 		{
 			en: 'Make the target at least 44 × 44 CSS px, the size WCAG success criterion 2.5.5 Target Size (Enhanced) asks for at Level AAA.',

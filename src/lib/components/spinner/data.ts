@@ -30,8 +30,8 @@ export default {
 			ja: 'このデモでは、枠を1つの画面に見立てています。ページの読み込み中は枠全体にスピナーを出し、読み込みが終わるとコメントを表示します。'
 		},
 		{
-			en: 'With the reduce-motion setting, which the page reads through `prefers-reduced-motion`, this demo stops the spinning. The DADS example does the same. The “Loading…” text still tells the user what is happening.',
-			ja: '「視差効果を減らす」などの設定が有効なとき、このデモは `prefers-reduced-motion` でそれを読み取り、回転を止めます。DADS の実装例も同じです。処理中であることは「読み込み中…」の文で伝わります。'
+			en: 'With the reduce-motion setting, which the page reads through `prefers-reduced-motion`, this demo stops the spinning. The Digital Agency Design System example does the same. The “Loading…” text still tells the user what is happening.',
+			ja: '「視差効果を減らす」などの設定が有効なとき、このデモは `prefers-reduced-motion` でそれを読み取り、回転を止めます。デジタル庁デザインシステムの実装例も同じです。処理中であることは「読み込み中…」の文で伝わります。'
 		}
 	],
 	keyboard: [
@@ -45,8 +45,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Systems differ on loading inside part of the screen. Because a part that keeps moving draws the eye away from the rest of the page, DADS keeps animated indicators for whole-screen loading and uses a static indicator, such as its hourglass type, for a small area. Carbon shows its small loading indicator next to the related action for loading inside one element.',
-			ja: '画面の一部の読み込みの扱いは資料によって分かれます。動き続ける部分に目を奪われ、画面のほかの部分に集中できなくなるため、DADS は動く表示を画面全体の読み込みに限り、一部の領域には砂時計タイプのような動かない表示を使います。Carbon は1つの要素の中の読み込みに、小さな読み込み表示を操作の横に出します。'
+			en: 'Systems differ on loading inside part of the screen. Because a part that keeps moving draws the eye away from the rest of the page, the Digital Agency Design System keeps animated indicators for whole-screen loading and uses a static indicator, such as its hourglass type, for a small area. Carbon shows its small loading indicator next to the related action for loading inside one element.',
+			ja: '画面の一部の読み込みの扱いは資料によって分かれます。動き続ける部分に目を奪われ、画面のほかの部分に集中できなくなるため、デジタル庁デザインシステムは動く表示を画面全体の読み込みに限り、一部の領域には砂時計タイプのような動かない表示を使います。Carbon は1つの要素の中の読み込みに、小さな読み込み表示を操作の横に出します。'
 		},
 		{
 			en: 'Continuous movement is especially distracting for some people with cognitive disabilities or attention deficits.',

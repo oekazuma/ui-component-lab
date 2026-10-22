@@ -53,8 +53,8 @@ export default {
 		{
 			name: { en: 'Display-only tag', ja: '表示だけのタグ' },
 			description: {
-				en: 'Shows a status or category that the content already has. DADS calls it a chip label, and Carbon a read-only tag.',
-				ja: '内容がすでに持っている状態や分類を示すものです。DADS ではチップラベル、Carbon では read-only tag と呼びます。'
+				en: 'Shows a status or category that the content already has. The Digital Agency Design System calls it a chip label, and Carbon a read-only tag.',
+				ja: '内容がすでに持っている状態や分類を示すものです。デジタル庁デザインシステムではチップラベル、Carbon では read-only tag と呼びます。'
 			}
 		},
 		{
@@ -67,8 +67,8 @@ export default {
 		{
 			name: { en: 'Removable tag', ja: '外せるタグ' },
 			description: {
-				en: 'Shows a value the user chose or entered, with a “×” to remove it. DADS calls it a chip tag, and Carbon a dismissible tag.',
-				ja: '利用者が選んだ値や入力した値を示し、「×」で外せるものです。DADS ではチップタグ、Carbon では dismissible tag と呼びます。'
+				en: 'Shows a value the user chose or entered, with a “×” to remove it. The Digital Agency Design System calls it a chip tag, and Carbon a dismissible tag.',
+				ja: '利用者が選んだ値や入力した値を示し、「×」で外せるものです。デジタル庁デザインシステムではチップタグ、Carbon では dismissible tag と呼びます。'
 			}
 		}
 	],

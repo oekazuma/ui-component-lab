@@ -60,8 +60,8 @@ export default {
 			ja: 'ディバイダーは余白や見出しを補うものにすぎません。線がなくても意味が通じる配置にします。'
 		},
 		{
-			en: 'Leave enough space around it so separate items do not look like one. DADS asks for at least 8 px in lists and 16 px between sections; Fluent asks for at least 12 px above and below.',
-			ja: '別々の項目が1つに見えないよう、周りに十分な余白をとります。DADS はリストで8px 以上、セクションの間で16px 以上、Fluent は上下に12px 以上を求めています。'
+			en: 'Leave enough space around it so separate items do not look like one. The Digital Agency Design System asks for at least 8 px in lists and 16 px between sections; Fluent asks for at least 12 px above and below.',
+			ja: '別々の項目が1つに見えないよう、周りに十分な余白をとります。デジタル庁デザインシステムはリストで8px 以上、セクションの間で16px 以上、Fluent は上下に12px 以上を求めています。'
 		},
 		{
 			en: 'Use `<hr>` for a change of topic within a section. Sections and headings already mark their own boundaries, so the line between sections, like any purely visual line, is a CSS border.',

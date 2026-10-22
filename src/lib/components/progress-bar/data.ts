@@ -29,8 +29,8 @@ export default {
 			ja: '操作する部品ではなく、見るだけのものです。近くのラベルで何の作業かを示し、終わったときや中止したときは結果を表す文に変えます。一方 Carbon はラベルを変えず、棒の色とアイコンで結果を示し、エラーの内容は補助テキストで伝えます。'
 		},
 		{
-			en: 'For a long task, tell assistive technology the percentage at intervals rather than at every change. The DADS HTML implementation announces it every 5 seconds by default.',
-			ja: '長い処理では、途中の割合を変わるたびではなく、間隔をあけて支援技術に伝えます。DADS の HTML 実装では、既定で5秒ごとに知らせます。'
+			en: 'For a long task, tell assistive technology the percentage at intervals rather than at every change. The Digital Agency Design System HTML implementation announces it every 5 seconds by default.',
+			ja: '長い処理では、途中の割合を変わるたびではなく、間隔をあけて支援技術に伝えます。デジタル庁デザインシステムの HTML 実装では、既定で5秒ごとに知らせます。'
 		},
 		{
 			en: 'This demo uses the native `<progress>` element with a `<label>`; leaving out `value` makes it indeterminate. The task is short, so only the start, completion and cancellation are announced, through a `role="status"` live region.',

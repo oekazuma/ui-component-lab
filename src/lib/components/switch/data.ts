@@ -48,8 +48,8 @@ export default {
 		{
 			name: { en: 'Two options (mode switch)', ja: '2択型（モードスイッチ）' },
 			description: {
-				en: 'Switches between two named options, such as list view and calendar view, or Celsius and Fahrenheit, with a label on each side. In the DADS example, each label is a `<button role="switch">`, and pressing either one flips the state.',
-				ja: 'リスト表示とカレンダー表示、摂氏と華氏のような名前のある2つの選択肢を、左右にラベルを置いて切り替えるものです。DADS の例では左右のラベルがそれぞれ `<button role="switch">` で、どちらを押しても状態が入れ替わります。'
+				en: 'Switches between two named options, such as list view and calendar view, or Celsius and Fahrenheit, with a label on each side. In the Digital Agency Design System example, each label is a `<button role="switch">`, and pressing either one flips the state.',
+				ja: 'リスト表示とカレンダー表示、摂氏と華氏のような名前のある2つの選択肢を、左右にラベルを置いて切り替えるものです。デジタル庁デザインシステムの例では左右のラベルがそれぞれ `<button role="switch">` で、どちらを押しても状態が入れ替わります。'
 			}
 		}
 	],

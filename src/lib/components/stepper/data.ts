@@ -23,8 +23,8 @@ export default {
 			ja: '「次へ」などのボタンで手続きを進めると、表示が切り替わります。'
 		},
 		{
-			en: 'The current step is marked with `aria-current="step"`, and finished steps have hidden text saying so. Hidden text before the steps, as in the DADS example, tells screen reader users the overall progress, such as “4 steps in total; reached step 2”.',
-			ja: '現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添えます。段階の並びの前には、DADS の実装例と同じく、「全4ステップ中、2ステップ目まで到達済み」のように全体の進み具合を伝える読み上げ用の文を置きます。'
+			en: 'The current step is marked with `aria-current="step"`, and finished steps have hidden text saying so. Hidden text before the steps, as in the Digital Agency Design System example, tells screen reader users the overall progress, such as “4 steps in total; reached step 2”.',
+			ja: '現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添えます。段階の並びの前には、デジタル庁デザインシステムの実装例と同じく、「全4ステップ中、2ステップ目まで到達済み」のように全体の進み具合を伝える読み上げ用の文を置きます。'
 		},
 		{
 			en: 'In this demo, every step already reached is a button, so you can go back to a finished step and return. The current step and steps not yet reached are plain text.',
@@ -77,8 +77,8 @@ export default {
 			ja: '作業を意味のまとまりで段階に分け、始める前に手続きの全体が分かるようにします。'
 		},
 		{
-			en: 'Show the state of each step, such as done, current or with errors. DADS also marks skipped steps, with a dashed circle.',
-			ja: '各段階の状態（完了・現在・エラーなど）を表示します。DADS ではスキップした段階も点線の丸で示します。'
+			en: 'Show the state of each step, such as done, current or with errors. The Digital Agency Design System also marks skipped steps, with a dashed circle.',
+			ja: '各段階の状態（完了・現在・エラーなど）を表示します。デジタル庁デザインシステムではスキップした段階も点線の丸で示します。'
 		},
 		{
 			en: 'For a short wait such as loading, use a progress bar. For moving between pages in a sequence, use pagination.',

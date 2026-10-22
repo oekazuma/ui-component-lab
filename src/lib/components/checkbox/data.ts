@@ -23,8 +23,8 @@ export default {
 			ja: '子の一部だけが選ばれているとき、親のチェックボックスは中間状態になります。親を押すと子をすべて選びます。'
 		},
 		{
-			en: 'The WAI-ARIA APG mixed-state example goes further: the parent cycles through unchecked, mixed and checked, and the mixed step brings back the last partial selection. This demo keeps to the simpler behavior and only checks or unchecks all (Carbon and the DADS example do the same).',
-			ja: 'WAI-ARIA APG の中間状態の例では、親を押すたびにオフ・中間・オンを順に切り替え、中間に戻ったときは直前の一部だけの選択を復元します。このデモはより簡単な動きにとどめ、すべて選ぶか、すべて外すだけにしています（Carbon と DADS の例も同じです）。'
+			en: 'The WAI-ARIA APG mixed-state example goes further: the parent cycles through unchecked, mixed and checked, and the mixed step brings back the last partial selection. This demo keeps to the simpler behavior and only checks or unchecks all (Carbon and the Digital Agency Design System example do the same).',
+			ja: 'WAI-ARIA APG の中間状態の例では、親を押すたびにオフ・中間・オンを順に切り替え、中間に戻ったときは直前の一部だけの選択を復元します。このデモはより簡単な動きにとどめ、すべて選ぶか、すべて外すだけにしています（Carbon とデジタル庁デザインシステムの例も同じです）。'
 		},
 		{
 			en: 'In this demo, Cheese starts checked so the mixed state is visible right away. In a real form, leave answers unchecked (see Misuses to avoid).',

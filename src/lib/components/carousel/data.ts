@@ -76,8 +76,8 @@ export default {
 		{
 			name: { en: 'Key visual type', ja: '打ち出しタイプ' },
 			description: {
-				en: 'The Digital Agency Design System (DADS) divides carousels into this key visual type and the container type. The key visual type is placed at the top of a page to show what the site is about, and is used only when the page `<title>` can serve as its heading.',
-				ja: 'デジタル庁デザインシステム（DADS）は、カルーセルをこの打ち出しタイプとコンテナタイプに分けています。打ち出しタイプはページの最上部に置き、ウェブサイトの主題を示すものです。ページの `<title>` 要素が見出しの役目を果たせる場合だけに使います。'
+				en: 'The Digital Agency Design System divides carousels into this key visual type and the container type. The key visual type is placed at the top of a page to show what the site is about, and is used only when the page `<title>` can serve as its heading.',
+				ja: 'デジタル庁デザインシステムは、カルーセルをこの打ち出しタイプとコンテナタイプに分けています。打ち出しタイプはページの最上部に置き、ウェブサイトの主題を示すものです。ページの `<title>` 要素が見出しの役目を果たせる場合だけに使います。'
 			}
 		},
 		{
@@ -90,8 +90,8 @@ export default {
 		{
 			name: { en: 'Multiple and single', ja: 'マルチとシングル' },
 			description: {
-				en: 'In DADS, a multiple carousel has 2 to 6 slides. A single one has only one slide and no controls for switching, and is used only for the key visual type. Nielsen Norman Group suggests 5 slides or fewer, since people are unlikely to engage with more.',
-				ja: 'DADS では、マルチはスライドを2〜6枚にします。シングルはスライドが1枚だけで切り替えの操作部品を出さず、打ち出しタイプだけで使います。Nielsen Norman Group は、それより多いと見てもらいにくいとして5枚以下を勧めています。'
+				en: 'In the Digital Agency Design System, a multiple carousel has 2 to 6 slides. A single one has only one slide and no controls for switching, and is used only for the key visual type. Nielsen Norman Group suggests 5 slides or fewer, since people are unlikely to engage with more.',
+				ja: 'デジタル庁デザインシステムでは、マルチはスライドを2〜6枚にします。シングルはスライドが1枚だけで切り替えの操作部品を出さず、打ち出しタイプだけで使います。Nielsen Norman Group は、それより多いと見てもらいにくいとして5枚以下を勧めています。'
 			}
 		},
 		{

@@ -69,8 +69,8 @@ export default {
 		{
 			name: { en: 'Link list', ja: 'リンクリスト' },
 			description: {
-				en: 'Each tab is a separate page, and the tab for the current page has `aria-current="page"`. In the DADS example, that tab also has no `href`. Nielsen Norman Group calls these navigation tabs and warns against mixing them with in-page tabs in one tab control.',
-				ja: 'タブごとに別のページになっているものです。今のページのタブには `aria-current="page"` を付けます。DADS の実装例では、このタブの `href` も省きます。Nielsen Norman Group はこれをナビゲーションタブと呼び、ページ内で切り替えるタブと1つのタブの並びに混ぜないよう勧めています。'
+				en: 'Each tab is a separate page, and the tab for the current page has `aria-current="page"`. In the Digital Agency Design System example, that tab also has no `href`. Nielsen Norman Group calls these navigation tabs and warns against mixing them with in-page tabs in one tab control.',
+				ja: 'タブごとに別のページになっているものです。今のページのタブには `aria-current="page"` を付けます。デジタル庁デザインシステムの実装例では、このタブの `href` も省きます。Nielsen Norman Group はこれをナビゲーションタブと呼び、ページ内で切り替えるタブと1つのタブの並びに混ぜないよう勧めています。'
 			}
 		},
 		{
