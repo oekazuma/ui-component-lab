@@ -11,7 +11,15 @@ const demoModules = import.meta.glob<Component<{ lang: Lang }>>('./components/*/
 	import: 'default'
 });
 
+// 開いて使う部品は、閉じた状態のデモではサムネイルにきっかけのボタンしか写らない。
+// そうした部品は Thumb.svelte を置くと、一覧ではデモの代わりにそれ（開いた状態の絵）を出す
+const thumbModules = import.meta.glob<Component<{ lang: Lang }>>('./components/*/Thumb.svelte', {
+	eager: true,
+	import: 'default'
+});
+
 const dirOf = (path: string) => path.split('/')[2];
+const thumbs = new Map(Object.entries(thumbModules).map(([path, thumb]) => [dirOf(path), thumb]));
 
 const demos = new Map(Object.entries(demoModules).map(([path, demo]) => [dirOf(path), demo]));
 
@@ -20,7 +28,7 @@ export const entries = Object.entries(dataModules)
 		const demo = demos.get(dirOf(path));
 		if (data.id !== dirOf(path)) throw new Error(`id "${data.id}" does not match ${path}`);
 		if (!demo) throw new Error(`Demo.svelte is missing for ${data.id}`);
-		return { data, demo };
+		return { data, demo, thumb: thumbs.get(data.id) };
 	})
 	.sort((a, b) => a.data.names.en.localeCompare(b.data.names.en));
 

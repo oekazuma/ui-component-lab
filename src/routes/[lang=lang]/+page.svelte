@@ -22,10 +22,14 @@
 		return () => observer.disconnect();
 	}
 
+	// 「パンくずリスト（パンくずナビゲーション）」のような名前は、狭いカードでは「（」から次の行へ折り返す。
+	// カードでは括弧の前だけを名前にし、括弧の中の呼び名は別名の行へ移す
+	const splitJa = (ja: string) => ja.match(/^(.+?)（(.+)）$/)?.slice(1) ?? [ja];
+
 	// 対応表では同じ呼び名をデザインシステムごとに並べるが、カードでは部品名と重なる呼び名や、同じ呼び名の繰り返しを出さない
 	const cardAliases = (d: ComponentData) =>
-		[...new Set(d.aliases.map((a) => a.name))].filter(
-			(name) => name.toLowerCase() !== d.names.en.toLowerCase() && name !== d.names.ja
+		[...new Set([...(lang === 'ja' ? splitJa(d.names.ja).slice(1) : []), ...d.aliases.map((a) => a.name)])].filter(
+			(name) => name.toLowerCase() !== d.names.en.toLowerCase() && name !== d.names.ja && name !== splitJa(d.names.ja)[0]
 		);
 
 	let shown = $derived(
@@ -65,13 +69,13 @@
 </div>
 
 <ul class="grid">
-	{#each shown as { data, demo: Demo } (data.id)}
+	{#each shown as { data, demo: Demo, thumb: Thumb } (data.id)}
 		<li class="card">
 			<!-- 一覧のデモは見た目を見せるだけのサムネイル。inert で操作もフォーカスも読み上げも止め、試すのは詳細ページで行う。
 				同じ大きさの枠に縮めて入れるので、中身の多いデモでもカードの並びが崩れない -->
 			<div class="thumb" inert>
 				<div class="thumb-inner" {@attach fit}>
-					<Demo {lang} />
+					{#if Thumb}<Thumb {lang} />{:else}<Demo {lang} />{/if}
 				</div>
 			</div>
 			<!-- サムネイルの中に操作できる部品がなくなったので、見出しのリンクを ::after でカード全体に広げる -->
@@ -79,7 +83,7 @@
 				<h2>
 					<a href={componentPath(lang, data.id)}>
 						{data.names.en}
-						{#if lang === 'ja'}<span class="sub">{data.names.ja}</span>{/if}
+						{#if lang === 'ja'}<span class="sub">{splitJa(data.names.ja)[0]}</span>{/if}
 					</a>
 				</h2>
 				<p class="summary">{data.summary[lang]}</p>
@@ -242,6 +246,8 @@
 		display: grid;
 		place-items: center;
 		width: 150%;
+		/* パンくずリストのように幅いっぱいに広がるデモでも、枠の端に文字が付かないようにする */
+		padding-inline: 1.5rem;
 		translate: -50% -50%;
 		scale: 0.667;
 	}

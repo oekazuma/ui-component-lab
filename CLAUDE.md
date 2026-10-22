@@ -44,6 +44,11 @@ CI は PR ごとに上の 3 つを実行する。
 - 共通のクラスは `.btn`、`.btn-primary`、`.visually-hidden`（`src/app.css`）
 - デモの挙動を変えたら、同じコミットで data.ts の keyboard と behavior を直す。独自のキー操作を変えたときは `tests/keyboard.spec.ts` も直す
 
+### Thumb.svelte（任意）
+
+- 一覧のサムネイルはデモを縮めて操作できなくしたものなので、開いて使う部品（メニュー、ダイアログ、トーストなど）はきっかけのボタンしか写らない。そうした部品は `Thumb.svelte` を置くと、一覧ではデモの代わりにそれを出す（例: `tooltip/Thumb.svelte`）
+- 開いた状態の静止した絵にする。props と文言はデモと同じ形にし、ルートに `data-preview` を付ける。状態、イベント、`$effect`、id、ARIA、`<dialog>`、アニメーションは使わない
+
 ## コードの約束事
 
 - routes と data.ts からは `#lib/*.js` で import し、`src/lib` の中では相対パスを使う。`src/params.ts` はビルド時に Node が直接読むので `#lib` を使わない
