@@ -7,6 +7,7 @@ test('components.json: lists every component with absolute URLs and version 1', 
 	expect(res.headers()['content-type']).toContain('application/json');
 	const json = await res.json();
 	expect(json.version).toBe(1);
+	expect(json.site.url).toBe('https://oekazuma.github.io/ui-component-lab/');
 	expect(json.components.map((c: { id: string }) => c.id).sort()).toEqual([...componentIds].sort());
 	const select = json.components.find((c: { id: string }) => c.id === 'select');
 	expect(select.urls.ja).toBe('https://oekazuma.github.io/ui-component-lab/ja/components/select/');

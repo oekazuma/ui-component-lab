@@ -11,7 +11,7 @@ export const prerender = true;
 export const GET: RequestHandler = ({ url }) => {
 	const body = {
 		version: 1,
-		site: { name: siteName, url: `${url.origin}${resolve('/')}/` },
+		site: { name: siteName, url: `${url.origin}${resolve('/')}`.replace(/\/?$/, '/') },
 		categories: categories.map((id) => ({ id, names: categoryNames[id] })),
 		components: entries.map(({ data }) => ({
 			...data,
