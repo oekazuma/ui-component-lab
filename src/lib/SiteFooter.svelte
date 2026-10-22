@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from './i18n';
-	import { systemsPath } from './paths';
+	import { skillPath, systemsPath } from './paths';
 	import type { Lang } from './types';
 
 	let { lang }: { lang: Lang } = $props();
@@ -12,7 +12,10 @@
 <footer>
 	<div class="text">
 		<p>{ui.sourcesNote}</p>
-		<a href={systemsPath(lang)}>{ui.systems}</a>
+		<ul class="pages">
+			<li><a href={systemsPath(lang)}>{ui.systems}</a></li>
+			<li><a href={skillPath(lang)}>{ui.skill}</a></li>
+		</ul>
 	</div>
 	<!-- アイコンだけのリンク。名前は読み上げ用の文で、見える人にはマウスを乗せたときの説明（title）で伝える -->
 	<ul class="icons">
@@ -54,6 +57,15 @@
 
 	p {
 		margin: 0 0 0.25rem;
+	}
+
+	.pages {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1.25rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 
 	.icons {

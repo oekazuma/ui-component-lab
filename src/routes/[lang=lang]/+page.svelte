@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { componentPath, systemsPath } from '#lib/paths.js';
+	import { componentPath, skillPath, systemsPath } from '#lib/paths.js';
 	import { categoryNames, siteName, t } from '#lib/i18n.js';
 	import { entries } from '#lib/registry.js';
 	import { filter } from '#lib/filter.svelte.js';
@@ -35,7 +35,17 @@
 
 <h1 class="visually-hidden">{siteName}</h1>
 <p class="tagline">{ui.tagline}</p>
-<p class="systems-link"><a href={systemsPath(lang)}>{ui.systems}</a></p>
+<ul class="pages">
+	<li><a href={systemsPath(lang)}>{ui.systems}</a></li>
+	<li>
+		<a class="skill" href={skillPath(lang)}>
+			<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+				<circle cx="11" cy="11" r="6" />
+				<path d="m20 20-4.5-4.5M8.5 11l1.75 1.75L13.5 9.5" />
+			</svg>{ui.skill}
+		</a>
+	</li>
+</ul>
 
 <div class="filters">
 	<!-- 見た目はピルだが中身はネイティブのラジオボタン。矢印キーでの移動と、選択中の読み上げはブラウザに任せる -->
@@ -89,8 +99,38 @@
 		color: var(--color-muted);
 	}
 
-	.systems-link {
+	.pages {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 1.5rem;
 		margin: -1rem 0 1.5rem;
+		padding: 0;
+		list-style: none;
+	}
+
+	/* カテゴリの上で見落とされないよう、枠で囲んでボタンに近い見た目にする */
+	.skill {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.375rem;
+		padding: 0.375rem 0.875rem;
+		border: 1px solid var(--color-accent);
+		border-radius: 999px;
+		text-decoration: none;
+	}
+
+	.skill:hover {
+		background: var(--color-surface);
+	}
+
+	.skill svg {
+		flex: none;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2;
+		stroke-linecap: round;
+		stroke-linejoin: round;
 	}
 
 	.filters {

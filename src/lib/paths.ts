@@ -6,5 +6,7 @@ export const homePath = (lang: Lang) => `${resolve('/[lang=lang]', { lang })}/`;
 
 export const systemsPath = (lang: Lang) => `${resolve('/[lang=lang]/systems', { lang })}/`;
 
+export const skillPath = (lang: Lang) => `${resolve('/[lang=lang]/skill', { lang })}/`;
+
 export const componentPath = (lang: Lang, id: string) =>
 	`${resolve('/[lang=lang]/components/[id]', { lang, id })}/`;

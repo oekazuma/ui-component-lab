@@ -44,7 +44,10 @@ const ui = {
 		systemsLead:
 			'What each design system calls the components in this guide. Components with no other known name are not listed.',
 		nameInSystem: 'Name in the system',
-		componentHere: 'Component in this guide'
+		componentHere: 'Component in this guide',
+		skill: 'Audit your site’s UI with an AI agent',
+		skillLead:
+			'An agent skill that checks the UI on your own pages against this guide, finds the wrong component, misuses and keyboard gaps, and writes plans to fix them.'
 	},
 	ja: {
 		tagline: 'そのUI、なんて名前？ 呼び方と動きを、触って覚えよう。',
@@ -87,7 +90,10 @@ const ui = {
 		systemsLead:
 			'このサイトの部品を、各デザインシステムが何と呼んでいるかの一覧。ほかの呼び名が見つかっていない部品は載せていない。',
 		nameInSystem: 'そのシステムでの呼び名',
-		componentHere: 'このサイトでの部品'
+		componentHere: 'このサイトでの部品',
+		skill: 'AIエージェントで自分のサイトのUIを点検する',
+		skillLead:
+			'このサイトの知見をもとに、自分のサイトのページのUIをエージェントが点検するスキル。部品の選び方、避けたい使い方、キー操作を確かめ、直し方を計画にまとめる。'
 	}
 } satisfies Record<Lang, Record<string, string | ((n: number) => string)>>;
 

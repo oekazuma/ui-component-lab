@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 import { componentIds } from './component-ids';
 
 // 一覧ページのデモは操作できないサムネイル（inert）で検査の対象から外れるので、全部品の詳細ページを回す
-for (const path of ['en/', 'ja/', 'en/systems/', 'ja/systems/', ...componentIds.map((id) => `ja/components/${id}/`)]) {
+for (const path of ['en/', 'ja/', 'en/systems/', 'ja/systems/', 'en/skill/', 'ja/skill/', ...componentIds.map((id) => `ja/components/${id}/`)]) {
 	test(`no axe violations: ${path}`, async ({ page }) => {
 		await page.goto(path);
 		const { violations } = await new AxeBuilder({ page })
