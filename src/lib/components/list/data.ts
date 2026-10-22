@@ -13,7 +13,7 @@ export default {
 	},
 	appearance: {
 		en: 'Rows separated by thin lines, each with an icon or avatar on the left, a main text, and a smaller gray line below it.',
-		ja: '細い線で区切られた行が並び、各行の左にアイコンやアバター、主な文、その下に小さな灰色の文がある。'
+		ja: '細い線で区切られた行が並び、各行には左のアイコンやアバター、主な文、その下の小さな灰色の文がある。'
 	},
 	behavior: [
 		{

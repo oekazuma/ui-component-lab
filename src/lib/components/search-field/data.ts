@@ -24,7 +24,7 @@ export default {
 		},
 		{
 			en: 'This demo wraps the form in a `<search>` element, which marks it as a search landmark so screen reader users can jump to it.',
-			ja: 'このデモはフォームを `<search>` 要素で囲んでいる。検索のランドマークになり、スクリーンリーダーの利用者が直接移動できる。'
+			ja: 'このデモはフォームを `<search>` 要素で囲んでいる。フォームは検索のランドマークになり、スクリーンリーダーの利用者がそこへ直接移動できる。'
 		},
 		{
 			en: 'It uses `<input type="search">`, so in Chrome, Esc clears the text.',
@@ -80,7 +80,7 @@ export default {
 			},
 			harm: {
 				en: 'Screen readers do not treat placeholder text as a label, and not all of them announce it, so screen reader users may not learn what the field is for. The text also disappears once typing starts.',
-				ja: 'スクリーンリーダーはプレースホルダーをラベルとして扱わず、読み上げないものもあるため、スクリーンリーダーの利用者には何の欄か伝わらないことがある。入力を始めると文字も消える。'
+				ja: 'スクリーンリーダーはプレースホルダーをラベルとして扱わず、読み上げないものもあるため、スクリーンリーダーの利用者には何の欄か伝わらないことがある。入力を始めるとプレースホルダーの文字も消える。'
 			},
 			instead: {
 				en: 'Give the field a name with `<label>`, such as “Search this site”. If the design has no room for a visible label, keep the `<label>` and hide it visually instead of relying on placeholder text.',
@@ -114,7 +114,7 @@ export default {
 			id: 'empty-state',
 			diff: {
 				en: 'A search field is where the search terms are typed; an empty state is what appears in place of the results when the search finds nothing.',
-				ja: '検索ボックスは、検索語を入力する欄。空の状態は、検索で何も見つからなかったときに結果の代わりに出る表示。'
+				ja: '検索ボックスは検索語を入力する欄で、空の状態は検索で何も見つからなかったときに結果の代わりに出る表示。'
 			}
 		}
 	],

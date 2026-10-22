@@ -32,7 +32,7 @@ export default {
 		},
 		{
 			en: 'The `role="menu"` element takes its name from the button with `aria-labelledby`, so screen readers say which menu opened.',
-			ja: '`role="menu"` の要素は `aria-labelledby` で開くボタンを指して名前を得る。スクリーンリーダーは、どのメニューが開いたかを読み上げる。'
+			ja: '`role="menu"` の要素は `aria-labelledby` で開くボタンを指して名前を得るので、スクリーンリーダーはどのメニューが開いたかを読み上げる。'
 		},
 		{
 			en: 'In this demo, a `role="separator"` line sets the destructive item apart at the end of each menu. Arrow keys skip over the line.',
@@ -55,14 +55,14 @@ export default {
 			key: '↓',
 			action: {
 				en: 'On the button, opens the menu at the first item. In the menu, moves to the next item; from the last item it goes back to the first.',
-				ja: 'ボタンではメニューを開いて最初の項目へ。メニュー内では次の項目へ移り、最後の項目からは最初の項目へ回る。'
+				ja: 'ボタンではメニューを開いて最初の項目へ移る。メニュー内では次の項目へ進み、最後の項目からは最初の項目へ回る。'
 			}
 		},
 		{
 			key: '↑',
 			action: {
 				en: 'On the button, opens the menu at the last item. In the menu, moves to the previous item; from the first item it goes to the last.',
-				ja: 'ボタンではメニューを開いて最後の項目へ。メニュー内では前の項目へ移り、最初の項目からは最後の項目へ回る。'
+				ja: 'ボタンではメニューを開いて最後の項目へ移る。メニュー内では前の項目へ進み、最初の項目からは最後の項目へ回る。'
 			}
 		},
 		{
@@ -80,7 +80,7 @@ export default {
 			key: 'Tab / Shift + Tab',
 			action: {
 				en: 'Closes the menu and moves on to the next element. Shift + Tab goes back to the menu button.',
-				ja: 'メニューを閉じ、次の要素へ移る。Shift + Tab では開いたボタンへ戻る。'
+				ja: 'メニューを閉じ、次の要素へ移る。Shift + Tab ではメニューボタンへ戻る。'
 			}
 		}
 	],
@@ -89,7 +89,7 @@ export default {
 			name: { en: 'Overflow menu', ja: 'オーバーフローメニュー' },
 			description: {
 				en: 'Opened from an icon-only “⋯” button, often in table rows or cards to hold extra actions. The button needs a name such as “More options for report.pdf”.',
-				ja: '「⋯」アイコンだけのボタンから開くもの。表の行やカードで、追加の操作をしまうのに使う。ボタンには「report.pdf のその他の操作」のような名前を付ける。'
+				ja: '「⋯」アイコンだけのボタンから開くもの。表の行やカードで、追加の操作をしまうのによく使う。ボタンには「report.pdf のその他の操作」のような名前を付ける。'
 			}
 		}
 	],
@@ -135,7 +135,7 @@ export default {
 			id: 'toolbar',
 			diff: {
 				en: 'A menu hides actions in a list that opens on demand; a toolbar keeps a group of controls visible in a row.',
-				ja: 'メニューは操作を開いたリストにしまい、ツールバーは操作部品を1列に並べて常に見せる。'
+				ja: 'メニューは操作を必要なときに開くリストにしまい、ツールバーは操作部品を1列に並べて常に見せる。'
 			}
 		},
 		{
@@ -149,14 +149,14 @@ export default {
 			id: 'menubar',
 			diff: {
 				en: 'A menu opens from a single button and closes after use; a menubar stays visible and holds several menus side by side.',
-				ja: 'メニューは1つのボタンから開き、使い終わると閉じる。メニューバーは常に表示され、複数のメニューを横に並べて持つ。'
+				ja: 'メニューは1つのボタンから開いて使い終わると閉じ、メニューバーは常に表示されて複数のメニューを横に並べて持つ。'
 			}
 		},
 		{
 			id: 'mega-menu',
 			diff: {
 				en: 'A menu lists a few actions in a narrow column; a mega menu shows many navigation links in a wide panel.',
-				ja: 'メニューは少しの操作を細い列に並べ、メガメニューは多くのナビゲーションのリンクを幅の広いパネルで見せる。'
+				ja: 'メニューはいくつかの操作を細い列に並べ、メガメニューは多くのナビゲーションのリンクを幅の広いパネルで見せる。'
 			}
 		},
 		{
@@ -170,7 +170,7 @@ export default {
 			id: 'context-menu',
 			diff: {
 				en: 'A menu opens from a visible button; a context menu opens where an item is right-clicked and has no visible trigger.',
-				ja: 'メニューは見えるボタンから開く。コンテキストメニューは項目を右クリックした場所に開き、開くための見えるボタンがない。'
+				ja: 'メニューは見えるボタンから開き、コンテキストメニューは項目を右クリックした場所に開いて、開くための見えるボタンがない。'
 			}
 		}
 	],

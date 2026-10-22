@@ -67,7 +67,7 @@ export default {
 			},
 			harm: {
 				en: 'Screen readers skip a control nested inside another one. Keyboard users can still reach it with Tab, but no name, role or state is announced, so it becomes an empty stop that tells them nothing.',
-				ja: 'スクリーンリーダーは、操作部品の中に入れ子になった操作部品を読み飛ばす。キーボードの利用者は Tab でそこへ移動できても、名前も役割も状態も伝わらず、何の手がかりもない場所に止まることになる。'
+				ja: 'スクリーンリーダーは操作部品の中に入れ子になった操作部品を読み飛ばす。キーボードの利用者は Tab でそこへ移動できても、名前も役割も状態も伝わらず、何の手がかりもない場所に止まることになる。'
 			},
 			instead: {
 				en: 'If the card needs its own buttons or links, make only the heading a link and leave the rest of the card unlinked.',

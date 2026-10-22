@@ -20,11 +20,11 @@ export default {
 	behavior: [
 		{
 			en: 'Clicking a star chooses that score. Moving the pointer over the stars previews the score before clicking.',
-			ja: '星をクリックするとその点数になる。マウスを星の上に動かすと、クリックする前に点数を先に見せる。'
+			ja: '星をクリックするとその点数になる。マウスを星の上に動かすと、クリックする前にその点数を見せる。'
 		},
 		{
 			en: 'It is a radio group with the inputs visually hidden: each star is a native radio button with a label such as “3 stars”. Tab moves into the group as one stop, and the arrow keys choose a score, as with any radio group.',
-			ja: '入力を見えなくしたラジオボタンのグループで作る。星はそれぞれ「星3つ」のようなラベルを持つネイティブのラジオボタンで、Tab ではグループ全体が1か所として扱われ、矢印キーで点数を選ぶ。ふつうのラジオボタンと同じ。'
+			ja: '入力を見えなくしたラジオボタンのグループで作る。星はそれぞれ「星3つ」のようなラベルを持つネイティブのラジオボタンである。ふつうのラジオボタンと同じく、Tab ではグループ全体が1か所として扱われ、矢印キーで点数を選ぶ。'
 		},
 		{
 			en: 'A radio button cannot be cleared once chosen, so there is also a hidden “No rating” option for 0 stars, chosen at first. When focus is on it, the whole row of stars gets a focus ring.',
@@ -91,7 +91,7 @@ export default {
 			id: 'slider',
 			diff: {
 				en: 'A rating chooses one of a few scores, such as 1 to 5 stars, each a separate option; a slider chooses any value along a track by moving a knob.',
-				ja: '評価は、星1〜5のような少しの点数から、選択肢を1つ選ぶ。スライダーは、つまみを溝に沿って動かして、範囲内の値を選ぶ。'
+				ja: '評価は、星1〜5のような数個の点数から1つを選び、点数はそれぞれ別の選択肢になる。スライダーは、つまみを溝に沿って動かして、範囲内の値を選ぶ。'
 			}
 		}
 	],

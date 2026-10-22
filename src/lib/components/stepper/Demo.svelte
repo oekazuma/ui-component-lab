@@ -25,7 +25,7 @@
 			back: '戻る',
 			next: '次へ',
 			submit: '申請する',
-			heading: (n: number, name: string) => `ステップ ${n}/4: ${name}`,
+			heading: (n: number, name: string) => `ステップ${n}/4: ${name}`,
 			optional: '書類を添付していないので、「次へ」でこの段階をスキップします。',
 			progress: (reached: number) => `全4ステップ中、${reached}ステップ目まで到達済み`,
 			submitted: '申請を受け付けました。'

@@ -18,7 +18,7 @@ export default {
 	behavior: [
 		{
 			en: 'Each section name is a button with `aria-expanded` that shows or hides its panel (the APG Disclosure pattern). The panel holds ordinary links, so the Tab key moves through them.',
-			ja: 'カテゴリ名はそれぞれ、パネルを開閉する `aria-expanded` 付きのボタン（APG の Disclosure パターン）。パネルの中は普通のリンクなので、Tab キーで順に移る。'
+			ja: 'カテゴリ名はそれぞれパネルを開閉する `aria-expanded` 付きのボタン（APG の Disclosure パターン）。パネルの中は普通のリンクなので、Tab キーで順に移る。'
 		},
 		{
 			en: 'Only one panel is open at a time; opening another closes the first.',
@@ -30,7 +30,7 @@ export default {
 		},
 		{
 			en: 'Besides links, the panel can hold descriptions and images.',
-			ja: 'パネルには、リンクのほかに説明文や画像も入れられる。'
+			ja: 'パネルにはリンクのほかに説明文や画像も入れられる。'
 		},
 		{
 			en: 'In this demo, the first panel starts open. The panel pushes the content below it down instead of covering the page, and choosing a link shows where it would go instead of leaving the page. Moving between the section names with the arrow keys, which the APG lists as optional, is left out.',
@@ -42,7 +42,7 @@ export default {
 			key: 'Enter / Space',
 			action: {
 				en: 'On a section name, opens or closes its panel. Enter on a link goes to its page.',
-				ja: 'カテゴリ名では、そのパネルを開閉する。リンクで Enter を押すと、そのページへ移る。'
+				ja: 'カテゴリ名ではそのパネルを開閉する。リンクで Enter を押すと、そのページへ移る。'
 			}
 		},
 		{
@@ -71,7 +71,7 @@ export default {
 		},
 		{
 			en: 'The section name opens the panel and does not go to the section’s own page, so put a link to that page in the panel.',
-			ja: 'カテゴリ名はパネルを開くだけで、カテゴリのページへは移らない。そのページへのリンクをパネルの中に入れる。'
+			ja: 'カテゴリ名はパネルを開くだけで、カテゴリのページへは移らないので、そのページへのリンクをパネルの中に入れる。'
 		},
 		{
 			en: 'Build it from buttons with `aria-expanded` and links, not from `role="menu"`. The menu role tells assistive technologies to expect complex keyboard behavior that site navigation does not need.',
@@ -96,11 +96,11 @@ export default {
 		{
 			pattern: {
 				en: 'Showing only some of a section’s pages in its panel',
-				ja: 'パネルに、カテゴリの中のページを一部だけ並べる'
+				ja: 'パネルにカテゴリの中のページを一部だけ並べる'
 			},
 			harm: {
 				en: 'People assume the panel lists every page in the section, so pages left out go unnoticed.',
-				ja: 'パネルがそのカテゴリの全ページだと思われ、載っていないページはあることに気づかれない。'
+				ja: '利用者はパネルにそのカテゴリの全ページが並んでいると思い込み、載っていないページがあることに気づかない。'
 			},
 			instead: {
 				en: 'List every page of that level in the panel. If they cannot all fit, use another way to navigate instead of a mega menu.',
@@ -108,14 +108,14 @@ export default {
 			}
 		},
 		{
-			pattern: { en: 'Putting many section names in the horizontal menu', ja: '水平メニューに、多くのカテゴリ名を並べる' },
+			pattern: { en: 'Putting many section names in the horizontal menu', ja: '水平メニューに多くのカテゴリ名を並べる' },
 			harm: {
 				en: 'People have a harder time finding the page they are looking for.',
-				ja: '利用者が、目的のページを見つけにくくなる。'
+				ja: '利用者が目的のページを見つけにくくなる。'
 			},
 			instead: {
 				en: 'Sort out the sections and, where needed, add levels so that each section name opens its pages in the panel.',
-				ja: 'カテゴリを整理し、必要なら階層に分けて、カテゴリ名からパネルでその中のページを開くようにする。'
+				ja: 'カテゴリを整理し、必要なら階層に分けて、カテゴリ名ごとにその中のページをパネルで開くようにする。'
 			}
 		}
 	],
@@ -124,14 +124,14 @@ export default {
 			id: 'menubar',
 			diff: {
 				en: 'A mega menu shows a site’s pages in a wide panel and is used with buttons and the Tab key; a menubar holds an app’s commands and is moved through with the arrow keys.',
-				ja: 'メガメニューはサイトのページを幅の広いパネルで見せ、ボタンと Tab キーで操作する。メニューバーはアプリの操作をまとめ、矢印キーで移る。'
+				ja: 'メガメニューはサイトのページを幅の広いパネルで見せてボタンと Tab キーで操作し、メニューバーはアプリの操作をまとめ、矢印キーで移る。'
 			}
 		},
 		{
 			id: 'menu',
 			diff: {
 				en: 'A mega menu shows many navigation links in a wide panel; a menu lists a few actions in a narrow column.',
-				ja: 'メガメニューは多くのナビゲーションのリンクを幅の広いパネルで見せ、メニューは少しの操作を細い列に並べる。'
+				ja: 'メガメニューは多くのナビゲーションのリンクを幅の広いパネルで見せ、メニューはいくつかの操作を細い列に並べる。'
 			}
 		},
 		{

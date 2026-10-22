@@ -113,7 +113,7 @@ export default {
 			id: 'drawer',
 			diff: {
 				en: 'A hamburger menu button is only the trigger; the drawer is the panel it opens from the edge of the screen.',
-				ja: 'ハンバーガーメニューボタンは開くきっかけになるボタンで、ドロワーはそれで画面の端から開くパネル。'
+				ja: 'ハンバーガーメニューボタンは開くきっかけになるボタンで、ドロワーはこのボタンで画面の端から開くパネル。'
 			}
 		},
 		{

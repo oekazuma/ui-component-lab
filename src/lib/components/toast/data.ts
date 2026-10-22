@@ -76,7 +76,7 @@ export default {
 			},
 			harm: {
 				en: 'A notice in a corner of the screen is easy to miss. People who need more time to find and read content, such as screen reader users and people with low vision or cognitive disabilities, may lose it before they finish reading.',
-				ja: '画面の隅の通知は気づかれずに見過ごされやすい。スクリーンリーダーの利用者や、弱視や認知に障害のある人など、内容を見つけて読むのに時間がかかる人は、読み終える前に見失うことがある。'
+				ja: '画面の隅の通知は見過ごされやすい。スクリーンリーダーの利用者や、弱視や認知に障害のある人など、内容を見つけて読むのに時間がかかる人は、読み終える前に見失うことがある。'
 			},
 			instead: {
 				en: 'Use a toast only for results the user can also check elsewhere, such as an archived message that appears in the archive. Otherwise use an alert in the page, or keep the toast until the user closes it.',

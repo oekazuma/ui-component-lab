@@ -34,7 +34,7 @@ export default {
 		},
 		{
 			en: 'In this demo, it explains the shipping fee in an order summary, and holds a link to more details and a Close button.',
-			ja: 'このデモでは、注文内容の送料の決まり方を説明し、詳しい説明へのリンクと「閉じる」ボタンを持つ。'
+			ja: 'このデモでは、注文内容の送料の決まり方を説明し、中に詳しい説明へのリンクと「閉じる」ボタンを置いている。'
 		},
 		{
 			en: 'Moving focus out of it does not close it; it stays open until the button, an outside click or Esc closes it.',

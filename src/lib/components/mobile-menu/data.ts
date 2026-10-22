@@ -13,7 +13,7 @@ export default {
 	},
 	appearance: {
 		en: 'A full-width list of tall rows, one link or group per row, inside a panel that covers part of the screen. Groups open in place or slide to a second list, and section names in bold separate the parts.',
-		ja: 'パネルの中に、1行に1つのリンクかまとまりを置いた、幅いっぱいの高い行が縦に並ぶ。まとまりはその場で開くか次の一覧へすべって移り、太字のセクション名で部分を分ける。'
+		ja: 'パネルの中に、1行に1つのリンクかまとまりを置いた、幅いっぱいの高い行が縦に並ぶ。まとまりはその場で開くか次の一覧へすべって移り、太字のセクション名が部分を区切る。'
 	},
 	behavior: [
 		{
@@ -22,7 +22,7 @@ export default {
 		},
 		{
 			en: 'Rows are tall enough to tap. A link goes to its page; a group shows the links under it.',
-			ja: '行はタップしやすい高さにする。リンクはそのページへ移り、まとまりはその下のリンクを見せる。'
+			ja: '行はタップしやすい高さになっている。リンクはそのページへ移り、まとまりはその下のリンクを見せる。'
 		},
 		{
 			en: 'This demo is the accordion type: each group is a `<details>` element, so the browser opens and closes it and tells screen readers whether it is open.',
@@ -42,7 +42,7 @@ export default {
 			key: 'Enter / Space',
 			action: {
 				en: 'On a group, opens or closes it. Enter on a link goes to its page.',
-				ja: 'まとまりでは、それを開閉する。リンクで Enter を押すと、そのページへ移る。'
+				ja: 'まとまりではそれを開閉する。リンクで Enter を押すと、そのページへ移る。'
 			}
 		},
 		{
@@ -98,7 +98,7 @@ export default {
 		{
 			pattern: {
 				en: 'Mixing the sliding type and the accordion type in one menu',
-				ja: '1つのメニューに、スライド型とアコーディオン型を混ぜる'
+				ja: '1つのメニューにスライド型とアコーディオン型を混ぜる'
 			},
 			harm: {
 				en: 'People have to deal with two different ways of opening groups, which makes the menu complicated to use.',
@@ -112,7 +112,7 @@ export default {
 		{
 			pattern: {
 				en: 'Telling links and groups apart only by the direction of the same chevron, such as › for links and ⌄ for groups',
-				ja: 'リンクとまとまりを、同じシェブロンの向きの違いだけで見分けさせる（リンクは ›、まとまりは ⌄ など）'
+				ja: 'リンクは ›、まとまりは ⌄ のように、同じシェブロンの向きの違いだけでリンクとまとまりを見分けさせる'
 			},
 			harm: {
 				en: 'It takes extra mental effort to see at a glance which rows go to a page and which open a group.',

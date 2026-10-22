@@ -19,7 +19,7 @@ export default {
 	behavior: [
 		{
 			en: 'Exactly one segment is selected at all times, and choosing another moves the selection to it. The first segment is usually selected at the start.',
-			ja: '選ばれている区画は常に1つで、別の区画を選ぶと選択がそちらへ移る。最初はふつう、先頭の区画を選んでおく。'
+			ja: '選ばれている区画は常に1つで、別の区画を選ぶと選択がそちらへ移る。ふつうは最初から先頭の区画が選ばれている。'
 		},
 		{
 			en: 'The whole control is a single Tab stop, and the arrow keys move the selection between segments.',
@@ -27,7 +27,7 @@ export default {
 		},
 		{
 			en: 'This demo is a group of native radio buttons in a `<fieldset>`, styled as segments. The browser keeps exactly one selected and handles the arrow keys and the Tab stop. The `<legend>` gives the group its name and is visually hidden.',
-			ja: 'このデモは、`<fieldset>` の中のネイティブのラジオボタンを区画の見た目にしたもの。選ぶのは常に1つにすること、矢印キー、Tab キーで止まる場所は、ブラウザが受け持つ。グループの名前は `<legend>` で付け、見た目には隠している。'
+			ja: 'このデモは `<fieldset>` の中のネイティブのラジオボタンを区画の見た目にしたもの。常に1つだけが選ばれた状態を保つこと、矢印キーの操作、Tab キーで止まる場所は、ブラウザが受け持つ。グループの名前は `<legend>` で付け、見た目には隠している。'
 		},
 		{
 			en: 'In this demo, the selected period changes the step count shown under the control.',
@@ -69,7 +69,7 @@ export default {
 			name: { en: 'Icon only', ja: 'アイコンだけ' },
 			description: {
 				en: 'Each segment shows only an icon, such as list and grid views, when space is short or the icons are clear. Every segment still needs a name, given with `aria-label` or visually hidden text.',
-				ja: '場所が狭いときや、一覧表示と格子表示のようにアイコンで意味が分かるとき、区画にアイコンだけを置くもの。区画にはそれぞれ、`aria-label` や見た目に隠した文字で名前を付ける。'
+				ja: '場所が狭いときや、一覧表示と格子表示のようにアイコンで意味が分かるとき、区画にアイコンだけを置くもの。区画にはそれぞれ `aria-label` や見た目に隠した文字で名前を付ける。'
 			}
 		},
 		{
@@ -97,7 +97,7 @@ export default {
 	usage: [
 		{
 			en: 'Label segments with short nouns or noun phrases, such as Day or List, not with actions.',
-			ja: '区画のラベルは、「日」「一覧」のような短い名詞にし、操作を表す言葉にしない。'
+			ja: '区画のラベルは「日」「一覧」のような短い名詞にし、操作を表す言葉にしない。'
 		},
 		{
 			en: 'Keep the segments the same width.',
@@ -112,7 +112,7 @@ export default {
 		{
 			pattern: {
 				en: 'Putting many segments in one control',
-				ja: '1つの部品に、多くの区画を並べる'
+				ja: '1つの部品に多くの区画を並べる'
 			},
 			harm: {
 				en: 'Too many segments are hard to take in and take a long time to move through.',
@@ -126,7 +126,7 @@ export default {
 		{
 			pattern: {
 				en: 'Mixing text segments and icon segments in one control',
-				ja: '1つの部品に、文字の区画とアイコンの区画を混ぜる'
+				ja: '1つの部品に文字の区画とアイコンの区画を混ぜる'
 			},
 			harm: {
 				en: 'The control looks disjointed and confusing.',
@@ -150,7 +150,7 @@ export default {
 			id: 'radio',
 			diff: {
 				en: 'A segmented control shows a few short choices as joined buttons in one row; radio buttons list choices with round markers and can hold longer labels.',
-				ja: 'セグメンテッドコントロールは少しの短い選択肢をつながったボタンとして1列に並べ、ラジオボタンは丸い印を付けて選択肢を並べ、長いラベルも置ける。'
+				ja: 'セグメンテッドコントロールは数個の短い選択肢をつながったボタンとして1列に並べ、ラジオボタンは丸い印を付けて選択肢を並べ、長いラベルも置ける。'
 			}
 		},
 		{

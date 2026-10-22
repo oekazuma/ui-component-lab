@@ -99,7 +99,7 @@ export default {
 			id: 'tabs',
 			diff: {
 				en: 'An accordion stacks sections vertically and can open several at once; tabs show one panel at a time side by side.',
-				ja: 'アコーディオンは縦に積んで複数を同時に開けるが、タブは横に並べて1枚ずつ表示する。'
+				ja: 'アコーディオンは項目を縦に積んで複数を同時に開けるが、タブは横に並べて1枚ずつ表示する。'
 			}
 		},
 		{

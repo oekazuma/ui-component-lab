@@ -16,7 +16,7 @@ export default {
 	behavior: [
 		{
 			en: 'Each item is a link to a heading on the same page. Following it moves to that section, and the next Tab continues from there.',
-			ja: '項目はそれぞれ、同じページの見出しへのリンク。たどるとその節へ移り、次の Tab キーはそこから先へ進む。'
+			ja: '項目はそれぞれ、同じページの見出しへのリンク。たどるとその節へ移り、次に Tab キーを押すとそこから先へ進む。'
 		},
 		{
 			en: 'It is a `<nav>` named by its title with `aria-labelledby`, so screen reader users can find it among the landmarks.',
@@ -57,7 +57,7 @@ export default {
 			name: { en: 'Sticky beside the text', ja: '本文の横に固定' },
 			description: {
 				en: 'Stays in view in a column beside the text while the page scrolls, and marks the section being read, like the table of contents on this page.',
-				ja: 'このページの目次のように、本文の横の列でスクロールしても見えたままにし、今読んでいる節を示すもの。'
+				ja: 'このページの目次のように、ページをスクロールしても本文の横の列に見えたまま残り、今読んでいる節を示すもの。'
 			}
 		}
 	],
@@ -79,7 +79,7 @@ export default {
 		{
 			pattern: {
 				en: 'Wording the items differently from the headings they link to',
-				ja: '項目の文言を、リンク先の見出しと変える'
+				ja: '項目を、リンク先の見出しと違う文言にする'
 			},
 			harm: {
 				en: 'When the label in the table of contents does not match the heading, people cannot find the place they were looking for.',
@@ -117,7 +117,7 @@ export default {
 			id: 'tabs',
 			diff: {
 				en: 'A table of contents links to sections that are all on the page at once; tabs show one panel at a time and hide the others.',
-				ja: '目次はすべて同時にページにある節へのリンクで、タブはパネルを1つずつ見せてほかを隠す。'
+				ja: '目次はすべてが同時にページにある節へのリンクで、タブはパネルを1つずつ見せてほかを隠す。'
 			}
 		}
 	],

@@ -28,11 +28,11 @@ export default {
 		},
 		{
 			en: 'The shapes say nothing to screen reader users, so the start and end of loading are announced in words through a `role="status"` live region placed outside the busy area.',
-			ja: '図形はスクリーンリーダーの利用者には何も伝えないため、読み込みの始まりと終わりを、読み込み中の領域の外に置いた `role="status"` のライブリージョンで言葉で知らせる。'
+			ja: '図形はスクリーンリーダーの利用者に何も伝えないため、読み込みの始まりと終わりは、読み込み中の領域の外に置いた `role="status"` のライブリージョンを使って言葉で知らせる。'
 		},
 		{
 			en: 'In this demo, the image placeholder keeps the same size as the image that replaces it, so the lines below do not move.',
-			ja: 'このデモでは、画像の場所の仮の図形を、置き換わる画像と同じ大きさにして、下の行がずれないようにしている。'
+			ja: 'このデモでは、画像が入る場所の仮の図形を、置き換わる画像と同じ大きさにして、下の行がずれないようにしている。'
 		}
 	],
 	keyboard: [
@@ -62,7 +62,7 @@ export default {
 			id: 'empty-state',
 			diff: {
 				en: 'A skeleton fills the space while content is still loading; an empty state appears after loading has finished with nothing to show.',
-				ja: 'スケルトンは、まだ読み込んでいる間に場所を埋める。空の状態は、読み込みが終わって表示するものがないときに出す。'
+				ja: 'スケルトンはまだ読み込んでいる間に場所を埋め、空の状態は読み込みが終わって表示するものがないときに出る。'
 			}
 		}
 	],

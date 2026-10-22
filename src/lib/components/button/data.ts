@@ -7,7 +7,7 @@ export default {
 	aliases: [],
 	summary: {
 		en: 'Triggers an action, such as submitting a form or opening a dialog.',
-		ja: 'フォームの送信やダイアログを開くなど、操作を実行する部品。'
+		ja: 'フォームを送信する、ダイアログを開くといった操作を実行する部品。'
 	},
 	appearance: {
 		en: 'A short label (sometimes with an icon) inside a clickable area, usually with a background or border. The most important action is often filled with the accent color. In this demo, “Cancel”, “Save draft” and “Submit” sit in a row as a text button, an outline button and a filled button.',
@@ -29,7 +29,7 @@ export default {
 	],
 	keyboard: [
 		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus to the button.', ja: 'ボタンにフォーカスを移す。' } },
-		{ key: 'Enter / Space', action: { en: 'Activates the button.', ja: 'ボタンを実行する。' } }
+		{ key: 'Enter / Space', action: { en: 'Activates the button.', ja: 'ボタンを押す。' } }
 	],
 	variations: [
 		{

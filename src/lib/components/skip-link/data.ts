@@ -18,7 +18,7 @@ export default {
 	behavior: [
 		{
 			en: 'It is the first thing Tab reaches on the page. Following it moves focus to the main content, so the next Tab continues from there instead of going through every link in the header.',
-			ja: 'ページの中で、Tab キーで最初にフォーカスが来る。たどると本文へフォーカスが移り、次の Tab キーはヘッダーのリンクを順にたどらず、本文から先へ進む。'
+			ja: 'ページの中で、Tab キーで最初にフォーカスが来る。リンクをたどると本文へフォーカスが移り、次に Tab キーを押すと、ヘッダーのリンクを順に通らずに本文から先へ進む。'
 		},
 		{
 			en: 'It is hidden by moving it off screen, not with `display: none` or the `hidden` attribute, so it stays in the keyboard order and is shown when it gets focus.',
@@ -65,7 +65,7 @@ export default {
 	usage: [
 		{
 			en: 'Put it on pages that repeat blocks such as a header or navigation. Screen reader users then do not have to hear the same header on every page, and keyboard users reach the content with far fewer keystrokes.',
-			ja: 'ヘッダーやナビゲーションのように、ページごとに繰り返す部分があるページに置く。スクリーンリーダーの利用者はページごとに同じヘッダーを聞かずに済み、キーボードの利用者ははるかに少ないキー操作で本文に届く。'
+			ja: 'ヘッダーやナビゲーションのように、ページごとに繰り返す部分があるページに置く。スクリーンリーダーの利用者はページごとに同じヘッダーを聞かずに済み、キーボードの利用者ははるかに少ないキー操作で本文にたどり着ける。'
 		},
 		{
 			en: 'Word it by where it goes, such as “Skip to main content”, rather than by what it skips.',
@@ -115,7 +115,7 @@ export default {
 			id: 'link',
 			diff: {
 				en: 'A skip link is a link to a place on the same page that usually stays hidden until it gets focus; an ordinary link is always visible.',
-				ja: 'スキップリンクは同じページの中の場所へのリンクで、多くはフォーカスが来るまで隠れている。ふつうのリンクは常に見えている。'
+				ja: 'スキップリンクは同じページの中の場所へのリンクで、多くはフォーカスが来るまで隠れており、ふつうのリンクは常に見えている。'
 			}
 		},
 		{

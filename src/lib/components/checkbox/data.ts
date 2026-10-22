@@ -41,7 +41,7 @@ export default {
 	],
 	keyboard: [
 		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between checkboxes.', ja: 'チェックボックス間を移動する。' } },
-		{ key: 'Space', action: { en: 'Checks or unchecks the focused box.', ja: 'フォーカス中のチェックを付ける・外す。' } }
+		{ key: 'Space', action: { en: 'Checks or unchecks the focused box.', ja: 'フォーカス中のボックスのチェックを付ける・外す。' } }
 	],
 	usage: [
 		{
@@ -65,7 +65,7 @@ export default {
 			},
 			harm: {
 				en: 'People tend to go with an option that has already been chosen for them. Anyone who scrolls past without noticing the setting goes on unaware of what it means, and can end up agreeing to things they never intended, such as recurring payments.',
-				ja: '人は、あらかじめ選ばれている選択肢をそのまま受け入れやすい。気づかずに先へ進んだ人は、その意味を知らないまま、定期的な支払いのような意図しない内容に同意してしまうことがある。'
+				ja: '人はあらかじめ選ばれている選択肢をそのまま受け入れやすい。気づかずに先へ進んだ人は、その意味を知らないまま、定期的な支払いのような意図しない内容に同意してしまうことがある。'
 			},
 			instead: {
 				en: 'Show these boxes unchecked, so that agreement only comes from people checking them themselves, and say in the label exactly what they agree to.',

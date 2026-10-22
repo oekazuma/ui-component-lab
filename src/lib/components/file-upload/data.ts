@@ -16,7 +16,7 @@ export default {
 	},
 	appearance: {
 		en: 'A “Choose files” button, often inside a dashed box where files can be dropped. Chosen files are listed below with their names and sizes.',
-		ja: '「ファイルを選択」ボタンがあり、ファイルを落とせる点線の枠に入っていることが多い。選んだファイルは名前と大きさが下に並ぶ。'
+		ja: '「ファイルを選択」ボタンがあり、ファイルを落とせる点線の枠に入っていることが多い。選んだファイルの名前と大きさが下に並ぶ。'
 	},
 	behavior: [
 		{

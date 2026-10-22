@@ -42,7 +42,7 @@ export default {
 			key: 'Enter / Space',
 			action: {
 				en: 'On the button, opens or closes the list. Enter on a language switches to it.',
-				ja: 'ボタンでは、一覧を開閉する。言語で Enter を押すと、その言語に切り替わる。'
+				ja: 'ボタンでは一覧を開閉する。言語で Enter を押すと、その言語に切り替わる。'
 			}
 		},
 		{
@@ -90,7 +90,7 @@ export default {
 		{
 			pattern: {
 				en: 'Labeling the selector only with words in one language, such as “Select language”',
-				ja: '選ぶ部品のラベルを、「言語を選択」のような1つの言語の言葉だけにする'
+				ja: '言語を選ぶ部品のラベルを、「言語を選択」のような1つの言語の言葉だけにする'
 			},
 			harm: {
 				en: 'People who do not read that language cannot tell that this is where to change the language.',
@@ -112,7 +112,7 @@ export default {
 			},
 			instead: {
 				en: 'Use links to each language, or put a button next to the `<select>` that moves to the chosen language when pressed.',
-				ja: '各言語へのリンクにする。`<select>` を使うなら横にボタンを置き、押したときに選んだ言語へ移る。'
+				ja: '各言語へのリンクにする。`<select>` を使うなら横にボタンを置き、そのボタンを押したら選んだ言語へ移るようにする。'
 			}
 		}
 	],

@@ -18,7 +18,7 @@ export default {
 	behavior: [
 		{
 			en: 'Opened from a button, often a menu or filter icon.',
-			ja: 'メニューや絞り込みのアイコンなど、ボタンから開く。'
+			ja: 'メニューや絞り込みのアイコンなどのボタンから開く。'
 		},
 		{
 			en: 'While open, the page behind cannot be used; Esc or the close button closes it and focus returns to the button.',
@@ -34,7 +34,7 @@ export default {
 		},
 		{
 			en: 'In this demo, `closedby="any"` also closes the drawer when the dimmed background is clicked. Browsers that do not support `closedby` ignore it, and the drawer then closes only with the close button or Esc.',
-			ja: 'このデモでは `closedby="any"` により、暗くした背景をクリックしても閉じる。`closedby` に対応していないブラウザはこれを無視し、閉じるボタンか Esc でだけ閉じる。'
+			ja: 'このデモでは `closedby="any"` により、暗くした背景をクリックしても閉じる。`closedby` に対応していないブラウザはこれを無視し、閉じるボタンか Esc でしか閉じない。'
 		},
 		{
 			en: 'In this demo, the choices take effect only when “Apply” is pressed, and the button that opens the drawer then shows how many filters are on. Closing it any other way drops the choices made since it opened.',

@@ -57,7 +57,7 @@ export default {
 	usage: [
 		{
 			en: 'With more than five options, support Home / End; with more than seven, support jumping by typing.',
-			ja: '選択肢が5つを超えるなら Home / End、7つを超えるなら文字入力での移動にも対応させる。'
+			ja: '選択肢が5つを超えるなら Home / End に、7つを超えるなら文字入力での移動にも対応させる。'
 		},
 		{
 			en: 'Selection that follows focus is only for single selection.',
@@ -92,7 +92,7 @@ export default {
 			id: 'radio',
 			diff: {
 				en: 'A listbox scrolls and is one tab stop; radio buttons show every option with its own label.',
-				ja: 'リストボックスはスクロールでき Tab では1か所として扱われ、ラジオボタンは選択肢ごとにラベル付きで全部を見せる。'
+				ja: 'リストボックスはスクロールできて Tab では1か所として扱われ、ラジオボタンは選択肢ごとにラベル付きで全部を見せる。'
 			}
 		}
 	],

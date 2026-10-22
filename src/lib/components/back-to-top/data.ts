@@ -22,11 +22,11 @@ export default {
 		},
 		{
 			en: 'The browser already does the same with the Home key, and Safari on iPhone does it when the status bar at the top of the screen is tapped.',
-			ja: '同じことは、ブラウザが Home キーで、iPhone の Safari では画面上端のステータスバーをタップすることで、すでに用意している。'
+			ja: 'ブラウザでは、すでに Home キーで同じことができる。iPhone の Safari では、画面上端のステータスバーをタップしても同じことができる。'
 		},
 		{
 			en: 'In this demo, the article scrolls inside its own box so the page stays still, and it starts partway down. The button stays in the lower right of the box, appears only after scrolling about half the height of the box, and moves focus to the article’s title when pressed, so the next Tab starts from the top instead of from the hidden button.',
-			ja: 'このデモでは、ページを動かさないよう、記事を専用の枠の中でスクロールさせ、途中までスクロールした状態で始める。ボタンは枠の右下にとどまり、枠の高さの半分ほどスクロールしてから現れる。押すと記事のタイトルへフォーカスを移し、次の Tab キーが消えたボタンからではなく先頭から始まるようにしている。'
+			ja: 'このデモでは、ページを動かさないよう、記事を専用の枠の中でスクロールさせ、途中までスクロールした状態で始める。ボタンは枠の右下にとどまり、枠の高さの半分ほどスクロールしてから現れる。押すと記事のタイトルへフォーカスを移し、次に Tab キーを押したとき、消えたボタンの位置からではなく先頭から移るようにしている。'
 		},
 		{
 			en: 'In this demo, the box itself can take focus, so with focus in the box, Home and End also scroll it to the start and the end.',
@@ -46,11 +46,11 @@ export default {
 	usage: [
 		{
 			en: 'The Digital Agency Design System no longer recommends this component: it has accessibility problems and does not make pages easier to use, since the browser can already return to the top. If you use it anyway, keep in mind the people it gets in the way of.',
-			ja: 'デジタル庁デザインシステムは、この部品の使用を推奨していない。アクセシビリティの問題がある一方で、ブラウザでも先頭へ戻れるため使いやすさは上がらない、という理由による。それでも使う場合は、不利益を受ける人がいることを踏まえて慎重に使う。'
+			ja: 'デジタル庁デザインシステムは、この部品の使用を推奨していない。アクセシビリティの問題があり、ブラウザでも先頭へ戻れるので使いやすさも上がらない、という理由による。それでも使う場合は、不利益を受ける人がいることを踏まえて慎重に使う。'
 		},
 		{
 			en: 'Nielsen Norman Group takes a different view: most people do not know shortcuts such as the Home key, so for pages longer than about four screens it suggests one button per page in the lower right corner, labeled in words, and small enough not to cover content. It also suggests showing it only once people have scrolled a few screens and start scrolling back up, and notes that other techniques, such as navigation at the bottom of the page or sticky menus, may work better.',
-			ja: 'Nielsen Norman Group は、Home キーのような方法を知らない人が多いとして、画面およそ4つ分より長いページに向けて、ページに1つだけ右下の隅に置き、文字のラベルを付け、内容を覆わない小ささにすることを勧めている。何画面か下までスクロールして上へ戻ろうとしたときに初めて出すことも提案し、ページ下部のナビゲーションや固定のメニューなど、ほかの方法のほうが合う場合もあるとしている。'
+			ja: 'Nielsen Norman Group は、Home キーのような方法を知らない人が多いとして、画面およそ4つ分より長いページでは、ボタンをページに1つだけ右下の隅に置き、文字のラベルを付け、内容を覆わない小ささにすることを勧めている。何画面か下までスクロールして上へ戻ろうとしたときに初めて出すことも提案し、ページ下部のナビゲーションや固定のメニューなど、ほかの方法のほうが合う場合もあるとしている。'
 		}
 	],
 	misuse: [

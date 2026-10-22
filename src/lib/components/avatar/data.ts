@@ -16,7 +16,7 @@ export default {
 	behavior: [
 		{
 			en: 'When there is no photo, or it fails to load, it falls back to an initial or a generic icon.',
-			ja: '写真がないときや読み込めないときは、頭文字や汎用のアイコンで代わりに表示する。'
+			ja: '写真がないときや読み込めないときは、代わりに頭文字や汎用のアイコンを表示する。'
 		},
 		{
 			en: 'If the person’s name is already next to it, the avatar is decorative (`alt=""`), so the name is not read twice; otherwise it needs the name as alternative text.',
@@ -45,7 +45,7 @@ export default {
 			pattern: { en: 'Showing an avatar with no name anywhere', ja: '名前をどこにも示さずにアバターだけを置く' },
 			harm: {
 				en: 'People who have difficulty seeing the picture and use a screen reader or braille cannot get information that exists only in the picture, so they cannot tell whose avatar it is.',
-				ja: '画像を見て内容をつかむことが難しく、スクリーンリーダーや点字を使う人には、画像にしかない情報が届かない。誰のアバターなのかが分からない。'
+				ja: '画像を見て内容をつかむことが難しく、スクリーンリーダーや点字を使う人には、画像にしかない情報が届かず、誰のアバターなのかが分からない。'
 			},
 			instead: {
 				en: 'Give the avatar the person’s name as alternative text, or show the name next to it and mark the avatar as decorative.',

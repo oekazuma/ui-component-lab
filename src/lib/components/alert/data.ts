@@ -50,7 +50,7 @@ export default {
 	usage: [
 		{
 			en: 'If it can be closed, keep it closed and provide a way to show it again.',
-			ja: '閉じられるようにする場合は、閉じた状態を保ち、もう一度表示する手段を用意する。'
+			ja: '閉じられるようにする場合は、閉じたあともその状態を保ち、もう一度表示する手段を用意する。'
 		}
 	],
 	misuse: [
@@ -58,7 +58,7 @@ export default {
 			pattern: { en: 'Showing the type of message by color alone', ja: 'メッセージの種類を色だけで示す' },
 			harm: {
 				en: 'People with low vision or color vision deficiency, many older people, and anyone on a monochrome or limited-color display cannot tell an error from a success, so they can miss what the message means.',
-				ja: '弱視や色覚に特性のある人、色を見分けにくくなった高齢の人、白黒や色数の少ない画面で見ている人には、エラーか成功かが分からず、メッセージの意味を受け取れない。'
+				ja: '弱視や色覚に特性のある人、色を見分けにくくなった高齢の人、白黒や色数の少ない画面で見ている人には、エラーか成功かが分からず、メッセージの意味を受け取れないことがある。'
 			},
 			instead: {
 				en: 'Pair the color with an icon and words that name the type, such as “Error:” or “Done:”.',
@@ -77,7 +77,7 @@ export default {
 			}
 		},
 		{
-			pattern: { en: 'Removing the alert automatically after a few seconds', ja: '数秒で自動で消す' },
+			pattern: { en: 'Removing the alert automatically after a few seconds', ja: '数秒後に自動で消す' },
 			harm: {
 				en: 'People who need more time to find and read content, such as screen reader users and people with low vision or cognitive disabilities, can lose the message before they finish reading it.',
 				ja: 'スクリーンリーダーの利用者や、弱視や認知に障害のある人など、内容を見つけて読むのに時間がかかる人は、読み終える前にメッセージを見失うことがある。'
@@ -114,14 +114,14 @@ export default {
 			id: 'emergency-banner',
 			diff: {
 				en: 'An alert carries ordinary important messages and can stay up for a long time; an emergency banner warns about urgent danger and cannot be closed.',
-				ja: 'アラートはふだんの重要なお知らせを伝えて長く載せておけ、緊急時バナーは差し迫った危険を知らせて閉じられない。'
+				ja: 'アラートはふだんの重要なお知らせを長く載せておけるが、緊急時バナーは差し迫った危険を知らせ、閉じられない。'
 			}
 		},
 		{
 			id: 'empty-state',
 			diff: {
 				en: 'An alert interrupts to report something important; an empty state stands in for missing content and points to the next step.',
-				ja: 'アラートは大事なことを知らせるために割り込んで出る。空の状態は、ない内容の代わりに置き、次の操作を示す。'
+				ja: 'アラートは大事なことを知らせるために割り込んで出るが、空の状態は内容がないときにその代わりに置き、次の操作を示す。'
 			}
 		}
 	],

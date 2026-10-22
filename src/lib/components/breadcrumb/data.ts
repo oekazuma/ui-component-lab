@@ -84,7 +84,7 @@ export default {
 			id: 'table-of-contents',
 			diff: {
 				en: 'A breadcrumb shows where the page sits among the pages of the site; a table of contents lists the sections within one page.',
-				ja: 'パンくずリストはサイトのページの階層の中で今のページの位置を示し、目次は1つのページの中の節を並べる。'
+				ja: 'パンくずリストはサイトの階層の中で今のページの位置を示し、目次は1つのページの中の節を並べる。'
 			}
 		}
 	],

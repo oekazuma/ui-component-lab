@@ -24,11 +24,11 @@ export default {
 		},
 		{
 			en: 'The current step is marked with `aria-current="step"`, and finished steps have hidden text saying so. Hidden text before the steps tells screen reader users the overall progress, such as “4 steps in total; reached step 2”.',
-			ja: '現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添える。段階の並びの前には「全4ステップ中、2ステップ目まで到達済み」のような全体の進み具合を、読み上げ用の文で置く。'
+			ja: '現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添える。段階の並びの前には、「全4ステップ中、2ステップ目まで到達済み」のように全体の進み具合を伝える読み上げ用の文を置く。'
 		},
 		{
 			en: 'In this demo, every step already reached is a button, so you can go back to a finished step and return. The current step and steps not yet reached are plain text.',
-			ja: 'このデモでは、一度たどり着いた段階はボタンになり、終わった段階へ戻ってまた先へ進める。現在の段階とまだ着いていない段階はただの文字。'
+			ja: 'このデモでは、一度たどり着いた段階はボタンになり、終わった段階へ戻ってまた先へ進める。現在の段階とまだたどり着いていない段階はただの文字。'
 		},
 		{
 			en: 'In this demo, “Documents” is optional and there is nothing to attach, so moving past it marks it as skipped. The state is shown in words, not only by the dashed circle.',
@@ -107,7 +107,7 @@ export default {
 			},
 			harm: {
 				en: 'Users who want to leave are kept away from it. Some give up and keep paying for a service they no longer need.',
-				ja: 'やめたい利用者が、その操作から遠ざけられる。あきらめて、もう要らないサービスに払い続ける人も出る。'
+				ja: 'やめたい利用者が、その操作から遠ざけられる。あきらめて、もう要らないサービスの料金を払い続ける人も出る。'
 			},
 			instead: {
 				en: 'Let users cancel in about as many steps as it took to sign up, and show the way to cancel where they can find it.',
@@ -121,7 +121,7 @@ export default {
 			id: 'tabs',
 			diff: {
 				en: 'A stepper shows steps completed in a fixed order; tabs can be opened in any order.',
-				ja: 'ステップナビゲーションの段階は決まった順に進め、タブはどの順番でも開ける。'
+				ja: 'ステップナビゲーションは決まった順に進む段階を示し、タブはどの順番でも開ける。'
 			}
 		},
 		{

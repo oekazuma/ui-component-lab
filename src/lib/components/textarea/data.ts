@@ -19,7 +19,7 @@ export default {
 	behavior: [
 		{
 			en: 'Enter starts a new line instead of submitting the form.',
-			ja: 'Enter を押すとフォームが送信されず、改行になる。'
+			ja: 'Enter を押してもフォームは送信されず、改行になる。'
 		},
 		{
 			en: 'The text scrolls inside the box when it gets longer than the visible lines.',
@@ -27,11 +27,11 @@ export default {
 		},
 		{
 			en: 'This demo shows the remaining characters and lets you type past the limit, showing how many characters are over instead of cutting the text off with `maxlength`.',
-			ja: 'このデモは残りの文字数を表示する。`maxlength` で打ち切らず、上限を超えても入力は止めずに、何文字超えているかを示す。'
+			ja: 'このデモは残りの文字数を表示する。上限を超えても `maxlength` で打ち切らずに入力でき、何文字超えているかを示す。'
 		},
 		{
 			en: 'In this demo, pressing Send while the text is over the limit shows an error with the number of characters entered, links it with `aria-describedby`, sets `aria-invalid`, and moves focus to the box. After the first send, the error updates as you type and disappears once the text fits.',
-			ja: 'このデモでは、上限を超えたまま「送信」を押すと、入力文字数入りのエラーを出して `aria-describedby` でつなぎ、`aria-invalid` を付けて、フォーカスを欄へ移す。一度送信したあとは、入力に合わせてエラーが変わり、上限内に収まると消える。'
+			ja: 'このデモでは、上限を超えたまま「送信」を押すと、入力した文字数を書いたエラーを出して `aria-describedby` でつなぎ、`aria-invalid` を付けて、フォーカスを欄へ移す。一度送信したあとは、入力に合わせてエラーが変わり、上限内に収まると消える。'
 		}
 	],
 	keyboard: [
@@ -68,7 +68,7 @@ export default {
 			},
 			harm: {
 				en: 'The person writing cannot tell how many characters are allowed until an error appears, and some error messages do not give the limit even then.',
-				ja: '書いている人は、エラーが出るまで何文字まで入力できるか分からない。エラーが出ても、何文字まで許されるのか分からないこともある。'
+				ja: '書いている人はエラーが出るまで何文字まで入力できるか分からない。エラーが出ても、何文字まで許されるのか分からないこともある。'
 			},
 			instead: {
 				en: 'Put the limit in the label, and show a counter when the limit is more than about 20 characters. When the text is too long, say so in the error together with the current count.',

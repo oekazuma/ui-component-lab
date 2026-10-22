@@ -115,7 +115,7 @@ export default {
 			id: 'text-field',
 			diff: {
 				en: 'A combobox adds a list of suggestions to a text field.',
-				ja: 'コンボボックスは、テキストフィールドに選べる候補のリストが付いたもの。'
+				ja: 'コンボボックスはテキストフィールドに選べる候補のリストが付いたもの。'
 			}
 		},
 		{

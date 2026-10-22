@@ -31,7 +31,7 @@ export default {
 		},
 		{
 			en: 'In this demo, jumping by typing a name and * to open all siblings are left out. APG recommends typing to jump especially for trees with more than seven top-level items, and lists * as optional; this tree has three top-level items and few files, so the arrow keys reach every item quickly.',
-			ja: 'このデモでは、名前の文字を打って移る操作と、* での一括展開を省いている。APG は文字入力での移動を特に最上位の項目が7つを超える木に勧め、* は任意としている。この木は最上位が3つでファイルも少なく、矢印キーだけで素早くたどれる。'
+			ja: 'このデモでは、名前の文字を打って移る操作と、* での一括展開を省いている。APG は最上位の項目が7つを超えるツリーでは特に文字入力での移動を勧め、* は任意としている。このツリーは最上位の項目が3つでファイルも少なく、矢印キーだけで素早くたどれる。'
 		}
 	],
 	keyboard: [

@@ -28,7 +28,7 @@ export default {
 		},
 		{
 			en: 'In this demo, the lines between sections are CSS borders, because the headings already show where each section starts. They run edge to edge (full width), while the lines between the notification channels stay inside the padding (inset).',
-			ja: 'このデモでは、セクションの間の線は CSS の border にしている。見出しでセクションの始まりがすでに伝わるため。セクションの間の線は枠の端から端まで（全幅）引き、通知の項目の間の線は余白の内側（インセット）に引いている。'
+			ja: 'このデモでは、見出しでセクションの始まりがすでに伝わるため、セクションの間の線は CSS の border にしている。この線は枠の端から端まで（全幅）引き、通知の項目の間の線は余白の内側（インセット）に引いている。'
 		},
 		{
 			en: 'In this demo, the vertical lines between links are only decoration and are hidden from screen readers.',

@@ -15,8 +15,8 @@
 			notifications: '通知',
 			messages: 'メッセージ',
 			downloads: 'ダウンロード',
-			unread: (label: string, n: string) => `${label} ${n}件の未読`,
-			fresh: (label: string) => `${label} 新着あり`
+			unread: (label: string, n: string) => `${label}、未読${n}件`,
+			fresh: (label: string) => `${label}、新着あり`
 		}
 	};
 

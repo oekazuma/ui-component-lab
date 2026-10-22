@@ -14,7 +14,7 @@ export default {
 	},
 	appearance: {
 		en: 'Nothing shows until it is opened. Then a small panel of action names, stacked vertically, appears at the pointer, over the page.',
-		ja: '開くまでは何も見えない。開くと、操作名を縦に並べた小さなパネルが、マウスポインターの位置にページの上に重なって出る。'
+		ja: '開くまでは何も見えない。開くと、操作名を縦に並べた小さなパネルが、ページに重なってマウスポインターの位置に出る。'
 	},
 	behavior: [
 		{
@@ -27,11 +27,11 @@ export default {
 		},
 		{
 			en: 'Inside, it works like any APG menu: focus moves to the first item, the arrow keys move between items, and Esc closes it and returns focus to the item it was opened on.',
-			ja: '開いたあとは APG のメニューと同じく、最初の項目にフォーカスが移り、矢印キーで項目を移り、Esc で閉じて開いた元の項目へフォーカスを戻す。'
+			ja: '開いたあとは APG のメニューと同じく、最初の項目にフォーカスが移り、矢印キーで項目の間を移動し、Esc で閉じて開いた元の項目へフォーカスを戻す。'
 		},
 		{
 			en: 'In this demo, each file also has a visible “⋯” button that opens the same menu, so people who cannot right-click, or do not know they can, still reach every action.',
-			ja: 'このデモでは、各ファイルに同じメニューを開く「⋯」ボタンも見える形で置き、右クリックできない人や、できると知らない人も、すべての操作に届くようにしている。'
+			ja: 'このデモでは、各ファイルに同じメニューを開く「⋯」ボタンも見える形で置き、右クリックできない人や、できると知らない人も、すべての操作にたどり着けるようにしている。'
 		},
 		{
 			en: 'In this demo, choosing an item only shows what was chosen, and the menu keeps within the screen when opened near its right edge.',
@@ -126,7 +126,7 @@ export default {
 			},
 			instead: {
 				en: 'Keep it to a few items that fit the item, and move rarely used actions elsewhere. Carbon suggests no more than 12.',
-				ja: 'その項目に合う少しの操作に絞り、あまり使わない操作は別の場所に移す。Carbon は12項目までを目安にしている。'
+				ja: 'その項目に合ういくつかの操作に絞り、あまり使わない操作は別の場所に移す。Carbon は12項目までを目安にしている。'
 			}
 		}
 	],

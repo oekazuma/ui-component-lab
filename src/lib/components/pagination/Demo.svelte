@@ -17,7 +17,7 @@
 			prev: '前へ',
 			next: '次へ',
 			page: (n: number) => `${n}ページ`,
-			showing: (from: number, to: number) => `全100件中 ${from}〜${to}件を表示`
+			showing: (from: number, to: number) => `全100件中${from}〜${to}件を表示`
 		}
 	};
 	const total = 10;

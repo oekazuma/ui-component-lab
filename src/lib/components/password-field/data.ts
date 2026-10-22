@@ -90,7 +90,7 @@ export default {
 			},
 			harm: {
 				en: 'People cannot paste from a password manager and have to type the password from memory or copy it character by character. This is hard for people with cognitive disabilities, such as difficulties with memory or reading.',
-				ja: 'パスワードマネージャーから貼り付けられず、記憶から入力するか、1文字ずつ書き写すことになる。記憶や読むことに困難があるなど、認知に障害のある人には難しい。'
+				ja: 'パスワードマネージャーから貼り付けられず、パスワードを思い出して入力するか、1文字ずつ書き写すことになる。記憶や読むことに困難があるなど、認知に障害のある人には難しい。'
 			},
 			instead: {
 				en: 'Allow paste, and set the right `autocomplete` value so browsers and password managers can fill the field.',
@@ -108,7 +108,7 @@ export default {
 			},
 			instead: {
 				en: 'Do not set a maximum. If one is truly needed, let people type past it and say so in an error message.',
-				ja: '最大の長さは決めない。どうしても要るなら、超えても入力させ、エラーメッセージで伝える。'
+				ja: '最大の長さは決めない。どうしても要るなら、超えても入力できるようにし、超えたことをエラーメッセージで伝える。'
 			}
 		}
 	],

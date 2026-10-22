@@ -36,7 +36,7 @@ export default {
 		},
 		{
 			en: 'In this demo, the range written above the track and the numbers at its ends are hidden from screen readers with `aria-hidden`, because each knob already announces its value.',
-			ja: 'このデモでは、溝の上に書いた範囲と両端の数字を、`aria-hidden` で読み上げから外している。値はつまみがそれぞれ読み上げるため。'
+			ja: 'このデモでは、値はつまみがそれぞれ読み上げるので、溝の上に書いた範囲と両端の数字は `aria-hidden` で読み上げから外している。'
 		}
 	],
 	keyboard: [

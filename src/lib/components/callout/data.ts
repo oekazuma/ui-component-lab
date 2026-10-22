@@ -19,7 +19,7 @@ export default {
 	behavior: [
 		{
 			en: 'It does nothing on its own. It is part of the page content and is read in order with the text around it.',
-			ja: 'それ自体は何も動かない。ページの内容の一部で、周りの文章と同じ順に読まれる。'
+			ja: 'それ自体は何の動作もしない。ページの内容の一部で、周りの文章と同じ順に読まれる。'
 		},
 		{
 			en: 'Unlike an alert, it has no `role="alert"`, so screen readers do not announce it out of turn.',
@@ -106,7 +106,7 @@ export default {
 			},
 			instead: {
 				en: 'Keep it for the few pieces of extra information that help the most, and write the rest in the main text.',
-				ja: '特に役立つ少しの補足だけに使い、それ以外は本文に書く。'
+				ja: '特に役立ついくつかの補足だけに使い、それ以外は本文に書く。'
 			}
 		}
 	],

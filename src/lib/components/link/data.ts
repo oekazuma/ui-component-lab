@@ -78,7 +78,7 @@ export default {
 		{
 			pattern: {
 				en: 'Styling ad links to look like the site’s own navigation or articles',
-				ja: '広告へのリンクを、サイトのナビゲーションや記事へのリンクと同じ見た目にする'
+				ja: '広告へのリンクをサイトのナビゲーションや記事へのリンクと同じ見た目にする'
 			},
 			harm: {
 				en: 'Users click the ad believing it is part of the interface or the site’s own content.',
@@ -103,7 +103,7 @@ export default {
 			id: 'back-to-top',
 			diff: {
 				en: 'A link moves to any page or place; a back to top button only returns to the top of the current page.',
-				ja: 'リンクはどのページや場所へも移れ、スクロールトップボタンは今のページの先頭へ戻るだけ。'
+				ja: 'リンクはどのページや場所へも移動でき、スクロールトップボタンは今のページの先頭へ戻るだけ。'
 			}
 		},
 		{

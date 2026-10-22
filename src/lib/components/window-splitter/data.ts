@@ -92,7 +92,7 @@ export default {
 			},
 			instead: {
 				en: 'Let the splitter take focus and move with the arrow keys and Enter, and give a single click or tap a job too, such as collapsing and restoring the pane or buttons with preset sizes.',
-				ja: '区切りをフォーカスできるようにして矢印キーと Enter で動かせるようにし、1回のクリックやタップでもできる操作を用意する。ペインを畳む・戻す、決まった大きさにするボタンなど。'
+				ja: '区切りをフォーカスできるようにして矢印キーと Enter で動かせるようにし、ペインを畳む・戻す操作や決まった大きさにするボタンなど、1回のクリックやタップでできる操作も用意する。'
 			}
 		}
 	],

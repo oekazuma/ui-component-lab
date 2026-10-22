@@ -55,11 +55,11 @@ export default {
 		{
 			pattern: {
 				en: 'Using a number input for codes such as postal codes or card numbers',
-				ja: '郵便番号やカード番号のような数字の符号に数値入力を使う'
+				ja: '郵便番号やカード番号のような番号に数値入力を使う'
 			},
 			harm: {
 				en: 'A number input treats the code as a quantity to step up or down. Someone entering a postal or card number can change it by accident while doing something else, such as scrolling the page, and if they type a character that is not a digit, they get no clear message about what is wrong.',
-				ja: '数値入力は、符号を増減できる数量として扱う。郵便番号やカード番号を入れている人が、ページのスクロールなど別の操作のつもりで番号を誤って変えてしまうことがある。数字以外の文字を入れても、何が誤りかがはっきり示されない。'
+				ja: '数値入力は、番号を増減できる数量として扱う。郵便番号やカード番号を入れている人が、ページのスクロールなど別の操作のつもりで番号を誤って変えてしまうことがある。数字以外の文字を入れても、何が誤りかがはっきり示されない。'
 			},
 			instead: {
 				en: 'Use a text input with `inputmode="numeric"` and a matching autocomplete value, such as `autocomplete="postal-code"`.',

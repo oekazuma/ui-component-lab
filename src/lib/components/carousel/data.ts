@@ -131,7 +131,7 @@ export default {
 			pattern: { en: 'Advancing slides automatically', ja: 'スライドを自動で切り替える' },
 			harm: {
 				en: 'Continuous motion pulls attention away from the rest of the page. People with cognitive or attention disabilities, and people who read slowly or have trouble following moving content, can find the page hard or impossible to use.',
-				ja: '動き続ける表示に注意を奪われ、ページのほかの部分を読めなくなる。認知障害や注意欠如のある人、読むのに時間がかかる人、動くものを目で追いにくい人には、ページが使いにくくなったり使えなくなったりする。'
+				ja: '動き続ける表示に気を取られ、ページのほかの部分に注意が向かなくなる。認知障害や注意欠如のある人、読むのに時間がかかる人、動くものを目で追いにくい人には、ページが使いにくくなったり使えなくなったりする。'
 			},
 			instead: {
 				en: 'Let users change slides themselves. If slides must rotate, provide a button that stops rotation, and pause while focus or the pointer is on the carousel.',

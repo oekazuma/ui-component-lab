@@ -7,7 +7,7 @@ export default {
 	aliases: [{ name: 'Input.OTP', source: 'Ant Design', url: 'https://ant.design/components/input#inputotp' }],
 	summary: {
 		en: 'A field for a short code sent by text message, email or an app, used once to confirm who is signing in.',
-		ja: 'SMS やメール、アプリで届いた短いコードを入れて、本人であることを1回だけ確かめる欄。'
+		ja: 'SMS やメール、アプリで届いた1回限りの短いコードを入れて、ログインする人が本人かを確かめる欄。'
 	},
 	appearance: {
 		en: 'A short text box with a label such as “Security code” and a hint saying how the code was sent. Some services draw one box for each digit instead.',
@@ -24,11 +24,11 @@ export default {
 		},
 		{
 			en: 'Spaces and hyphens are allowed and removed before checking, so a code can be entered the way it appears in the message.',
-			ja: '空白やハイフンも入力でき、確かめる前に取り除く。届いたままの形で入力できる。'
+			ja: '空白やハイフンも受け付けて確かめる前に取り除くので、届いたままの形でコードを入力できる。'
 		},
 		{
 			en: 'In this demo, nothing is sent, and any 6 digits are accepted. Pressing Continue with too few or too many digits shows an error below the field, links it with `aria-describedby`, and moves focus to the field. The field has no `maxlength`, so a pasted “123 456” is not cut off.',
-			ja: 'このデモでは何も送られず、6桁の数字なら何でも通る。桁が足りないまま、または多すぎるまま「次へ」を押すと、欄の下にエラーを出して `aria-describedby` でつなぎ、フォーカスを欄へ移す。`maxlength` は付けていないので、貼り付けた「123 456」も途中で切れない。'
+			ja: 'このデモでは何も送られず、6桁の数字なら何でも通る。桁が足りないときや多すぎるときに「次へ」を押すと、欄の下にエラーを出して `aria-describedby` でつなぎ、フォーカスを欄へ移す。`maxlength` は付けていないので、貼り付けた「123 456」も途中で切れない。'
 		}
 	],
 	keyboard: [
@@ -56,7 +56,7 @@ export default {
 		},
 		{
 			en: 'Error messages should say what is wrong with the code, such as too few digits, or that it has expired and a new one was sent.',
-			ja: 'エラーメッセージでは、桁が足りない、期限が切れたので新しいコードを送った、のように、コードの何が問題かを伝える。'
+			ja: 'エラーメッセージでは、「桁が足りない」「期限が切れたので新しいコードを送った」のように、コードの何が問題かを伝える。'
 		}
 	],
 	misuse: [
@@ -67,7 +67,7 @@ export default {
 			},
 			harm: {
 				en: 'People cannot paste the code and have to copy it by hand, digit by digit. Some people with cognitive disabilities, such as difficulties with memory or with numbers, cannot retype a one-time code.',
-				ja: 'コードを貼り付けられず、1桁ずつ書き写すことになる。記憶や数の扱いに困難があるなど、認知に障害のある人には、確認コードを打ち直せない人もいる。'
+				ja: 'コードを貼り付けられず、1桁ずつ書き写すことになる。記憶や数の扱いに困難があるなど、認知に障害のある人の中には、確認コードを打ち直せない人もいる。'
 			},
 			instead: {
 				en: 'Use one field. If the design needs separate boxes, make a paste into the first box fill all of them.',
@@ -80,7 +80,7 @@ export default {
 			id: 'text-field',
 			diff: {
 				en: 'A one-time code field is a text field set up for a short code: numeric keypad, autofill from the message, and spaces allowed.',
-				ja: '確認コードの入力は、短いコードのために整えたテキストフィールドで、数字のキーボード、届いたメッセージからの自動入力、空白の許容を備える。'
+				ja: '確認コードの入力は、短いコード向けに整えたテキストフィールドで、数字のキーボードが出て、届いたメッセージから自動で入力でき、空白も受け付ける。'
 			}
 		},
 		{

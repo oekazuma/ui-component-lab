@@ -42,7 +42,7 @@ export default {
 			},
 			instead: {
 				en: 'Change only one of them. For Bold or Mute, keep the label fixed and show the state with `aria-pressed`. For Play and Pause, where people using voice input say the label they see, change the label and make it an ordinary button without `aria-pressed`.',
-				ja: '変えるのはどちらか一方だけにする。太字やミュートは、ラベルを変えずに状態を `aria-pressed` で伝える。再生と一時停止のように、音声入力の人が見えているラベルを口にする場面では、ラベルを変え、`aria-pressed` のない普通のボタンにする。'
+				ja: '変えるのはどちらか一方だけにする。太字やミュートはラベルを変えずに状態を `aria-pressed` で伝える。再生と一時停止のように、音声入力を使う人が見えているラベルを口にする場面では、ラベルを変え、`aria-pressed` のない普通のボタンにする。'
 			}
 		}
 	],

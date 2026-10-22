@@ -30,7 +30,7 @@ export default {
 		},
 		{
 			en: 'Tab moves into the group as one stop; arrow keys move between the options and choose them at the same time.',
-			ja: 'Tab ではグループ全体が1か所として扱われ、グループ内は矢印キーで移動すると同時に選ばれる。'
+			ja: 'Tab ではグループ全体が1か所として扱われ、グループの中では矢印キーで選択肢を移ると同時に選ぶ。'
 		}
 	],
 	keyboard: [
@@ -38,7 +38,7 @@ export default {
 			key: 'Tab / Shift + Tab',
 			action: {
 				en: 'Moves into the group (to the chosen option, or to the first one if none is chosen) and out of it.',
-				ja: 'グループ（選ばれている選択肢。どれも選ばれていなければ最初の選択肢）へ入る、またはグループから出る。'
+				ja: 'グループ（選ばれている選択肢、どれも選ばれていなければ最初の選択肢）へ入る、またはグループから出る。'
 			}
 		},
 		{
@@ -96,14 +96,14 @@ export default {
 			id: 'listbox',
 			diff: {
 				en: 'Radio buttons show every option with its own label; a listbox scrolls and is one tab stop.',
-				ja: 'ラジオボタンは選択肢ごとにラベル付きで全部を見せ、リストボックスはスクロールでき Tab では1か所として扱われる。'
+				ja: 'ラジオボタンは選択肢ごとのラベルを付けてすべてを見せ、リストボックスはスクロールでき、Tab では1か所として扱われる。'
 			}
 		},
 		{
 			id: 'segmented-control',
 			diff: {
 				en: 'Radio buttons list choices with round markers and can hold longer labels; a segmented control shows a few short choices as joined buttons in one row.',
-				ja: 'ラジオボタンは丸い印を付けて選択肢を並べ、長いラベルも置ける。セグメンテッドコントロールは少しの短い選択肢をつながったボタンとして1列に並べる。'
+				ja: 'ラジオボタンは丸い印を付けて選択肢を並べ、長いラベルも置ける。セグメンテッドコントロールは数個の短い選択肢をつながったボタンとして1列に並べる。'
 			}
 		},
 		{

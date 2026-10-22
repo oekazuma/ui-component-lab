@@ -32,7 +32,7 @@ export default {
 		},
 		{
 			en: 'The APG Tooltip pattern is still marked as work in progress.',
-			ja: 'APG の Tooltip パターンは、まだ作業中と明記されている。'
+			ja: 'APG の Tooltip パターンはまだ作業中と明記されている。'
 		}
 	],
 	keyboard: [
@@ -53,7 +53,7 @@ export default {
 			},
 			harm: {
 				en: 'Tooltips usually do not appear on touchscreens, mouse-only ones cannot be reached by keyboard, and they are hard to notice, so people may never find the information. They also have to remember it after it disappears.',
-				ja: 'タッチ画面ではふつう表示されず、マウスでしか出ないものはキーボードで使う人に届かない。目印がなく気づきにくいため情報に行き着けないこともあり、消えたあとは覚えておく必要がある。'
+				ja: 'タッチ画面ではふつう表示されず、マウスでしか出ないものはキーボードで使う人に届かない。目印がなく気づきにくいため、情報に行き着けないこともある。また、消えたあとは内容を覚えておく必要がある。'
 			},
 			instead: {
 				en: 'Show information such as input requirements on the page itself, and label icons with visible text. Use a tooltip only for supplementary hints.',
@@ -71,7 +71,7 @@ export default {
 			},
 			instead: {
 				en: 'Let Esc hide the tooltip without moving the pointer or focus, keep it open while the pointer is over the tooltip itself, and keep it visible until the pointer or focus leaves.',
-				ja: 'ポインターやフォーカスを動かさずに Esc で消せるようにし、ツールチップ自体にポインターを乗せても消えないようにし、ポインターやフォーカスが離れるまで表示し続ける。'
+				ja: 'ポインターやフォーカスを動かさずに Esc で消せるようにする。ツールチップ自体にポインターを乗せても消さず、ポインターやフォーカスが離れるまで表示し続ける。'
 			}
 		}
 	],

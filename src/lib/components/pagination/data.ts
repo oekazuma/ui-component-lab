@@ -55,7 +55,7 @@ export default {
 			name: { en: 'Previous and next with a counter', ja: '前後とカウンターだけの型' },
 			description: {
 				en: 'Only “Previous page” and “Next page” with the position, such as “5 / 24”, between them and no page numbers. The Digital Agency Design System uses this form, as text, outlined or arrow-only buttons.',
-				ja: 'ページ番号を並べず、「前のページ」「次のページ」と、その間の「5 / 24」のような現在位置だけを置くもの。デジタル庁デザインシステムはこの形で、テキスト型・アウトライン型・矢印型がある。'
+				ja: 'ページ番号を並べず、「前のページ」「次のページ」と、その間の「5 / 24」のような現在位置だけを置くもの。デジタル庁デザインシステムはこの形を使い、ボタンにはテキスト型・アウトライン型・矢印型がある。'
 			}
 		},
 		{
@@ -93,7 +93,7 @@ export default {
 			id: 'feed',
 			diff: {
 				en: 'Pagination splits the items into pages that people choose to move between; a feed adds the next articles in place as people read.',
-				ja: 'ページネーションは項目をページに分けて利用者が選んで移り、フィードは読み進めるとその場に次の記事を足す。'
+				ja: 'ページネーションは項目をページに分けて利用者が選んだページへ移り、フィードは読み進めるとその場に次の記事を足す。'
 			}
 		},
 		{

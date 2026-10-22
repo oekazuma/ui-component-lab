@@ -15,12 +15,12 @@ export default {
 	},
 	appearance: {
 		en: 'A short heading, a sentence or two, and often a button, in the space where the content would be. A simple picture often sits above them.',
-		ja: '内容が入るはずの場所に、短い見出しと1〜2文の説明、多くはボタンが並ぶ。上に簡単な絵が付くことも多い。'
+		ja: '内容が入るはずの場所に、短い見出しと1〜2文の説明が並び、多くの場合はボタンもある。上に簡単な絵が付くことも多い。'
 	},
 	behavior: [
 		{
 			en: 'It replaces the empty list or table entirely, with no leftover headers, so screen readers do not read an empty table before the message.',
-			ja: '空の一覧や表を、見出しの行なども残さず丸ごと置き換える。スクリーンリーダーが、案内より先に空の表を読み上げずに済む。'
+			ja: '空の一覧や表を、見出しの行なども残さず丸ごと置き換える。こうすると、スクリーンリーダーが案内より先に空の表を読み上げずに済む。'
 		},
 		{
 			en: 'The picture is decoration, so it is hidden from screen readers (`alt=""` for an image). The heading and text carry the meaning.',

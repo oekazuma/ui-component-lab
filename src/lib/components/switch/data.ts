@@ -14,7 +14,7 @@ export default {
 	},
 	appearance: {
 		en: 'A pill-shaped track with a round knob. The knob slides to one end and the track changes color when it is on.',
-		ja: '角の丸い横長のつまみ溝に、丸いつまみが乗った形。オンにするとつまみが端へ移り、溝の色が変わる。'
+		ja: '角の丸い横長の溝に、丸いつまみが乗った形。オンにするとつまみが端へ移り、溝の色が変わる。'
 	},
 	behavior: [
 		{
@@ -67,7 +67,7 @@ export default {
 			},
 			harm: {
 				en: 'People tend to go with an option that has already been chosen for them. Anyone who scrolls past without noticing the setting goes on unaware of what it means, and leaves it on without ever having chosen it.',
-				ja: '人は、あらかじめ選ばれている選択肢をそのまま受け入れやすい。気づかずに先へ進んだ人は、その意味を知らないまま、自分で選んでいない設定をオンのまま使い続けることになる。'
+				ja: '人はあらかじめ選ばれている選択肢をそのまま受け入れやすい。気づかずに先へ進んだ人は、その意味を知らないまま、自分で選んでいない設定をオンのまま使い続けることになる。'
 			},
 			instead: {
 				en: 'Start these settings off and let people turn them on themselves. Say in the label what turning it on does.',

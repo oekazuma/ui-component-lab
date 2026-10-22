@@ -16,7 +16,7 @@ export default {
 	behavior: [
 		{
 			en: 'This site’s header search (“Search by name”, opened with ⌘K or Ctrl + K) is a command palette whose commands open the component pages.',
-			ja: 'このサイトのヘッダーの検索窓（「名前で検索」。⌘K か Ctrl + K で開く）がこの部品で、選ぶと部品のページを開く。'
+			ja: 'このサイトのヘッダーの検索窓（「名前で検索」。⌘K か Ctrl + K で開く）がこの部品で、操作を選ぶと部品のページを開く。'
 		},
 		{
 			en: 'It is a modal dialog that holds a combobox. Typing narrows the list, and the arrow keys highlight a command while focus stays in the field; `aria-activedescendant` tells screen readers which command is highlighted.',

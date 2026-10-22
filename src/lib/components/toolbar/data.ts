@@ -23,7 +23,7 @@ export default {
 		},
 		{
 			en: 'When the user tabs back in, focus returns to the last focused button (roving `tabindex`).',
-			ja: 'Tab で戻ってくると、最後にフォーカスしていたボタンに戻る（ロービング `tabindex`）。'
+			ja: 'Tab でツールバーに入り直すと、最後にフォーカスしていたボタンにフォーカスが戻る（ロービング `tabindex`）。'
 		},
 		{
 			en: 'In this demo, Bold, Italic and Underline are toggle buttons that use `aria-pressed`, so any number of them can be on.',
@@ -31,7 +31,7 @@ export default {
 		},
 		{
 			en: 'In this demo, the alignment buttons are a `radiogroup` of `role="radio"` buttons with `aria-checked`, so exactly one is chosen. Moving focus onto one does not choose it.',
-			ja: 'このデモの揃え方のボタンは、`role="radio"` と `aria-checked` を持つボタンの `radiogroup` で、選べるのは常に1つ。フォーカスを移しただけでは選ばれない。'
+			ja: 'このデモの揃え方のボタンは `role="radio"` と `aria-checked` を持つボタンの `radiogroup` で、常にどれか1つだけが選ばれている。フォーカスを移しただけでは選ばれない。'
 		}
 	],
 	keyboard: [
@@ -47,7 +47,7 @@ export default {
 			key: '← / →',
 			action: {
 				en: 'Moves to the previous or next button, across the divider (wraps around).',
-				ja: '区切り線をまたいで、前後のボタンへ移る（端から反対の端へ回る）。'
+				ja: '区切り線をまたいで前後のボタンへ移り、端では反対の端へ回る。'
 			}
 		},
 		{ key: 'Home / End', action: { en: 'Moves to the first or last button.', ja: '最初または最後のボタンへ移る。' } }

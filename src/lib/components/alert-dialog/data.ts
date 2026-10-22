@@ -11,7 +11,7 @@ export default {
 	},
 	appearance: {
 		en: 'Looks like a modal dialog: a box over a dimmed page with a short title, a message and two buttons, one of them for the risky action. In this demo, “Discard” is the same filled button as other main actions; the safer “Keep editing” is on the left and “Discard” on the right.',
-		ja: 'モーダルダイアログと同じく、暗くした背景の上に箱が出る。短いタイトルと本文、危険な操作のボタンを含む2つのボタンを持つ。このデモの「破棄」は、ほかの主な操作と同じ塗りのボタンで、安全な「編集を続ける」を左、「破棄」を右に置く。'
+		ja: 'モーダルダイアログと同じく、暗くした背景の上に箱が出る。箱には短いタイトルと本文、2つのボタンがあり、片方は危険な操作のボタン。このデモの「破棄」は、ほかの主な操作と同じ塗りのボタンで、安全な「編集を続ける」を左、「破棄」を右に置く。'
 	},
 	behavior: [
 		{
@@ -52,7 +52,7 @@ export default {
 		{
 			pattern: {
 				en: 'Relying on the confirmation dialog as the only safeguard, or asking for confirmation on routine actions',
-				ja: '確認ダイアログだけを安全策にする、日常的な操作にも確認を出す'
+				ja: '確認ダイアログだけを安全策にしたり、日常的な操作にも確認を出したりする'
 			},
 			harm: {
 				en: 'When confirmations appear often, people stop reading them and press the confirm button out of habit, so the dialog no longer prevents mistakes; people can still delete things such as their account by accident even after several confirmations.',

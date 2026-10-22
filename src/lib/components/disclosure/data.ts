@@ -55,7 +55,7 @@ export default {
 			pattern: { en: 'Hiding information that most users need in a disclosure', ja: '多くの利用者が必要とする情報をディスクロージャーにしまう' },
 			harm: {
 				en: 'Some people do not open it because they expect the label to take them away from the page, so they miss the information inside.',
-				ja: 'ラベルを押すと別のページに移ると考えて開かない人がいて、その人は中の情報を見落とす。'
+				ja: 'ラベルを押すと別のページに移ると考えて開かない人は、中の情報を見落とす。'
 			},
 			instead: {
 				en: 'Show information that most people need directly on the page, and keep disclosures for extra details that only some people need.',

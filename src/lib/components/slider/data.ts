@@ -68,7 +68,7 @@ export default {
 			},
 			instead: {
 				en: 'Let people also set the value by clicking or tapping the track and with the arrow keys. A native `<input type="range">` already supports both.',
-				ja: 'トラックのクリックやタップ、矢印キーでも値を変えられるようにする。ネイティブの `<input type="range">` はどちらにも対応している。'
+				ja: '溝のクリックやタップ、矢印キーでも値を変えられるようにする。ネイティブの `<input type="range">` はどちらにも対応している。'
 			}
 		}
 	],
@@ -98,7 +98,7 @@ export default {
 			id: 'rating',
 			diff: {
 				en: 'A slider chooses any value along a track by moving a knob; a rating chooses one of a few scores, such as 1 to 5 stars, each a separate option.',
-				ja: 'スライダーは、つまみを溝に沿って動かして、範囲内の値を選ぶ。評価は、星1〜5のような少しの点数から、選択肢を1つ選ぶ。'
+				ja: 'スライダーはつまみを溝に沿って動かして範囲内の値を選び、評価は星1〜5のような数個の点数から、選択肢を1つ選ぶ。'
 			}
 		}
 	],

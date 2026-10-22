@@ -22,7 +22,7 @@ export default {
 		},
 		{
 			en: 'Pressing the arrow opens a menu of other actions; choosing one runs it and closes the menu.',
-			ja: '矢印を押すと他の操作のメニューが開き、選ぶとその操作を実行してメニューが閉じる。'
+			ja: '矢印を押すと他の操作のメニューが開き、1つを選ぶとその操作を実行してメニューが閉じる。'
 		},
 		{
 			en: 'The menu points to the arrow button with `aria-labelledby`, so it is named after the button’s label (in this demo, “More save options”).',
@@ -56,7 +56,7 @@ export default {
 			key: '↑ / ↓',
 			action: {
 				en: 'On the arrow, opens the menu: ↓ focuses the first item, ↑ the last. In the menu, moves between items.',
-				ja: '矢印では、↓ で最初の項目、↑ で最後の項目にフォーカスしてメニューを開く。メニュー内では項目を移動する。'
+				ja: '矢印ではメニューを開き、↓ なら最初の項目、↑ なら最後の項目にフォーカスする。メニュー内では項目の間を移動する。'
 			}
 		},
 		{

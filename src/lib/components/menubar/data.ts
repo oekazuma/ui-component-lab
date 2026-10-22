@@ -68,7 +68,7 @@ export default {
 			key: 'Home / End',
 			action: {
 				en: 'Moves to the first / last item of the menubar or the submenu.',
-				ja: 'メニューバーやサブメニューの、最初・最後の項目へ移る。'
+				ja: 'メニューバーやサブメニューの最初・最後の項目へ移る。'
 			}
 		},
 		{
@@ -109,7 +109,7 @@ export default {
 		},
 		{
 			en: 'Add “…” to the label of a command that opens a dialog, as in “Open…”.',
-			ja: 'ダイアログを開く操作は、「開く…」のようにラベルの最後に「…」を付ける。'
+			ja: 'ダイアログを開く操作には、「開く…」のようにラベルの最後に「…」を付ける。'
 		}
 	],
 	related: [
@@ -117,7 +117,7 @@ export default {
 			id: 'menu',
 			diff: {
 				en: 'A menubar stays visible and holds several menus side by side; a menu opens from a single button and closes after use.',
-				ja: 'メニューバーは常に表示され、複数のメニューを横に並べて持つ。メニューは1つのボタンから開き、使い終わると閉じる。'
+				ja: 'メニューバーは常に表示されて複数のメニューを横に並べて持ち、メニューは1つのボタンから開いて使い終わると閉じる。'
 			}
 		},
 		{
@@ -131,7 +131,7 @@ export default {
 			id: 'mega-menu',
 			diff: {
 				en: 'A menubar holds an app’s commands and is moved through with the arrow keys; a mega menu shows a site’s pages in a wide panel and is used with buttons and the Tab key.',
-				ja: 'メニューバーはアプリの操作をまとめ、矢印キーで移る。メガメニューはサイトのページを幅の広いパネルで見せ、ボタンと Tab キーで操作する。'
+				ja: 'メニューバーはアプリの操作をまとめ、矢印キーで移り、メガメニューはサイトのページを幅の広いパネルで見せてボタンと Tab キーで操作する。'
 			}
 		}
 	],

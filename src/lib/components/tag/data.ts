@@ -24,7 +24,7 @@ export default {
 		},
 		{
 			en: 'Selectable tags are toggle buttons with `aria-pressed`, so screen readers announce whether each one is chosen.',
-			ja: '選べるタグは `aria-pressed` を持つトグルボタンにし、選ばれているかどうかをスクリーンリーダーが読み上げる。'
+			ja: '選べるタグは `aria-pressed` を持つトグルボタンにするので、選ばれているかどうかをスクリーンリーダーが読み上げる。'
 		},
 		{
 			en: 'Removable tags can be dismissed, for example to clear a filter. Each “×” is a button named after its tag, such as “Remove Red”.',

@@ -31,7 +31,7 @@ export default {
 		},
 		{
 			en: 'In this demo, the bar is also described in words: the visible “40 GB of 100 GB” text is tied to the `<meter>` with `aria-describedby`, and past 70 GB it adds “Almost full” (“Full” at 100 GB). A screen reader otherwise reads only the percentage.',
-			ja: 'このデモでは、棒の内容を言葉でも示す。見えている「40GB / 100GB」の文を `aria-describedby` で `<meter>` と結び、70GB を超えると「もうすぐいっぱいです」（100GB では「いっぱいです」）を添える。結ばないと、スクリーンリーダーは割合しか読まない。'
+			ja: 'このデモでは、棒の内容を言葉でも示す。見えている「40GB / 100GB」の文を `aria-describedby` で `<meter>` と結び、70GB を超えると「もうすぐいっぱいです」（100GB では「いっぱいです」）を添える。結ばないと、スクリーンリーダーは割合しか読み上げない。'
 		}
 	],
 	keyboard: [
@@ -50,7 +50,7 @@ export default {
 		},
 		{
 			en: 'The maximum must mean something, like the size of the disk.',
-			ja: '最大値には意味が必要（ディスクの容量など）。'
+			ja: '最大値にはディスクの容量のような意味のある値が必要。'
 		}
 	],
 	misuse: [

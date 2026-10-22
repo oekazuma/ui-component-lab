@@ -52,7 +52,7 @@ export default {
 		},
 		{
 			en: 'Make the title name the actual danger. The banner itself already says it is an emergency, so a title such as “Emergency notice” tells nothing.',
-			ja: 'タイトルには、具体的な警告の内容を書く。このバナーを使った時点で緊急のお知らせであることは示されているので、「緊急のお知らせ」のようなタイトルでは何も伝わらない。'
+			ja: 'タイトルには具体的な警告の内容を書く。このバナーを使った時点で緊急のお知らせであることは示されているので、「緊急のお知らせ」のようなタイトルでは何も伝わらない。'
 		},
 		{
 			en: 'Give it a style that differs a little from the rest of the site, so it catches the eye.',

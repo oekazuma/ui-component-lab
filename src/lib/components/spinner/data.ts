@@ -23,7 +23,7 @@ export default {
 		},
 		{
 			en: 'The spinning shape is decorative; a text such as “Loading…” in a status region tells screen reader users what is happening.',
-			ja: '回る図形は飾りで、「読み込み中…」などの文を status の領域に入れてスクリーンリーダー利用者に伝える。'
+			ja: '回る図形は飾りで、何が起きているかは status の領域に入れた「読み込み中…」などの文でスクリーンリーダー利用者に伝える。'
 		},
 		{
 			en: 'In this demo, the box stands for a whole screen. The spinner fills it while the page loads, and the comments appear once loading finishes.',
@@ -45,7 +45,7 @@ export default {
 	],
 	misuse: [
 		{
-			pattern: { en: 'Spinning while only part of the screen is loading', ja: '画面の一部の読み込み中に回し続ける' },
+			pattern: { en: 'Spinning while only part of the screen is loading', ja: '画面の一部だけが読み込み中のときに回し続ける' },
 			harm: {
 				en: 'A part of the screen that keeps moving draws the eye, and the user can no longer concentrate on the rest of the page.',
 				ja: '動き続ける部分に目を奪われ、利用者が画面のほかの部分に集中できなくなる。'

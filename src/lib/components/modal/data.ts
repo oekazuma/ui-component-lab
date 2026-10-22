@@ -93,7 +93,7 @@ export default {
 			},
 			harm: {
 				en: 'People are steered toward the choice that suits the provider, such as agreeing to the use of their personal information, instead of the choice they would make themselves.',
-				ja: '個人情報の利用への同意など、提供する側に都合のよい選択へ誘導され、利用者が自分で選ぶはずだった判断ができなくなる。'
+				ja: '個人情報の利用への同意など、提供する側に都合のよい選択へ誘導され、利用者が自分でするはずだった判断ができなくなる。'
 			},
 			instead: {
 				en: 'Give both choices the same visual weight and label each button with what it does, so people can compare them and pick one.',
@@ -107,7 +107,7 @@ export default {
 			id: 'command-palette',
 			diff: {
 				en: 'A modal can hold any content; a command palette is a modal dialog that holds only a search field and a list of commands.',
-				ja: 'モーダルはどんな内容でも持て、コマンドパレットは検索欄と操作の一覧だけを持つモーダルダイアログ。'
+				ja: 'モーダルはどんな内容も持つことができ、コマンドパレットは検索欄と操作の一覧だけを持つモーダルダイアログ。'
 			}
 		},
 		{

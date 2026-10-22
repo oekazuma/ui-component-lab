@@ -39,7 +39,7 @@ export default {
 			key: 'Tab / Shift + Tab',
 			action: {
 				en: 'Moves focus into the tab list (to the selected tab), then to the panel. Shift + Tab goes back the same way.',
-				ja: 'タブリスト（選択中のタブ）にフォーカスし、次に押すとパネルへ移る。Shift + Tab では同じ順に戻る。'
+				ja: 'まずタブリストの選択中のタブへ、次にパネルへフォーカスを移す。Shift + Tab では同じ順に戻る。'
 			}
 		},
 		{
@@ -150,7 +150,7 @@ export default {
 			id: 'table-of-contents',
 			diff: {
 				en: 'Tabs show one panel at a time and hide the others; a table of contents links to sections that are all on the page at once.',
-				ja: 'タブはパネルを1つずつ見せてほかを隠し、目次はすべて同時にページにある節へのリンクを並べる。'
+				ja: 'タブはパネルを1つずつ見せてほかを隠し、目次はすべてが同時にページにある節へのリンクを並べる。'
 			}
 		}
 	],

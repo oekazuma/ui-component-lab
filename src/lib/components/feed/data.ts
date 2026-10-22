@@ -61,7 +61,7 @@ export default {
 	usage: [
 		{
 			en: 'Feeds have no established keyboard convention, so tell people which keys move between articles and out of the feed, for example next to the feed or in help.',
-			ja: 'フィードのキー操作には決まった慣習がない。記事の間やフィードの外へ移るキーを、フィードの近くやヘルプで伝える。'
+			ja: 'フィードのキー操作には決まった慣習がないので、記事の間やフィードの外へ移るキーを、フィードの近くやヘルプで伝える。'
 		},
 		{
 			en: 'A feed suits content that keeps coming and is browsed without looking for anything in particular, such as news or social posts.',

@@ -24,7 +24,7 @@ export default {
 		},
 		{
 			en: 'This demo uses `<dl>` with a `<dt>` (name) and `<dd>` (value) in each row, so screen readers can treat them as pairs. The link goes in another `<dd>` in the same row.',
-			ja: 'このデモは `<dl>` を使い、各行を `<dt>`（項目名）と `<dd>`（値）で書いている。スクリーンリーダーが組として扱える。リンクは同じ行の別の `<dd>` に置く。'
+			ja: 'このデモは `<dl>` を使い、各行を `<dt>`（項目名）と `<dd>`（値）で書いているので、スクリーンリーダーが組として扱える。リンクは同じ行の別の `<dd>` に置く。'
 		},
 		{
 			en: 'Each link shows only “Change”, and visually hidden text adds the row name, so it is read as “Change name” even out of context, such as in a list of links.',
