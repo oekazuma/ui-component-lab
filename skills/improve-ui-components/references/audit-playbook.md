@@ -20,6 +20,8 @@ For each component, read the Lab entry's `usage` and every `related[].diff`, and
 - Count what the decision depends on: the number of options (radio buttons versus select versus combobox), whether choosing moves to another page or changes content in place (links versus tabs), whether the choice applies at once or on submit (switch versus checkbox), whether the content is a few steps in order or freely switchable (stepper versus tabs), whether the message needs a response (alert dialog versus modal versus alert versus toast).
 - A finding here names the better component, quotes the Lab line that decides it, and links both Lab pages (the current component and the suggested one).
 - Do not report a choice as wrong only because another component is also possible. Report it when the Lab entry or its source says this situation calls for something else.
+- Thresholds are often written from one side only ("With five or fewer options, use radio buttons instead" on `select`). A page clearly on the other side (12 radio buttons) may be reported as a choice finding with confidence MED: quote the threshold and say the finding reads it from the other side.
+- `usage` lines that are not about choosing between components (target size, a "None of these" option) are checked here too; report them with Check `usage`.
 
 ## 3. Check for misuses
 
@@ -40,7 +42,7 @@ Compare what the component does with the entry's `keyboard` and `behavior`.
 
 ## 5. Automated scan (supplement)
 
-If you can run axe (for example with `@axe-core/playwright` on the local server, or by injecting axe-core into the page in your own browser session), run it with the WCAG 2.2 A/AA tags. Attach each violation to the component it belongs to and fold it into checks 2–4. Violations that belong to no Lab component go to "Outside the Lab". An automated violation alone is never a reason to skip checks 1–4.
+If axe is already available (for example with `@axe-core/playwright` on the local server, or by injecting axe-core into the page in your own browser session), run it with the WCAG 2.2 A/AA tags. Attach each violation to the component it belongs to and fold it into checks 2–4. Violations that belong to no Lab component go to "Outside the Lab". An automated violation alone is never a reason to skip checks 1–4. Do not install axe without permission; if it is not available, list the scan under "Not checked".
 
 ## Finding format
 
@@ -53,7 +55,7 @@ Every finding, from you or a subagent, comes back in this shape:
 - **Where**: <visible label or nearby heading>, selector `<selector>`
 - **Source**: `path/file.ext:123` — one line on what is there (or "not found")
 - **Component**: <Lab id> — <Lab page URL in the user's language>
-- **Check**: choice | misuse | deceptive | behavior | outside-lab
+- **Check**: choice | usage | misuse | deceptive | behavior | outside-lab
 - **Evidence**: the Lab field you relied on (quote it briefly) and its source URL, plus what you observed on the page (and how: read, keyboard on local server, screenshot)
 - **Impact**: who is affected and how, in concrete terms
 - **Effort**: S | M | L (for the fix, including tests)
@@ -62,7 +64,7 @@ Every finding, from you or a subagent, comes back in this shape:
 - **Fix sketch**: 1–3 sentences
 ```
 
-`CHECK` is `CHOICE`, `MISUSE`, `DECEPTIVE`, `BEHAVIOR` or `OUTSIDE`.
+`CHECK` is `CHOICE`, `USAGE`, `MISUSE`, `DECEPTIVE`, `BEHAVIOR` or `OUTSIDE`.
 
 ## Prioritization
 

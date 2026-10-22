@@ -15,12 +15,12 @@ If you cannot confirm it, treat the repository as unrelated: do not start a serv
 ## 2. Find how to start it
 
 - Look for the development command in `package.json` `scripts` (`dev`, `start`, `serve`), a `Makefile`, `README` or `CONTRIBUTING`. Use the repository's own command and package manager (the lockfile tells you: `pnpm-lock.yaml`, `yarn.lock`, `package-lock.json`, `bun.lock`).
-- If dependencies are not installed (for example `node_modules` is missing) or the command needs environment variables, a database or other services, **ask the user** before doing anything. Do not install, do not create `.env` files.
+- If the project declares dependencies that are not installed (for example `package.json` lists dependencies and `node_modules` is missing) or the command needs environment variables, a database or other services, **ask the user** before doing anything. Do not install, do not create `.env` files.
 - Start it in the background and wait until it answers. Note the local origin (for example `http://localhost:5173`).
 
 ## 3. Map the URLs
 
-Replace the live origin with the local origin and adjust for a base path when the site is served under one (for example `https://example.github.io/app/pricing/` → `http://localhost:5173/app/pricing/`). Open each mapped page and compare it with the live page: the same main heading and the same components. If they differ in a way that matters (a different version, a missing feature flag), audit the live site for that page instead and say why.
+Replace the live origin with the local origin and adjust for a base path when the site is served under one (for example `https://example.github.io/app/pricing/` → `http://localhost:5173/app/pricing/`). Open each mapped page and compare it with the live page: the same main heading and the same components (for a static page, compare the served HTML). If they differ in a way that matters (a different version, a missing feature flag), audit the live site for that page instead and say why.
 
 ## 4. Pages that need data or a login locally
 
