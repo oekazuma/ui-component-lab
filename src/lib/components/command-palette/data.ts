@@ -37,6 +37,10 @@ export default {
 		{
 			en: 'While text is still being composed with an input method (such as for Japanese), the arrow keys and Enter go to the input method and do not move through or run commands.',
 			ja: '日本語入力などで変換している間は、矢印キーと Enter は変換の操作に使われ、操作の移動や実行には使われません。'
+		},
+		{
+			en: 'In this demo, the palette opens inside the demo frame and dims only the frame, so it is easy to see which demo it belongs to. On a real page, it dims the whole page.',
+			ja: 'このデモでは、どのデモの動きかが分かりやすいよう、パレットをデモの枠の中に出し、枠の中だけを暗くします。実際のページでは、ページ全体を暗くします。'
 		}
 	],
 	keyboard: [

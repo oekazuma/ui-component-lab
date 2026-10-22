@@ -25,28 +25,38 @@
 </script>
 
 <!-- ネイティブの <dialog> の showModal() が、背景の操作無効化・Esc で閉じる・フォーカス復帰を担う -->
-<button type="button" class="btn" onclick={() => dialog.showModal()}>{text[lang].open}</button>
+<div class="demo">
+	<button type="button" class="btn" onclick={() => dialog.showModal()}>{text[lang].open}</button>
+</div>
 
-<dialog bind:this={dialog} aria-labelledby="{uid}-title" aria-describedby="{uid}-number {uid}-body">
-	<h2 id="{uid}-title">{text[lang].title}</h2>
-	<p id="{uid}-number" class="number">{text[lang].number}</p>
-	<p id="{uid}-body">{text[lang].body}</p>
-	<!-- 操作ボタンがないので閉じるボタンだけを置く。ボタンが1つのときは中央に置く（DADS ボタンの使い方） -->
-	<form method="dialog" class="actions">
-		<button class="btn">{text[lang].close}</button>
-	</form>
+<dialog bind:this={dialog} class="in-frame" aria-labelledby="{uid}-title" aria-describedby="{uid}-number {uid}-body">
+	<div class="box">
+		<h2 id="{uid}-title">{text[lang].title}</h2>
+		<p id="{uid}-number" class="number">{text[lang].number}</p>
+		<p id="{uid}-body">{text[lang].body}</p>
+		<!-- 操作ボタンがないので閉じるボタンだけを置く。ボタンが1つのときは中央に置く（DADS ボタンの使い方） -->
+		<form method="dialog" class="actions">
+			<button class="btn">{text[lang].close}</button>
+		</form>
+	</div>
 </dialog>
 
 <style>
-	dialog {
+	/* 開いたダイアログが収まるだけの高さを枠に確保する */
+	.demo {
+		display: grid;
+		place-items: center;
+		min-height: 14rem;
+	}
+
+	/* 枠の中央に出す箱（枠に重ねる仕組みは app.css の .in-frame） */
+	.box {
+		place-self: center;
 		width: min(calc(100% - 2rem), 24rem);
 		padding: 1.25rem;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
-	}
-
-	dialog::backdrop {
-		background: rgb(0 0 0 / 0.4);
+		background: var(--color-bg);
 	}
 
 	h2 {

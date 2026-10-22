@@ -29,6 +29,10 @@ export default {
 		{
 			en: 'In this demo, the note stays on the page and the dialog only asks for confirmation. “Discard” empties the note; “Keep editing” or Esc leaves it as it was.',
 			ja: 'このデモでは、メモ欄はページに置いたままで、ダイアログは確認だけをします。「破棄」を選ぶとメモが空になり、「編集を続ける」か Esc ではそのまま残ります。'
+		},
+		{
+			en: 'In this demo, the dialog opens inside the demo frame and dims only the frame, so it is easy to see which demo it belongs to. On a real page, it dims the whole page.',
+			ja: 'このデモでは、どのデモの動きかが分かりやすいよう、ダイアログをデモの枠の中に出し、枠の中だけを暗くします。実際のページでは、ページ全体を暗くします。'
 		}
 	],
 	keyboard: [

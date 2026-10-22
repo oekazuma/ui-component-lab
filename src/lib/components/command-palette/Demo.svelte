@@ -65,45 +65,50 @@
 
 <!-- ネイティブの <dialog>（showModal）が、背後を操作できなくすること、最初の入力欄へフォーカスを移すこと、Esc で閉じること、閉じたあと開いたボタンへフォーカスを戻すことを受け持つ。
 	フォーカスは入力欄に置いたまま、aria-activedescendant で選んでいる候補を伝える（APG Combobox） -->
-<dialog bind:this={dialog} aria-labelledby="{uid}-title">
-	<h2 id="{uid}-title" class="visually-hidden">{text[lang].title}</h2>
-	<input
-		type="text"
-		role="combobox"
-		aria-labelledby="{uid}-title"
-		aria-expanded="true"
-		aria-controls="{uid}-list"
-		aria-autocomplete="list"
-		aria-activedescendant={results.length ? `${uid}-option-${active}` : undefined}
-		autocomplete="off"
-		placeholder={text[lang].placeholder}
-		bind:value={query}
-		oninput={() => (active = 0)}
-		{onkeydown}
-	/>
-	<ul id="{uid}-list" role="listbox" aria-labelledby="{uid}-title">
-		{#each results as command, i (command)}
-			<!-- キー操作もフォーカスも入力欄が受け持つので、候補はマウスとタッチの操作だけを持つ -->
-			<!-- svelte-ignore a11y_click_events_have_key_events -->
-			<li
-				id="{uid}-option-{i}"
-				role="option"
-				aria-selected={i === active}
-				onclick={() => run(command)}
-				onmousemove={() => (active = i)}
-			>
-				{command}
-			</li>
-		{/each}
-	</ul>
-	<p class="none" class:visually-hidden={results.length} aria-live="polite">{results.length ? '' : text[lang].none}</p>
+<dialog bind:this={dialog} class="in-frame" aria-labelledby="{uid}-title">
+	<div class="box">
+		<h2 id="{uid}-title" class="visually-hidden">{text[lang].title}</h2>
+		<input
+			type="text"
+			role="combobox"
+			aria-labelledby="{uid}-title"
+			aria-expanded="true"
+			aria-controls="{uid}-list"
+			aria-autocomplete="list"
+			aria-activedescendant={results.length ? `${uid}-option-${active}` : undefined}
+			autocomplete="off"
+			placeholder={text[lang].placeholder}
+			bind:value={query}
+			oninput={() => (active = 0)}
+			{onkeydown}
+		/>
+		<ul id="{uid}-list" role="listbox" aria-labelledby="{uid}-title">
+			{#each results as command, i (command)}
+				<!-- キー操作もフォーカスも入力欄が受け持つので、候補はマウスとタッチの操作だけを持つ -->
+				<!-- svelte-ignore a11y_click_events_have_key_events -->
+				<li
+					id="{uid}-option-{i}"
+					role="option"
+					aria-selected={i === active}
+					onclick={() => run(command)}
+					onmousemove={() => (active = i)}
+				>
+					{command}
+				</li>
+			{/each}
+		</ul>
+		<p class="none" class:visually-hidden={results.length} aria-live="polite">{results.length ? '' : text[lang].none}</p>
+	</div>
 </dialog>
 
 <style>
+	/* 開いたパレットの候補がすべて並ぶだけの高さを枠に確保する */
 	.demo {
 		display: grid;
+		place-content: center;
 		justify-items: center;
 		gap: 0.5rem;
+		min-height: 22rem;
 	}
 
 	[role='status'] {
@@ -113,19 +118,16 @@
 		font-size: 0.875rem;
 	}
 
-	dialog {
+	/* 枠の上寄りの中央に出すパレット（枠に重ねる仕組みは app.css の .in-frame） */
+	.box {
+		align-self: start;
+		justify-self: center;
 		width: min(28rem, calc(100% - 2rem));
-		margin: 15vh auto auto;
-		padding: 0;
+		margin-top: 1rem;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
 		background: var(--color-bg);
-		color: var(--color-text);
 		box-shadow: 0 12px 32px rgb(0 0 0 / 0.25);
-	}
-
-	dialog::backdrop {
-		background: rgb(0 0 0 / 0.4);
 	}
 
 	input {

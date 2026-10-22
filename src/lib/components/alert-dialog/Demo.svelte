@@ -58,21 +58,26 @@
 	</div>
 
 	<!-- role="alertdialog" で、開いたときにタイトルと本文が警告として読み上げられる -->
-	<dialog bind:this={dialog} role="alertdialog" aria-labelledby="{uid}-title" aria-describedby="{uid}-body" {onclose}>
-		<h2 id="{uid}-title">{text[lang].title}</h2>
-		<p id="{uid}-body">{text[lang].body}</p>
-		<form method="dialog" class="actions">
-			<button class="btn" value="cancel">{text[lang].cancel}</button>
-			<button class="btn btn-primary" value="confirm">{text[lang].confirm}</button>
-		</form>
+	<dialog bind:this={dialog} class="in-frame" role="alertdialog" aria-labelledby="{uid}-title" aria-describedby="{uid}-body" {onclose}>
+		<div class="box">
+			<h2 id="{uid}-title">{text[lang].title}</h2>
+			<p id="{uid}-body">{text[lang].body}</p>
+			<form method="dialog" class="actions">
+				<button class="btn" value="cancel">{text[lang].cancel}</button>
+				<button class="btn btn-primary" value="confirm">{text[lang].confirm}</button>
+			</form>
+		</div>
 	</dialog>
 </div>
 
 <style>
+	/* 開いたダイアログが収まるだけの高さを枠に確保する */
 	.demo {
 		display: grid;
+		align-content: center;
 		gap: 0.25rem;
 		width: min(100%, 20rem);
+		min-height: 14rem;
 	}
 
 	label {
@@ -101,15 +106,14 @@
 		font-size: 0.875rem;
 	}
 
-	dialog {
+	/* 枠の中央に出す箱（枠に重ねる仕組みは app.css の .in-frame） */
+	.box {
+		place-self: center;
 		width: min(calc(100% - 2rem), 24rem);
 		padding: 1.25rem;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
-	}
-
-	dialog::backdrop {
-		background: rgb(0 0 0 / 0.4);
+		background: var(--color-bg);
 	}
 
 	h2 {

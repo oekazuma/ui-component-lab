@@ -44,6 +44,7 @@
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 <dialog
 	bind:this={dialog}
+	class="in-frame"
 	closedby="any"
 	aria-labelledby="{uid}-title"
 	onclick={(e) => {
@@ -122,43 +123,9 @@
 		text-align: center;
 	}
 
-	/* 開いたメニューは、画面全体ではなくデモの枠に重ねて出す。<dialog> を枠の大きさにして暗くし、パネルを右端に寄せる。
-		アンカー配置に対応していないブラウザでは、画面全体に出る */
-	dialog {
-		position: fixed;
-		inset: 0;
-		width: auto;
-		height: auto;
-		max-width: none;
-		max-height: none;
-		margin: 0;
-		padding: 0;
-		border: 0;
-		background: rgb(0 0 0 / 0.4);
-	}
-
-	@supports (anchor-name: --a) {
-		dialog {
-			position-anchor: --demo-frame;
-			top: anchor(top);
-			right: anchor(right);
-			bottom: anchor(bottom);
-			left: anchor(left);
-			border-radius: var(--radius);
-		}
-	}
-
-	dialog[open] {
-		display: flex;
-		justify-content: flex-end;
-		overflow: hidden;
-	}
-
-	dialog::backdrop {
-		background: transparent;
-	}
-
+	/* 枠の右端から出るパネル（枠に重ねる仕組みは app.css の .in-frame） */
 	.panel {
+		justify-self: end;
 		width: min(calc(100% - 3rem), 18rem);
 		height: 100%;
 		overflow: auto;

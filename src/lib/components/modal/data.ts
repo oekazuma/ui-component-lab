@@ -33,6 +33,10 @@ export default {
 		{
 			en: 'In this demo, the message is complete in itself and asks for no decision, so the only button is Close, and focus moves to it when the dialog opens. For confirming a destructive action, see the alert dialog.',
 			ja: 'このデモのメッセージはダイアログの中で完結し、判断を求めないので、ボタンは「閉じる」だけで、開くとそこにフォーカスが移ります。取り消せない操作の確認は、アラートダイアログを参照してください。'
+		},
+		{
+			en: 'In this demo, the dialog opens inside the demo frame and dims only the frame, so it is easy to see which demo it belongs to. On a real page, it dims the whole page.',
+			ja: 'このデモでは、どのデモの動きかが分かりやすいよう、ダイアログをデモの枠の中に出し、枠の中だけを暗くします。実際のページでは、ページ全体を暗くします。'
 		}
 	],
 	keyboard: [

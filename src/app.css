@@ -120,6 +120,43 @@ textarea {
 	color: inherit;
 }
 
+/* デモのモーダルな <dialog>（showModal）を、画面全体ではなくデモの枠（DemoFrame.svelte の --demo-frame）に重ねて出す。
+	画面全体に出ると、どのデモの動きなのかが分かりにくいため。<dialog> を枠の大きさにして枠の中だけを暗くし、中身は子要素で置く。
+	背景の操作無効化・Esc・フォーカス復帰はモーダルのまま。アンカー配置に対応していないブラウザでは、画面全体に出る */
+dialog.in-frame {
+	position: fixed;
+	inset: 0;
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: rgb(0 0 0 / 0.4);
+	color: var(--color-text);
+}
+
+@supports (anchor-name: --a) {
+	dialog.in-frame {
+		position-anchor: --demo-frame;
+		top: anchor(top);
+		right: anchor(right);
+		bottom: anchor(bottom);
+		left: anchor(left);
+		border-radius: var(--radius);
+	}
+}
+
+dialog.in-frame[open] {
+	display: grid;
+	overflow: hidden;
+}
+
+dialog.in-frame::backdrop {
+	background: transparent;
+}
+
 /* デモ内で共通に使うボタン。押せる範囲は 44 × 44 CSS px 以上にする（DADS ボタンのアクセシビリティ） */
 .btn {
 	display: inline-flex;
