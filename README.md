@@ -32,14 +32,21 @@ An agent skill that audits the UI components on pages of your own site against t
 npx skills add oekazuma/ui-component-lab
 ```
 
-Then pass one or more page URLs:
+Then pass one or more page URLs. Local URLs from your running development server are the usual way, because the components can be operated there:
 
 ```text
-/improve-ui-components https://example.com/signup https://example.com/settings
+/improve-ui-components http://localhost:5173/signup http://localhost:5173/settings
+```
+
+A live URL is fine for a quick look. When the repository is its source, the skill starts your development server and checks there instead:
+
+```text
+/improve-ui-components https://example.com/signup
 ```
 
 - It checks only the pages you pass: which Lab component each UI is, whether it is the right choice (for example a select instead of 12 radio buttons), known misuses and deceptive patterns, and keyboard behavior. Each finding links the Lab page and its source.
-- When the repository is the source of those pages, it starts your development server and operates the components there. On the live site it only reads and moves focus: it never submits, types, changes a value, or signs in.
+- On local pages it operates the components, as long as everything the page sends stays on your machine. If the development server talks to a remote backend, it treats the page like the live site.
+- On the live site it only reads and moves focus: it never submits, types, changes a value, or signs in.
 - Signed-in pages are checked only in a browser you have signed in to and let the agent use.
 - Add `--issues` to also file each plan as a GitHub issue (it asks first).
 - The knowledge comes from [components.json](https://oekazuma.github.io/ui-component-lab/components.json), fetched on every run.

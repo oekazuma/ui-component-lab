@@ -40,7 +40,8 @@ const required: Record<string, string[]> = {
 		'On the live site, never change anything.',
 		'skip the page and say so',
 		'backend is not confirmed local',
-		'Hard Rules 2, 3, 4, 5, 7 and 8'
+		'Hard Rules 2, 3, 4, 5, 7 and 8',
+		'Prefer local:'
 	],
 	'references/local-server.md': ['## 3. Is the backend local?']
 };

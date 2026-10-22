@@ -50,7 +50,7 @@ call happen when a detail is off.
 
 ## Where on the page
 
-- **Page**: <live URL> (local: <local URL> when checked on the dev server)
+- **Page**: <live URL, if known> (local: <local URL> when checked on the dev server)
 - **Location**: <visible label or nearby heading>, selector `<selector>`
 - **What it is now**: <the component as built, e.g. "12 radio buttons in a
   `fieldset` labelled 'Prefecture'">

@@ -1,6 +1,8 @@
 # Checking on the local development server
 
-The user gives live URLs because that is easy. When this repository is the source of those pages, check on the local development server instead: there you can operate value-changing components, as long as what they send stays on this machine (section 3). The live site is then used only to confirm that the local page matches what is deployed.
+Check on a local development server whenever you can. The user may pass local URLs directly (a server they already run), or live URLs because that is easy; when this repository is the source of those live pages, start the local development server and check there instead: there you can operate value-changing components, as long as what they send stays on this machine (section 3). The live site is then used only to confirm that the local page matches what is deployed.
+
+For a local URL the user passed, skip sections 1 and 2: the server is theirs, so do not stop or restart it. Do not open the live site for it unless the user gives that URL. Sections 3, 5 and 6 still apply.
 
 ## 1. Is this repository the source of the page?
 
@@ -21,7 +23,7 @@ If you cannot confirm it, treat the repository as unrelated: do not start a serv
 
 ## 3. Is the backend local?
 
-A development server often talks to a real backend: an API base URL, a hosted database or auth project (Firebase, Supabase and the like) set in `.env*` files or the configuration. Read those settings (names and host names only; never copy secret values). Operate value-changing components and press send, buy, delete, save or confirm only when every backend the page uses is confirmed local (`localhost`, a container on this machine, a mock). If any backend is remote, or you cannot tell, treat that page as the live site (SKILL.md Hard Rules 3 and 4) or ask the user.
+A development server often talks to a real backend: an API base URL, a hosted database or auth project (Firebase, Supabase and the like) set in `.env*` files or the configuration. Read those settings (names and host names only; never copy secret values). Operate value-changing components and press send, buy, delete, save or confirm only when every backend the page uses is confirmed local (`localhost`, a container on this machine, a mock, or no backend at all: a static server whose forms post back to itself, even if it rejects them). Watch the requests while you operate: if one goes to a host that is not local, stop operating that page. If any backend is remote, or you cannot tell, treat that page as the live site (SKILL.md Hard Rules 3 and 4) or ask the user.
 
 ## 4. Map the URLs
 
@@ -33,4 +35,4 @@ If the local page needs seed data or a local account to show the component, ask 
 
 ## 6. Stop it
 
-Stop every server you started before the final report, and say in the report which pages were checked locally and which on the live site.
+Stop every server you started (never one the user was already running) before the final report, and say in the report which pages were checked locally and which on the live site.
