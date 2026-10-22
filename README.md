@@ -24,6 +24,26 @@ Create `src/lib/components/<id>/` with two files. They are registered automatica
 
 Then run `pnpm check` and `pnpm build`. The conventions (related links, source labels, key notation, demo rules) are in [CLAUDE.md](CLAUDE.md).
 
+## Skill: improve-ui-components
+
+An agent skill that audits the UI components on pages of your own site against this Lab, and writes improvement plans to `plans/` for another agent (or you) to implement. Run it in the repository that holds the site's source.
+
+```bash
+npx skills add oekazuma/ui-component-lab
+```
+
+Then pass one or more page URLs:
+
+```text
+/improve-ui-components https://example.com/signup https://example.com/settings
+```
+
+- It checks only the pages you pass: which Lab component each UI is, whether it is the right choice (for example a select instead of 12 radio buttons), known misuses and deceptive patterns, and keyboard behavior. Each finding links the Lab page and its source.
+- When the repository is the source of those pages, it starts your development server and operates the components there. On the live site it only reads and moves focus: it never submits, types, changes a value, or signs in.
+- Signed-in pages are checked only in a browser you have signed in to and let the agent use.
+- Add `--issues` to also file each plan as a GitHub issue (it asks first).
+- The knowledge comes from [components.json](https://oekazuma.github.io/ui-component-lab/components.json), fetched on every run.
+
 ## License
 
 [MIT](LICENSE)
