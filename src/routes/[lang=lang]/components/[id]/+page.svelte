@@ -23,9 +23,9 @@
 			[
 				['aliases', data.aliases.length],
 				['appearance', true],
-				['variations', data.variations?.length],
 				['behavior', true],
 				['keyboard', true],
+				['variations', data.variations?.length],
 				['usage', data.usage?.length],
 				['misuse', data.misuse?.length],
 				['related', related.length],
@@ -118,18 +118,6 @@
 			<p><CodeText text={data.appearance[lang]} /></p>
 		</section>
 
-		{#if data.variations?.length}
-			<section aria-labelledby="variations">
-				<h2 id="variations">{ui.variations}</h2>
-				<dl>
-					{#each data.variations as v (v.name.en)}
-						<dt><CodeText text={v.name[lang]} /></dt>
-						<dd><CodeText text={v.description[lang]} /></dd>
-					{/each}
-				</dl>
-			</section>
-		{/if}
-
 		<section aria-labelledby="behavior">
 			<h2 id="behavior">{ui.behavior}</h2>
 			<ul>
@@ -152,6 +140,18 @@
 				</tbody>
 			</table>
 		</section>
+
+		{#if data.variations?.length}
+			<section aria-labelledby="variations">
+				<h2 id="variations">{ui.variations}</h2>
+				<dl>
+					{#each data.variations as v (v.name.en)}
+						<dt><CodeText text={v.name[lang]} /></dt>
+						<dd><CodeText text={v.description[lang]} /></dd>
+					{/each}
+				</dl>
+			</section>
+		{/if}
 
 		{#if data.usage?.length}
 			<section aria-labelledby="usage">

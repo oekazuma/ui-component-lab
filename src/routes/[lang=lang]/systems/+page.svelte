@@ -9,7 +9,7 @@
 	let lang = $derived(params.lang);
 	let ui = $derived(t(lang));
 
-	// 別名をデザインシステムごとにまとめる。件数の多い順、同数なら名前順
+	// 別名をデザインシステムごとにまとめる。件数の多い順にすると特定のデザインシステムが先頭で目立つので、名前順にする
 	let systems = $derived(
 		Object.entries(
 			Object.groupBy(
@@ -21,7 +21,7 @@
 				name,
 				rows: rows!.toSorted((a, b) => a.data.names[lang].localeCompare(b.data.names[lang], lang))
 			}))
-			.toSorted((a, b) => b.rows.length - a.rows.length || a.name.localeCompare(b.name))
+			.toSorted((a, b) => a.name.localeCompare(b.name, lang))
 	);
 </script>
 
