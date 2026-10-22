@@ -12,28 +12,28 @@ export default {
 	],
 	summary: {
 		en: 'Lets the user choose files from their device, by a button or by dragging them in.',
-		ja: '端末にあるファイルを、ボタンで選ぶかドラッグして入れることで指定する部品。'
+		ja: '端末にあるファイルを、ボタンで選ぶかドラッグして入れることで指定する部品です。'
 	},
 	appearance: {
 		en: 'A “Choose files” button, often inside a dashed box where files can be dropped. Chosen files are listed below with their names and sizes.',
-		ja: '「ファイルを選択」ボタンがあり、ファイルを落とせる点線の枠に入っていることが多い。選んだファイルの名前と大きさが下に並ぶ。'
+		ja: '「ファイルを選択」ボタンがあり、ファイルを落とせる点線の枠に入っていることが多いです。選んだファイルの名前と大きさが下に並びます。'
 	},
 	behavior: [
 		{
 			en: 'The button opens the operating system’s file picker.',
-			ja: 'ボタンを押すと OS のファイル選択画面が開く。'
+			ja: 'ボタンを押すと OS のファイル選択画面が開きます。'
 		},
 		{
 			en: 'Dropping files on the dashed box also chooses them. This demo uses the native `<input type="file">` and handles drops on the surrounding box.',
-			ja: '点線の枠にファイルを落としても選べる。このデモはネイティブの `<input type="file">` を使い、周りの枠へのドロップも受け付けている。'
+			ja: '点線の枠にファイルを落としても選べます。このデモはネイティブの `<input type="file">` を使い、周りの枠へのドロップも受け付けています。'
 		},
 		{
 			en: 'In this demo, every file is checked for its type (PDF, PNG or JPEG) and size (up to 10 MB), whether it was chosen with the button or dropped. A file that fails stays in the list with an error message under its name, and an error message for the whole field appears under the number of chosen files.',
-			ja: 'このデモでは、ボタンで選んだファイルもドロップしたファイルも、形式（PDF・PNG・JPEG）と大きさ（10MBまで）を確かめる。条件に合わないファイルは一覧に残し、ファイル名の下にエラー文を出す。選んだ件数の下には、全体のエラー文を出す。'
+			ja: 'このデモでは、ボタンで選んだファイルもドロップしたファイルも、形式（PDF・PNG・JPEG）と大きさ（10MBまで）を確かめます。条件に合わないファイルは一覧に残し、ファイル名の下にエラー文を出します。選んだ件数の下には、全体のエラー文を出します。'
 		},
 		{
 			en: 'Each chosen file can be removed from the list. Removing moves focus back to the file button.',
-			ja: '選んだファイルは1件ずつ解除できる。解除するとフォーカスはファイル選択ボタンに戻る。'
+			ja: '選んだファイルは1件ずつ解除できます。解除するとフォーカスはファイル選択ボタンに戻ります。'
 		}
 	],
 	keyboard: [
@@ -41,19 +41,19 @@ export default {
 			key: 'Enter / Space',
 			action: {
 				en: 'Opens the file picker (on the file button), or removes a file (on its remove button).',
-				ja: 'ファイル選択ボタンでは選択画面を開き、解除ボタンではそのファイルを外す。'
+				ja: 'ファイル選択ボタンでは選択画面を開き、解除ボタンではそのファイルを外します。'
 			}
 		},
-		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between the buttons.', ja: 'ボタンの間を移動する。' } }
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between the buttons.', ja: 'ボタンの間を移動します。' } }
 	],
 	usage: [
 		{
 			en: 'Show the chosen files as a numbered list with the name, the size and a remove button, and say “No file selected” when there are none.',
-			ja: '選んだファイルは番号付きリストにし、各行にファイル名・大きさ・解除ボタンを置く。何も選んでいないときは「未選択」と表示する。'
+			ja: '選んだファイルは番号付きリストにし、各行にファイル名・大きさ・解除ボタンを置きます。何も選んでいないときは「未選択」と表示します。'
 		},
 		{
 			en: 'The `accept` attribute only narrows what the file picker shows, and does not apply to dropped files. Check the type and size in the page, and on the server too.',
-			ja: '`accept` 属性はファイル選択画面での絞り込みにすぎず、ドロップしたファイルには効かない。ページの中で形式と大きさを確かめ、サーバー側でも確かめる。'
+			ja: '`accept` 属性はファイル選択画面での絞り込みにすぎず、ドロップしたファイルには効きません。ページの中で形式と大きさを確かめ、サーバー側でも確かめます。'
 		}
 	],
 	misuse: [
@@ -64,11 +64,11 @@ export default {
 			},
 			harm: {
 				en: 'People who cannot drag precisely, and people who use a trackball, head pointer, eye-gaze system or speech-controlled pointer, find dragging hard and error-prone.',
-				ja: '正確にドラッグできない人や、トラックボール、ヘッドポインター、視線入力、音声で動かすポインターを使う人には、ドラッグが難しく、誤りやすい。'
+				ja: '正確にドラッグできない人や、トラックボール、ヘッドポインター、視線入力、音声で動かすポインターを使う人には、ドラッグが難しく、誤りやすいです。'
 			},
 			instead: {
 				en: 'Always provide a file button (`<input type="file">`) next to the drop area, so files can be chosen with a click or the keyboard.',
-				ja: 'ドロップエリアのそばにファイル選択ボタン（`<input type="file">`）を必ず置き、クリックやキーボードでも選べるようにする。'
+				ja: 'ドロップエリアのそばにファイル選択ボタン（`<input type="file">`）を必ず置き、クリックやキーボードでも選べるようにします。'
 			}
 		}
 	],
@@ -77,7 +77,7 @@ export default {
 			id: 'button',
 			diff: {
 				en: 'A file upload is built around a button, but the button opens a file picker and keeps the chosen files as a form value.',
-				ja: 'ファイルアップロードの中心はボタンだが、押すとファイル選択画面が開き、選んだファイルをフォームの値として持つ。'
+				ja: 'ファイルアップロードの中心はボタンですが、押すとファイル選択画面が開き、選んだファイルをフォームの値として持ちます。'
 			}
 		}
 	],

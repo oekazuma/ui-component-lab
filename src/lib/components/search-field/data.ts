@@ -11,65 +11,65 @@ export default {
 	],
 	summary: {
 		en: 'A text box with a search button for finding content across a site.',
-		ja: 'サイト内の情報を探すための、検索ボタン付きの入力欄。'
+		ja: 'サイト内の情報を探すための、検索ボタン付きの入力欄です。'
 	},
 	appearance: {
 		en: 'A text box, often with a magnifying glass icon, next to a “Search” button. Some browsers show a × button to clear the text.',
-		ja: '虫眼鏡のアイコンが付くことの多い入力欄の横に「検索」ボタンがある。ブラウザによっては入力を消す × ボタンが出る。'
+		ja: '虫眼鏡のアイコンが付くことの多い入力欄の横に「検索」ボタンがあります。ブラウザによっては入力を消す × ボタンが出ます。'
 	},
 	behavior: [
 		{
 			en: 'Pressing Enter or the button runs the search.',
-			ja: 'Enter またはボタンで検索を実行する。'
+			ja: 'Enter またはボタンで検索を実行します。'
 		},
 		{
 			en: 'This demo wraps the form in a `<search>` element, which marks it as a search landmark so screen reader users can jump to it.',
-			ja: 'このデモはフォームを `<search>` 要素で囲んでいる。フォームは検索のランドマークになり、スクリーンリーダーの利用者がそこへ直接移動できる。'
+			ja: 'このデモはフォームを `<search>` 要素で囲んでいます。フォームは検索のランドマークになり、スクリーンリーダーの利用者がそこへ直接移動できます。'
 		},
 		{
 			en: 'It uses `<input type="search">`, so in Chrome, Esc clears the text.',
-			ja: '`<input type="search">` を使っているので、Chrome では Esc で入力を消せる。'
+			ja: '`<input type="search">` を使っているので、Chrome では Esc で入力を消せます。'
 		},
 		{
 			en: 'In this demo, the magnifying glass at the start of the box is decorative. The label already names the field, so the icon is hidden from screen readers with `aria-hidden`.',
-			ja: 'このデモでは、入力欄の先頭の虫眼鏡は飾りとして置いている。欄の名前はラベルが伝えるので、アイコンは `aria-hidden` で読み上げから外している。'
+			ja: 'このデモでは、入力欄の先頭の虫眼鏡は飾りとして置いています。欄の名前はラベルが伝えるので、アイコンは `aria-hidden` で読み上げから外しています。'
 		}
 	],
 	keyboard: [
-		{ key: 'Enter', action: { en: 'Runs the search.', ja: '検索を実行する。' } },
+		{ key: 'Enter', action: { en: 'Runs the search.', ja: '検索を実行します。' } },
 		{
 			key: 'Esc',
-			action: { en: 'Clears the text (depends on the browser).', ja: '入力を消す（ブラウザによる）。' }
+			action: { en: 'Clears the text (depends on the browser).', ja: '入力を消します（ブラウザによる）。' }
 		},
-		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between the box and the search button.', ja: '入力欄と検索ボタンの間を移動する。' } }
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves between the box and the search button.', ja: '入力欄と検索ボタンの間を移動します。' } }
 	],
 	variations: [
 		{
 			name: { en: 'With scope', ja: '検索範囲の指定付き' },
 			description: {
 				en: 'A menu next to the box narrows what to search, such as news or documents only.',
-				ja: '入力欄の横のメニューで、お知らせだけ・資料だけのように検索する範囲を絞る。'
+				ja: '入力欄の横のメニューで、お知らせだけ・資料だけのように検索する範囲を絞ります。'
 			}
 		},
 		{
 			name: { en: 'With advanced search', ja: '詳細検索付き' },
 			description: {
 				en: 'A disclosure titled “Advanced search” below the box holds more conditions, such as the kind of content and the sort order. While it is closed, the current conditions can be shown as text.',
-				ja: '入力欄の下の「詳細検索」のディスクロージャーに、探す種類や並び順などの条件をまとめたもの。閉じている間も、今の条件を文で示せる。'
+				ja: '入力欄の下の「詳細検索」のディスクロージャーに、探す種類や並び順などの条件をまとめたものです。閉じている間も、今の条件を文で示せます。'
 			}
 		},
 		{
 			name: { en: 'With popular searches', ja: 'よくある検索付き' },
 			description: {
 				en: 'A row of buttons for frequently searched words, labeled “Popular searches”, below the box. Pressing one searches for that word.',
-				ja: '入力欄の下に「よくある検索」として、よく探される語のボタンを並べたもの。押すとその語で検索する。'
+				ja: '入力欄の下に「よくある検索」として、よく探される語のボタンを並べたものです。押すとその語で検索します。'
 			}
 		}
 	],
 	usage: [
 		{
 			en: 'Use it for searching across a whole site. To filter rows of a table, use table controls instead.',
-			ja: 'サイト全体を横断する検索に使う。表の行を絞り込むのには使わず、表の操作部品を使う。'
+			ja: 'サイト全体を横断する検索に使います。表の行を絞り込むのには使わず、表の操作部品を使います。'
 		}
 	],
 	misuse: [
@@ -80,11 +80,11 @@ export default {
 			},
 			harm: {
 				en: 'Screen readers do not treat placeholder text as a label, and not all of them announce it, so screen reader users may not learn what the field is for. The text also disappears once typing starts.',
-				ja: 'スクリーンリーダーはプレースホルダーをラベルとして扱わず、読み上げないものもあるため、スクリーンリーダーの利用者には何の欄か伝わらないことがある。入力を始めるとプレースホルダーの文字も消える。'
+				ja: 'スクリーンリーダーはプレースホルダーをラベルとして扱わず、読み上げないものもあるため、スクリーンリーダーの利用者には何の欄か伝わらないことがあります。入力を始めるとプレースホルダーの文字も消えます。'
 			},
 			instead: {
 				en: 'Give the field a name with `<label>`, such as “Search this site”. If the design has no room for a visible label, keep the `<label>` and hide it visually instead of relying on placeholder text.',
-				ja: '`<label>` で「サイト内検索」などの名前を付ける。見た目にラベルを出せないデザインでも、`<label>` は残して見た目だけ隠し、プレースホルダーには頼らない。'
+				ja: '`<label>` で「サイト内検索」などの名前を付けます。見た目にラベルを出せないデザインでも、`<label>` は残して見た目だけ隠し、プレースホルダーには頼りません。'
 			}
 		}
 	],
@@ -93,28 +93,28 @@ export default {
 			id: 'command-palette',
 			diff: {
 				en: 'A search field sends the typed words and shows the results on a page; a command palette narrows a list as you type and goes straight to the chosen item.',
-				ja: '検索ボックスは入力した語を送って結果をページに出し、コマンドパレットは入力に合わせて一覧を絞り込み、選んだものへ直接移る。'
+				ja: '検索ボックスは入力した語を送って結果をページに出し、コマンドパレットは入力に合わせて一覧を絞り込み、選んだものへ直接移ります。'
 			}
 		},
 		{
 			id: 'text-field',
 			diff: {
 				en: 'A search field is a text field for search terms, usually with a search button and a search landmark.',
-				ja: '検索ボックスは検索語を入れるためのテキストフィールドで、検索ボタンや検索のランドマークが付くことが多い。'
+				ja: '検索ボックスは検索語を入れるためのテキストフィールドで、検索ボタンや検索のランドマークが付くことが多いです。'
 			}
 		},
 		{
 			id: 'combobox',
 			diff: {
 				en: 'A search field sends the typed words as they are; a combobox suggests values to pick from while typing.',
-				ja: '検索ボックスは入力した語をそのまま送り、コンボボックスは入力中に選べる候補を出す。'
+				ja: '検索ボックスは入力した語をそのまま送り、コンボボックスは入力中に選べる候補を出します。'
 			}
 		},
 		{
 			id: 'empty-state',
 			diff: {
 				en: 'A search field is where the search terms are typed; an empty state is what appears in place of the results when the search finds nothing.',
-				ja: '検索ボックスは検索語を入力する欄で、空の状態は検索で何も見つからなかったときに結果の代わりに出る表示。'
+				ja: '検索ボックスは検索語を入力する欄で、空の状態は検索で何も見つからなかったときに結果の代わりに出る表示です。'
 			}
 		}
 	],

@@ -11,54 +11,54 @@ export default {
 	],
 	summary: {
 		en: 'A box where the user types a short piece of free text, such as a name.',
-		ja: '名前など、短い文字列を自由に入力する欄。'
+		ja: '名前など、短い文字列を自由に入力する欄です。'
 	},
 	appearance: {
 		en: 'A rectangle with a border or an underline, with a label above it. A required field has a mark such as “(required)” next to the label. Hint text often sits between the label and the field, and error text appears below the field.',
-		ja: '枠線または下線のある長方形で、上にラベルがある。入力が必須の欄はラベルの横に「※必須」などの表示がある。ラベルと欄の間に補足の文が、欄の下にエラーの文が出ることが多い。'
+		ja: '枠線または下線のある長方形で、上にラベルがあります。入力が必須の欄はラベルの横に「※必須」などの表示があります。ラベルと欄の間に補足の文が、欄の下にエラーの文が出ることが多いです。'
 	},
 	behavior: [
 		{
 			en: 'Clicking or tabbing into it shows a text cursor, and typing enters text.',
-			ja: 'クリックまたは Tab でフォーカスするとカーソルが出て、文字を入力できる。'
+			ja: 'クリックまたは Tab でフォーカスするとカーソルが出て、文字を入力できます。'
 		},
 		{
 			en: 'The label stays visible; `placeholder` text disappears when typing starts, so it should not replace the label.',
-			ja: 'ラベルは常に見えるようにする。`placeholder` は入力を始めると消えるため、ラベルの代わりにはしない。'
+			ja: 'ラベルは常に見えるようにします。`placeholder` は入力を始めると消えるため、ラベルの代わりにはしません。'
 		},
 		{
 			en: 'Hint text is linked with `aria-describedby` so screen readers read it with the label.',
-			ja: '補足の文は `aria-describedby` でつなぎ、スクリーンリーダーがラベルと一緒に読み上げるようにする。'
+			ja: '補足の文は `aria-describedby` でつなぎ、スクリーンリーダーがラベルと一緒に読み上げるようにします。'
 		},
 		{
 			en: 'In this demo, the field has no `maxlength`, so text past 20 characters is not cut off. Pressing Save with the field empty or too long shows an error below the field, links it with `aria-describedby`, sets `aria-invalid`, and moves focus to the field. After the first save, the error updates as you type and disappears once the value is fixed.',
-			ja: 'このデモでは `maxlength` を付けていないので、20文字を超えても入力は切れない。空のまま、または長すぎるまま「保存」を押すと、欄の下にエラーの文を出して `aria-describedby` でつなぎ、`aria-invalid` を付けて、フォーカスを欄へ移す。一度保存したあとは、入力に合わせてエラーが変わり、直すと消える。'
+			ja: 'このデモでは `maxlength` を付けていないので、20文字を超えても入力は切れません。空のまま、または長すぎるまま「保存」を押すと、欄の下にエラーの文を出して `aria-describedby` でつなぎ、`aria-invalid` を付けて、フォーカスを欄へ移します。一度保存したあとは、入力に合わせてエラーが変わり、直すと消えます。'
 		}
 	],
 	keyboard: [
-		{ key: 'Enter', action: { en: 'Submits the form (Save in this demo).', ja: 'フォームを送信する（このデモでは「保存」）。' } },
-		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus into or out of the field.', ja: '入力欄へ、または入力欄から移動する。' } },
+		{ key: 'Enter', action: { en: 'Submits the form (Save in this demo).', ja: 'フォームを送信します（このデモでは「保存」）。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus into or out of the field.', ja: 'フォーカスを入力欄に移したり、入力欄から外したりします。' } },
 		{
 			key: '← / → / Home / End',
-			action: { en: 'Moves the text cursor.', ja: '文字のカーソルを移動する。' }
+			action: { en: 'Moves the text cursor.', ja: '文字のカーソルを移動します。' }
 		}
 	],
 	usage: [
 		{
 			en: 'Match the width of the field to the expected length of the input.',
-			ja: '入力欄の幅は、想定する入力の長さに合わせる。'
+			ja: '入力欄の幅は、想定する入力の長さに合わせます。'
 		},
 		{
 			en: 'Mark required fields in words next to the label, such as “(required)”, not with color alone.',
-			ja: '入力が必須の欄は、ラベルの横に「※必須」のような文字で示し、色だけに頼らない。'
+			ja: '入力が必須の欄は、ラベルの横に「※必須」のような文字で示し、色だけに頼りません。'
 		},
 		{
 			en: 'Error messages should say what is wrong and how to fix it. Show them when the form is submitted, not while typing or when focus leaves the field.',
-			ja: 'エラーメッセージには、何が問題でどう直せばよいかを書く。エラーは送信したときに出し、入力中やフォーカスが外れたときには出さない。'
+			ja: 'エラーメッセージには、何が問題でどう直せばよいかを書きます。エラーは送信したときに出し、入力中やフォーカスが外れたときには出しません。'
 		},
 		{
 			en: 'Do not cut off input with `maxlength`. Let people type past the limit, and say in the error how many characters they entered.',
-			ja: '`maxlength` で入力を打ち切らない。上限を超えても入力させ、エラーで入力した文字数を伝える。'
+			ja: '`maxlength` で入力を打ち切りません。上限を超えても入力させ、エラーで入力した文字数を伝えます。'
 		}
 	],
 	misuse: [
@@ -69,11 +69,11 @@ export default {
 			},
 			harm: {
 				en: 'Placeholder text disappears once typing starts, which is a problem for people with memory difficulties and for anyone reviewing their answers. Not all screen readers announce it, and the default browser styling for it often fails contrast requirements.',
-				ja: 'プレースホルダーは入力を始めると消えるため、記憶に困難のある人や、入力内容を見直す人が困る。読み上げないスクリーンリーダーもあり、ブラウザ既定の表示色はコントラストの基準を満たさないことが多い。'
+				ja: 'プレースホルダーは入力を始めると消えるため、記憶に困難のある人や、入力内容を見直す人が困ります。読み上げないスクリーンリーダーもあり、ブラウザ既定の表示色はコントラストの基準を満たさないことが多いです。'
 			},
 			instead: {
 				en: 'Put a visible label outside the field, and write hints and examples as text outside it too, so they stay on screen while typing.',
-				ja: '入力欄の外に常に見えるラベルを置き、補足説明や入力例も欄の外にテキストで書いて、入力中も見えるようにする。'
+				ja: '入力欄の外に常に見えるラベルを置き、補足説明や入力例も欄の外にテキストで書いて、入力中も見えるようにします。'
 			}
 		}
 	],
@@ -82,35 +82,35 @@ export default {
 			id: 'combobox',
 			diff: {
 				en: 'A text field has no suggestions; a combobox adds a list of suggestions to choose from.',
-				ja: 'テキストフィールドには候補がなく、コンボボックスは選べる候補のリストが付く。'
+				ja: 'テキストフィールドには候補がなく、コンボボックスは選べる候補のリストが付きます。'
 			}
 		},
 		{
 			id: 'textarea',
 			diff: {
 				en: 'A text field takes one short line; a text area takes several lines of free text.',
-				ja: 'テキストフィールドは短い1行を入力し、テキストエリアは複数行の文章を入力する。'
+				ja: 'テキストフィールドは短い1行を入力し、テキストエリアは複数行の文章を入力します。'
 			}
 		},
 		{
 			id: 'search-field',
 			diff: {
 				en: 'A text field takes any short text; a search field is one made for search terms, usually with a search button and a search landmark.',
-				ja: 'テキストフィールドは短い文字列全般に使う。検索ボックスは検索語のための形で、検索ボタンや検索のランドマークが付くことが多い。'
+				ja: 'テキストフィールドは短い文字列全般に使います。検索ボックスは検索語のための形で、検索ボタンや検索のランドマークが付くことが多いです。'
 			}
 		},
 		{
 			id: 'password-field',
 			diff: {
 				en: 'A text field always shows what is typed; a password field hides it and has a button to show it.',
-				ja: 'テキストフィールドは入力した文字を常に見せる。パスワード入力は文字を隠し、表示するボタンが付く。'
+				ja: 'テキストフィールドは入力した文字を常に見せます。パスワード入力は文字を隠し、表示するボタンが付きます。'
 			}
 		},
 		{
 			id: 'one-time-code',
 			diff: {
 				en: 'A text field takes any short text; a one-time code field is one set up for a code sent to the user, with a number keypad and autofill from the message.',
-				ja: 'テキストフィールドは短い文字列全般に使う。確認コードの入力は、届いたコードのために整えた形で、数字のキーボードと、届いたメッセージからの自動入力が付く。'
+				ja: 'テキストフィールドは短い文字列全般に使います。確認コードの入力は、届いたコードのために整えた形で、数字のキーボードと、届いたメッセージからの自動入力が付きます。'
 			}
 		}
 	],

@@ -9,36 +9,36 @@ export default {
 	],
 	summary: {
 		en: 'A bar that fills up to show how much of a task, such as an upload, is done.',
-		ja: 'アップロードなどの作業がどこまで進んだかを、伸びていく棒で示す部品。'
+		ja: 'アップロードなどの作業がどこまで進んだかを、伸びていく棒で示す部品です。'
 	},
 	appearance: {
 		en: 'A thin horizontal track that fills with color from left to right, often with a percentage or label nearby.',
-		ja: '細い横長の溝が左から右へ色で埋まっていく。近くに割合やラベルが表示されることが多い。'
+		ja: '細い横長の溝が左から右へ色で埋まっていきます。近くに割合やラベルが表示されることが多いです。'
 	},
 	behavior: [
 		{
 			en: 'The filled part grows as the task progresses and reaches the end when it finishes.',
-			ja: '作業が進むと塗られた部分が伸び、終わると端まで届く。'
+			ja: '作業が進むと塗られた部分が伸び、終わると端まで届きます。'
 		},
 		{
 			en: 'When the remaining time is not yet known, it shows an indeterminate bar that moves without a value, and switches to the percentage once it is known.',
-			ja: '残りの時間がまだ分からないうちは、値を持たずに動く不確定の表示にし、分かった時点で割合の表示に切り替える。'
+			ja: '残りの時間がまだ分からないうちは、値を持たずに動く不確定の表示にし、分かった時点で割合の表示に切り替えます。'
 		},
 		{
 			en: 'It is not interactive; the user only watches it. The label next to it says what is being done, and changes to the result when the task finishes or is canceled. Carbon instead keeps the label as it is and shows the result with the bar’s color and an icon, with helper text explaining an error.',
-			ja: '操作する部品ではなく、見るだけのもの。近くのラベルで何の作業かを示し、終わったときや中止したときは結果を表す文に変える。一方 Carbon はラベルを変えず、棒の色とアイコンで結果を示し、エラーの内容は補助テキストで伝える。'
+			ja: '操作する部品ではなく、見るだけのものです。近くのラベルで何の作業かを示し、終わったときや中止したときは結果を表す文に変えます。一方 Carbon はラベルを変えず、棒の色とアイコンで結果を示し、エラーの内容は補助テキストで伝えます。'
 		},
 		{
 			en: 'For a long task, tell assistive technology the percentage at intervals rather than at every change. The DADS HTML implementation announces it every 5 seconds by default.',
-			ja: '長い処理では、途中の割合を変わるたびではなく、間隔をあけて支援技術に伝える。DADS の HTML 実装では、既定で5秒ごとに知らせる。'
+			ja: '長い処理では、途中の割合を変わるたびではなく、間隔をあけて支援技術に伝えます。DADS の HTML 実装では、既定で5秒ごとに知らせます。'
 		},
 		{
 			en: 'This demo uses the native `<progress>` element with a `<label>`; leaving out `value` makes it indeterminate. The task is short, so only the start, completion and cancellation are announced, through a `role="status"` live region.',
-			ja: 'このデモはネイティブの `<progress>` 要素と `<label>` を使い、`value` を省いて不確定の表示にしている。作業が短いため、開始・完了・中止だけを `role="status"` のライブリージョンで知らせる。'
+			ja: 'このデモはネイティブの `<progress>` 要素と `<label>` を使い、`value` を省いて不確定の表示にしています。作業が短いため、開始・完了・中止だけを `role="status"` のライブリージョンで知らせます。'
 		},
 		{
 			en: 'In this demo, the start button cannot be pressed while the upload is running, and Cancel stops it where it is. Both are marked with `aria-disabled` rather than `disabled`, so focus stays on the button.',
-			ja: 'このデモでは、アップロード中は開始ボタンを押せず、キャンセルを押すとその位置で止まる。どちらも `disabled` ではなく `aria-disabled` で押せないことを示し、フォーカスがボタンから外れないようにしている。'
+			ja: 'このデモでは、アップロード中は開始ボタンを押せず、キャンセルを押すとその位置で止まります。どちらも `disabled` ではなく `aria-disabled` で押せないことを示し、フォーカスがボタンから外れないようにしています。'
 		}
 	],
 	keyboard: [
@@ -46,7 +46,7 @@ export default {
 			key: '—',
 			action: {
 				en: 'None. The demo’s start and cancel buttons use Enter / Space.',
-				ja: 'なし。デモの開始ボタンとキャンセルボタンは Enter / Space で押せる。'
+				ja: 'なし。デモの開始ボタンとキャンセルボタンは Enter / Space で押せます。'
 			}
 		}
 	],
@@ -55,21 +55,21 @@ export default {
 			name: { en: 'Determinate', ja: '確定' },
 			description: {
 				en: 'Shows how much of the task is done, often with a percentage nearby.',
-				ja: '作業がどこまで済んだかを示すもの。近くに割合を添えることが多い。'
+				ja: '作業がどこまで済んだかを示すものです。近くに割合を添えることが多いです。'
 			}
 		},
 		{
 			name: { en: 'Indeterminate', ja: '不確定' },
 			description: {
 				en: 'Shows that work is ongoing without knowing how long it will take, often as a moving stripe. Made by leaving out the `value` attribute.',
-				ja: '終わるまでの時間が分からないときに、動く帯などで作業中であることだけを示すもの。`value` 属性を省くとこの状態になる。'
+				ja: '終わるまでの時間が分からないときに、動く帯などで作業中であることだけを示すものです。`value` 属性を省くとこの状態になります。'
 			}
 		}
 	],
 	usage: [
 		{
 			en: 'Do not use it to show progress through the steps of a form. Use a stepper for that.',
-			ja: 'フォームの手順の進み具合を示すのには使わない。それにはステップナビゲーションを使う。'
+			ja: 'フォームの手順の進み具合を示すのには使いません。それにはステップナビゲーションを使います。'
 		}
 	],
 	related: [
@@ -77,21 +77,21 @@ export default {
 			id: 'spinner',
 			diff: {
 				en: 'A progress bar shows how far along a task is; a spinner only shows that something is happening.',
-				ja: 'プログレスバーは作業の進み具合を示し、スピナーは処理中であることだけを示す。'
+				ja: 'プログレスバーは作業の進み具合を示し、スピナーは処理中であることだけを示します。'
 			}
 		},
 		{
 			id: 'meter',
 			diff: {
 				en: 'A progress bar shows how far a task has gone; a meter shows a measurement within a known range, such as disk usage.',
-				ja: 'プログレスバーは作業の進み具合を示し、メーターはディスク使用量のように決まった範囲の中の測定値を示す。'
+				ja: 'プログレスバーは作業の進み具合を示し、メーターはディスク使用量のように決まった範囲の中の測定値を示します。'
 			}
 		},
 		{
 			id: 'stepper',
 			diff: {
 				en: 'A progress bar shows progress within one task; a stepper shows which step of a multi-page procedure the user is on.',
-				ja: 'プログレスバーは1つの作業の進み具合を示し、ステップナビゲーションは複数画面にまたがる手続きのどの段階にいるかを示す。'
+				ja: 'プログレスバーは1つの作業の進み具合を示し、ステップナビゲーションは複数画面にまたがる手続きのどの段階にいるかを示します。'
 			}
 		}
 	],

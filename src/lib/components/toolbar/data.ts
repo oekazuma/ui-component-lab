@@ -10,56 +10,56 @@ export default {
 	],
 	summary: {
 		en: 'A row of related controls, such as text formatting buttons, grouped together.',
-		ja: '文字の書式ボタンのように、関係する操作部品を1列にまとめたもの。'
+		ja: '文字の書式ボタンのように、関係する操作部品を1列にまとめたものです。'
 	},
 	appearance: {
 		en: 'A strip of small icon buttons, sometimes with dividers between groups. Pressed buttons stay highlighted. In this demo, a divider separates the text style buttons from the alignment buttons, and on a narrow screen the strip wraps onto two rows.',
-		ja: '小さなアイコンのボタンが帯状に並び、グループの間に区切り線が入ることもある。押した状態のボタンは色が変わったままになる。このデモでは、文字の飾りのボタンと揃え方のボタンの間に区切り線があり、狭い画面では2段に折り返す。'
+		ja: '小さなアイコンのボタンが帯状に並び、グループの間に区切り線が入ることもあります。押した状態のボタンは色が変わったままになります。このデモでは、文字の飾りのボタンと揃え方のボタンの間に区切り線があり、狭い画面では2段に折り返します。'
 	},
 	behavior: [
 		{
 			en: 'The whole toolbar is a single Tab stop. Inside it, the arrow keys move between buttons.',
-			ja: 'ツールバー全体で Tab の止まる場所は1か所だけで、中のボタンの間は矢印キーで移る。'
+			ja: 'ツールバー全体で Tab の止まる場所は1か所だけで、中のボタンの間は矢印キーで移ります。'
 		},
 		{
 			en: 'When the user tabs back in, focus returns to the last focused button (roving `tabindex`).',
-			ja: 'Tab でツールバーに入り直すと、最後にフォーカスしていたボタンにフォーカスが戻る（ロービング `tabindex`）。'
+			ja: 'Tab でツールバーに入り直すと、最後にフォーカスしていたボタンにフォーカスが戻ります（ロービング `tabindex`）。'
 		},
 		{
 			en: 'In this demo, Bold, Italic and Underline are toggle buttons that use `aria-pressed`, so any number of them can be on.',
-			ja: 'このデモの「太字」「斜体」「下線」は `aria-pressed` を使ったトグルボタンで、いくつでも同時にオンにできる。'
+			ja: 'このデモの「太字」「斜体」「下線」は `aria-pressed` を使ったトグルボタンで、いくつでも同時にオンにできます。'
 		},
 		{
 			en: 'In this demo, the alignment buttons are a `radiogroup` of `role="radio"` buttons with `aria-checked`, so exactly one is chosen. Moving focus onto one does not choose it.',
-			ja: 'このデモの揃え方のボタンは `role="radio"` と `aria-checked` を持つボタンの `radiogroup` で、常にどれか1つだけが選ばれている。フォーカスを移しただけでは選ばれない。'
+			ja: 'このデモの揃え方のボタンは `role="radio"` と `aria-checked` を持つボタンの `radiogroup` で、常にどれか1つだけが選ばれています。フォーカスを移しただけでは選ばれません。'
 		}
 	],
 	keyboard: [
-		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus into or out of the toolbar.', ja: 'ツールバーへ、またはツールバーから移動する。' } },
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus into or out of the toolbar.', ja: 'フォーカスをツールバーに移したり、ツールバーから外したりします。' } },
 		{
 			key: 'Enter / Space',
 			action: {
 				en: 'Turns the focused style button on or off, or chooses the focused alignment.',
-				ja: 'フォーカス中の飾りのボタンをオン・オフする。揃え方のボタンでは、その揃え方を選ぶ。'
+				ja: 'フォーカス中の飾りのボタンをオン・オフします。揃え方のボタンでは、その揃え方を選びます。'
 			}
 		},
 		{
 			key: '← / →',
 			action: {
 				en: 'Moves to the previous or next button, across the divider (wraps around).',
-				ja: '区切り線をまたいで前後のボタンへ移り、端では反対の端へ回る。'
+				ja: '区切り線をまたいで前後のボタンへ移り、端では反対の端へ回ります。'
 			}
 		},
-		{ key: 'Home / End', action: { en: 'Moves to the first or last button.', ja: '最初または最後のボタンへ移る。' } }
+		{ key: 'Home / End', action: { en: 'Moves to the first or last button.', ja: '最初または最後のボタンへ移ります。' } }
 	],
 	usage: [
 		{
 			en: 'Group controls as a toolbar only when there are three or more of them.',
-			ja: 'ツールバーとしてまとめるのは、操作部品が3つ以上あるときだけにする。'
+			ja: 'ツールバーとしてまとめるのは、操作部品が3つ以上あるときだけにします。'
 		},
 		{
 			en: 'Give the toolbar a label with `aria-label` so its purpose is announced.',
-			ja: '`aria-label` でツールバーに名前を付け、何のための操作群か読み上げられるようにする。'
+			ja: '`aria-label` でツールバーに名前を付け、何のための操作群か読み上げられるようにします。'
 		}
 	],
 	misuse: [
@@ -70,11 +70,11 @@ export default {
 			},
 			harm: {
 				en: 'People mistake it for the neighboring button and press Delete by accident, which can lose their data.',
-				ja: '隣のボタンと取り違えて「削除」を誤って押し、データを失うことがある。'
+				ja: '隣のボタンと取り違えて「削除」を誤って押し、データを失うことがあります。'
 			},
 			instead: {
 				en: 'Put space or a divider between Delete and the other buttons, or move it to a separate group at the end of the toolbar.',
-				ja: '「削除」とほかのボタンの間に余白や区切り線を入れるか、ツールバーの端の別のグループに分けて置く。'
+				ja: '「削除」とほかのボタンの間に余白や区切り線を入れるか、ツールバーの端の別のグループに分けて置きます。'
 			}
 		}
 	],
@@ -83,14 +83,14 @@ export default {
 			id: 'menu',
 			diff: {
 				en: 'A toolbar keeps a group of controls visible in a row; a menu hides actions in a list that opens on demand.',
-				ja: 'ツールバーは操作部品を1列に並べて常に見せ、メニューは操作を開いたリストにしまう。'
+				ja: 'ツールバーは操作部品を1列に並べて常に見せ、メニューは操作を開いたリストにしまいます。'
 			}
 		},
 		{
 			id: 'toggle-button',
 			diff: {
 				en: 'A toolbar groups several buttons and moves between them with arrow keys; a toggle button is a single on/off button that can sit inside one.',
-				ja: 'ツールバーは複数のボタンをまとめて矢印キーで行き来させる。トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーの中に置くこともある。'
+				ja: 'ツールバーは複数のボタンをまとめて矢印キーで行き来させます。トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーの中に置くこともあります。'
 			}
 		}
 	],

@@ -7,32 +7,32 @@ export default {
 	aliases: [],
 	summary: {
 		en: 'Gray placeholder shapes that show the layout of content while it loads.',
-		ja: '読み込み中の内容のレイアウトを、灰色の図形で先に見せる仮の表示。'
+		ja: '読み込み中の内容のレイアウトを、灰色の図形で先に見せる仮の表示です。'
 	},
 	appearance: {
 		en: 'Light gray circles and bars where images and lines of text will appear, often with a soft shimmer moving across them.',
-		ja: '画像や文字が入る場所に薄い灰色の丸や棒が並び、光が横に流れるような動きが付くことが多い。'
+		ja: '画像や文字が入る場所に薄い灰色の丸や棒が並び、光が横に流れるような動きが付くことが多いです。'
 	},
 	behavior: [
 		{
 			en: 'Replaced by the real content when loading finishes.',
-			ja: '読み込みが終わると、本物の内容に置き換わる。'
+			ja: '読み込みが終わると、本物の内容に置き換わります。'
 		},
 		{
 			en: 'Because the layout appears right away, the page feels faster and does not jump when the content arrives.',
-			ja: 'レイアウトがすぐに出るので待ち時間が短く感じられ、内容が届いたときに画面がずれにくい。'
+			ja: 'レイアウトがすぐに出るので待ち時間が短く感じられ、内容が届いたときに画面がずれにくくなります。'
 		},
 		{
 			en: 'The gray shapes are hidden from assistive technology, and the area is marked `aria-busy` while loading.',
-			ja: '灰色の図形は支援技術から隠し、読み込み中の領域には `aria-busy` を付ける。'
+			ja: '灰色の図形は支援技術から隠し、読み込み中の領域には `aria-busy` を付けます。'
 		},
 		{
 			en: 'The shapes say nothing to screen reader users, so the start and end of loading are announced in words through a `role="status"` live region placed outside the busy area.',
-			ja: '図形はスクリーンリーダーの利用者に何も伝えないため、読み込みの始まりと終わりは、読み込み中の領域の外に置いた `role="status"` のライブリージョンを使って言葉で知らせる。'
+			ja: '図形はスクリーンリーダーの利用者に何も伝えないため、読み込みの始まりと終わりは、読み込み中の領域の外に置いた `role="status"` のライブリージョンを使って言葉で知らせます。'
 		},
 		{
 			en: 'In this demo, the image placeholder keeps the same size as the image that replaces it, so the lines below do not move.',
-			ja: 'このデモでは、画像が入る場所の仮の図形を、置き換わる画像と同じ大きさにして、下の行がずれないようにしている。'
+			ja: 'このデモでは、画像が入る場所の仮の図形を、置き換わる画像と同じ大きさにして、下の行がずれないようにしています。'
 		}
 	],
 	keyboard: [
@@ -40,14 +40,14 @@ export default {
 			key: '—',
 			action: {
 				en: 'None. The demo’s reload button uses Enter / Space.',
-				ja: 'なし。デモの再読み込みボタンは Enter / Space で押せる。'
+				ja: 'なし。デモの再読み込みボタンは Enter / Space で押せます。'
 			}
 		}
 	],
 	usage: [
 		{
 			en: 'Sources differ on skeletons. The Digital Agency Design System (DADS) does not use skeletons: while a screen is loading, it shows a progress indicator instead, even when several pieces of data are awaited. Carbon prefers skeleton states to loading indicators for full-screen loads. Nielsen Norman Group also recommends skeleton screens when the whole page is loading and the wait is under 10 seconds.',
-			ja: 'スケルトンの扱いは資料によって分かれる。デジタル庁デザインシステム（DADS）はスケルトンを使わない。画面の読み込み中は、複数のデータを待つ場合もプログレスインジケーターで処理中であることを示す。Carbon は画面全体の読み込みにはローディングインジケーターよりスケルトンを勧める。Nielsen Norman Group も、ページ全体の読み込みで待ち時間が10秒未満ならスケルトンを勧める。'
+			ja: 'スケルトンの扱いは資料によって分かれます。デジタル庁デザインシステム（DADS）はスケルトンを使いません。画面の読み込み中は、複数のデータを待つ場合もプログレスインジケーターで処理中であることを示します。Carbon は画面全体の読み込みにはローディングインジケーターよりスケルトンを勧めます。Nielsen Norman Group も、ページ全体の読み込みで待ち時間が10秒未満ならスケルトンを勧めています。'
 		}
 	],
 	related: [
@@ -55,14 +55,14 @@ export default {
 			id: 'spinner',
 			diff: {
 				en: 'A skeleton previews the layout of the content; a spinner is one shape that only shows something is loading.',
-				ja: 'スケルトンは内容のレイアウトを先に見せ、スピナーは読み込み中であることだけを1つの図形で示す。'
+				ja: 'スケルトンは内容のレイアウトを先に見せ、スピナーは読み込み中であることだけを1つの図形で示します。'
 			}
 		},
 		{
 			id: 'empty-state',
 			diff: {
 				en: 'A skeleton fills the space while content is still loading; an empty state appears after loading has finished with nothing to show.',
-				ja: 'スケルトンはまだ読み込んでいる間に場所を埋め、空の状態は読み込みが終わって表示するものがないときに出る。'
+				ja: 'スケルトンはまだ読み込んでいる間に場所を埋め、空の状態は読み込みが終わって表示するものがないときに出ます。'
 			}
 		}
 	],

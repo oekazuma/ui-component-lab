@@ -9,28 +9,28 @@ export default {
 	],
 	summary: {
 		en: 'A button with three stacked lines that opens the site’s menu, mainly on phones.',
-		ja: '3本線のアイコンが付いた、サイトのメニューを開くボタン。主にスマートフォンで使う。'
+		ja: '3本線のアイコンが付いた、サイトのメニューを開くボタンです。主にスマートフォンで使います。'
 	},
 	appearance: {
 		en: 'An icon of three horizontal lines with the word “Menu” beside it, at the left or right end of the page header. Once the menu is open, a button of the same shape shows an × and the word “Close”.',
-		ja: '水平線3本のアイコンと「メニュー」の文字を並べたボタンで、ページのヘッダーの左端か右端に置く。メニューを開くと、同じ形のボタンがバツ印と「閉じる」の文字に変わって見える。'
+		ja: '水平線3本のアイコンと「メニュー」の文字を並べたボタンで、ページのヘッダーの左端か右端に置きます。メニューを開くと、同じ形のボタンがバツ印と「閉じる」の文字に変わって見えます。'
 	},
 	behavior: [
 		{
 			en: 'Pressing it opens the mobile menu, which usually slides in from the edge of the screen in a drawer.',
-			ja: '押すと、モバイルメニューが開く。モバイルメニューはふつう、ドロワーに入って画面の端から出てくる。'
+			ja: '押すと、モバイルメニューが開きます。モバイルメニューはふつう、ドロワーに入って画面の端から出てきます。'
 		},
 		{
 			en: 'Pressing the Close button in the open menu closes it.',
-			ja: '開いたメニューの中にある「閉じる」ボタンを押すと閉じる。'
+			ja: '開いたメニューの中にある「閉じる」ボタンを押すと閉じます。'
 		},
 		{
 			en: 'In this demo, the Menu button opens the menu as a modal `<dialog>` (the WAI-ARIA APG Dialog (Modal) pattern), and the Close button is a separate button inside it, as in the Digital Agency Design System drawer example. While the dialog is open the rest of the page, including the Menu button, is inert, so the Menu button has no `aria-expanded`.',
-			ja: 'このデモでは、「メニュー」ボタンでメニューをモーダルの `<dialog>` として開き（WAI-ARIA APG の Dialog (Modal) パターン）、デジタル庁デザインシステムのドロワーの実装例と同じく、「閉じる」ボタンはその中に別のボタンとして置く。開いている間は「メニュー」ボタンを含むページのほかの部分を操作できないので、`aria-expanded` は付けない。'
+			ja: 'このデモでは、「メニュー」ボタンでメニューをモーダルの `<dialog>` として開き（WAI-ARIA APG の Dialog (Modal) パターン）、デジタル庁デザインシステムのドロワーの実装例と同じく、「閉じる」ボタンはその中に別のボタンとして置きます。開いている間は「メニュー」ボタンを含むページのほかの部分を操作できないので、`aria-expanded` は付けません。'
 		},
 		{
 			en: 'In this demo, choosing a link closes the menu and shows where it would go instead of leaving the page. `closedby="any"` also closes the menu when the dimmed background is clicked; browsers that do not support it ignore it.',
-			ja: 'このデモでは、リンクを選ぶとメニューを閉じ、ページを移らずに行き先を表示する。`closedby="any"` により暗くした背景をクリックしても閉じる（対応していないブラウザはこれを無視する）。'
+			ja: 'このデモでは、リンクを選ぶとメニューを閉じ、ページを移らずに行き先を表示します。`closedby="any"` により暗くした背景をクリックしても閉じます（対応していないブラウザはこれを無視します）。'
 		}
 	],
 	keyboard: [
@@ -38,21 +38,21 @@ export default {
 			key: 'Enter / Space',
 			action: {
 				en: 'On the Menu button, opens the menu. On the Close button, closes it and returns focus to the Menu button.',
-				ja: '「メニュー」ボタンではメニューを開く。「閉じる」ボタンではメニューを閉じ、「メニュー」ボタンにフォーカスを戻す。'
+				ja: '「メニュー」ボタンではメニューを開きます。「閉じる」ボタンではメニューを閉じ、「メニュー」ボタンにフォーカスを戻します。'
 			}
 		},
 		{
 			key: 'Tab / Shift + Tab',
 			action: {
 				en: 'Moves between the Close button and the links inside the open menu.',
-				ja: '開いたメニューの中で、「閉じる」ボタンとリンクの間を移動する。'
+				ja: '開いたメニューの中で、「閉じる」ボタンとリンクの間を移動します。'
 			}
 		},
 		{
 			key: 'Esc',
 			action: {
 				en: 'Closes the menu and returns focus to the Menu button.',
-				ja: 'メニューを閉じ、「メニュー」ボタンにフォーカスを戻す。'
+				ja: 'メニューを閉じ、「メニュー」ボタンにフォーカスを戻します。'
 			}
 		}
 	],
@@ -61,21 +61,21 @@ export default {
 			name: { en: 'Desktop and mobile (label beside the icon)', ja: 'デスクトップ・モバイル共通（文字をアイコンの横に置く）' },
 			description: {
 				en: 'A wide button with the word “Menu” to the right of the icon, as in this demo. The Digital Agency Design System uses this type as a rule.',
-				ja: 'このデモのように、アイコンの右に「メニュー」の文字を並べた横長のボタン。デジタル庁デザインシステムは原則としてこの型を使う。'
+				ja: 'このデモのように、アイコンの右に「メニュー」の文字を並べた横長のボタンです。デジタル庁デザインシステムは原則としてこの型を使います。'
 			}
 		},
 		{
 			name: { en: 'Mobile conditional (label under the icon)', ja: 'モバイル条件付き（文字をアイコンの下に置く）' },
 			description: {
 				en: 'A nearly square button with the word “Menu” under the icon, for headers too short of space for the side-by-side type. The word follows the page language, such as “MENU” and “CLOSE” on English pages.',
-				ja: 'アイコンの下に「メニュー」の文字を置いた、正方形に近いボタン。ヘッダーに横長の型を置く場所がないときだけ使う。文字はページの言語に合わせ、英語のページでは「MENU」「CLOSE」にする。'
+				ja: 'アイコンの下に「メニュー」の文字を置いた、正方形に近いボタンです。ヘッダーに横長の型を置く場所がないときだけ使います。文字はページの言語に合わせ、英語のページでは「MENU」「CLOSE」にします。'
 			}
 		}
 	],
 	usage: [
 		{
 			en: 'Place it at the left or right end of the header.',
-			ja: 'ヘッダーの左端か右端に置く。'
+			ja: 'ヘッダーの左端か右端に置きます。'
 		}
 	],
 	misuse: [
@@ -86,11 +86,11 @@ export default {
 			},
 			harm: {
 				en: 'Most people now recognize the icon, but not everyone does. People less used to digital services, or who meet the icon in an unfamiliar layout, may not understand that it opens a menu.',
-				ja: '今では多くの人がアイコンの意味を知っているが、全員ではない。デジタル機器に慣れていない人や、見慣れない画面でこのアイコンに出会った人は、メニューが開くことに気づかないことがある。'
+				ja: '今では多くの人がアイコンの意味を知っていますが、全員ではありません。デジタル機器に慣れていない人や、見慣れない画面でこのアイコンに出会った人は、メニューが開くことに気づかないことがあります。'
 			},
 			instead: {
 				en: 'Put the word “Menu” beside the icon. If the header is too short of space, put the word under the icon instead of dropping it.',
-				ja: 'アイコンの横に「メニュー」の文字を置く。ヘッダーに場所がなければ、文字を省かずにアイコンの下に置く。'
+				ja: 'アイコンの横に「メニュー」の文字を置きます。ヘッダーに場所がなければ、文字を省かずにアイコンの下に置きます。'
 			}
 		},
 		{
@@ -100,11 +100,11 @@ export default {
 			},
 			harm: {
 				en: 'People find the site’s content far less often than when the navigation is visible, take longer, and find the tasks harder. The drop is largest on desktop, where many people did not even notice the button.',
-				ja: 'ナビゲーションが見えている場合より、利用者がコンテンツを見つけにくくなり、時間がかかり、難しいと感じる。この差はデスクトップで特に大きく、ボタンに気づきもしない人が多かった。'
+				ja: 'ナビゲーションが見えている場合より、利用者がコンテンツを見つけにくくなり、時間がかかり、難しいと感じます。この差はデスクトップで特に大きく、ボタンに気づきもしない人が多くいました。'
 			},
 			instead: {
 				en: 'On wide screens, show the top-level links across the page header, and keep the button for narrow screens.',
-				ja: '画面が広いときは最上位のリンクをヘッダーに横に並べて見せ、このボタンは画面が狭いときに使う。'
+				ja: '画面が広いときは最上位のリンクをヘッダーに横に並べて見せ、このボタンは画面が狭いときに使います。'
 			}
 		}
 	],
@@ -113,21 +113,21 @@ export default {
 			id: 'drawer',
 			diff: {
 				en: 'A hamburger menu button is only the trigger; the drawer is the panel it opens from the edge of the screen.',
-				ja: 'ハンバーガーメニューボタンは開くきっかけになるボタンで、ドロワーはこのボタンで画面の端から開くパネル。'
+				ja: 'ハンバーガーメニューボタンは開くきっかけになるボタンで、ドロワーはこのボタンで画面の端から開くパネルです。'
 			}
 		},
 		{
 			id: 'menu',
 			diff: {
 				en: 'A hamburger menu button opens the site’s navigation links; a menu button opens a short list of actions right under itself.',
-				ja: 'ハンバーガーメニューボタンはサイトのナビゲーションのリンクを開き、メニューボタンは自分のすぐ下に操作の短い一覧を開く。'
+				ja: 'ハンバーガーメニューボタンはサイトのナビゲーションのリンクを開き、メニューボタンは自分のすぐ下に操作の短い一覧を開きます。'
 			}
 		},
 		{
 			id: 'mobile-menu',
 			diff: {
 				en: 'A hamburger menu button is the button that opens the menu; the mobile menu is the list of links shown once it opens.',
-				ja: 'ハンバーガーメニューボタンはメニューを開くボタンで、モバイルメニューは開いたときに出るリンクの一覧。'
+				ja: 'ハンバーガーメニューボタンはメニューを開くボタンで、モバイルメニューは開いたときに出るリンクの一覧です。'
 			}
 		}
 	],

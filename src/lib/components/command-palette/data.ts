@@ -7,36 +7,36 @@ export default {
 	aliases: [],
 	summary: {
 		en: 'A dialog with a search field that narrows a list of commands or pages as you type, then runs or opens the chosen one.',
-		ja: '検索欄に入力すると操作やページの一覧が絞り込まれ、選んだものを実行したり開いたりするダイアログ。'
+		ja: '検索欄に入力すると操作やページの一覧が絞り込まれ、選んだものを実行したり開いたりするダイアログです。'
 	},
 	appearance: {
 		en: 'A box in the middle of the screen, over a dimmed page, with a large search field at the top and a list of commands below it. The highlighted command is shaded.',
-		ja: '暗くしたページの上、画面の中ほどに箱が出る。上に大きな検索欄、その下に操作の一覧があり、選んでいる操作に色が付く。'
+		ja: '暗くしたページの上、画面の中ほどに箱が出ます。上に大きな検索欄、その下に操作の一覧があり、選んでいる操作に色が付きます。'
 	},
 	behavior: [
 		{
 			en: 'This site’s header search (“Search by name”, opened with ⌘K or Ctrl + K) is a command palette whose commands open the component pages.',
-			ja: 'このサイトのヘッダーの検索窓（「名前で検索」。⌘K か Ctrl + K で開く）がこの部品で、操作を選ぶと部品のページを開く。'
+			ja: 'このサイトのヘッダーの検索窓（「名前で検索」、⌘K か Ctrl + K で開きます）がこの部品で、操作を選ぶと部品のページを開きます。'
 		},
 		{
 			en: 'It is a modal dialog that holds a combobox. Typing narrows the list, and the arrow keys highlight a command while focus stays in the field; `aria-activedescendant` tells screen readers which command is highlighted.',
-			ja: 'コンボボックスを入れたモーダルダイアログ。入力すると一覧が絞り込まれ、矢印キーで操作を選ぶ間もフォーカスは入力欄に残る。選んでいる操作は `aria-activedescendant` でスクリーンリーダーに伝える。'
+			ja: 'コンボボックスを入れたモーダルダイアログです。入力すると一覧が絞り込まれ、矢印キーで操作を選ぶ間もフォーカスは入力欄に残ります。選んでいる操作は `aria-activedescendant` でスクリーンリーダーに伝えます。'
 		},
 		{
 			en: 'The list is shown the whole time the palette is open, so the field keeps `aria-expanded="true"`.',
-			ja: '開いている間は一覧を常に表示するので、入力欄の `aria-expanded` は `true` のままにする。'
+			ja: '開いている間は一覧を常に表示するので、入力欄の `aria-expanded` は `true` のままにします。'
 		},
 		{
 			en: 'A native `<dialog>` opened with `showModal()` makes the rest of the page inert, moves focus to the field, and closes with Esc. In this demo, focus then goes back to the button that opened it.',
-			ja: 'ネイティブの `<dialog>` を `showModal()` で開くと、ページのほかの部分が操作できなくなり、フォーカスが入力欄へ移り、Esc で閉じる。このデモでは、閉じると開いたボタンへフォーカスが戻る。'
+			ja: 'ネイティブの `<dialog>` を `showModal()` で開くと、ページのほかの部分が操作できなくなり、フォーカスが入力欄へ移り、Esc で閉じます。このデモでは、閉じると開いたボタンへフォーカスが戻ります。'
 		},
 		{
 			en: 'Command palettes are often opened with ⌘K or Ctrl + K. This demo opens only with its button, so that it does not clash with the site’s own shortcut. Its commands only show which one was run.',
-			ja: 'コマンドパレットは ⌘K や Ctrl + K で開くことが多い。このデモはサイト自身のショートカットとぶつからないよう、ボタンでだけ開く。操作を選んでも、選んだ操作を表示するだけ。'
+			ja: 'コマンドパレットは ⌘K や Ctrl + K で開くことが多いです。このデモはサイト自身のショートカットとぶつからないよう、ボタンでだけ開きます。操作を選んでも、選んだ操作を表示するだけです。'
 		},
 		{
 			en: 'While text is still being composed with an input method (such as for Japanese), the arrow keys and Enter go to the input method and do not move through or run commands.',
-			ja: '日本語入力などで変換している間は、矢印キーと Enter は変換の操作に使われ、操作の移動や実行には使われない。'
+			ja: '日本語入力などで変換している間は、矢印キーと Enter は変換の操作に使われ、操作の移動や実行には使われません。'
 		}
 	],
 	keyboard: [
@@ -44,21 +44,21 @@ export default {
 			key: 'Enter',
 			action: {
 				en: 'On the button, opens the palette. In the palette, runs the highlighted command and closes it.',
-				ja: 'ボタンでは、パレットを開く。パレットでは、選んでいる操作を実行して閉じる。'
+				ja: 'ボタンでは、パレットを開きます。パレットでは、選んでいる操作を実行して閉じます。'
 			}
 		},
 		{
 			key: '↑ / ↓',
 			action: {
 				en: 'Highlights the previous / next command. From the first it goes to the last, and from the last to the first.',
-				ja: '前・次の操作を選ぶ。最初からは最後へ、最後からは最初へ回る。'
+				ja: '前・次の操作を選びます。最初からは最後へ、最後からは最初へ回ります。'
 			}
 		},
 		{
 			key: 'Esc',
 			action: {
 				en: 'Closes the palette without running anything and returns focus to the button.',
-				ja: '何も実行せずにパレットを閉じ、ボタンへフォーカスを戻す。'
+				ja: '何も実行せずにパレットを閉じ、ボタンへフォーカスを戻します。'
 			}
 		}
 	],
@@ -70,11 +70,11 @@ export default {
 			},
 			harm: {
 				en: 'People who use speech input can open it by accident, because what they say is typed as letters. Keyboard users who press a key by mistake, including people with limited dexterity, lose their place when focus jumps to the palette.',
-				ja: '音声入力を使う人は、話した言葉が文字として入力されるため、意図せず開いてしまう。手の動きに制約のある人など、キーを押し間違えたキーボード利用者は、フォーカスがパレットへ移って作業の場所を見失う。'
+				ja: '音声入力を使う人は、話した言葉が文字として入力されるため、意図せず開いてしまいます。手の動きに制約のある人など、キーを押し間違えたキーボード利用者は、フォーカスがパレットへ移って作業の場所を見失います。'
 			},
 			instead: {
 				en: 'Use a shortcut with a modifier key, such as ⌘K or Ctrl + K. If a single character key is used, let people turn it off or change it to include a modifier key.',
-				ja: '⌘K や Ctrl + K のように、修飾キーを含むショートカットにする。1文字のキーを使うなら、無効にしたり修飾キーを含むキーに変えたりできるようにする。'
+				ja: '⌘K や Ctrl + K のように、修飾キーを含むショートカットにします。1文字のキーを使うなら、無効にしたり修飾キーを含むキーに変えたりできるようにします。'
 			}
 		}
 	],
@@ -83,21 +83,21 @@ export default {
 			id: 'combobox',
 			diff: {
 				en: 'A command palette puts a combobox in a dialog and runs or opens the chosen item; a combobox puts the chosen value into the field.',
-				ja: 'コマンドパレットはコンボボックスをダイアログに入れ、選んだものを実行したり開いたりする。コンボボックスは選んだ値を入力欄に入れる。'
+				ja: 'コマンドパレットはコンボボックスをダイアログに入れ、選んだものを実行したり開いたりします。コンボボックスは選んだ値を入力欄に入れます。'
 			}
 		},
 		{
 			id: 'search-field',
 			diff: {
 				en: 'A command palette narrows a list as you type and goes straight to the chosen item; a search field sends the typed words and shows the results on a page.',
-				ja: 'コマンドパレットは入力に合わせて一覧を絞り込み、選んだものへ直接移る。検索ボックスは入力した語を送り、結果をページに出す。'
+				ja: 'コマンドパレットは入力に合わせて一覧を絞り込み、選んだものへ直接移ります。検索ボックスは入力した語を送り、結果をページに出します。'
 			}
 		},
 		{
 			id: 'modal',
 			diff: {
 				en: 'A command palette is a modal dialog that holds only a search field and a list of commands; a modal can hold any content.',
-				ja: 'コマンドパレットは検索欄と操作の一覧だけを持つモーダルダイアログで、モーダルはどんな内容でも持てる。'
+				ja: 'コマンドパレットは検索欄と操作の一覧だけを持つモーダルダイアログで、モーダルはどんな内容でも持てます。'
 			}
 		}
 	],

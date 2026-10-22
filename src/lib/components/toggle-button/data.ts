@@ -7,28 +7,28 @@ export default {
 	aliases: [],
 	summary: {
 		en: 'A button that stays pressed or unpressed, showing whether an option is on.',
-		ja: '押された状態と押されていない状態を保ち、機能がオンかどうかを示すボタン。'
+		ja: '押された状態と押されていない状態を保ち、機能がオンかどうかを示すボタンです。'
 	},
 	appearance: {
 		en: 'Looks like an ordinary button, but its background or border changes while it is pressed. Often an icon button in a toolbar, such as Bold or Mute.',
-		ja: '普通のボタンと同じ形だが、押されている間は背景や枠線の色が変わる。太字やミュートのように、ツールバーのアイコンボタンとして使われることが多い。'
+		ja: '普通のボタンと同じ形ですが、押されている間は背景や枠線の色が変わります。太字やミュートのように、ツールバーのアイコンボタンとして使われることが多いです。'
 	},
 	behavior: [
 		{
 			en: 'Each press flips between pressed and not pressed.',
-			ja: '押すたびに、押された状態と押されていない状態が入れ替わる。'
+			ja: '押すたびに、押された状態と押されていない状態が入れ替わります。'
 		},
 		{
 			en: 'The label stays the same; the pressed state is shown by the style and announced through `aria-pressed`.',
-			ja: 'ラベルは変えず、押されているかどうかは見た目と `aria-pressed` で伝える。'
+			ja: 'ラベルは変えず、押されているかどうかは見た目と `aria-pressed` で伝えます。'
 		},
 		{
 			en: 'Several toggle buttons can be grouped, for example Bold, Italic, and Underline.',
-			ja: '太字・斜体・下線のように、複数を並べてグループにすることもある。'
+			ja: '太字・斜体・下線のように、複数を並べてグループにすることもあります。'
 		}
 	],
 	keyboard: [
-		{ key: 'Enter / Space', action: { en: 'Presses or releases the button.', ja: 'ボタンを押す・戻す。' } }
+		{ key: 'Enter / Space', action: { en: 'Presses or releases the button.', ja: 'ボタンを押すか、戻します。' } }
 	],
 	misuse: [
 		{
@@ -38,11 +38,11 @@ export default {
 			},
 			harm: {
 				en: 'A button whose label has just changed to Pause is also marked as pressed, so the label and the state contradict each other and confuse people.',
-				ja: 'ラベルが「一時停止」に変わったボタンが「押されている」状態にもなり、ラベルと状態が食い違って混乱を招く。'
+				ja: 'ラベルが「一時停止」に変わったボタンが「押されている」状態にもなり、ラベルと状態が食い違って混乱を招きます。'
 			},
 			instead: {
 				en: 'Change only one of them. For Bold or Mute, keep the label fixed and show the state with `aria-pressed`. For Play and Pause, where people using voice input say the label they see, change the label and make it an ordinary button without `aria-pressed`.',
-				ja: '変えるのはどちらか一方だけにする。太字やミュートはラベルを変えずに状態を `aria-pressed` で伝える。再生と一時停止のように、音声入力を使う人が見えているラベルを口にする場面では、ラベルを変え、`aria-pressed` のない普通のボタンにする。'
+				ja: '変えるのはどちらか一方だけにします。太字やミュートはラベルを変えずに状態を `aria-pressed` で伝えます。再生と一時停止のように、音声入力を使う人が見えているラベルを口にする場面では、ラベルを変え、`aria-pressed` のない普通のボタンにします。'
 			}
 		}
 	],
@@ -51,28 +51,28 @@ export default {
 			id: 'switch',
 			diff: {
 				en: 'A toggle button looks like a button and is often used in toolbars; a switch looks like a sliding knob and is used for settings.',
-				ja: 'トグルボタンはボタンの形でツールバーなどに使い、スイッチはつまみが動く形で設定項目に使う。'
+				ja: 'トグルボタンはボタンの形でツールバーなどに使い、スイッチはつまみが動く形で設定項目に使います。'
 			}
 		},
 		{
 			id: 'button',
 			diff: {
 				en: 'A button runs an action once; a toggle button keeps an on or off state.',
-				ja: 'ボタンは押すたびに操作を1回実行し、トグルボタンはオン・オフの状態を保つ。'
+				ja: 'ボタンは押すたびに操作を1回実行し、トグルボタンはオン・オフの状態を保ちます。'
 			}
 		},
 		{
 			id: 'toolbar',
 			diff: {
 				en: 'A toggle button is one on/off button; a toolbar groups several buttons and moves between them with arrow keys.',
-				ja: 'トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーは複数のボタンをまとめて矢印キーで行き来させる。'
+				ja: 'トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーは複数のボタンをまとめて矢印キーで行き来させます。'
 			}
 		},
 		{
 			id: 'segmented-control',
 			diff: {
 				en: 'A toggle button turns a single option on or off; a segmented control picks one of several segments.',
-				ja: 'トグルボタンは1つの機能をオンかオフにし、セグメンテッドコントロールは複数の区画から1つを選ぶ。'
+				ja: 'トグルボタンは1つの機能をオンかオフにし、セグメンテッドコントロールは複数の区画から1つを選びます。'
 			}
 		}
 	],

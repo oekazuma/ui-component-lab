@@ -10,44 +10,44 @@ export default {
 	],
 	summary: {
 		en: 'A single button that shows or hides one section of content.',
-		ja: '1つのボタンで、1か所の内容の表示・非表示を切り替える部品。'
+		ja: '1つのボタンで、1か所の内容の表示・非表示を切り替える部品です。'
 	},
 	appearance: {
 		en: 'A short label, often with a triangle or chevron that points right when closed and down when open. The hidden content appears just below the label.',
-		ja: '短いラベルの横に、閉じているときは右向き、開くと下向きになる三角や山形のアイコンがある。隠れていた内容はラベルのすぐ下に出る。'
+		ja: '短いラベルの横に、閉じているときは右向き、開くと下向きになる三角や山形のアイコンがあります。隠れていた内容はラベルのすぐ下に出ます。'
 	},
 	behavior: [
 		{
 			en: 'Activating the label toggles the content between shown and hidden.',
-			ja: 'ラベルを押すと、内容の表示・非表示が切り替わる。'
+			ja: 'ラベルを押すと、内容の表示・非表示が切り替わります。'
 		},
 		{
 			en: 'Used for optional extra information, such as help text, that most users do not need.',
-			ja: '補足の説明など、多くの人には不要な追加情報をしまっておくのに使う。'
+			ja: '補足の説明など、多くの人には不要な追加情報をしまっておくのに使います。'
 		},
 		{
 			en: 'This demo uses the native `<details>` and `<summary>` elements, which handle the toggling and keyboard support.',
-			ja: 'このデモはネイティブの `<details>` と `<summary>` 要素を使っており、開閉とキーボード操作はブラウザが受け持つ。'
+			ja: 'このデモはネイティブの `<details>` と `<summary>` 要素を使っており、開閉とキーボード操作はブラウザが受け持ちます。'
 		},
 		{
 			en: 'In this demo, the disclosure sits under a postal code field and explains what to do for people who live outside Japan, an exception that most people filling in the form do not need.',
-			ja: 'このデモでは、郵便番号の欄の下にディスクロージャーを置き、海外に住む人向けの入力方法を畳んでいる。フォームに記入するほとんどの人には要らない、例外の説明にあたる。'
+			ja: 'このデモでは、郵便番号の欄の下にディスクロージャーを置き、海外に住む人向けの入力方法を畳んでいます。フォームに記入するほとんどの人には要らない、例外の説明にあたります。'
 		}
 	],
 	keyboard: [
 		{
 			key: 'Enter / Space',
-			action: { en: 'Shows or hides the content.', ja: '内容を表示・非表示にする。' }
+			action: { en: 'Shows or hides the content.', ja: '内容を表示・非表示にします。' }
 		}
 	],
 	usage: [
 		{
 			en: 'Use it for supplementary content within a section, such as a note on an exception under a form field, the data behind a chart, or the transcript of a video.',
-			ja: '申し込みフォームの欄の下に置く例外の説明、グラフの元データの表、動画の文字起こしなど、セクションの中の補足に使う。'
+			ja: '申し込みフォームの欄の下に置く例外の説明、グラフの元データの表、動画の文字起こしなど、セクションの中の補足に使います。'
 		},
 		{
 			en: 'Make the title describe the content. Avoid vague text like "Show more", and do not switch it between "Open" and "Close".',
-			ja: 'タイトルには中身が分かる文言を使う。「もっと見る」のような曖昧な文言や、「開く」「閉じる」の切り替えは避ける。'
+			ja: 'タイトルには中身が分かる文言を使います。「もっと見る」のような曖昧な文言や、「開く」「閉じる」の切り替えは避けます。'
 		}
 	],
 	misuse: [
@@ -55,22 +55,22 @@ export default {
 			pattern: { en: 'Hiding information that most users need in a disclosure', ja: '多くの利用者が必要とする情報をディスクロージャーにしまう' },
 			harm: {
 				en: 'Some people do not open it because they expect the label to take them away from the page, so they miss the information inside.',
-				ja: 'ラベルを押すと別のページに移ると考えて開かない人は、中の情報を見落とす。'
+				ja: 'ラベルを押すと別のページに移ると考えて開かない人は、中の情報を見落とします。'
 			},
 			instead: {
 				en: 'Show information that most people need directly on the page, and keep disclosures for extra details that only some people need.',
-				ja: '多くの人が必要とする情報はそのまま表示し、ディスクロージャーには一部の人だけが必要とする補足を入れる。'
+				ja: '多くの人が必要とする情報はそのまま表示し、ディスクロージャーには一部の人だけが必要とする補足を入れます。'
 			}
 		},
 		{
 			pattern: { en: 'Putting fees or contract terms inside a closed disclosure', ja: '料金や契約の条件を閉じたディスクロージャーの中に入れる' },
 			harm: {
 				en: 'People agree to a purchase or contract without seeing the costs or conditions. They may pay for things they did not choose, or find out about a fee only after they have been charged.',
-				ja: '費用や条件を見ないまま購入や契約に同意してしまう。選んでいないものにお金を払ったり、請求されてから手数料に気づいたりする。'
+				ja: '費用や条件を見ないまま購入や契約に同意してしまいます。選んでいないものにお金を払ったり、請求されてから手数料に気づいたりします。'
 			},
 			instead: {
 				en: 'Show the total cost and the renewal and cancellation terms in the open, next to the button that confirms the purchase or agreement.',
-				ja: '合計の金額と、自動更新や解約の条件は、購入や同意を確定するボタンの近くに、開いた状態で表示する。'
+				ja: '合計の金額と、自動更新や解約の条件は、購入や同意を確定するボタンの近くに、開いた状態で表示します。'
 			},
 			deceptive: true
 		}
@@ -80,7 +80,7 @@ export default {
 			id: 'accordion',
 			diff: {
 				en: 'A disclosure is one toggle on its own; an accordion is a set of disclosures stacked under headings.',
-				ja: 'ディスクロージャーは単独の開閉部品で、それを見出し付きで縦に並べたものがアコーディオン。'
+				ja: 'ディスクロージャーは単独の開閉部品で、それを見出し付きで縦に並べたものがアコーディオンです。'
 			}
 		}
 	],

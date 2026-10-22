@@ -10,32 +10,32 @@ export default {
 	],
 	summary: {
 		en: 'An important message shown in the page, announced right away without interrupting what the user is doing.',
-		ja: 'ページの中に表示する重要なメッセージ。作業を中断させずに、すぐ読み上げられる。'
+		ja: 'ページの中に表示する重要なメッセージです。作業を中断させずに、すぐ読み上げられます。'
 	},
 	appearance: {
 		en: 'A colored box with an icon and a short message, placed near the related content or at the top of the page. The color shows the type: error, warning, success, or info.',
-		ja: 'アイコンと短い文の入った色付きの箱で、関連する内容の近くかページの上部に出る。色でエラー・警告・成功・お知らせの種類を表す。'
+		ja: 'アイコンと短い文の入った色付きの箱で、関連する内容の近くかページの上部に出ます。色でエラー・警告・成功・お知らせの種類を表します。'
 	},
 	behavior: [
 		{
 			en: 'Content added to a `role="alert"` element is read out by screen readers without moving focus.',
-			ja: '`role="alert"` の要素に中身を入れると、フォーカスを動かさずにスクリーンリーダーが読み上げる。'
+			ja: '`role="alert"` の要素に中身を入れると、フォーカスを動かさずにスクリーンリーダーが読み上げます。'
 		},
 		{
 			en: 'An alert that is already on the page when it loads is not announced.',
-			ja: 'ページを読み込んだ時点ですでにあるアラートは読み上げられない。'
+			ja: 'ページを読み込んだ時点ですでにあるアラートは読み上げられません。'
 		},
 		{
 			en: 'In this demo, the message is rebuilt each time Save is pressed, because putting the same text in again is not read out.',
-			ja: 'このデモでは、同じ文を入れ直しても読み上げられないため、「保存」を押すたびにメッセージを作り直している。'
+			ja: 'このデモでは、同じ文を入れ直しても読み上げられないため、「保存」を押すたびにメッセージを作り直しています。'
 		},
 		{
 			en: 'In this demo, the type is given in words (“Error:”) as well as by color and the icon, so the icon is hidden from screen readers to avoid reading it twice.',
-			ja: 'このデモでは、色とアイコンに加えて「エラー：」の文字で種類を示す。読み上げが重ならないよう、アイコンはスクリーンリーダーから隠している。'
+			ja: 'このデモでは、色とアイコンに加えて「エラー：」の文字で種類を示します。読み上げが重ならないよう、アイコンはスクリーンリーダーから隠しています。'
 		},
 		{
 			en: 'It should not disappear on its own, so the user has time to read it.',
-			ja: '読む時間を確保するため、自動で消さない。'
+			ja: '読む時間を確保するため、自動で消しません。'
 		}
 	],
 	keyboard: [
@@ -43,14 +43,14 @@ export default {
 			key: '—',
 			action: {
 				en: 'None. An alert does not take focus, so the user can keep working.',
-				ja: 'なし。アラートはフォーカスを受けないので、そのまま作業を続けられる。'
+				ja: 'なし。アラートはフォーカスを受けないので、そのまま作業を続けられます。'
 			}
 		}
 	],
 	usage: [
 		{
 			en: 'If it can be closed, keep it closed and provide a way to show it again.',
-			ja: '閉じられるようにする場合は、閉じたあともその状態を保ち、もう一度表示する手段を用意する。'
+			ja: '閉じられるようにする場合は、閉じたあともその状態を保ち、もう一度表示する手段を用意します。'
 		}
 	],
 	misuse: [
@@ -58,33 +58,33 @@ export default {
 			pattern: { en: 'Showing the type of message by color alone', ja: 'メッセージの種類を色だけで示す' },
 			harm: {
 				en: 'People with low vision or color vision deficiency, many older people, and anyone on a monochrome or limited-color display cannot tell an error from a success, so they can miss what the message means.',
-				ja: '弱視や色覚に特性のある人、色を見分けにくくなった高齢の人、白黒や色数の少ない画面で見ている人には、エラーか成功かが分からず、メッセージの意味を受け取れないことがある。'
+				ja: '弱視や色覚に特性のある人、色を見分けにくくなった高齢の人、白黒や色数の少ない画面で見ている人には、エラーか成功かが分からず、メッセージの意味を受け取れないことがあります。'
 			},
 			instead: {
 				en: 'Pair the color with an icon and words that name the type, such as “Error:” or “Done:”.',
-				ja: '色に加えて、種類を表すアイコンと「エラー：」「完了：」のような文言を添える。'
+				ja: '色に加えて、種類を表すアイコンと「エラー：」「完了：」のような文言を添えます。'
 			}
 		},
 		{
 			pattern: { en: 'Showing alerts one after another', ja: 'アラートを次々と出す' },
 			harm: {
 				en: 'Every alert interrupts the user. Frequent interruptions make the page harder to use for people with visual or cognitive disabilities, and a stream of notices breaks anyone’s concentration.',
-				ja: 'アラートは出るたびに利用者の作業に割り込む。頻繁に割り込まれると、視覚や認知に障害のある人には使いにくくなる。通知が多いと、だれでも集中が途切れる。'
+				ja: 'アラートは出るたびに利用者の作業に割り込みます。頻繁に割り込まれると、視覚や認知に障害のある人には使いにくくなります。通知が多いと、だれでも集中が途切れます。'
 			},
 			instead: {
 				en: 'Use an alert only for what the user needs to know now. Combine related messages into one, and show the rest in the page without `role="alert"`.',
-				ja: 'アラートは今すぐ知る必要があることだけに使う。関連するメッセージは1つにまとめ、それ以外は `role="alert"` を付けずにページに載せる。'
+				ja: 'アラートは今すぐ知る必要があることだけに使います。関連するメッセージは1つにまとめ、それ以外は `role="alert"` を付けずにページに載せます。'
 			}
 		},
 		{
 			pattern: { en: 'Removing the alert automatically after a few seconds', ja: '数秒後に自動で消す' },
 			harm: {
 				en: 'People who need more time to find and read content, such as screen reader users and people with low vision or cognitive disabilities, can lose the message before they finish reading it.',
-				ja: 'スクリーンリーダーの利用者や、弱視や認知に障害のある人など、内容を見つけて読むのに時間がかかる人は、読み終える前にメッセージを見失うことがある。'
+				ja: 'スクリーンリーダーの利用者や、弱視や認知に障害のある人など、内容を見つけて読むのに時間がかかる人は、読み終える前にメッセージを見失うことがあります。'
 			},
 			instead: {
 				en: 'Keep the alert until it is no longer needed or the user closes it.',
-				ja: '不要になるか、利用者が閉じるまで表示しておく。'
+				ja: '不要になるか、利用者が閉じるまで表示しておきます。'
 			}
 		}
 	],
@@ -93,35 +93,35 @@ export default {
 			id: 'toast',
 			diff: {
 				en: 'An alert stays in the page content; a toast floats over the page and disappears on its own.',
-				ja: 'アラートはページの中に残り、トーストはページの上に浮かんで自動で消える。'
+				ja: 'アラートはページの中に残り、トーストはページの上に浮かんで自動で消えます。'
 			}
 		},
 		{
 			id: 'alert-dialog',
 			diff: {
 				en: 'An alert informs without interrupting; an alert dialog stops the user until they respond.',
-				ja: 'アラートは作業を中断させずに知らせ、アラートダイアログは応答するまで作業を止める。'
+				ja: 'アラートは作業を中断させずに知らせ、アラートダイアログは応答するまで作業を止めます。'
 			}
 		},
 		{
 			id: 'callout',
 			diff: {
 				en: 'An alert tells the user something important, and content added to it is announced right away; a callout sets apart helpful extra information and is never announced on its own.',
-				ja: 'アラートは重要なことを知らせ、中身を入れるとすぐに読み上げられる。注釈ブロックは役立つ補足を区別して見せるだけで、ひとりでに読み上げられることはない。'
+				ja: 'アラートは重要なことを知らせ、中身を入れるとすぐに読み上げられます。注釈ブロックは役立つ補足を区別して見せるだけで、ひとりでに読み上げられることはありません。'
 			}
 		},
 		{
 			id: 'emergency-banner',
 			diff: {
 				en: 'An alert carries ordinary important messages and can stay up for a long time; an emergency banner warns about urgent danger and cannot be closed.',
-				ja: 'アラートはふだんの重要なお知らせを長く載せておけるが、緊急時バナーは差し迫った危険を知らせ、閉じられない。'
+				ja: 'アラートはふだんの重要なお知らせを長く載せておけますが、緊急時バナーは差し迫った危険を知らせ、閉じられません。'
 			}
 		},
 		{
 			id: 'empty-state',
 			diff: {
 				en: 'An alert interrupts to report something important; an empty state stands in for missing content and points to the next step.',
-				ja: 'アラートは大事なことを知らせるために割り込んで出るが、空の状態は内容がないときにその代わりに置き、次の操作を示す。'
+				ja: 'アラートは大事なことを知らせるために割り込んで出ますが、空の状態は内容がないときにその代わりに置き、次の操作を示します。'
 			}
 		}
 	],

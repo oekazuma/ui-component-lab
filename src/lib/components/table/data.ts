@@ -10,32 +10,32 @@ export default {
 	],
 	summary: {
 		en: 'Data arranged in rows and columns, with headings that explain each column.',
-		ja: 'データを行と列に並べ、列ごとに見出しを付けた表。'
+		ja: 'データを行と列に並べ、列ごとに見出しを付けた表です。'
 	},
 	appearance: {
 		en: 'A grid of cells with a bold header row at the top, separated by lines. Numbers are usually right-aligned.',
-		ja: '太字の見出し行が上にあり、線で区切られたセルが並ぶ。数値は右揃えにすることが多い。'
+		ja: '太字の見出し行が上にあり、線で区切られたセルが並びます。数値は右揃えにすることが多いです。'
 	},
 	behavior: [
 		{
 			en: 'The cells themselves are not interactive; screen readers announce the matching column and row headings while moving through cells.',
-			ja: 'セル自体は操作できない。スクリーンリーダーはセルを移動するとき、対応する列と行の見出しを読み上げる。'
+			ja: 'セル自体は操作できません。スクリーンリーダーはセルを移動するとき、対応する列と行の見出しを読み上げます。'
 		},
 		{
 			en: 'A sortable column has a button in its heading, and `aria-sort` tells which way it is sorted. Only one column is sorted at a time, so `aria-sort` moves to the newly sorted column and is removed from the previous one.',
-			ja: '並べ替えできる列は見出しにボタンを置き、`aria-sort` で並び順を伝える。並べ替えるのは一度に1列だけなので、`aria-sort` は新しく並べ替えた列へ移し、前の列からは外す。'
+			ja: '並べ替えできる列は見出しにボタンを置き、`aria-sort` で並び順を伝えます。並べ替えるのは一度に1列だけなので、`aria-sort` は新しく並べ替えた列へ移し、前の列からは外します。'
 		},
 		{
 			en: 'That the buttons sort the table is said once, in visually hidden text in the `<caption>`, rather than repeated on every button.',
-			ja: 'ボタンで並べ替えられることは、ボタンごとに繰り返さず、`<caption>` の中の見えない文字で1回だけ伝える。'
+			ja: 'ボタンで並べ替えられることは、ボタンごとに繰り返さず、`<caption>` の中の見えない文字で1回だけ伝えます。'
 		},
 		{
 			en: 'In this demo, both Price and Storage can be sorted. A sortable heading is underlined and has two triangles; the one for the current order is filled, and both are outlined while the column is not sorted, so the states differ in shape as well as color.',
-			ja: 'このデモでは、月額と容量の両方で並べ替えられる。並べ替えできる見出しには下線と上下の三角があり、今の並び順の三角だけを塗る。並べ替えていない列は両方とも線だけにし、色だけでなく形でも状態を見分けられるようにしている。'
+			ja: 'このデモでは、月額と容量の両方で並べ替えられます。並べ替えできる見出しには下線と上下の三角があり、今の並び順の三角だけを塗ります。並べ替えていない列は両方とも線だけにし、色だけでなく形でも状態を見分けられるようにしています。'
 		},
 		{
 			en: 'Native `<table>`, `<caption>`, and `<th scope>` give the structure without extra ARIA.',
-			ja: 'ネイティブの `<table>`・`<caption>`・`<th scope>` を使えば、ARIA を足さずに構造が伝わる。'
+			ja: 'ネイティブの `<table>`・`<caption>`・`<th scope>` を使えば、ARIA を足さずに構造が伝わります。'
 		}
 	],
 	keyboard: [
@@ -43,14 +43,14 @@ export default {
 			key: 'Tab / Shift + Tab',
 			action: {
 				en: 'Moves only between controls inside the table, such as the sort buttons.',
-				ja: '表の中の操作できる要素（並べ替えボタンなど）の間だけを移動する。'
+				ja: '表の中の操作できる要素（並べ替えボタンなど）の間だけを移動します。'
 			}
 		},
 		{
 			key: 'Enter / Space',
 			action: {
 				en: 'On a sort button, sorts by that column in ascending order, or switches between ascending and descending if it is already sorted.',
-				ja: '並べ替えボタンで、その列を昇順に並べる。すでにその列で並べているときは、昇順と降順を切り替える。'
+				ja: '並べ替えボタンで、その列を昇順に並べます。すでにその列で並べているときは、昇順と降順を切り替えます。'
 			}
 		}
 	],
@@ -59,18 +59,18 @@ export default {
 			name: { en: 'Data grid', ja: 'データグリッド' },
 			description: {
 				en: 'An interactive table where arrow keys move between cells, used when cells can be edited or selected. This site describes it as its own component, the data grid.',
-				ja: 'セルを編集・選択できる表で、矢印キーでセル間を移動するもの。このサイトでは別の部品「グリッド」として説明している。'
+				ja: 'セルを編集・選択できる表で、矢印キーでセル間を移動するものです。このサイトでは別の部品「グリッド」として説明しています。'
 			}
 		}
 	],
 	usage: [
 		{
 			en: 'Sort by the column the user clicks. Both the heading text and the sort icon should be clickable.',
-			ja: '押された列を基準に並べ替える。見出しの文字と並べ替えのアイコンの両方を押せる範囲にする。'
+			ja: '押された列を基準に並べ替えます。見出しの文字と並べ替えのアイコンの両方を押せる範囲にします。'
 		},
 		{
 			en: 'For pairs of names and values, use a description list.',
-			ja: '項目名と値の組には、説明リストを使う。'
+			ja: '項目名と値の組には、説明リストを使います。'
 		}
 	],
 	misuse: [
@@ -78,11 +78,11 @@ export default {
 			pattern: { en: 'Using a table to lay out the page', ja: 'ページのレイアウトにテーブルを使う' },
 			harm: {
 				en: 'Screen readers read a table in source order, which can differ from the visual order, so people using a screen reader or a keyboard may meet the content in a confusing order. Markup such as `<th>` or `<caption>` can make a screen reader present it as a data table. When people with low vision enlarge text in fixed-size cells, it can overflow and need horizontal scrolling.',
-				ja: 'スクリーンリーダーはソースの順に読むため、見た目の順とずれることがあり、スクリーンリーダーやキーボードを使う人には内容が分かりにくい順で伝わる。`<th>` や `<caption>` があると、データの表として読み上げられることがある。弱視の人が文字を拡大すると、大きさを固定したセルから内容がはみ出し、横スクロールが必要になることがある。'
+				ja: 'スクリーンリーダーはソースの順に読むため、見た目の順とずれることがあり、スクリーンリーダーやキーボードを使う人には内容が分かりにくい順で伝わります。`<th>` や `<caption>` があると、データの表として読み上げられることがあります。弱視の人が文字を拡大すると、大きさを固定したセルから内容がはみ出し、横スクロールが必要になることがあります。'
 			},
 			instead: {
 				en: 'Lay out the page with CSS (grid or flexbox) and keep `<table>` for data compared across rows and columns.',
-				ja: 'レイアウトは CSS（grid や flexbox）で組み、`<table>` は行と列で比べるデータにだけ使う。'
+				ja: 'レイアウトは CSS（grid や flexbox）で組み、`<table>` は行と列で比べるデータにだけ使います。'
 			}
 		}
 	],
@@ -91,21 +91,21 @@ export default {
 			id: 'data-grid',
 			diff: {
 				en: 'A table is for reading, and only the controls inside it are in the Tab order; a data grid lets people move between cells with the arrow keys and operate them.',
-				ja: 'テーブルは読むための表で、中の操作できる要素だけが Tab キーの順に入る。グリッドは矢印キーでセルを移って操作できる。'
+				ja: 'テーブルは読むための表で、中の操作できる要素だけが Tab キーの順に入ります。グリッドは矢印キーでセルを移って操作できます。'
 			}
 		},
 		{
 			id: 'list',
 			diff: {
 				en: 'A table compares several values per row in columns; a list shows one item per row without columns.',
-				ja: 'テーブルは1行の複数の値を列で比べ、リストは列を持たずに1行に1項目を並べる。'
+				ja: 'テーブルは1行の複数の値を列で比べ、リストは列を持たずに1行に1項目を並べます。'
 			}
 		},
 		{
 			id: 'description-list',
 			diff: {
 				en: 'A table compares values across rows and columns; a description list shows name–value pairs for one subject.',
-				ja: 'テーブルは行と列で値を比べ、説明リストは1つの対象について項目名と値の組を並べる。'
+				ja: 'テーブルは行と列で値を比べ、説明リストは1つの対象について項目名と値の組を並べます。'
 			}
 		}
 	],

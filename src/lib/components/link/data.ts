@@ -7,46 +7,46 @@ export default {
 	aliases: [],
 	summary: {
 		en: 'Text or an image that takes the user to another page or another place on the same page.',
-		ja: '別のページや、同じページ内の別の場所へ移動するための文字や画像。'
+		ja: '別のページや、同じページ内の別の場所へ移動するための文字や画像です。'
 	},
 	appearance: {
 		en: 'Text in the accent color, usually underlined. It often changes color or underline on hover, and links already visited often have a different color.',
-		ja: 'アクセントカラーの文字で、多くは下線が付く。マウスを乗せると色や下線が変わることが多く、訪問済みのリンクは別の色になることが多い。'
+		ja: 'アクセントカラーの文字で、多くは下線が付きます。マウスを乗せると色や下線が変わることが多く、訪問済みのリンクは別の色になることが多いです。'
 	},
 	behavior: [
 		{
 			en: 'Clicking it opens the destination in the same tab.',
-			ja: 'クリックすると、同じタブで移動先が開く。'
+			ja: 'クリックすると、同じタブで移動先が開きます。'
 		},
 		{
 			en: 'The browser also offers opening in a new tab, copying the address, and going back with history.',
-			ja: '新しいタブで開く・アドレスをコピーする・履歴で戻るといった操作も、ブラウザが用意している。'
+			ja: '新しいタブで開く・アドレスをコピーする・履歴で戻るといった操作も、ブラウザが用意しています。'
 		},
 		{
 			en: 'In this demo, the link in the sentence goes to the Button page of this site. The second link opens the Digital Agency’s page in a new tab with `target="_blank"`, and its icon has `role="img"` and an `aria-label` that says so. The third link opens this site’s preview image, with the file type and size in the link text.',
-			ja: 'このデモでは、文中のリンクはこのサイトのボタンのページへ移動する。2つ目のリンクは `target="_blank"` でデジタル庁のページを新しいタブで開き、そのことをアイコンの `role="img"` と `aria-label` で伝える。3つ目のリンクはこのサイトの紹介画像を開き、ファイルの形式と大きさをリンクの文言に含めている。'
+			ja: 'このデモでは、文中のリンクはこのサイトのボタンのページへ移動します。2つ目のリンクは `target="_blank"` でデジタル庁のページを新しいタブで開き、そのことをアイコンの `role="img"` と `aria-label` で伝えます。3つ目のリンクはこのサイトの紹介画像を開き、ファイルの形式と大きさをリンクの文言に含めています。'
 		},
 		{
 			en: 'In this demo, hovering thickens the underline and darkens the color, and visited links turn purple. The weight and size of the text stay the same, so the surrounding text does not move.',
-			ja: 'このデモでは、マウスを乗せると下線が太くなって色が濃くなり、訪問済みのリンクは紫になる。文字の太さや大きさは変えないので、周りの文字は動かない。'
+			ja: 'このデモでは、マウスを乗せると下線が太くなって色が濃くなり、訪問済みのリンクは紫になります。文字の太さや大きさは変えないので、周りの文字は動きません。'
 		}
 	],
 	keyboard: [
-		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus to the link.', ja: 'リンクにフォーカスを移す。' } },
-		{ key: 'Enter', action: { en: 'Follows the link.', ja: 'リンク先へ移動する。' } }
+		{ key: 'Tab / Shift + Tab', action: { en: 'Moves focus to the link.', ja: 'リンクにフォーカスを移します。' } },
+		{ key: 'Enter', action: { en: 'Follows the link.', ja: 'リンク先へ移動します。' } }
 	],
 	usage: [
 		{
 			en: 'Mark links that open a new tab or another site with an icon that has alternative text.',
-			ja: '新しいタブや外部サイトで開くリンクには、代替テキスト付きのアイコンを付ける。'
+			ja: '新しいタブや外部サイトで開くリンクには、代替テキスト付きのアイコンを付けます。'
 		},
 		{
 			en: 'For links to files such as PDFs, put the file type and size in the link text, for example “Brochure (PDF, 100 KB)”.',
-			ja: 'PDF などのファイルへのリンクには、「紹介パンフレット（PDF:100KB）」のように形式と大きさをリンクの文言に含める。'
+			ja: 'PDF などのファイルへのリンクには、「紹介パンフレット（PDF:100KB）」のように形式と大きさをリンクの文言に含めます。'
 		},
 		{
 			en: 'Give visited links their own color so users can see which pages they have already opened, especially on pages with many links.',
-			ja: '訪問済みのリンクには別の色を付け、すでに開いたページが分かるようにする。リンクの多いページでは特に役立つ。'
+			ja: '訪問済みのリンクには別の色を付け、すでに開いたページが分かるようにします。リンクの多いページでは特に役立ちます。'
 		}
 	],
 	misuse: [
@@ -54,11 +54,11 @@ export default {
 			pattern: { en: 'Marking links with color alone', ja: 'リンクを色だけで示す' },
 			harm: {
 				en: 'People with partial sight, older people, people with color vision deficiencies, and people using monochrome displays may not be able to tell which text is a link.',
-				ja: '弱視の人、高齢の人、色の見え方に特性のある人、白黒の画面を使う人には、どの文字がリンクなのか見分けられないことがある。'
+				ja: '弱視の人、高齢の人、色の見え方に特性のある人、白黒の画面を使う人には、どの文字がリンクなのか見分けられないことがあります。'
 			},
 			instead: {
 				en: 'Underline links so they can be recognized without color, in addition to using the link color.',
-				ja: 'リンクの色に加えて下線を付け、色が分からなくてもリンクだと分かるようにする。'
+				ja: 'リンクの色に加えて下線を付け、色が分からなくてもリンクだと分かるようにします。'
 			}
 		},
 		{
@@ -68,11 +68,11 @@ export default {
 			},
 			harm: {
 				en: 'Screen reader users who pick from a list of the page’s links cannot tell which link to choose. People with motor impairments spend extra keystrokes on links they did not want, and people with cognitive disabilities can lose their way after landing on unwanted pages.',
-				ja: 'ページ内のリンクを一覧にして選ぶスクリーンリーダーの利用者は、どのリンクを選べばよいか分からない。運動機能に障害のある人は不要なリンクを開いて戻る操作が増え、認知障害のある人は思わぬページへ移って迷いやすくなる。'
+				ja: 'ページ内のリンクを一覧にして選ぶスクリーンリーダーの利用者は、どのリンクを選べばよいか分かりません。運動機能に障害のある人は不要なリンクを開いて戻る操作が増え、認知障害のある人は思わぬページへ移って迷いやすくなります。'
 			},
 			instead: {
 				en: 'Make the destination itself the link text, for example "Price list" instead of "Click here for prices".',
-				ja: '行き先を表す語をリンクにする。例えば「料金はこちら」ではなく「料金表」をリンクにする。'
+				ja: '行き先を表す語をリンクにします。例えば「料金はこちら」ではなく「料金表」をリンクにします。'
 			}
 		},
 		{
@@ -82,11 +82,11 @@ export default {
 			},
 			harm: {
 				en: 'Users click the ad believing it is part of the interface or the site’s own content.',
-				ja: '利用者は、画面の部品やサイト自身の記事だと思い込んで広告を開いてしまう。'
+				ja: '利用者は、画面の部品やサイト自身の記事だと思い込んで広告を開いてしまいます。'
 			},
 			instead: {
 				en: 'Label ads as ads in text, and give them a look that differs from the site’s own links.',
-				ja: '広告には「広告」と文字のラベルを付け、サイト自身のリンクとは異なる見た目にする。'
+				ja: '広告には「広告」と文字のラベルを付け、サイト自身のリンクとは異なる見た目にします。'
 			},
 			deceptive: true
 		}
@@ -96,21 +96,21 @@ export default {
 			id: 'button',
 			diff: {
 				en: 'A link moves to another page or place; a button runs an action on the current page.',
-				ja: 'リンクは別のページや場所へ移動し、ボタンは今のページで操作を実行する。'
+				ja: 'リンクは別のページや場所へ移動し、ボタンは今のページで操作を実行します。'
 			}
 		},
 		{
 			id: 'back-to-top',
 			diff: {
 				en: 'A link moves to any page or place; a back to top button only returns to the top of the current page.',
-				ja: 'リンクはどのページや場所へも移動でき、スクロールトップボタンは今のページの先頭へ戻るだけ。'
+				ja: 'リンクはどのページや場所へも移動でき、スクロールトップボタンは今のページの先頭へ戻るだけです。'
 			}
 		},
 		{
 			id: 'skip-link',
 			diff: {
 				en: 'An ordinary link is always visible; a skip link is a link to a place on the same page that usually stays hidden until it gets focus.',
-				ja: 'ふつうのリンクは常に見えており、スキップリンクは同じページの中の場所へのリンクで、多くはフォーカスが来るまで隠れている。'
+				ja: 'ふつうのリンクは常に見えており、スキップリンクは同じページの中の場所へのリンクで、多くはフォーカスが来るまで隠れています。'
 			}
 		}
 	],
