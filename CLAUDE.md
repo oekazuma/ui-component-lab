@@ -26,6 +26,7 @@ CI は PR ごとに上の 3 つを実行する。
 - キー操作がない部品は `key: '—'` の行を置き、動作に「なし。」から始まる説明を書く
 - デモ固有の挙動は behavior に「このデモでは…」「In this demo, …」と書く
 - `misuse`（避けたい使い方）は pattern（どういう使い方か）、harm（誰がどう困るか）、instead（代わりにどうするか）で書く。harm は出典に書かれている内容に限り、部品を問わない資料（WCAG、deceptive.design など）を当てはめてよい。`deceptive: true` は出典がディセプティブパターンやダークパターンとして分類しているものにだけ付ける。根拠にした資料は sources に足し、根拠が見つからない部品には書かない
+- `components.json`（`src/routes/components.json/+server.ts`）は improve-ui-components スキル（`skills/`）が読む。形を変えるときは `ComponentsJson` の `version` を上げ、スキルも合わせる
 - データの約束事の検査は `src/lib/data.check.ts` に足す。`registry.ts` はクライアントでも動くので、検査を増やさない
 
 ### Demo.svelte

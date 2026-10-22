@@ -43,3 +43,11 @@ export interface ComponentData {
 	related?: { id: string; diff: Text }[];
 	sources: { label: string; url: string; checkedAt: string }[];
 }
+
+/** improve-ui-components スキルが読む components.json の形。形を変えるときは version を上げ、スキルも合わせる */
+export interface ComponentsJson {
+	version: 1;
+	site: { name: string; url: string };
+	categories: { id: Category; names: Text }[];
+	components: (ComponentData & { urls: Record<Lang, string> })[];
+}
