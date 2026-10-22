@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Acme Travel — Sign up</title>
+		<style>
+			body {
+				font-family: system-ui, sans-serif;
+				max-width: 40rem;
+				margin: 2rem auto;
+				padding: 0 1rem;
+			}
+			[role='tablist'] {
+				display: flex;
+				gap: 0.25rem;
+				border-bottom: 1px solid #888;
+			}
+			[role='tab'] {
+				padding: 0.5rem 1rem;
+				text-decoration: none;
+				color: inherit;
+			}
+			[role='tab'][aria-selected='true'] {
+				border-bottom: 3px solid #0057b8;
+			}
+			.prefs {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+			}
+			.account {
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+			}
+			.account ul {
+				position: absolute;
+				right: 0;
+				margin: 0;
+				padding: 0.25rem;
+				list-style: none;
+				background: #fff;
+				border: 1px solid #888;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="account">
+			<button type="button" id="account-button" aria-haspopup="menu" aria-expanded="false" aria-controls="account-menu">Account</button>
+			<ul id="account-menu" role="menu" aria-labelledby="account-button" hidden>
+				<li role="menuitem" tabindex="-1">Profile</li>
+				<li role="menuitem" tabindex="-1">Billing</li>
+				<li role="menuitem" tabindex="-1">Sign out</li>
+			</ul>
+		</div>
+
+		<nav aria-label="Sections">
+			<div role="tablist">
+				<a role="tab" aria-selected="true" href="./">Sign up</a>
+				<a role="tab" aria-selected="false" href="./pricing/">Pricing</a>
+				<a role="tab" aria-selected="false" href="./help/">Help</a>
+			</div>
+		</nav>
+
+		<h1>Create your account</h1>
+
+		<form method="post" action="/signup">
+			<p>
+				<label for="email">Email</label>
+				<input id="email" name="email" type="email" autocomplete="email" />
+			</p>
+
+			<fieldset>
+				<legend>Home region</legend>
+				<div class="prefs">
+					<label><input type="radio" name="region" value="hokkaido" /> Hokkaido</label>
+					<label><input type="radio" name="region" value="aomori" /> Aomori</label>
+					<label><input type="radio" name="region" value="iwate" /> Iwate</label>
+					<label><input type="radio" name="region" value="miyagi" /> Miyagi</label>
+					<label><input type="radio" name="region" value="akita" /> Akita</label>
+					<label><input type="radio" name="region" value="yamagata" /> Yamagata</label>
+					<label><input type="radio" name="region" value="fukushima" /> Fukushima</label>
+					<label><input type="radio" name="region" value="ibaraki" /> Ibaraki</label>
+					<label><input type="radio" name="region" value="tochigi" /> Tochigi</label>
+					<label><input type="radio" name="region" value="gunma" /> Gunma</label>
+					<label><input type="radio" name="region" value="saitama" /> Saitama</label>
+					<label><input type="radio" name="region" value="chiba" /> Chiba</label>
+				</div>
+			</fieldset>
+
+			<p>
+				<label><input type="checkbox" name="newsletter" checked /> Send me the Acme Travel newsletter and partner offers</label>
+			</p>
+
+			<p><button type="submit">Create account</button></p>
+		</form>
+
+		<form method="post" action="/settings/currency">
+			<p>
+				<label for="currency">Currency</label>
+				<select id="currency" name="currency" onchange="this.form.submit()">
+					<option value="jpy" selected>JPY</option>
+					<option value="usd">USD</option>
+					<option value="eur">EUR</option>
+				</select>
+			</p>
+		</form>
+
+		<script>
+			const button = document.getElementById('account-button');
+			const menu = document.getElementById('account-menu');
+			button.addEventListener('click', () => {
+				const open = button.getAttribute('aria-expanded') === 'true';
+				button.setAttribute('aria-expanded', String(!open));
+				menu.hidden = open;
+			});
+		</script>
+	</body>
+</html>
