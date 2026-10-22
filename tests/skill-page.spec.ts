@@ -40,3 +40,16 @@ test('skill: no horizontal scroll on phones in Japanese', async ({ page }) => {
 	await page.goto('ja/skill/');
 	expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+
+test('skill: the guide lists every way to call it, with what each does', async ({ page }) => {
+	await page.goto('ja/skill/');
+	const commands = page.getByRole('region', { name: '呼び出し方' });
+	for (const usage of ['/improve-ui-components <URL>', '--issues', '/improve-ui-components plan']) {
+		const term = commands.getByRole('term').filter({ hasText: usage });
+		await expect(term).toHaveCount(1);
+		// 書き方のすぐあとに、することの説明が続く
+		expect(await term.evaluate((dt) => dt.nextElementSibling?.tagName)).toBe('DD');
+	}
+	for (const name of ['必要なもの', '実行の流れ', '結果の使い方'])
+		await expect(page.getByRole('heading', { level: 2, name })).toBeVisible();
+});
