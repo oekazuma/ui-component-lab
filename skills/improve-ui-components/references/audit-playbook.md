@@ -34,7 +34,7 @@ For each component, go through every item in the entry's `misuse`. For each, dec
 Compare what the component does with the entry's `keyboard` and `behavior`.
 
 - On the local development server: operate it fully. Press each key in `keyboard`, including keys that change values, and check focus movement, what is announced (`aria-*` states after each step), and that Escape closes what it opened and returns focus.
-- On the live site: only keys that do not change anything (Hard Rule 3). For value-changing components, write "not exercised on the live site" and check only what can be read (roles, states, labels, `aria-controls`, tab order).
+- On the live site: only keys that do not change anything (Hard Rule 4). For value-changing components, write "not exercised on the live site" and check only what can be read (roles, states, labels, `aria-controls`, tab order).
 - When the Lab entry does not cover a key or state you need, open the APG pattern for that role (https://www.w3.org/WAI/ARIA/apg/patterns/) and cite it.
 - A finding names the key, what was expected (with the Lab or APG line), and what happened.
 

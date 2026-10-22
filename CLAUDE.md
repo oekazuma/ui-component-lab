@@ -4,7 +4,7 @@ UIコンポーネントの名前と動きを、英日で試して確かめられ
 
 ## 確認コマンド
 
-- `pnpm check` で型、Svelte の a11y 警告（警告でも失敗する）、`src/lib/search.check.ts`、`src/lib/data.check.ts` を確かめる
+- `pnpm check` で型、Svelte の a11y 警告（警告でも失敗する）、`src/lib/search.check.ts`、`src/lib/data.check.ts`、`skills/skills.check.ts` を確かめる
 - `pnpm build` で全ページをプリレンダーする
 - `pnpm build && pnpm test:e2e` で Playwright と axe を回す（axe は一覧ページと全部品の詳細ページ、ライトとダーク。ほかに独自のキー操作とデモの挙動）
 
