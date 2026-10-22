@@ -33,18 +33,25 @@
 	}
 </script>
 
-<!-- モーダルの <dialog> を画面の端に寄せて表示する。背景の操作無効化・Esc・フォーカス復帰はブラウザが受け持つ。
-	closedby="any" で背景のクリックでも閉じる（対応していないブラウザでは閉じるボタンと Esc だけ） -->
-<button type="button" class="btn" onclick={open}>{text[lang].open(applied.filter(Boolean).length)}</button>
+<!-- モーダルの <dialog> を使う。背景の操作無効化・Esc・フォーカス復帰はブラウザが受け持つ。
+	closedby="any" で枠の外のクリックでも閉じる（対応していないブラウザでは閉じるボタンと Esc だけ） -->
+<div class="demo">
+	<button type="button" class="btn" onclick={open}>{text[lang].open(applied.filter(Boolean).length)}</button>
+</div>
+<!-- 枠の中の暗い部分は <dialog> 自身なので closedby では閉じない。そこを押したときも閉じる。キーボードでは Esc で閉じられる -->
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 <dialog
 	bind:this={dialog}
 	closedby="any"
 	aria-labelledby="{uid}-title"
+	onclick={(e) => {
+		if (e.target === dialog) dialog.close();
+	}}
 	onclose={() => {
 		if (dialog.returnValue === 'apply') applied = [...draft];
 	}}
 >
-	<form method="dialog">
+	<form method="dialog" class="panel">
 		<div class="head">
 			<h2 id="{uid}-title">{text[lang].title}</h2>
 			<button class="btn" value="close">{text[lang].close}</button>
@@ -59,18 +66,57 @@
 </dialog>
 
 <style>
+	/* パネルが出きるだけの高さを枠に確保する */
+	.demo {
+		display: grid;
+		place-items: center;
+		min-height: 15rem;
+	}
+
+	/* 開いたドロワーは、画面全体ではなくデモの枠に重ねて出す。<dialog> を枠の大きさにして暗くし、パネルを右端に寄せる。
+		アンカー配置に対応していないブラウザでは、画面全体に出る */
 	dialog {
-		width: min(calc(100% - 3rem), 18rem);
+		position: fixed;
+		inset: 0;
+		width: auto;
+		height: auto;
 		max-width: none;
-		height: 100%;
 		max-height: none;
-		margin: 0 0 0 auto;
-		padding: 1rem;
+		margin: 0;
+		padding: 0;
 		border: 0;
-		border-left: 1px solid var(--color-border);
+		background: rgb(0 0 0 / 0.4);
+	}
+
+	@supports (anchor-name: --a) {
+		dialog {
+			position-anchor: --demo-frame;
+			top: anchor(top);
+			right: anchor(right);
+			bottom: anchor(bottom);
+			left: anchor(left);
+			border-radius: var(--radius);
+		}
 	}
 
 	dialog[open] {
+		display: flex;
+		justify-content: flex-end;
+		overflow: hidden;
+	}
+
+	dialog::backdrop {
+		background: transparent;
+	}
+
+	.panel {
+		width: min(calc(100% - 3rem), 18rem);
+		height: 100%;
+		overflow: auto;
+		padding: 1rem;
+		border-left: 1px solid var(--color-border);
+		background: var(--color-bg);
+		color: var(--color-text);
 		animation: slide-in 0.2s ease-out;
 	}
 
@@ -81,13 +127,9 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		dialog[open] {
+		.panel {
 			animation: none;
 		}
-	}
-
-	dialog::backdrop {
-		background: rgb(0 0 0 / 0.4);
 	}
 
 	.head {

@@ -40,38 +40,52 @@
 	<p role="status">{went ? `${text[lang].went} ${went}` : ''}</p>
 </div>
 
-<dialog bind:this={dialog} closedby="any" aria-labelledby="{uid}-title">
-	<h2 id="{uid}-title" class="visually-hidden">{text[lang].title}</h2>
-	<form method="dialog" class="head">
-		<button class="btn hamburger">
-			<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 19 5 17.6 10.6 12 5 6.4 6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4Z" /></svg>
-			{text[lang].close}
-		</button>
-	</form>
-	<nav aria-labelledby="{uid}-title">
-		<ul>
-			{#each text[lang].links as link (link)}
-				<li>
-					<!-- デモなので移動はせず、行き先を表示する（href は prerender の存在チェックを通すため見出しを指す） -->
-					<a
-						href="#{uid}-title"
-						onclick={(e) => {
-							e.preventDefault();
-							went = link;
-							dialog.close();
-						}}>{link}</a
-					>
-				</li>
-			{/each}
-		</ul>
-	</nav>
+<!-- 枠の中の暗い部分は <dialog> 自身なので closedby では閉じない。そこを押したときも閉じる。キーボードでは Esc で閉じられる -->
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
+<dialog
+	bind:this={dialog}
+	closedby="any"
+	aria-labelledby="{uid}-title"
+	onclick={(e) => {
+		if (e.target === dialog) dialog.close();
+	}}
+>
+	<div class="panel">
+		<h2 id="{uid}-title" class="visually-hidden">{text[lang].title}</h2>
+		<form method="dialog" class="head">
+			<button class="btn hamburger">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 19 5 17.6 10.6 12 5 6.4 6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4Z" /></svg>
+				{text[lang].close}
+			</button>
+		</form>
+		<nav aria-labelledby="{uid}-title">
+			<ul>
+				{#each text[lang].links as link (link)}
+					<li>
+						<!-- デモなので移動はせず、行き先を表示する（href は prerender の存在チェックを通すため見出しを指す） -->
+						<a
+							href="#{uid}-title"
+							onclick={(e) => {
+								e.preventDefault();
+								went = link;
+								dialog.close();
+							}}>{link}</a
+						>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+	</div>
 </dialog>
 
 <style>
+	/* 開いたメニューのリンクが並びきるだけの高さを枠に確保する */
 	.demo {
 		display: grid;
+		align-content: center;
 		gap: 0.5rem;
 		width: min(100%, 20rem);
+		min-height: 17rem;
 	}
 
 	.header {
@@ -108,20 +122,50 @@
 		text-align: center;
 	}
 
+	/* 開いたメニューは、画面全体ではなくデモの枠に重ねて出す。<dialog> を枠の大きさにして暗くし、パネルを右端に寄せる。
+		アンカー配置に対応していないブラウザでは、画面全体に出る */
 	dialog {
-		width: min(calc(100% - 3rem), 18rem);
+		position: fixed;
+		inset: 0;
+		width: auto;
+		height: auto;
 		max-width: none;
-		height: 100%;
 		max-height: none;
-		margin: 0 0 0 auto;
-		padding: 0.5rem 1rem 1rem;
+		margin: 0;
+		padding: 0;
 		border: 0;
-		border-left: 1px solid var(--color-border);
-		background: var(--color-bg);
-		color: var(--color-text);
+		background: rgb(0 0 0 / 0.4);
+	}
+
+	@supports (anchor-name: --a) {
+		dialog {
+			position-anchor: --demo-frame;
+			top: anchor(top);
+			right: anchor(right);
+			bottom: anchor(bottom);
+			left: anchor(left);
+			border-radius: var(--radius);
+		}
 	}
 
 	dialog[open] {
+		display: flex;
+		justify-content: flex-end;
+		overflow: hidden;
+	}
+
+	dialog::backdrop {
+		background: transparent;
+	}
+
+	.panel {
+		width: min(calc(100% - 3rem), 18rem);
+		height: 100%;
+		overflow: auto;
+		padding: 0.5rem 1rem 1rem;
+		border-left: 1px solid var(--color-border);
+		background: var(--color-bg);
+		color: var(--color-text);
 		animation: slide-in 0.2s ease-out;
 	}
 
@@ -132,13 +176,9 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		dialog[open] {
+		.panel {
 			animation: none;
 		}
-	}
-
-	dialog::backdrop {
-		background: rgb(0 0 0 / 0.4);
 	}
 
 	.head {

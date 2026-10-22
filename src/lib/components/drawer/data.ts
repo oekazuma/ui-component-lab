@@ -29,12 +29,12 @@ export default {
 			ja: 'ナビゲーションメニュー、絞り込み、カートなどに使います。'
 		},
 		{
-			en: 'This demo is a native modal `<dialog>` styled to sit at the right edge.',
-			ja: 'このデモはネイティブのモーダル `<dialog>` を右端に寄せたものです。'
+			en: 'In this demo, the drawer is a native modal `<dialog>`. To make the movement easy to see, it opens from the right edge of the demo frame and dims only the frame. On a real page, it opens from the edge of the screen and dims the whole page.',
+			ja: 'このデモでは、ドロワーをネイティブのモーダル `<dialog>` で作っています。動きが分かりやすいよう、デモの枠の右端から出して、枠の中だけを暗くします。実際のページでは、画面の端から出て、ページ全体を暗くします。'
 		},
 		{
-			en: 'In this demo, `closedby="any"` also closes the drawer when the dimmed background is clicked. Browsers that do not support `closedby` ignore it, and the drawer then closes only with the close button or Esc.',
-			ja: 'このデモでは `closedby="any"` により、暗くした背景をクリックしても閉じます。`closedby` に対応していないブラウザはこれを無視し、閉じるボタンか Esc でしか閉じません。'
+			en: 'In this demo, clicking the dimmed part of the frame or anywhere outside the frame also closes the drawer. Closing on a click outside the frame relies on `closedby="any"`, which browsers that do not support it ignore.',
+			ja: 'このデモでは、枠の中の暗い部分や枠の外をクリックしても閉じます。枠の外のクリックで閉じるのは `closedby="any"` によるもので、対応していないブラウザはこれを無視します。'
 		},
 		{
 			en: 'In this demo, the choices take effect only when “Apply” is pressed, and the button that opens the drawer then shows how many filters are on. Closing it any other way drops the choices made since it opened.',

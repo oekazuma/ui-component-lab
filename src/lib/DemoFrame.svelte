@@ -26,8 +26,11 @@
 </div>
 
 <style>
+	/* ドロワーなどのモーダルなデモは、画面全体ではなくこの枠に重ねて出す（CSS のアンカー配置で枠の位置に合わせる） */
 	.frame {
 		position: relative;
+		anchor-name: --demo-frame;
+		anchor-scope: --demo-frame;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
 		background: var(--color-surface);

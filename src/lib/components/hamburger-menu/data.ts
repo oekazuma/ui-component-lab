@@ -25,8 +25,8 @@ export default {
 			ja: '開いたメニューの中にある「閉じる」ボタンを押すと閉じます。'
 		},
 		{
-			en: 'In this demo, the Menu button opens the menu as a modal `<dialog>` (the WAI-ARIA APG Dialog (Modal) pattern), and the Close button is a separate button inside it, as in the Digital Agency Design System drawer example. While the dialog is open the rest of the page, including the Menu button, is inert, so the Menu button has no `aria-expanded`.',
-			ja: 'このデモでは、「メニュー」ボタンでメニューをモーダルの `<dialog>` として開き（WAI-ARIA APG の Dialog (Modal) パターン）、デジタル庁デザインシステムのドロワーの実装例と同じく、「閉じる」ボタンはその中に別のボタンとして置きます。開いている間は「メニュー」ボタンを含むページのほかの部分を操作できないので、`aria-expanded` は付けません。'
+			en: 'In this demo, the Menu button opens the menu as a modal `<dialog>` (the WAI-ARIA APG Dialog (Modal) pattern), and the Close button is a separate button inside it, as in the Digital Agency Design System drawer example. While the dialog is open the rest of the page, including the Menu button, is inert, so the Menu button has no `aria-expanded`. To make the movement easy to see, the menu opens inside the demo frame and dims only the frame.',
+			ja: 'このデモでは、「メニュー」ボタンでメニューをモーダルの `<dialog>` として開き（WAI-ARIA APG の Dialog (Modal) パターン）、デジタル庁デザインシステムのドロワーの実装例と同じく、「閉じる」ボタンはその中に別のボタンとして置きます。開いている間は「メニュー」ボタンを含むページのほかの部分を操作できないので、`aria-expanded` は付けません。動きが分かりやすいよう、メニューはデモの枠の中に出し、枠の中だけを暗くします。'
 		},
 		{
 			en: 'In this demo, choosing a link closes the menu and shows where it would go instead of leaving the page. `closedby="any"` also closes the menu when the dimmed background is clicked; browsers that do not support it ignore it.',
