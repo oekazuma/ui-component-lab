@@ -76,29 +76,29 @@ export default {
 		{
 			name: { en: 'Key visual type', ja: '打ち出しタイプ' },
 			description: {
-				en: 'A Digital Agency Design System type, placed at the top of a page to show what the site is about. Used only when the page `<title>` can serve as its heading.',
-				ja: 'デジタル庁デザインシステムの型で、ページの最上部に置き、ウェブサイトの主題を示すものです。ページの `<title>` 要素が見出しの役目を果たせる場合だけに使います。'
+				en: 'The Digital Agency Design System (DADS) divides carousels into this key visual type and the container type. The key visual type is placed at the top of a page to show what the site is about, and is used only when the page `<title>` can serve as its heading.',
+				ja: 'デジタル庁デザインシステム（DADS）は、カルーセルをこの打ち出しタイプとコンテナタイプに分けています。打ち出しタイプはページの最上部に置き、ウェブサイトの主題を示すものです。ページの `<title>` 要素が見出しの役目を果たせる場合だけに使います。'
 			}
 		},
 		{
 			name: { en: 'Container type', ja: 'コンテナタイプ' },
 			description: {
-				en: 'A Digital Agency Design System type that groups content on one topic, such as news, with a heading placed before it.',
-				ja: 'デジタル庁デザインシステムの型で、「新着情報」のような1つの話題のまとまりに使い、前に見出しを置くものです。'
+				en: 'Groups content on one topic, such as news, with a heading placed before it.',
+				ja: '「新着情報」のような1つの話題のまとまりに使い、前に見出しを置くものです。'
 			}
 		},
 		{
 			name: { en: 'Multiple and single', ja: 'マルチとシングル' },
 			description: {
-				en: 'In the Digital Agency Design System, a multiple carousel has 2 to 6 slides. A single one has only one slide and no controls for switching, and is used only for the key visual type. Nielsen Norman Group suggests 5 slides or fewer, since people are unlikely to engage with more.',
-				ja: 'デジタル庁デザインシステムでは、マルチはスライドを2〜6枚にします。シングルはスライドが1枚だけで切り替えの操作部品を出さず、打ち出しタイプだけで使います。Nielsen Norman Group は、それより多いと見てもらいにくいとして5枚以下を勧めています。'
+				en: 'In DADS, a multiple carousel has 2 to 6 slides. A single one has only one slide and no controls for switching, and is used only for the key visual type. Nielsen Norman Group suggests 5 slides or fewer, since people are unlikely to engage with more.',
+				ja: 'DADS では、マルチはスライドを2〜6枚にします。シングルはスライドが1枚だけで切り替えの操作部品を出さず、打ち出しタイプだけで使います。Nielsen Norman Group は、それより多いと見てもらいにくいとして5枚以下を勧めています。'
 			}
 		},
 		{
 			name: { en: 'Standard size', ja: '標準サイズ' },
 			description: {
-				en: 'The Digital Agency Design System’s standard size. Beside the slide, a next area shows a small version of the next slide as a Next slide button. Numbered buttons below show the position.',
-				ja: 'デジタル庁デザインシステムの標準の大きさで、スライドの横に次のスライドの縮小画像を「次のスライド」ボタンとして示す領域を置きます。下の番号のボタンで位置を示します。'
+				en: 'The standard size. Beside the slide, a next area shows a small version of the next slide as a Next slide button. Numbered buttons below show the position.',
+				ja: '標準の大きさで、スライドの横に次のスライドの縮小画像を「次のスライド」ボタンとして示す領域を置きます。下の番号のボタンで位置を示します。'
 			}
 		},
 		{

@@ -123,7 +123,7 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「リンクテキスト」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/foundations/link-text/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステム HTML 実装例: link',

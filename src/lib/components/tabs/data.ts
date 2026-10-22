@@ -90,8 +90,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Do not use tabs for site navigation, step-by-step flows, filtering, or content users need to compare side by side.',
-			ja: 'サイト内の移動、手順の進行、絞り込み、並べて比べたい内容には使いません。'
+			en: 'Do not use ARIA tabs (`role="tab"`) for site navigation, step-by-step flows, filtering, or content users need to compare side by side. For tabs that move between pages, use a row of links styled as tabs (the link list).',
+			ja: 'ARIA のタブ（`role="tab"`）は、サイト内の移動、手順の進行、絞り込み、並べて比べたい内容には使いません。ページを移るタブにしたいときは、見た目だけをタブにしたリンクの並び（リンクリスト）にします。'
 		}
 	],
 	misuse: [
