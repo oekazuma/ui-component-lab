@@ -49,8 +49,8 @@ export default {
 			ja: 'タイトル・補足の文・リンク・選択肢など、いくつかの情報を持つ項目の一覧を、DADS ではリソースリストと呼ぶ。タイトルだけを並べるものは箇条書きリストにあたる。'
 		},
 		{
-			en: 'DADS uses `<ul>` for every bulleted list, including numbered ones, and writes the numbers as text. Numbers made by `<ol>` cannot be copied and shift when items are added or removed.',
-			ja: 'DADS は番号付きのものも含めて箇条書きリストをすべて `<ul>` で書き、項目番号は地の文字として書く。`<ol>` の番号はコピーできず、項目を足したり消したりするとずれるため。'
+			en: 'DADS uses `<ul>` for every bulleted list, including numbered ones, and writes the numbers as text. Numbers made by `<ol>` cannot be copied and shift when items are added or removed. The GOV.UK Design System, by contrast, uses a numbered list made with `<ol>` when the order of the items matters.',
+			ja: 'DADS は番号付きのものも含めて箇条書きリストをすべて `<ul>` で書き、項目番号は地の文字として書く。`<ol>` の番号はコピーできず、項目を足したり消したりするとずれるため。一方 GOV.UK Design System は、項目の順番に意味があるときは `<ol>` で番号付きリストにする。'
 		},
 		{
 			en: 'For pairs of names and values, use a description list. To compare values across items, use a table.',
@@ -112,6 +112,31 @@ export default {
 			label: 'デジタル庁デザインシステム HTML 実装例: resource-list',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/resource-list',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Lists',
+			url: 'https://design-system.service.gov.uk/styles/lists/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Carbon Design System: List',
+			url: 'https://carbondesignsystem.com/components/list/usage/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'WCAG 2.2 Technique H48: Using ol, ul and dl for lists or groups of links',
+			url: 'https://www.w3.org/WAI/WCAG22/Techniques/html/H48',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Deque University: <li> elements must be contained in a <ul> or <ol>',
+			url: 'https://dequeuniversity.com/rules/axe/4.10/listitem',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'MDN: <a>',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

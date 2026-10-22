@@ -146,6 +146,16 @@ export default {
 			checkedAt: '2026-10-21'
 		},
 		{
+			label: 'MDN: <a>',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Nielsen Norman Group: Change the Color of Visited Links',
+			url: 'https://www.nngroup.com/articles/change-the-color-of-visited-links/',
+			checkedAt: '2026-10-22'
+		},
+		{
 			label: 'Deceptive Patterns: Disguised ads',
 			url: 'https://www.deceptive.design/types/disguised-ads',
 			checkedAt: '2026-10-21'

@@ -49,8 +49,8 @@ export default {
 		{
 			name: { en: 'Text (tertiary)', ja: 'テキストボタン（ターシャリ）' },
 			description: {
-				en: 'No border or background; the colored label is underlined so it still reads as something to press. Used for low-emphasis actions. Some design systems call it a ghost button.',
-				ja: '枠線も背景もなく、色の付いたラベルに下線を引いて押せることを示すもの。目立たせなくてよい操作に使う。ゴーストボタンと呼ぶデザインシステムもある。'
+				en: 'No border or background. The Digital Agency Design System underlines the colored label so it still reads as something to press. Used for low-emphasis actions. Some design systems, such as Carbon, call a similar style a ghost button.',
+				ja: '枠線も背景もないもの。デジタル庁デザインシステムは、色の付いたラベルに下線を引いて押せることを示している。目立たせなくてよい操作に使う。Carbon のように、似た形をゴーストボタンと呼ぶデザインシステムもある。'
 			}
 		}
 	],
@@ -60,12 +60,12 @@ export default {
 			ja: '塗りのボタンは1画面に1つにし、優先度は色だけでなく形（塗り、枠線、テキスト）でも示す。'
 		},
 		{
-			en: 'When buttons sit side by side, put the most important one on the right and the least important on the left, so actions such as Cancel or Back go on the left. A single button in a modal dialog goes in the center.',
-			ja: 'ボタンを横に並べるときは、最も優先度の高いボタンを右端に、低いボタンを左に置き、「キャンセル」「戻る」のような操作は左にする。モーダルダイアログのボタンが1つだけなら中央に置く。'
+			en: 'When buttons sit side by side, the Digital Agency Design System puts the most important one on the right and the least important on the left, so actions such as Cancel or Back go on the left, and it centers a single button in a modal dialog. Carbon puts the primary button on the left on full pages and on the right in dialogs and wizards, and GOV.UK aligns the primary button with the left edge of the form.',
+			ja: 'ボタンを横に並べるとき、デジタル庁デザインシステムは最も優先度の高いボタンを右端に、低いボタンを左に置き、「キャンセル」「戻る」のような操作を左にする。ボタンが1つだけのモーダルダイアログでは、DADS はそのボタンを中央に置く。Carbon はページ全体では主なボタンを左に、ダイアログやウィザードでは右に置き、GOV.UK は主なボタンをフォームの左端にそろえる。'
 		},
 		{
-			en: 'Make the target at least 44 × 44 CSS px.',
-			ja: '押せる領域は44 × 44 CSS px 以上にする。'
+			en: 'Make the target at least 44 × 44 CSS px, the size WCAG success criterion 2.5.5 Target Size (Enhanced) asks for at Level AAA.',
+			ja: '押せる領域は44 × 44 CSS px 以上にする。WCAG の達成基準 2.5.5「ターゲットのサイズ（高度）」（レベル AAA）が求める大きさ。'
 		}
 	],
 	misuse: [
@@ -181,6 +181,21 @@ export default {
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
 			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Button',
+			url: 'https://design-system.service.gov.uk/components/button/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Carbon Design System: Button',
+			url: 'https://carbondesignsystem.com/components/button/usage/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Understanding Success Criterion 2.5.5: Target Size (Enhanced) (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html',
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'Deceptive Patterns: Confirmshaming',

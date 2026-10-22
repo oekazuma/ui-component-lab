@@ -76,36 +76,36 @@ export default {
 		{
 			name: { en: 'Key visual type', ja: '打ち出しタイプ' },
 			description: {
-				en: 'Placed at the top of a page to show what the site is about. Used only when the page `<title>` can serve as its heading.',
-				ja: 'ページの最上部に置き、ウェブサイトの主題を示すもの。ページの `<title>` 要素が見出しの役目を果たせる場合だけに使う。'
+				en: 'A Digital Agency Design System type, placed at the top of a page to show what the site is about. Used only when the page `<title>` can serve as its heading.',
+				ja: 'デジタル庁デザインシステムの型で、ページの最上部に置き、ウェブサイトの主題を示すもの。ページの `<title>` 要素が見出しの役目を果たせる場合だけに使う。'
 			}
 		},
 		{
 			name: { en: 'Container type', ja: 'コンテナタイプ' },
 			description: {
-				en: 'Groups content on one topic, such as news, with a heading placed before it.',
-				ja: '「新着情報」のような1つの話題のまとまりに使い、前に見出しを置くもの。'
+				en: 'A Digital Agency Design System type that groups content on one topic, such as news, with a heading placed before it.',
+				ja: 'デジタル庁デザインシステムの型で、「新着情報」のような1つの話題のまとまりに使い、前に見出しを置くもの。'
 			}
 		},
 		{
 			name: { en: 'Multiple and single', ja: 'マルチとシングル' },
 			description: {
-				en: 'A multiple carousel has 2 to 6 slides. A single one has only one slide and no controls for switching, and is used only for the key visual type.',
-				ja: 'マルチはスライドを2〜6枚にする。シングルはスライドが1枚だけで切り替えの操作部品を出さず、打ち出しタイプだけで使う。'
+				en: 'In the Digital Agency Design System, a multiple carousel has 2 to 6 slides. A single one has only one slide and no controls for switching, and is used only for the key visual type. Nielsen Norman Group suggests 5 slides or fewer, since people are unlikely to engage with more.',
+				ja: 'デジタル庁デザインシステムでは、マルチはスライドを2〜6枚にする。シングルはスライドが1枚だけで切り替えの操作部品を出さず、打ち出しタイプだけで使う。Nielsen Norman Group は、それより多いと見てもらいにくいとして5枚以下を勧めている。'
 			}
 		},
 		{
 			name: { en: 'Standard size', ja: '標準サイズ' },
 			description: {
-				en: 'Beside the slide, a next area shows a small version of the next slide as a Next slide button. Numbered buttons below show the position.',
-				ja: 'スライドの横に、次のスライドの縮小画像を「次のスライド」ボタンとして示す領域を置く。下の番号のボタンで位置を示す。'
+				en: 'The Digital Agency Design System’s standard size. Beside the slide, a next area shows a small version of the next slide as a Next slide button. Numbered buttons below show the position.',
+				ja: 'デジタル庁デザインシステムの標準の大きさで、スライドの横に次のスライドの縮小画像を「次のスライド」ボタンとして示す領域を置く。下の番号のボタンで位置を示す。'
 			}
 		},
 		{
 			name: { en: 'Narrow size', ja: '幅狭サイズ' },
 			description: {
-				en: 'For narrow content areas, down to 320 px. There is no next area; previous and next buttons with the position as text, such as "1 / 4", take its place.',
-				ja: 'コンテンツ領域が狭いとき（320px まで）の型。次のスライドを示す領域はなく、代わりに「1 / 4」のような位置の表示と前後のボタンを置く。'
+				en: 'The counterpart of the standard size for narrow content areas, down to 320 px. There is no next area; previous and next buttons with the position as text, such as "1 / 4", take its place.',
+				ja: '標準サイズに対して、コンテンツ領域が狭いとき（320px まで）の型。次のスライドを示す領域はなく、代わりに「1 / 4」のような位置の表示と前後のボタンを置く。'
 			}
 		},
 		{
@@ -117,10 +117,6 @@ export default {
 		}
 	],
 	usage: [
-		{
-			en: 'Keep one topic per carousel.',
-			ja: '1つのカルーセルには1つの話題だけを入れる。'
-		},
 		{
 			en: 'Keep the text on each slide short and explain the details on the linked page.',
 			ja: 'スライドの文字は短くし、詳しいことはリンク先で説明する。'
@@ -181,7 +177,7 @@ export default {
 		{
 			label: 'Nielsen Norman Group: Carousel Usability: Designing an Effective UI for Websites with Content Overload',
 			url: 'https://www.nngroup.com/articles/designing-effective-carousels/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
@@ -204,9 +200,14 @@ export default {
 			checkedAt: '2026-10-21'
 		},
 		{
+			label: 'W3C WAI Tutorials: Carousels: Animations',
+			url: 'https://www.w3.org/WAI/tutorials/carousels/animations/',
+			checkedAt: '2026-10-22'
+		},
+		{
 			label: 'デジタル庁デザインシステムウェブサイト「カルーセル（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/carousel/usage/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「カルーセル」をもとに作成',

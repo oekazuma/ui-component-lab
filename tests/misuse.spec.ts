@@ -24,7 +24,7 @@ test('misuse: labels follow the language switch', async ({ page }) => {
 });
 
 test('misuse: usage section disappears once every note moved to misuse', async ({ page }) => {
-	await page.goto('en/components/spinner/');
+	await page.goto('en/components/toast/');
 	await expect(page.getByRole('heading', { name: 'Misuses to avoid' })).toBeVisible();
 	await expect(page.getByRole('heading', { name: 'Usage notes' })).toHaveCount(0);
 });

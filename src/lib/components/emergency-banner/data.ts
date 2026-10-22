@@ -47,8 +47,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Use it only for urgent, important information that affects people’s lives or property, such as an evacuation order. For other notices, such as opening hours over the holidays, use an alert instead.',
-			ja: '避難の呼びかけのように、人の命や財産に関わる緊急で重要な情報だけに使う。年末年始の営業時間のようなそれ以外のお知らせには、アラートを使う。'
+			en: 'Use it only for urgent, important information that affects people’s lives or property, such as an evacuation order. For other notices, such as opening hours over the holidays, use an alert instead. GOV.UK shows one at the top of every page for a national or local emergency, or a notable death.',
+			ja: '避難の呼びかけのように、人の命や財産に関わる緊急で重要な情報だけに使う。年末年始の営業時間のようなそれ以外のお知らせには、アラートを使う。GOV.UK は国や地域の緊急事態や著名人の死去のときに、全ページの上部に表示する。'
 		},
 		{
 			en: 'Make the title name the actual danger. The banner itself already says it is an emergency, so a title such as “Emergency notice” tells nothing.',
@@ -56,7 +56,7 @@ export default {
 		},
 		{
 			en: 'Give it a style that differs a little from the rest of the site, so it catches the eye.',
-			ja: 'サイトのほかの部分とは少し違う、違和感のあるスタイルにして、目を引くようにする。'
+			ja: 'サイトのほかの部分とは少し違う、違和感のあるスタイルにして目を引くようにする。'
 		},
 		{
 			en: 'Give it at most one link, and put the details on the linked page.',
@@ -88,8 +88,8 @@ export default {
 				ja: 'バナーの平たい文字だけでは、詳しい情報を正しく伝えるのが難しい。'
 			},
 			instead: {
-				en: 'Keep the description to about 100 Japanese characters, structured with headings or a list if needed, and link to a page with the details.',
-				ja: '説明は全角100文字程度までにし、必要なら見出しや箇条書きで整理して、詳細はリンク先のページに書く。'
+				en: 'Keep the description short (the Digital Agency Design System suggests about 100 Japanese characters), structured with headings or a list if needed, and link to a page with the details.',
+				ja: '説明は短くし（デジタル庁デザインシステムは全角100文字程度までとしている）、必要なら見出しや箇条書きで整理して、詳細はリンク先のページに書く。'
 			}
 		}
 	],
@@ -123,6 +123,21 @@ export default {
 		{
 			label: 'デジタル庁デザインシステム HTML 実装例: emergency-banner',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/emergency-banner',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'GOV.UK Publishing Components: Emergency banner',
+			url: 'https://components.publishing.service.gov.uk/component-guide/emergency_banner',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'MDN: ARIA: alert role',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'MDN: <time>',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/time',
 			checkedAt: '2026-10-22'
 		}
 	]

@@ -57,8 +57,8 @@ export default {
 		{
 			name: { en: 'Left border with a disclosure', ja: '左端の線とディスクロージャー' },
 			description: {
-				en: 'A thick left border, with a disclosure inside that folds away extra information people can skip.',
-				ja: '左端の線を太くし、中のディスクロージャーに、読まなくても進められる補足を畳んでおくもの。'
+				en: 'A thick left border, with a disclosure inside that folds away extra information people can skip. This one comes from the Digital Agency Design System.',
+				ja: '左端の線を太くし、中のディスクロージャーに、読まなくても進められる補足を畳んでおくもの。デジタル庁デザインシステムにある形。'
 			}
 		}
 	],

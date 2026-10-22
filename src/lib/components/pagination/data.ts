@@ -54,8 +54,8 @@ export default {
 		{
 			name: { en: 'Previous and next with a counter', ja: '前後とカウンターだけの型' },
 			description: {
-				en: 'Only “Previous page” and “Next page” with the position, such as “5 / 24”, between them and no page numbers. The Digital Agency Design System uses this form, as text, outlined or arrow-only buttons.',
-				ja: 'ページ番号を並べず、「前のページ」「次のページ」と、その間の「5 / 24」のような現在位置だけを置くもの。デジタル庁デザインシステムはこの形を使い、ボタンにはテキスト型・アウトライン型・矢印型がある。'
+				en: 'Only “Previous page” and “Next page” with the position, such as “5 / 24”, between them and no page numbers. The Digital Agency Design System uses this form, as text, outlined or arrow-only buttons. The GOV.UK Design System’s block style also shows only Previous and Next, stacked vertically, and its labels can say what the neighbouring pages are about.',
+				ja: 'ページ番号を並べず、「前のページ」「次のページ」と、その間の「5 / 24」のような現在位置だけを置くもの。デジタル庁デザインシステムはこの形を使い、ボタンにはテキスト型・アウトライン型・矢印型がある。GOV.UK Design System のブロック型も「前へ」「次へ」だけを縦に並べ、ラベルに前後のページの内容を添えられる。'
 			}
 		},
 		{
@@ -68,8 +68,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'The Digital Agency Design System hides "Previous" and "Next" on the first and last pages instead of disabling them. This demo keeps them focusable with `aria-disabled`.',
-			ja: 'デジタル庁デザインシステムでは、最初と最後のページで「前へ」「次へ」を無効にせず非表示にする。このデモは `aria-disabled` にして、フォーカスできるまま残している。'
+			en: 'The GOV.UK Design System and the Digital Agency Design System hide "Previous" and "Next" on the first and last pages instead of disabling them. This demo keeps them focusable with `aria-disabled`.',
+			ja: 'GOV.UK Design System とデジタル庁デザインシステムでは、最初と最後のページで「前へ」「次へ」を無効にせず非表示にする。このデモは `aria-disabled` にして、フォーカスできるまま残している。'
 		}
 	],
 	misuse: [
@@ -115,7 +115,7 @@ export default {
 		{
 			label: 'GOV.UK Design System: Pagination',
 			url: 'https://design-system.service.gov.uk/components/pagination/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'Carbon Design System: Pagination',
@@ -125,7 +125,7 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ページナビゲーション」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/page-navigation/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステム HTML 実装例: page-navigation',

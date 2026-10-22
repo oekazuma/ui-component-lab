@@ -68,8 +68,8 @@ export default {
 		{
 			name: { en: 'Separate fields', ja: '年・月・日に分けた欄' },
 			description: {
-				en: 'Year, month and day are separate text fields, each with its own label and `inputmode="numeric"`. DADS calls this the Separated type, and the single field the Consolidated type. A field can be left out when it is not needed, such as for a year and month only.',
-				ja: '年・月・日をそれぞれラベル付きの別の入力欄にし、`inputmode="numeric"` を付けたもの。DADS ではこれを Separated タイプ、1つの欄にまとめたものを Consolidated タイプと呼ぶ。年月だけのように、要らない欄は省ける。'
+				en: 'Year, month and day are separate text fields, each with its own label and `inputmode="numeric"`. GOV.UK’s date input works this way. DADS calls this the Separated type, and the single field the Consolidated type, and lets a field be left out when it is not needed, such as for a year and month only.',
+				ja: '年・月・日をそれぞれラベル付きの別の入力欄にし、`inputmode="numeric"` を付けたもの。GOV.UK の日付入力もこの形。DADS ではこれを Separated タイプ、1つの欄にまとめたものを Consolidated タイプと呼び、年月だけのように要らない欄は省けるとしている。'
 			}
 		},
 		{
@@ -82,12 +82,12 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Say in the hint that the year is in the Western calendar and give an example of a whole date. Do not use placeholder text.',
-			ja: '補足の文で、年は西暦で入れることを伝え、年月日の入力例を示す。プレースホルダーは使わない。'
+			en: 'Give an example of a whole date in the hint. Show the format in the hint rather than as placeholder text, which disappears once people start typing. DADS also has the hint say that the year is in the Western calendar.',
+			ja: '補足の文で年月日の入力例を示す。プレースホルダーは入力を始めると消えてしまうので、形式はプレースホルダーではなく補足の文で示す。DADS では、年は西暦で入れることも補足の文で伝える。'
 		},
 		{
-			en: 'Open the calendar only from its button, not on focus or hover.',
-			ja: 'カレンダーはボタンからだけ開き、フォーカスやホバーでは開かない。'
+			en: 'The WAI-ARIA APG example and DADS open the calendar only from its button, and DADS says not to open it on focus or hover. Carbon also opens it when the field gets focus.',
+			ja: 'WAI-ARIA APG の例と DADS はカレンダーをボタンからだけ開き、DADS はフォーカスやホバーで開かないよう求めている。Carbon は欄にフォーカスしたときにも開く。'
 		}
 	],
 	misuse: [
@@ -115,7 +115,7 @@ export default {
 		{
 			label: 'WAI-ARIA APG: Date Picker Dialog Example',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「日付ピッカー／カレンダー」をもとに作成',
@@ -130,12 +130,22 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「日付ピッカー／カレンダー（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/date-picker/usage/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステム HTML 実装例: date-picker',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/date-picker',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Date input',
+			url: 'https://design-system.service.gov.uk/components/date-input/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Carbon Design System: Date picker',
+			url: 'https://carbondesignsystem.com/components/date-picker/usage/',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

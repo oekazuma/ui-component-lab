@@ -23,8 +23,8 @@ export default {
 			ja: '「次へ」などのボタンで手続きを進めると、表示が切り替わる。'
 		},
 		{
-			en: 'The current step is marked with `aria-current="step"`, and finished steps have hidden text saying so. Hidden text before the steps tells screen reader users the overall progress, such as “4 steps in total; reached step 2”.',
-			ja: '現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添える。段階の並びの前には、「全4ステップ中、2ステップ目まで到達済み」のように全体の進み具合を伝える読み上げ用の文を置く。'
+			en: 'The current step is marked with `aria-current="step"`, and finished steps have hidden text saying so. Hidden text before the steps, as in the DADS example, tells screen reader users the overall progress, such as “4 steps in total; reached step 2”.',
+			ja: '現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添える。段階の並びの前には、DADS の実装例と同じく、「全4ステップ中、2ステップ目まで到達済み」のように全体の進み具合を伝える読み上げ用の文を置く。'
 		},
 		{
 			en: 'In this demo, every step already reached is a button, so you can go back to a finished step and return. The current step and steps not yet reached are plain text.',
@@ -59,15 +59,15 @@ export default {
 		{
 			name: { en: 'Vertical', ja: '縦並び' },
 			description: {
-				en: 'Steps stacked vertically, useful when the names are long or on narrow screens.',
-				ja: '段階を縦に並べたもの。名前が長いときや、幅の狭い画面に向く。'
+				en: 'Steps stacked vertically, useful when the names are long or on narrow screens. Carbon recommends the vertical layout whenever possible, for easier reading.',
+				ja: '段階を縦に並べたもの。名前が長いときや、幅の狭い画面に向く。Carbon は読みやすさのため、できるだけ縦に並べるよう勧めている。'
 			}
 		},
 		{
 			name: { en: 'Clickable steps', ja: '段階へ移動できるもの' },
 			description: {
-				en: 'Finished steps are links or buttons so the user can go back to them, as in this demo. With links, the Digital Agency Design System wraps the steps in a `<nav>` with an `aria-label`.',
-				ja: 'このデモのように、終わった段階をリンクやボタンにして戻れるようにしたもの。リンクにする場合、デジタル庁デザインシステムは全体を `aria-label` 付きの `<nav>` で囲む。'
+				en: 'Finished steps are links or buttons so the user can go back to them, as in this demo. Carbon’s interactive progress indicator lets the user move to each step, while Nielsen Norman Group advises not letting users pick a step before finishing the ones before it. With links, the Digital Agency Design System wraps the steps in a `<nav>` with an `aria-label`.',
+				ja: 'このデモのように、終わった段階をリンクやボタンにして戻れるようにしたもの。Carbon の操作できるプログレスインジケーターはどの段階へも移れるが、Nielsen Norman Group は前の段階を終えるまで先の段階を選べないようにすることを勧めている。リンクにする場合、デジタル庁デザインシステムは全体を `aria-label` 付きの `<nav>` で囲む。'
 			}
 		}
 	],
@@ -77,12 +77,12 @@ export default {
 			ja: '作業を意味のまとまりで段階に分け、始める前に手続きの全体が分かるようにする。'
 		},
 		{
-			en: 'Show the state of each step: done, current, skipped or with errors.',
-			ja: '各段階の状態（完了・現在・スキップ・エラー）を表示する。'
+			en: 'Show the state of each step, such as done, current or with errors. DADS also marks skipped steps, with a dashed circle.',
+			ja: '各段階の状態（完了・現在・エラーなど）を表示する。DADS ではスキップした段階も点線の丸で示す。'
 		},
 		{
 			en: 'For a short wait such as loading, use a progress bar. For moving between pages in a sequence, use pagination.',
-			ja: '読み込み待ちのような一時的な状態にはプログレスインジケーターを、順番に並んだページの行き来にはページネーションを使う。'
+			ja: '読み込み待ちのような一時的な状態にはプログレスバーを、順番に並んだページの行き来にはページネーションを使う。'
 		}
 	],
 	misuse: [
@@ -160,17 +160,27 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ステップナビゲーション」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/step-navigation/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステム HTML 実装例: step-navigation',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/step-navigation',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'Apple Human Interface Guidelines: Steppers',
 			url: 'https://developer.apple.com/design/human-interface-guidelines/steppers',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'MDN: aria-current',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Nielsen Norman Group: Wizards: Definition and Design Recommendations',
+			url: 'https://www.nngroup.com/articles/wizards/',
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'Understanding Success Criterion 3.3.7: Redundant Entry (WCAG 2.2)',

@@ -57,15 +57,15 @@ export default {
 		{
 			name: { en: 'Standard (sliding) type', ja: 'スタンダードタイプ（スライド型）' },
 			description: {
-				en: 'Choosing a group slides in a second list with a Back button at the top. Suits menus with a second level or many items.',
-				ja: 'まとまりを選ぶと、上に戻るボタンを置いた第二階層の一覧がすべって出る。第二階層がある場合や、項目が多い場合に向く。'
+				en: 'Choosing a group slides in a second list with a Back button at the top. The Digital Agency Design System calls it the standard type and recommends it for menus with a second level or many items. Nielsen Norman Group calls it a sequential menu and generally does not recommend it for subnavigation, because the menu’s Back button is easily confused with the browser’s.',
+				ja: 'まとまりを選ぶと、上に戻るボタンを置いた第二階層の一覧がすべって出る。デジタル庁デザインシステムはこれをスタンダードタイプと呼び、第二階層がある場合や項目が多い場合に勧める。Nielsen Norman Group は sequential menu と呼び、メニューの戻るボタンとブラウザの戻るボタンを取り違えやすいため、下位のナビゲーションには基本的に勧めていない。'
 			}
 		},
 		{
 			name: { en: 'Accordion type', ja: 'アコーディオンタイプ' },
 			description: {
-				en: 'Each group opens in place to show its links, as in this demo.',
-				ja: 'このデモのように、まとまりをその場で開いて中のリンクを見せる。'
+				en: 'Each group opens in place to show its links, as in this demo. Nielsen Norman Group finds it works well when each group holds only a few links, typically fewer than six.',
+				ja: 'このデモのように、まとまりをその場で開いて中のリンクを見せる。Nielsen Norman Group は、各まとまりのリンクが少ない場合（目安は6個未満）に向くとしている。'
 			}
 		},
 		{
@@ -82,12 +82,12 @@ export default {
 			ja: 'スマートフォンの画面では本文から関連リンクが省かれることが多く、モバイルメニューからしか行けないページが出る。利用者が行く必要のあるページをすべて含める。'
 		},
 		{
-			en: 'Do not nest the menu deeper than two levels.',
-			ja: 'メニューの階層は第二階層より深くしない。'
+			en: 'Keep the menu to two levels. Deeper menus make people choose category after category before they reach any content.',
+			ja: 'メニューの階層は第二階層までにする。階層が深いと、内容にたどり着くまでに分類を何度も選ばせることになる。'
 		},
 		{
 			en: 'Avoid mixing icons that mark links with icons that mark groups. If both are needed, make their shapes clearly different, as in this demo.',
-			ja: 'リンクを示すアイコンと、まとまりを示すアイコンを混ぜるのはできるだけ避ける。どうしても混ぜるなら、このデモのように形をはっきり変える。'
+			ja: 'リンクを示すアイコンとまとまりを示すアイコンを混ぜるのは、できるだけ避ける。どうしても混ぜるなら、このデモのように形をはっきり変える。'
 		},
 		{
 			en: 'Separate sections with bold section names. Put a divider between sections whose content differs a lot, and add a section icon as a supporting cue when the sections need to stand out more.',
@@ -105,8 +105,8 @@ export default {
 				ja: 'まとまりの開き方が2通りになり、利用者にとって操作が複雑になる。'
 			},
 			instead: {
-				en: 'Choose one type for the whole menu. Use the sliding type when there is a second level or many items.',
-				ja: 'メニュー全体でどちらか一方の型にする。第二階層がある場合や項目が多い場合は、スライド型にする。'
+				en: 'Choose one type for the whole menu. The Digital Agency Design System recommends the sliding type when there is a second level or many items; Nielsen Norman Group prefers the accordion type when each group has only a few links.',
+				ja: 'メニュー全体でどちらか一方の型にする。デジタル庁デザインシステムは第二階層がある場合や項目が多い場合にスライド型を勧め、Nielsen Norman Group は各まとまりのリンクが少なければアコーディオン型を勧める。'
 			}
 		},
 		{
@@ -116,7 +116,7 @@ export default {
 			},
 			harm: {
 				en: 'It takes extra mental effort to see at a glance which rows go to a page and which open a group.',
-				ja: 'どの行がページへ移り、どの行がまとまりを開くのかを一目で見分けるのに、頭の負担がかかる。'
+				ja: 'どの行がページへ移り、どの行がまとまりを開くのかを一目で見分けるのに頭の負担がかかる。'
 			},
 			instead: {
 				en: 'Use clearly different icons, such as › for links and + / − for groups, and use the same icon for the same behavior across the site.',
@@ -149,7 +149,22 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「モバイルメニュー（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/mobile-menu/usage/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Nielsen Norman Group: Mobile Subnavigation',
+			url: 'https://www.nngroup.com/articles/mobile-subnavigation/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Bootstrap: Offcanvas',
+			url: 'https://getbootstrap.com/docs/5.3/components/offcanvas/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Understanding Success Criterion 2.5.8: Target Size (Minimum) (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

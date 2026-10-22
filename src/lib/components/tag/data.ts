@@ -19,8 +19,8 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'Display-only tags (DADS chip labels) only label content with a status or category, such as “Open”, and are not interactive.',
-			ja: '表示だけのタグ（DADS のチップラベル）は、「受付中」のような状態や分類を示すだけで、操作できない。'
+			en: 'Display-only tags only label content with a status or category, such as “Open”, and are not interactive.',
+			ja: '表示だけのタグは、「受付中」のような状態や分類を示すだけで、操作できない。'
 		},
 		{
 			en: 'Selectable tags are toggle buttons with `aria-pressed`, so screen readers announce whether each one is chosen.',
@@ -53,33 +53,33 @@ export default {
 		{
 			name: { en: 'Display-only tag', ja: '表示だけのタグ' },
 			description: {
-				en: 'Shows a status or category that the content already has. DADS calls it a chip label.',
-				ja: '内容がすでに持っている状態や分類を示すもの。DADS ではチップラベルと呼ぶ。'
+				en: 'Shows a status or category that the content already has. DADS calls it a chip label, and Carbon a read-only tag.',
+				ja: '内容がすでに持っている状態や分類を示すもの。DADS ではチップラベル、Carbon では read-only tag と呼ぶ。'
 			}
 		},
 		{
 			name: { en: 'Selectable tag', ja: '選択できるタグ' },
 			description: {
-				en: 'Can be turned on or off, often to filter content on the page.',
-				ja: 'オン・オフを切り替えられるもの。ページ内の内容の絞り込みに使うことが多い。'
+				en: 'Can be turned on or off, often to filter content on the page. Carbon calls it a selectable tag.',
+				ja: 'オン・オフを切り替えられるもの。ページ内の内容の絞り込みに使うことが多い。Carbon では selectable tag と呼ぶ。'
 			}
 		},
 		{
 			name: { en: 'Removable tag', ja: '外せるタグ' },
 			description: {
-				en: 'Shows a value the user chose or entered, with a “×” to remove it. DADS calls it a chip tag.',
-				ja: '利用者が選んだ値や入力した値を示し、「×」で外せるもの。DADS ではチップタグと呼ぶ。'
+				en: 'Shows a value the user chose or entered, with a “×” to remove it. DADS calls it a chip tag, and Carbon a dismissible tag.',
+				ja: '利用者が選んだ値や入力した値を示し、「×」で外せるもの。DADS ではチップタグ、Carbon では dismissible tag と呼ぶ。'
 			}
 		}
 	],
 	usage: [
 		{
-			en: 'A removable chip shows a value the user chose or entered. Do not use it for removals that cannot be undone.',
-			ja: '× で外せるチップは、利用者が選んだ値や入力した値に使う。取り消せない削除には使わない。'
+			en: 'A removable chip shows a value the user chose or entered, such as a filter or a recipient. Do not use it for removals that cannot be undone, or for a tag that must always stay.',
+			ja: '× で外せるチップは、絞り込みの条件や宛先など、利用者が選んだ値や入力した値に使う。取り消せない削除や、常に残しておくべきタグには使わない。'
 		},
 		{
-			en: 'A display-only chip shows a status or category. Do not use too many colors, and always write the meaning as text.',
-			ja: '表示だけのチップは状態や分類に使う。色を使いすぎず、意味は必ず文字で書く。'
+			en: 'A display-only chip shows a status or category. Always write the meaning as text, not by color alone. Colors can help tell categories apart, but too many make them harder to distinguish.',
+			ja: '表示だけのチップは状態や分類に使う。意味は色だけで示さず、必ず文字で書く。色は分類の見分けに役立つが、使いすぎるとかえって見分けにくくなる。'
 		}
 	],
 	misuse: [
@@ -123,22 +123,22 @@ export default {
 		{
 			label: 'Carbon Design System: Tag',
 			url: 'https://carbondesignsystem.com/components/tag/usage/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'MUI: Chip',
 			url: 'https://mui.com/material-ui/react-chip/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「チップタグ」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/chip-tag/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「チップラベル」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/chip-label/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'Understanding Success Criterion 1.4.1: Use of Color (WCAG 2.2)',
@@ -154,6 +154,16 @@ export default {
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
 			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'WAI-ARIA APG: Button Pattern',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Inclusive Components: A Todo List',
+			url: 'https://inclusive-components.design/a-todo-list/',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

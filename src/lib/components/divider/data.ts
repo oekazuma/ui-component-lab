@@ -56,12 +56,12 @@ export default {
 	],
 	usage: [
 		{
-			en: 'A divider only supports spacing. The layout should still make sense without the line.',
-			ja: 'ディバイダーは余白を補うものにすぎない。線がなくても意味が通じる配置にする。'
+			en: 'A divider only supports spacing and headings. The layout should still make sense without the line.',
+			ja: 'ディバイダーは余白や見出しを補うものにすぎない。線がなくても意味が通じる配置にする。'
 		},
 		{
-			en: 'Leave enough space around it (at least 8 px in lists and 16 px between sections) so separate items do not look like one.',
-			ja: '別々の項目が1つに見えないよう、周りに十分な余白をとる（リストでは8px 以上、セクションの間では16px 以上）。'
+			en: 'Leave enough space around it so separate items do not look like one. DADS asks for at least 8 px in lists and 16 px between sections; Fluent asks for at least 12 px above and below.',
+			ja: '別々の項目が1つに見えないよう、周りに十分な余白をとる。DADS はリストで8px 以上、セクションの間で16px 以上、Fluent は上下に12px 以上を求めている。'
 		},
 		{
 			en: 'Use `<hr>` for a change of topic within a section. Sections and headings already mark their own boundaries, so the line between sections, like any purely visual line, is a CSS border.',
@@ -88,6 +88,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ディバイダー（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/divider/usage/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Fluent 2 Design System: Divider',
+			url: 'https://fluent2.microsoft.design/components/web/react/core/divider/usage',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

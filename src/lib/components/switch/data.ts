@@ -122,6 +122,11 @@ export default {
 			label: 'Deceptive Patterns: Preselection',
 			url: 'https://www.deceptive.design/types/preselection',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Nielsen Norman Group: Toggle-Switch Guidelines',
+			url: 'https://www.nngroup.com/articles/toggle-switch-guidelines/',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

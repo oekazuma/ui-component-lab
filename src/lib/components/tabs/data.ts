@@ -69,8 +69,8 @@ export default {
 		{
 			name: { en: 'Link list', ja: 'リンクリスト' },
 			description: {
-				en: 'Each tab is a separate page. The tab for the current page has `aria-current="page"` and no `href`.',
-				ja: 'タブごとに別のページになっているもの。今のページのタブには `aria-current="page"` を付け、`href` を省く。'
+				en: 'Each tab is a separate page, and the tab for the current page has `aria-current="page"`. In the DADS example, that tab also has no `href`. Nielsen Norman Group calls these navigation tabs and warns against mixing them with in-page tabs in one tab control.',
+				ja: 'タブごとに別のページになっているもの。今のページのタブには `aria-current="page"` を付ける。DADS の実装例では、このタブの `href` も省く。Nielsen Norman Group はこれをナビゲーションタブと呼び、ページ内で切り替えるタブと1つのタブの並びに混ぜないよう勧めている。'
 			}
 		},
 		{
@@ -174,6 +174,21 @@ export default {
 			label: 'デジタル庁デザインシステム HTML 実装例: tab',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/tab',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Tabs',
+			url: 'https://design-system.service.gov.uk/components/tabs/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'MDN: aria-current',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Nielsen Norman Group: Tabs, Used Right',
+			url: 'https://www.nngroup.com/articles/tabs-used-right/',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

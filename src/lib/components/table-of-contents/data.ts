@@ -100,8 +100,8 @@ export default {
 				ja: '項目が多くなりすぎて、かえって見づらくなる。'
 			},
 			instead: {
-				en: 'Limit the table of contents to the top one or two levels.',
-				ja: '目次に含める見出しを、上の1〜2階層に絞る。'
+				en: 'When the heading structure is deep, include only the levels people need.',
+				ja: '見出しの階層が深いときは、目次に含める階層を必要なものに絞る。'
 			}
 		}
 	],
@@ -130,6 +130,21 @@ export default {
 		{
 			label: 'デジタル庁デザインシステム HTML 実装例: toc',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/toc',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Nielsen Norman Group: Table of Contents: The Ultimate Design Guide',
+			url: 'https://www.nngroup.com/articles/table-of-contents/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'MDN: <nav>',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/nav',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'MDN: aria-current',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current',
 			checkedAt: '2026-10-22'
 		}
 	]

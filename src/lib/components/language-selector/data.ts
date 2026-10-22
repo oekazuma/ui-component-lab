@@ -33,8 +33,8 @@ export default {
 			ja: 'このサイトのヘッダーにある言語の切り替えがこの部品。ボタンには「Language」の代わりに今の言語の名前を出し、狭い画面では名前を隠している。'
 		},
 		{
-			en: 'In this demo, choosing a language changes the small page in the box instead of moving to another page, then closes the list and returns focus to the button. The Digital Agency Design System example also moves between the languages with ↑ / ↓ and Home / End; this demo leaves that out, like the switch in this site’s header.',
-			ja: 'このデモでは、言語を選ぶと別のページへは移らず、枠の中の小さなページの言語が変わり、一覧を閉じてボタンにフォーカスを戻す。デジタル庁デザインシステムの実装例は ↑ / ↓ と Home / End でも言語の間を移るが、このデモではこのサイトのヘッダーの切り替えと同じく省いている。'
+			en: 'In this demo, choosing a language changes the small page in the box instead of moving to another page, then closes the list and returns focus to the button. Moving between the languages with ↑ / ↓ and Home / End is optional in the APG disclosure navigation example, and this demo leaves it out, like the switch in this site’s header.',
+			ja: 'このデモでは、言語を選ぶと別のページへは移らず、枠の中の小さなページの言語が変わり、一覧を閉じてボタンにフォーカスを戻す。↑ / ↓ と Home / End で言語の間を移る機能は APG の Disclosure ナビゲーションの例では任意とされており、このデモではこのサイトのヘッダーの切り替えと同じく省いている。'
 		}
 	],
 	keyboard: [
@@ -156,6 +156,11 @@ export default {
 		{
 			label: 'Understanding Success Criterion 3.2.2: On Input (WCAG 2.2)',
 			url: 'https://www.w3.org/WAI/WCAG22/Understanding/on-input.html',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Understanding Success Criterion 3.1.2: Language of Parts (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html',
 			checkedAt: '2026-10-22'
 		},
 		{

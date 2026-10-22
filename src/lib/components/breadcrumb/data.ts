@@ -21,8 +21,8 @@ export default {
 			ja: 'それぞれの名前はその階層のページへのリンクで、最後の名前は今いるページを示す。'
 		},
 		{
-			en: 'The current page is a `<span>` with `aria-current="page"`, not a link. A link to the page you are already on does nothing when followed, so this demo follows the Digital Agency Design System and Nielsen Norman Group. APG also allows a link with `aria-current="page"`, and says `aria-current` is optional when the current page is not a link; this demo keeps it so screen readers announce the current page.',
-			ja: '今のページは、リンクではなく `aria-current="page"` を付けた `<span>` にする。今いるページへのリンクはたどっても何も起きないため、このデモはデジタル庁デザインシステムと Nielsen Norman Group に合わせている。APG は `aria-current="page"` を付けたリンクも認め、今のページがリンクでなければ `aria-current` は任意としている。このデモでは、スクリーンリーダーが今のページと読み上げるよう付けている。'
+			en: 'The current page is a `<span>` with `aria-current="page"`, not a link, because a link to the page you are already on does nothing when followed. Nielsen Norman Group and the Digital Agency Design System also show it as plain text, and GOV.UK leaves the current page out, ending the trail at its parent. APG also allows a link with `aria-current="page"`, and says `aria-current` is optional when the current page is not a link; this demo keeps it so screen readers announce the current page.',
+			ja: '今いるページへのリンクはたどっても何も起きないので、今のページはリンクにせず、`aria-current="page"` を付けた `<span>` にする。Nielsen Norman Group とデジタル庁デザインシステムもただの文字で示し、GOV.UK は今のページを載せず、1つ上の階層で終える。APG は `aria-current="page"` を付けたリンクも認め、今のページがリンクでなければ `aria-current` は任意としている。このデモでは、スクリーンリーダーが今のページと読み上げるよう付けている。'
 		},
 		{
 			en: 'In this demo the links do not navigate; they show where they would go.',
@@ -45,8 +45,8 @@ export default {
 			ja: 'ヘッダーとページの見出しの間に置く。'
 		},
 		{
-			en: 'Page names cannot be kept short, so let the trail wrap when it is wider than the content area, also on narrow screens. The Digital Agency Design System allows a single line that scrolls sideways on phones when many pages have long trails, so the breadcrumb does not push the content down; in that case, also put a wrapping breadcrumb at the bottom of the page, above the footer. Nielsen Norman Group instead advises against trails that wrap, and suggests showing only the last level or two on phones.',
-			ja: 'ページ名の長さは制御できないので、コンテンツの幅を超えたら折り返す。狭い画面でも同じ。デジタル庁デザインシステムは、長いパンくずリストになるページが多いときに限り、コンテンツを押し下げないようスマートフォンで折り返さず横にスクロールさせる形も認めている。その場合は、ページ下部のフッターの上にも折り返すパンくずリストを置く。一方 Nielsen Norman Group は、複数行に折り返すパンくずリストを避け、スマートフォンでは最後の1〜2階層だけを見せる方法を挙げている。'
+			en: 'Page names cannot be kept short, so let the trail wrap when it is wider than the content area, also on narrow screens. The Digital Agency Design System allows a single line that scrolls sideways on phones when many pages have long trails, so the breadcrumb does not push the content down; in that case, also put a wrapping breadcrumb at the bottom of the page, above the footer. Nielsen Norman Group instead advises against trails that wrap, and suggests showing only the last level or two on phones. GOV.UK can show only the first and last items of a long trail on phones.',
+			ja: 'ページ名の長さは制御できないので、コンテンツの幅を超えたら折り返す。狭い画面でも同じ。デジタル庁デザインシステムは、長いパンくずリストになるページが多いときに限り、コンテンツを押し下げないようスマートフォンで折り返さず横にスクロールさせる形も認めている。その場合は、ページ下部のフッターの上にも折り返すパンくずリストを置く。一方 Nielsen Norman Group は複数行に折り返すパンくずリストを避け、スマートフォンでは最後の1〜2階層だけを見せる方法を挙げている。GOV.UK には、長いパンくずリストをスマートフォンで最初と最後の項目だけにする形がある。'
 		}
 	],
 	misuse: [
@@ -108,6 +108,11 @@ export default {
 			label: 'デジタル庁デザインシステム HTML 実装例: breadcrumb',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/breadcrumb',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Breadcrumbs',
+			url: 'https://design-system.service.gov.uk/components/breadcrumbs/',
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'Nielsen Norman Group: Breadcrumbs: 11 Design Guidelines for Desktop and Mobile',

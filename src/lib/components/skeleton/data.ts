@@ -46,8 +46,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'The Digital Agency Design System (DADS) does not use skeletons: while a screen is loading, it shows a progress indicator instead, even when several pieces of data are awaited.',
-			ja: 'デジタル庁デザインシステム（DADS）はスケルトンを使わない。画面の読み込み中は、複数のデータを待つ場合もプログレスインジケーターで処理中であることを示す。'
+			en: 'Sources differ on skeletons. The Digital Agency Design System (DADS) does not use skeletons: while a screen is loading, it shows a progress indicator instead, even when several pieces of data are awaited. Carbon prefers skeleton states to loading indicators for full-screen loads. Nielsen Norman Group also recommends skeleton screens when the whole page is loading and the wait is under 10 seconds.',
+			ja: 'スケルトンの扱いは資料によって分かれる。デジタル庁デザインシステム（DADS）はスケルトンを使わない。画面の読み込み中は、複数のデータを待つ場合もプログレスインジケーターで処理中であることを示す。Carbon は画面全体の読み込みにはローディングインジケーターよりスケルトンを勧める。Nielsen Norman Group も、ページ全体の読み込みで待ち時間が10秒未満ならスケルトンを勧める。'
 		}
 	],
 	related: [
@@ -75,12 +75,17 @@ export default {
 		{
 			label: 'Carbon Design System: Loading',
 			url: 'https://carbondesignsystem.com/components/loading/usage/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Nielsen Norman Group: Skeleton Screens 101',
+			url: 'https://www.nngroup.com/articles/skeleton-screens/',
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/progress-indicator/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

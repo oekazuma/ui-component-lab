@@ -66,8 +66,8 @@ export default {
 			ja: 'カテゴリ名には行き先のページ名を使い、「詳細」「その他」のようなあいまいな言葉を避ける。概要・仕様・レビューのように同じ主題の内容を切り替えるなら、タブを使う。'
 		},
 		{
-			en: 'Use it on desktop screens to list the pages under each section of the horizontal menu. On phones, use the hamburger menu button and the mobile menu instead.',
-			ja: 'デスクトップの画面で、水平メニューの各カテゴリの下にあるページを一覧にするのに使う。スマートフォンでは、代わりにハンバーガーメニューボタンとモバイルメニューを使う。'
+			en: 'Use it on desktop screens to list the pages under each section of the horizontal menu. On phones, its small options are easy to mis-tap, so use the hamburger menu button and the mobile menu instead.',
+			ja: 'デスクトップの画面で、水平メニューの各カテゴリの下にあるページを一覧にするのに使う。スマートフォンでは小さな選択肢を押し間違えやすいので、代わりにハンバーガーメニューボタンとモバイルメニューを使う。'
 		},
 		{
 			en: 'The section name opens the panel and does not go to the section’s own page, so put a link to that page in the panel.',
@@ -157,6 +157,21 @@ export default {
 			label: 'WAI-ARIA APG: Example Disclosure Navigation Menu',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Nielsen Norman Group: Mega Menus Work Well for Site Navigation',
+			url: 'https://www.nngroup.com/articles/mega-menus-work-well/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Inclusive Components: Menus & Menu Buttons',
+			url: 'https://inclusive-components.design/menus-menu-buttons/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Understanding Success Criterion 2.1.1: Keyboard (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

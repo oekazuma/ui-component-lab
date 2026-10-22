@@ -25,8 +25,8 @@ export default {
 			ja: '残りの時間がまだ分からないうちは、値を持たずに動く不確定の表示にし、分かった時点で割合の表示に切り替える。'
 		},
 		{
-			en: 'It is not interactive; the user only watches it. The label next to it says what is being done, and changes to the result when the task finishes or is canceled.',
-			ja: '操作する部品ではなく、見るだけのもの。近くのラベルで何の作業かを示し、終わったときや中止したときは結果を表す文に変える。'
+			en: 'It is not interactive; the user only watches it. The label next to it says what is being done, and changes to the result when the task finishes or is canceled. Carbon instead keeps the label as it is and shows the result with the bar’s color and an icon, with helper text explaining an error.',
+			ja: '操作する部品ではなく、見るだけのもの。近くのラベルで何の作業かを示し、終わったときや中止したときは結果を表す文に変える。一方 Carbon はラベルを変えず、棒の色とアイコンで結果を示し、エラーの内容は補助テキストで伝える。'
 		},
 		{
 			en: 'For a long task, tell assistive technology the percentage at intervals rather than at every change. The DADS HTML implementation announces it every 5 seconds by default.',
@@ -105,6 +105,11 @@ export default {
 			label: 'MUI: Progress',
 			url: 'https://mui.com/material-ui/react-progress/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Carbon Design System: Progress bar',
+			url: 'https://carbondesignsystem.com/components/progress-bar/usage/',
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「プログレスインジケーター」をもとに作成',

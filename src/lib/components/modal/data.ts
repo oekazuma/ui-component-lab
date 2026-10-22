@@ -55,12 +55,12 @@ export default {
 			ja: 'ナビゲーションメニューや完了の通知には使わない。ナビゲーションにはドロワーやメニューボタンを使う。'
 		},
 		{
-			en: 'Add a separate close button only when there are no action buttons.',
-			ja: '操作ボタンがないときだけ、別に閉じるボタンを置く。'
+			en: 'The Digital Agency Design System adds a separate close button only when there are no action buttons. Carbon gives even modals that have action buttons a close (×) icon that closes them without submitting anything.',
+			ja: 'デジタル庁デザインシステムは、操作ボタンがないときだけ別に閉じるボタンを置く。Carbon は操作ボタンがあるモーダルにも、何も送信せずに閉じる × のアイコンを付ける。'
 		},
 		{
-			en: 'When the dialog has only one button, place it in the center.',
-			ja: 'ダイアログのボタンが1つだけのときは、中央に置く。'
+			en: 'When the dialog has only one button, the Digital Agency Design System places it in the center, as this demo does. Carbon places a single button on the right side instead.',
+			ja: 'ダイアログのボタンが1つだけのとき、デジタル庁デザインシステムはこのデモのように中央に置く。Carbon は右側に置く。'
 		}
 	],
 	misuse: [
@@ -151,17 +151,32 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「モーダルダイアログ」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/modal-dialog/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ボタン（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/button/usage/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
 			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Carbon Design System: Modal',
+			url: 'https://carbondesignsystem.com/components/modal/usage/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Nielsen Norman Group: Modal & Nonmodal Dialogs: When (& When Not) to Use Them',
+			url: 'https://www.nngroup.com/articles/modal-nonmodal-dialog/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Office of the Privacy Commissioner of Canada: Sweep Report 2024: Deceptive Design Patterns',
+			url: 'https://priv.gc.ca/en/about-the-opc/what-we-do/international-collaboration/international-privacy-sweep/2024_sweep/opc-sweep-report-2024',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

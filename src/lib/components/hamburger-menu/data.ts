@@ -25,8 +25,8 @@ export default {
 			ja: '開いたメニューの中にある「閉じる」ボタンを押すと閉じる。'
 		},
 		{
-			en: 'This demo follows the Digital Agency Design System drawer example: the Menu button opens a modal `<dialog>`, and the Close button is a separate button inside it. While the dialog is open the Menu button cannot be used, so it has no `aria-expanded`.',
-			ja: 'このデモはデジタル庁デザインシステムのドロワーの実装例にならい、「メニュー」ボタンでモーダルの `<dialog>` を開き、「閉じる」ボタンはその中に別のボタンとして置く。開いている間は「メニュー」ボタンを操作できないので、`aria-expanded` は付けない。'
+			en: 'In this demo, the Menu button opens the menu as a modal `<dialog>` (the WAI-ARIA APG Dialog (Modal) pattern), and the Close button is a separate button inside it, as in the Digital Agency Design System drawer example. While the dialog is open the rest of the page, including the Menu button, is inert, so the Menu button has no `aria-expanded`.',
+			ja: 'このデモでは、「メニュー」ボタンでメニューをモーダルの `<dialog>` として開き（WAI-ARIA APG の Dialog (Modal) パターン）、デジタル庁デザインシステムのドロワーの実装例と同じく、「閉じる」ボタンはその中に別のボタンとして置く。開いている間は「メニュー」ボタンを含むページのほかの部分を操作できないので、`aria-expanded` は付けない。'
 		},
 		{
 			en: 'In this demo, choosing a link closes the menu and shows where it would go instead of leaving the page. `closedby="any"` also closes the menu when the dimmed background is clicked; browsers that do not support it ignore it.',
@@ -161,6 +161,16 @@ export default {
 			label: 'Nielsen Norman Group: Hamburger Menus and Hidden Navigation Hurt UX Metrics',
 			url: 'https://www.nngroup.com/articles/hamburger-menus/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'WAI-ARIA APG: Dialog (Modal) Pattern',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/',
+			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'MDN: <dialog>',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;

@@ -62,6 +62,11 @@ for (const d of all) {
 		)
 			errors.push(`${d.id}: DADS source needs the attribution label`);
 	}
+	// いろいろな有力な文献をもとにするサイトなので、1つのデザインシステムに寄りすぎないようにする。
+	// デジタル庁は DADS のサイト・実装例のリポジトリ・ガイドブックをよく引くため、合わせて数える
+	const dads = d.sources.filter((s) => /^https:\/\/((design|www)\.digital\.go\.jp|github\.com\/digital-go-jp)\//.test(s.url)).length;
+	if (dads && dads === d.sources.length) errors.push(`${d.id}: needs a source other than the Digital Agency`);
+	if (dads * 2 > d.sources.length) errors.push(`${d.id}: more than half of the sources are from the Digital Agency (${dads}/${d.sources.length})`);
 	for (const url of [...d.sources.map((s) => s.url), ...d.aliases.map((a) => a.url)])
 		if (!url.startsWith('https://')) errors.push(`${d.id}: non-https url ${url}`);
 	for (const a of d.aliases)

@@ -44,16 +44,16 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Free text takes effort to write. Narrow the question first, for example by asking only people who chose “Other”.',
-			ja: '自由記述は書く手間が大きい。「その他」を選んだ人にだけ尋ねるなど、先に質問の範囲を絞る。'
+			en: 'Free text takes effort to write. Narrow the question first, for example by splitting it into simpler questions or by asking only people who chose “Other”.',
+			ja: '自由記述は書く手間が大きい。簡単な質問に分ける、「その他」を選んだ人にだけ尋ねるなどして、先に質問の範囲を絞る。'
 		},
 		{
-			en: 'Put the character limit in the label. For limits of more than about 20 characters, always show a counter.',
-			ja: '文字数の上限はラベルに書く。上限がおよそ20文字を超えるなら、文字数のカウンターを常に表示する。'
+			en: 'Tell people the character limit before they start typing. DADS puts it in the label and shows a counter for limits of more than about 20 characters. GOV.UK states the limit in a count message below the box, and uses a character count only when there is a good reason to limit the text.',
+			ja: '文字数の上限は入力を始める前に伝える。DADS は上限をラベルに書き、上限がおよそ20文字を超えるなら文字数のカウンターを表示する。GOV.UK は欄の下の文字数の表示で上限を伝え、文字数を制限する十分な理由があるときだけ文字数のカウンターを使う。'
 		},
 		{
-			en: 'When the text is too long, give the number of characters entered in the error, such as “You entered 201 characters”, so people can tell how much to cut.',
-			ja: '上限を超えたときは「（入力文字数201文字）」のように入力した文字数をエラーに書き、どれだけ削ればよいか分かるようにする。'
+			en: 'When the text is too long, DADS gives the number of characters entered in the error, such as “You entered 201 characters”, so people can tell how much to cut. GOV.UK gives the limit in the error, such as “Job description must be 350 characters or less”, and the count message below the box says that too many characters have been entered.',
+			ja: '上限を超えたとき、DADS は「（入力文字数201文字）」のように入力した文字数をエラーに書き、どれだけ削ればよいか分かるようにする。GOV.UK は「職務内容は350文字以内で入力してください」のように上限をエラーに書き、欄の下の表示で文字数が多すぎることを知らせる。'
 		},
 		{
 			en: 'Set the height to match the expected length of the answer.',
@@ -71,8 +71,8 @@ export default {
 				ja: '書いている人はエラーが出るまで何文字まで入力できるか分からない。エラーが出ても、何文字まで許されるのか分からないこともある。'
 			},
 			instead: {
-				en: 'Put the limit in the label, and show a counter when the limit is more than about 20 characters. When the text is too long, say so in the error together with the current count.',
-				ja: '上限はラベルに書き、およそ20文字を超えるなら文字数のカウンターも表示する。超えたときは、入力済みの文字数とあわせてエラーで知らせる。'
+				en: 'Tell people the limit before they type, in the label or in a count message below the box. When the text is too long, say so in an error that gives the limit or the number of characters entered.',
+				ja: '上限はラベルや欄の下の文字数の表示で、入力する前に伝える。超えたときは、上限か入力済みの文字数を書いたエラーで知らせる。'
 			}
 		}
 	],
@@ -94,12 +94,12 @@ export default {
 		{
 			label: 'GOV.UK Design System: Textarea',
 			url: 'https://design-system.service.gov.uk/components/textarea/',
-			checkedAt: '2026-10-20'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'GOV.UK Design System: Character count',
 			url: 'https://design-system.service.gov.uk/components/character-count/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「テキストエリア」をもとに作成',
@@ -109,7 +109,7 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「テキストエリア（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/textarea/usage/',
-			checkedAt: '2026-10-21'
+			checkedAt: '2026-10-22'
 		},
 		{
 			label: 'デジタル庁デザインシステム HTML 実装例: textarea',

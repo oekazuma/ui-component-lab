@@ -108,8 +108,8 @@ export default {
 			ja: 'サイトのナビゲーションには `role="menubar"` を使わず、リンクと開閉ボタン（ディスクロージャー）で作る。メニューバーのパターンは、一般的なサイトのナビゲーションには要らない複雑なキー操作を必要とし、それが要るサイトは少ない。デジタル庁デザインシステムの水平メニューはメニューバーではなくこの種のサイトのナビゲーションで、ページへ移る項目はリンク、サブメニューを開く項目は `aria-expanded` を持つボタンにする。メガメニューも参照。'
 		},
 		{
-			en: 'Add “…” to the label of a command that opens a dialog, as in “Open…”.',
-			ja: 'ダイアログを開く操作には、「開く…」のようにラベルの最後に「…」を付ける。'
+			en: 'Add “…” to the label of a command that needs more input before it runs, such as one that opens a dialog, as in “Open…”.',
+			ja: 'ダイアログを開く操作のように、実行する前に入力や選択が要る操作には、「開く…」のようにラベルの最後に「…」を付ける。'
 		}
 	],
 	related: [
@@ -160,6 +160,11 @@ export default {
 			label: 'デジタル庁デザインシステム HTML 実装例: horizontal-menu',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/horizontal-menu',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Apple Human Interface Guidelines: Menus',
+			url: 'https://developer.apple.com/design/human-interface-guidelines/menus',
+			checkedAt: '2026-10-22'
 		}
 	]
 } satisfies ComponentData;
