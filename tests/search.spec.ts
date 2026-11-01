@@ -60,3 +60,21 @@ test('search: no axe violations while open', async ({ page }) => {
 		.analyze();
 	expect(violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`)).toEqual([]);
 });
+
+// Playwright では IME の変換を再現できないため、変換中を示す isComposing を付けた keydown を送る
+test('search: arrow keys and Enter during IME composition are left to the IME', async ({ page }) => {
+	await page.goto('ja/');
+	await page.waitForLoadState('networkidle');
+	await page.keyboard.press(shortcut);
+	const dialog = page.getByRole('dialog', { name: '名前で検索' });
+	const input = dialog.getByRole('combobox');
+	await input.fill('もだる');
+	const active = await input.getAttribute('aria-activedescendant');
+
+	await input.dispatchEvent('keydown', { key: 'ArrowDown', isComposing: true, bubbles: true });
+	await expect(input).toHaveAttribute('aria-activedescendant', active!);
+	await input.dispatchEvent('keydown', { key: 'Enter', isComposing: true, bubbles: true });
+	await input.dispatchEvent('keydown', { key: 'Enter', keyCode: 229, bubbles: true });
+	await expect(dialog).toBeVisible();
+	await expect(page).toHaveURL(/\/ja\/$/);
+});
