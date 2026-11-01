@@ -6,8 +6,8 @@ export default {
 	names: { en: 'Toast', ja: 'トースト' },
 	aliases: [{ name: 'Snackbar', source: 'MUI', url: 'https://mui.com/material-ui/react-snackbar/' }],
 	summary: {
-		en: 'A brief message that pops up at the edge of the screen after an action and disappears on its own.',
-		ja: '操作の結果を画面の端に短く表示し、しばらくすると自動で消えるメッセージです。'
+		en: 'A brief message that pops up at the edge of the screen after an action; one with only a message disappears on its own.',
+		ja: '操作の結果を画面の端に短く表示するメッセージです。文字だけのものは、しばらくすると自動で消えます。'
 	},
 	appearance: {
 		en: 'A small dark or colored box floating near the bottom or top of the screen, with one line of text and sometimes a close or undo button.',
@@ -103,8 +103,8 @@ export default {
 		{
 			id: 'alert',
 			diff: {
-				en: 'A toast floats over the page and disappears on its own; an alert sits in the page content and stays until it is no longer needed or the user closes it.',
-				ja: 'トーストはページの上に浮かんで自動で消え、アラートはページの中に置かれ、不要になるか利用者が閉じるまで残ります。'
+				en: 'A toast floats over the page, and one with only a message disappears on its own; an alert sits in the page content and stays until it is no longer needed or the user closes it.',
+				ja: 'トーストはページの上に浮かび、文字だけのものは自動で消えますが、アラートはページの中に置かれ、不要になるか利用者が閉じるまで残ります。'
 			}
 		}
 	],

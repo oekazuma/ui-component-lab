@@ -92,8 +92,8 @@ export default {
 		{
 			id: 'toast',
 			diff: {
-				en: 'An alert stays in the page content; a toast floats over the page and disappears on its own.',
-				ja: 'アラートはページの中に残り、トーストはページの上に浮かんで自動で消えます。'
+				en: 'An alert stays in the page content; a toast floats over the page, and one with only a message disappears on its own.',
+				ja: 'アラートはページの中に残り、トーストはページの上に浮かんで、文字だけのものは自動で消えます。'
 			}
 		},
 		{
