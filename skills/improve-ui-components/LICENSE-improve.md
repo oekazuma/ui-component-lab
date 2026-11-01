@@ -1,4 +1,4 @@
-The plan template in `references/plan-template.md` and the planning workflow in `SKILL.md` are adapted from the improve skill (https://github.com/shadcn/improve), used under the following license.
+The plan template in `references/plan-template.md`, the finding format and prioritization in `references/audit-playbook.md`, and the planning workflow in `SKILL.md` are adapted from the improve skill (https://github.com/shadcn/improve), used under the following license.
 
 MIT License
 
