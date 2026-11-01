@@ -37,6 +37,10 @@ export default {
 	],
 	usage: [
 		{
+			en: 'To move between pages, use links, such as a horizontal menu. Do not use ARIA tabs (`role="tab"`) for it, since tabs switch content in place.',
+			ja: 'ページ間の移動にはリンク（水平メニューなど）を使います。ARIA のタブ（`role="tab"`）はその場で内容を切り替える部品なので、ページ間の移動には使いません。'
+		},
+		{
 			en: 'Mark links that open a new tab or another site with an icon that has alternative text.',
 			ja: '新しいタブや外部サイトで開くリンクには、代替テキスト付きのアイコンを付けます。'
 		},
@@ -159,6 +163,16 @@ export default {
 			label: 'Deceptive Patterns: Disguised ads',
 			url: 'https://www.deceptive.design/types/disguised-ads',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「タブ」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/tab/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'GOV.UK Design System: Tabs',
+			url: 'https://design-system.service.gov.uk/components/tabs/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;
