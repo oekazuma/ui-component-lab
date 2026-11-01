@@ -576,3 +576,13 @@ test('mega menu: Enter on a link shows where it goes, closes the panel and retur
 	await expect(living).toHaveAttribute('aria-expanded', 'false');
 	await expect(demo.getByRole('status')).toContainText('All about living');
 });
+
+test('back to top: Home with focus on the button scrolls to the start and keeps focus in the box', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/back-to-top/');
+	const article = demo.getByRole('region', { name: 'Article' });
+	const button = demo.getByRole('button', { name: 'Back to top', exact: true });
+	await button.focus();
+	await page.keyboard.press('Home');
+	await expect(button).toBeHidden();
+	await expect(article).toBeFocused();
+});

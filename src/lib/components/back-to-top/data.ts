@@ -29,8 +29,8 @@ export default {
 			ja: 'このデモでは、ページを動かさないよう、記事を専用の枠の中でスクロールさせ、途中までスクロールした状態で始めます。ボタンは枠の右下にとどまり、枠の高さの半分ほどスクロールしてから現れます。押すと記事のタイトルへフォーカスを移し、次に Tab キーを押したとき、消えたボタンの位置からではなく先頭から移るようにしています。'
 		},
 		{
-			en: 'In this demo, the box itself can take focus, so with focus in the box, Home and End also scroll it to the start and the end.',
-			ja: 'このデモでは枠そのものにもフォーカスでき、枠にフォーカスがあるときは Home キーと End キーでも先頭と末尾へスクロールします。'
+			en: 'In this demo, the box itself can take focus, so with focus in the box, Home and End also scroll it to the start and the end. If the button has focus when it hides, focus moves to the box.',
+			ja: 'このデモでは枠そのものにもフォーカスでき、枠にフォーカスがあるときは Home キーと End キーでも先頭と末尾へスクロールします。ボタンにフォーカスがあるまま消えるときは、枠へフォーカスを移します。'
 		}
 	],
 	keyboard: [

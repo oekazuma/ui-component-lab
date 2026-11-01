@@ -40,7 +40,15 @@
 
 	let box: HTMLElement;
 	let title: HTMLElement;
+	let button: HTMLButtonElement;
 	let scrolled = $state(false);
+
+	// ボタンにフォーカスがあるまま Home キーなどで上へ戻ると、ボタンが消えてフォーカスがページの先頭へ落ちる。
+	// 消える前に、矢印キーでそのままスクロールを続けられる枠へフォーカスを移す
+	function onscroll() {
+		scrolled = box.scrollTop > box.clientHeight / 2;
+		if (!scrolled && document.activeElement === button) box.focus({ preventScroll: true });
+	}
 
 	// 一覧ページのサムネイルでもボタンが見えるよう、記事の途中までスクロールした状態で始める
 	$effect(() => {
@@ -57,7 +65,7 @@
 	role="region"
 	aria-label={text[lang].article}
 	tabindex="0"
-	onscroll={() => (scrolled = box.scrollTop > box.clientHeight / 2)}
+	{onscroll}
 >
 	<!-- 押したあとのフォーカスの移り先。消えたボタンにフォーカスが残ると、次の Tab が記事の末尾から始まってしまう -->
 	<h3 bind:this={title} tabindex="-1">{text[lang].title}</h3>
@@ -66,6 +74,7 @@
 	{/each}
 	<!-- 内容を覆いすぎないよう、十分にスクロールしてから出し、小さくする（NN/g）。fixed にするとページに固定されるので、枠の中の sticky にする -->
 	<button
+		bind:this={button}
 		type="button"
 		class="btn"
 		hidden={!scrolled}
