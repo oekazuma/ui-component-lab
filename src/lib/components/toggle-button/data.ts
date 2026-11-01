@@ -57,8 +57,8 @@ export default {
 		{
 			id: 'button',
 			diff: {
-				en: 'A button runs an action once; a toggle button keeps an on or off state.',
-				ja: 'ボタンは押すたびに操作を1回実行し、トグルボタンはオン・オフの状態を保ちます。'
+				en: 'A toggle button keeps an on or off state; a button runs its action once per press.',
+				ja: 'トグルボタンはオン・オフの状態を保ち、ボタンは押すたびに操作を1回実行します。'
 			}
 		},
 		{

@@ -98,8 +98,8 @@ export default {
 		{
 			id: 'button',
 			diff: {
-				en: 'A button offers one action; a split button adds a menu of related actions beside it.',
-				ja: 'ボタンは操作が1つだけで、スプリットボタンはその横に関連する操作のメニューが付きます。'
+				en: 'A split button adds a menu of related actions beside the main button; a button offers one action.',
+				ja: 'スプリットボタンは、主な操作のボタンの横に関連する操作のメニューが付き、ボタンは操作が1つだけです。'
 			}
 		}
 	],

@@ -125,15 +125,15 @@ export default {
 		{
 			id: 'toggle-button',
 			diff: {
-				en: 'A toggle button keeps an on or off state; a button runs its action once per press.',
-				ja: 'トグルボタンはオン・オフの状態を保ち、ボタンは押すたびに操作を1回実行します。'
+				en: 'A button runs its action once per press; a toggle button keeps an on or off state.',
+				ja: 'ボタンは押すたびに操作を1回実行し、トグルボタンはオン・オフの状態を保ちます。'
 			}
 		},
 		{
 			id: 'split-button',
 			diff: {
-				en: 'A split button adds a menu of related actions beside the main button.',
-				ja: 'スプリットボタンは、主な操作のボタンの横に関連する操作のメニューが付きます。'
+				en: 'A button offers one action; a split button adds a menu of related actions beside it.',
+				ja: 'ボタンは操作が1つだけで、スプリットボタンはその横に関連する操作のメニューが付きます。'
 			}
 		},
 		{
