@@ -44,7 +44,8 @@ const need = (file: string, scope: string, needles: string[]) => {
 
 const skill = read('SKILL.md');
 // 安全の約束は Hard Rules の節にあってこそ効く。ほかの節に同じ言い回しがあっても通らないよう、節を切り出して探す
-const hardRules = skill.match(/^## Hard Rules\n([\s\S]*?)(?=^## )/m)?.[1] ?? '';
+const hardRules = skill.match(/^## Hard Rules\n([\s\S]*?)(?=^## |(?![\s\S]))/m)?.[1] ?? '';
+if (!hardRules) errors.push('SKILL.md: section "## Hard Rules" not found');
 need('SKILL.md', skill, ['https://oekazuma.github.io/ui-component-lab/components.json', '## Hard Rules', 'Hard Rules 1 to 8']);
 need('SKILL.md (## Hard Rules)', hardRules, [
 	'On the live site, never change anything.',
@@ -66,7 +67,7 @@ const typesVersion = readFileSync(new URL('../src/lib/types.ts', import.meta.url
 if (!typesVersion) errors.push('src/lib/types.ts: ComponentsJson version not found');
 else need('SKILL.md', skill, [`understands \`version\` ${typesVersion}`]);
 
-need('references/local-server.md', read('references/local-server.md'), ['## 3. Is the backend local?', 'server.proxy', 'predev']);
+need('references/local-server.md', read('references/local-server.md'), ['## 3. Is the backend local?', 'server.proxy', 'predev', 'find the process that listens on it']);
 
 if (errors.length) throw new Error(errors.join('\n'));
 console.log('ok');

@@ -4,7 +4,7 @@ Adapted in part (finding format and prioritization) from the improve skill by sh
 
 How to check one page. Do the five checks in order. Work on the local development server when Phase 1 started one (see `local-server.md`); otherwise work on the live site under the observe-only rules (SKILL.md Hard Rules 3 and 4).
 
-Use whatever browser automation is available: a Playwright script if Playwright is already installed (do not let `npx` download it), saved outside the repository, a browser tool such as Claude in Chrome or a built-in browser pane, or a headless browser. For signed-in pages, only the user's own signed-in browser. Prefer reading the accessibility tree and the DOM over screenshots; take a screenshot when the visual appearance is the point (color only, hidden labels, layout).
+Use whatever browser automation is available: a Playwright script if Playwright and its browsers are already installed (do not let `npx` download it), saved outside the repository, a browser tool such as Claude in Chrome or a built-in browser pane, or a headless browser. For signed-in pages, only the user's own signed-in browser. Prefer reading the accessibility tree and the DOM over screenshots; take a screenshot when the visual appearance is the point (color only, hidden labels, layout).
 
 ## 1. Identify the components
 
