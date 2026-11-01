@@ -68,12 +68,13 @@ test('search: arrow keys and Enter during IME composition are left to the IME', 
 	await page.keyboard.press(shortcut);
 	const dialog = page.getByRole('dialog', { name: '名前で検索' });
 	const input = dialog.getByRole('combobox');
-	await input.fill('もだる');
+	await input.fill('めにゅー');
 	const active = await input.getAttribute('aria-activedescendant');
 
 	await input.dispatchEvent('keydown', { key: 'ArrowDown', isComposing: true, bubbles: true });
 	await expect(input).toHaveAttribute('aria-activedescendant', active!);
 	await input.dispatchEvent('keydown', { key: 'Enter', isComposing: true, bubbles: true });
+	await expect(dialog).toBeVisible();
 	await input.dispatchEvent('keydown', { key: 'Enter', keyCode: 229, bubbles: true });
 	await expect(dialog).toBeVisible();
 	await expect(page).toHaveURL(/\/ja\/$/);

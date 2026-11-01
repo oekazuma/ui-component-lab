@@ -45,7 +45,9 @@
 	let shown = $derived(atEnd ? toc.at(-1) : current);
 	$effect(() => {
 		// 関連部品のリンクなどで別の部品へ移っても、このコンポーネントは作り直されず値が残る。
-		// 新しいページの節は監視を始めた時点で決め直す
+		// 新しいページの節は監視を始めた時点で決め直す。
+		// 同じ部品のまま言語を切り替えても toc は同じ値のままなので、言語にも依存させて作り直す
+		void lang;
 		current = '';
 		atEnd = false;
 		const observer = new IntersectionObserver(

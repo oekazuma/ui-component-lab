@@ -59,7 +59,20 @@ test('toc: moving to a similar component from the bottom does not keep the old s
 	await expect(toc.getByRole('link', { name: 'Sources' })).toHaveAttribute('aria-current', 'location');
 	await page.locator('section[aria-labelledby="related"] a').first().click();
 	await page.waitForURL((url) => !url.pathname.endsWith('/components/button/'));
-	await expect(toc.getByRole('link', { name: 'Sources' })).not.toHaveAttribute('aria-current');
+	await expect(toc.locator('[aria-current]')).toHaveCount(0);
+});
+
+test('toc: switching the language on the same component does not keep the old section marked', async ({ page }) => {
+	await page.goto('en/components/button/');
+	await page.waitForLoadState('networkidle');
+	await page.evaluate(() => scrollTo(0, document.body.scrollHeight));
+	await expect(
+		page.getByRole('navigation', { name: 'On this page' }).getByRole('link', { name: 'Sources' })
+	).toHaveAttribute('aria-current', 'location');
+	await page.getByRole('button', { name: /Language/ }).click();
+	await page.getByRole('link', { name: '日本語' }).click();
+	await page.waitForURL(/\/ja\/components\/button\/$/);
+	await expect(page.getByRole('navigation', { name: 'このページの内容' }).locator('[aria-current]')).toHaveCount(0);
 });
 
 test('systems: the page title says it is a table of names', async ({ page }) => {
