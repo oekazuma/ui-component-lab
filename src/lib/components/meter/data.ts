@@ -26,8 +26,8 @@ export default {
 			ja: '操作する部品ではなく、値を示すだけのものです。'
 		},
 		{
-			en: 'This demo uses the native `<meter>` with low, high and optimum, so the browser colors the bar by range. Use the buttons to change the value.',
-			ja: 'このデモはネイティブの `<meter>` に low・high・optimum を付けているため、ブラウザが範囲に応じて棒の色を変えます。ボタンで値を変えられます。'
+			en: 'This demo uses the native `<meter>` with `low`, `high` and `optimum`, so the browser colors the bar by range. Use the buttons to change the value.',
+			ja: 'このデモはネイティブの `<meter>` に `low`・`high`・`optimum` を付けているため、ブラウザが範囲に応じて棒の色を変えます。ボタンで値を変えられます。'
 		},
 		{
 			en: 'In this demo, the bar is also described in words: the visible “40 GB of 100 GB” text is tied to the `<meter>` with `aria-describedby`, and past 70 GB it adds “Almost full” (“Full” at 100 GB). A screen reader otherwise reads only the percentage.',

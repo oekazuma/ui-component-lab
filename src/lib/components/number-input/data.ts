@@ -67,8 +67,8 @@ export default {
 				ja: '数値入力は番号を増減できる数量として扱います。郵便番号やカード番号を入れている人が、ページのスクロールなど別の操作のつもりで番号を誤って変えてしまうことがあります。数字以外の文字を入れても、何が誤りかがはっきり示されません。'
 			},
 			instead: {
-				en: 'Use a text input with `inputmode="numeric"` and a matching autocomplete value, such as `autocomplete="postal-code"`.',
-				ja: '`inputmode="numeric"` を付けたテキスト入力を使い、`autocomplete="postal-code"` のように内容に合う autocomplete を付けます。'
+				en: 'Use a text input with `inputmode="numeric"` and a matching `autocomplete` value, such as `autocomplete="postal-code"`.',
+				ja: '`inputmode="numeric"` を付けたテキスト入力を使い、`autocomplete="postal-code"` のように内容に合う `autocomplete` を付けます。'
 			}
 		}
 	],

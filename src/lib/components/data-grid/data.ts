@@ -18,7 +18,7 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'The whole grid is a single Tab stop, and the arrow keys move between cells (roving tabindex). Tab leaves the grid instead of visiting every cell.',
+			en: 'The whole grid is a single Tab stop, and the arrow keys move between cells (roving `tabindex`). Tab leaves the grid instead of visiting every cell.',
 			ja: 'グリッド全体で Tab キーが止まるのは1か所だけで、セルの間は矢印キーで移ります（ロービングタブインデックス）。Tab キーではすべてのセルを回らずに、グリッドの外へ出ます。'
 		},
 		{

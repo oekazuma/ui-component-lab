@@ -22,8 +22,8 @@ export default {
 			ja: 'データを待っている間だけ表示し、読み込みが終わると消します。'
 		},
 		{
-			en: 'The spinning shape is decorative; a text such as “Loading…” in a status region tells screen reader users what is happening.',
-			ja: '回る図形は飾りで、何が起きているかは status の領域に入れた「読み込み中…」などの文でスクリーンリーダー利用者に伝えます。'
+			en: 'The spinning shape is decorative; a text such as “Loading…” in a `status` region tells screen reader users what is happening.',
+			ja: '回る図形は飾りで、何が起きているかは `status` の領域に入れた「読み込み中…」などの文でスクリーンリーダー利用者に伝えます。'
 		},
 		{
 			en: 'In this demo, the box stands for a whole screen. The spinner fills it while the page loads, and the comments appear once loading finishes.',

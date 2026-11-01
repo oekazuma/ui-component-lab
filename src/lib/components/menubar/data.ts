@@ -19,7 +19,7 @@ export default {
 			ja: 'メニューボタンと違い、バーそのものは閉じません。バーには `role="menubar"` を付け、各項目は `aria-haspopup` と `aria-expanded` を持つ `menuitem` にします。'
 		},
 		{
-			en: 'The whole menubar is a single Tab stop, and the arrow keys move between its items (roving tabindex).',
+			en: 'The whole menubar is a single Tab stop, and the arrow keys move between its items (roving `tabindex`).',
 			ja: 'メニューバー全体で Tab キーが止まるのは1か所だけで、項目の間は矢印キーで移ります（ロービングタブインデックス）。'
 		},
 		{
