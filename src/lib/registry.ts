@@ -30,7 +30,7 @@ export const entries = Object.entries(dataModules)
 		if (!demo) throw new Error(`Demo.svelte is missing for ${data.id}`);
 		return { data, demo, thumb: thumbs.get(data.id) };
 	})
-	.sort((a, b) => a.data.names.en.localeCompare(b.data.names.en));
+	.sort((a, b) => a.data.names.en.localeCompare(b.data.names.en, 'en'));
 
 for (const { data } of entries) {
 	for (const r of data.related ?? []) {

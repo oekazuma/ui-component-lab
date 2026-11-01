@@ -14,7 +14,7 @@
 	<h1>{siteName}</h1>
 	<ul>
 		<li><a href={homePath('en')} hreflang="en">English</a></li>
-		<li><a href={homePath('ja')} hreflang="ja">日本語</a></li>
+		<li><a href={homePath('ja')} hreflang="ja" lang="ja">日本語</a></li>
 	</ul>
 </main>
 
