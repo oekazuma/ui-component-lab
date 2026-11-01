@@ -1,14 +1,6 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
+import { demos } from './modal-demos';
 import { openDemo } from './open-demo';
-
-// モーダルなデモが画面全体に出ると、どのデモの動きなのかが分かりにくい。デモの枠の中に出す
-const demos = [
-	{ path: 'en/components/drawer/', open: 'Filters', role: 'dialog', name: 'Filters', clickToClose: true },
-	{ path: 'en/components/hamburger-menu/', open: 'Menu', role: 'dialog', name: 'Menu', clickToClose: true },
-	{ path: 'en/components/modal/', open: 'Show receipt number', role: 'dialog', name: 'Your receipt number', clickToClose: false },
-	{ path: 'en/components/alert-dialog/', open: 'Discard note…', role: 'alertdialog', name: 'Discard this note?', clickToClose: false },
-	{ path: 'en/components/command-palette/', open: 'Commands…', role: 'dialog', name: 'Commands', clickToClose: false }
-] as const;
 
 async function openInFrame(page: Page, d: (typeof demos)[number]): Promise<[Locator, Locator]> {
 	const demo = await openDemo(page, d.path);
