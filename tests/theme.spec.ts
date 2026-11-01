@@ -62,3 +62,22 @@ test('theme: the button follows an OS switch while the page is open', async ({ p
 	await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
 	await expect(button).toHaveAttribute('aria-pressed', 'false');
 });
+
+test('theme: the saved theme is applied before the app starts', async ({ page }) => {
+	await page.goto('ja/');
+	await page.evaluate(() => localStorage.setItem('theme', 'dark'));
+	// アプリの JS を止めても付いていれば、app.html の描画前のスクリプトが付けている
+	await page.route('**/_app/**/*.js', (route) => route.abort());
+	await page.reload();
+	expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
+});
+
+test('theme: a saved light theme wins over a dark OS setting before the app starts', async ({ page }) => {
+	await page.emulateMedia({ colorScheme: 'dark' });
+	await page.goto('ja/');
+	await page.evaluate(() => localStorage.setItem('theme', 'light'));
+	await page.route('**/_app/**/*.js', (route) => route.abort());
+	await page.reload();
+	expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe('light');
+	expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(255, 255, 255)');
+});
