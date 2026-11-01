@@ -53,6 +53,10 @@ export default {
 	],
 	usage: [
 		{
+			en: 'Radio buttons suit five or fewer options, because every option is visible without opening anything. With more than five options, a select fits better. With only two options, a select is a poor fit.',
+			ja: '選択肢が5つ以下ならラジオボタンが向いています。何も開かなくてもすべての選択肢が見えるためです。選択肢が5つを超えるなら、セレクトボックスのほうが向いています。2択にはセレクトボックスは向いていません。'
+		},
+		{
 			en: 'A selected radio button cannot be cleared, so add a choice such as “None of these” to optional questions.',
 			ja: '一度選ぶと選択を外せないため、任意の質問には「あてはまるものはない」などの選択肢を加えます。'
 		},
@@ -129,6 +133,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「ラジオボタン」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/radio/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「セレクトボックス」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/select/usage/',
+			checkedAt: '2026-11-02'
 		},
 		{
 			label: 'GOV.UK Design System: Radios',
