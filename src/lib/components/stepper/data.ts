@@ -141,7 +141,7 @@ export default {
 		{
 			id: 'number-input',
 			diff: {
-				en: 'A stepper here is a step indicator, not the − / + control of a number input that Apple calls a “stepper”.',
+				en: 'A stepper here is a step indicator, not what Apple calls a “stepper”, the − / + control of a number input.',
 				ja: 'ステップナビゲーションは段階の表示で、Apple が「Stepper」と呼ぶ数値入力の − / + の部品とは別のものです。'
 			}
 		}

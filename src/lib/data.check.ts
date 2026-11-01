@@ -39,12 +39,15 @@ const designSystems = [
 // diff は自分の側を主語にする。部品名のほかに、文の書き出しで使ってよい呼び方
 const subjects: Record<string, { en?: string[]; ja?: string[] }> = {
 	link: { en: ['ordinary link'], ja: ['ふつうのリンク'] },
-	modal: { en: ['modal'], ja: ['モーダル'] },
+	modal: { ja: ['モーダル'] },
 	'one-time-code': { en: ['one-time code'], ja: ['確認コード'] },
 	select: { ja: ['セレクト'] },
 	tabs: { en: ['tab'] },
 	textarea: { en: ['text area'] }
 };
+
+const stripEn = (n: string) => n.replace(/ \(.*\)$/, '').toLowerCase();
+const stripJa = (n: string) => n.replace(/（.*）$/, '');
 
 for (const d of all) {
 	// 詳細ページの {#each} のキーと同じ式。重複すると本番でもハイドレーションで落ちる
@@ -93,8 +96,8 @@ for (const d of all) {
 		if (k.key === '—' && !(k.action.en.startsWith('None.') && k.action.ja.startsWith('なし。')))
 			errors.push(`${d.id}: a '—' keyboard row starts with "None." / "なし。"`);
 	// 対になるキーは 1 行にまとめる（Home / End）。別の行にすると表が長くなり、対であることが見えにくい
-	if (d.keyboard.some((k) => k.key === 'Home') && d.keyboard.some((k) => k.key === 'End'))
-		errors.push(`${d.id}: write Home and End on one row as 'Home / End'`);
+	if (d.keyboard.some((k) => k.key.endsWith('Home')) && d.keyboard.some((k) => k.key.endsWith('End')))
+		errors.push(`${d.id}: write Home and End on one row, such as 'Home / End'`);
 
 	// 英日の両方を埋める（Text 型は空文字を防げない）
 	const texts = [
@@ -114,12 +117,18 @@ for (const d of all) {
 	for (const t of texts)
 		if (t.en.replace(/`[^`]*`/g, '').includes('"')) errors.push(`${d.id}: use “ ” instead of " in ${t.en}`);
 
-	const enNames = [d.names.en.replace(/ \(.*\)$/, '').toLowerCase(), ...(subjects[d.id]?.en ?? [])];
-	const jaNames = [d.names.ja.replace(/（.*）$/, ''), ...(subjects[d.id]?.ja ?? [])];
+	const enNames = [stripEn(d.names.en), ...(subjects[d.id]?.en ?? [])];
+	const jaNames = [stripJa(d.names.ja), ...(subjects[d.id]?.ja ?? [])];
 	for (const r of d.related ?? []) {
 		const en = r.diff.en.toLowerCase().replace(/^(a|an|the) /, '');
-		if (!enNames.some((n) => en.startsWith(n))) errors.push(`${d.id}: diff to ${r.id} must start with ${d.names.en} (en)`);
-		if (!jaNames.some((n) => r.diff.ja.startsWith(n))) errors.push(`${d.id}: diff to ${r.id} must start with ${d.names.ja} (ja)`);
+		const other = byId.get(r.id)!.names;
+		// 相手の名前が自分の名前で始まる組（alert と alert dialog）は、長いほうに一致したら相手が主語
+		const wrong = (own: string[], text: string, theirs: string) => {
+			const mine = own.filter((n) => text.startsWith(n)).sort((a, b) => b.length - a.length)[0];
+			return !mine || (text.startsWith(theirs) && theirs.length > mine.length);
+		};
+		if (wrong(enNames, en, stripEn(other.en))) errors.push(`${d.id}: diff to ${r.id} must start with ${d.names.en} (en)`);
+		if (wrong(jaNames, r.diff.ja, stripJa(other.ja))) errors.push(`${d.id}: diff to ${r.id} must start with ${jaNames[0]} (ja)`);
 	}
 
 	// 文中のコードは `…` で囲む（CodeText.svelte）。閉じ忘れると以降がすべてコードとして表示される
