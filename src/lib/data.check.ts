@@ -121,7 +121,8 @@ for (const d of all) {
 	const jaNames = [stripJa(d.names.ja), ...(subjects[d.id]?.ja ?? [])];
 	for (const r of d.related ?? []) {
 		const en = r.diff.en.toLowerCase().replace(/^(a|an|the) /, '');
-		const other = byId.get(r.id)!.names;
+		const other = byId.get(r.id)?.names;
+		if (!other) continue;
 		// 相手の名前が自分の名前で始まる組（alert と alert dialog）は、長いほうに一致したら相手が主語
 		const wrong = (own: string[], text: string, theirs: string) => {
 			const mine = own.filter((n) => text.startsWith(n)).sort((a, b) => b.length - a.length)[0];
