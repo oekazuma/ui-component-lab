@@ -10,7 +10,7 @@
 
 ## Development
 
-Requires Node.js 24 or later and pnpm (enable it with `corepack enable`).
+Requires Node.js 24 or later and pnpm 10 (`npm install -g pnpm`; on Node 24, `corepack enable` also works).
 
 ```sh
 pnpm install
@@ -25,7 +25,7 @@ Create `src/lib/components/<id>/` with two files (and an optional third). They a
 - `Demo.svelte`: a minimal interactive demo that takes a `lang` prop.
 - `Thumb.svelte` (optional): a still picture of the opened state for the list page, for components that open (menus, dialogs, toasts). See CLAUDE.md.
 
-Then run `pnpm check`, and `pnpm build && pnpm test:e2e` (Playwright with axe). The conventions (related links, source labels, key notation, demo rules) are in [CLAUDE.md](CLAUDE.md).
+Then run `pnpm check`, and `pnpm build && pnpm test:e2e` (Playwright with axe; the first run needs `pnpm exec playwright install chromium`). The conventions (related links, source labels, key notation, demo rules) are in [CLAUDE.md](CLAUDE.md).
 
 ## Skill: improve-ui-components
 

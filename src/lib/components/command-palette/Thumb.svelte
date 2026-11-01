@@ -48,7 +48,7 @@
 		place-items: center;
 	}
 
-	/* デモの `dialog.in-frame` の背景（`src/app.css`）と同じ黒の半透明。ダークモードでも背後を暗く沈める */
+	/* デモの dialog.in-frame の背景（src/app.css）と同じ黒の半透明。ダークモードでも背後を暗く沈める */
 	.backdrop {
 		display: grid;
 		justify-items: center;

@@ -1,5 +1,5 @@
 // コンポーネントデータの約束事を確かめる: node src/lib/data.check.ts
-// 検査はここに置く（src/lib/server/components.ts はビルドの中でしか動かず、結果が pnpm check に出ないため）
+// 検査はここに置く（src/lib/server/components.ts は pnpm check では動かず、結果も出ないため）
 import { readdirSync, readFileSync } from 'node:fs';
 import type { ComponentData } from './types.ts';
 

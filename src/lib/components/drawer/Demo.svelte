@@ -71,7 +71,7 @@
 	.demo {
 		display: grid;
 		place-items: center;
-		min-height: 15rem;
+		min-height: 16rem;
 	}
 
 	/* 枠の右端から出るパネル（枠に重ねる仕組みは app.css の .in-frame） */
