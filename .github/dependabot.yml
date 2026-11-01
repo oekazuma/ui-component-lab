@@ -9,6 +9,10 @@ updates:
       dev-dependencies:
         patterns: ['*']
         update-types: [minor, patch]
+    # 実行環境（package.json の engines と CI）は Node 24。型だけ先に上げると、24 にない API でも型検査が通ってしまう
+    ignore:
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
   - package-ecosystem: github-actions
     directory: /
     schedule:

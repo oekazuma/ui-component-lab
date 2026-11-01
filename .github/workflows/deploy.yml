@@ -34,6 +34,14 @@ jobs:
 
       - run: pnpm test:e2e
 
+      # 落ちたテストのトレースを残す。手元で再現しなくても原因を見られるようにする
+      - if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: playwright-test-results
+          path: test-results/
+          retention-days: 7
+
       - if: github.event_name == 'push'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
 
