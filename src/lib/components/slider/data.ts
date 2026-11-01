@@ -40,8 +40,10 @@ export default {
 	keyboard: [
 		{ key: '→ / ↑', action: { en: 'Increases the value by one step.', ja: '値を1刻み増やします。' } },
 		{ key: '← / ↓', action: { en: 'Decreases the value by one step.', ja: '値を1刻み減らします。' } },
-		{ key: 'Home', action: { en: 'Sets the minimum value.', ja: '最小値にします。' } },
-		{ key: 'End', action: { en: 'Sets the maximum value.', ja: '最大値にします。' } },
+		{
+			key: 'Home / End',
+			action: { en: 'Sets the minimum / maximum value.', ja: '最小値・最大値にします。' }
+		},
 		{
 			key: 'Page Up / Page Down',
 			action: {

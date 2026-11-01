@@ -35,8 +35,8 @@ export default {
 		{
 			key: '—',
 			action: {
-				en: 'None for the badge. The button it sits on uses Enter / Space.',
-				ja: 'バッジ自体にはありません。付いているボタンは Enter / Space で押せます。'
+				en: 'None. The badge itself has no keyboard interaction; the button it sits on uses Enter / Space.',
+				ja: 'なし。バッジ自体にはキー操作がなく、付いているボタンは Enter / Space で押せます。'
 			}
 		}
 	],

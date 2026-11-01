@@ -37,8 +37,13 @@ export default {
 		}
 	],
 	keyboard: [
-		{ key: '↑', action: { en: 'Increases the value by one step.', ja: '値を1刻み増やします。' } },
-		{ key: '↓', action: { en: 'Decreases the value by one step.', ja: '値を1刻み減らします。' } },
+		{
+			key: '↑ / ↓',
+			action: {
+				en: 'Increases / decreases the value by one step.',
+				ja: '値を1刻み増やしたり減らしたりします。'
+			}
+		},
 		{ key: '0–9', action: { en: 'Types the value directly.', ja: '値を直接入力します。' } }
 	],
 	usage: [
