@@ -19,6 +19,18 @@ test('radio: starts with nothing chosen; Tab reaches the first option and Space 
 	await expect(radios.first()).toBeChecked();
 });
 
+test('radio: with nothing chosen, Shift + Tab into the group lands on the last option', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/radio/');
+	// グループの直後に Shift + Tab の起点を置く
+	await demo.locator('fieldset').evaluate((el) => {
+		const end = document.createElement('button');
+		el.after(end);
+		end.focus();
+	});
+	await page.keyboard.press('Shift+Tab');
+	await expect(demo.getByRole('radio').last()).toBeFocused();
+});
+
 test('tooltip: stays open while the pointer crosses the gap onto the tooltip', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/tooltip/');
 	const button = demo.getByRole('button', { name: 'Copy link' });
