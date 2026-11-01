@@ -52,3 +52,16 @@ test('theme: the button shows a sun in light mode and a moon in dark mode', asyn
 	await expect(button.locator('.moon')).toBeVisible();
 	await expect(button.locator('.sun')).toBeHidden();
 });
+
+test('theme: the button follows an OS switch while the page is open', async ({ page }) => {
+	await page.emulateMedia({ colorScheme: 'light' });
+	await page.goto('en/');
+	await page.waitForLoadState('networkidle');
+	const button = page.getByRole('button', { name: 'Dark mode' });
+	await expect(button).toHaveAttribute('aria-pressed', 'false');
+	await page.emulateMedia({ colorScheme: 'dark' });
+	await expect(button).toHaveAttribute('aria-pressed', 'true');
+	await button.click();
+	await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+	await expect(button).toHaveAttribute('aria-pressed', 'false');
+});

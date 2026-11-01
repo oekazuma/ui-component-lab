@@ -1,15 +1,26 @@
 <script lang="ts">
 	let { label }: { label: string } = $props();
 
+	// 選んだ値（data-theme）を優先し、なければ OS の設定に従う（app.css のダークモードの条件と同じ）
+	const os = () => matchMedia('(prefers-color-scheme: dark)');
+	const isDark = () => {
+		const chosen = document.documentElement.dataset.theme;
+		return chosen ? chosen === 'dark' : os().matches;
+	};
+
 	// 表示前の色は app.html のスクリプトが data-theme で決める。prerender の時点では OS の設定が分からないので、ここでは描画後に読み直す
 	let dark = $state(false);
 	$effect(() => {
-		const chosen = document.documentElement.dataset.theme;
-		dark = chosen ? chosen === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+		dark = isDark();
+		// 選んでいない間は OS の設定が途中で変わりうるので、変わったら読み直す
+		const query = os();
+		const update = () => (dark = isDark());
+		query.addEventListener('change', update);
+		return () => query.removeEventListener('change', update);
 	});
 
 	function toggle() {
-		dark = !dark;
+		dark = !isDark();
 		const theme = dark ? 'dark' : 'light';
 		document.documentElement.dataset.theme = theme;
 		try {
