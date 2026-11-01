@@ -565,3 +565,14 @@ test('stepper: Enter on a finished step goes to it and moves focus to its headin
 	await page.keyboard.press('Enter');
 	await expect(demo.getByText('Step 1 of 4: Applicant')).toBeFocused();
 });
+
+test('mega menu: Enter on a link shows where it goes, closes the panel and returns focus to its button', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/mega-menu/');
+	const living = demo.getByRole('button', { name: 'Living' });
+	const link = demo.getByRole('link', { name: 'All about living' });
+	await link.focus();
+	await page.keyboard.press('Enter');
+	await expect(living).toBeFocused();
+	await expect(living).toHaveAttribute('aria-expanded', 'false');
+	await expect(demo.getByRole('status')).toContainText('All about living');
+});

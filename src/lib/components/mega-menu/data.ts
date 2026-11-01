@@ -33,8 +33,8 @@ export default {
 			ja: 'パネルにはリンクのほかに説明文や画像も入れられます。'
 		},
 		{
-			en: 'In this demo, the first panel starts open. The panel pushes the content below it down instead of covering the page, and choosing a link shows where it would go instead of leaving the page. Moving between the section names with the arrow keys, which the APG lists as optional, is left out.',
-			ja: 'このデモでは、最初のパネルを開いた状態で始めます。パネルはページに重ねず、下の内容を押し下げて開きます。リンクを選ぶと、ページを移らずに行き先を表示します。APG で任意とされている、矢印キーでカテゴリ名の間を移る機能は省いています。'
+			en: 'In this demo, the first panel starts open. The panel pushes the content below it down instead of covering the page, and choosing a link shows where it would go instead of leaving the page, closes the panel and returns focus to its section name. Moving between the section names with the arrow keys, which the APG lists as optional, is left out.',
+			ja: 'このデモでは、最初のパネルを開いた状態で始めます。パネルはページに重ねず、下の内容を押し下げて開きます。リンクを選ぶと、ページを移らずに行き先を表示し、パネルを閉じてカテゴリ名へフォーカスを戻します。APG で任意とされている、矢印キーでカテゴリ名の間を移る機能は省いています。'
 		}
 	],
 	keyboard: [

@@ -82,6 +82,8 @@
 		onclick={(e) => {
 			e.preventDefault();
 			went = name;
+			// 選んだリンクはパネルごと隠れるので、Esc と同じくカテゴリ名へフォーカスを戻してから閉じる
+			buttons[open!].focus();
 			open = null;
 		}}>{name}</a
 	>
