@@ -44,6 +44,10 @@
 	let end: HTMLElement;
 	let shown = $derived(atEnd ? toc.at(-1) : current);
 	$effect(() => {
+		// 関連部品のリンクなどで別の部品へ移っても、このコンポーネントは作り直されず値が残る。
+		// 新しいページの節は監視を始めた時点で決め直す
+		current = '';
+		atEnd = false;
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const e of entries) if (e.isIntersecting) current = e.target.id;

@@ -51,6 +51,17 @@ test('toc: marks the last section once the page is scrolled to the end', async (
 	await expect(toc.locator('[aria-current]')).toHaveCount(1);
 });
 
+test('toc: moving to a similar component from the bottom does not keep the old section marked', async ({ page }) => {
+	await page.goto('en/components/button/');
+	await page.waitForLoadState('networkidle');
+	await page.evaluate(() => scrollTo(0, document.body.scrollHeight));
+	const toc = page.getByRole('navigation', { name: 'On this page' });
+	await expect(toc.getByRole('link', { name: 'Sources' })).toHaveAttribute('aria-current', 'location');
+	await page.locator('section[aria-labelledby="related"] a').first().click();
+	await page.waitForURL((url) => !url.pathname.endsWith('/components/button/'));
+	await expect(toc.getByRole('link', { name: 'Sources' })).not.toHaveAttribute('aria-current');
+});
+
 test('systems: the page title says it is a table of names', async ({ page }) => {
 	await page.goto('en/systems/');
 	await expect(page.getByRole('heading', { level: 1 })).toHaveText('Component names across design systems');
