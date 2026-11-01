@@ -1,20 +1,13 @@
-import { error } from '@sveltejs/kit';
 import { definePageMetaTags } from 'svelte-meta-tags';
-import { entries as components, getEntry } from '#lib/registry.js';
-import { langs } from '#lib/types.js';
-import type { EntryGenerator, PageLoad } from './$types';
+import { loadDemo } from '#lib/demos.js';
+import type { PageLoad } from './$types';
 
-export const entries: EntryGenerator = () =>
-	langs.flatMap((lang) => components.map(({ data }) => ({ lang, id: data.id })));
-
-export const load: PageLoad = ({ params }) => {
-	const entry = getEntry(params.id);
-	if (!entry) error(404);
-	return {
-		entry,
-		...definePageMetaTags({
-			title: entry.data.names[params.lang],
-			description: entry.data.summary[params.lang]
-		})
-	};
-};
+// デモは Svelte のコンポーネントで JSON にできないので、サーバーの load ではなくここで読み込む
+export const load: PageLoad = async ({ data, params }) => ({
+	...data,
+	demo: await loadDemo(params.id),
+	...definePageMetaTags({
+		title: data.data.names[params.lang],
+		description: data.data.summary[params.lang]
+	})
+});

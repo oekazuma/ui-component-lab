@@ -12,7 +12,7 @@ CI は PR ごとに上の 3 つを実行する。
 
 ## コンポーネントの追加
 
-`src/lib/components/<id>/` に `data.ts` と `Demo.svelte` を置くと、`src/lib/registry.ts` が自動で登録する。
+`src/lib/components/<id>/` に `data.ts` と `Demo.svelte` を置くと、`src/lib/server/components.ts`（データ）と `src/lib/demos.ts`（デモと Thumb）が自動で登録する。
 
 ### data.ts
 
@@ -29,7 +29,7 @@ CI は PR ごとに上の 3 つを実行する。
 - デモ固有の挙動は behavior に「このデモでは…」「In this demo, …」と書く
 - `misuse`（避けたい使い方）は pattern（どういう使い方か）、harm（誰がどう困るか）、instead（代わりにどうするか）で書く。harm は出典に書かれている内容に限り、部品を問わない資料（WCAG、deceptive.design など）を当てはめてよい。`deceptive: true` は出典がディセプティブパターンやダークパターンとして分類しているものにだけ付ける。根拠にした資料は sources に足し、根拠が見つからない部品には書かない
 - `components.json`（`src/routes/components.json/+server.ts`）は improve-ui-components スキル（`skills/`）が読む。形を変えるときは `ComponentsJson` の `version` を上げ、スキルも合わせる
-- データの約束事の検査は `src/lib/data.check.ts` に足す。`registry.ts` はクライアントでも動くので、検査を増やさない
+- データの約束事の検査は `src/lib/data.check.ts` に足す。`src/lib/server/components.ts` はプリレンダーのたびに動くので、検査を増やさない
 
 ### Demo.svelte
 
@@ -53,6 +53,7 @@ CI は PR ごとに上の 3 つを実行する。
 ## コードの約束事
 
 - routes と data.ts からは `#lib/*.js` で import し、`src/lib` の中では相対パスを使う。`src/params.ts` はビルド時に Node が直接読むので `#lib` を使わない
+- ページへ渡すデータは、`+page.server.ts` などの `load` で要る分だけに削る（全部品のデータをクライアントに読み込ませない）
 - コメントは日本語で書き、処理の説明より理由を書く
 - `ponytail:` コメントは、意図して簡略にした箇所と、見直すきっかけを示す
 - インデントはタブ、文字列はシングルクォート、末尾カンマなし

@@ -1,5 +1,5 @@
 // コンポーネントデータの約束事を確かめる: node src/lib/data.check.ts
-// registry.ts はクライアントでも動くため、ビルド時にだけ要る検査はここに置く
+// 検査はページの表示と分けてここに置く（src/lib/server/components.ts はプリレンダーのたびに動くため、重い検査を増やさない）
 import { readdirSync } from 'node:fs';
 import type { ComponentData } from './types.ts';
 

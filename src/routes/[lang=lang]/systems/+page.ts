@@ -5,5 +5,7 @@ import type { EntryGenerator, PageLoad } from './$types';
 
 export const entries: EntryGenerator = () => langs.map((lang) => ({ lang }));
 
-export const load: PageLoad = ({ params }) =>
-	definePageMetaTags({ title: t(params.lang).systems, description: t(params.lang).systemsLead });
+export const load: PageLoad = ({ data, params }) => ({
+	...data,
+	...definePageMetaTags({ title: t(params.lang).systems, description: t(params.lang).systemsLead })
+});

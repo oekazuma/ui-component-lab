@@ -4,19 +4,12 @@
 	import DemoFrame from '#lib/DemoFrame.svelte';
 	import ExternalLink from '#lib/ExternalLink.svelte';
 	import { categoryNames, t } from '#lib/i18n.js';
-	import { getEntry } from '#lib/registry.js';
 	import type { PageProps } from './$types';
 
 	let { data: page, params }: PageProps = $props();
 	let lang = $derived(params.lang);
-	let { data, demo } = $derived(page.entry);
+	let { data, demo, related } = $derived(page);
 	let ui = $derived(t(lang));
-	let related = $derived(
-		(data.related ?? []).flatMap((r) => {
-			const entry = getEntry(r.id);
-			return entry ? [{ ...r, names: entry.data.names }] : [];
-		})
-	);
 	// 目次は、このページに出ているセクションだけを並べる
 	let toc = $derived(
 		(

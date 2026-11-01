@@ -1,5 +1,5 @@
 import { componentPath, homePath, skillPath, systemsPath } from '#lib/paths.js';
-import { entries } from '#lib/registry.js';
+import { components } from '#lib/server/components.js';
 import { langs } from '#lib/types.js';
 import type { RequestHandler } from './$types';
 
@@ -11,7 +11,7 @@ export const GET: RequestHandler = ({ url }) => {
 		homePath(lang),
 		systemsPath(lang),
 		skillPath(lang),
-		...entries.map(({ data }) => componentPath(lang, data.id))
+		...components.map(({ id }) => componentPath(lang, id))
 	]);
 	const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

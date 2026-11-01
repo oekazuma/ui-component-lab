@@ -8,7 +8,7 @@
 	import ThemeToggle from '#lib/ThemeToggle.svelte';
 	import type { LayoutProps } from './$types';
 
-	let { children, params }: LayoutProps = $props();
+	let { children, params, data }: LayoutProps = $props();
 
 	// <html lang> は prerender 時に hooks.server.ts が入れる。言語切替はクライアント側の遷移なので、ここで追従させる
 	$effect(() => {
@@ -21,7 +21,7 @@
 
 <SiteHeader home={homePath(params.lang)}>
 	<search>
-		<SearchPalette lang={params.lang} />
+		<SearchPalette lang={params.lang} items={data.searchItems} />
 	</search>
 	<div class="actions">
 		<ThemeToggle label={t(params.lang).darkMode} />

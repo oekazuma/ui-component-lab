@@ -1,6 +1,5 @@
 // 表記ゆれ正規化の最小チェック: node src/lib/search.check.ts
-import { matchedAlias, normalize } from './search.ts';
-import type { ComponentData } from './types.ts';
+import { matchedAlias, normalize, type SearchItem } from './search.ts';
 
 for (const [input, expected] of [
 	['ﾓｰﾀﾞﾙ', 'もだる'],
@@ -17,8 +16,9 @@ for (const [input, expected] of [
 const toast = {
 	id: 'toast',
 	names: { en: 'Toast', ja: 'トースト' },
-	aliases: [{ name: 'Snackbar', source: 'MUI', url: 'https://mui.com/' }]
-} as ComponentData;
+	category: 'feedback',
+	aliases: [{ name: 'Snackbar' }]
+} satisfies SearchItem;
 for (const [query, expected] of [
 	['snack', 'Snackbar'],
 	['トースト', undefined],

@@ -3,11 +3,10 @@
 	import { tick } from 'svelte';
 	import { categoryNames, t } from './i18n';
 	import { componentPath } from './paths';
-	import { entries } from './registry';
-	import { matchedAlias, matches } from './search';
-	import { categories, type ComponentData, type Lang } from './types';
+	import { matchedAlias, matches, type SearchItem } from './search';
+	import { categories, type Lang } from './types';
 
-	let { lang }: { lang: Lang } = $props();
+	let { lang, items }: { lang: Lang; items: SearchItem[] } = $props();
 	let ui = $derived(t(lang));
 
 	const uid = $props.id();
@@ -24,13 +23,13 @@
 	// 何も打っていないときはカテゴリごとに全件、打ったら一致したものを名前順に並べる
 	let groups = $derived.by(() => {
 		let i = 0;
-		const item = (data: ComponentData) => ({ data, alias: matchedAlias(data, query), i: i++ });
+		const item = (data: SearchItem) => ({ data, alias: matchedAlias(data, query), i: i++ });
 		if (!query.trim())
 			return categories.map((c) => ({
 				category: c,
-				items: entries.filter((e) => e.data.category === c).map((e) => item(e.data))
+				items: items.filter((d) => d.category === c).map(item)
 			}));
-		return [{ category: undefined, items: entries.filter((e) => matches(e.data, query)).map((e) => item(e.data)) }];
+		return [{ category: undefined, items: items.filter((d) => matches(d, query)).map(item) }];
 	});
 	let results = $derived(groups.flatMap((g) => g.items));
 	const optionId = (i: number) => `${uid}-option-${i}`;
@@ -42,7 +41,7 @@
 		input.focus();
 	}
 
-	function choose(data: ComponentData) {
+	function choose(data: SearchItem) {
 		dialog.close();
 		goto(componentPath(lang, data.id));
 	}

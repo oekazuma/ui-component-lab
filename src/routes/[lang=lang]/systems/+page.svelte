@@ -2,10 +2,9 @@
 	import { componentPath, homePath } from '#lib/paths.js';
 	import ExternalLink from '#lib/ExternalLink.svelte';
 	import { t } from '#lib/i18n.js';
-	import { entries } from '#lib/registry.js';
 	import type { PageProps } from './$types';
 
-	let { params }: PageProps = $props();
+	let { data: page, params }: PageProps = $props();
 	let lang = $derived(params.lang);
 	let ui = $derived(t(lang));
 
@@ -13,7 +12,7 @@
 	let systems = $derived(
 		Object.entries(
 			Object.groupBy(
-				entries.flatMap(({ data }) => data.aliases.map((alias) => ({ alias, data }))),
+				page.rows.flatMap((data) => data.aliases.map((alias) => ({ alias, data }))),
 				({ alias }) => alias.source
 			)
 		)

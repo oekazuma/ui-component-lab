@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { componentPath, skillPath, systemsPath } from '#lib/paths.js';
 	import { categoryNames, siteName, t } from '#lib/i18n.js';
-	import { entries } from '#lib/registry.js';
 	import { filter } from '#lib/filter.svelte.js';
-	import { categories, type ComponentData } from '#lib/types.js';
+	import { categories } from '#lib/types.js';
 	import type { PageProps } from './$types';
 
-	let { params }: PageProps = $props();
+	let { data, params }: PageProps = $props();
 	let lang = $derived(params.lang);
 	let ui = $derived(t(lang));
 
@@ -27,13 +26,13 @@
 	const splitJa = (ja: string) => ja.match(/^(.+?)（(.+)）$/)?.slice(1) ?? [ja];
 
 	// 対応表では同じ呼び名をデザインシステムごとに並べるが、カードでは部品名と重なる呼び名や、同じ呼び名の繰り返しを出さない
-	const cardAliases = (d: ComponentData) =>
+	const cardAliases = (d: (typeof data.cards)[number]) =>
 		[...new Set([...(lang === 'ja' ? splitJa(d.names.ja).slice(1) : []), ...d.aliases.map((a) => a.name)])].filter(
 			(name) => name.toLowerCase() !== d.names.en.toLowerCase() && name !== d.names.ja && name !== splitJa(d.names.ja)[0]
 		);
 
 	let shown = $derived(
-		entries.filter(({ data }) => !filter.category || data.category === filter.category)
+		data.cards.filter((c) => !filter.category || c.category === filter.category)
 	);
 </script>
 
@@ -69,27 +68,28 @@
 </div>
 
 <ul class="grid">
-	{#each shown as { data, demo: Demo, thumb: Thumb } (data.id)}
+	{#each shown as card (card.id)}
+		{@const Thumb = data.thumbs[card.id]}
 		<li class="card">
 			<!-- 一覧のデモは見た目を見せるだけのサムネイル。inert で操作もフォーカスも読み上げも止め、試すのは詳細ページで行う。
 				同じ大きさの枠に縮めて入れるので、中身の多いデモでもカードの並びが崩れない -->
 			<div class="thumb" inert>
 				<div class="thumb-inner" {@attach fit}>
-					{#if Thumb}<Thumb {lang} />{:else}<Demo {lang} />{/if}
+					<Thumb {lang} />
 				</div>
 			</div>
 			<!-- サムネイルの中に操作できる部品がなくなったので、見出しのリンクを ::after でカード全体に広げる -->
 			<div class="body">
 				<h2>
-					<a href={componentPath(lang, data.id)}>
-						{data.names.en}
-						{#if lang === 'ja'}<span class="sub">{splitJa(data.names.ja)[0]}</span>{/if}
+					<a href={componentPath(lang, card.id)}>
+						{card.names.en}
+						{#if lang === 'ja'}<span class="sub">{splitJa(card.names.ja)[0]}</span>{/if}
 					</a>
 				</h2>
-				<p class="summary">{data.summary[lang]}</p>
-				{#if cardAliases(data).length}
+				<p class="summary">{card.summary[lang]}</p>
+				{#if cardAliases(card).length}
 					<p class="aliases">
-						{ui.aliases}: {cardAliases(data).join(lang === 'ja' ? '、' : ', ')}
+						{ui.aliases}: {cardAliases(card).join(lang === 'ja' ? '、' : ', ')}
 					</p>
 				{/if}
 			</div>

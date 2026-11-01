@@ -1,7 +1,7 @@
 import { categoryNames, siteName } from '#lib/i18n.js';
 import { resolve } from '$app/paths';
 import { componentPath } from '#lib/paths.js';
-import { entries } from '#lib/registry.js';
+import { components } from '#lib/server/components.js';
 import { categories, langs, type ComponentsJson } from '#lib/types.js';
 import type { RequestHandler } from './$types';
 
@@ -13,7 +13,7 @@ export const GET: RequestHandler = ({ url }) => {
 		version: 1,
 		site: { name: siteName, url: `${url.origin}${resolve('/')}`.replace(/\/?$/, '/') },
 		categories: categories.map((id) => ({ id, names: categoryNames[id] })),
-		components: entries.map(({ data }) => ({
+		components: components.map((data) => ({
 			...data,
 			urls: Object.fromEntries(langs.map((lang) => [lang, `${url.origin}${componentPath(lang, data.id)}`])) as Record<
 				(typeof langs)[number],
