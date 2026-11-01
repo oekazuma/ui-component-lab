@@ -1,15 +1,21 @@
 // コンポーネントデータの約束事を確かめる: node src/lib/data.check.ts
 // 検査はページの表示と分けてここに置く（src/lib/server/components.ts はプリレンダーのたびに動くため、重い検査を増やさない）
-import { readdirSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import type { ComponentData } from './types.ts';
 
 const dir = new URL('./components/', import.meta.url);
 const all: ComponentData[] = [];
+const errors: string[] = [];
 for (const id of readdirSync(dir)) {
+	// この検査は Node が data.ts を直接読む。#lib/types.js は .ts の実体を指さないので、import type 以外は読み込みで落ちる
+	const source = readFileSync(new URL(`${id}/data.ts`, dir), 'utf8');
+	if (/^import (?!type )[^;]*from '#lib\//m.test(source)) {
+		errors.push(`${id}: data.ts may import only types from #lib`);
+		continue;
+	}
 	all.push((await import(new URL(`${id}/data.ts`, dir).href)).default);
 }
 const byId = new Map(all.map((d) => [d.id, d]));
-const errors: string[] = [];
 
 // 別名の source はこの一覧から選ぶ。表記がそろっていないとデザインシステム別の索引で別物として並ぶ
 const designSystems = [
@@ -29,6 +35,16 @@ const designSystems = [
 	'Atlassian Design System',
 	'Angular Material'
 ];
+
+// diff は自分の側を主語にする。部品名のほかに、文の書き出しで使ってよい呼び方
+const subjects: Record<string, { en?: string[]; ja?: string[] }> = {
+	link: { en: ['ordinary link'], ja: ['ふつうのリンク'] },
+	modal: { en: ['modal'], ja: ['モーダル'] },
+	'one-time-code': { en: ['one-time code'], ja: ['確認コード'] },
+	select: { ja: ['セレクト'] },
+	tabs: { en: ['tab'] },
+	textarea: { en: ['text area'] }
+};
 
 for (const d of all) {
 	// 詳細ページの {#each} のキーと同じ式。重複すると本番でもハイドレーションで落ちる
@@ -72,6 +88,14 @@ for (const d of all) {
 	for (const a of d.aliases)
 		if (!designSystems.includes(a.source)) errors.push(`${d.id}: unknown alias source ${a.source}`);
 
+	// キー操作がない部品は「なし。」で始め、何もしないことをはっきり書く
+	for (const k of d.keyboard)
+		if (k.key === '—' && !(k.action.en.startsWith('None.') && k.action.ja.startsWith('なし。')))
+			errors.push(`${d.id}: a '—' keyboard row starts with "None." / "なし。"`);
+	// 対になるキーは 1 行にまとめる（Home / End）。別の行にすると表が長くなり、対であることが見えにくい
+	if (d.keyboard.some((k) => k.key === 'Home') && d.keyboard.some((k) => k.key === 'End'))
+		errors.push(`${d.id}: write Home and End on one row as 'Home / End'`);
+
 	// 英日の両方を埋める（Text 型は空文字を防げない）
 	const texts = [
 		d.names,
@@ -85,6 +109,18 @@ for (const d of all) {
 		...(d.variations ?? []).flatMap((v) => [v.name, v.description])
 	];
 	for (const t of texts) if (!t.en.trim() || !t.ja.trim()) errors.push(`${d.id}: empty text`);
+
+	// 英語の文の引用符は “ ” にそろえる。コードの中の " は HTML の書き方なので除く
+	for (const t of texts)
+		if (t.en.replace(/`[^`]*`/g, '').includes('"')) errors.push(`${d.id}: use “ ” instead of " in ${t.en}`);
+
+	const enNames = [d.names.en.replace(/ \(.*\)$/, '').toLowerCase(), ...(subjects[d.id]?.en ?? [])];
+	const jaNames = [d.names.ja.replace(/（.*）$/, ''), ...(subjects[d.id]?.ja ?? [])];
+	for (const r of d.related ?? []) {
+		const en = r.diff.en.toLowerCase().replace(/^(a|an|the) /, '');
+		if (!enNames.some((n) => en.startsWith(n))) errors.push(`${d.id}: diff to ${r.id} must start with ${d.names.en} (en)`);
+		if (!jaNames.some((n) => r.diff.ja.startsWith(n))) errors.push(`${d.id}: diff to ${r.id} must start with ${d.names.ja} (ja)`);
+	}
 
 	// 文中のコードは `…` で囲む（CodeText.svelte）。閉じ忘れると以降がすべてコードとして表示される
 	for (const t of texts)

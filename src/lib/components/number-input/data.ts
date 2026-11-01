@@ -83,8 +83,8 @@ export default {
 		{
 			id: 'stepper',
 			diff: {
-				en: 'Some systems (such as Apple) call the − / + buttons of a number input a “stepper”. Here, stepper means the step indicator of a multi-page procedure.',
-				ja: 'Apple などは数値入力の − / + ボタンを「Stepper」と呼びます。このサイトの Stepper は、複数画面の手続きの段階を示すステップナビゲーションのことです。'
+				en: 'A number input’s − / + buttons are what some systems (such as Apple) call a “stepper”; on this site, the stepper is the step indicator of a multi-page procedure.',
+				ja: '数値入力の − / + ボタンは、Apple などが「Stepper」と呼ぶものです。このサイトの Stepper は、複数画面の手続きの段階を示すステップナビゲーションのことです。'
 			}
 		},
 		{
