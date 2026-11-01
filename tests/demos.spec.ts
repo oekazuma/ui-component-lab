@@ -381,6 +381,7 @@ test('toast: with Undo and Close it stays until dismissed, and every press is an
 });
 
 test('progress bar: starts indeterminate, can be canceled, and names itself after the result', async ({ page }) => {
+	await page.clock.install();
 	const demo = await openDemo(page, 'en/components/progress-bar/');
 	const start = demo.getByRole('button', { name: 'Start upload' });
 	const cancel = demo.getByRole('button', { name: 'Cancel' });
@@ -390,6 +391,12 @@ test('progress bar: starts indeterminate, can be canceled, and names itself afte
 	await expect(demo.getByRole('progressbar', { name: 'Uploading photo.jpg' })).not.toHaveAttribute('value');
 	await expect(status).toHaveText('Upload started');
 	await expect(start).toHaveAttribute('aria-disabled', 'true');
+	// 最初の 1 秒は「値なし」のまま。過ぎたら 300 ms ごとに 10 ずつ進む
+	await page.clock.fastForward(900);
+	await expect(demo.getByRole('progressbar')).not.toHaveAttribute('value');
+	await page.clock.fastForward(100);
+	await expect(demo.getByRole('progressbar')).toHaveAttribute('value');
+	await page.clock.fastForward(300);
 	await expect(demo.getByRole('progressbar')).toHaveAttribute('value', /^[1-9]/);
 	await cancel.click();
 	await expect(status).toHaveText('Upload canceled');
@@ -397,7 +404,10 @@ test('progress bar: starts indeterminate, can be canceled, and names itself afte
 	await expect(cancel).toHaveAttribute('aria-disabled', 'true');
 
 	await start.click();
-	await expect(demo.getByRole('progressbar', { name: 'Uploaded photo.jpg' })).toHaveAttribute('value', '100', { timeout: 10_000 });
+	await page.clock.fastForward(1000);
+	await expect(demo.getByRole('progressbar')).toHaveAttribute('value');
+	await page.clock.fastForward(3000);
+	await expect(demo.getByRole('progressbar', { name: 'Uploaded photo.jpg' })).toHaveAttribute('value', '100');
 	await expect(status).toHaveText('Upload complete');
 	await expect(start).not.toHaveAttribute('aria-disabled', 'true');
 });

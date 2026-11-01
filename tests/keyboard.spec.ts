@@ -381,6 +381,7 @@ test('data grid: one Tab stop, arrow keys stop at the edges, Home / End and Ctrl
 });
 
 test('feed: Page Down / Page Up move by article, the last one loads more, and Ctrl + End / Ctrl + Home leave the feed', async ({ page }) => {
+	await page.clock.install();
 	const demo = await openDemo(page, 'en/components/feed/');
 	const feed = demo.getByRole('feed', { name: 'Neighborhood news' });
 	const articles = feed.getByRole('article');
@@ -398,6 +399,7 @@ test('feed: Page Down / Page Up move by article, the last one loads more, and Ct
 	await page.keyboard.press('PageDown');
 	await page.keyboard.press('PageDown');
 	await expect(feed).toHaveAttribute('aria-busy', 'true');
+	await page.clock.fastForward(400);
 	await expect(articles).toHaveCount(6);
 	await expect(feed).toHaveAttribute('aria-busy', 'false');
 	await expect(articles.nth(5)).toHaveAttribute('aria-setsize', '6');
