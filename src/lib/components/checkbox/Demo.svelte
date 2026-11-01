@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import type { Lang } from '#lib/types.js';
 
 	let { lang }: { lang: Lang } = $props();
@@ -57,11 +58,15 @@
 	<!-- 同意のチェックは最初から付けない。required を付けるとブラウザ独自の吹き出しが出るので、novalidate にして自前の文で伝える -->
 	<form
 		novalidate
-		onsubmit={(e) => {
+		onsubmit={async (e) => {
 			e.preventDefault();
 			submitted = true;
 			sent = agreed;
-			if (!agreed) termsBox.focus();
+			// aria-invalid とエラーの文は次の描画で入る。先にフォーカスすると、読み上げにエラーが入らないことがある
+			if (!agreed) {
+				await tick();
+				termsBox.focus();
+			}
 		}}
 	>
 		<label>

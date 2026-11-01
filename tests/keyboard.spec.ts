@@ -586,3 +586,14 @@ test('back to top: Home with focus on the button scrolls to the start and keeps 
 	await expect(button).toBeHidden();
 	await expect(article).toBeFocused();
 });
+
+test('checkbox: the terms checkbox is already marked invalid when Apply moves focus to it', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/checkbox/');
+	const terms = demo.getByRole('checkbox', { name: 'I agree to the terms of use' });
+	await terms.evaluate((el) =>
+		el.addEventListener('focus', () => (el.dataset.invalidOnFocus = String(el.getAttribute('aria-invalid'))), { once: true })
+	);
+	await demo.getByRole('button', { name: 'Apply' }).click();
+	await expect(terms).toBeFocused();
+	await expect(terms).toHaveAttribute('data-invalid-on-focus', 'true');
+});
