@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { componentIds } from './component-ids';
 
 test('list: clicking the text under a demo opens the component page', async ({ page }) => {
 	await page.goto('ja/');
@@ -95,4 +96,31 @@ test('list: a card leaves out aliases that repeat the component name or each oth
 	await page.goto('en/');
 	const card = page.locator('li', { has: page.getByRole('link', { name: 'Range slider', exact: true }) });
 	await expect(card.locator('.aliases')).toHaveText('Also known as: Slider (Multi-Thumb)');
+});
+
+test('list: a category shows only its components, stays chosen after visiting one, and All brings back every card', async ({ page, request }) => {
+	const json = await (await request.get('components.json')).json();
+	const expected = json.components.filter((c: { category: string }) => c.category === 'overlay').length;
+	await page.goto('en/');
+	await page.waitForLoadState('networkidle');
+	const cards = page.locator('ul.grid > li.card');
+	await expect(cards).toHaveCount(componentIds.length);
+	const category = page.getByRole('group', { name: 'Category' });
+	// ラジオは visually-hidden で、ピルの label が上に重なっている。利用者と同じく label を押す
+	const choose = (name: string) => category.getByText(name, { exact: true }).click();
+	await choose('Overlay');
+	await expect(cards).toHaveCount(expected);
+	expect(expected).toBeGreaterThan(0);
+	expect(expected).toBeLessThan(componentIds.length);
+
+	await cards.first().getByRole('link').click();
+	await expect(page).toHaveURL(/\/en\/components\//);
+	await page.goBack();
+	await expect(page).toHaveURL(/\/en\/$/);
+	await expect(category.getByRole('radio', { name: 'Overlay' })).toBeChecked();
+	await expect(cards).toHaveCount(expected);
+
+	await choose('All');
+	await expect(category.getByRole('radio', { name: 'All' })).toBeChecked();
+	await expect(cards).toHaveCount(componentIds.length);
 });
