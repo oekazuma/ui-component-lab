@@ -124,6 +124,8 @@
 	/* リンクと開閉で形の違うアイコンを使う（DADS モバイルメニューの使い方: 向きだけの違いにしない） */
 	a::after {
 		content: '›';
+		/* 記号は見た目だけ。代わりの文字を空にして名前に入れない（対応していないブラウザは上の行を使う） */
+		content: '›' / '';
 		color: var(--color-muted);
 		font-size: 1.25rem;
 		line-height: 1;
@@ -139,6 +141,7 @@
 
 	summary::after {
 		content: '+';
+		content: '+' / '';
 		color: var(--color-muted);
 		font-size: 1.25rem;
 		line-height: 1;
@@ -146,6 +149,7 @@
 
 	details[open] > summary::after {
 		content: '−';
+		content: '−' / '';
 	}
 
 	details ul {

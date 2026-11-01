@@ -805,6 +805,16 @@ test('mobile menu: sections open in place, and links and sections use different 
 	await expect(demo.locator('[role="status"]')).toHaveText('Going to: Moving in or out');
 });
 
+test('mobile menu: the icons drawn with CSS are not part of the names', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/mobile-menu/');
+	const nav = demo.getByRole('navigation', { name: 'Menu' });
+	await expect(nav.getByRole('link', { name: 'Home', exact: true })).toBeVisible();
+	const summary = nav.locator('summary', { hasText: 'Services' });
+	await expect(summary).not.toHaveAccessibleName(/[+−›]/);
+	await summary.click();
+	await expect(summary).not.toHaveAccessibleName(/[+−›]/);
+});
+
 test('mega menu: a panel lists the section page and all its pages, and opening another closes it', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/mega-menu/');
 	const living = demo.getByRole('button', { name: 'Living' });
