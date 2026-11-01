@@ -22,3 +22,15 @@ test('components.json: keeps misuse, related and sources as written in data.ts',
 	expect(checkbox.sources.every((s: { url: string }) => s.url.startsWith('https://'))).toBe(true);
 	expect(json.categories).toHaveLength(7);
 });
+
+// improve-ui-components スキルは、根拠の節を URL の #id で指す。id を変えるとスキルのリンクが先頭を指すようになる
+test('components.json: detail pages have the section ids the skill links to', async ({ page, request }) => {
+	const json = await (await request.get('components.json')).json();
+	const full = json.components.find((c: Record<string, unknown[]>) =>
+		['aliases', 'variations', 'usage', 'misuse', 'related'].every((k) => c[k]?.length)
+	);
+	expect(full).toBeTruthy();
+	await page.goto(new URL(full.urls.en).pathname.replace(/^\/ui-component-lab\//, ''));
+	for (const id of ['aliases', 'appearance', 'behavior', 'keyboard', 'variations', 'usage', 'misuse', 'related', 'sources'])
+		await expect(page.locator(`h2#${id}`)).toHaveCount(1);
+});

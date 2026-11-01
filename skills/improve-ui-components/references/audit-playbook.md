@@ -56,7 +56,7 @@ Every finding, from you or a subagent, comes back in this shape:
 - **Page**: <URL> (local: <local URL>, or "live site only")
 - **Where**: <visible label or nearby heading>, selector `<selector>`
 - **Source**: `path/file.ext:123` — one line on what is there (or "not found")
-- **Component**: <Lab id> — <Lab page URL in the user's language>
+- **Component**: <Lab id> — <Lab page URL in the user's language>#<section>
 - **Check**: choice | usage | misuse | deceptive | behavior | outside-lab
 - **Evidence**: the Lab field you relied on (quote it briefly) and its source URL, plus what you observed on the page (and how: read, keyboard on local server, screenshot)
 - **Impact**: who is affected and how, in concrete terms
