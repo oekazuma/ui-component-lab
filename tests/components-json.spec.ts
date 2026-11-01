@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { expect, test } from '@playwright/test';
 import { componentIds } from './component-ids';
 
@@ -30,7 +31,12 @@ test('components.json: detail pages have the section ids the skill links to', as
 		['aliases', 'variations', 'usage', 'misuse', 'related'].every((k) => c[k]?.length)
 	);
 	expect(full).toBeTruthy();
-	await page.goto(new URL(full.urls.en).pathname.replace(/^\/ui-component-lab\//, ''));
-	for (const id of ['aliases', 'appearance', 'behavior', 'keyboard', 'variations', 'usage', 'misuse', 'related', 'sources'])
-		await expect(page.locator(`h2#${id}`)).toHaveCount(1);
+	// SKILL.md の一覧と詳細ページの id がずれたら落ちるように、id は SKILL.md から読む
+	const line = readFileSync('skills/improve-ui-components/SKILL.md', 'utf8')
+		.split('\n')
+		.find((l) => l.includes('appending its id'));
+	const ids = [...(line ?? '').matchAll(/`#(\w+)`/g)].map((m) => m[1]);
+	expect(ids).toHaveLength(9);
+	await page.goto(full.urls.en.replace(json.site.url, ''));
+	for (const id of ids) await expect(page.locator(`h2#${id}`)).toHaveCount(1);
 });

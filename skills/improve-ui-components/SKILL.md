@@ -34,7 +34,7 @@ Fetch https://oekazuma.github.io/ui-component-lab/components.json at the start o
 - The top level has `site` (`name`, `url`), `categories` (`id`, `names`) and `components[]`. Each component has `id`, `category`, `names` (`en`, `ja`), `aliases` (names in other design systems), `summary`, `appearance`, `behavior`, `keyboard`, `sources`, and `urls` (`en`, `ja`: the Lab page to cite); `variations`, `usage`, `misuse` (`pattern`, `harm`, `instead`, `deceptive`) and `related` (`id`, `diff`: how it differs from a similar component) may be absent.
 - Text in backticks is code (HTML elements, attributes, ARIA). Any sentence in any field that mentions the Lab's demo (“In this demo”, “this demo”, “the demo’s”) describes the demo, not the component; do not use it as a requirement.
 - Cite the Lab page in the user's language (`urls.ja` for Japanese, otherwise `urls.en`).
-- Link the section you relied on by appending its id to that URL: `#usage`, `#misuse`, `#keyboard`, `#behavior`, `#related`, `#variations`, `#appearance`, `#aliases` or `#sources` (for example `…/components/select/#usage`). A section whose field is absent from the entry is not on the page.
+- Link the section you relied on by appending its id to that URL: `#usage`, `#misuse`, `#keyboard`, `#behavior`, `#related`, `#variations`, `#appearance`, `#aliases` or `#sources` (for example `…/components/select/#usage`). A section whose field is absent from or empty in the entry is not on the page.
 
 ## Workflow
 
