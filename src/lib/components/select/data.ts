@@ -9,6 +9,7 @@ export default {
 		{ name: 'Dropdown', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/dropdown/usage/' },
 		{ name: 'セレクトボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/select/' }
 	],
+	searchTerms: ['プルダウン', 'ドロップダウン', 'ドロップダウンリスト'],
 	summary: {
 		en: 'Lets the user pick one option from a list that opens on demand.',
 		ja: '開いたリストから選択肢を1つ選ぶ部品です。'

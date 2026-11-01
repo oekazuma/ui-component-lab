@@ -5,6 +5,7 @@ export default {
 	category: 'overlay',
 	names: { en: 'Tooltip', ja: 'ツールチップ' },
 	aliases: [],
+	searchTerms: ['吹き出し'],
 	summary: {
 		en: 'A short note that appears near an element while it is hovered or focused.',
 		ja: '要素にマウスを乗せたりフォーカスしたりしている間だけ、近くに出る短い説明です。'

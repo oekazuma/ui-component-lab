@@ -13,7 +13,8 @@ export const GET: RequestHandler = ({ url }) => {
 		version: 1,
 		site: { name: siteName, url: `${url.origin}${resolve('/')}`.replace(/\/?$/, '/') },
 		categories: categories.map((id) => ({ id, names: categoryNames[id] })),
-		components: components.map((data) => ({
+		// 検索だけの語は出典のある呼び名ではないので、スキルに渡す知識には含めない
+		components: components.map(({ searchTerms: _searchTerms, ...data }) => ({
 			...data,
 			urls: Object.fromEntries(langs.map((lang) => [lang, `${url.origin}${componentPath(lang, data.id)}`])) as Record<
 				(typeof langs)[number],

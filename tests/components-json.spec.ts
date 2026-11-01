@@ -14,6 +14,7 @@ test('components.json: lists every component with absolute URLs and version 1', 
 	const select = json.components.find((c: { id: string }) => c.id === 'select');
 	expect(select.urls.ja).toBe('https://oekazuma.github.io/ui-component-lab/ja/components/select/');
 	expect(select.usage.length).toBeGreaterThan(0);
+	expect(json.components.some((c: Record<string, unknown>) => 'searchTerms' in c)).toBe(false);
 });
 
 test('components.json: keeps misuse, related and sources as written in data.ts', async ({ request }) => {

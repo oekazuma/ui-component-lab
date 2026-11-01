@@ -9,6 +9,7 @@ export default {
 		{ name: 'Dropdown', source: 'Ant Design', url: 'https://ant.design/components/dropdown' },
 		{ name: 'メニューリストボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/menu-list-box/' }
 	],
+	searchTerms: ['ドロップダウンメニュー', 'プルダウンメニュー'],
 	summary: {
 		en: 'A list of actions that pops up from a button.',
 		ja: 'ボタンから開く、操作の一覧です。'

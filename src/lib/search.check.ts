@@ -1,5 +1,5 @@
 // 表記ゆれ正規化の最小チェック: node src/lib/search.check.ts
-import { matchedAlias, normalize, type SearchItem } from './search.ts';
+import { matchedAlias, matches, normalize, type SearchItem } from './search.ts';
 
 for (const [input, expected] of [
 	['ﾓｰﾀﾞﾙ', 'もだる'],
@@ -28,4 +28,16 @@ for (const [query, expected] of [
 ] as const) {
 	if (matchedAlias(toast, query) !== expected) throw new Error(`matchedAlias(${query}) -> ${matchedAlias(toast, query)}`);
 }
+
+// 検索だけの語では一致するが、別名としては返さない
+const select = {
+	id: 'select',
+	names: { en: 'Select', ja: 'セレクトボックス' },
+	category: 'input',
+	aliases: [{ name: 'Dropdown' }],
+	searchTerms: ['プルダウン']
+} satisfies SearchItem;
+if (!matches(select, 'ぷるだうん')) throw new Error('matches(searchTerms) -> false');
+if (matches({ ...select, searchTerms: undefined }, 'プルダウン')) throw new Error('matches without searchTerms -> true');
+if (matchedAlias(select, 'プルダウン') !== undefined) throw new Error(`matchedAlias(searchTerms) -> ${matchedAlias(select, 'プルダウン')}`);
 console.log('ok');

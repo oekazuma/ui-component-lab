@@ -9,6 +9,7 @@ export default {
 		{ name: 'Modal dialog', source: 'Atlassian Design System', url: 'https://atlassian.design/components/modal-dialog' },
 		{ name: 'モーダルダイアログ', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/modal-dialog/' }
 	],
+	searchTerms: ['ポップアップ'],
 	summary: {
 		en: 'A window on top of the page that blocks the rest of the page until it is closed.',
 		ja: 'ページの上に重ねて表示し、閉じるまで背後のページを操作できなくするウィンドウです。'

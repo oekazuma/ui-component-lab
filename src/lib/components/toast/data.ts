@@ -5,6 +5,7 @@ export default {
 	category: 'feedback',
 	names: { en: 'Toast', ja: 'トースト' },
 	aliases: [{ name: 'Snackbar', source: 'MUI', url: 'https://mui.com/material-ui/react-snackbar/' }],
+	searchTerms: ['スナックバー'],
 	summary: {
 		en: 'A brief message that pops up at the edge of the screen after an action; one with only a message disappears on its own.',
 		ja: '操作の結果を画面の端に短く表示するメッセージです。文字だけのものは、しばらくすると自動で消えます。'

@@ -7,6 +7,7 @@ export default {
 	aliases: [
 		{ name: 'Toggletip', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/toggletip/usage/' }
 	],
+	searchTerms: ['ポップアップ'],
 	summary: {
 		en: 'A small panel that opens next to a button and closes when the user clicks elsewhere.',
 		ja: 'ボタンの近くに開き、外側をクリックすると閉じる小さなパネルです。'

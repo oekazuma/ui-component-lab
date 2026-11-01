@@ -21,6 +21,8 @@ export interface ComponentData {
 	names: Text;
 	/** 他のデザインシステムでの呼び名。source にどの資料の呼び名かを書く */
 	aliases: { name: string; source: string; url: string }[];
+	/** 検索だけに使う、普段の呼び名（例: 「プルダウン」）。出典のある呼び名ではないので、画面にも components.json にも出さない */
+	searchTerms?: string[];
 	summary: Text;
 	appearance: Text;
 	behavior: Text[];

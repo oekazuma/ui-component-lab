@@ -1,7 +1,7 @@
 import type { ComponentData } from './types';
 
 /** 検索に要る分だけ。ページへ渡す量を減らすため、全データではなくこれを渡す */
-export type SearchItem = Pick<ComponentData, 'id' | 'names' | 'category'> & {
+export type SearchItem = Pick<ComponentData, 'id' | 'names' | 'category' | 'searchTerms'> & {
 	aliases: { name: string }[];
 };
 
@@ -19,9 +19,13 @@ export const normalize = (s: string) =>
 // ponytail: 部分一致のみ。typo 許容が要るほど件数が増えたら Fuse.js を検討する
 export const matches = (data: SearchItem, query: string) => {
 	const q = normalize(query);
-	return [data.id, data.names.en, data.names.ja, ...data.aliases.map((a) => a.name)].some((s) =>
-		normalize(s).includes(q)
-	);
+	return [
+		data.id,
+		data.names.en,
+		data.names.ja,
+		...data.aliases.map((a) => a.name),
+		...(data.searchTerms ?? [])
+	].some((s) => normalize(s).includes(q));
 };
 
 /** 部品名ではなく別名で一致したとき、その別名を返す（候補に「別名: …」と添えるため） */

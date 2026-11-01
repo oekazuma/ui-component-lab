@@ -91,6 +91,12 @@ for (const d of all) {
 	for (const a of d.aliases)
 		if (!designSystems.includes(a.source)) errors.push(`${d.id}: unknown alias source ${a.source}`);
 
+	// 検索だけの語は、空の語と、名前や別名と同じ語を入れない（同じなら要らない）
+	for (const term of d.searchTerms ?? []) {
+		if (!term.trim()) errors.push(`${d.id}: empty search term`);
+		if ([d.names.en, d.names.ja, ...d.aliases.map((a) => a.name)].includes(term)) errors.push(`${d.id}: search term repeats a name: ${term}`);
+	}
+
 	// キー操作がない部品は「なし。」で始め、何もしないことをはっきり書く
 	for (const k of d.keyboard)
 		if (k.key === '—' && !(k.action.en.startsWith('None.') && k.action.ja.startsWith('なし。')))
