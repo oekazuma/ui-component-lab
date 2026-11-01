@@ -1,5 +1,5 @@
-import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { expectNoAxeViolations } from './axe';
 import { componentIds } from './component-ids';
 
 const shortcut = process.platform === 'darwin' ? 'Meta+k' : 'Control+k';
@@ -55,10 +55,7 @@ test('search: no axe violations while open', async ({ page }) => {
 	await page.waitForLoadState('networkidle');
 	await page.keyboard.press(shortcut);
 	await page.getByRole('dialog').getByRole('combobox').fill('タブ');
-	const { violations } = await new AxeBuilder({ page })
-		.withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
-		.analyze();
-	expect(violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`)).toEqual([]);
+	await expectNoAxeViolations(page);
 });
 
 // Playwright では IME の変換を再現できないため、変換中を示す isComposing を付けた keydown を送る

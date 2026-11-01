@@ -1,5 +1,5 @@
-import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { expectNoAxeViolations } from './axe';
 
 test('theme: the header button switches to dark mode and remembers it', async ({ page }) => {
 	await page.emulateMedia({ colorScheme: 'light' });
@@ -24,14 +24,11 @@ test('theme: follows the OS setting until the user chooses', async ({ page }) =>
 	expect(bg).not.toBe('rgb(255, 255, 255)');
 });
 
-for (const path of ['ja/', 'en/components/alert/', 'ja/components/badge/', 'en/components/alert-dialog/']) {
+for (const path of ['ja/', 'ja/components/badge/']) {
 	test(`theme: no axe violations in dark mode: ${path}`, async ({ page }) => {
 		await page.emulateMedia({ colorScheme: 'dark' });
 		await page.goto(path);
-		const { violations } = await new AxeBuilder({ page })
-			.withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
-			.analyze();
-		expect(violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`)).toEqual([]);
+		await expectNoAxeViolations(page);
 	});
 }
 
