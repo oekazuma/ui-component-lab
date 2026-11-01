@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { expect, test } from '@playwright/test';
+import { categories } from '../src/lib/types.ts';
 import { componentIds } from './component-ids';
 
 test('components.json: lists every component with absolute URLs and version 1', async ({ request }) => {
@@ -21,7 +22,7 @@ test('components.json: keeps misuse, related and sources as written in data.ts',
 	expect(checkbox.misuse.some((m: { deceptive?: boolean }) => m.deceptive)).toBe(true);
 	expect(checkbox.related.length).toBeGreaterThan(0);
 	expect(checkbox.sources.every((s: { url: string }) => s.url.startsWith('https://'))).toBe(true);
-	expect(json.categories).toHaveLength(7);
+	expect(json.categories).toHaveLength(categories.length);
 });
 
 // improve-ui-components スキルは、根拠の節を URL の #id で指す。id を変えるとスキルのリンクが先頭を指すようになる

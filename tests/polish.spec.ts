@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test';
 test('systems: the index lists design systems in name order, not by how many names they have', async ({ page }) => {
 	await page.goto('ja/systems/');
 	const names = await page.getByRole('navigation', { name: 'デザインシステムの一覧' }).getByRole('link').allTextContents();
+	// リンクが 1 つもなくても [] と [] で通ってしまう
+	expect(names.length).toBeGreaterThan(1);
 	expect(names).toEqual(names.toSorted((a, b) => a.localeCompare(b, 'ja')));
 });
 
