@@ -381,8 +381,11 @@ test('toast: with Undo and Close it stays until dismissed, and every press is an
 });
 
 test('progress bar: starts indeterminate, can be canceled, and names itself after the result', async ({ page }) => {
-	await page.clock.install();
+	// install だけでは時計が進み続け、短い窓の確認が実時間の競争になる。水和のあとで止めて、進めるのはテストだけにする
+	const start0 = new Date('2026-01-01T00:00:00');
+	await page.clock.install({ time: start0 });
 	const demo = await openDemo(page, 'en/components/progress-bar/');
+	await page.clock.pauseAt(new Date(start0.getTime() + 30_000));
 	const start = demo.getByRole('button', { name: 'Start upload' });
 	const cancel = demo.getByRole('button', { name: 'Cancel' });
 	const status = demo.getByRole('status');
@@ -396,7 +399,7 @@ test('progress bar: starts indeterminate, can be canceled, and names itself afte
 	await expect(demo.getByRole('progressbar')).not.toHaveAttribute('value');
 	await page.clock.fastForward(100);
 	await expect(demo.getByRole('progressbar')).toHaveAttribute('value');
-	await page.clock.fastForward(300);
+	await page.clock.runFor(300);
 	await expect(demo.getByRole('progressbar')).toHaveAttribute('value', /^[1-9]/);
 	await cancel.click();
 	await expect(status).toHaveText('Upload canceled');
@@ -406,7 +409,7 @@ test('progress bar: starts indeterminate, can be canceled, and names itself afte
 	await start.click();
 	await page.clock.fastForward(1000);
 	await expect(demo.getByRole('progressbar')).toHaveAttribute('value');
-	await page.clock.fastForward(3000);
+	await page.clock.runFor(3000);
 	await expect(demo.getByRole('progressbar', { name: 'Uploaded photo.jpg' })).toHaveAttribute('value', '100');
 	await expect(status).toHaveText('Upload complete');
 	await expect(start).not.toHaveAttribute('aria-disabled', 'true');

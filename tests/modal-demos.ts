@@ -7,4 +7,3 @@ export const demos = [
 	{ path: 'en/components/alert-dialog/', open: 'Discard note…', role: 'alertdialog', name: 'Discard this note?', clickToClose: false },
 	{ path: 'en/components/command-palette/', open: 'Commands…', role: 'dialog', name: 'Commands', clickToClose: false }
 ] as const;
-

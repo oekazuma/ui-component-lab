@@ -381,8 +381,11 @@ test('data grid: one Tab stop, arrow keys stop at the edges, Home / End and Ctrl
 });
 
 test('feed: Page Down / Page Up move by article, the last one loads more, and Ctrl + End / Ctrl + Home leave the feed', async ({ page }) => {
-	await page.clock.install();
+	// install だけでは時計が進み続け、短い窓の確認が実時間の競争になる。水和のあとで止めて、進めるのはテストだけにする
+	const start0 = new Date('2026-01-01T00:00:00');
+	await page.clock.install({ time: start0 });
 	const demo = await openDemo(page, 'en/components/feed/');
+	await page.clock.pauseAt(new Date(start0.getTime() + 30_000));
 	const feed = demo.getByRole('feed', { name: 'Neighborhood news' });
 	const articles = feed.getByRole('article');
 	await expect(articles).toHaveCount(3);
@@ -601,7 +604,6 @@ test('checkbox: the terms checkbox is already marked invalid when Apply moves fo
 });
 
 test('toast: Escape dismisses it and returns focus to the button that showed it', async ({ page }) => {
-	await page.clock.install();
 	const demo = await openDemo(page, 'en/components/toast/');
 	const archive = demo.getByRole('button', { name: 'Archive message' });
 	const undo = demo.getByRole('button', { name: 'Undo' });

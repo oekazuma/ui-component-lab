@@ -109,9 +109,9 @@ test('list: a category shows only its components, stays chosen after visiting on
 	// ラジオは visually-hidden で、ピルの label が上に重なっている。利用者と同じく label を押す
 	const choose = (name: string) => category.getByText(name, { exact: true }).click();
 	await choose('Overlay');
-	await expect(cards).toHaveCount(expected);
 	expect(expected).toBeGreaterThan(0);
 	expect(expected).toBeLessThan(componentIds.length);
+	await expect(cards).toHaveCount(expected);
 
 	await cards.first().getByRole('link').click();
 	await expect(page).toHaveURL(/\/en\/components\//);

@@ -55,7 +55,7 @@ const popups: { path: string; open: (demo: Locator, page: Page) => Promise<void>
 		path: 'en/components/tooltip/',
 		open: async (demo) => {
 			await demo.getByRole('button', { name: 'Copy link' }).focus();
-			await expect(demo.locator('[role="tooltip"]')).toHaveClass(/visible/);
+			await expect(demo.locator('[role="tooltip"]')).toBeVisible();
 		}
 	},
 	{

@@ -13,8 +13,8 @@ test('thumbs: components that open show their opened state in the list', async (
 	await page.goto('ja/');
 	expect(opened.length).toBeGreaterThan(0);
 	for (const id of opened) {
-		const card = page.locator('li.card', { has: page.locator(`a[href$="/components/${id}/"]`) });
-		await expect(card.locator('.thumb [data-preview]'), id).toBeVisible();
+		const item = page.locator('li.card', { has: page.locator(`a[href$="/components/${id}/"]`) });
+		await expect(item.locator('.thumb [data-preview]'), id).toBeVisible();
 	}
 });
 
