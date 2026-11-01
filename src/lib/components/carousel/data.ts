@@ -13,7 +13,7 @@ export default {
 		ja: '複数のスライドを1枚ずつ表示し、ボタンでスライドを選んだり前後へ切り替えたりする部品です。'
 	},
 	appearance: {
-		en: 'A heading above a wide panel showing one slide. Below it are numbered buttons with the current one highlighted, previous and next arrow buttons with the position as text, such as "1 / 4", and an All slides toggle that lists the rest.',
+		en: 'A heading above a wide panel showing one slide. Below it are numbered buttons with the current one highlighted, previous and next arrow buttons with the position as text, such as “1 / 4”, and an All slides toggle that lists the rest.',
 		ja: '見出しの下に、1枚のスライドを表示する横長の枠があります。その下に、表示中のものが強調された番号のボタンと、「1 / 4」のように今の位置を文字で示す前後の矢印のボタン、残りのスライドを一覧にする「すべてのスライド」が並びます。'
 	},
 	behavior: [
@@ -104,7 +104,7 @@ export default {
 		{
 			name: { en: 'Narrow size', ja: '幅狭サイズ' },
 			description: {
-				en: 'The counterpart of the standard size for narrow content areas, down to 320 px. There is no next area; previous and next buttons with the position as text, such as "1 / 4", take its place.',
+				en: 'The counterpart of the standard size for narrow content areas, down to 320 px. There is no next area; previous and next buttons with the position as text, such as “1 / 4”, take its place.',
 				ja: '標準サイズに対して、コンテンツ領域が狭いとき（320px まで）の型です。次のスライドを示す領域はなく、代わりに「1 / 4」のような位置の表示と前後のボタンを置きます。'
 			}
 		},

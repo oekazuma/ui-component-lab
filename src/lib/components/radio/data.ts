@@ -53,7 +53,7 @@ export default {
 	],
 	usage: [
 		{
-			en: 'A selected radio button cannot be cleared, so add a choice such as "None of these" to optional questions.',
+			en: 'A selected radio button cannot be cleared, so add a choice such as “None of these” to optional questions.',
 			ja: '一度選ぶと選択を外せないため、任意の質問には「あてはまるものはない」などの選択肢を加えます。'
 		},
 		{

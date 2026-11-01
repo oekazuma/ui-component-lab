@@ -46,7 +46,7 @@ export default {
 			ja: '申し込みフォームの欄の下に置く例外の説明、グラフの元データの表、動画の文字起こしなど、セクションの中の補足に使います。'
 		},
 		{
-			en: 'Make the title describe the content. Avoid vague text like "Show more", and do not switch it between "Open" and "Close".',
+			en: 'Make the title describe the content. Avoid vague text like “Show more”, and do not switch it between “Open” and “Close”.',
 			ja: 'タイトルには中身が分かる文言を使います。「もっと見る」のような曖昧な文言や、「開く」「閉じる」の切り替えは避けます。'
 		}
 	],

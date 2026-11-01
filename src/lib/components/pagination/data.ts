@@ -68,7 +68,7 @@ export default {
 	],
 	usage: [
 		{
-			en: 'The GOV.UK Design System and the Digital Agency Design System hide "Previous" and "Next" on the first and last pages instead of disabling them. This demo keeps them focusable with `aria-disabled`.',
+			en: 'The GOV.UK Design System and the Digital Agency Design System hide “Previous” and “Next” on the first and last pages instead of disabling them. This demo keeps them focusable with `aria-disabled`.',
 			ja: 'GOV.UK Design System とデジタル庁デザインシステムでは、最初と最後のページで「前へ」「次へ」を無効にせず非表示にします。このデモは `aria-disabled` にして、フォーカスできるまま残しています。'
 		}
 	],

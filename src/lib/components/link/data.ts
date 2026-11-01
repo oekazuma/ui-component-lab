@@ -63,7 +63,7 @@ export default {
 		},
 		{
 			pattern: {
-				en: 'Link text such as "here" or "Details" that does not say where it goes',
+				en: 'Link text such as “here” or “Details” that does not say where it goes',
 				ja: '「こちら」「詳細」のように、行き先が分からないリンク文言'
 			},
 			harm: {
@@ -71,7 +71,7 @@ export default {
 				ja: 'ページ内のリンクを一覧にして選ぶスクリーンリーダーの利用者は、どのリンクを選べばよいか分かりません。運動機能に障害のある人は不要なリンクを開いて戻る操作が増え、認知障害のある人は思わぬページへ移って迷いやすくなります。'
 			},
 			instead: {
-				en: 'Make the destination itself the link text, for example "Price list" instead of "Click here for prices".',
+				en: 'Make the destination itself the link text, for example “Price list” instead of “Click here for prices”.',
 				ja: '行き先を表す語をリンクにします。例えば「料金はこちら」ではなく「料金表」をリンクにします。'
 			}
 		},

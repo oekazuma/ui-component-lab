@@ -96,7 +96,7 @@ export default {
 				ja: '認知障害や学習障害、記憶に困難のある人は、前に入力した内容を思い出さなければなりません。入力を誤ったり、手続きをあきらめたりすることがあります。'
 			},
 			instead: {
-				en: 'Fill in what the user already entered, or let them choose it, for example with a "Same as shipping address" checkbox.',
+				en: 'Fill in what the user already entered, or let them choose it, for example with a “Same as shipping address” checkbox.',
 				ja: '入力済みの内容をあらかじめ入れておくか、選べるようにします。例えば「お届け先と同じ」のチェックボックスを置きます。'
 			}
 		},
