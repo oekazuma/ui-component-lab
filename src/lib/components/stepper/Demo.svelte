@@ -38,6 +38,7 @@
 	let current = $state(0);
 	let furthest = $state(0);
 	let submitted = $state(false);
+	let heading = $state<HTMLElement>();
 	const status: ('done' | 'skipped' | undefined)[] = $state([]);
 
 	function next() {
@@ -69,7 +70,15 @@
 					{#if status[i] === 'skipped'}<span class="note">{text[lang].skipped}</span>{/if}
 				{/snippet}
 				{#if i <= furthest && i !== current && !submitted}
-					<button type="button" class="header" onclick={() => (current = i)}>{@render header()}</button>
+					<button
+						type="button"
+						class="header"
+						onclick={() => {
+							current = i;
+							// 押したボタンは現在の段階になって文字に変わるので、移った段階の見出しへフォーカスを移す
+							heading?.focus();
+						}}>{@render header()}</button
+					>
 				{:else}
 					<span class="header">{@render header()}</span>
 				{/if}
@@ -80,7 +89,7 @@
 		<p class="heading" tabindex="-1" {@attach (el) => el.focus()}>{text[lang].submitted}</p>
 	{:else}
 		<div class="status" aria-live="polite">
-			<p class="heading">{text[lang].heading(current + 1, text[lang].steps[current])}</p>
+			<p class="heading" tabindex="-1" bind:this={heading}>{text[lang].heading(current + 1, text[lang].steps[current])}</p>
 			{#if current === optional}<p class="hint">{text[lang].optional}</p>{/if}
 		</div>
 		<div class="buttons">

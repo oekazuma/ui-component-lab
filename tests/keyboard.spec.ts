@@ -556,3 +556,12 @@ test('context menu: the same actions are on a visible ⋯ button', async ({ page
 	await demo.getByRole('button', { name: 'More options for report.pdf' }).click();
 	await expect(demo.getByRole('menuitem')).toHaveText(['Download', 'Share', 'Delete']);
 });
+
+test('stepper: Enter on a finished step goes to it and moves focus to its heading', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/stepper/');
+	await demo.getByRole('button', { name: 'Next' }).click();
+	const applicant = demo.getByRole('button', { name: /^Applicant/ });
+	await applicant.focus();
+	await page.keyboard.press('Enter');
+	await expect(demo.getByText('Step 1 of 4: Applicant')).toBeFocused();
+});

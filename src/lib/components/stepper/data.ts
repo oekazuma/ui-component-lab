@@ -27,8 +27,8 @@ export default {
 			ja: '現在の段階には `aria-current="step"` を付け、終わった段階には読み上げ用の「完了」を添えます。段階の並びの前には、デジタル庁デザインシステムの実装例と同じく、「全4ステップ中、2ステップ目まで到達済み」のように全体の進み具合を伝える読み上げ用の文を置きます。'
 		},
 		{
-			en: 'In this demo, every step already reached is a button, so you can go back to a finished step and return. The current step and steps not yet reached are plain text.',
-			ja: 'このデモでは、一度たどり着いた段階はボタンになり、終わった段階へ戻ってまた先へ進めます。現在の段階とまだたどり着いていない段階はただの文字です。'
+			en: 'In this demo, every step already reached is a button, so you can go back to a finished step and return. The current step and steps not yet reached are plain text. Pressing a step button moves focus to the heading of that step, because the button turns into plain text.',
+			ja: 'このデモでは、一度たどり着いた段階はボタンになり、終わった段階へ戻ってまた先へ進めます。現在の段階とまだたどり着いていない段階はただの文字です。段階のボタンを押すと、そのボタンは文字に変わるので、移った段階の見出しへフォーカスを移します。'
 		},
 		{
 			en: 'In this demo, “Documents” is optional and there is nothing to attach, so moving past it marks it as skipped. The state is shown in words, not only by the dashed circle.',
@@ -50,8 +50,8 @@ export default {
 		{
 			key: 'Enter / Space',
 			action: {
-				en: 'On a step button, goes to that step. Also presses Back, Next and Submit.',
-				ja: '段階のボタンでは、その段階へ移ります。「戻る」「次へ」「申請する」もこのキーで押します。'
+				en: 'On a step button, goes to that step and moves focus to its heading. Also presses Back, Next and Submit.',
+				ja: '段階のボタンでは、その段階へ移り、見出しへフォーカスを移します。「戻る」「次へ」「申請する」もこのキーで押します。'
 			}
 		}
 	],
