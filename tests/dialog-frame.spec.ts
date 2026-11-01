@@ -32,3 +32,26 @@ for (const d of demos.filter((d) => d.clickToClose)) {
 		await expect(button).toBeFocused();
 	});
 }
+
+for (const d of demos) {
+	test(`${d.name}: focus moves to a control inside it when it opens`, async ({ page }) => {
+		await openInFrame(page, d);
+		const dialog = page.getByRole(d.role, { name: d.name });
+		const focused = await dialog.evaluate((el) => {
+			const a = document.activeElement;
+			return a && el.contains(a) ? a.tagName : null;
+		});
+		expect(['BUTTON', 'INPUT']).toContain(focused);
+	});
+}
+
+for (const d of demos) {
+	test(`${d.name}: its content fits inside the demo frame`, async ({ page }) => {
+		await openInFrame(page, d);
+		const overflow = await page.getByRole(d.role, { name: d.name }).evaluate((el) => {
+			const box = el.getBoundingClientRect();
+			return [...el.querySelectorAll('*')].filter((c) => c.getBoundingClientRect().bottom > box.bottom + 1).map((c) => c.tagName);
+		});
+		expect(overflow).toEqual([]);
+	});
+}

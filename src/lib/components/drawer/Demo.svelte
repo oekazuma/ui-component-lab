@@ -79,7 +79,6 @@
 		justify-self: end;
 		width: min(calc(100% - 3rem), 18rem);
 		height: 100%;
-		overflow: auto;
 		padding: 1rem;
 		border-left: 1px solid var(--color-border);
 		background: var(--color-bg);
