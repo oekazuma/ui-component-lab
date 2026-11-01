@@ -26,7 +26,7 @@ test('skill: the guide shows how to install and try it, and what it never does o
 	await expect(page).toHaveTitle(/AIエージェントで自分のサイトのUIを点検する/);
 	await expect(page.locator('pre code', { hasText: 'npx skills add oekazuma/ui-component-lab' })).toBeVisible();
 	await expect(page.locator('pre code', { hasText: '/improve-ui-components http://localhost:5173/signup' })).toBeVisible();
-	await expect(page.getByRole('heading', { level: 2, name: '本番のサイトでは操作しない' })).toBeVisible();
+	await expect(page.getByRole('heading', { level: 2, name: '本番のサイトでは何も変えない' })).toBeVisible();
 	for (const id of ['select', 'checkbox', 'menu'])
 		await expect(page.getByRole('main').locator(`a[href="/ui-component-lab/ja/components/${id}/"]`)).toBeVisible();
 	await expect(page.getByRole('link', { name: /スキルのソース.*外部サイト/ })).toHaveAttribute(

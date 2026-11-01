@@ -61,11 +61,11 @@
 				'After the fix, check it with the keys and expected results at the end of the plan, and with your test commands.',
 				'The skill does not change your source, so you can read the plans before deciding what to fix.'
 			],
-			safe: 'It never operates your live site',
+			safe: 'It never changes anything on your live site',
 			rules: [
-				'On the live site it only reads the page and moves focus. It never submits, buys, deletes, saves, changes a value or signs in.',
+				'On the live site it only reads the page, moves focus, and opens and closes menus and dialogs. It never submits, buys, deletes, saves, changes a value or signs in.',
 				'Changing values and pressing buttons happen only on your development server, and only when everything the page sends stays on your machine.',
-				'It does not change your source code. The only files it writes are the plans in `plans/`.',
+				'It does not change your source code. The only files it writes are the plans in `plans/` (or `advisor-plans/` when `plans/` is used for something else).',
 				'Pages behind a login are checked only in a browser you have signed in to and let the agent use. It never asks for a password.',
 				'It checks only the pages you pass. It does not crawl the site.'
 			],
@@ -120,11 +120,11 @@
 				'直したら、計画の最後にある確かめ方（押すキーと、起きるべきこと）と、テストのコマンドで確かめます。',
 				'スキルはソースを書き換えないので、計画を読んでから、どれを直すかを決められます。'
 			],
-			safe: '本番のサイトでは操作しない',
+			safe: '本番のサイトでは何も変えない',
 			rules: [
-				'本番のページでは、読むこととフォーカスを動かすことだけをします。送信、購入、削除、保存、値の変更、ログインはしません。',
+				'本番のページでは、読むこと、フォーカスを動かすこと、メニューやダイアログを開いて閉じることだけをします。送信、購入、削除、保存、値の変更、ログインはしません。',
 				'値を変えたりボタンを押したりして確かめるのは、開発サーバーの上だけです。それも、ページの送り先がそのマシンの中だけだと確かめられたときに限ります。',
-				'ソースコードは書き換えません。書くのは `plans/` の計画だけです。',
+				'ソースコードは書き換えません。書くのは `plans/`（`plans/` がほかの用途に使われていれば `advisor-plans/`）の計画だけです。',
 				'ログインが要るページは、利用者が自分でログインしたブラウザを、使ってよいと言われたときだけ点検します。パスワードは求めません。',
 				'点検するのは渡したページだけです。サイトをたどって回ることはしません。'
 			],
