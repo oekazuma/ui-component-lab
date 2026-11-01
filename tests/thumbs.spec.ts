@@ -13,6 +13,7 @@ const opened = [
 	'Menubar',
 	'Modal',
 	'Select',
+	'Skeleton',
 	'Spinner',
 	'Toast',
 	'Tooltip'

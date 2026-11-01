@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import type { Lang } from '#lib/types.js';
 
 	let { lang }: { lang: Lang } = $props();
@@ -30,7 +29,7 @@
 		timer = setTimeout(() => (loading = false), 1500);
 	}
 
-	onMount(() => {
+	$effect(() => {
 		load();
 		return () => clearTimeout(timer);
 	});
