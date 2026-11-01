@@ -51,12 +51,12 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Use it to confirm a destructive action or to show a short, self-contained message.',
-			ja: '取り消せない操作の確認や、短く完結したメッセージに使います。'
+			en: 'Use it to show a short, self-contained message. To confirm a destructive action, use an alert dialog.',
+			ja: '短く完結したメッセージに使います。取り消せない操作の確認には、アラートダイアログを使います。'
 		},
 		{
-			en: 'Do not use it for navigation menus or completion notices; use a drawer or a menu button for navigation.',
-			ja: 'ナビゲーションメニューや完了の通知には使いません。ナビゲーションにはドロワーやメニューボタンを使います。'
+			en: 'Do not use it for navigation menus or completion notices; for navigation, use a drawer opened by a hamburger menu button.',
+			ja: 'ナビゲーションメニューや完了の通知には使いません。ナビゲーションには、ハンバーガーメニューボタンで開くドロワーを使います。'
 		},
 		{
 			en: 'The Digital Agency Design System adds a separate close button only when there are no action buttons. Carbon gives even modals that have action buttons a close (×) icon that closes them without submitting anything.',
