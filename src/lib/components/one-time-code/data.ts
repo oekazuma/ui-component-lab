@@ -23,8 +23,8 @@ export default {
 			ja: 'このデモは、GOV.UK と同じく、1桁ごとの枠ではなく1つの欄にしています。1つの欄なら、貼り付けたコードも自動入力されたコードもそのまま全部入ります。1桁ごとの枠で、貼り付けても最初の枠にしか入らない作りは、WCAG を満たしません。'
 		},
 		{
-			en: 'Spaces and hyphens are allowed and removed before checking, so a code can be entered the way it appears in the message. Full-width digits typed with a Japanese input method are accepted too.',
-			ja: '空白やハイフンも受け付けて確かめる前に取り除くので、届いたままの形でコードを入力できます。日本語入力のまま打った全角の数字も受け付けます。'
+			en: 'Spaces and hyphens are allowed and removed before checking, so a code can be entered the way it appears in the message. Full-width digits typed with a Japanese input method, and a long vowel mark “ー” typed as a hyphen, are accepted too.',
+			ja: '空白やハイフンも受け付けて確かめる前に取り除くので、届いたままの形でコードを入力できます。日本語入力のまま打った全角の数字や、ハイフンのつもりで打った長音記号「ー」も受け付けます。'
 		},
 		{
 			en: 'In this demo, nothing is sent, and any 6 digits are accepted. Pressing Continue with too few or too many digits shows an error below the field, links it with `aria-describedby`, and moves focus to the field. The field has no `maxlength`, so a pasted “123 456” is not cut off.',
