@@ -33,6 +33,10 @@ export default {
 		{
 			en: 'In this demo, the heading links do not go anywhere.',
 			ja: 'このデモでは、見出しのリンクを押しても移動しません。'
+		},
+		{
+			en: 'In this demo, each Save button is described by its card’s heading with `aria-describedby`, so a list of buttons still tells which card each one belongs to.',
+			ja: 'このデモでは、各カードの「保存」ボタンに `aria-describedby` でカードの見出しを結び、ボタンの一覧で聞いてもどのカードのものか分かるようにしています。'
 		}
 	],
 	keyboard: [

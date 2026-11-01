@@ -449,6 +449,12 @@ test('card: cards in a grid with linked headings and category labels, and an ad 
 	expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
 });
 
+test('card: each Save button is described by its card heading', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/card/');
+	await expect(demo.getByRole('button', { name: 'Save' }).first()).toHaveAccessibleDescription('Weekend in Kyoto');
+	await expect(demo.getByRole('button', { name: 'Save' }).nth(1)).toHaveAccessibleDescription('Market breakfast in Hakodate');
+});
+
 test('description list: each row has a Change link named after its row, and fits a phone screen', async ({ page }) => {
 	await page.setViewportSize({ width: 375, height: 800 });
 	const demo = await openDemo(page, 'en/components/description-list/');

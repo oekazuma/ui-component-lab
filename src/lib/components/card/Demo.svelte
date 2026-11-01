@@ -39,7 +39,14 @@
 					<p class="meta">{card.meta}</p>
 					<p>{card.body}</p>
 					<div class="actions">
-						<button type="button" class="btn" aria-pressed={saved[i]} onclick={() => (saved[i] = !saved[i])}>
+						<!-- 同じ「保存」が並ぶので、ボタンの一覧で聞いてもどのカードのものか分かるよう、見出しを説明として結ぶ -->
+						<button
+							type="button"
+							class="btn"
+							aria-pressed={saved[i]}
+							aria-describedby="{uid}-title-{i}"
+							onclick={() => (saved[i] = !saved[i])}
+						>
 							<span aria-hidden="true">{saved[i] ? '★' : '☆'}</span>
 							{text[lang].save}
 						</button>
