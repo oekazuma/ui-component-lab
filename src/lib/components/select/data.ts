@@ -141,6 +141,11 @@ export default {
 			checkedAt: '2026-10-20'
 		},
 		{
+			label: 'デジタル庁デザインシステムウェブサイト「セレクトボックス（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/select/usage/',
+			checkedAt: '2026-11-02'
+		},
+		{
 			label: 'Deceptive Patterns: Trick wording',
 			url: 'https://www.deceptive.design/types/trick-wording',
 			checkedAt: '2026-10-21'

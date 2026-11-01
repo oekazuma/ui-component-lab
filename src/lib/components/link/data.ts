@@ -37,7 +37,7 @@ export default {
 	],
 	usage: [
 		{
-			en: 'To move between pages, use links, such as a horizontal menu. Do not use ARIA tabs (`role="tab"`) for it, since tabs switch content in place.',
+			en: 'To move between pages, use links, for example in a horizontal menu. Do not use ARIA tabs (`role="tab"`) for it, since tabs switch content in place.',
 			ja: 'ページ間の移動にはリンク（水平メニューなど）を使います。ARIA のタブ（`role="tab"`）はその場で内容を切り替える部品なので、ページ間の移動には使いません。'
 		},
 		{
