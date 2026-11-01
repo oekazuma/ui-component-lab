@@ -10,6 +10,8 @@
 
 ## Development
 
+Requires Node.js 24 or later and pnpm (enable it with `corepack enable`).
+
 ```sh
 pnpm install
 pnpm dev
@@ -17,12 +19,13 @@ pnpm dev
 
 ## Adding a component
 
-Create `src/lib/components/<id>/` with two files. They are registered automatically.
+Create `src/lib/components/<id>/` with two files (and an optional third). They are registered automatically.
 
 - `data.ts`: `export default { ... } satisfies ComponentData` (see `src/lib/types.ts`). Required fields are `id` (same as the directory name), `category`, `names`, `aliases`, `summary`, `appearance`, `behavior`, `keyboard` and `sources`; `variations`, `usage`, `misuse` and `related` are optional. Every text has both `en` and `ja`.
 - `Demo.svelte`: a minimal interactive demo that takes a `lang` prop.
+- `Thumb.svelte` (optional): a still picture of the opened state for the list page, for components that open (menus, dialogs, toasts). See CLAUDE.md.
 
-Then run `pnpm check` and `pnpm build`. The conventions (related links, source labels, key notation, demo rules) are in [CLAUDE.md](CLAUDE.md).
+Then run `pnpm check`, and `pnpm build && pnpm test:e2e` (Playwright with axe). The conventions (related links, source labels, key notation, demo rules) are in [CLAUDE.md](CLAUDE.md).
 
 ## Skill: improve-ui-components
 

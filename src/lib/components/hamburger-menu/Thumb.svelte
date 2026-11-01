@@ -30,7 +30,7 @@
 			{text[lang].open}
 		</span>
 	</div>
-	<!-- 暗くする色はデモの ::backdrop と同じにする。トークンはどれもダークモードで明るい色に変わり、背景が暗くならないため -->
+	<!-- 暗くする色はデモの `dialog.in-frame` の背景（`src/app.css`）と同じにする。トークンはどれもダークモードで明るい色に変わり、背景が暗くならないため -->
 	<div class="backdrop"></div>
 	<div class="panel">
 		<span class="head">

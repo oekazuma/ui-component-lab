@@ -30,6 +30,7 @@ CI は PR ごとに上の 3 つを実行する。
 - `misuse`（避けたい使い方）は pattern（どういう使い方か）、harm（誰がどう困るか）、instead（代わりにどうするか）で書く。harm は出典に書かれている内容に限り、部品を問わない資料（WCAG、deceptive.design など）を当てはめてよい。`deceptive: true` は出典がディセプティブパターンやダークパターンとして分類しているものにだけ付ける。根拠にした資料は sources に足し、根拠が見つからない部品には書かない
 - `components.json`（`src/routes/components.json/+server.ts`）は improve-ui-components スキル（`skills/`）が読む。形を変えるときは `ComponentsJson` の `version` を上げ、スキルも合わせる
 - データの約束事の検査は `src/lib/data.check.ts` に足す。`src/lib/server/components.ts` はビルドの中でしか動かず、結果も `pnpm check` に出ないので、検査を増やさない
+- `#lib` から import できるのは型だけ（`import type`）。`src/lib/data.check.ts` が data.ts を Node で直接読み、`#lib/types.js` は .ts の実体を指さないため（`data.check.ts` が確かめる）
 
 ### Demo.svelte
 
@@ -41,7 +42,7 @@ CI は PR ごとに上の 3 つを実行する。
 - タイマーは `$effect` の片付けで止める（例: `toast/Demo.svelte`）
 - モーダルなデモ（`<dialog>` の `showModal()`）は、`<dialog>` に `class="in-frame"`（`src/app.css`）を付け、中身を子要素に入れて、デモの枠に重ねて出す。画面全体に出ると、どのデモの動きかが分かりにくいため。中身の箱に `overflow: auto` を付けると、開いたときのフォーカスが箱に移るので付けず、収まらないときはデモの高さを広げる（例: `drawer/Demo.svelte`、`modal/Demo.svelte`）
 - `svelte-ignore` を使うときは、1 行上に理由を書く
-- 色は `src/app.css` のトークン（`--color-*`）を使う。ダークモードではトークンの値が切り替わるので、色を直に書くとダークモードで読めなくなる。エラーは `--color-danger`（その上の文字は `--color-danger-text`）、薄い背景のエラー表示は `--color-danger-surface` と `--color-danger-on-surface`、アクセントのホバーは `--color-accent-hover`。トークンを足すときはライトとダークの両方に値を書き、コントラスト比をコメントに書く
+- 色は `src/app.css` のトークン（`--color-*`）を使う。ダークモードではトークンの値が切り替わるので、色を直に書くとダークモードで読めなくなる。エラーは `--color-danger`（その上の文字は `--color-danger-text`）、薄い背景のエラー表示は `--color-danger-surface` と `--color-danger-on-surface`、アクセントのホバーは `--color-accent-hover`。トークンを足すときはライトとダークの両方に値を書き、コントラスト比をコメントに書く。影（`box-shadow`）と、モーダルの背景を暗くする半透明の黒（`rgb(0 0 0 / …)`）は、ライトでもダークでも背景を暗く沈めるだけなので、直に書いてよい（`src/app.css` の `dialog.in-frame` も同じ）
 - 共通のクラスは `.btn`、`.btn-primary`、`.visually-hidden`（`src/app.css`）
 - デモの挙動を変えたら、同じコミットで data.ts の keyboard と behavior を直す。独自のキー操作を変えたときは `tests/keyboard.spec.ts` も直す
 
@@ -52,7 +53,7 @@ CI は PR ごとに上の 3 つを実行する。
 
 ## コードの約束事
 
-- routes と data.ts からは `#lib/*.js` で import し、`src/lib` の中では相対パスを使う。`src/params.ts` はビルド時に Node が直接読むので `#lib` を使わない
+- routes、data.ts、`src/lib/components/` の中のファイルからは `#lib/*.js` で import する。`src/lib` 直下の共通のモジュールどうしは相対パスを使う。`src/params.ts` はビルド時に Node が直接読むので `#lib` を使わない
 - ページへ渡すデータは、`+page.server.ts` などの `load` で要る分だけに削る（全部品のデータをクライアントに読み込ませない）
 - コメントは日本語で書き、処理の説明より理由を書く
 - `ponytail:` コメントは、意図して簡略にした箇所と、見直すきっかけを示す
