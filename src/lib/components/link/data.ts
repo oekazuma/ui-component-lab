@@ -27,8 +27,8 @@ export default {
 			ja: 'このデモでは、文中のリンクはこのサイトのボタンのページへ移動します。2つ目のリンクは `target="_blank"` でデジタル庁のページを新しいタブで開き、そのことをアイコンの `role="img"` と `aria-label` で伝えます。3つ目のリンクはこのサイトの紹介画像を開き、ファイルの形式と大きさをリンクの文言に含めています。'
 		},
 		{
-			en: 'In this demo, hovering thickens the underline and darkens the color, and visited links turn purple. The weight and size of the text stay the same, so the surrounding text does not move.',
-			ja: 'このデモでは、マウスを乗せると下線が太くなって色が濃くなり、訪問済みのリンクは紫になります。文字の太さや大きさは変えないので、周りの文字は動きません。'
+			en: 'In this demo, hovering thickens the underline and changes the color, and visited links turn purple. The weight and size of the text stay the same, so the surrounding text does not move.',
+			ja: 'このデモでは、マウスを乗せると下線が太くなって色が変わり、訪問済みのリンクは紫になります。文字の太さや大きさは変えないので、周りの文字は動きません。'
 		}
 	],
 	keyboard: [

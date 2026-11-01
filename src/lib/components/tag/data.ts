@@ -32,7 +32,7 @@ export default {
 		},
 		{
 			en: 'After removing a tag, this demo moves focus to the next tag’s button (or the previous one if it was the last) so keyboard users do not lose their place.',
-			ja: 'このデモではタグを外したあと、キーボード利用者が迷わないよう、隣のタグのボタンにフォーカスを移します。'
+			ja: 'このデモではタグを外したあと、キーボード利用者が迷わないよう、次のタグ（最後のタグだったときは前のタグ）のボタンにフォーカスを移します。'
 		},
 		{
 			en: 'In this demo, a chosen tag shows a check mark as well as a color change, so the choice is not shown by color alone.',
@@ -45,7 +45,7 @@ export default {
 			key: 'Enter / Space',
 			action: {
 				en: 'On a selectable tag, chooses it or clears the choice. On a remove button, removes the tag and moves focus to the next one (or the previous one if it was the last).',
-				ja: '選べるタグでは、選ぶか選択を外します。外すボタンでは、タグを外し、隣のタグへフォーカスを移します。'
+				ja: '選べるタグでは、選ぶか選択を外します。外すボタンでは、タグを外し、次のタグ（最後のタグだったときは前のタグ）へフォーカスを移します。'
 			}
 		}
 	],

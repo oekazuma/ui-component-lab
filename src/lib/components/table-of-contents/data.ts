@@ -23,8 +23,8 @@ export default {
 			ja: 'タイトルを `aria-labelledby` で名前にした `<nav>` なので、スクリーンリーダーの利用者はランドマークの一覧から見つけられます。'
 		},
 		{
-			en: 'When it marks the section being read, the link has `aria-current="location"` as well as the bold text and color.',
-			ja: '今読んでいる節を示すときは、太字と色に加えて、そのリンクに `aria-current="location"` を付けます。'
+			en: 'When it marks the section being read, the link has `aria-current="location"` as well as a visible mark such as bold text.',
+			ja: '今読んでいる節を示すときは、太字などの見た目の印に加えて、そのリンクに `aria-current="location"` を付けます。'
 		},
 		{
 			en: 'The table of contents on the right of this page (under the demo on phones) is this component. It marks the section being read.',

@@ -104,8 +104,8 @@ export default {
 			ja: '区画の幅はそろえます。'
 		},
 		{
-			en: 'For switching between completely separate parts of an app or a page, use tabs instead. For a yes/no or on/off choice, use a switch.',
-			ja: 'アプリやページのまったく別の部分を切り替えるなら、タブを使います。はい・いいえやオン・オフの選択には、スイッチを使います。'
+			en: 'For switching between completely separate parts of an app or a page, use tabs instead. For an on/off setting that takes effect immediately, use a switch.',
+			ja: 'アプリやページのまったく別の部分を切り替えるなら、タブを使います。すぐに反映されるオン・オフの設定には、スイッチを使います。'
 		}
 	],
 	misuse: [

@@ -53,15 +53,15 @@ export default {
 		{
 			key: '↓',
 			action: {
-				en: 'Opens the suggestions, or highlights the next one.',
-				ja: '候補を開きます。開いているときは次の候補を選びます。'
+				en: 'Opens the suggestions and highlights the first one, or highlights the next one.',
+				ja: '候補を開いて最初の候補を選びます。開いているときは次の候補を選びます。'
 			}
 		},
 		{
 			key: '↑',
 			action: {
-				en: 'Opens the suggestions, or highlights the previous one.',
-				ja: '候補を開きます。開いているときは前の候補を選びます。'
+				en: 'Opens the suggestions and highlights the last one, or highlights the previous one.',
+				ja: '候補を開いて最後の候補を選びます。開いているときは前の候補を選びます。'
 			}
 		},
 		{
