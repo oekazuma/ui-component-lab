@@ -597,3 +597,97 @@ test('checkbox: the terms checkbox is already marked invalid when Apply moves fo
 	await expect(terms).toBeFocused();
 	await expect(terms).toHaveAttribute('data-invalid-on-focus', 'true');
 });
+
+test('toast: Escape dismisses it and returns focus to the button that showed it', async ({ page }) => {
+	await page.clock.install();
+	const demo = await openDemo(page, 'en/components/toast/');
+	const archive = demo.getByRole('button', { name: 'Archive message' });
+	const undo = demo.getByRole('button', { name: 'Undo' });
+
+	await archive.click();
+	await page.keyboard.press('Tab');
+	await expect(undo).toBeFocused();
+	await page.keyboard.press('Escape');
+	await expect(undo).toHaveCount(0);
+	await expect(demo.getByRole('status')).toHaveText('');
+	await expect(archive).toBeFocused();
+});
+
+test('split button: the arrow opens the menu, Home and End move to the first and last item, and Escape returns to the arrow', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/split-button/');
+	const arrow = demo.getByRole('button', { name: 'More save options' });
+	const item = (name: string) => demo.getByRole('menuitem', { name });
+
+	await arrow.focus();
+	await page.keyboard.press('ArrowDown');
+	await expect(item('Save as draft')).toBeFocused();
+	await page.keyboard.press('End');
+	await expect(item('Save and close')).toBeFocused();
+	await page.keyboard.press('Home');
+	await expect(item('Save as draft')).toBeFocused();
+
+	await page.keyboard.press('Escape');
+	await expect(demo.getByRole('menu')).toHaveCount(0);
+	await expect(arrow).toBeFocused();
+
+	await page.keyboard.press('ArrowUp');
+	await expect(item('Save and close')).toBeFocused();
+	await page.keyboard.press('Escape');
+	await page.keyboard.press('Enter');
+	await expect(item('Save as draft')).toBeFocused();
+});
+
+test('tree view: ArrowDown and ArrowUp move through the visible items, Home and End to the first and last', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/tree-view/');
+	const item = (name: string) => demo.getByRole('treeitem', { name, exact: true });
+
+	// 閉じたフォルダの中身は「見えている項目」に入らない
+	await item('Documents').focus();
+	await page.keyboard.press('ArrowDown');
+	await expect(item('Pictures')).toBeFocused();
+	await page.keyboard.press('ArrowDown');
+	await expect(item('readme.txt')).toBeFocused();
+	await page.keyboard.press('Home');
+	await expect(item('Documents')).toBeFocused();
+	await page.keyboard.press('End');
+	await expect(item('readme.txt')).toBeFocused();
+	await page.keyboard.press('ArrowUp');
+	await expect(item('Pictures')).toBeFocused();
+
+	await page.keyboard.press('ArrowRight');
+	await page.keyboard.press('ArrowDown');
+	await expect(item('cat.png')).toBeFocused();
+	await page.keyboard.press('ArrowUp');
+	await expect(item('Pictures')).toBeFocused();
+});
+
+test('combobox: ArrowDown and Enter choose a suggestion, and Alt+ArrowDown opens the list without choosing', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/combobox/');
+	const input = demo.getByRole('combobox');
+
+	await input.focus();
+	await page.keyboard.press('Alt+ArrowDown');
+	await expect(input).toHaveAttribute('aria-expanded', 'true');
+	await expect(input).not.toHaveAttribute('aria-activedescendant', /.+/);
+
+	await page.keyboard.press('Escape');
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('Enter');
+	await expect(input).toHaveValue('Apricot');
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('menu: Home and End move to the first and last item', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/menu/');
+	const item = (name: string) => demo.getByRole('menu', { name: 'Actions' }).getByRole('menuitem', { name });
+
+	await demo.getByRole('button', { name: 'Actions' }).focus();
+	await page.keyboard.press('ArrowDown');
+	await expect(item('Rename')).toBeFocused();
+	await page.keyboard.press('End');
+	await expect(item('Move to trash')).toBeFocused();
+	await page.keyboard.press('Home');
+	await expect(item('Rename')).toBeFocused();
+});
