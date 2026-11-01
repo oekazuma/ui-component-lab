@@ -1028,6 +1028,13 @@ test('one-time code: one field takes a pasted code with a space, and a short cod
 	await expect(input).toHaveAccessibleDescription(/6 numbers/);
 });
 
+test('one-time code: full-width digits and a long vowel mark typed with a Japanese input method are accepted', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/one-time-code/');
+	await demo.getByLabel('Security code').fill('１２３ー４５６');
+	await demo.getByRole('button', { name: 'Continue' }).click();
+	await expect(demo.getByRole('status')).toHaveText('Code accepted');
+});
+
 test('rating: starts with no rating, and choosing a star says the value in words', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/rating/');
 	await expect(demo.getByRole('radio', { name: 'No rating' })).toBeChecked();

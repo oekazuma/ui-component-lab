@@ -29,8 +29,9 @@
 	let ok = $state(false);
 	let input: HTMLInputElement;
 
-	// 届いたままの形で貼り付けられるよう、空白とハイフンは入力させてから取り除く
-	let digits = $derived(value.replace(/[\s-]/g, ''));
+	// 届いたままの形で貼り付けられるよう、空白とハイフンは入力させてから取り除く。
+	// 日本語入力のまま打った全角の数字や記号も通すため、先に NFKC で半角にそろえる（「ー」はハイフンのつもりで打たれる）
+	let digits = $derived(value.normalize('NFKC').replace(/[\s\-ー]/g, ''));
 	let error = $derived(
 		!submitted ? '' : !digits ? text[lang].empty : digits.length !== length || /\D/.test(digits) ? text[lang].wrong : ''
 	);
