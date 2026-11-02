@@ -60,6 +60,14 @@ export default {
 		{
 			en: 'Do not nest it inside a list, table, accordion or disclosure.',
 			ja: 'リスト、テーブル、アコーディオン、ディスクロージャーの中には入れません。'
+		},
+		{
+			en: 'The GOV.UK Design System says to use an accordion only if there is evidence that it helps users, because accordions hide content and not all users notice them or understand how they work. It suggests trying simpler approaches first, such as making the content shorter, splitting it across pages or separating it with headings.',
+			ja: 'GOV.UK は、役に立つという根拠があるときだけアコーディオンを使うよう求めています。アコーディオンは内容を隠すため、気づかない人や使い方が分からない人がいるからです。まずは内容を簡潔にする、ページを分ける、見出しで区切るといった、より単純な方法を試すよう勧めています。'
+		},
+		{
+			en: 'The U.S. Web Design System suits an accordion to cases where people need only a few pieces of the content, or where space is tight. It advises against one when most users need to see most of the information, or when there is too little content to be worth condensing, since an accordion adds cognitive load and interaction cost.',
+			ja: 'U.S. Web Design System は、内容のうち必要な部分が少しだけの場合や、場所が限られている場合にアコーディオンが向いているとしています。ほとんどの利用者が情報の大部分を見る必要がある場合や、まとめるほどの量がない場合は避けるよう勧めています。どの見出しを開くか判断する手間が増え、認知的な負担と操作の手間が増えるためです。'
 		}
 	],
 	misuse: [
@@ -150,6 +158,16 @@ export default {
 			label: 'デジタル庁デザインシステム HTML 実装例: accordion',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/accordion',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Accordion',
+			url: 'https://design-system.service.gov.uk/components/accordion/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'U.S. Web Design System: Accordion',
+			url: 'https://designsystem.digital.gov/components/accordion/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

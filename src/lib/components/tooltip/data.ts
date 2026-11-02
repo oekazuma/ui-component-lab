@@ -46,6 +46,16 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Keep a tooltip to a short note and never put information in it that people need to finish a task. The U.S. Web Design System says to use one only on elements that look interactive, such as buttons and links, because a hidden tooltip cannot be found, and to treat it as a last resort when space is tight.',
+			ja: 'ツールチップには短い補足だけを入れ、作業を終えるのに必要な情報は入れません。U.S. Web Design System は、隠れたツールチップは見つけられないので、ボタンやリンクのように操作できそうに見える要素にだけ付けること、場所が足りないときの最後の手段として使うことを求めています。'
+		},
+		{
+			en: 'Material Design 3 uses a plain tooltip to label an element that has no text, such as an icon-only button, and does not add one to an element that already has a text label. It uses a rich tooltip for longer text such as a definition, shows only one tooltip at a time, and says to use a dialog, not a tooltip, for critical information.',
+			ja: 'Material Design 3 は、アイコンだけのボタンのように文字のない要素に、プレーンツールチップでラベルを付けます。すでに文字のラベルがある要素には付けません。定義のような長めの説明にはリッチツールチップを使い、ツールチップは同時に1つだけ表示します。重要な情報はツールチップに隠さず、ダイアログで伝えるとしています。'
+		}
+	],
 	misuse: [
 		{
 			pattern: {
@@ -100,6 +110,16 @@ export default {
 			label: 'Understanding Success Criterion 1.4.13: Content on Hover or Focus (WCAG 2.2)',
 			url: 'https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'U.S. Web Design System: Tooltip',
+			url: 'https://designsystem.digital.gov/components/tooltip/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'Material Design 3: Tooltips',
+			url: 'https://m3.material.io/components/tooltips/guidelines',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

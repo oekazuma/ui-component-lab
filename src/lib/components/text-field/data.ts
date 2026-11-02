@@ -7,7 +7,8 @@ export default {
 	aliases: [
 		{ name: 'Text input', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/text-input/usage/' },
 		{ name: 'Input', source: 'Ant Design', url: 'https://ant.design/components/input' },
-		{ name: 'インプットテキスト', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/input-text/' }
+		{ name: 'インプットテキスト', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/input-text/' },
+		{ name: 'Text input', source: 'U.S. Web Design System', url: 'https://designsystem.digital.gov/components/text-input/' }
 	],
 	summary: {
 		en: 'A box where the user types a short piece of free text, such as a name.',
@@ -59,6 +60,10 @@ export default {
 		{
 			en: 'Do not cut off input with `maxlength`. Let people type past the limit, and say in the error how many characters they entered.',
 			ja: '`maxlength` で入力を打ち切りません。上限を超えても入力させ、エラーで入力した文字数を伝えます。'
+		},
+		{
+			en: 'The U.S. Web Design System says to avoid placeholder text, which vanishes once people type and often has too little contrast, and not to split one number, such as a phone number, across several fields. It also says to choose between disabled and read-only on purpose: a native disabled field cannot be reached with Tab and its value is not submitted, while a read-only field stays focusable and its value is submitted.',
+			ja: 'U.S. Web Design System は、入力し始めると消え、コントラストも足りないことが多いプレースホルダーを避けること、電話番号のように1つの番号を複数の欄に分けないことを求めています。無効（disabled）と読み取り専用（read-only）は意図して選びます。無効の欄は Tab キーで届かず、値も送信されません。読み取り専用の欄はフォーカスでき、値も送信されます。'
 		}
 	],
 	misuse: [
@@ -159,6 +164,11 @@ export default {
 			label: 'Nielsen Norman Group: Placeholders in Form Fields Are Harmful',
 			url: 'https://www.nngroup.com/articles/form-design-placeholders/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'U.S. Web Design System: Text input',
+			url: 'https://designsystem.digital.gov/components/text-input/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

@@ -7,7 +7,8 @@ export default {
 	aliases: [
 		{ name: 'Search', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/building-blocks/core/components/search' },
 		{ name: 'SearchField', source: 'React Aria', url: 'https://react-aria.adobe.com/SearchField' },
-		{ name: '検索ボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/search-box/' }
+		{ name: '検索ボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/search-box/' },
+		{ name: 'Search', source: 'U.S. Web Design System', url: 'https://designsystem.digital.gov/components/search/' }
 	],
 	summary: {
 		en: 'A text box with a search button for finding content across a site.',
@@ -70,6 +71,10 @@ export default {
 		{
 			en: 'Use it for searching across a whole site. To filter rows of a table, use table controls instead.',
 			ja: 'サイト全体を横断する検索に使います。表の行を絞り込むのには使わず、表の操作部品を使います。'
+		},
+		{
+			en: 'The U.S. Web Design System says to make the field at least 27 characters wide so that several search terms stay visible, and to fill it with the original search terms on the results page. The button should be a submit button, and the word “search” must be inside it for screen readers, even when only a magnifying glass icon is shown.',
+			ja: 'U.S. Web Design System は、複数の検索語が見えるよう入力欄を27文字分以上の幅にし、検索結果のページでは入力した検索語を欄に入れておくよう求めています。ボタンは送信ボタンにし、虫眼鏡のアイコンだけを見せる場合も、スクリーンリーダーのために「search」という語をボタンの中に入れておきます。'
 		}
 	],
 	misuse: [
@@ -148,6 +153,11 @@ export default {
 			label: 'GOV.UK Design System: Text input',
 			url: 'https://design-system.service.gov.uk/components/text-input/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'U.S. Web Design System: Search',
+			url: 'https://designsystem.digital.gov/components/search/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

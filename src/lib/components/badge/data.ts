@@ -56,6 +56,12 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Material Design 3 puts a badge at the ending edge of an icon in a component such as a navigation bar. A small badge, a plain dot, marks something new, and a large badge shows a count of up to four characters, including a + for more. A badge keeps a fixed position and is not moved over its icon, and in a navigation bar it is hidden once the destination is selected.',
+			ja: 'Material Design 3 は、ナビゲーションバーなどの部品の中で、アイコンの末尾側の端にバッジを付けます。小さなバッジは丸い点だけで新しい通知を示し、大きなバッジは件数などを最大4文字（「+」を含む）で示します。バッジの位置は固定でアイコンの上には重ねず、ナビゲーションバーでは移動先を選んだらバッジを隠します。'
+		}
+	],
 	related: [
 		{
 			id: 'tag',
@@ -75,6 +81,11 @@ export default {
 			label: 'MUI: Badge',
 			url: 'https://mui.com/material-ui/react-badge/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Material Design 3: Badge',
+			url: 'https://m3.material.io/components/badges/guidelines',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

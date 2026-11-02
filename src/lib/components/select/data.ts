@@ -64,6 +64,14 @@ export default {
 		{
 			en: 'With five or fewer options, use radio buttons instead. Never use a select for two options.',
 			ja: '選択肢が5つ以下ならラジオボタンを使います。2択にはセレクトを使いません。'
+		},
+		{
+			en: 'The GOV.UK Design System says to use a select only as a last resort in public-facing services, because research shows that some users find selects very difficult to use. Before using one, try asking questions that let you show fewer options, which may remove the need for a select.',
+			ja: 'GOV.UK は、一般向けのサービスではセレクトを最後の手段としてだけ使うよう求めています。調査で、セレクトをとても使いにくいと感じる利用者がいることが分かっているためです。使う前に、質問を重ねて選択肢の数を減らせないかを試します。そうすれば、セレクトが要らなくなることもあります。'
+		},
+		{
+			en: 'The U.S. Web Design System recommends a select for about 7 to 15 options when space is limited, radio buttons for fewer, and a combo box for more. It says not to submit the form or do anything else when an option is chosen, since people often change their choice several times and screen readers select each option as they read it.',
+			ja: 'U.S. Web Design System は、スペースが限られていて選択肢が7〜15個ほどのときにセレクトを使い、それより少なければラジオボタン、多ければコンボボックスを使うよう勧めています。選択肢を選んだだけでフォームの送信などをしないようにも求めています。利用者は選び直すことが多く、スクリーンリーダーは読み上げながら選択肢を順に選ぶためです。'
 		}
 	],
 	misuse: [
@@ -150,6 +158,16 @@ export default {
 			label: 'Deceptive Patterns: Trick wording',
 			url: 'https://www.deceptive.design/types/trick-wording',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Select',
+			url: 'https://design-system.service.gov.uk/components/select/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'U.S. Web Design System: Select',
+			url: 'https://designsystem.digital.gov/components/select/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

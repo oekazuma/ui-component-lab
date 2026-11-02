@@ -70,6 +70,10 @@ export default {
 		{
 			en: 'The GOV.UK Design System and the Digital Agency Design System hide “Previous” and “Next” on the first and last pages instead of disabling them. This demo keeps them focusable with `aria-disabled`.',
 			ja: 'GOV.UK Design System とデジタル庁デザインシステムでは、最初と最後のページで「前へ」「次へ」を無効にせず非表示にします。このデモは `aria-disabled` にして、フォーカスできるまま残しています。'
+		},
+		{
+			en: 'The U.S. Web Design System always shows the first page and the current page, highlights the current page, and shows the previous, next and last pages when they exist. It keeps every item on one line, marks missing pages with an ellipsis that cannot be selected, and suggests showing everything on one page when the collection is shorter than three or four screens.',
+			ja: 'U.S. Web Design System は、最初のページと現在のページを必ず出して現在のページを目立たせ、前・次・最後のページがあればそれも出します。項目は1行に収め、抜けているページは選べない「…」で示します。項目が全体で画面3〜4つ分に満たないときは、ページを分けずにすべて表示することを勧めています。'
 		}
 	],
 	misuse: [
@@ -141,6 +145,11 @@ export default {
 			label: 'Nielsen Norman Group: Infinite Scrolling Is Not for Every Website',
 			url: 'https://www.nngroup.com/articles/infinite-scrolling/',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'U.S. Web Design System: Pagination',
+			url: 'https://designsystem.digital.gov/components/pagination/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

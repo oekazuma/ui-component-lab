@@ -4,7 +4,12 @@ export default {
 	id: 'toast',
 	category: 'feedback',
 	names: { en: 'Toast', ja: 'トースト' },
-	aliases: [{ name: 'Snackbar', source: 'MUI', url: 'https://mui.com/material-ui/react-snackbar/' }],
+	aliases: [
+		{ name: 'Snackbar', source: 'MUI', url: 'https://mui.com/material-ui/react-snackbar/' },
+		{ name: 'Snackbar', source: 'Material Design 3', url: 'https://m3.material.io/components/snackbar/overview' },
+		{ name: 'Flag', source: 'Atlassian Design System', url: 'https://atlassian.design/components/flag' },
+		{ name: 'Message', source: 'Ant Design', url: 'https://ant.design/components/message' }
+	],
 	searchTerms: ['スナックバー'],
 	summary: {
 		en: 'A brief message that pops up at the edge of the screen after an action; one with only a message disappears on its own.',
@@ -67,6 +72,12 @@ export default {
 				en: 'Adds a button such as Undo, and a Close button. It does not disappear on its own.',
 				ja: '「元に戻す」などのボタンと閉じるボタンを添えたものです。自動では消しません。'
 			}
+		}
+	],
+	usage: [
+		{
+			en: 'Material Design 3 allows only one snackbar at a time, with at most one action such as “Undo”, and no icon or inline link; for a message that needs more, it uses a different component such as a dialog. On the web it also says a snackbar that disappears on its own is hard to use for people with low vision or who need more time, so give the snackbar an action to keep it on screen, or show the same information next to the control that triggered it.',
+			ja: 'Material Design 3 では、スナックバーは同時に1つだけ表示し、操作は「元に戻す」のようなものを最大1つにします。アイコンや文中のリンクは付けず、それ以上の内容が必要なときはダイアログなど別の部品を使います。ウェブでは、自動で消えるスナックバーは弱視の人や読むのに時間がかかる人には使いにくいため、操作を付けて表示を残すか、同じ内容をスナックバーを出した操作の近くにも示すよう求めています。'
 		}
 	],
 	misuse: [
@@ -144,6 +155,11 @@ export default {
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
 			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Material Design 3: Snackbar',
+			url: 'https://m3.material.io/components/snackbar/guidelines',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

@@ -33,7 +33,9 @@ const designSystems = [
 	'HTML',
 	'Fluent UI React v9',
 	'Atlassian Design System',
-	'Angular Material'
+	'Angular Material',
+	'U.S. Web Design System',
+	'Primer'
 ];
 
 // diff は自分の側を主語にする。部品名のほかに、文の書き出しで使ってよい呼び方

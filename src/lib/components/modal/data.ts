@@ -66,6 +66,10 @@ export default {
 		{
 			en: 'When the dialog has only one button, the Digital Agency Design System places it in the center, as this demo does. Carbon places a single button on the right side instead.',
 			ja: 'ダイアログのボタンが1つだけのとき、デジタル庁デザインシステムはこのデモのように中央に置きます。Carbon は右側に置きます。'
+		},
+		{
+			en: 'The U.S. Web Design System calls a modal a last resort and says to consider a less disruptive component every time. A modal should open because of something the person did, not on its own, except for cases such as a session about to time out. It says a multi-step process belongs on its own page, and advises against components other than buttons inside a modal and against using one to stop people before an external link.',
+			ja: 'U.S. Web Design System は、モーダルを最後の手段と位置づけ、そのつど、もっと邪魔にならない部品で済まないかを考えるよう求めています。モーダルは、利用者の操作を受けて開くもので、セッションが切れそうなときなどを除き、勝手に開きません。複数の手順にわたる流れは専用のページに置き、モーダルの中にはボタン以外の部品を置かず、外部サイトへのリンクの手前でモーダルを出して足止めしないようにします。'
 		}
 	],
 	misuse: [
@@ -182,6 +186,11 @@ export default {
 			label: 'Office of the Privacy Commissioner of Canada: Sweep Report 2024: Deceptive Design Patterns',
 			url: 'https://priv.gc.ca/en/about-the-opc/what-we-do/international-collaboration/international-privacy-sweep/2024_sweep/opc-sweep-report-2024',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'U.S. Web Design System: Modal',
+			url: 'https://designsystem.digital.gov/components/modal/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

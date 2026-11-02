@@ -71,6 +71,14 @@ export default {
 		{
 			en: 'For pairs of names and values, use a description list.',
 			ja: '項目名と値の組には、説明リストを使います。'
+		},
+		{
+			en: 'The GOV.UK Design System says never to use a table to lay out a page; use a grid instead. It describes a table with a `<caption>` written like a heading, uses the `scope` attribute on header cells so assistive technology can tell row headers from column headers, and aligns columns of numbers to the right.',
+			ja: 'GOV.UK は、ページのレイアウトにテーブルを使わず、グリッドを使うよう求めています。テーブルには見出しのように書いた `<caption>` で説明を付け、見出しセルには `scope` 属性を付けて、支援技術が行見出しと列見出しを区別できるようにします。数値の列は右に揃えます。'
+		},
+		{
+			en: 'The U.S. Web Design System says a table is for data with a consistent structure, not for page layout or for long text in cells. It advises keeping the columns few, using one unit and format within a column, and adding sorting only to long tables whose data can be ordered, and never to tables with merged cells.',
+			ja: 'U.S. Web Design System は、テーブルを使うのは構造がそろったデータで、ページのレイアウトや、セルの中の長い文章には使わないとしています。列の数は少なくし、1つの列の中では単位と書式をそろえます。並べ替えは、データに順序を付けられる長いテーブルにだけ付け、セルを結合したテーブルには付けません。'
 		}
 	],
 	misuse: [
@@ -144,6 +152,16 @@ export default {
 			label: 'WebAIM: Creating Accessible Tables',
 			url: 'https://webaim.org/techniques/tables/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Table',
+			url: 'https://design-system.service.gov.uk/components/table/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'U.S. Web Design System: Table',
+			url: 'https://designsystem.digital.gov/components/table/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

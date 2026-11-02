@@ -7,7 +7,8 @@ export default {
 	aliases: [
 		{ name: 'Chip', source: 'MUI', url: 'https://mui.com/material-ui/react-chip/' },
 		{ name: 'チップタグ', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/chip-tag/' },
-		{ name: 'チップラベル', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/chip-label/' }
+		{ name: 'チップラベル', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/chip-label/' },
+		{ name: 'Chips', source: 'Material Design 3', url: 'https://m3.material.io/components/chips/overview' }
 	],
 	summary: {
 		en: 'A short keyword label used to categorize content or show an applied filter.',
@@ -37,6 +38,10 @@ export default {
 		{
 			en: 'In this demo, a chosen tag shows a check mark as well as a color change, so the choice is not shown by color alone.',
 			ja: 'このデモでは、選んだタグに色の変化だけでなくチェックの印も付け、選択を色だけで示さないようにしています。'
+		},
+		{
+			en: 'In this demo, the display-only, selectable and removable kinds are shown together so that you can compare them.',
+			ja: 'このデモでは、見比べられるように、表示だけのタグ、選べるタグ、外せるタグを並べています。'
 		}
 	],
 	keyboard: [
@@ -80,6 +85,18 @@ export default {
 		{
 			en: 'A display-only chip shows a status or category. Always write the meaning as text, not by color alone. Colors can help tell categories apart, but too many make them harder to distinguish.',
 			ja: '表示だけのチップは状態や分類に使います。意味は色だけで示さず、必ず文字で書きます。色は分類の見分けに役立ちますが、使いすぎるとかえって見分けにくくなります。'
+		},
+		{
+			en: 'In the GOV.UK Design System, a tag only shows a status and is never made a link or a button. It names statuses with adjectives such as “Completed”, not verbs, so that no one expects a click to do something. The selectable and removable tags on this page are other kinds, so this advice applies to the display-only tag.',
+			ja: 'GOV.UK のタグは状態を示すだけのもので、リンクやボタンにはしません。名前は「完了済み」のように状態を表す語にし、動詞は使いません。動詞だと、押すと何か起きると思わせるためです。このページの選べるタグと外せるタグは別の種類なので、この助言は表示だけのタグに当てはまります。'
+		},
+		{
+			en: 'The U.S. Web Design System warns that people often mistake tags for buttons. A tag that is not interactive should have no hover, focus or active style, and it advises against mixing interactive and static tags on a site, because once a pattern is set people expect it every time.',
+			ja: 'U.S. Web Design System は、タグをボタンと取り違える人が多いと注意しています。操作できないタグには、ホバー・フォーカス・押下時の見た目を付けません。タグの動きが決まると利用者はいつも同じだと期待するため、サイトの中で操作できるタグと操作できないタグを混在させないよう勧めています。'
+		},
+		{
+			en: 'Material Design 3 calls interactive tags chips and sorts them into four kinds. Its filter chip, which stands for a filter on a collection, matches the selectable tag, and its input chip, a piece of information the person entered, matches the removable tag. It says chips are not buttons: actions that move a task forward are buttons, and a chip label is 20 characters or fewer.',
+			ja: 'Material Design 3 は、操作できるタグをチップと呼び、4種類に分けています。コレクションの絞り込みを表すフィルターチップは選べるタグに、利用者が入力した情報を表すインプットチップは外せるタグに当たります。チップはボタンではなく、作業を先へ進める操作はボタンにするとしています。チップのラベルは20文字以内にします。'
 		}
 	],
 	misuse: [
@@ -164,6 +181,21 @@ export default {
 			label: 'Inclusive Components: A Todo List',
 			url: 'https://inclusive-components.design/a-todo-list/',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'GOV.UK Design System: Tag',
+			url: 'https://design-system.service.gov.uk/components/tag/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'U.S. Web Design System: Tag',
+			url: 'https://designsystem.digital.gov/components/tag/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'Material Design 3: Chips',
+			url: 'https://m3.material.io/components/chips/guidelines',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

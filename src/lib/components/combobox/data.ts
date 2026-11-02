@@ -5,7 +5,8 @@ export default {
 	category: 'input',
 	names: { en: 'Combobox', ja: 'コンボボックス' },
 	aliases: [
-		{ name: 'Autocomplete', source: 'MUI', url: 'https://mui.com/material-ui/react-autocomplete/' }
+		{ name: 'Autocomplete', source: 'MUI', url: 'https://mui.com/material-ui/react-autocomplete/' },
+		{ name: 'Combo box', source: 'U.S. Web Design System', url: 'https://designsystem.digital.gov/components/combo-box/' }
 	],
 	summary: {
 		en: 'A text field with a list of suggestions; the user can pick one or type their own value.',
@@ -101,6 +102,10 @@ export default {
 		{
 			en: 'There are two kinds: one that only filters a fixed list, and one that also accepts free text.',
 			ja: '決まった選択肢を絞り込むだけのものと、自由な入力も受け付けるものの2種類があります。'
+		},
+		{
+			en: 'The U.S. Web Design System suggests a combo box when there are more than 15 options, and a select or radio buttons when there are few. Because the list is filtered by matching text, it advises writing options in strings people know, such as a postal abbreviation beside a state name. It also notes that testing with assistive technology found usability problems and, for now, recommends considering a select instead.',
+			ja: 'U.S. Web Design System は、選択肢が15個を超えるときにコンボボックスを使い、少ないときはセレクトかラジオボタンを使うよう勧めています。入力した文字との一致で絞り込むため、州名の横に郵便用の略称を添えるなど、利用者がなじんでいる表記で選択肢を書くよう求めています。また、支援技術を使った検証で使いにくさが見つかったため、現時点ではセレクトの利用を検討するよう勧めています。'
 		}
 	],
 	related: [
@@ -158,6 +163,11 @@ export default {
 			label: 'デジタル庁デザインシステムウェブサイト「コンボボックス」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/combobox/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'U.S. Web Design System: Combo box',
+			url: 'https://designsystem.digital.gov/components/combo-box/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

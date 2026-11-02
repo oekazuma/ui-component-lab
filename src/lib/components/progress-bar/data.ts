@@ -5,7 +5,8 @@ export default {
 	category: 'feedback',
 	names: { en: 'Progress bar', ja: 'プログレスバー' },
 	aliases: [
-		{ name: 'プログレスインジケーター', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/progress-indicator/' }
+		{ name: 'プログレスインジケーター', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/progress-indicator/' },
+		{ name: 'Progress indicators', source: 'Material Design 3', url: 'https://m3.material.io/components/progress-indicators/guidelines' }
 	],
 	summary: {
 		en: 'A bar that fills up to show how much of a task, such as an upload, is done.',
@@ -70,6 +71,10 @@ export default {
 		{
 			en: 'Do not use it to show progress through the steps of a form. Use a stepper for that.',
 			ja: 'フォームの手順の進み具合を示すのには使いません。それにはステップナビゲーションを使います。'
+		},
+		{
+			en: 'Material Design 3 uses a progress indicator for waits over 5 seconds, and one indicator for a whole group of items rather than one for each. A determinate indicator must reflect the real progress, and an indeterminate one can change to a determinate one as more becomes known.',
+			ja: 'Material Design 3 は、5秒を超える待ち時間にプログレスインジケーターを使い、項目ごとではなく、まとまり全体に1つだけ出します。進捗が分かるものは実際の進み具合を正確に表す必要があります。進捗が分からないものは、情報が増えたら進捗が分かるものに切り替えられます。'
 		}
 	],
 	related: [
@@ -120,6 +125,11 @@ export default {
 			label: 'デジタル庁デザインシステム HTML 実装例: progress-indicator',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/progress-indicator',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Material Design 3: Progress indicators',
+			url: 'https://m3.material.io/components/progress-indicators/guidelines',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

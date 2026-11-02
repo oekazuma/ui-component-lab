@@ -7,7 +7,8 @@ export default {
 	aliases: [
 		{ name: 'Menu button', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/menu-buttons/usage/' },
 		{ name: 'Dropdown', source: 'Ant Design', url: 'https://ant.design/components/dropdown' },
-		{ name: 'メニューリストボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/menu-list-box/' }
+		{ name: 'メニューリストボックス', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/menu-list-box/' },
+		{ name: 'Dropdown menu', source: 'Atlassian Design System', url: 'https://atlassian.design/components/dropdown-menu' }
 	],
 	searchTerms: ['ドロップダウンメニュー', 'プルダウンメニュー'],
 	summary: {

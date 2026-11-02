@@ -6,7 +6,8 @@ export default {
 	names: { en: 'Segmented control', ja: 'セグメンテッドコントロール' },
 	aliases: [
 		{ name: 'Segmented', source: 'Ant Design', url: 'https://ant.design/components/segmented' },
-		{ name: 'Content switcher', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/content-switcher/usage/' }
+		{ name: 'Content switcher', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/content-switcher/usage/' },
+		{ name: 'Segmented button', source: 'Material Design 3', url: 'https://m3.material.io/components/segmented-buttons/guidelines' }
 	],
 	summary: {
 		en: 'A row of joined buttons of equal width where exactly one is selected, used to switch between closely related options or views.',
@@ -106,6 +107,10 @@ export default {
 		{
 			en: 'For switching between completely separate parts of an app or a page, use tabs instead. For an on/off setting that takes effect immediately, use a switch.',
 			ja: 'アプリやページのまったく別の部分を切り替えるなら、タブを使います。すぐに反映されるオン・オフの設定には、スイッチを使います。'
+		},
+		{
+			en: 'Material Design 3 recommends 2 to 5 segments and suggests another component, such as chips, for more choices. It keeps labels short and on one line, and does not mix icon-only segments with text segments. It also has a multi-select kind, in which anywhere from none to all of the segments can be on, which matches the Multiple choice variation on this page. Its latest update no longer recommends segmented buttons and points to a connected button group instead.',
+			ja: 'Material Design 3 は、セグメントを2〜5個にし、選択肢がそれより多いときはチップなど別の部品を使うよう勧めています。ラベルは短く1行に収め、アイコンだけのセグメントと文字のセグメントは混ぜません。オフからすべてまで選べる複数選択の種類もあり、このページのバリエーションの「複数選択」に当たります。最新の更新ではセグメンテッドボタンの利用を勧めておらず、代わりにコネクテッドボタングループを案内しています。'
 		}
 	],
 	misuse: [
@@ -181,6 +186,11 @@ export default {
 			label: 'Carbon Design System: Content switcher accessibility',
 			url: 'https://carbondesignsystem.com/components/content-switcher/accessibility/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Material Design 3: Segmented button',
+			url: 'https://m3.material.io/components/segmented-buttons/guidelines',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

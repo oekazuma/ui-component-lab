@@ -7,7 +7,8 @@ export default {
 	aliases: [
 		{ name: 'Empty states', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/patterns/empty-states-pattern/' },
 		{ name: 'Empty', source: 'Ant Design', url: 'https://ant.design/components/empty' },
-		{ name: 'Empty state', source: 'Atlassian Design System', url: 'https://atlassian.design/components/empty-state/usage' }
+		{ name: 'Empty state', source: 'Atlassian Design System', url: 'https://atlassian.design/components/empty-state/usage' },
+		{ name: 'Blankslate', source: 'Primer', url: 'https://primer.style/product/components/blankslate' }
 	],
 	summary: {
 		en: 'A message shown in place of a list or table that has nothing to show, saying why and what to do next.',

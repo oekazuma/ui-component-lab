@@ -5,7 +5,9 @@ export default {
 	category: 'overlay',
 	names: { en: 'Drawer', ja: 'ドロワー' },
 	aliases: [
-		{ name: 'Offcanvas', source: 'Bootstrap', url: 'https://getbootstrap.com/docs/5.3/components/offcanvas/' }
+		{ name: 'Offcanvas', source: 'Bootstrap', url: 'https://getbootstrap.com/docs/5.3/components/offcanvas/' },
+		{ name: 'Sheet', source: 'React Aria', url: 'https://react-aria.adobe.com/Sheet' },
+		{ name: 'Side sheets', source: 'Material Design 3', url: 'https://m3.material.io/components/side-sheets/overview' }
 	],
 	summary: {
 		en: 'A panel that slides in from the edge of the screen, over the page.',

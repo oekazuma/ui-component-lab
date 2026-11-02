@@ -6,7 +6,8 @@ export default {
 	names: { en: 'Carousel', ja: 'カルーセル' },
 	aliases: [
 		{ name: 'Slide show', source: 'WAI-ARIA APG', url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/' },
-		{ name: 'Image rotator', source: 'WAI-ARIA APG', url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/' }
+		{ name: 'Image rotator', source: 'WAI-ARIA APG', url: 'https://www.w3.org/WAI/ARIA/apg/patterns/carousel/' },
+		{ name: 'イメージスライダー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/image-slider/' }
 	],
 	summary: {
 		en: 'Shows a set of slides one at a time, with buttons to choose a slide or move to the previous or next one.',

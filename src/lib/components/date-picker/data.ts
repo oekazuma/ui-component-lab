@@ -88,6 +88,10 @@ export default {
 		{
 			en: 'The WAI-ARIA APG example and the Digital Agency Design System open the calendar only from its button, and the Digital Agency Design System says not to open it on focus or hover. Carbon also opens it when the field gets focus.',
 			ja: 'WAI-ARIA APG の例とデジタル庁デザインシステムはカレンダーをボタンからだけ開き、デジタル庁デザインシステムはフォーカスやホバーで開かないよう求めています。Carbon は欄にフォーカスしたときにも開きます。'
+		},
+		{
+			en: 'The U.S. Web Design System uses a date picker when people schedule an event or the day of the week helps them choose. For a date they know well, such as a birthday, it uses memorable date fields instead. It always lets people type the date, because usability testing suggests some prefer that to the calendar.',
+			ja: 'U.S. Web Design System は、予定を決めるときや、曜日が分かると選びやすいときに日付ピッカーを使います。誕生日のようによく知っている日付には、代わりに覚えやすい日付の入力欄を使います。カレンダーより直接入力を好む人がいるとユーザビリティテストで分かったため、日付はいつでも入力できるようにします。'
 		}
 	],
 	misuse: [
@@ -146,6 +150,11 @@ export default {
 			label: 'Carbon Design System: Date picker',
 			url: 'https://carbondesignsystem.com/components/date-picker/usage/',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'U.S. Web Design System: Date picker',
+			url: 'https://designsystem.digital.gov/components/date-picker/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

@@ -6,7 +6,9 @@ export default {
 	names: { en: 'Alert', ja: 'アラート（ノティフィケーションバナー）' },
 	aliases: [
 		{ name: 'Inline notification', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/notification/usage/' },
-		{ name: 'ノティフィケーションバナー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/notification-banner/' }
+		{ name: 'ノティフィケーションバナー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/notification-banner/' },
+		{ name: 'Section message', source: 'Atlassian Design System', url: 'https://atlassian.design/components/section-message' },
+		{ name: 'Message bar', source: 'Fluent UI React v9', url: 'https://fluent2.microsoft.design/components/web/react/core/messagebar/usage' }
 	],
 	summary: {
 		en: 'An important message shown in the page, announced right away without interrupting what the user is doing.',
@@ -51,6 +53,14 @@ export default {
 		{
 			en: 'If it can be closed, keep it closed and provide a way to show it again.',
 			ja: '閉じられるようにする場合は、閉じたあともその状態を保ち、もう一度表示する手段を用意します。'
+		},
+		{
+			en: 'The GOV.UK Design System notification banner is for news that is not directly about what the person is doing on the page. It says to use it sparingly because people often miss banners, to show only one per page, and not to use one for validation errors, which belong in an error message and an error summary.',
+			ja: 'GOV.UK のノティフィケーションバナーは、利用者がそのページでしていることに直接関係しない知らせに使います。見落とされやすいので控えめに使うこと、1ページに1つだけにすること、入力エラーには使わず、エラーメッセージとエラーサマリーを使うことを求めています。'
+		},
+		{
+			en: 'The U.S. Web Design System says to start an alert’s text with a word naming its type, so the purpose is clear without relying on color or icon shape. It picks the ARIA role by urgency: `role="alert"` for errors and emergencies, `role="status"` for advisory messages such as success, and `role="region"` for informative or warning messages that should not interrupt.',
+			ja: 'U.S. Web Design System は、色やアイコンの形に頼らず目的が分かるよう、アラートの文を種類を表す言葉で始めるよう求めています。ARIA ロールは緊急度で選び、エラーや緊急のお知らせには `role="alert"`、成功のような補足的な知らせには `role="status"`、割り込ませたくない情報や警告には `role="region"` を使います。'
 		}
 	],
 	misuse: [
@@ -155,6 +165,16 @@ export default {
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
 			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: Notification banner',
+			url: 'https://design-system.service.gov.uk/components/notification-banner/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'U.S. Web Design System: Alert',
+			url: 'https://designsystem.digital.gov/components/alert/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

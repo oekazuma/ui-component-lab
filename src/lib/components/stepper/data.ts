@@ -7,7 +7,8 @@ export default {
 	aliases: [
 		{ name: 'Progress indicator', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/building-blocks/core/components/progress-indicator' },
 		{ name: 'Steps', source: 'Ant Design', url: 'https://ant.design/components/steps' },
-		{ name: 'ステップナビゲーション', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/step-navigation/' }
+		{ name: 'ステップナビゲーション', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/step-navigation/' },
+		{ name: 'Step indicator', source: 'U.S. Web Design System', url: 'https://designsystem.digital.gov/components/step-indicator/' }
 	],
 	summary: {
 		en: 'Shows the steps of a multi-page procedure, such as an application, and which step the user is on.',
@@ -83,6 +84,10 @@ export default {
 		{
 			en: 'For a short wait such as loading, use a progress bar. For moving between pages in a sequence, use pagination.',
 			ja: '読み込み待ちのような一時的な状態にはプログレスバーを、順番に並んだページの行き来にはページネーションを使います。'
+		},
+		{
+			en: 'The U.S. Web Design System uses a step indicator for a linear process of three or more high-level steps, alongside separate back and next buttons rather than as navigation of its own. It says not to use one for fewer than three sections, for steps that can be done in any order, or when the number of steps may change with the person’s answers.',
+			ja: 'U.S. Web Design System は、3つ以上の大きな段階が順に進む手続きにステップインジケーターを使い、戻る・次へのボタンとは別に置きます。それ自体を移動手段にはしません。段階が3つに満たない場合、順番が決まっていない場合、回答によって段階の数が変わりうる場合には使わないよう求めています。'
 		}
 	],
 	misuse: [
@@ -196,6 +201,11 @@ export default {
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
 			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'U.S. Web Design System: Step indicator',
+			url: 'https://designsystem.digital.gov/components/step-indicator/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

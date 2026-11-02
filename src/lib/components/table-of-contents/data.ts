@@ -4,7 +4,10 @@ export default {
 	id: 'table-of-contents',
 	category: 'navigation',
 	names: { en: 'Table of contents', ja: '目次' },
-	aliases: [{ name: '目次', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/toc/' }],
+	aliases: [
+		{ name: '目次', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/toc/' },
+		{ name: 'In-page navigation', source: 'U.S. Web Design System', url: 'https://designsystem.digital.gov/components/in-page-navigation/' }
+	],
 	summary: {
 		en: 'A list of links to the headings of a long page, showing how the page is organized and jumping to a section.',
 		ja: '長いページの見出しへのリンクを並べたものです。ページの構成を示し、目当ての節へ移れるようにします。'
@@ -73,6 +76,10 @@ export default {
 		{
 			en: 'If there are several on one page, give each title its own `id` so the `aria-labelledby` values do not clash.',
 			ja: '1つのページに複数置くときは、`aria-labelledby` が重ならないよう、タイトルにそれぞれ別の `id` を付けます。'
+		},
+		{
+			en: 'The U.S. Web Design System suggests in-page navigation for a page with three or more sections, or content more than three screens long, and not for a short page or one without a heading structure. Its link text matches the section headings, and the page’s `h1` is left out of the list.',
+			ja: 'U.S. Web Design System は、節が3つ以上ある、または内容が画面3つ分より長いページにページ内ナビゲーションを使い、短いページや見出しの構造がないページには使わないとしています。リンクの文言は各節の見出しと同じにし、ページの `h1` は一覧に入れません。'
 		}
 	],
 	misuse: [
@@ -146,6 +153,11 @@ export default {
 			label: 'MDN: aria-current',
 			url: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'U.S. Web Design System: In-page navigation',
+			url: 'https://designsystem.digital.gov/components/in-page-navigation/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

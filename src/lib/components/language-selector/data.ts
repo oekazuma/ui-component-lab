@@ -5,7 +5,8 @@ export default {
 	category: 'navigation',
 	names: { en: 'Language selector', ja: 'ランゲージセレクター' },
 	aliases: [
-		{ name: 'ランゲージセレクター', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/language-selector/' }
+		{ name: 'ランゲージセレクター', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/language-selector/' },
+		{ name: 'Language navigation', source: 'GOV.UK Design System', url: 'https://design-system.service.gov.uk/components/language-navigation/' }
 	],
 	summary: {
 		en: 'A control that lets people choose the language in which the site is shown.',
@@ -84,6 +85,14 @@ export default {
 		{
 			en: 'Write each language name in that language, such as “français” rather than “French”.',
 			ja: '言語名は、「フランス語」ではなく「français」のように、それぞれの言語で書きます。'
+		},
+		{
+			en: 'Offer a choice of language only for a page whose key information is available in the other language. The GOV.UK Design System also says people must not lose data they have entered when they switch language, and that the component should sit in the same place throughout the service.',
+			ja: 'もう一方の言語でも主な情報をすべて提供できるページだけに、言語の選択肢を出します。GOV.UK は、言語を切り替えても入力したデータが消えないようにすること、サービス全体で同じ場所に置くことも求めています。'
+		},
+		{
+			en: 'The U.S. Web Design System uses one button for two languages, and a button that opens a list of links for three or more. It says to use the component only when equivalent content is translated, and to mark each language link whose language differs from the page with the `lang` attribute.',
+			ja: 'U.S. Web Design System は、言語が2つのときはボタン1つ、3つ以上のときは、押すとリンクの一覧が開くボタンを使います。同じ内容が翻訳されているときだけ使うこと、ページとは別の言語になる言語リンクには `lang` 属性を付けることを求めています。'
 		}
 	],
 	misuse: [
@@ -167,6 +176,16 @@ export default {
 			label: 'WAI-ARIA APG: Example Disclosure Navigation Menu',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'GOV.UK Design System: Language navigation',
+			url: 'https://design-system.service.gov.uk/components/language-navigation/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'U.S. Web Design System: Language selector',
+			url: 'https://designsystem.digital.gov/components/language-selector/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

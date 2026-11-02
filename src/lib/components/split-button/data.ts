@@ -87,6 +87,12 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Material Design 3 keeps the main button’s label to one or two words, with an icon that matches the action. The button that opens the menu always shows the expand and collapse icon, which rotates when the menu is open, and the menu is aligned with that button where there is room.',
+			ja: 'Material Design 3 は、メインのボタンのラベルを1〜2語にし、操作に合うアイコンを添えます。メニューを開くボタンには常に展開・折りたたみを表すアイコンを使い、メニューが開くとこのアイコンが回転します。メニューは、余裕があれば、メニューを開くボタンに揃えて開きます。'
+		}
+	],
 	related: [
 		{
 			id: 'menu',
@@ -118,6 +124,11 @@ export default {
 			label: 'WAI-ARIA APG: Menu Button Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/',
 			checkedAt: '2026-10-20'
+		},
+		{
+			label: 'Material Design 3: Split buttons',
+			url: 'https://m3.material.io/components/split-button/guidelines',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

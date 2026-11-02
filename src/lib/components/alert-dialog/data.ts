@@ -4,7 +4,9 @@ export default {
 	id: 'alert-dialog',
 	category: 'overlay',
 	names: { en: 'Alert dialog', ja: 'アラートダイアログ' },
-	aliases: [],
+	aliases: [
+		{ name: 'Alert', source: 'Apple Human Interface Guidelines', url: 'https://developer.apple.com/design/human-interface-guidelines/alerts' }
+	],
 	summary: {
 		en: 'A modal dialog that interrupts the user with an urgent message and waits for a response.',
 		ja: '緊急のメッセージで作業を中断させ、応答を待つモーダルダイアログです。'
@@ -50,6 +52,10 @@ export default {
 		{
 			en: 'Use it only for urgent messages that need a decision, such as confirming an action that cannot be undone.',
 			ja: '取り消せない操作の確認など、判断が必要な緊急のメッセージにだけ使います。'
+		},
+		{
+			en: 'Apple Human Interface Guidelines call an alert critical information that people need right away, and say to use alerts sparingly. They advise against an alert that only informs, and against one for common actions that can be undone. Buttons are titled with verbs that say the result, such as “Delete”, and “OK” is not the default unless the alert is purely informational.',
+			ja: 'Apple Human Interface Guidelines は、アラートを今すぐ必要な重要な情報を伝えるものとし、控えめに使うよう求めています。情報を伝えるだけのアラートや、元に戻せるよくある操作のためのアラートは避けます。ボタンの名前は「削除」のように結果を表す動詞にし、情報を伝えるだけのアラートでない限り、「OK」を既定のボタンにしません。'
 		}
 	],
 	misuse: [
@@ -139,6 +145,11 @@ export default {
 			label: 'Deceptive Patterns: Confirmshaming',
 			url: 'https://www.deceptive.design/types/confirmshaming',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Apple Human Interface Guidelines: Alerts',
+			url: 'https://developer.apple.com/design/human-interface-guidelines/alerts',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

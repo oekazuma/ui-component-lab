@@ -6,7 +6,8 @@ export default {
 	names: { en: 'Spinner', ja: 'スピナー' },
 	aliases: [
 		{ name: 'Loading', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/components/loading/usage/' },
-		{ name: 'プログレスインジケーター', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/progress-indicator/' }
+		{ name: 'プログレスインジケーター', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/progress-indicator/' },
+		{ name: 'Loading indicator', source: 'Material Design 3', url: 'https://m3.material.io/components/loading-indicator/guidelines' }
 	],
 	summary: {
 		en: 'A small rotating shape that shows something is loading, without saying how long it will take.',
@@ -51,6 +52,10 @@ export default {
 		{
 			en: 'Continuous movement is especially distracting for some people with cognitive disabilities or attention deficits.',
 			ja: '認知障害や注意の障害がある人には、動き続けるものが特に妨げになります。'
+		},
+		{
+			en: 'Material Design 3 uses no indicator for a wait under 200 ms, a loading indicator for 200 ms to 5 s, and a progress indicator for anything longer. It centers the indicator in the page or container, or in the empty space where new content will appear, and does not switch a loading indicator into a determinate progress indicator partway through.',
+			ja: 'Material Design 3 は、待ち時間が200ミリ秒に満たなければインジケーターを出さず、200ミリ秒から5秒まではローディングインジケーター、それより長ければプログレスインジケーターを使います。インジケーターはページやコンテナの中央か、新しい内容が入る空きに置きます。途中でローディングインジケーターを進捗の分かるプログレスインジケーターに切り替えないよう求めています。'
 		}
 	],
 	related: [
@@ -104,6 +109,11 @@ export default {
 			label: 'デジタル庁「ユーザビリティ導入ガイドブック」（DS-671.1）',
 			url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/91365885/20251016_introduction_to_usability.pdf',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Material Design 3: Loading indicator',
+			url: 'https://m3.material.io/components/loading-indicator/guidelines',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

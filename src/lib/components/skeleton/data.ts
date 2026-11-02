@@ -4,7 +4,9 @@ export default {
 	id: 'skeleton',
 	category: 'feedback',
 	names: { en: 'Skeleton', ja: 'スケルトン' },
-	aliases: [],
+	aliases: [
+		{ name: 'Placeholders', source: 'Bootstrap', url: 'https://getbootstrap.com/docs/5.3/components/placeholders/' }
+	],
 	summary: {
 		en: 'Gray placeholder shapes that show the layout of content while it loads.',
 		ja: '読み込み中の内容のレイアウトを、灰色の図形で先に見せる仮の表示です。'

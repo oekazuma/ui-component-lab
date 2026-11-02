@@ -8,7 +8,8 @@ export default {
 		{ name: 'File uploader', source: 'Carbon Design System', url: 'https://carbondesignsystem.com/building-blocks/core/components/file-uploader' },
 		{ name: 'Upload', source: 'Ant Design', url: 'https://ant.design/components/upload' },
 		{ name: 'DropZone', source: 'React Aria', url: 'https://react-aria.adobe.com/DropZone' },
-		{ name: 'ファイルアップロード／ドロップエリア', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/file-upload/' }
+		{ name: 'ファイルアップロード／ドロップエリア', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/file-upload/' },
+		{ name: 'File input', source: 'U.S. Web Design System', url: 'https://designsystem.digital.gov/components/file-input/' }
 	],
 	summary: {
 		en: 'Lets the user choose files from their device, by a button or by dragging them in.',
@@ -54,6 +55,14 @@ export default {
 		{
 			en: 'The `accept` attribute only narrows what the file picker shows, and does not apply to dropped files. Check the type and size in the page, and on the server too.',
 			ja: '`accept` 属性はファイル選択画面での絞り込みにすぎず、ドロップしたファイルには効きません。ページの中で形式と大きさを確かめ、サーバー側でも確かめます。'
+		},
+		{
+			en: 'The GOV.UK Design System says to ask for an upload only if it is critical to delivering the service. It says to let people reuse a file they uploaded earlier in the same journey, and to write a specific error message for each problem, such as no file selected, the wrong file type or a file that is too large.',
+			ja: 'GOV.UK は、サービスの提供に欠かせないときだけファイルのアップロードを求めるよう勧めています。同じ一連の手続きの中で前にアップロードしたファイルを使い回せるようにし、ファイルが選ばれていない、種類が違う、大きすぎるといった問題ごとに、具体的なエラーメッセージを書くよう求めています。'
+		},
+		{
+			en: 'The U.S. Web Design System says to ask for files only when they are required, to accept several file formats, and to prefer one file per input because some people do not know how to select several. It explains restrictions such as file types and size in hint text. Its file input does not upload in the background: files are sent only when the form is submitted.',
+			ja: 'U.S. Web Design System は、ファイルを求めるのは必須のときだけにし、複数のファイル形式を受け付け、1つの入力欄につきファイルは1つにするよう勧めています。複数のファイルの選び方が分からない人がいるためです。ファイルの種類や大きさといった制限は、ヒントのテキストで説明します。このファイル入力は裏でアップロードを進めず、フォームを送信したときに初めてファイルを送ります。'
 		}
 	],
 	misuse: [
@@ -101,6 +110,16 @@ export default {
 			label: 'WCAG 2.2: Understanding SC 2.5.7 Dragging Movements',
 			url: 'https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK Design System: File upload',
+			url: 'https://design-system.service.gov.uk/components/file-upload/',
+			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'U.S. Web Design System: File input',
+			url: 'https://designsystem.digital.gov/components/file-input/',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;

@@ -57,6 +57,10 @@ export default {
 		{
 			en: 'Use it only for settings that take effect immediately and whose result can be seen on the spot. If a save or submit step is needed, or the result cannot be seen right away, use a checkbox or radio buttons.',
 			ja: 'すぐに反映され、結果をその場で目で確かめられる設定にだけ使います。保存や送信が必要なときや、結果がすぐには見えないときは、チェックボックスかラジオボタンを使います。'
+		},
+		{
+			en: 'Apple Human Interface Guidelines use a toggle only to choose between two opposing states, and not to pick from a list of items. They say not to show the state by color alone. On iOS and iPadOS, the switch style belongs only in a list row; outside a list, they use a button that behaves like a toggle.',
+			ja: 'Apple Human Interface Guidelines は、トグルを対になる2つの状態から選ぶ場面だけに使い、一覧から項目を選ぶ場面には使いません。状態の違いを色だけで示さないようにも求めています。iOS と iPadOS では、スイッチの形はリストの行の中だけに使い、リストの外ではトグルとして働くボタンを使います。'
 		}
 	],
 	misuse: [
@@ -127,6 +131,11 @@ export default {
 			label: 'Nielsen Norman Group: Toggle-Switch Guidelines',
 			url: 'https://www.nngroup.com/articles/toggle-switch-guidelines/',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'Apple Human Interface Guidelines: Toggles',
+			url: 'https://developer.apple.com/design/human-interface-guidelines/toggles',
+			checkedAt: '2026-11-02'
 		}
 	]
 } satisfies ComponentData;
