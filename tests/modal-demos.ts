@@ -2,6 +2,7 @@
 // モーダルなデモが画面全体に出ると、どのデモの動きなのかが分かりにくい。デモの枠の中に出す
 export const demos = [
 	{ path: 'en/components/drawer/', open: 'Filters', role: 'dialog', name: 'Filters', clickToClose: true },
+	{ path: 'en/components/bottom-sheet/', open: 'Show store details', role: 'dialog', name: 'Riverside Store', clickToClose: true },
 	{ path: 'en/components/hamburger-menu/', open: 'Menu', role: 'dialog', name: 'Menu', clickToClose: true },
 	{ path: 'en/components/modal/', open: 'Show receipt number', role: 'dialog', name: 'Your receipt number', clickToClose: false },
 	{ path: 'en/components/alert-dialog/', open: 'Discard note…', role: 'alertdialog', name: 'Discard this note?', clickToClose: false },

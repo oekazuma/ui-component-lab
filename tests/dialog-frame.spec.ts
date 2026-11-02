@@ -48,7 +48,9 @@ for (const d of demos) {
 for (const d of demos) {
 	test(`${d.name}: its content fits inside the demo frame`, async ({ page }) => {
 		await openInFrame(page, d);
-		const overflow = await page.getByRole(d.role, { name: d.name }).evaluate((el) => {
+		const overflow = await page.getByRole(d.role, { name: d.name }).evaluate(async (el) => {
+			// 下から出るデモは、すべり出る途中だと中身が一時的に下端の外にあるので、動きが終わるのを待つ
+			await Promise.all(el.getAnimations({ subtree: true }).map((a) => a.finished));
 			const box = el.getBoundingClientRect();
 			return [...el.querySelectorAll('*')].filter((c) => c.getBoundingClientRect().bottom > box.bottom + 1).map((c) => c.tagName);
 		});

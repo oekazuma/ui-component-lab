@@ -174,6 +174,13 @@ export default {
 				en: 'A menu opens from a visible button; a context menu opens where an item is right-clicked and has no visible trigger.',
 				ja: 'メニューは見えるボタンから開き、コンテキストメニューは項目を右クリックした場所に開いて、開くための見えるボタンがありません。'
 			}
+		},
+		{
+			id: 'bottom-sheet',
+			diff: {
+				en: 'A menu is a list of actions that opens from a button; in mobile apps, Material Design 3 offers a modal bottom sheet as an alternative, especially for a long list of actions.',
+				ja: 'メニューはボタンから開く操作の一覧です。モバイルアプリでは、特に操作が多いときの代わりとして、Material Design 3 はモーダルのボトムシートを挙げています。'
+			}
 		}
 	],
 	sources: [

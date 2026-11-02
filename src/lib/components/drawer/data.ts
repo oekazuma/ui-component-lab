@@ -35,8 +35,8 @@ export default {
 			ja: 'このデモでは、ドロワーをネイティブのモーダル `<dialog>` で作っています。動きが分かりやすいよう、デモの枠の右端から出して、枠の中だけを暗くします。実際のページでは、画面の端から出て、ページ全体を暗くします。'
 		},
 		{
-			en: 'In this demo, clicking the dimmed part of the frame or anywhere outside the frame also closes the drawer. Closing on a click outside the frame relies on `closedby="any"`, which browsers that do not support it ignore.',
-			ja: 'このデモでは、枠の中の暗い部分や枠の外をクリックしても閉じます。枠の外のクリックで閉じるのは `closedby="any"` によるもので、対応していないブラウザはこれを無視します。'
+			en: 'In this demo, clicking the dimmed part of the frame or anywhere outside the frame also closes the drawer.',
+			ja: 'このデモでは、枠の中の暗い部分や枠の外をクリックしても閉じます。'
 		},
 		{
 			en: 'In this demo, the choices take effect only when “Apply” is pressed, and the button that opens the drawer then shows how many filters are on. Closing it any other way drops the choices made since it opened.',
@@ -133,6 +133,13 @@ export default {
 				en: 'A drawer is a panel that slides in over the page; side navigation is a list of links placed beside the content.',
 				ja: 'ドロワーはページの上にすべり出るパネルで、サイドナビゲーションは内容の横に置くリンクの一覧です。'
 			}
+		},
+		{
+			id: 'bottom-sheet',
+			diff: {
+				en: 'A drawer slides in from an edge, most often a side; a bottom sheet is anchored to the bottom edge, mainly on phones, and for apps Material Design 3 has a standard kind that leaves the main UI usable beside it.',
+				ja: 'ドロワーは端からすべり出るパネルで、多くは側面の端から出ます。ボトムシートは画面の下端に固定され、おもにスマートフォンで使います。Material Design 3 は、アプリ向けに、主な部分を並べて操作できる標準の種類を挙げています。'
+			}
 		}
 	],
 	sources: [
@@ -154,11 +161,6 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ドロワー（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/drawer/usage/',
-			checkedAt: '2026-10-21'
-		},
-		{
-			label: 'MDN: <dialog> closedby',
-			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby',
 			checkedAt: '2026-10-21'
 		},
 		{

@@ -33,17 +33,15 @@
 	}
 </script>
 
-<!-- モーダルの <dialog> を使う。背景の操作無効化・Esc・フォーカス復帰はブラウザが受け持つ。
-	closedby="any" で枠の外のクリックでも閉じる（対応していないブラウザでは閉じるボタンと Esc だけ） -->
+<!-- モーダルの <dialog> を使う。背景の操作無効化・Esc・フォーカス復帰はブラウザが受け持つ -->
 <div class="demo">
 	<button type="button" class="btn" onclick={open}>{text[lang].open(applied.filter(Boolean).length)}</button>
 </div>
-<!-- 枠の中の暗い部分は <dialog> 自身なので closedby では閉じない。そこを押したときも閉じる。キーボードでは Esc で閉じられる -->
+<!-- <dialog> 自身が枠いっぱいの大きさなので、枠の中の暗い部分も、枠の外の ::backdrop も、クリックの対象は <dialog> になる。そこを押したときに閉じる。キーボードでは Esc で閉じられる -->
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 <dialog
 	bind:this={dialog}
 	class="in-frame"
-	closedby="any"
 	aria-labelledby="{uid}-title"
 	onclick={(e) => {
 		if (e.target === dialog) dialog.close();

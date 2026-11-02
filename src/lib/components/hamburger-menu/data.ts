@@ -29,8 +29,8 @@ export default {
 			ja: 'このデモでは、「メニュー」ボタンでメニューをモーダルの `<dialog>` として開き（WAI-ARIA APG の Dialog (Modal) パターン）、デジタル庁デザインシステムのドロワーの実装例と同じく、「閉じる」ボタンはその中に別のボタンとして置きます。開いている間は「メニュー」ボタンを含むページのほかの部分を操作できないので、`aria-expanded` は付けません。動きが分かりやすいよう、メニューはデモの枠の中に出し、枠の中だけを暗くします。'
 		},
 		{
-			en: 'In this demo, choosing a link closes the menu and shows where it would go instead of leaving the page. `closedby="any"` also closes the menu when the dimmed background is clicked; browsers that do not support it ignore it.',
-			ja: 'このデモでは、リンクを選ぶとメニューを閉じ、ページを移らずに行き先を表示します。`closedby="any"` により暗くした背景をクリックしても閉じます（対応していないブラウザはこれを無視します）。'
+			en: 'In this demo, choosing a link closes the menu and shows where it would go instead of leaving the page. Clicking the dimmed background also closes the menu.',
+			ja: 'このデモでは、リンクを選ぶとメニューを閉じ、ページを移らずに行き先を表示します。暗くした背景をクリックしても閉じます。'
 		}
 	],
 	keyboard: [

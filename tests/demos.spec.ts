@@ -232,6 +232,66 @@ test('drawer: Apply sets the count on the button; a backdrop click closes withou
 	await expect(drawer.getByLabel('In stock')).toBeChecked();
 });
 
+test('bottom sheet: focus moves in; Esc, Close and a click on the backdrop close it and return focus', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/bottom-sheet/');
+	const open = demo.getByRole('button', { name: 'Show store details' });
+	const sheet = page.getByRole('dialog', { name: 'Riverside Store' });
+
+	await open.click();
+	await expect(sheet).toBeVisible();
+	await expect(sheet.getByRole('button', { name: 'More details' })).toBeFocused();
+
+	await page.keyboard.press('Escape');
+	await expect(sheet).toBeHidden();
+	await expect(open).toBeFocused();
+
+	await open.click();
+	await sheet.getByRole('button', { name: 'Close' }).click();
+	await expect(sheet).toBeHidden();
+	await expect(open).toBeFocused();
+
+	// 低い高さのシートは枠の上半分を空けるので、枠の上端近くの暗い部分を押す
+	await open.click();
+	const frame = (await demo.boundingBox())!;
+	await page.mouse.click(frame.x + frame.width / 2, frame.y + 12);
+	await expect(sheet).toBeHidden();
+	await expect(open).toBeFocused();
+});
+
+test('bottom sheet: the handle button toggles aria-expanded and the height, with no drag involved', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/bottom-sheet/');
+	const open = demo.getByRole('button', { name: 'Show store details' });
+	const sheet = page.getByRole('dialog', { name: 'Riverside Store' });
+	const handle = sheet.getByRole('button', { name: 'More details' });
+	const more = sheet.getByRole('heading', { name: 'Opening hours' });
+	const frame = (await demo.boundingBox())!;
+	const height = async () => (await sheet.locator('form').boundingBox())!.height;
+
+	await open.click();
+	await expect(handle).toHaveAttribute('aria-expanded', 'false');
+	await expect(more).toBeHidden();
+	// すべり出る動きと高さの変化が終わるのを待ってから測る
+	await expect.poll(height).toBeLessThan(frame.height * 0.5);
+	const low = await height();
+
+	await handle.press('Enter');
+	await expect(handle).toHaveAttribute('aria-expanded', 'true');
+	await expect(more).toBeVisible();
+	await expect.poll(height).toBeGreaterThan(frame.height - 2);
+
+	await handle.press('Space');
+	await expect(handle).toHaveAttribute('aria-expanded', 'false');
+	await expect(more).toBeHidden();
+	await expect.poll(height).toBeCloseTo(low, 0);
+
+	// 閉じて開き直すと、高さは低いほうから始まる
+	await handle.click();
+	await expect(handle).toHaveAttribute('aria-expanded', 'true');
+	await page.keyboard.press('Escape');
+	await open.click();
+	await expect(handle).toHaveAttribute('aria-expanded', 'false');
+});
+
 test('popover: Tab goes through its link and out, and it stays open', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/popover/');
 	const button = demo.getByRole('button', { name: 'About shipping' });

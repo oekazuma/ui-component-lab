@@ -80,6 +80,13 @@ export default {
 				en: 'A popover is a panel of any content next to its button; a context menu lists actions for an item and opens where it is right-clicked.',
 				ja: 'ポップオーバーは、ボタンの隣に好きな内容を出すパネルです。コンテキストメニューは項目に対する操作を並べ、右クリックした場所に開きます。'
 			}
+		},
+		{
+			id: 'bottom-sheet',
+			diff: {
+				en: 'A popover opens next to the button that opened it and leaves the page usable; a bottom sheet is anchored to the bottom edge of the screen, and a modal one dims the page.',
+				ja: 'ポップオーバーは開いたボタンの隣に出てページを操作でき、ボトムシートは画面の下端に固定され、モーダルのものはページを暗くします。'
+			}
 		}
 	],
 	sources: [
