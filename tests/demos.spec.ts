@@ -164,8 +164,9 @@ test('file upload: a file chosen with the button is also checked for size', asyn
 		mimeType: 'application/pdf',
 		buffer: Buffer.alloc(11 * 1024 * 1024)
 	});
-	await expect(demo.locator('ol')).toHaveAttribute('role', 'list');
 	const row = demo.getByRole('listitem');
+	await expect(row).toHaveCSS('display', 'list-item');
+	await expect(row).toHaveCSS('list-style-type', 'decimal');
 	await expect(row).toContainText('scan.pdf（11MB）');
 	await expect(row).toContainText('ファイルサイズが10MBを超えています。');
 });

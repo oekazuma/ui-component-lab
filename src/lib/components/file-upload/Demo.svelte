@@ -107,18 +107,20 @@
 		{/if}
 	</div>
 	{#if rows.length}
-		<ol role="list">
+		<ol>
 			{#each rows as { file, errors }, i (file)}
 				<li>
-					<div>
-						<span>{file.name}{text[lang].size(formatSize(file.size))}</span>
-						{#each errors as error (error)}
-							<p class="error">{error}</p>
-						{/each}
+					<div class="row">
+						<div>
+							<span>{file.name}{text[lang].size(formatSize(file.size))}</span>
+							{#each errors as error (error)}
+								<p class="error">{error}</p>
+							{/each}
+						</div>
+						<button type="button" class="btn" onclick={() => remove(i)}>
+							{text[lang].remove}<span class="visually-hidden">: {file.name}</span>
+						</button>
 					</div>
-					<button type="button" class="btn" onclick={() => remove(i)}>
-						{text[lang].remove}<span class="visually-hidden">: {file.name}</span>
-					</button>
 				</li>
 			{/each}
 		</ol>
@@ -172,7 +174,12 @@
 		max-width: 100%;
 	}
 
-	li {
+	ol {
+		padding-inline-start: 1.5em;
+	}
+
+	/* li を display: flex にすると番号が消えるので、横並びは中の要素に任せる */
+	.row {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -181,7 +188,7 @@
 		overflow-wrap: anywhere;
 	}
 
-	li .btn {
+	.row .btn {
 		padding: 0.1em 0.6em;
 		font-size: 0.8125rem;
 	}
