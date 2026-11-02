@@ -135,9 +135,9 @@ test('search: an everyday name such as プルダウン finds the select, without
 	await page.keyboard.press(shortcut);
 	const dialog = page.getByRole('dialog', { name: '名前で検索' });
 	await dialog.getByRole('combobox').fill('プルダウン');
-	const option = dialog.getByRole('option').first();
-	await expect(option).toContainText('セレクトボックス');
-	await expect(option).not.toContainText('プルダウン');
+	// メニューも「プルダウンメニュー」で一致して先に並ぶので、先頭ではなくセレクトボックスがあることを確かめる
+	await expect(dialog.getByRole('option', { name: /セレクトボックス/ })).toBeVisible();
+	await expect(dialog.getByRole('option').filter({ hasText: 'プルダウン' })).toHaveCount(0);
 });
 ```
 

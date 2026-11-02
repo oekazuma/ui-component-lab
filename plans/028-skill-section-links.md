@@ -77,7 +77,7 @@ improve-ui-components スキルは、指摘ごとに根拠として Lab のペ�
 
 ```text
 - Cite the Lab page in the user's language (`urls.ja` for Japanese, otherwise `urls.en`).
-- Link the section you relied on by appending its id to that URL: `#usage`, `#misuse`, `#keyboard`, `#behavior`, `#related`, `#variations`, `#appearance`, `#aliases` or `#sources` (for example `…/components/select/#usage`). A section whose field is absent from the entry is not on the page.
+- Link the section you relied on by appending its id to that URL: `#usage`, `#misuse`, `#keyboard`, `#behavior`, `#related`, `#variations`, `#appearance`, `#aliases` or `#sources` (for example `…/components/select/#usage`). A section whose field is absent from or empty in the entry is not on the page.
 ```
 
 **Verify**: `grep -c "#misuse" skills/improve-ui-components/SKILL.md` → 1 以上。`node skills/skills.check.ts` → `ok`。

@@ -209,8 +209,8 @@ test('mega menu: Escape closes the panel and returns focus to its button', async
 
 ### Step 1: ステップナビゲーションで、段階のボタンを押したら見出しへフォーカスを移す
 
-1. `<p class="heading">`（`{:else}` 側、`aria-live` の中のもの）に `tabindex="-1"` と `bind:this={heading}` を付け、`let heading: HTMLElement;` を宣言する。
-2. 段階のボタンの `onclick` を、`current = i` のあとに `heading.focus()` を呼ぶ形にする。`<p>` は残るので（文字だけが変わる）、`tick()` は要らない。ボタンが消える理由をコメントに書く（例: `押したボタンは現在の段階になって文字に変わるので、移った段階の見出しへフォーカスを移す`）。
+1. `<p class="heading">`（`{:else}` 側、`aria-live` の中のもの）に `tabindex="-1"` と `bind:this={heading}` を付け、`let heading = $state<HTMLElement>();` を宣言する。
+2. 段階のボタンの `onclick` を、`current = i` のあとに `heading?.focus()` を呼ぶ形にする。`<p>` は残るので（文字だけが変わる）、`tick()` は要らない。ボタンが消える理由をコメントに書く（例: `押したボタンは現在の段階になって文字に変わるので、移った段階の見出しへフォーカスを移す`）。
 3. `stepper/data.ts` の `behavior` の 3 つ目に、次の文を足す。en `' Pressing a step button moves focus to the heading of that step, because the button turns into plain text.'`、ja `'段階のボタンを押すと、そのボタンは文字に変わるので、移った段階の見出しへフォーカスを移します。'`（どちらも既存の文の後ろに続ける）。
 4. `keyboard` の `Enter / Space` の action を、en `'On a step button, goes to that step and moves focus to its heading. Also presses Back, Next and Submit.'`、ja `'段階のボタンでは、その段階へ移り、見出しへフォーカスを移します。「戻る」「次へ」「申請する」もこのキーで押します。'` にする。
 
@@ -339,7 +339,7 @@ test('checkbox: the terms checkbox is already marked invalid when Apply moves fo
 
 ## Done criteria
 
-- [ ] `grep -n "heading.focus()" src/lib/components/stepper/Demo.svelte` → 1 行
+- [ ] `grep -n "heading?.focus()" src/lib/components/stepper/Demo.svelte` → 1 行
 - [ ] `grep -n "buttons\[open!\].focus()" src/lib/components/mega-menu/Demo.svelte` → 1 行
 - [ ] `grep -n "box.focus({ preventScroll: true })" src/lib/components/back-to-top/Demo.svelte` → 1 行
 - [ ] `grep -n "await tick()" src/lib/components/checkbox/Demo.svelte` → 1 行

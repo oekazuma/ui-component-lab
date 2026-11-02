@@ -125,7 +125,7 @@ for (const d of demos) {
 
 ### Step 6: README の部品の足し方と開発の準備を補う
 
-1. 「## Development」の `pnpm install` の前に、`Requires Node.js 24 or later and pnpm (enable it with `corepack enable`).` を 1 行足す。
+1. 「## Development」の `pnpm install` の前に、`Requires Node.js 24 or later and pnpm 10 (`npm install -g pnpm`; on Node 24, `corepack enable` also works).` を 1 行足す。
 2. 「## Adding a component」の箇条書きに、`- `Thumb.svelte` (optional): a still picture of the opened state for the list page, for components that open (menus, dialogs, toasts). See CLAUDE.md.` を足す。`with two files` は `with two files (and an optional third)` にする。
 3. 最後の文を ``Then run `pnpm check`, and `pnpm build && pnpm test:e2e` (Playwright with axe).`` にする。
 
