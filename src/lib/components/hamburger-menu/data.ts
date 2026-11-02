@@ -129,6 +129,13 @@ export default {
 				en: 'A hamburger menu button is the button that opens the menu; the mobile menu is the list of links shown once it opens.',
 				ja: 'ハンバーガーメニューボタンはメニューを開くボタンで、モバイルメニューは開いたときに出るリンクの一覧です。'
 			}
+		},
+		{
+			id: 'bottom-navigation',
+			diff: {
+				en: 'A hamburger menu button keeps the destinations behind one button that opens the menu; bottom navigation shows them in a bar at the bottom of the screen, which the Digital Agency Design System no longer recommends.',
+				ja: 'ハンバーガーメニューボタンは行き先を1つのボタンの後ろに置いてメニューを開き、ボトムナビゲーションは行き先を画面の下のバーに見せます。デジタル庁デザインシステムは、ボトムナビゲーションを勧めていません。'
+			}
 		}
 	],
 	sources: [

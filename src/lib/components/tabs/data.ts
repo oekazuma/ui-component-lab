@@ -159,6 +159,13 @@ export default {
 				en: 'Tabs switch between panels inside one page; side navigation links to separate pages, with the current page marked.',
 				ja: 'タブは1つのページの中のパネルを切り替え、サイドナビゲーションは別々のページへのリンクで今のページを示します。'
 			}
+		},
+		{
+			id: 'bottom-navigation',
+			diff: {
+				en: 'Tabs switch between panels of related content inside one page; bottom navigation moves between three to five top-level destinations along the bottom of a phone screen, with the current one marked.',
+				ja: 'タブは1つのページの中の関連する内容のパネルを切り替え、ボトムナビゲーションはスマートフォンの画面の下で、3〜5個の最上位の行き先の間を移り、今の行き先を示します。'
+			}
 		}
 	],
 	sources: [

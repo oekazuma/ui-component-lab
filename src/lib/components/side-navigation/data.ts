@@ -212,6 +212,13 @@ export default {
 				en: 'Side navigation links to separate pages, with the current page marked; tabs switch between panels inside one page.',
 				ja: 'サイドナビゲーションは別々のページへのリンクで今のページを示し、タブは1つのページの中のパネルを切り替えます。'
 			}
+		},
+		{
+			id: 'bottom-navigation',
+			diff: {
+				en: 'Side navigation lists the pages of a site or a section in a column beside the content; bottom navigation puts three to five top-level destinations in a bar along the bottom of a phone screen.',
+				ja: 'サイドナビゲーションはサイトやそのあるまとまりのページを内容の横の列に並べ、ボトムナビゲーションはスマートフォンの画面の下のバーに3〜5個の最上位の行き先を並べます。'
+			}
 		}
 	],
 	sources: [

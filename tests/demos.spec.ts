@@ -889,6 +889,54 @@ test('side navigation: a link moves aria-current and the content without leaving
 	await expect(nav.getByRole('link', { name: 'Invoices' })).toBeFocused();
 });
 
+test('bottom navigation: a link moves aria-current and the heading without leaving the page', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/bottom-navigation/');
+	const nav = demo.getByRole('navigation', { name: 'Main' });
+	const url = page.url();
+
+	await expect(nav.locator('[aria-current]')).toHaveCount(1);
+	await expect(nav.getByRole('link', { name: 'Home' })).toHaveAttribute('aria-current', 'page');
+	await expect(demo.getByRole('heading', { name: 'Home' })).toBeVisible();
+
+	await nav.getByRole('link', { name: 'Chat' }).click();
+	await expect(nav.getByRole('link', { name: 'Chat' })).toHaveAttribute('aria-current', 'page');
+	await expect(nav.locator('[aria-current]')).toHaveCount(1);
+	await expect(demo.getByRole('heading', { name: 'Chat' })).toBeVisible();
+	expect(page.url()).toBe(url);
+
+	// Enter でも同じ。Tab で次の項目へ移る
+	await nav.getByRole('link', { name: 'Search' }).focus();
+	await page.keyboard.press('Enter');
+	await expect(nav.getByRole('link', { name: 'Search' })).toHaveAttribute('aria-current', 'page');
+	await expect(nav.locator('[aria-current]')).toHaveCount(1);
+	await expect(demo.getByRole('heading', { name: 'Search' })).toBeVisible();
+	await page.keyboard.press('Tab');
+	await expect(nav.getByRole('link', { name: 'Chat' })).toBeFocused();
+});
+
+test('bottom navigation: the nav comes first in the DOM but is drawn below the content, and every item has a visible label', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/bottom-navigation/');
+	const nav = demo.getByRole('navigation', { name: 'Main' });
+	const heading = demo.getByRole('heading', { level: 3 });
+
+	// DOM の順序は nav が先（Tab とスクリーンリーダーに先に届く）で、見た目は内容の下
+	expect(await nav.evaluate((el, h) => !!(el.compareDocumentPosition(h) & Node.DOCUMENT_POSITION_FOLLOWING), await heading.elementHandle())).toBe(true);
+	const n = (await nav.boundingBox())!;
+	const h = (await heading.boundingBox())!;
+	expect(n.y).toBeGreaterThan(h.y + h.height);
+
+	// ラベルは見える文字で、アイコンは名前に入らない。タッチの的は 44px 以上
+	const links = nav.getByRole('link');
+	await expect(links).toHaveCount(4);
+	for (const link of await links.all()) {
+		await expect(link).toHaveText(/\S/);
+		await expect(link.locator('svg')).toHaveAttribute('aria-hidden', 'true');
+		const box = (await link.boundingBox())!;
+		expect(box.height).toBeGreaterThanOrEqual(44);
+		expect(box.width).toBeGreaterThanOrEqual(44);
+	}
+});
+
 test('mega menu: a panel lists the section page and all its pages, and opening another closes it', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/mega-menu/');
 	const living = demo.getByRole('button', { name: 'Living' });

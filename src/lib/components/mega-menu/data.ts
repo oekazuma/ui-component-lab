@@ -140,6 +140,13 @@ export default {
 				en: 'A mega menu drops down under the horizontal menu on wide screens; a drawer slides in from the edge of the screen and covers the page.',
 				ja: 'メガメニューは広い画面で水平メニューの下に開き、ドロワーは画面の端からすべり出てページを覆います。'
 			}
+		},
+		{
+			id: 'bottom-navigation',
+			diff: {
+				en: 'A mega menu is a wide panel of a section’s pages that opens from a horizontal menu on a wide screen; bottom navigation is a bar of three to five destinations along the bottom of a phone screen.',
+				ja: 'メガメニューは広い画面で水平メニューから開く、カテゴリのページをまとめて見せる幅の広いパネルで、ボトムナビゲーションはスマートフォンの画面の下にある3〜5個の行き先のバーです。'
+			}
 		}
 	],
 	sources: [

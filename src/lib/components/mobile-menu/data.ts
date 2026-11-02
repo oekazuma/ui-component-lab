@@ -145,6 +145,13 @@ export default {
 				en: 'A mobile menu stacks the site’s navigation for small touch screens and is opened from a button; side navigation stays beside the content on a wide screen.',
 				ja: 'モバイルメニューは小さなタッチスクリーン向けにサイトのナビゲーションを縦に積んでボタンから開き、サイドナビゲーションは広い画面で内容の横に残ります。'
 			}
+		},
+		{
+			id: 'bottom-navigation',
+			diff: {
+				en: 'A mobile menu stacks the site’s navigation in a list that is opened from a button; bottom navigation keeps three to five destinations in a bar along the bottom of the screen, which the Digital Agency Design System no longer recommends.',
+				ja: 'モバイルメニューはサイトのナビゲーションを縦に積んでボタンから開き、ボトムナビゲーションは画面の下のバーに3〜5個の行き先を残します。デジタル庁デザインシステムは、ボトムナビゲーションを勧めていません。'
+			}
 		}
 	],
 	sources: [
