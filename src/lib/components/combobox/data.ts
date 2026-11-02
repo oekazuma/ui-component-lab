@@ -143,6 +143,13 @@ export default {
 				en: 'A combobox puts a single value into the field; a token field keeps several chosen values as removable tokens and empties the input after each choice.',
 				ja: 'コンボボックスは1つの値を入力欄に入れます。トークン入力は選んだ複数の値を外せるトークンとして残し、選ぶたびに入力欄を空にします。'
 			}
+		},
+		{
+			id: 'time-picker',
+			diff: {
+				en: 'A combobox suggests whatever list its author provides; a time picker is made for times of day, and the U.S. Web Design System builds one as a combo box of times at set steps.',
+				ja: 'コンボボックスは作り手が用意したどんな候補の一覧も出せますが、タイムピッカーは時刻のための部品で、U.S. Web Design System は一定の刻みの時刻を並べたコンボボックスとして作っています。'
+			}
 		}
 	],
 	sources: [

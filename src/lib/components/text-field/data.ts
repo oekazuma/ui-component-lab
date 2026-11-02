@@ -117,6 +117,13 @@ export default {
 				en: 'A text field takes any short text; a one-time code field is one set up for a code sent to the user, with a number keypad and autofill from the message.',
 				ja: 'テキストフィールドは短い文字列全般に使います。確認コードの入力は、届いたコードのために整えた形で、数字のキーボードと、届いたメッセージからの自動入力が付きます。'
 			}
+		},
+		{
+			id: 'time-picker',
+			diff: {
+				en: 'A text field takes any text, and the U.S. Web Design System prefers it for exact past times such as a time of birth; a time picker takes only times of day, typically in set increments such as 30 minutes.',
+				ja: 'テキストフィールドは自由な文字列を入れられ、U.S. Web Design System は出生時刻のような過去の正確な時刻にこちらを勧めていますが、タイムピッカーは30分刻みなど決まった刻みの時刻だけを受け取ります。'
+			}
 		}
 	],
 	sources: [

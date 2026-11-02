@@ -746,6 +746,104 @@ test('date picker: min is set to today in the browser, with a hint on the year a
 	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
 });
 
+test('time picker: the label names the input; an out-of-range or off-step time shows the error, and fixing it clears the error', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/time-picker/');
+	const input = demo.getByLabel('Reservation time');
+	const status = demo.locator('[aria-live="polite"]');
+	await expect(input).toHaveAttribute('type', 'time');
+	await expect(input).toHaveAttribute('min', '09:00');
+	await expect(input).toHaveAttribute('max', '18:00');
+	await expect(input).toHaveAttribute('step', '1800');
+	await expect(input).toHaveAccessibleDescription(/9:00 AM to 6:00 PM.*every 30 minutes/);
+	await expect(status).toHaveText('');
+
+	await input.fill('13:30');
+	await expect(status).toHaveText('Value: 13:30');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+
+	// 範囲の下、範囲の上、刻み外のどれでも同じエラーになる
+	for (const bad of ['08:00', '18:30', '09:10']) {
+		await input.fill(bad);
+		await expect(input).toHaveAttribute('aria-invalid', 'true');
+		await expect(input).toHaveAccessibleDescription(/^Choose a time from 9:00 AM to 6:00 PM, on the hour or half hour\. We take reservations/);
+		await expect(status).toHaveText('');
+	}
+
+	await input.fill('09:30');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+	await expect(input).toHaveAccessibleDescription(/^We take reservations/);
+	await expect(status).toHaveText('Value: 09:30');
+
+	// 空にしたら、エラーもエラー文も消える
+	await input.fill('18:30');
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await input.fill('');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+	await expect(status).toHaveText('');
+});
+
+test('time picker: ↑ goes past max and the error follows; typing into an empty field shows no error until the time is complete', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/time-picker/');
+	const input = demo.getByLabel('Reservation time');
+	await input.fill('17:30');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+	await input.focus();
+	// Chromium は max で止めず、時を進めると範囲外の値になる
+	await page.keyboard.press('ArrowUp');
+	await expect(input).toHaveValue('18:30');
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await page.keyboard.press('ArrowDown');
+	await expect(input).toHaveValue('17:30');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+
+	// 空の欄に打ち始めた間は値が空のままで、範囲の違反ではない
+	await input.fill('');
+	await input.focus();
+	await page.keyboard.type('0');
+	await expect(input).toHaveValue('');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+
+	// すでに時刻が入っているときは1桁ごとに値が変わるので、1と打つと午前1:30になり、次の桁までエラーが出る
+	await input.fill('09:30');
+	await input.focus();
+	await page.keyboard.type('1');
+	await expect(input).toHaveValue('01:30');
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+});
+
+test('time picker: the status line never shows an out-of-range value, even for a moment', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/time-picker/');
+	const input = demo.getByLabel('Reservation time');
+	const status = demo.locator('[aria-live="polite"]');
+	await input.fill('09:30');
+	await expect(status).toHaveText('Value: 09:30');
+	// 読み上げは挿入された文字を拾うので、範囲外の値が一瞬でも入ると聞こえてしまう
+	await status.evaluate((el) => {
+		const seen: string[] = [];
+		(window as unknown as { seen: string[] }).seen = seen;
+		new MutationObserver(() => seen.push(el.textContent ?? '')).observe(el, { childList: true, characterData: true, subtree: true });
+	});
+	await input.focus();
+	await page.keyboard.press('ArrowDown');
+	await expect(input).toHaveValue('08:30');
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await expect(status).toHaveText('');
+	const seen = await page.evaluate(() => (window as unknown as { seen: string[] }).seen);
+	expect(seen.join('|')).not.toContain('08:30');
+});
+
+test('time picker: the Japanese demo has its own label, hint and error', async ({ page }) => {
+	const demo = await openDemo(page, 'ja/components/time-picker/', /^デモ:/);
+	const input = demo.getByLabel('予約時刻');
+	await expect(input).toHaveAccessibleDescription(/午前9:00から午後6:00（9:00から18:00）まで、30分刻み.*午後1:30（13:30）/);
+	await input.fill('19:00');
+	await expect(input).toHaveAttribute('aria-invalid', 'true');
+	await expect(input).toHaveAccessibleDescription(/^＊午前9:00から午後6:00（9:00から18:00）までの、30分刻みの時刻を入力してください。/);
+	await input.fill('10:00');
+	await expect(input).not.toHaveAttribute('aria-invalid', 'true');
+	await expect(demo.locator('[aria-live="polite"]')).toHaveText('値: 10:00');
+});
+
 test('slider: shows the minimum and maximum under the ends of the track', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/slider/');
 	const r = (await demo.getByRole('slider', { name: 'Volume' }).boundingBox())!;

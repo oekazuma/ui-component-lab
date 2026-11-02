@@ -133,6 +133,13 @@ export default {
 				en: 'A select shows the chosen option in a closed box until it is opened; a token field lets people type to choose several values and shows each as a removable token.',
 				ja: 'セレクトボックスは開くまで、選んだ値を閉じた箱の中にしか見せません。トークン入力は入力で複数の値を選び、それぞれを外せるトークンとして見せます。'
 			}
+		},
+		{
+			id: 'time-picker',
+			diff: {
+				en: 'A select chooses from options its author wrote one by one; a time picker takes a time of day within a range and a step.',
+				ja: 'セレクトボックスは作り手が1つずつ書いた選択肢から選び、タイムピッカーは範囲と刻みの中の時刻を受け取ります。'
+			}
 		}
 	],
 	sources: [
