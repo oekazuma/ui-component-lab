@@ -853,6 +853,42 @@ test('mobile menu: the icons drawn with CSS are not part of the names', async ({
 	await expect(summary).not.toHaveAccessibleName(/[+−›]/);
 });
 
+test('side navigation: a link moves aria-current and the content without leaving the page, and the button toggles the sublinks', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/side-navigation/');
+	const nav = demo.getByRole('navigation', { name: 'Account settings' });
+	const billing = nav.getByRole('button', { name: 'Billing' });
+	const url = page.url();
+
+	await expect(nav.locator('[aria-current]')).toHaveCount(1);
+	await expect(nav.getByRole('link', { name: 'Profile' })).toHaveAttribute('aria-current', 'page');
+	await expect(demo.getByRole('heading', { name: 'Profile' })).toBeVisible();
+
+	await nav.getByRole('link', { name: 'Invoices' }).click();
+	await expect(nav.getByRole('link', { name: 'Invoices' })).toHaveAttribute('aria-current', 'page');
+	await expect(nav.locator('[aria-current]')).toHaveCount(1);
+	await expect(demo.getByRole('heading', { name: 'Invoices' })).toBeVisible();
+	expect(page.url()).toBe(url);
+
+	// 閉じると中のリンクは Tab からも読み上げからも外れる。今のページは閉じたまま残る
+	await expect(billing).toHaveAttribute('aria-expanded', 'true');
+	await billing.focus();
+	await page.keyboard.press('Enter');
+	await expect(billing).toHaveAttribute('aria-expanded', 'false');
+	await expect(nav.getByRole('link', { name: 'Invoices' })).toBeHidden();
+	// 閉じた項目の中に今のページがあるときは、名前の先頭は項目名のまま、今のページを含むことを足す
+	await expect(billing).toHaveAccessibleName(/^Billing\s*\(contains the current page\)$/);
+	await page.keyboard.press('Space');
+	await expect(billing).toHaveAccessibleName(/^Billing$/);
+	await expect(billing).toHaveAttribute('aria-expanded', 'true');
+	await expect(nav.getByRole('link', { name: 'Invoices' })).toHaveAttribute('aria-current', 'page');
+
+	// 矢印キーは何もしない。項目へは Tab で移る
+	await page.keyboard.press('ArrowDown');
+	await expect(billing).toBeFocused();
+	await page.keyboard.press('Tab');
+	await expect(nav.getByRole('link', { name: 'Invoices' })).toBeFocused();
+});
+
 test('mega menu: a panel lists the section page and all its pages, and opening another closes it', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/mega-menu/');
 	const living = demo.getByRole('button', { name: 'Living' });

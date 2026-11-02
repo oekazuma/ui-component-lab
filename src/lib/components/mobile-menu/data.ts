@@ -138,6 +138,13 @@ export default {
 				en: 'A mobile menu is the navigation inside; a drawer is the panel that holds it and slides in from the edge.',
 				ja: 'モバイルメニューは中に入るナビゲーションで、ドロワーはそれを入れて端からすべり出るパネルです。'
 			}
+		},
+		{
+			id: 'side-navigation',
+			diff: {
+				en: 'A mobile menu stacks the site’s navigation for small touch screens and is opened from a button; side navigation stays beside the content on a wide screen.',
+				ja: 'モバイルメニューは小さなタッチスクリーン向けにサイトのナビゲーションを縦に積んでボタンから開き、サイドナビゲーションは広い画面で内容の横に残ります。'
+			}
 		}
 	],
 	sources: [

@@ -126,6 +126,13 @@ export default {
 				en: 'A drawer slides in from the edge of the screen and covers the page; a mega menu drops down under the horizontal menu on wide screens.',
 				ja: 'ドロワーは画面の端からすべり出てページを覆い、メガメニューは広い画面で水平メニューの下に開きます。'
 			}
+		},
+		{
+			id: 'side-navigation',
+			diff: {
+				en: 'A drawer is a panel that slides in over the page; side navigation is a list of links placed beside the content.',
+				ja: 'ドロワーはページの上にすべり出るパネルで、サイドナビゲーションは内容の横に置くリンクの一覧です。'
+			}
 		}
 	],
 	sources: [

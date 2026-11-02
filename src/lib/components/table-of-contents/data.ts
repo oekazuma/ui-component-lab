@@ -126,6 +126,13 @@ export default {
 				en: 'A table of contents links to sections that are all on the page at once; tabs show one panel at a time and hide the others.',
 				ja: '目次はすべてが同時にページにある節へのリンクで、タブはパネルを1つずつ見せてほかを隠します。'
 			}
+		},
+		{
+			id: 'side-navigation',
+			diff: {
+				en: 'A table of contents links to the sections within the current page; side navigation links to the other pages of a section.',
+				ja: '目次は今のページの中の節へのリンクを並べ、サイドナビゲーションはあるまとまりの別のページへのリンクを並べます。'
+			}
 		}
 	],
 	sources: [

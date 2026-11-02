@@ -152,6 +152,13 @@ export default {
 				en: 'Tabs show one panel at a time and hide the others; a table of contents links to sections that are all on the page at once.',
 				ja: 'タブはパネルを1つずつ見せてほかを隠し、目次はすべてが同時にページにある節へのリンクを並べます。'
 			}
+		},
+		{
+			id: 'side-navigation',
+			diff: {
+				en: 'Tabs switch between panels inside one page; side navigation links to separate pages, with the current page marked.',
+				ja: 'タブは1つのページの中のパネルを切り替え、サイドナビゲーションは別々のページへのリンクで今のページを示します。'
+			}
 		}
 	],
 	sources: [

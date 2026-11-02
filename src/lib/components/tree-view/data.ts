@@ -72,6 +72,13 @@ export default {
 				en: 'A tree view opens nested items in several levels; an accordion opens sections of content in one level.',
 				ja: 'ツリービューは入れ子の項目を何段にも開閉し、アコーディオンは内容のまとまりを1段で開閉します。'
 			}
+		},
+		{
+			id: 'side-navigation',
+			diff: {
+				en: 'A tree view is a widget with its own arrow-key behavior for opening and choosing items; side navigation is a list of links that is read as navigation.',
+				ja: 'ツリービューは項目の開閉と選択に専用の矢印キー操作を持つ部品で、サイドナビゲーションはナビゲーションとして読まれるリンクの一覧です。'
+			}
 		}
 	],
 	sources: [
