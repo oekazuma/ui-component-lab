@@ -134,6 +134,13 @@ export default {
 				en: 'A tag stands on its own as a label for content; a badge is attached to another element to show a count or status.',
 				ja: 'タグは単独で内容のラベルとして置き、バッジは別の要素に付けて件数や状態を示します。'
 			}
+		},
+		{
+			id: 'token-field',
+			diff: {
+				en: 'A tag is the label itself and takes no input; a token field is an input that makes removable tokens from what people choose.',
+				ja: 'タグはラベルそのもので、入力は受け付けません。トークン入力は、選んだものから外せるトークンを作る入力欄です。'
+			}
 		}
 	],
 	sources: [

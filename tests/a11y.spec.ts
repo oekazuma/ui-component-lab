@@ -71,6 +71,14 @@ const popups: { path: string; open: (demo: Locator, page: Page) => Promise<void>
 		}
 	},
 	{
+		path: 'en/components/token-field/',
+		open: async (demo) => {
+			const input = demo.getByRole('combobox');
+			await input.fill('b');
+			await expect(input).toHaveAttribute('aria-expanded', 'true');
+		}
+	},
+	{
 		path: 'en/components/popover/',
 		open: async (demo) => {
 			await demo.getByRole('button', { name: 'About shipping' }).click();

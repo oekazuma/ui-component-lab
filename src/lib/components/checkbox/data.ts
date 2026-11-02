@@ -117,6 +117,13 @@ export default {
 				en: 'A checkbox is often confirmed later with a submit button; a switch takes effect right away.',
 				ja: 'チェックボックスは送信ボタンで後から確定することが多く、スイッチは切り替えるとすぐに反映されます。'
 			}
+		},
+		{
+			id: 'token-field',
+			diff: {
+				en: 'Checkboxes show every option at once; a token field picks several values from a long or open-ended list by typing.',
+				ja: 'チェックボックスはすべての選択肢を一度に見せ、トークン入力は長い一覧や決まっていない候補から入力で複数の値を選びます。'
+			}
 		}
 	],
 	sources: [

@@ -136,6 +136,13 @@ export default {
 				en: 'A combobox suggests values to pick from while typing; a search field sends the typed words as they are.',
 				ja: 'コンボボックスは入力中に選べる候補を出し、検索ボックスは入力した語をそのまま送ります。'
 			}
+		},
+		{
+			id: 'token-field',
+			diff: {
+				en: 'A combobox puts a single value into the field; a token field keeps several chosen values as removable tokens and empties the input after each choice.',
+				ja: 'コンボボックスは1つの値を入力欄に入れます。トークン入力は選んだ複数の値を外せるトークンとして残し、選ぶたびに入力欄を空にします。'
+			}
 		}
 	],
 	sources: [

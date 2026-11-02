@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { openDemo } from './open-demo.ts';
 
 test('tabs: arrow keys, End and Home move focus and selection', async ({ page }) => {
@@ -694,4 +694,158 @@ test('menu: Home and End move to the first and last item', async ({ page }) => {
 	await expect(item('Move to trash')).toBeFocused();
 	await page.keyboard.press('Home');
 	await expect(item('Rename')).toBeFocused();
+});
+
+const tokenField = async (page: Page) => {
+	const demo = await openDemo(page, 'en/components/token-field/');
+	const input = demo.getByRole('combobox', { name: 'Ingredients' });
+	const tokens = demo.getByRole('list', { name: 'Chosen ingredients' }).getByRole('listitem');
+	return { demo, input, tokens, status: demo.getByRole('status'), options: demo.getByRole('option') };
+};
+
+test('token field: ArrowDown opens the list without the chosen value and moves through the options, ArrowUp goes back', async ({ page }) => {
+	const { input, options } = await tokenField(page);
+
+	await input.focus();
+	await page.keyboard.press('ArrowDown');
+	await expect(input).toHaveAttribute('aria-expanded', 'true');
+	await expect(options).toHaveCount(9);
+	await expect(options).not.toContainText(['Garlic']);
+	await expect(input).toHaveAttribute('aria-activedescendant', /option-0$/);
+	await expect(options.first()).toHaveText('Basil');
+	await expect(options.first()).toHaveAttribute('aria-selected', 'true');
+
+	await page.keyboard.press('ArrowDown');
+	await expect(options.nth(1)).toHaveAttribute('aria-selected', 'true');
+	await page.keyboard.press('ArrowUp');
+	await expect(options.first()).toHaveAttribute('aria-selected', 'true');
+	await page.keyboard.press('ArrowUp');
+	await expect(options.last()).toHaveAttribute('aria-selected', 'true');
+	await expect(input).toBeFocused();
+});
+
+test('token field: Enter adds the highlighted option as a token, empties the input, closes the list and keeps focus in the input', async ({ page }) => {
+	const { input, tokens, options } = await tokenField(page);
+
+	await input.focus();
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('Enter');
+	await expect(tokens).toHaveText([/^Garlic/, /^Broccoli/]);
+	await expect(input).toHaveValue('');
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+	await expect(input).toBeFocused();
+
+	await page.keyboard.press('ArrowDown');
+	await expect(options).toHaveCount(8);
+	await expect(options).not.toContainText(['Broccoli']);
+});
+
+test('token field: Escape closes the list, then clears the typed text, and never removes a token', async ({ page }) => {
+	const { input, tokens } = await tokenField(page);
+
+	await input.fill('b');
+	await expect(input).toHaveAttribute('aria-expanded', 'true');
+	await page.keyboard.press('Escape');
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+	await expect(input).toHaveValue('b');
+
+	await page.keyboard.press('Escape');
+	await expect(input).toHaveValue('');
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+	await expect(tokens).toHaveText([/^Garlic/]);
+});
+
+test('token field: Backspace in the empty input removes the last token; with text it only deletes a character', async ({ page }) => {
+	const { input, tokens } = await tokenField(page);
+
+	await input.focus();
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('Enter');
+	await expect(tokens).toHaveText([/^Garlic/, /^Basil/]);
+
+	await page.keyboard.type('b');
+	await page.keyboard.press('Backspace');
+	await expect(input).toHaveValue('');
+	await expect(tokens).toHaveText([/^Garlic/, /^Basil/]);
+
+	await page.keyboard.press('Backspace');
+	await expect(tokens).toHaveText([/^Garlic/]);
+	await expect(input).toBeFocused();
+	await page.keyboard.press('Backspace');
+	await expect(tokens).toHaveCount(0);
+	await page.keyboard.press('Backspace');
+	await expect(tokens).toHaveCount(0);
+	await expect(input).toBeFocused();
+});
+
+test('token field: holding Backspace removes only one token', async ({ page }) => {
+	const { input, tokens } = await tokenField(page);
+
+	await input.focus();
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('Enter');
+	await expect(tokens).toHaveCount(2);
+
+	await page.keyboard.down('Backspace');
+	await page.keyboard.down('Backspace');
+	await page.keyboard.down('Backspace');
+	await page.keyboard.up('Backspace');
+	await expect(tokens).toHaveText([/^Garlic/]);
+});
+
+// Playwright では IME の変換を再現できないため、変換中を示す isComposing を付けた keydown を送る
+test('token field: Backspace and ArrowDown during IME composition are left to the IME', async ({ page }) => {
+	const { input, tokens } = await tokenField(page);
+
+	await input.fill('b');
+	await input.dispatchEvent('keydown', { key: 'Backspace', isComposing: true, bubbles: true });
+	await input.dispatchEvent('keydown', { key: 'ArrowDown', isComposing: true, bubbles: true });
+	await expect(input).not.toHaveAttribute('aria-activedescendant');
+	await input.fill('');
+	await input.dispatchEvent('keydown', { key: 'Backspace', isComposing: true, bubbles: true });
+	await expect(tokens).toHaveText([/^Garlic/]);
+});
+
+test('token field: a remove button moves focus to the input, and the status region announces each change', async ({ page }) => {
+	const { demo, input, tokens, status } = await tokenField(page);
+	await expect(status).toHaveText('');
+
+	await input.focus();
+	await page.keyboard.press('ArrowDown');
+	await page.keyboard.press('Enter');
+	await expect(status).toHaveText('Added Basil. 2 chosen.');
+
+	await page.keyboard.press('Shift+Tab');
+	await expect(demo.getByRole('button', { name: 'Remove Basil' })).toBeFocused();
+	await page.keyboard.press('Shift+Tab');
+	await expect(demo.getByRole('button', { name: 'Remove Garlic' })).toBeFocused();
+	await page.keyboard.press('Enter');
+	await expect(tokens).toHaveText([/^Basil/]);
+	await expect(input).toBeFocused();
+	await expect(status).toHaveText('Removed Garlic. 1 chosen.');
+
+	await page.keyboard.press('Backspace');
+	await expect(status).toHaveText('Removed Basil. 0 chosen.');
+	await page.keyboard.type('z');
+	await expect(status).toHaveText('No matching ingredient');
+});
+
+test('token field: removing a token with the list open clears the highlight, so Enter does not add it back', async ({ page }) => {
+	const { input, tokens, options } = await tokenField(page);
+
+	await input.focus();
+	// 候補は Basil, Broccoli, Carrot, Ginger, … の順。外した Garlic は 4 番目（番号 3）に戻る
+	for (let i = 0; i < 4; i++) await page.keyboard.press('ArrowDown');
+	await expect(options.nth(3)).toHaveText('Ginger');
+	await expect(options.nth(3)).toHaveAttribute('aria-selected', 'true');
+
+	await page.keyboard.press('Backspace');
+	await expect(tokens).toHaveCount(0);
+	await expect(options.nth(3)).toHaveText('Garlic');
+	await expect(input).not.toHaveAttribute('aria-activedescendant');
+	await expect(options.nth(3)).toHaveAttribute('aria-selected', 'false');
+
+	await page.keyboard.press('Enter');
+	await expect(tokens).toHaveCount(0);
 });

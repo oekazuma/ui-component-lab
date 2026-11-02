@@ -126,6 +126,13 @@ export default {
 				en: 'A select keeps the chosen option as a form value; a language selector lists links to each language’s version of the page.',
 				ja: 'セレクトボックスは選んだ選択肢をフォームの値として保持し、ランゲージセレクターはページの各言語版へのリンクを並べます。'
 			}
+		},
+		{
+			id: 'token-field',
+			diff: {
+				en: 'A select shows the chosen option in a closed box until it is opened; a token field lets people type to choose several values and shows each as a removable token.',
+				ja: 'セレクトボックスは開くまで、選んだ値を閉じた箱の中にしか見せません。トークン入力は入力で複数の値を選び、それぞれを外せるトークンとして見せます。'
+			}
 		}
 	],
 	sources: [

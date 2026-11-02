@@ -94,6 +94,13 @@ export default {
 				en: 'A listbox scrolls and is one tab stop; radio buttons show every option with its own label.',
 				ja: 'リストボックスはスクロールできて Tab では1か所として扱われ、ラジオボタンは選択肢ごとにラベル付きで全部を見せます。'
 			}
+		},
+		{
+			id: 'token-field',
+			diff: {
+				en: 'A listbox shows its options in one list and has no text field to type in; a token field lets people type to narrow the options and shows only the chosen values as tokens.',
+				ja: 'リストボックスは選択肢を1つの一覧で見せ、入力する欄はありません。トークン入力は入力で選択肢を絞り込み、選んだ値だけをトークンとして見せます。'
+			}
 		}
 	],
 	sources: [

@@ -1262,3 +1262,62 @@ test('empty state: says there is nothing yet, then that a search found nothing, 
 	await expect(search).toBeFocused();
 	await expect(search).toHaveValue('');
 });
+
+test('token field: a click on an option adds a token, and chosen options drop out of the list', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/token-field/');
+	const input = demo.getByRole('combobox', { name: 'Ingredients' });
+	const tokens = demo.getByRole('list', { name: 'Chosen ingredients' }).getByRole('listitem');
+	const options = demo.getByRole('option');
+	await expect(tokens).toHaveText([/^Garlic/]);
+
+	await input.fill('g');
+	await expect(options).toHaveText(['Ginger']);
+	await input.fill('b');
+	await expect(options).toHaveText(['Basil', 'Broccoli']);
+	await options.nth(1).click();
+	await expect(tokens).toHaveText([/^Garlic/, /^Broccoli/]);
+	await expect(input).toHaveValue('');
+	await expect(input).toBeFocused();
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+
+	await input.fill('b');
+	await expect(options).toHaveText(['Basil']);
+	await input.fill('zzz');
+	await expect(input).toHaveAttribute('aria-expanded', 'false');
+	await expect(demo.getByRole('status')).toHaveText('No matching ingredient');
+	await expect(demo.getByRole('status')).toBeVisible();
+});
+
+test('token field: the remove button takes the token away, returns it to the list and focuses the input', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/token-field/');
+	const input = demo.getByRole('combobox', { name: 'Ingredients' });
+	const tokens = demo.getByRole('list', { name: 'Chosen ingredients' }).getByRole('listitem');
+
+	await demo.getByRole('button', { name: 'Remove Garlic' }).click();
+	await expect(tokens).toHaveCount(0);
+	await expect(input).toBeFocused();
+	await expect(demo.getByRole('status')).toHaveText('Removed Garlic. 0 chosen.');
+	await input.fill('g');
+	await expect(demo.getByRole('option')).toHaveText(['Garlic', 'Ginger']);
+});
+
+test('token field: tokens wrap inside the field at a narrow width, and the Japanese demo works the same way', async ({ page }) => {
+	await page.setViewportSize({ width: 320, height: 700 });
+	const demo = await openDemo(page, 'ja/components/token-field/', /^デモ:/);
+	const input = demo.getByRole('combobox', { name: '食材' });
+	await expect(demo.getByRole('button', { name: 'ニンニクを外す' })).toBeVisible();
+
+	await input.fill('に');
+	await expect(demo.getByRole('option')).toHaveText(['ニンジン']);
+	for (const name of ['ニンジン', 'ブロッコリー', 'タマネギ', 'ショウガ']) {
+		await input.fill(name);
+		await demo.getByRole('option', { name }).click();
+	}
+	await expect(demo.getByRole('status')).toHaveText('ショウガを追加しました。5件を選択中です。');
+	const field = demo.locator('.field');
+	const box = await field.boundingBox();
+	expect(box!.height).toBeGreaterThan(60);
+	const overflow = await field.evaluate((el) => el.scrollWidth > el.clientWidth);
+	expect(overflow).toBe(false);
+	expect(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)).toBe(false);
+});
