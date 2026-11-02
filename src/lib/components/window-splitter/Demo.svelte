@@ -76,7 +76,7 @@
 <div bind:this={win} class="window">
 	<section id="{uid}-primary" class="primary" style:width="{value}%" hidden={value === 0} aria-labelledby="{uid}-contents">
 		<h3 id="{uid}-contents">{text[lang].contents}</h3>
-		<ul>
+		<ul role="list">
 			{#each text[lang].chapters as chapter (chapter)}
 				<li>{chapter}</li>
 			{/each}

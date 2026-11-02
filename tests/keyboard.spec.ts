@@ -410,7 +410,7 @@ test('feed: Page Down / Page Up move by article, the last one loads more, and Ct
 	await expect(articles.nth(3)).toBeFocused();
 
 	await page.keyboard.press('Control+End');
-	await expect(demo.getByRole('button', { name: /^↺/ })).toBeFocused();
+	await expect(demo.getByRole('button', { name: /^Reset/ })).toBeFocused();
 	await articles.nth(1).focus();
 	await page.keyboard.press('Control+Home');
 	expect(await feed.evaluate((el) => !el.contains(document.activeElement) && !!(el.compareDocumentPosition(document.activeElement!) & Node.DOCUMENT_POSITION_PRECEDING))).toBe(true);

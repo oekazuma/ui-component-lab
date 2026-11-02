@@ -107,7 +107,7 @@
 		{/if}
 	</div>
 	{#if rows.length}
-		<ol>
+		<ol role="list">
 			{#each rows as { file, errors }, i (file)}
 				<li>
 					<div>

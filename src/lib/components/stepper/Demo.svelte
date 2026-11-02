@@ -57,7 +57,7 @@
 	端で「戻る」を disabled にするとフォーカスが失われるため、aria-disabled にとどめる -->
 <div class="demo">
 	<p class="visually-hidden">{text[lang].progress(furthest + 1)}</p>
-	<ol aria-label={text[lang].label}>
+	<ol role="list" aria-label={text[lang].label}>
 		{#each text[lang].steps as name, i (name)}
 			<li
 				class={status[i]}

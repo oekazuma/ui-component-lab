@@ -51,7 +51,7 @@
 <div class="demo">
 	<!-- 表示だけのチップラベル。状態はすでに決まっているものを示すだけなので、操作できる要素にしない -->
 	<p id="{uid}-notices" class="heading">{text[lang].notices}</p>
-	<ul class="notices" aria-labelledby="{uid}-notices">
+	<ul class="notices" role="list" aria-labelledby="{uid}-notices">
 		{#each text[lang].items as [title, status], i (title)}
 			<li>
 				{title}
@@ -72,7 +72,7 @@
 	</div>
 
 	<p id="{uid}-filters" class="heading">{text[lang].label}</p>
-	<ul class="tags" bind:this={list} aria-labelledby="{uid}-filters" tabindex="-1">
+	<ul class="tags" role="list" bind:this={list} aria-labelledby="{uid}-filters" tabindex="-1">
 		{#each kept as k, i (k)}
 			<li class="tag">
 				{text[lang].tags[k]}

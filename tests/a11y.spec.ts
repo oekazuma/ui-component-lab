@@ -5,7 +5,9 @@ import { demos } from './modal-demos';
 import { openDemo } from './open-demo';
 
 // 一覧ページのデモは操作できないサムネイル（inert）で検査の対象から外れるので、全部品の詳細ページを回す
-for (const path of ['en/', 'ja/', 'en/systems/', 'ja/systems/', 'en/skill/', 'ja/skill/', ...componentIds.map((id) => `ja/components/${id}/`)]) {
+const paths = ['en/', 'ja/', 'en/systems/', 'ja/systems/', 'en/skill/', 'ja/skill/', ...componentIds.map((id) => `ja/components/${id}/`)];
+
+for (const path of paths) {
 	test(`no axe violations: ${path}`, async ({ page }) => {
 		await page.goto(path);
 		await expectNoAxeViolations(page);
@@ -19,6 +21,30 @@ for (const id of componentIds) {
 		await expectNoAxeViolations(page);
 	});
 }
+
+// Safari は印の出ないリスト（list-style: none、li が display: flex など）を <nav> の外ではリストとして扱わず、項目数が伝わらない。
+// axe も Chromium の読み取りもこれを見つけられないので、CSS から確かめる
+test('lists without markers outside <nav> keep their list role in Safari', async ({ page }) => {
+	test.slow();
+	for (const path of paths) {
+		await page.goto(path);
+		const lists = await page
+			.locator('ul:not([role]), ol:not([role])')
+			.evaluateAll((els) =>
+				els
+					.filter((el) => {
+						const items = [...el.children].filter((child) => child.tagName === 'LI');
+						const hasMarker = items.some((li) => {
+							const style = getComputedStyle(li);
+							return style.display === 'list-item' && style.listStyleType !== 'none';
+						});
+						return items.length > 0 && !hasMarker && !el.closest('nav, [inert]');
+					})
+					.map((el) => el.outerHTML.slice(0, 80))
+			);
+		expect.soft(lists, path).toEqual([]);
+	}
+});
 
 // 開いた状態に出る誤り（名前のないリスト、コントラストなど）は、閉じた初期状態の検査では見つからない
 const popups: { path: string; open: (demo: Locator, page: Page) => Promise<void> }[] = [

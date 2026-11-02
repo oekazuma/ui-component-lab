@@ -60,7 +60,7 @@
 		<label for="{uid}-search">{text[lang].filter}</label>
 		<input id="{uid}-search" type="search" bind:this={search} bind:value={query} />
 		{#if shown.length}
-			<ul>
+			<ul role="list">
 				{#each shown as project (project)}
 					<li>{project}</li>
 				{/each}

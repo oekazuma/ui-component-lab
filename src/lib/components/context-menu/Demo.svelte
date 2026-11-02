@@ -33,7 +33,7 @@
 	メニューの中身は「⋯」ボタンの APG Menu Button と共有し、右クリックできない人にも同じ操作を見える場所に用意する -->
 <div class="demo">
 	<p class="hint">{text[lang].hint}</p>
-	<ul>
+	<ul role="list">
 		{#each text[lang].files as file, i (file)}
 			<li>
 				<button

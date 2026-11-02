@@ -129,7 +129,7 @@
 	</div>
 	<details>
 		<summary>{text[lang].all}</summary>
-		<ul>
+		<ul role="list">
 			{#each others as i (i)}
 				<li class="slide">
 					<span class="number" aria-hidden="true">{i + 1}</span>

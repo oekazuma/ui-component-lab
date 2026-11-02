@@ -136,7 +136,7 @@
 </script>
 
 <p class="back">
-	<a href={homePath(lang)}>← {ui.backToList}</a>
+	<a href={homePath(lang)}><span aria-hidden="true">←</span> {ui.backToList}</a>
 </p>
 
 <h1>{ui.skill}</h1>
@@ -144,7 +144,7 @@
 
 <section aria-labelledby="finds">
 	<h2 id="finds">{x.finds}</h2>
-	<ul class="findings">
+	<ul class="findings" role="list">
 		{#each x.findings as f (f.id)}
 			<li>
 				<span class="kind">{f.kind}</span>
@@ -216,7 +216,7 @@
 	</ul>
 </section>
 
-<ul class="more">
+<ul class="more" role="list">
 	<li><ExternalLink href="{repo}/tree/main/skills/improve-ui-components" text={x.source} label={ui.external} /></li>
 	<li><a href={resolve('/components.json')}>{x.data}</a></li>
 </ul>

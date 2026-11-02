@@ -3,6 +3,8 @@
 
 	let { lang }: { lang: Lang } = $props();
 
+	let pop: HTMLElement;
+
 	const text = {
 		en: {
 			summary: 'Order summary',
@@ -57,13 +59,14 @@
 		</div>
 	</dl>
 </section>
-<div id="{uid}-pop" popover role="dialog" aria-labelledby="{uid}-title" style:position-anchor="--{uid}">
+<div bind:this={pop} id="{uid}-pop" popover role="dialog" aria-labelledby="{uid}-title" style:position-anchor="--{uid}">
 	<h4 id="{uid}-title">{text[lang].title}</h4>
 	<p>{text[lang].body}</p>
 	<!-- デモなので移動はしない（href は prerender の存在チェックを通すため見出しを指す） -->
 	<a href="#{uid}-title" onclick={(e) => e.preventDefault()}>{text[lang].link}</a>
 	<div class="actions">
-		<button type="button" class="btn" popovertarget="{uid}-pop" popovertargetaction="hide">
+		<!-- popovertarget のボタンはブラウザが展開の状態を付け、「閉じる」が「展開」と読まれるので、JS で閉じる。hidePopover() も開く前の要素へフォーカスを戻す -->
+		<button type="button" class="btn" onclick={() => pop.hidePopover()}>
 			{text[lang].close}
 		</button>
 	</div>

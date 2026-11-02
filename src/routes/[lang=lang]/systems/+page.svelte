@@ -25,7 +25,7 @@
 </script>
 
 <p class="back">
-	<a href={homePath(lang)}>← {ui.backToList}</a>
+	<a href={homePath(lang)}><span aria-hidden="true">←</span> {ui.backToList}</a>
 </p>
 
 <h1>{ui.systems}</h1>

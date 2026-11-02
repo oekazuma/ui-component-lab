@@ -12,13 +12,13 @@
 <footer>
 	<div class="text">
 		<p>{ui.sourcesNote}</p>
-		<ul class="pages">
+		<ul class="pages" role="list">
 			<li><a href={systemsPath(lang)}>{ui.systems}</a></li>
 			<li><a href={skillPath(lang)}>{ui.skill}</a></li>
 		</ul>
 	</div>
 	<!-- アイコンだけのリンク。名前は読み上げ用の文で、見える人にはマウスを乗せたときの説明（title）で伝える -->
-	<ul class="icons">
+	<ul class="icons" role="list">
 		<li>
 			<a href={repo} title={ui.repository}>
 				<svg viewBox="0 0 16 16" width="22" height="22" aria-hidden="true" class="filled">

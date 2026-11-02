@@ -38,7 +38,7 @@
 
 <h1 class="visually-hidden">{siteName}</h1>
 <p class="tagline">{ui.tagline}</p>
-<ul class="pages">
+<ul class="pages" role="list">
 	<li><a href={systemsPath(lang)}>{ui.systems}</a></li>
 	<li>
 		<a class="skill" href={skillPath(lang)}>
@@ -67,7 +67,7 @@
 	<p class="count visually-hidden" aria-live="polite">{ui.count(shown.length)}</p>
 </div>
 
-<ul class="grid">
+<ul class="grid" role="list">
 	{#each shown as card (card.id)}
 		{@const Thumb = data.thumbs[card.id]}
 		<li class="card">

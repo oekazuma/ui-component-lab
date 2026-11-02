@@ -28,7 +28,7 @@
 
 <div class="demo">
 	<!-- 名前がほかに見えていないので、写真には名前を代替テキストとして付ける。頭文字の丸は見た目だけにし、名前は visually-hidden の文で伝える -->
-	<ul class="group" aria-label={text[lang].group}>
+	<ul class="group" role="list" aria-label={text[lang].group}>
 		{#each text[lang].people as person, i (person)}
 			<li>
 				{#if photos[i] && !failed[i]}

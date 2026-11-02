@@ -58,7 +58,7 @@
 			<path d="M3 4.5 6 7.5 9 4.5" />
 		</svg>
 	</button>
-	<ul id="{uid}-list" hidden={!open}>
+	<ul id="{uid}-list" role="list" hidden={!open}>
 		{#each langs as l (l)}
 			<li>
 				<a

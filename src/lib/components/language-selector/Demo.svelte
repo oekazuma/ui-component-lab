@@ -73,7 +73,7 @@
 				<span lang="en">Language</span>
 				<svg class="chevron" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg>
 			</button>
-			<ul id="{uid}-list" hidden={!open}>
+			<ul id="{uid}-list" role="list" hidden={!open}>
 				{#each languages as l, i (l.code)}
 					<li>
 						<!-- デモなので移動はせず、枠の中のページの言語を切り替える（href は prerender の存在チェックを通すため本文を指す） -->

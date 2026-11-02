@@ -21,7 +21,7 @@
 		{/key}
 	</div>
 	<button type="button" class="reset" onclick={() => generation++}>
-		↺ {t(lang).reset}<span class="visually-hidden">: {label}</span>
+		<span aria-hidden="true">↺</span> {t(lang).reset}<span class="visually-hidden">: {label}</span>
 	</button>
 </div>
 

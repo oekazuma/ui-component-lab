@@ -19,10 +19,10 @@
 	const uid = $props.id();
 </script>
 
-<!-- ネイティブの <ul> は項目数を支援技術に伝える。各項目は主な文と補足の文の2行。
+<!-- ネイティブの <ul> は項目数を支援技術に伝える。ただし Safari は list-style: none のリストをリストとして扱わないので、role="list" を付ける。各項目は主な文と補足の文の2行。
 	項目の中にほかの操作を足せるよう、行全体ではなくタイトルだけをリンクにする（DADS リソースリスト）。
 	デモなのでリンクは移動しない（href は prerender の存在チェックを通すため自身を指す） -->
-<ul id={uid}>
+<ul id={uid} role="list">
 	{#each text[lang] as [title, meta], i (title)}
 		<li>
 			<span class="icon" aria-hidden="true">{icons[i]}</span>

@@ -44,6 +44,7 @@ CI は PR ごとに上の 3 つを実行する。
 - モーダルなデモ（`<dialog>` の `showModal()`）は、`<dialog>` に `class="in-frame"`（`src/app.css`）を付け、中身を子要素に入れて、デモの枠に重ねて出す。画面全体に出ると、どのデモの動きかが分かりにくいため。中身の箱に `overflow: auto` を付けると、開いたときのフォーカスが箱に移るので付けず、収まらないときはデモの高さを広げる（例: `drawer/Demo.svelte`、`modal/Demo.svelte`）
 - `svelte-ignore` を使うときは、1 行上に理由を書く
 - 色は `src/app.css` のトークン（`--color-*`）を使う。ダークモードではトークンの値が切り替わるので、色を直に書くとダークモードで読めなくなる。エラーは `--color-danger`（その上の文字は `--color-danger-text`）、薄い背景のエラー表示は `--color-danger-surface` と `--color-danger-on-surface`、アクセントのホバーは `--color-accent-hover`。トークンを足すときはライトとダークの両方に値を書き、コントラスト比をコメントに書く。影（`box-shadow`）と、モーダルの背景を暗くする半透明の黒（`rgb(0 0 0 / …)`）は、ライトでもダークでも背景を暗く沈めるだけなので、直に書いてよい（`src/app.css` の `dialog.in-frame` も同じ）
+- 印の出ない `<ul>` と `<ol>`（`list-style: none` や、`li` の `display: flex` など）には、`<nav>` の中を除いて `role="list"` を付ける。Safari がリストとして扱わなくなり、項目数が伝わらないため（`tests/a11y.spec.ts` が確かめる。`{#if}` の中のリストはこの検査に写らないので、部品のテストで確かめる）
 - 共通のクラスは `.btn`、`.btn-primary`、`.visually-hidden`（`src/app.css`）
 - デモの挙動を変えたら、同じコミットで data.ts の keyboard と behavior を直す。独自のキー操作を変えたときは `tests/keyboard.spec.ts` も直す
 

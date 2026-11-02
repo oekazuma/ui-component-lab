@@ -63,7 +63,7 @@
 </script>
 
 {#snippet tocLinks()}
-	<ul>
+	<ul role="list">
 		{#each toc as id (id)}
 			<li><a href="#{id}" aria-current={id === shown ? 'location' : undefined}>{ui[id]}</a></li>
 		{/each}
@@ -71,7 +71,7 @@
 {/snippet}
 
 <p class="back">
-	<a href={homePath(lang)}>← {ui.backToList}</a>
+	<a href={homePath(lang)}><span aria-hidden="true">←</span> {ui.backToList}</a>
 </p>
 
 <header>
@@ -170,7 +170,7 @@
 				{#if data.misuse.some((m) => m.deceptive)}
 					<p class="deceptive-note"><dfn>{ui.deceptive}</dfn>{ui.deceptiveNote}</p>
 				{/if}
-				<ul class="misuse">
+				<ul class="misuse" role="list">
 					{#each data.misuse as m (m.pattern.en)}
 						<!-- 避けたい使い方（赤）と代わりの方法（緑）を色と記号の両方で分け、どちらの話かを一目で分かるようにする -->
 						<li>

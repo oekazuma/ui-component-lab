@@ -33,7 +33,7 @@
 	<section>
 		<h3>{text[lang].notifications}</h3>
 		<!-- 同じセクションの項目の間は、余白の内側だけに引くインセットの線にする -->
-		<ul class="inset">
+		<ul class="inset" role="list">
 			{#each text[lang].channels as channel (channel)}
 				<li>{channel}</li>
 			{/each}

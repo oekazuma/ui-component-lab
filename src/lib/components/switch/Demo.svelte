@@ -44,7 +44,7 @@
 		<input type="checkbox" role="switch" bind:checked />
 		<span class="state" aria-hidden="true">{checked ? text[lang].on : text[lang].off}</span>
 	</label>
-	<ul aria-label={text[lang].list}>
+	<ul role="list" aria-label={text[lang].list}>
 		{#each shown as [task, done] (task)}
 			<li>{task}{#if done}<span class="done">{text[lang].done}</span>{/if}</li>
 		{/each}

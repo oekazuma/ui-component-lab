@@ -164,6 +164,7 @@ test('file upload: a file chosen with the button is also checked for size', asyn
 		mimeType: 'application/pdf',
 		buffer: Buffer.alloc(11 * 1024 * 1024)
 	});
+	await expect(demo.locator('ol')).toHaveAttribute('role', 'list');
 	const row = demo.getByRole('listitem');
 	await expect(row).toContainText('scan.pdf（11MB）');
 	await expect(row).toContainText('ファイルサイズが10MBを超えています。');
@@ -244,6 +245,17 @@ test('popover: Tab goes through its link and out, and it stays open', async ({ p
 	await page.keyboard.press('Tab');
 	expect(await pop.evaluate((el) => el.contains(document.activeElement))).toBe(false);
 	await expect(pop).toBeVisible();
+});
+
+test('popover: the Close button closes it and returns focus to the button that opened it', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/popover/');
+	const button = demo.getByRole('button', { name: 'About shipping' });
+	const pop = page.getByRole('dialog', { name: 'How shipping is calculated' });
+	await button.focus();
+	await page.keyboard.press('Enter');
+	await pop.getByRole('button', { name: 'Close' }).click();
+	await expect(pop).toBeHidden();
+	await expect(button).toBeFocused();
 });
 
 test('button: real labels from low to high priority, left to right, with an underlined text button', async ({ page }) => {

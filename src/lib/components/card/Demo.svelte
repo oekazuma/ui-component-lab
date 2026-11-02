@@ -28,7 +28,7 @@
 
 <!-- 各カードは 1 つの話題をまとめた article。中にボタンがあるため、カード全体ではなく見出しだけをリンクにする。
 	デモなのでリンクは移動しない（href は prerender の存在チェックを通すため自身を指す） -->
-<ul class="cards" id={uid}>
+<ul class="cards" id={uid} role="list">
 	{#each text[lang].cards as card, i (card.title)}
 		<li>
 			<article aria-labelledby="{uid}-title-{i}">
