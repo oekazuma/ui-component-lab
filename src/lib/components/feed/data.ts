@@ -126,6 +126,13 @@ export default {
 				en: 'A feed adds the next articles in place as people read; pagination splits the items into pages that people choose to move between.',
 				ja: 'フィードは読み進めるとその場に次の記事を足し、ページネーションは項目をページに分けて、利用者が選んで移ります。'
 			}
+		},
+		{
+			id: 'timeline',
+			diff: {
+				en: 'A feed is a section of articles that loads more as people scroll and is marked with `role="feed"`; a timeline lays out events in time order along a line.',
+				ja: 'フィードはスクロールに合わせて記事を読み込み続ける部分で、`role="feed"` を付けます。タイムラインは出来事を時間順に線に沿って並べます。'
+			}
 		}
 	],
 	sources: [

@@ -149,6 +149,13 @@ export default {
 				en: 'A stepper here is a step indicator, not what Apple calls a “stepper”, the − / + control of a number input.',
 				ja: 'ステップナビゲーションは段階の表示で、Apple が「Stepper」と呼ぶ数値入力の − / + の部品とは別のものです。'
 			}
+		},
+		{
+			id: 'timeline',
+			diff: {
+				en: 'A stepper shows the steps of a procedure and which one the user is on; a timeline lays out events by when they happen.',
+				ja: 'ステップナビゲーションは手続きの段階と今いる段階を示し、タイムラインは出来事をいつ起きたかで並べます。'
+			}
 		}
 	],
 	sources: [

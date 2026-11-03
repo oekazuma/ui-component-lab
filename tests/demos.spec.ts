@@ -1733,3 +1733,33 @@ test('button group: the group has a name, each button reports its result, and ev
 	await page.keyboard.press('Shift+Tab');
 	await expect(buttons.nth(1)).toBeFocused();
 });
+
+test('timeline: a named ordered list of dated events, oldest first, with decorative markers and the state in words', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/timeline/');
+	const list = demo.getByRole('list', { name: 'Order history' });
+	const items = list.getByRole('listitem');
+	await expect(items).toHaveCount(4);
+	await expect(list).toHaveJSProperty('tagName', 'OL');
+	await expect(demo.getByText('Oldest first')).toBeVisible();
+
+	// 各項目の <time> に datetime があり、並びが古い順になっている
+	const times = list.locator('time');
+	await expect(times).toHaveCount(4);
+	const datetimes = await times.evaluateAll((els) => els.map((el) => el.getAttribute('datetime')));
+	expect(datetimes.every((d) => /^\d{4}-\d{2}-\d{2}$/.test(d ?? ''))).toBe(true);
+	expect(datetimes).toEqual([...datetimes].sort());
+
+	// 丸は飾りなので読み上げから外れていて、名前も役割も持たない
+	const markers = list.locator('.marker');
+	await expect(markers).toHaveCount(4);
+	for (const marker of await markers.all()) {
+		await expect(marker).toHaveAttribute('aria-hidden', 'true');
+		await expect(marker).toBeEmpty();
+		await expect(marker).not.toHaveAttribute('aria-label');
+	}
+
+	// 状態は色だけでなく文字でも伝える
+	await expect(items.nth(2)).toContainText('Needs attention');
+	await expect(items.last()).toContainText('Scheduled');
+	await expect(items.first()).toContainText('Done');
+});

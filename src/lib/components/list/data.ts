@@ -85,6 +85,13 @@ export default {
 				en: 'A list shows single items; a description list pairs each name with its value or explanation.',
 				ja: 'リストは項目を1つずつ並べ、説明リストは項目名と値や説明を組にして並べます。'
 			}
+		},
+		{
+			id: 'timeline',
+			diff: {
+				en: 'A list holds items of any kind in a plain column; a timeline is a list of events in time order, drawn along a line with their dates.',
+				ja: 'リストはどんな項目もふつうに縦に並べ、タイムラインは出来事を時間順に、日時とともに線に沿って描くリストです。'
+			}
 		}
 	],
 	sources: [
