@@ -201,6 +201,7 @@
 	[role='tablist'],
 	.pager {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.25rem;
 	}
@@ -232,6 +233,7 @@
 
 	ul {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.5rem;
 		margin: 0.5rem 0 0;
 		padding: 0;

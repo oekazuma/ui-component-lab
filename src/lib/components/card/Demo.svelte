@@ -71,7 +71,7 @@
 <style>
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
 		gap: 0.75rem;
 		/* max-width を付けると、その幅で入る列の数が中身の最小幅になり、狭い画面でページが横にはみ出す */
 		width: 100%;

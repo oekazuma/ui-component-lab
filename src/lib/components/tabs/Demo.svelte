@@ -91,6 +91,7 @@
 
 	[role='tablist'] {
 		display: flex;
+		flex-wrap: wrap;
 		border-bottom: 1px solid var(--color-border);
 	}
 
@@ -101,7 +102,6 @@
 		border-bottom: 2px solid transparent;
 		background: none;
 		color: var(--color-muted);
-		white-space: nowrap;
 		cursor: pointer;
 	}
 

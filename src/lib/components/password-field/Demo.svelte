@@ -104,6 +104,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.25rem;
 		width: min(100%, 18rem);
 	}
@@ -114,11 +115,12 @@
 
 	.row {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.5rem;
 	}
 
 	input {
-		flex: 1;
+		flex: 1 1 8rem;
 		min-width: 0;
 		padding: 0.4em 0.5em;
 		border: 1px solid var(--color-muted);

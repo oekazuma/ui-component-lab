@@ -26,7 +26,7 @@
 <style>
 	.demo {
 		display: grid;
-		grid-template-columns: auto 1fr 2.5em;
+		grid-template-columns: fit-content(30%) minmax(0, 1fr) auto;
 		align-items: center;
 		gap: 0.5rem;
 		width: min(100%, 18rem);
@@ -49,6 +49,7 @@
 	}
 
 	output {
+		min-width: 2.5em;
 		text-align: right;
 		font-variant-numeric: tabular-nums;
 	}

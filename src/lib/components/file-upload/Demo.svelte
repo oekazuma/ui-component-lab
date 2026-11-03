@@ -188,7 +188,11 @@
 		overflow-wrap: anywhere;
 	}
 
+	/* 行の overflow-wrap: anywhere を引き継ぐと、長いファイル名と並んだボタンの文字が 1 字ずつに割れる。
+		ボタンが縮むと文字が枠からはみ出すので、縮めない */
 	.row .btn {
+		flex: none;
+		overflow-wrap: normal;
 		padding: 0.1em 0.6em;
 		font-size: 0.8125rem;
 	}

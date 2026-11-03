@@ -108,5 +108,6 @@
 		border-bottom: 1px solid var(--color-border);
 		text-align: left;
 		vertical-align: top;
+		overflow-wrap: anywhere;
 	}
 </style>

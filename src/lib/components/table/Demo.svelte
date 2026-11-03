@@ -61,27 +61,35 @@
 
 <!-- ネイティブの <table>。並べ替えできる列は見出しの中のボタンで切り替える。
 	ボタンで並べ替えられることは、ボタンごとに言うと繰り返しになるので caption に 1 回だけ添える -->
-<table>
-	<caption>{text[lang].caption}<span class="visually-hidden">{text[lang].sortable}</span></caption>
-	<thead>
-		<tr>
-			<th scope="col">{text[lang].headers[0]}</th>
-			{@render header(1)}
-			{@render header(2)}
-		</tr>
-	</thead>
-	<tbody>
-		{#each rows as [plan, price, gb] (plan)}
+<!-- 表は列の幅を縮めると 1 文字ずつ折り返して読めなくなるので、狭いときはこの枠の中で横にスクロールさせる。
+	並べ替えボタンにフォーカスが移ればブラウザが見える位置までスクロールするので、枠自体は Tab で止まらない -->
+<div class="scroll">
+	<table>
+		<caption>{text[lang].caption}<span class="visually-hidden">{text[lang].sortable}</span></caption>
+		<thead>
 			<tr>
-				<th scope="row">{plan}</th>
-				<td class="num">{text[lang].price(price)}</td>
-				<td class="num">{storage(gb)}</td>
+				<th scope="col">{text[lang].headers[0]}</th>
+				{@render header(1)}
+				{@render header(2)}
 			</tr>
-		{/each}
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			{#each rows as [plan, price, gb] (plan)}
+				<tr>
+					<th scope="row">{plan}</th>
+					<td class="num">{text[lang].price(price)}</td>
+					<td class="num">{storage(gb)}</td>
+				</tr>
+			{/each}
+		</tbody>
+	</table>
+</div>
 
 <style>
+	.scroll {
+		overflow-x: auto;
+	}
+
 	table {
 		border-collapse: collapse;
 		font-size: 0.875rem;
@@ -98,6 +106,7 @@
 		padding: 0.3rem 0.6rem;
 		border-bottom: 1px solid var(--color-border);
 		text-align: left;
+		white-space: nowrap;
 	}
 
 	thead th {

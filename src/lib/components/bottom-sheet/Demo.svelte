@@ -81,6 +81,11 @@
 		grid-template-columns: minmax(0, 1fr);
 	}
 
+	/* シートがすべり上がる間、縦のスクロールバーが一瞬出ないよう、共通の縦スクロール（app.css）を切る。中身は max-content まで伸びるので溢れない */
+	dialog.in-frame[open] {
+		overflow: hidden;
+	}
+
 	/* 低い高さのシートでも枠の中央（背景を押して閉じる位置）が空くよう、枠に高さを確保する */
 	.demo {
 		display: grid;

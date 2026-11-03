@@ -112,7 +112,9 @@
 	}
 
 	.header {
+		position: relative;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
 		gap: 0.5rem;
@@ -122,10 +124,6 @@
 
 	.logo {
 		font-weight: 700;
-	}
-
-	.selector {
-		position: relative;
 	}
 
 	.btn {
@@ -147,10 +145,11 @@
 
 	ul {
 		position: absolute;
-		top: calc(100% + 0.25rem);
-		right: 0;
+		top: 100%;
+		right: 0.5rem;
 		z-index: 1;
-		min-width: 10rem;
+		min-width: min(10rem, calc(100% - 1rem));
+		max-width: calc(100% - 1rem);
 		margin: 0;
 		padding: 0.25rem;
 		border: 1px solid var(--color-border);

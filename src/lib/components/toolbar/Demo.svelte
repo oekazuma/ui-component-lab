@@ -93,6 +93,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.5rem;
 		width: min(100%, 22rem);
 	}
@@ -110,6 +111,7 @@
 
 	[role='radiogroup'] {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.25rem;
 		padding-left: 0.25rem;
 		border-left: 1px solid var(--color-border);

@@ -151,6 +151,7 @@
 	.demo {
 		position: relative;
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.25rem;
 		width: min(100%, 14rem);
 	}
@@ -162,6 +163,7 @@
 	.field {
 		position: relative;
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 	}
 
 	input {

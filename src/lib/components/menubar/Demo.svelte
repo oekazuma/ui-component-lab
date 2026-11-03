@@ -149,6 +149,7 @@
 	/* 開いたサブメニューがデモの枠に収まる高さを取り、結果の表示はその下に置く */
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		align-content: space-between;
 		gap: 0.5rem;
 		width: min(100%, 22rem);
@@ -163,6 +164,7 @@
 
 	[role='menubar'] {
 		display: flex;
+		flex-wrap: wrap;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
 		background: var(--color-bg);

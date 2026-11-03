@@ -122,7 +122,7 @@
 	.box {
 		align-self: start;
 		justify-self: center;
-		width: min(28rem, calc(100% - 2rem));
+		width: min(28rem, calc(100% - 2 * var(--gutter)));
 		margin-top: 1rem;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);

@@ -72,6 +72,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.5rem;
 		width: min(100%, 18rem);
 	}
@@ -106,6 +107,8 @@
 
 	.file {
 		flex: 1;
+		min-width: 0;
+		overflow-wrap: anywhere;
 		padding: 0.5em 0.75em;
 		border: 0;
 		background: none;

@@ -75,9 +75,9 @@
 	/* 枠の右端から出るパネル（枠に重ねる仕組みは app.css の .in-frame） */
 	.panel {
 		justify-self: end;
-		width: min(calc(100% - 3rem), 18rem);
+		width: min(calc(100% - 3 * var(--gutter)), 18rem);
 		height: 100%;
-		padding: 1rem;
+		padding: 1rem var(--gutter);
 		border-left: 1px solid var(--color-border);
 		background: var(--color-bg);
 		color: var(--color-text);
@@ -98,6 +98,7 @@
 
 	.head {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 0.75rem;

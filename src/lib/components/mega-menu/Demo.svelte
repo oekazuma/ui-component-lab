@@ -140,6 +140,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.5rem;
 		width: min(100%, 40rem);
 		align-self: start;
@@ -218,7 +219,7 @@
 	ul {
 		display: grid;
 		flex: 3 1 16rem;
-		grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 9rem), 1fr));
 		gap: 0.25rem 1rem;
 		margin: 0;
 		padding: 0 0 0 1.5rem;

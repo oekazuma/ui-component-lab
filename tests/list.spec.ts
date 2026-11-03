@@ -58,7 +58,7 @@ test('detail: alias and source links say they open another site', async ({ page 
 test('ja: lines break between phrases, and dates do not wrap', async ({ page }) => {
 	await page.goto('ja/components/tabs/');
 	expect(await page.evaluate(() => getComputedStyle(document.body).wordBreak)).toBe('auto-phrase');
-	expect(await page.locator('.checked').first().evaluate((e) => getComputedStyle(e).whiteSpace)).toBe('nowrap');
+	expect(await page.locator('.checked time').first().evaluate((e) => getComputedStyle(e).whiteSpace)).toBe('nowrap');
 });
 
 test('list: thumbnails are not interactive, share one height, and the whole card opens the page', async ({ page }) => {

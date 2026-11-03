@@ -38,6 +38,7 @@
 <style>
 	.actions {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		gap: 1rem;
 	}
@@ -80,6 +81,6 @@
 	main {
 		max-width: 72rem;
 		margin: 0 auto;
-		padding: 1.5rem 1rem 4rem;
+		padding: 1.5rem var(--gutter) 4rem;
 	}
 </style>

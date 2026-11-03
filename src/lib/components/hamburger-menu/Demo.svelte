@@ -82,6 +82,7 @@
 	/* 開いたメニューのリンクが並びきるだけの高さを枠に確保する */
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		align-content: center;
 		gap: 0.5rem;
 		width: min(100%, 20rem);
@@ -90,6 +91,7 @@
 
 	.header {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
 		gap: 0.5rem;
@@ -125,9 +127,9 @@
 	/* 枠の右端から出るパネル（枠に重ねる仕組みは app.css の .in-frame） */
 	.panel {
 		justify-self: end;
-		width: min(calc(100% - 3rem), 18rem);
+		width: min(calc(100% - 3 * var(--gutter)), 18rem);
 		height: 100%;
-		padding: 0.5rem 1rem 1rem;
+		padding: 0.5rem var(--gutter) 1rem;
 		border-left: 1px solid var(--color-border);
 		background: var(--color-bg);
 		color: var(--color-text);

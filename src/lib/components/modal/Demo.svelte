@@ -51,8 +51,9 @@
 
 	/* 枠の中央に出す箱（枠に重ねる仕組みは app.css の .in-frame） */
 	.box {
-		place-self: center;
-		width: min(calc(100% - 2rem), 24rem);
+		/* place-self: center だと、枠より背が高いときに上端が切れてスクロールでも届かない */
+		margin: auto;
+		width: min(calc(100% - 2 * var(--gutter)), 24rem);
 		padding: 1.25rem;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);

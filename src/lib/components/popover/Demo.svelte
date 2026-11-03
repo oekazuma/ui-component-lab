@@ -92,9 +92,10 @@
 
 	dl div {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-		gap: 0.5rem;
+		gap: 0.25rem 0.5rem;
 		padding: 0.25rem 0;
 	}
 
@@ -122,7 +123,8 @@
 	}
 
 	[popover] {
-		width: min(calc(100% - 2rem), 18rem);
+		--width: min(calc(100% - 2 * var(--gutter)), 18rem);
+		width: var(--width);
 		padding: 0.75rem 1rem;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
@@ -135,7 +137,8 @@
 	@supports (anchor-name: --a) {
 		[popover] {
 			top: anchor(bottom);
-			left: anchor(left);
+			/* position-try-fallbacks が効かない環境でも、文字を大きくした狭い画面で右端から出ないよう、左端を内側へ抑える */
+			left: min(anchor(left), calc(100% - var(--width) - var(--gutter)));
 			margin: 0.4rem 0 0;
 			position-try-fallbacks: flip-inline, --popover-demo-inset, flip-block;
 		}

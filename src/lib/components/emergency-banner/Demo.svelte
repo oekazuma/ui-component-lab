@@ -48,6 +48,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.5rem;
 		width: min(100%, 36rem);
 	}
@@ -55,6 +56,7 @@
 	/* サイトのほかの部分と違う、目を引く見た目にする（DADS 緊急時バナー）。色はエラーの色 */
 	article {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.5rem;
 		padding: 0.875rem 1rem;
 		border: 6px solid var(--color-danger);

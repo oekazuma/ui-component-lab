@@ -63,6 +63,7 @@
 
 	.stars {
 		display: flex;
+		flex-wrap: wrap;
 		border-radius: var(--radius);
 	}
 

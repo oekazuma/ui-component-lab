@@ -53,6 +53,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		justify-items: center;
 		gap: 0.5rem;
 		width: min(100%, 16rem);

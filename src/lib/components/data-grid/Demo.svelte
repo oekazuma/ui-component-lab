@@ -62,55 +62,62 @@
 
 <!-- 行と列の構造はネイティブの <table> に任せ、role="grid" を付けて矢印キーで動けることを伝える（APG のデータグリッドの例も <table> を使う）。
 	完了の列はチェックボックスにフォーカスを置き、Space での切り替えはネイティブの <input type="checkbox"> に任せる -->
-<table
-	bind:this={grid}
-	role="grid"
-	aria-labelledby="{uid}-caption"
-	{onkeydown}
-	onfocusin={(e) => {
-		// マウスで押したセルも、次に Tab で戻ってくる場所にする
-		const cell = (e.target as HTMLElement).dataset.cell;
-		if (cell) {
-			const [r, c] = cell.split('-').map(Number);
-			pos = { r, c };
-		}
-	}}
->
-	<caption id="{uid}-caption">{text[lang].caption}</caption>
-	<thead>
-		<tr>
-			{#each text[lang].headers as header (header)}
-				<th scope="col">{header}</th>
-			{/each}
-		</tr>
-	</thead>
-	<tbody>
-		{#each text[lang].rows as [task, due], r (task)}
+<!-- 狭いときは枠の中で横にスクロールさせる。セルにフォーカスが移ればブラウザが見える位置までスクロールするので、枠自体は Tab で止まらない -->
+<div class="scroll">
+	<table
+		bind:this={grid}
+		role="grid"
+		aria-labelledby="{uid}-caption"
+		{onkeydown}
+		onfocusin={(e) => {
+			// マウスで押したセルも、次に Tab で戻ってくる場所にする
+			const cell = (e.target as HTMLElement).dataset.cell;
+			if (cell) {
+				const [r, c] = cell.split('-').map(Number);
+				pos = { r, c };
+			}
+		}}
+	>
+		<caption id="{uid}-caption">{text[lang].caption}</caption>
+		<thead>
 			<tr>
-				{#each [task, due] as value, c (c)}
-					<td
-						id={c === 0 ? `${uid}-task-${r}` : undefined}
-						role="gridcell"
-						data-cell="{r}-{c}"
-						tabindex={pos.r === r && pos.c === c ? 0 : -1}
-					>
-						{value}
-					</td>
+				{#each text[lang].headers as header (header)}
+					<th scope="col">{header}</th>
 				{/each}
-				<td role="gridcell" class="done">
-					<input
-						type="checkbox"
-						data-cell="{r}-2"
-						tabindex={pos.r === r && pos.c === 2 ? 0 : -1}
-						aria-labelledby="{uid}-task-{r}"
-					/>
-				</td>
 			</tr>
-		{/each}
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			{#each text[lang].rows as [task, due], r (task)}
+				<tr>
+					{#each [task, due] as value, c (c)}
+						<td
+							id={c === 0 ? `${uid}-task-${r}` : undefined}
+							role="gridcell"
+							data-cell="{r}-{c}"
+							tabindex={pos.r === r && pos.c === c ? 0 : -1}
+						>
+							{value}
+						</td>
+					{/each}
+					<td role="gridcell" class="done">
+						<input
+							type="checkbox"
+							data-cell="{r}-2"
+							tabindex={pos.r === r && pos.c === 2 ? 0 : -1}
+							aria-labelledby="{uid}-task-{r}"
+						/>
+					</td>
+				</tr>
+			{/each}
+		</tbody>
+	</table>
+</div>
 
 <style>
+	.scroll {
+		overflow-x: auto;
+	}
+
 	table {
 		border-collapse: collapse;
 		font-size: 0.875rem;
@@ -128,6 +135,7 @@
 		border: 1px solid var(--color-border);
 		background: var(--color-bg);
 		text-align: left;
+		white-space: nowrap;
 	}
 
 	th {

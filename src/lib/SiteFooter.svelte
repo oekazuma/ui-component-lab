@@ -49,7 +49,7 @@
 		gap: 1rem 2rem;
 		max-width: 72rem;
 		margin: 0 auto;
-		padding: 1.5rem 1rem 3rem;
+		padding: 1.5rem var(--gutter) 3rem;
 		border-top: 1px solid var(--color-border);
 		color: var(--color-muted);
 		font-size: 0.875rem;

@@ -170,7 +170,7 @@
 		gap: 0.25rem;
 		/* left: 50% のままだと幅が画面の半分までに縮むので、中身の幅にしてから画面幅で抑える */
 		width: max-content;
-		max-width: calc(100vw - 2rem);
+		max-width: calc(100vw - 2 * var(--gutter));
 		translate: -50% 0;
 	}
 

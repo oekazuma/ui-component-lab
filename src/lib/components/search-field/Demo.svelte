@@ -42,12 +42,14 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.25rem;
 		width: min(100%, 20rem);
 	}
 
 	form {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.25rem;
 	}
 
@@ -57,13 +59,14 @@
 
 	.row {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.25rem;
 	}
 
 	.field {
 		position: relative;
 		display: flex;
-		flex: 1;
+		flex: 1 1 8rem;
 		min-width: 0;
 	}
 

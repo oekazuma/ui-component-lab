@@ -43,6 +43,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		justify-items: center;
 		gap: 0.75rem;
 		width: min(100%, 20rem);
@@ -50,8 +51,7 @@
 
 	fieldset {
 		display: grid;
-		grid-auto-columns: 1fr;
-		grid-auto-flow: column;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 3.5rem), 1fr));
 		gap: 2px;
 		width: 100%;
 		margin: 0;

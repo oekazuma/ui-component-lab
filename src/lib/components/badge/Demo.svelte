@@ -63,6 +63,7 @@
 <style>
 	.row {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1.25rem;
 	}
 

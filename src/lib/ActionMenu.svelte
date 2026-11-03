@@ -158,6 +158,10 @@
 		left: 0;
 		z-index: 1;
 		min-width: 100%;
+		/* 項目は折り返さずに並べるが、文字を大きくした狭い画面で枠の外へ出ないよう、画面の幅で抑えて折り返す。
+			width を付けないと、位置を決める箱（ボタンの幅）に合わせて項目が先に折り返す */
+		width: max-content;
+		max-width: calc(100vw - 7 * var(--gutter));
 		margin: 0.25rem 0 0;
 		padding: 0.25rem 0;
 		border: 1px solid var(--color-border);
@@ -174,7 +178,6 @@
 		border: 0;
 		background: none;
 		text-align: left;
-		white-space: nowrap;
 		cursor: pointer;
 	}
 

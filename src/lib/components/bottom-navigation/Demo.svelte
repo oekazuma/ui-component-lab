@@ -74,6 +74,7 @@
 	/* バーを画面ではなくこの枠の下に固定するため、position: fixed は使わず grid の下の行に置く */
 	.phone {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		grid-template-rows: 1fr auto;
 		width: min(100%, 20rem);
 		min-height: 22rem;
@@ -92,7 +93,7 @@
 	ul {
 		display: grid;
 		grid-auto-flow: column;
-		grid-auto-columns: 1fr;
+		grid-auto-columns: minmax(0, 1fr);
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -109,6 +110,7 @@
 		border-top: 3px solid transparent;
 		color: var(--color-text);
 		font-size: 0.75rem;
+		overflow-wrap: anywhere;
 		text-decoration: none;
 	}
 

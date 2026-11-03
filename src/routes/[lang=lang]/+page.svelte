@@ -159,8 +159,8 @@
 		fieldset {
 			min-width: 0;
 			flex-wrap: nowrap;
-			margin: -0.375rem -1rem;
-			padding: 0.375rem 1rem;
+			margin: -0.375rem calc(-1 * var(--gutter));
+			padding: 0.375rem var(--gutter);
 			overflow-x: auto;
 			scrollbar-width: none;
 		}

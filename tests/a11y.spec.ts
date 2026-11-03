@@ -46,6 +46,22 @@ test('lists without markers outside <nav> keep their list role in Safari', async
 	}
 });
 
+// 狭い画面（320px）で文字を 200% にしても、ページが横にスクロールしないこと（WCAG 1.4.4 と 1.4.10）。
+// 文字の大きさは html の font-size で真似る。デモの中の rem もこれに従って大きくなる
+test('pages do not scroll sideways at 320px with 200% text', async ({ page }) => {
+	test.slow();
+	await page.setViewportSize({ width: 320, height: 800 });
+	const reflowPaths = ['', 'systems/', 'skill/', ...componentIds.map((id) => `components/${id}/`)].flatMap((p) => [`en/${p}`, `ja/${p}`]);
+	for (const path of reflowPaths) {
+		for (const size of ['100%', '200%']) {
+			await page.goto(path);
+			await page.addStyleTag({ content: `html { font-size: ${size} !important }` });
+			const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+			expect.soft(overflow, `${path} at ${size}`).toBeLessThanOrEqual(0);
+		}
+	}
+});
+
 // 開いた状態に出る誤り（名前のないリスト、コントラストなど）は、閉じた初期状態の検査では見つからない
 const popups: { path: string; open: (demo: Locator, page: Page) => Promise<void> }[] = [
 	...demos.map((d) => ({

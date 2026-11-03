@@ -61,6 +61,9 @@
 
 	.group {
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		row-gap: 0.5rem;
 		margin: 0;
 		padding: 0;
 		list-style: none;

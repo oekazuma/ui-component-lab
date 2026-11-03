@@ -126,7 +126,7 @@
 			</ul>
 		</section>
 
-		<section aria-labelledby="keyboard">
+		<section class="keys" aria-labelledby="keyboard">
 			<h2 id="keyboard">{ui.keyboard}</h2>
 			<table>
 				<thead>
@@ -230,8 +230,10 @@
 </div>
 
 <style>
+	/* 列の幅を指定しないと、幅の広いデモや表に合わせて列が広がり、ページごと横にはみ出す */
 	.layout {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 3rem;
 	}
 
@@ -458,7 +460,6 @@
 		font-weight: 700;
 		line-height: 1.5;
 		vertical-align: 0.1em;
-		white-space: nowrap;
 	}
 
 	table {
@@ -474,6 +475,16 @@
 		vertical-align: top;
 	}
 
+	/* キーの列は 1 文字ずつに折れると読めないので、説明の列だけを単語の途中でも折り返す */
+	td:last-child {
+		overflow-wrap: anywhere;
+	}
+
+	th,
+	td:first-child {
+		overflow-wrap: normal;
+	}
+
 	/* 既定の等幅フォントは 13px 基準で em が効くため小さくなりすぎる。本文の書体で rem 指定にする */
 	kbd {
 		padding: 0.05em 0.4em;
@@ -485,10 +496,34 @@
 		white-space: nowrap;
 	}
 
-	/* 確認日は「2026-」と「10-20」に分かれると読みにくいので折り返さない */
+	.keys {
+		container-type: inline-size;
+	}
+
+	/* 文字を大きくした狭い画面では、キーの組み合わせを空白で折り返す。
+		コンテナクエリの rem は実際の文字の大きさで決まるので、文字が標準の大きさのスマホでは 1 行のまま */
+	@container (max-width: 16rem) {
+		th,
+		td {
+			padding-inline: 0.25rem;
+		}
+
+		kbd {
+			overflow-wrap: normal;
+			white-space: normal;
+			-webkit-box-decoration-break: clone;
+			box-decoration-break: clone;
+		}
+	}
+
 	.checked {
+		display: inline-block;
 		color: var(--color-muted);
-		white-space: nowrap;
 		font-size: 0.875rem;
+	}
+
+	/* 確認日は「2026-」と「10-20」に分かれると読みにくいので折り返さない */
+	.checked time {
+		white-space: nowrap;
 	}
 </style>

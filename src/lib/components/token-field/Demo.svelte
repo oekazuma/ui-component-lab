@@ -173,6 +173,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.25rem;
 		width: min(100%, 20rem);
 	}
@@ -184,6 +185,7 @@
 	.combo {
 		position: relative;
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 	}
 
 	.field {

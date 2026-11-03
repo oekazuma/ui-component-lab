@@ -50,7 +50,8 @@
 		left: 50%;
 		z-index: 1;
 		width: max-content;
-		max-width: 14rem;
+		/* 文字を大きくした狭い画面で、中央に置いた吹き出しがデモの枠からはみ出さないようにする */
+		max-width: min(14rem, calc(100vw - 3rem));
 		padding: 0.3em 0.6em;
 		border-radius: 4px;
 		background: var(--color-text);

@@ -59,6 +59,7 @@
 <style>
 	.demo {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.25rem;
 		width: min(100%, 18rem);
 	}
@@ -85,6 +86,7 @@
 
 	.buttons {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.5rem;
 		margin-top: 0.5rem;
 	}

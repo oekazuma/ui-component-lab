@@ -38,9 +38,22 @@
 
 	.stage {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		place-items: center;
 		min-height: 11rem;
-		padding: 2.25rem 1rem 1rem;
+		padding: 2.25rem var(--gutter) 1rem;
+	}
+
+	/* 既定の min-width: auto と入力欄の既定の幅が、文字を大きくした狭い画面でデモを枠の外へ押し出す。
+		:where() で詳細度を下げ、デモが自分で決めた max-width（link の 20rem、toast の position: fixed など）を上書きしないようにする。
+		dialog は枠に重ねる大きさを app.css が決めるので除く */
+	:global(.stage > :where(:not(dialog))) {
+		min-width: 0;
+		max-width: 100%;
+	}
+
+	:global(.stage :where(input, select, textarea, meter, progress)) {
+		max-width: 100%;
 	}
 
 	.reset {

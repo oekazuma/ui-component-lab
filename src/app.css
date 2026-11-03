@@ -18,6 +18,8 @@
 	--color-focus-inner: #ffd43d;
 	--color-focus-outer: #000000;
 	--radius: 6px;
+	/* 左右の余白。文字を大きくしても 16px を超えさせない（rem のままだと狭い画面で本文の幅が半分近く失われる） */
+	--gutter: min(1rem, 16px);
 	--font:
 		system-ui, -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
 
@@ -82,6 +84,8 @@ body {
 	color: var(--color-text);
 	font-family: var(--font);
 	line-height: 1.6;
+	/* 文字を大きくした狭い画面で、長い英単語が見出しや段落を押し広げないようにする */
+	overflow-wrap: break-word;
 }
 
 /* 日本語は文節の切れ目で改行する（対応していないブラウザでは従来どおり文字単位で折り返す）。
@@ -148,9 +152,11 @@ dialog.in-frame {
 	}
 }
 
+/* 文字を大きくした狭い枠では中身が枠より背高くなるので、縦だけスクロールで届くようにする。
+	横は、パネルがすべり出る間の動きで一瞬スクロールバーが出ないよう切る */
 dialog.in-frame[open] {
 	display: grid;
-	overflow: hidden;
+	overflow: hidden auto;
 }
 
 dialog.in-frame::backdrop {

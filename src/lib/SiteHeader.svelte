@@ -22,7 +22,7 @@
 		gap: 0.75rem 1rem;
 		max-width: 72rem;
 		margin: 0 auto;
-		padding: 1rem;
+		padding: 1rem var(--gutter);
 		border-bottom: 1px solid var(--color-border);
 	}
 
