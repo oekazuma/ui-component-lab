@@ -1643,3 +1643,35 @@ test('floating action button: Tab reaches the button before the list, and no foc
 		expect(overlaps, `${await rows.nth(i).textContent()} overlaps the button`).toBe(false);
 	}
 });
+
+test('button group: the group has a name, each button reports its result, and every button is its own Tab stop', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/button-group/');
+	const group = demo.getByRole('group', { name: 'Save options' });
+	const buttons = group.getByRole('button');
+	await expect(buttons).toHaveText(['Save', 'Save as draft', 'Cancel']);
+
+	const status = demo.getByRole('status');
+	for (const [name, result] of [
+		['Save', 'Saved.'],
+		['Save as draft', 'Saved as a draft.'],
+		['Cancel', 'Canceled.']
+	]) {
+		await group.getByRole('button', { name, exact: true }).click();
+		await expect(status).toHaveText(result);
+	}
+
+	// グループの直前に Tab の起点を置く。矢印キーで移る toolbar とは違い、Tab がボタンを 1 つずつ巡る
+	await group.evaluate((el) => {
+		const start = document.createElement('button');
+		el.before(start);
+		start.focus();
+	});
+	for (const button of await buttons.all()) {
+		await page.keyboard.press('Tab');
+		await expect(button).toBeFocused();
+	}
+	await page.keyboard.press('ArrowLeft');
+	await expect(buttons.last()).toBeFocused();
+	await page.keyboard.press('Shift+Tab');
+	await expect(buttons.nth(1)).toBeFocused();
+});

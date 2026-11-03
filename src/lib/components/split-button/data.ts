@@ -107,6 +107,13 @@ export default {
 				en: 'A split button adds a menu of related actions beside the main button; a button offers one action.',
 				ja: 'スプリットボタンは、主な操作のボタンの横に関連する操作のメニューが付き、ボタンは操作が1つだけです。'
 			}
+		},
+		{
+			id: 'button-group',
+			diff: {
+				en: 'A split button is one main action joined to an arrow button that opens a menu of related actions; a button group is a set of separate buttons, each running its own action.',
+				ja: 'スプリットボタンは主な操作に、関連する操作のメニューを開く矢印のボタンをつなげたものです。ボタングループは別々のボタンを並べ、それぞれが自分の操作を実行します。'
+			}
 		}
 	],
 	sources: [

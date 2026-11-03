@@ -164,6 +164,13 @@ export default {
 				en: 'A segmented control picks one of several segments; a toggle button turns a single option on or off.',
 				ja: 'セグメンテッドコントロールは複数の区画から1つを選び、トグルボタンは1つの機能をオンかオフにします。'
 			}
+		},
+		{
+			id: 'button-group',
+			diff: {
+				en: 'A segmented control shows which of its segments is chosen; a button group has each button run its own action and marks none as chosen.',
+				ja: 'セグメンテッドコントロールは、区画のうちどれが選ばれているかを示します。ボタングループはそれぞれのボタンが自分の操作を実行し、選ばれた状態を示しません。'
+			}
 		}
 	],
 	sources: [

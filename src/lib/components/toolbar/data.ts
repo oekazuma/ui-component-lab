@@ -92,6 +92,13 @@ export default {
 				en: 'A toolbar groups several buttons and moves between them with arrow keys; a toggle button is a single on/off button that can sit inside one.',
 				ja: 'ツールバーは複数のボタンをまとめて矢印キーで行き来させます。トグルボタンはオンとオフを切り替える1つのボタンで、ツールバーの中に置くこともあります。'
 			}
+		},
+		{
+			id: 'button-group',
+			diff: {
+				en: 'A toolbar is a single Tab stop with the arrow keys moving between its controls; a button group is a few related buttons that each take a Tab stop.',
+				ja: 'ツールバーは Tab の止まる場所が1か所で、中の操作部品の間を矢印キーで移ります。ボタングループは関連するボタンを数個並べ、Tab はボタンごとに止まります。'
+			}
 		}
 	],
 	sources: [

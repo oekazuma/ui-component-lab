@@ -156,6 +156,13 @@ export default {
 				en: 'A button runs any action in its place in the layout; a back to top button only returns to the top and often floats over the page.',
 				ja: 'ボタンはレイアウトの中の決まった場所でさまざまな操作を実行し、スクロールトップボタンは先頭へ戻ることだけを受け持ち、ページの上に浮かぶことが多いです。'
 			}
+		},
+		{
+			id: 'button-group',
+			diff: {
+				en: 'A button is a single control that runs one action; a button group puts a few related buttons together, each running its own action.',
+				ja: 'ボタンは1つの操作を実行する単独の部品で、ボタングループは関連するボタンを数個まとめて並べ、それぞれが自分の操作を実行します。'
+			}
 		}
 	],
 	sources: [
