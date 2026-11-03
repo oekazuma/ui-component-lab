@@ -1151,6 +1151,92 @@ test('emergency banner: an article with a specific heading, a time, one link, an
 	await expect(demo.locator('[role="status"]')).toContainText('evacuation shelters');
 });
 
+test('cookie banner: a named region with accept and reject buttons of the same size, and a details link', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/cookie-banner/');
+	const banner = demo.getByRole('region', { name: 'Cookies on Example Library' });
+	await expect(banner.getByRole('heading', { level: 3 })).toHaveText('Cookies on Example Library');
+	await expect(demo.getByRole('dialog')).toHaveCount(0);
+	const accept = banner.getByRole('button', { name: 'Accept analytics cookies' });
+	const reject = banner.getByRole('button', { name: 'Reject analytics cookies' });
+	await expect(banner.getByRole('button')).toHaveCount(2);
+	expect(await accept.boundingBox()).toMatchObject({ height: (await reject.boundingBox())!.height });
+	// 見た目の違いはラベルだけにする
+	const look = (b: typeof accept) =>
+		b.evaluate((el) => {
+			const s = getComputedStyle(el);
+			return [s.backgroundColor, s.color, s.fontSize, s.fontWeight, s.borderColor].join('|');
+		});
+	expect(await look(accept)).toBe(await look(reject));
+
+	await banner.getByRole('link', { name: 'View cookies' }).click();
+	await expect(demo.getByRole('status')).toContainText('cookies page');
+	await expect(banner.getByRole('button')).toHaveCount(2);
+});
+
+for (const [choice, said] of [
+	['Accept', 'accepted'],
+	['Reject', 'rejected']
+] as const) {
+	test(`cookie banner: ${choice.toLowerCase()} replaces the question with a confirmation that takes focus`, async ({ page }) => {
+		const demo = await openDemo(page, 'en/components/cookie-banner/');
+		const banner = demo.getByRole('region', { name: 'Cookies on Example Library' });
+
+		// キーボードで押す。押したボタンが消えても、フォーカスは body に落ちない
+		await banner.getByRole('button', { name: `${choice} analytics cookies` }).focus();
+		await page.keyboard.press('Enter');
+		const confirmation = banner.getByRole('alert');
+		await expect(confirmation).toHaveText(`You have ${said} analytics cookies. You can change your cookie settings at any time.`);
+		await expect(confirmation).toBeFocused();
+		await expect(banner.getByRole('heading')).toHaveCount(0);
+		await expect(banner.getByRole('button', { name: /analytics cookies/ })).toHaveCount(0);
+
+		await page.keyboard.press('Tab');
+		await expect(banner.getByRole('button', { name: 'Hide cookie message' })).toBeFocused();
+	});
+}
+
+test('cookie banner: hide removes the banner and leaves focus on the cookie settings button, which asks again', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/cookie-banner/');
+	const banner = demo.getByRole('region', { name: 'Cookies on Example Library' });
+	const settings = demo.getByRole('button', { name: 'Cookie settings' });
+
+	await banner.getByRole('button', { name: 'Reject analytics cookies' }).click();
+	await expect(banner.getByRole('alert')).toBeFocused();
+	await banner.getByRole('button', { name: 'Hide cookie message' }).click();
+	await expect(banner).toHaveCount(0);
+	await expect(settings).toBeFocused();
+	await expect(demo.getByRole('status')).toHaveText('The cookie message is hidden');
+
+	await settings.click();
+	await expect(banner.getByRole('button', { name: 'Accept analytics cookies' })).toBeVisible();
+	await expect(settings).toBeFocused();
+	await expect(demo.getByRole('status')).toContainText('cookies page');
+});
+
+test('cookie banner: the cookie settings button is never silent, whether the question or the confirmation is showing', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/cookie-banner/');
+	const banner = demo.getByRole('region', { name: 'Cookies on Example Library' });
+	const settings = demo.getByRole('button', { name: 'Cookie settings' });
+	const status = demo.getByRole('status');
+
+	// 質問が出ているときも、行き先を示す。同じ文でも読み上げ直されるよう、押すたびに中身を作り直す
+	await settings.click();
+	await expect(status).toContainText('A real site would open the cookies page. Here, the banner asks again');
+	await expect(banner.getByRole('button', { name: 'Accept analytics cookies' })).toBeVisible();
+	const first = await status.locator('span').elementHandle();
+	await settings.click();
+	expect(await status.locator('span').evaluate((el, old) => el !== old, first)).toBe(true);
+
+	// 確認の文が出ているときは、質問に戻す
+	await banner.getByRole('button', { name: 'Accept analytics cookies' }).click();
+	await expect(banner.getByRole('alert')).toBeVisible();
+	await settings.click();
+	await expect(banner.getByRole('alert')).toHaveCount(0);
+	await expect(banner.getByRole('button', { name: 'Reject analytics cookies' })).toBeVisible();
+	await expect(status).toContainText('asks again');
+	await expect(settings).toBeFocused();
+});
+
 test('table of contents: a link scrolls only the article, focuses its heading, and is marked current', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/table-of-contents/');
 	const toc = demo.getByRole('navigation', { name: 'Contents' });

@@ -146,6 +146,13 @@ export default {
 				en: 'A modal dialog sits in the middle of the screen and blocks the page; a bottom sheet is anchored to the bottom edge, mainly on phones, and for apps Material Design 3 has a standard kind that leaves the main UI usable beside it.',
 				ja: 'モーダルダイアログは画面の中央に出てページを操作できなくし、ボトムシートは下端に固定され、おもにスマートフォンで使います。Material Design 3 は、アプリ向けに、主な部分を並べて操作できる標準の種類を挙げています。'
 			}
+		},
+		{
+			id: 'cookie-banner',
+			diff: {
+				en: 'A modal blocks the page until it is closed; a cookie banner stays in the page flow and lets the visitor keep using the page.',
+				ja: 'モーダルは閉じるまでページを操作できなくしますが、Cookie バナーはページの流れの中に置かれ、訪問者はページを使い続けられます。'
+			}
 		}
 	],
 	sources: [

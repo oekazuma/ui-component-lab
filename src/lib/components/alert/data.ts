@@ -133,6 +133,13 @@ export default {
 				en: 'An alert interrupts to report something important; an empty state stands in for missing content and points to the next step.',
 				ja: 'アラートは大事なことを知らせるために割り込んで出ますが、空の状態は内容がないときにその代わりに置き、次の操作を示します。'
 			}
+		},
+		{
+			id: 'cookie-banner',
+			diff: {
+				en: 'An alert reports an important message and asks for nothing; a cookie banner asks the visitor to accept or reject optional cookies and is replaced by a confirmation once answered.',
+				ja: 'アラートは重要なお知らせを伝えるだけで何も求めませんが、Cookie バナーは任意の Cookie を受け入れるか拒否するかを尋ね、答えると確認の文に替わります。'
+			}
 		}
 	],
 	sources: [

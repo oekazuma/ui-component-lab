@@ -107,6 +107,13 @@ export default {
 				en: 'An emergency banner takes over the top of the page to warn about an urgent danger; a callout sits next to the content it adds to.',
 				ja: '緊急時バナーはページの上部を占めて差し迫った危険を知らせ、注釈ブロックは補足する内容のそばに置きます。'
 			}
+		},
+		{
+			id: 'cookie-banner',
+			diff: {
+				en: 'An emergency banner warns about urgent danger and cannot be closed; a cookie banner asks the visitor to accept or reject optional cookies and can be hidden once answered.',
+				ja: '緊急時バナーは差し迫った危険を知らせて閉じられず、Cookie バナーは任意の Cookie を受け入れるか拒否するかを尋ね、答えたあとは隠せます。'
+			}
 		}
 	],
 	sources: [
