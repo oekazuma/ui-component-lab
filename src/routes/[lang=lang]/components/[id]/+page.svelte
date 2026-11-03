@@ -508,6 +508,11 @@
 			padding-inline: 0.25rem;
 		}
 
+		/* 幅の広いフォントでは、折り返せない「Backspace」と「Action」を合わせると表の幅に収まらない */
+		th:last-child {
+			overflow-wrap: anywhere;
+		}
+
 		kbd {
 			overflow-wrap: normal;
 			white-space: normal;

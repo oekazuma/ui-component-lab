@@ -126,8 +126,10 @@
 		font-weight: 700;
 	}
 
+	/* 文字を大きくした狭い画面で、幅の広いフォントだと 1 語の「Language」とアイコンが枠に収まらない */
 	.btn {
 		border-color: transparent;
+		overflow-wrap: anywhere;
 	}
 
 	svg {
