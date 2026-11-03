@@ -25,8 +25,8 @@ export default {
 			ja: '`display: none` や `hidden` 属性ではなく画面の外へ動かして隠すので、キーボードの順番に残り、フォーカスが来たときに表示されます。'
 		},
 		{
-			en: 'The target, such as `<main>`, has `tabindex="-1"`, so it can take focus from the link even though it is not a control.',
-			ja: '移り先の `<main>` などには `tabindex="-1"` を付け、操作する要素でなくてもリンクからフォーカスを受けられるようにします。'
+			en: 'In this demo, the target has `tabindex="-1"`, so it can take focus from the link even though it is not a control.',
+			ja: 'このデモでは移り先に `tabindex="-1"` を付け、操作する要素でなくてもリンクからフォーカスを受けられるようにしています。'
 		},
 		{
 			en: 'The “Skip to content” link at the top of this page is this component. Press Tab right after the page loads to see it.',

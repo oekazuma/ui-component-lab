@@ -130,8 +130,8 @@ export default {
 		{
 			id: 'alert',
 			diff: {
-				en: 'An empty state stands in for missing content and points to the next step; an alert is a message that interrupts to report something important.',
-				ja: '空の状態は、ない内容の代わりに置き、次の操作を示します。アラートは、大事なことを知らせるために割り込んで出る通知です。'
+				en: 'An empty state stands in for missing content and points to the next step; an alert is a message that reports something important and is announced right away.',
+				ja: '空の状態は、ない内容の代わりに置き、次の操作を示します。アラートは、大事なことを知らせ、すぐに読み上げられる通知です。'
 			}
 		},
 		{

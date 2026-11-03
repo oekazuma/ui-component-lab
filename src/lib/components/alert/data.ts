@@ -51,8 +51,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'If it can be closed, keep it closed and provide a way to show it again.',
-			ja: '閉じられるようにする場合は、閉じたあともその状態を保ち、もう一度表示する手段を用意します。'
+			en: 'Fluent 2 brings a dismissed warning or error back in the next session until the problem is resolved.',
+			ja: 'Fluent 2 は、閉じた警告やエラーを、問題が解決するまで次のセッションでまた表示します。'
 		},
 		{
 			en: 'The GOV.UK Design System notification banner is for news that is not directly about what the person is doing on the page. It says to use it sparingly because people often miss banners, to show only one per page, and not to use one for validation errors, which belong in an error message and an error summary.',
@@ -79,7 +79,7 @@ export default {
 			pattern: { en: 'Showing alerts one after another', ja: 'アラートを次々と出す' },
 			harm: {
 				en: 'Every alert interrupts the user. Frequent interruptions make the page harder to use for people with visual or cognitive disabilities, and a stream of notices breaks anyone’s concentration.',
-				ja: 'アラートは出るたびに利用者の作業に割り込みます。頻繁に割り込まれると、視覚や認知に障害のある人には使いにくくなります。通知が多いと、だれでも集中が途切れます。'
+				ja: 'アラートは出るたびに利用者に割り込みます。頻繁に割り込まれると、視覚や認知に障害のある人には使いにくくなります。通知が多いと、だれでも集中が途切れます。'
 			},
 			instead: {
 				en: 'Use an alert only for what the user needs to know now. Combine related messages into one, and show the rest in the page without `role="alert"`.',
@@ -130,8 +130,8 @@ export default {
 		{
 			id: 'empty-state',
 			diff: {
-				en: 'An alert interrupts to report something important; an empty state stands in for missing content and points to the next step.',
-				ja: 'アラートは大事なことを知らせるために割り込んで出ますが、空の状態は内容がないときにその代わりに置き、次の操作を示します。'
+				en: 'An alert reports something important and is announced right away; an empty state stands in for missing content and points to the next step.',
+				ja: 'アラートは大事なことを知らせ、すぐに読み上げられますが、空の状態は内容がないときにその代わりに置き、次の操作を示します。'
 			}
 		},
 		{
@@ -182,6 +182,16 @@ export default {
 			label: 'U.S. Web Design System: Alert',
 			url: 'https://designsystem.digital.gov/components/alert/',
 			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'Fluent 2 Design System: Message bar',
+			url: 'https://fluent2.microsoft.design/components/web/react/core/messagebar/usage',
+			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'MDN: ARIA: alert role',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

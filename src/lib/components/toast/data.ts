@@ -37,16 +37,16 @@ export default {
 			ja: 'ボタンのないトーストは数秒で消えます。「元に戻す」などのボタンを含むトーストは、キーボード利用者が間に合わないことがあるため、利用者が閉じるまで残します。'
 		},
 		{
-			en: 'A toast that disappears on its own stops its timer while the pointer is over it, so people can finish reading. A message-only toast has nothing to focus, so anything people may need to reach with the keyboard belongs in a toast with buttons.',
-			ja: '自動で消えるトーストは、ポインターを乗せている間はタイマーを止め、読み終えるまで残します。メッセージだけのトーストにはフォーカスできるものがないので、キーボードで操作したいものはボタン付きのトーストに入れます。'
+			en: 'In this demo, a toast that disappears on its own stops its timer while the pointer is over it, so people can finish reading. A message-only toast has nothing to focus, so anything people may need to reach with the keyboard belongs in a toast with buttons.',
+			ja: 'このデモでは、自動で消えるトーストは、ポインターを乗せている間はタイマーを止め、読み終えるまで残します。メッセージだけのトーストにはフォーカスできるものがないので、キーボードで操作したいものはボタン付きのトーストに入れます。'
 		},
 		{
 			en: 'In this demo, Copy link shows a message-only toast that disappears after 5 seconds. Moving the pointer off the toast starts the 5 seconds again. The demo does not actually write to the clipboard; the share link on the page is marked as copied, so the result can still be checked after the toast is gone.',
 			ja: 'このデモでは、「リンクをコピー」でメッセージだけのトーストが出て、5秒で消えます。ポインターをトーストから離すと、5秒を数え直します。実際にはクリップボードに書き込まず、ページの共有リンクに「コピー済み」と出すので、トーストが消えたあとも結果を確かめられます。'
 		},
 		{
-			en: 'In this demo, Archive message shows a toast with Undo and Close that stays until it is dismissed. Undo puts the message back in the inbox. Undo and Close return focus to the Archive message button. When the inbox is empty, that button is marked `aria-disabled` rather than `disabled`, so focus stays on it.',
-			ja: 'このデモでは、「メッセージをアーカイブ」で「元に戻す」と「閉じる」の付いたトーストが出て、消すまで残ります。「元に戻す」でメッセージが受信トレイに戻ります。「元に戻す」と「閉じる」を押すと、フォーカスは「メッセージをアーカイブ」のボタンへ戻ります。受信トレイが空になると、そのボタンは `disabled` ではなく `aria-disabled` で押せないことを示し、フォーカスが外れないようにしています。'
+			en: 'In this demo, Archive message shows a toast with Undo and Close that stays until it is dismissed. Undo puts the message back in the inbox. Undo and Close return focus to the Archive message button when focus was in the toast. When the inbox is empty, that button is marked `aria-disabled` rather than `disabled`, so focus stays on it.',
+			ja: 'このデモでは、「メッセージをアーカイブ」で「元に戻す」と「閉じる」の付いたトーストが出て、消すまで残ります。「元に戻す」でメッセージが受信トレイに戻ります。「元に戻す」と「閉じる」を押したとき、フォーカスがトーストの中にあれば「メッセージをアーカイブ」のボタンへ戻ります。受信トレイが空になると、そのボタンは `disabled` ではなく `aria-disabled` で押せないことを示し、フォーカスが外れないようにしています。'
 		},
 		{
 			en: 'Important information, such as form errors, belongs in an alert rather than a toast.',
@@ -62,8 +62,8 @@ export default {
 		{
 			name: { en: 'Message only', ja: 'メッセージだけ' },
 			description: {
-				en: 'Shows one line of text and disappears on its own after a few seconds. The timer stops while the pointer is over it.',
-				ja: '1行の文だけを表示し、数秒で自動で消えるものです。ポインターを乗せている間はタイマーを止めます。'
+				en: 'Shows one line of text and disappears on its own after a few seconds. In this demo, the timer stops while the pointer is over it.',
+				ja: '1行の文だけを表示し、数秒で自動で消えるものです。このデモでは、ポインターを乗せている間はタイマーを止めます。'
 			}
 		},
 		{

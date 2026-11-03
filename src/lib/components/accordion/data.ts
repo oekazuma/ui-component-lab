@@ -5,8 +5,7 @@ export default {
 	category: 'disclosure',
 	names: { en: 'Accordion', ja: 'アコーディオン' },
 	aliases: [
-		{ name: 'Collapse', source: 'Ant Design', url: 'https://ant.design/components/collapse' },
-		{ name: 'Expansion panel', source: 'Angular Material', url: 'https://material.angular.dev/components/expansion/overview' }
+		{ name: 'Collapse', source: 'Ant Design', url: 'https://ant.design/components/collapse' }
 	],
 	summary: {
 		en: 'A vertical stack of headings that each show or hide a section of content.',

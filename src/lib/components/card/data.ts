@@ -128,6 +128,11 @@ export default {
 			label: 'Deceptive Patterns: Disguised ads',
 			url: 'https://www.deceptive.design/types/disguised-ads',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Deque University: <li> elements must be contained in a <ul> or <ol>',
+			url: 'https://dequeuniversity.com/rules/axe/4.10/listitem',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

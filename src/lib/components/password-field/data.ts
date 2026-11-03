@@ -39,8 +39,8 @@ export default {
 			ja: 'ブラウザやパスワードマネージャー、スクリーンリーダーが独自の表示ボタンを足したり、別の方法で表示を切り替えたりするので、ボタンの文言と実際の表示が食い違うことがあります。'
 		},
 		{
-			en: 'In this demo, the field is for creating a password, so it uses `new-password`. Pressing Save hides the password again before saving, so the browser does not offer it as a suggestion in other fields. With fewer than 8 characters, an error appears below the field. The password is not sent or kept anywhere.',
-			ja: 'このデモはパスワードを作る欄なので `new-password` を付けています。「保存」を押すと、ブラウザがほかの欄の入力候補として覚えないよう、表示していたパスワードを隠してから保存します。8文字未満なら欄の下にエラーを出します。パスワードはどこにも送らず、残しません。'
+			en: 'In this demo, the field is for creating a password, so it uses `new-password`. Pressing Save hides the password again before saving, as GOV.UK’s component does. With fewer than 8 characters, an error appears below the field. The password is not sent or kept anywhere.',
+			ja: 'このデモはパスワードを作る欄なので `new-password` を付けています。「保存」を押すと、GOV.UK の部品と同じように、表示していたパスワードを隠してから保存します。8文字未満なら欄の下にエラーを出します。パスワードはどこにも送らず、残しません。'
 		}
 	],
 	keyboard: [

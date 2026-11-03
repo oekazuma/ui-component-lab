@@ -101,8 +101,8 @@ export default {
 			ja: 'パネルはボタンの左端か右端にそろえます。'
 		},
 		{
-			en: 'Group related actions with dividers, and set high-impact actions such as deleting apart from the rest with a divider.',
-			ja: '関係する操作を区切り線でまとめ、削除のように影響の大きい操作は区切り線でほかの操作から離します。'
+			en: 'Group related actions with dividers.',
+			ja: '関係する操作を区切り線でまとめます。'
 		}
 	],
 	misuse: [
@@ -218,6 +218,11 @@ export default {
 			label: 'Nielsen Norman Group: Timing Guidelines for Exposing Hidden Content',
 			url: 'https://www.nngroup.com/articles/timing-exposing-content/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Material Design 3: Bottom sheets (guidelines)',
+			url: 'https://m3.material.io/components/bottom-sheets/guidelines',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

@@ -56,8 +56,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'With more than five options, support Home / End; with more than seven, support jumping by typing.',
-			ja: '選択肢が5つを超えるなら Home / End に、7つを超えるなら文字入力での移動にも対応させます。'
+			en: 'With more than five options, support Home / End. Jumping by typing is recommended for every listbox, especially with more than seven options.',
+			ja: '選択肢が5つを超えるなら Home / End に対応させます。文字入力での移動はどのリストボックスにも勧められ、7つを超えるときは特に対応させます。'
 		},
 		{
 			en: 'Selection that follows focus is only for single selection.',

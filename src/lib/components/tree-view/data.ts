@@ -30,8 +30,8 @@ export default {
 			ja: 'ツリー全体で Tab の止まる場所は1か所だけで、見えている項目の間は矢印キーで移ります。'
 		},
 		{
-			en: 'In this demo, jumping by typing a name and * to open all siblings are left out. APG recommends typing to jump especially for trees with more than seven top-level items, and lists * as optional; this tree has three top-level items and few files, so the arrow keys reach every item quickly.',
-			ja: 'このデモでは、名前の文字を打って移る操作と、* での一括展開を省いています。APG は最上位の項目が7つを超えるツリーでは特に文字入力での移動を勧め、* は任意としています。このツリーは最上位の項目が3つでファイルも少なく、矢印キーだけで素早くたどれます。'
+			en: 'In this demo, jumping by typing a name and * to open all siblings are left out. APG recommends typing to jump for all trees, especially those with more than seven top-level items, and lists * as optional; this tree has three top-level items and few files, so the arrow keys reach every item quickly.',
+			ja: 'このデモでは、名前の文字を打って移る操作と、* での一括展開を省いています。APG は文字入力での移動をすべてのツリーに勧め（最上位の項目が7つを超えるときは特に）、* は任意としています。このツリーは最上位の項目が3つでファイルも少なく、矢印キーだけで素早くたどれます。'
 		}
 	],
 	keyboard: [

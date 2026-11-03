@@ -43,7 +43,7 @@
 		dialog.close();
 	}
 
-	// WAI-ARIA APG Combobox（リストボックスのポップアップ）: ↑↓ で候補を移り、Enter で決める。端では反対の端へ回る
+	// WAI-ARIA APG Combobox（リストボックスのポップアップ）: ↑↓ で候補を移り、Enter で決める。端で反対の端へ回すのは APG にない、このデモの動き
 	function onkeydown(e: KeyboardEvent) {
 		// 日本語入力の変換中の ↓ や Enter は IME の操作なので横取りしない。
 		// Safari は変換を確定する Enter で isComposing が false になるため、keyCode 229 も見る

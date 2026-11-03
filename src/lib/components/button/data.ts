@@ -23,8 +23,8 @@ export default {
 			ja: 'マウスを乗せると見た目が変わり、キーボードでフォーカスするとフォーカスリングが出ます。'
 		},
 		{
-			en: 'Navigating to another page is the job of a link, not a button.',
-			ja: '別のページへの移動はボタンではなくリンクの役割です。'
+			en: 'APG treats navigating to another page as the job of a link, not a button. The Digital Agency Design System also uses buttons to trigger page transitions.',
+			ja: 'APG は、別のページへの移動をボタンではなくリンクの役割としています。デジタル庁デザインシステムは、ページ遷移のきっかけにもボタンを使います。'
 		}
 	],
 	keyboard: [

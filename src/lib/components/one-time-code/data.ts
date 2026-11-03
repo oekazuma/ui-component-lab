@@ -40,15 +40,15 @@ export default {
 		{
 			name: { en: 'One box per digit', ja: '1桁ごとの枠' },
 			description: {
-				en: 'A row of boxes, one for each digit, such as Ant Design’s Input.OTP. If used, pasting the whole code into the first box must fill every box, and the boxes need one shared label.',
-				ja: 'Ant Design の Input.OTP のように、数字1桁ごとに枠を並べるものです。使うなら、最初の枠にコード全体を貼り付けるとすべての枠が埋まるようにし、枠全体に1つのラベルを付けます。'
+				en: 'A row of boxes, one for each digit, such as Ant Design’s Input.OTP. If used, pasting the whole code into the first box must fill every box.',
+				ja: 'Ant Design の Input.OTP のように、数字1桁ごとに枠を並べるものです。使うなら、最初の枠にコード全体を貼り付けるとすべての枠が埋まるようにします。'
 			}
 		}
 	],
 	usage: [
 		{
-			en: 'Say in the hint how the code was sent and how many digits it has. When people are signing in, do not show the phone number it was sent to.',
-			ja: '補足の文で、コードをどの方法で送ったかと桁数を伝えます。ログインのときは、送り先の電話番号を見せません。'
+			en: 'Say above the field how the code was sent. When people are signing in, do not show the phone number it was sent to.',
+			ja: '入力欄の上の文で、コードをどの方法で送ったかを伝えます。ログインのときは、送り先の電話番号を見せません。'
 		},
 		{
 			en: 'Messages can take a few minutes to arrive. Offer a way to get a new code, and say what to do if the person cannot use their phone.',
@@ -128,6 +128,11 @@ export default {
 			label: 'Ant Design: Input',
 			url: 'https://ant.design/components/input',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'GOV.UK Design System: Text input',
+			url: 'https://design-system.service.gov.uk/components/text-input/',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

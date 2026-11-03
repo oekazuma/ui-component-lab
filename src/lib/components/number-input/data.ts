@@ -32,8 +32,8 @@ export default {
 			ja: 'このデモでは、範囲外の値や小数、数として読めない入力になると、枠が赤くなり、入力欄の下にエラー文が出ます。エラー文は `aria-describedby` で入力欄と結び、入力欄には `aria-invalid="true"` を付けます。'
 		},
 		{
-			en: 'APG also defines Home / End for the minimum and maximum, but the native element uses them to move the text cursor.',
-			ja: 'APG では Home / End で最小値・最大値にするとしていますが、ネイティブの要素では文字のカーソル移動になります。'
+			en: 'APG also defines Home / End for the minimum and maximum, but in Chrome the native element uses them to move the text cursor.',
+			ja: 'APG では Home / End で最小値・最大値にするとしていますが、Chrome のネイティブの要素では文字のカーソル移動になります。'
 		}
 	],
 	keyboard: [
@@ -52,8 +52,8 @@ export default {
 			ja: '数量のように小刻みに増減する値に使います。'
 		},
 		{
-			en: 'Some design systems avoid `type="number"`: scrolling can change the value by accident, and some browsers accept letters like “e”. A text input with `inputmode="numeric"` is an alternative.',
-			ja: '`type="number"` を避けるデザインシステムもあります。スクロールで値が変わってしまうことがあり、ブラウザによっては「e」などの文字も入るためです。代わりに `inputmode="numeric"` を付けたテキスト入力を使う方法があります。'
+			en: 'Some design systems avoid `type="number"`: scrolling can change the value by accident, and Chrome silently drops letters other than “e”. A text input with `inputmode="numeric"` is an alternative.',
+			ja: '`type="number"` を避けるデザインシステムもあります。スクロールで値が変わってしまうことがあり、Chrome は「e」以外の文字を何も知らせずに捨てるためです。代わりに `inputmode="numeric"` を付けたテキスト入力を使う方法があります。'
 		}
 	],
 	misuse: [
@@ -115,6 +115,11 @@ export default {
 			label: 'GOV.UK Design System: Text input (Numbers)',
 			url: 'https://design-system.service.gov.uk/components/text-input/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'GOV.UK: Why the GOV.UK Design System team changed the input type for numbers',
+			url: 'https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

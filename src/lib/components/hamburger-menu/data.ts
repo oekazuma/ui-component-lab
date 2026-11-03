@@ -17,8 +17,8 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'Pressing it opens the mobile menu, which usually slides in from the edge of the screen in a drawer.',
-			ja: '押すと、モバイルメニューが開きます。モバイルメニューはふつう、ドロワーに入って画面の端から出てきます。'
+			en: 'Pressing it opens the mobile menu, for example in a drawer that comes out from the edge of the screen.',
+			ja: '押すと、モバイルメニューが開きます。たとえば、画面の端から出てくるドロワーに入れて開きます。'
 		},
 		{
 			en: 'Pressing the Close button in the open menu closes it.',

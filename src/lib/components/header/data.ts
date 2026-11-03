@@ -214,6 +214,11 @@ export default {
 			label: 'WCAG 2.2 Technique C43: Using CSS scroll-padding to un-obscure content',
 			url: 'https://www.w3.org/WAI/WCAG22/Techniques/css/C43',
 			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ヘッダーコンテナ（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/header-container/usage/',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

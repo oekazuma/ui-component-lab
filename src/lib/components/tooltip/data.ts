@@ -90,8 +90,8 @@ export default {
 		{
 			id: 'popover',
 			diff: {
-				en: 'A tooltip shows on hover or focus and holds only text; a popover opens on click and can contain buttons and links.',
-				ja: 'ツールチップはホバーやフォーカスで出て文字だけを持ち、ポップオーバーはクリックで開いてボタンやリンクも入れられます。'
+				en: 'A tooltip shows on hover or focus and holds only text (Material Design 3’s rich tooltip, which can have buttons and links, is the exception); a popover opens on click and can contain buttons and links.',
+				ja: 'ツールチップはホバーやフォーカスで出て文字だけを持ち（ボタンやリンクも持てる Material Design 3 のリッチツールチップは例外です）、ポップオーバーはクリックで開いてボタンやリンクも入れられます。'
 			}
 		}
 	],

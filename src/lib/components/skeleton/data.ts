@@ -21,8 +21,8 @@ export default {
 			ja: '読み込みが終わると、本物の内容に置き換わります。'
 		},
 		{
-			en: 'Because the layout appears right away, the page feels faster and does not jump when the content arrives.',
-			ja: 'レイアウトがすぐに出るので待ち時間が短く感じられ、内容が届いたときに画面がずれにくくなります。'
+			en: 'Because the layout appears right away, the page feels faster.',
+			ja: 'レイアウトがすぐに出るので待ち時間が短く感じられます。'
 		},
 		{
 			en: 'The gray shapes are hidden from assistive technology, and the area is marked `aria-busy` while loading.',

@@ -57,7 +57,7 @@
 		<p role="status">{result ? text[lang].result[result] : ''}</p>
 	</div>
 
-	<!-- role="alertdialog" で、開いたときにタイトルと本文が警告として読み上げられる -->
+	<!-- role="alertdialog" は支援技術がほかのダイアログと区別するためのもの。読み上げは aria-labelledby と aria-describedby による -->
 	<dialog bind:this={dialog} class="in-frame" role="alertdialog" aria-labelledby="{uid}-title" aria-describedby="{uid}-body" {onclose}>
 		<div class="box">
 			<h2 id="{uid}-title">{text[lang].title}</h2>

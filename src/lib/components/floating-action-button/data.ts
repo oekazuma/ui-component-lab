@@ -66,8 +66,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Both Material Design 3 and MUI reserve it for the one main action of a screen, and MUI says to use it only when it is the most suitable way to show that action. Material Design 3 says not every screen needs one, for example when images already stand for the main actions, and lists multiple FABs on one screen as a “don’t”; MUI recommends one per screen. When many kinds of actions relate to it, a FAB menu is the alternative, with the rest left as ordinary buttons or in a toolbar.',
-			ja: 'Material Design 3 も MUI も、1つの画面の主な操作1つのために使うとしています。MUI は、その操作を見せるのに最もふさわしい方法であるときだけ使うよう書いています。Material Design 3 は、画像がすでに主な操作を表している場合のように、すべての画面に要るわけではないとしています。また、1つの画面に複数の FAB を置くことを「してはいけない」例に挙げ、MUI も1画面に1つを勧めています。関わる操作が何種類もあるときは FAB メニューにし、残りは通常のボタンやツールバーに置きます。'
+			en: 'Both Material Design 3 and MUI reserve it for the one main action of a screen, and MUI says to use it only when it is the most suitable way to show that action. Material Design 3 says not every screen needs one, for example when images already stand for the main actions, and lists multiple FABs on one screen as a “don’t”; MUI recommends one per screen. When many kinds of actions relate to it, a FAB menu is the alternative.',
+			ja: 'Material Design 3 も MUI も、1つの画面の主な操作1つのために使うとしています。MUI は、その操作を見せるのに最もふさわしい方法であるときだけ使うよう書いています。Material Design 3 は、画像がすでに主な操作を表している場合のように、すべての画面に要るわけではないとしています。また、1つの画面に複数の FAB を置くことを「してはいけない」例に挙げ、MUI も1画面に1つを勧めています。関わる操作が何種類もあるときは FAB メニューにします。'
 		},
 		{
 			en: 'Material Design 3 suggests actions such as create, favorite, share and start a process, and says cards and similar components should not each have their own FAB. Because a FAB promotes an important, constructive action, it also lists actions a FAB should not carry: archive or trash, alerts or errors, limited tasks such as cutting text, and controls better suited to a toolbar. Ant Design’s FloatButton is broader: it is for site-wide functions and buttons visible wherever people browse.',

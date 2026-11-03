@@ -38,8 +38,8 @@ export default {
 			ja: 'このデモでは、注文内容の送料の決まり方を説明し、中に詳しい説明へのリンクと「閉じる」ボタンを置いています。'
 		},
 		{
-			en: 'Moving focus out of it does not close it; it stays open until the button, an outside click or Esc closes it.',
-			ja: 'フォーカスが外へ出ても閉じません。ボタン、外側のクリック、Esc のどれかで閉じるまで開いたままです。'
+			en: 'With the native `popover` attribute, moving focus out of it does not close it; it stays open until the button, an outside click or Esc closes it.',
+			ja: 'ネイティブの `popover` 属性では、フォーカスが外へ出ても閉じません。ボタン、外側のクリック、Esc のどれかで閉じるまで開いたままです。'
 		}
 	],
 	keyboard: [
@@ -63,8 +63,8 @@ export default {
 		{
 			id: 'tooltip',
 			diff: {
-				en: 'A popover opens on click and can contain buttons; a tooltip shows on hover or focus and holds only text.',
-				ja: 'ポップオーバーはクリックで開いてボタンも入れられ、ツールチップはホバーやフォーカスで出て文字だけを持ちます。'
+				en: 'A popover opens on click and can contain buttons; a tooltip shows on hover or focus and holds only text (Material Design 3’s rich tooltip, which can have buttons and links, is the exception).',
+				ja: 'ポップオーバーはクリックで開いてボタンも入れられ、ツールチップはホバーやフォーカスで出て文字だけを持ちます（ボタンやリンクも持てる Material Design 3 のリッチツールチップは例外です）。'
 			}
 		},
 		{
@@ -104,6 +104,11 @@ export default {
 			label: 'Carbon Design System: Toggletip',
 			url: 'https://carbondesignsystem.com/components/toggletip/usage/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Material Design 3: Tooltips (guidelines)',
+			url: 'https://m3.material.io/components/tooltips/guidelines',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

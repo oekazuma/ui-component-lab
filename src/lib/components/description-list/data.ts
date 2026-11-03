@@ -23,8 +23,8 @@ export default {
 			ja: 'リスト自体は操作する部品ではなく、読むためのものです。確認画面では、行ごとに設問へ戻る「変更」などのリンクを置くことがあります。'
 		},
 		{
-			en: 'This demo uses `<dl>` with a `<dt>` (name) and `<dd>` (value) in each row, so screen readers can treat them as pairs. The link goes in another `<dd>` in the same row.',
-			ja: 'このデモは `<dl>` を使い、各行を `<dt>`（項目名）と `<dd>`（値）で書いているので、スクリーンリーダーが組として扱えます。リンクは同じ行の別の `<dd>` に置きます。'
+			en: 'This demo uses `<dl>` with a `<dt>` (name) and `<dd>` (value) in each row, so screen readers that support it can treat them as pairs. The link goes in another `<dd>` in the same row.',
+			ja: 'このデモは `<dl>` を使い、各行を `<dt>`（項目名）と `<dd>`（値）で書いているので、対応するスクリーンリーダーは組として扱えます。リンクは同じ行の別の `<dd>` に置きます。'
 		},
 		{
 			en: 'Each link shows only “Change”, and visually hidden text adds the row name, so it is read as “Change name” even out of context, such as in a list of links.',

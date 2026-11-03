@@ -23,8 +23,8 @@ export default {
 			ja: '大きな数は、120件を「99+」とするように頭打ちにします。'
 		},
 		{
-			en: 'The badge itself is hidden from screen readers; the count is put into the name of the button it belongs to, such as “Notifications, 3 unread”. A capped count goes into the name as shown, “99+”, so that voice control users can say what they see.',
-			ja: 'バッジ自体はスクリーンリーダーから隠し、件数は「通知、未読3件」のように持ち主のボタンの名前に含めます。頭打ちにした件数は見えているとおり「99+」と名前に入れ、音声で操作する人が見たままの言葉で呼べるようにします。'
+			en: 'In this demo, the badge itself is hidden from screen readers; the count is put into the name of the button it belongs to, such as “Notifications, 3 unread”. A capped count goes into the name as shown, “99+”, so that voice control users can say what they see.',
+			ja: 'このデモでは、バッジ自体はスクリーンリーダーから隠し、件数は「通知、未読3件」のように持ち主のボタンの名前に含めます。頭打ちにした件数は見えているとおり「99+」と名前に入れ、音声で操作する人が見たままの言葉で呼べるようにします。'
 		},
 		{
 			en: 'In this demo, the buttons show only an icon, so each gets its name from `aria-label`. A dot carries no number, so the name says “new” instead.',

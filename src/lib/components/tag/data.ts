@@ -32,8 +32,8 @@ export default {
 			ja: '外せるタグは絞り込みの解除などに使います。「×」はそれぞれボタンで、「赤を外す」のようにタグ名を含む名前を付けます。'
 		},
 		{
-			en: 'After removing a tag, this demo moves focus to the next tag’s button (or the previous one if it was the last) so keyboard users do not lose their place.',
-			ja: 'このデモではタグを外したあと、キーボード利用者が迷わないよう、次のタグ（最後のタグだったときは前のタグ）のボタンにフォーカスを移します。'
+			en: 'After removing a tag, this demo moves focus to the next tag’s button (or the previous one if it was the last) so keyboard users do not lose their place. When no tags remain, focus goes to the list itself.',
+			ja: 'このデモではタグを外したあと、キーボード利用者が迷わないよう、次のタグ（最後のタグだったときは前のタグ）のボタンにフォーカスを移します。タグがなくなったときは一覧へ移します。'
 		},
 		{
 			en: 'In this demo, a chosen tag shows a check mark as well as a color change, so the choice is not shown by color alone.',
@@ -49,8 +49,8 @@ export default {
 		{
 			key: 'Enter / Space',
 			action: {
-				en: 'On a selectable tag, chooses it or clears the choice. On a remove button, removes the tag and moves focus to the next one (or the previous one if it was the last).',
-				ja: '選べるタグでは、選ぶか選択を外します。外すボタンでは、タグを外し、次のタグ（最後のタグだったときは前のタグ）へフォーカスを移します。'
+				en: 'On a selectable tag, chooses it or clears the choice. On a remove button, removes the tag and moves focus to the next one (or the previous one if it was the last, or the list when none remain).',
+				ja: '選べるタグでは、選ぶか選択を外します。外すボタンでは、タグを外し、次のタグ（最後のタグだったときは前のタグ、残っていないときは一覧）へフォーカスを移します。'
 			}
 		}
 	],
@@ -95,8 +95,8 @@ export default {
 			ja: 'U.S. Web Design System は、タグをボタンと取り違える人が多いと注意しています。操作できないタグには、ホバー・フォーカス・押下時の見た目を付けません。タグの動きが決まると利用者はいつも同じだと期待するため、サイトの中で操作できるタグと操作できないタグを混在させないよう勧めています。'
 		},
 		{
-			en: 'Material Design 3 calls interactive tags chips and sorts them into four kinds. Its filter chip, which stands for a filter on a collection, matches the selectable tag, and its input chip, a piece of information the person entered, matches the removable tag. It says chips are not buttons: actions that move a task forward are buttons, and a chip label is 20 characters or fewer.',
-			ja: 'Material Design 3 は、操作できるタグをチップと呼び、4種類に分けています。コレクションの絞り込みを表すフィルターチップは選べるタグに、利用者が入力した情報を表すインプットチップは外せるタグに当たります。チップはボタンではなく、作業を先へ進める操作はボタンにするとしています。チップのラベルは20文字以内にします。'
+			en: 'For interactive tags, Material Design 3 has chips, which it sorts into four kinds. Its filter chip, which stands for a filter on a collection, matches the selectable tag, and its input chip, a piece of information the person entered, matches the removable tag. It says chips are not buttons: actions that move a task forward are buttons, and a chip label is 20 characters or fewer.',
+			ja: 'Material Design 3 では、操作できるタグに当たるものをチップといい、4種類に分けています。コレクションの絞り込みを表すフィルターチップは選べるタグに、利用者が入力した情報を表すインプットチップは外せるタグに当たります。チップはボタンではなく、作業を先へ進める操作はボタンにするとしています。チップのラベルは20文字以内にします。'
 		}
 	],
 	misuse: [

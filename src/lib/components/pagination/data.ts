@@ -150,6 +150,11 @@ export default {
 			label: 'U.S. Web Design System: Pagination',
 			url: 'https://designsystem.digital.gov/components/pagination/',
 			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'WAI-ARIA APG: Link Pattern',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/link/',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

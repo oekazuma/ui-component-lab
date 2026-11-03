@@ -67,15 +67,15 @@ export default {
 		{
 			key: 'Menu key',
 			action: {
-				en: 'Same as Shift + F10, on keyboards that have it.',
-				ja: 'メニューキーのあるキーボードでは、Shift + F10と同じです。'
+				en: 'Opens the same menu, on keyboards that have it.',
+				ja: 'メニューキーのあるキーボードでは、同じメニューを開きます。'
 			}
 		},
 		{
 			key: 'Esc',
 			action: {
-				en: 'Closes the menu and returns focus to the file.',
-				ja: 'メニューを閉じ、ファイルにフォーカスを戻します。'
+				en: 'Closes the menu and returns focus to the file, or to the ⋯ button if it was opened from there.',
+				ja: 'メニューを閉じ、ファイル（「⋯」ボタンから開いたときはそのボタン）にフォーカスを戻します。'
 			}
 		},
 		{
@@ -88,8 +88,8 @@ export default {
 	],
 	usage: [
 		{
-			en: 'Include only the actions people are most likely to need for that item, and keep the list short. Group items with dividers, and put destructive ones such as Delete at the end.',
-			ja: 'その項目でよく使う操作だけを入れ、短くします。区切り線でまとめ、削除のように取り消しにくい操作は最後に置きます。'
+			en: 'Include only the actions people are most likely to need for that item, and keep the list short. Group items with dividers. On iOS, iPadOS and visionOS, Apple lists destructive items such as Delete at the end.',
+			ja: 'その項目でよく使う操作だけを入れ、短くします。区切り線でまとめます。iOS、iPadOS、visionOS では、Apple は削除のようにデータを失う操作を最後に置くとしています。'
 		},
 		{
 			en: 'Offer context menus consistently. If some items have one and others do not, people do not know where to look and may think something is broken.',

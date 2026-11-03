@@ -46,7 +46,7 @@ export default {
 		},
 		{
 			en: 'Page names cannot be kept short, so let the trail wrap when it is wider than the content area, also on narrow screens. The Digital Agency Design System allows a single line that scrolls sideways on phones when many pages have long trails, so the breadcrumb does not push the content down; in that case, also put a wrapping breadcrumb at the bottom of the page, above the footer. Nielsen Norman Group instead advises against trails that wrap, and suggests showing only the last level or two on phones. GOV.UK can show only the first and last items of a long trail on phones.',
-			ja: 'ページ名の長さは制御できないので、コンテンツの幅を超えたら折り返します。狭い画面でも同じです。デジタル庁デザインシステムは、長いパンくずリストになるページが多いときに限り、コンテンツを押し下げないようスマートフォンで折り返さず横にスクロールさせる形も認めています。その場合は、ページ下部のフッターの上にも折り返すパンくずリストを置きます。一方 Nielsen Norman Group は複数行に折り返すパンくずリストを避け、スマートフォンでは最後の1〜2階層だけを見せる方法を挙げています。GOV.UK には、長いパンくずリストをスマートフォンで最初と最後の項目だけにする形があります。'
+			ja: 'ページ名の長さは制御できないので、コンテンツの幅を超えたら折り返します。狭い画面でも同じです。デジタル庁デザインシステムは、長いパンくずリストになるページが多いときは、コンテンツを押し下げないようスマートフォンで折り返さず横にスクロールさせる形も認めています。その場合は、ページ下部のフッターの上にも折り返すパンくずリストを置きます。一方 Nielsen Norman Group は複数行に折り返すパンくずリストを避け、スマートフォンでは最後の1〜2階層だけを見せる方法を挙げています。GOV.UK には、長いパンくずリストをスマートフォンで最初と最後の項目だけにする形があります。'
 		}
 	],
 	misuse: [

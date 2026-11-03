@@ -78,8 +78,8 @@ export default {
 				ja: 'キーボードの利用者は、ページの最後までフォーカスを移さないとボタンに届かず、途中から先頭へ戻るのには使えません。'
 			},
 			instead: {
-				en: 'Do not count on it for keyboard users. The Home key returns to the top, and headings and landmarks let them move around the page.',
-				ja: 'キーボードの利用者向けの手段としては当てにしません。先頭へは Home キーで戻れ、ページの中は見出しやランドマークで移れます。'
+				en: 'Do not count on it for keyboard users. The Home key returns to the top.',
+				ja: 'キーボードの利用者向けの手段としては当てにしません。先頭へは Home キーで戻れます。'
 			}
 		}
 	],

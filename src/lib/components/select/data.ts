@@ -54,7 +54,7 @@ export default {
 		{
 			key: 'A–Z',
 			action: {
-				en: 'Jumps to an option starting with the typed letter. It matches typed letters only, not IME input.',
+				en: 'Jumps to an option starting with the typed letter. It matches typed letters only, not IME input, so it cannot be tried on the options in the Japanese demo.',
 				ja: '入力した英字で始まる選択肢へ移ります。日本語入力（IME）では働かないため、日本語版のデモの選択肢では試せません。'
 			}
 		},

@@ -25,8 +25,8 @@ export default {
 			ja: '行はタップしやすい高さになっています。リンクはそのページへ移り、まとまりはその下のリンクを見せます。'
 		},
 		{
-			en: 'This demo is the accordion type: each group is a `<details>` element, so the browser opens and closes it and tells screen readers whether it is open.',
-			ja: 'このデモはアコーディオンタイプで、まとまりはそれぞれ `<details>` 要素にしています。開閉と、開いているかどうかの読み上げはブラウザが受け持ちます。'
+			en: 'This demo is the accordion type: each group is a `<details>` element, so the browser opens and closes it.',
+			ja: 'このデモはアコーディオンタイプで、まとまりはそれぞれ `<details>` 要素にしています。開閉はブラウザが受け持ちます。'
 		},
 		{
 			en: 'In this demo, links end with › and groups end with + or −, so the two kinds of rows look clearly different.',
@@ -57,8 +57,8 @@ export default {
 		{
 			name: { en: 'Standard (sliding) type', ja: 'スタンダードタイプ（スライド型）' },
 			description: {
-				en: 'Choosing a group slides in a second list with a Back button at the top. The Digital Agency Design System calls it the standard type and recommends it for menus with a second level or many items. Nielsen Norman Group calls it a sequential menu and generally does not recommend it for subnavigation, because the menu’s Back button is easily confused with the browser’s.',
-				ja: 'まとまりを選ぶと、上に戻るボタンを置いた第二階層の一覧がすべって出ます。デジタル庁デザインシステムはこれをスタンダードタイプと呼び、第二階層がある場合や項目が多い場合に勧めます。Nielsen Norman Group は sequential menu と呼び、メニューの戻るボタンとブラウザの戻るボタンを取り違えやすいため、下位のナビゲーションには基本的に勧めていません。'
+				en: 'Choosing a group slides in a second list with a Back button at the top. The Digital Agency Design System calls it the standard type and says it suits menus with a second level or many items. Nielsen Norman Group calls it a sequential menu and generally does not recommend it for subnavigation, because the menu’s Back button is easily confused with the browser’s.',
+				ja: 'まとまりを選ぶと、上に戻るボタンを置いた第二階層の一覧がすべって出ます。デジタル庁デザインシステムはこれをスタンダードタイプと呼び、第二階層がある場合や項目が多い場合に適しているとしています。Nielsen Norman Group は sequential menu と呼び、メニューの戻るボタンとブラウザの戻るボタンを取り違えやすいため、下位のナビゲーションには基本的に勧めていません。'
 			}
 		},
 		{
@@ -105,8 +105,8 @@ export default {
 				ja: 'まとまりの開き方が2通りになり、利用者にとって操作が複雑になります。'
 			},
 			instead: {
-				en: 'Choose one type for the whole menu. The Digital Agency Design System recommends the sliding type when there is a second level or many items; Nielsen Norman Group prefers the accordion type when each group has only a few links.',
-				ja: 'メニュー全体でどちらか一方の型にします。デジタル庁デザインシステムは第二階層がある場合や項目が多い場合にスライド型を勧め、Nielsen Norman Group は各まとまりのリンクが少なければアコーディオン型を勧めます。'
+				en: 'Choose one type for the whole menu. The Digital Agency Design System says the sliding type suits menus with a second level or many items; Nielsen Norman Group prefers the accordion type when each group has only a few links.',
+				ja: 'メニュー全体でどちらか一方の型にします。デジタル庁デザインシステムは第二階層がある場合や項目が多い場合にスライド型が適しているとし、Nielsen Norman Group は各まとまりのリンクが少なければアコーディオン型を勧めます。'
 			}
 		},
 		{
@@ -179,6 +179,16 @@ export default {
 			label: 'Understanding Success Criterion 2.5.8: Target Size (Minimum) (WCAG 2.2)',
 			url: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ボトムナビゲーション」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/bottom-navigation/',
+			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'MDN: <details> HTML details disclosure element',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

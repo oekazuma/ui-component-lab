@@ -37,8 +37,8 @@ export default {
 		{
 			key: 'Tab / Shift + Tab',
 			action: {
-				en: 'Moves into the group and out of it. Focus goes to the chosen option; if none is chosen, Tab goes to the first option and Shift + Tab to the last.',
-				ja: 'グループへ入ったり、グループから出たりします。選ばれている選択肢へ入り、どれも選ばれていなければ、Tab キーでは最初、Shift + Tab では最後の選択肢へ入ります。'
+				en: 'Moves into the group and out of it. Focus goes to the chosen option; if none is chosen, Tab goes to the first option. With Shift + Tab, some browsers go to the last option.',
+				ja: 'グループへ入ったり、グループから出たりします。選ばれている選択肢へ入り、どれも選ばれていなければ、Tab キーでは最初の選択肢へ入ります。Shift + Tab では、最後の選択肢へ入るブラウザもあります。'
 			}
 		},
 		{

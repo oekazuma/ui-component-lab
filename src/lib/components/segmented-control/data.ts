@@ -37,13 +37,6 @@ export default {
 	],
 	keyboard: [
 		{
-			key: 'Space',
-			action: {
-				en: 'Selects the focused segment.',
-				ja: 'フォーカスしている区画を選びます。'
-			}
-		},
-		{
 			key: '↑ / ↓',
 			action: {
 				en: 'Same as ← / →.',
@@ -105,8 +98,8 @@ export default {
 			ja: '区画の幅はそろえます。'
 		},
 		{
-			en: 'For switching between completely separate parts of an app or a page, use tabs instead. For an on/off setting that takes effect immediately, use a switch.',
-			ja: 'アプリやページのまったく別の部分を切り替えるなら、タブを使います。すぐに反映されるオン・オフの設定には、スイッチを使います。'
+			en: 'For switching between completely separate parts of an app or a page, use tabs instead.',
+			ja: 'アプリやページのまったく別の部分を切り替えるなら、タブを使います。'
 		},
 		{
 			en: 'Material Design 3 recommends 2 to 5 segments and suggests another component, such as chips, for more choices. It keeps labels short and on one line, and does not mix icon-only segments with text segments. It also has a multi-select kind, in which anywhere from none to all of the segments can be on, which matches the Multiple choice variation on this page. Its latest update no longer recommends segmented buttons and points to a connected button group instead.',
@@ -124,8 +117,8 @@ export default {
 				ja: '区画が多すぎると、ひと目で把握しにくく、目当ての区画まで移るのにも時間がかかります。'
 			},
 			instead: {
-				en: 'Keep it to about five segments on a phone and five to seven on a wide screen. For more options, use a select or radio buttons.',
-				ja: 'スマートフォンでは5つ程度、広い画面でも5〜7つ程度までにします。選択肢がそれより多いなら、セレクトボックスやラジオボタンにします。'
+				en: 'Keep it to about five segments on a phone and five to seven on a wide screen. For more options, Material Design 3 suggests another component, such as chips.',
+				ja: 'スマートフォンでは5つ程度、広い画面でも5〜7つ程度までにします。選択肢がそれより多いなら、Material Design 3 はチップなど別の部品を挙げています。'
 			}
 		},
 		{

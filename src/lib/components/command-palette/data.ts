@@ -31,8 +31,8 @@ export default {
 			ja: 'ネイティブの `<dialog>` を `showModal()` で開くと、ページのほかの部分が操作できなくなり、フォーカスが入力欄へ移り、Esc で閉じます。このデモでは、閉じると開いたボタンへフォーカスが戻ります。'
 		},
 		{
-			en: 'Command palettes are often opened with ⌘K or Ctrl + K. This demo opens only with its button, so that it does not clash with the site’s own shortcut. Its commands only show which one was run.',
-			ja: 'コマンドパレットは ⌘K や Ctrl + K で開くことが多いです。このデモはサイト自身のショートカットとぶつからないよう、ボタンでだけ開きます。操作を選んでも、選んだ操作を表示するだけです。'
+			en: 'This site’s own search palette opens with ⌘K or Ctrl + K. This demo opens only with its button, so that it does not clash with that shortcut. Its commands only show which one was run.',
+			ja: 'このサイト自身の検索パレットは ⌘K や Ctrl + K で開きます。このデモはそのショートカットとぶつからないよう、ボタンでだけ開きます。操作を選んでも、選んだ操作を表示するだけです。'
 		},
 		{
 			en: 'While text is still being composed with an input method (such as for Japanese), the arrow keys and Enter go to the input method and do not move through or run commands.',

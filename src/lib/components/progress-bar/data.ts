@@ -26,8 +26,8 @@ export default {
 			ja: '残りの時間がまだ分からないうちは、値を持たずに動く不確定の表示にし、分かった時点で割合の表示に切り替えます。'
 		},
 		{
-			en: 'It is not interactive; the user only watches it. The label next to it says what is being done, and changes to the result when the task finishes or is canceled. Carbon instead keeps the label as it is and shows the result with the bar’s color and an icon, with helper text explaining an error.',
-			ja: '操作する部品ではなく、見るだけのものです。近くのラベルで何の作業かを示し、終わったときや中止したときは結果を表す文に変えます。一方 Carbon はラベルを変えず、棒の色とアイコンで結果を示し、エラーの内容は補助テキストで伝えます。'
+			en: 'It is not interactive; the user only watches it. The label next to it says what is being done. In this demo, it changes to the result when the task finishes or is canceled; Carbon instead keeps the label as it is and shows the result with the bar’s color and an icon, with helper text explaining an error.',
+			ja: '操作する部品ではなく、見るだけのものです。近くのラベルで何の作業かを示します。このデモでは、終わったときや中止したときにラベルを結果を表す文に変えますが、Carbon はラベルを変えず、棒の色とアイコンで結果を示し、エラーの内容は補助テキストで伝えます。'
 		},
 		{
 			en: 'For a long task, tell assistive technology the percentage at intervals rather than at every change. The Digital Agency Design System HTML implementation announces it every 5 seconds by default.',

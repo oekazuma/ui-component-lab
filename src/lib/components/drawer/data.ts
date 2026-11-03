@@ -14,8 +14,8 @@ export default {
 		ja: '画面の端からページの上にすべり出てくるパネルです。'
 	},
 	appearance: {
-		en: 'A tall panel along the left or right edge (sometimes the top or bottom), with the rest of the page dimmed behind it.',
-		ja: '左右どちらか（上下のこともある）の端に沿った縦長のパネルで、後ろのページは暗くなります。'
+		en: 'A tall panel along the left or right edge (sometimes the top or bottom). In its modal form, the rest of the page is dimmed behind it.',
+		ja: '左右どちらか（上下のこともある）の端に沿った縦長のパネルです。モーダルの形では、後ろのページは暗くなります。'
 	},
 	behavior: [
 		{
@@ -23,8 +23,8 @@ export default {
 			ja: 'メニューや絞り込みのアイコンなどのボタンから開きます。'
 		},
 		{
-			en: 'While open, the page behind cannot be used; Esc or the close button closes it and focus returns to the button.',
-			ja: '開いている間は後ろのページを操作できません。Esc か閉じるボタンで閉じ、フォーカスは開いたボタンに戻ります。'
+			en: 'In its modal form, the page behind cannot be used while it is open. The Digital Agency Design System makes every drawer modal, while Bootstrap and Material Design 3 also have forms that leave the page usable. Esc or the close button closes it and focus returns to the button.',
+			ja: 'モーダルの形では、開いている間は後ろのページを操作できません。デジタル庁デザインシステムのドロワーは必ずモーダルですが、Bootstrap と Material Design 3 にはページを操作できる形もあります。Esc か閉じるボタンで閉じ、フォーカスは開いたボタンに戻ります。'
 		},
 		{
 			en: 'Used for navigation menus, filters, or a shopping cart.',

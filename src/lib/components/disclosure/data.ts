@@ -6,7 +6,8 @@ export default {
 	names: { en: 'Disclosure', ja: 'ディスクロージャー' },
 	aliases: [
 		{ name: 'Details', source: 'GOV.UK Design System', url: 'https://design-system.service.gov.uk/components/details/' },
-		{ name: 'Collapse', source: 'Bootstrap', url: 'https://getbootstrap.com/docs/5.3/components/collapse/' }
+		{ name: 'Collapse', source: 'Bootstrap', url: 'https://getbootstrap.com/docs/5.3/components/collapse/' },
+		{ name: 'Expansion panel', source: 'Angular Material', url: 'https://material.angular.dev/components/expansion/overview' }
 	],
 	summary: {
 		en: 'A single button that shows or hides one section of content.',
@@ -119,6 +120,11 @@ export default {
 			label: 'デジタル庁デザインシステム HTML 実装例: disclosure',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/disclosure',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'デジタル庁デザインシステムウェブサイト「ディスクロージャー（使い方）」をもとに作成',
+			url: 'https://design.digital.go.jp/dads/components/disclosure/usage/',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

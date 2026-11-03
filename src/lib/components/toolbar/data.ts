@@ -58,8 +58,8 @@ export default {
 			ja: 'ツールバーとしてまとめるのは、操作部品が3つ以上あるときだけにします。'
 		},
 		{
-			en: 'Give the toolbar a label with `aria-label` so its purpose is announced.',
-			ja: '`aria-label` でツールバーに名前を付け、何のための操作群か読み上げられるようにします。'
+			en: 'Give the toolbar a name so its purpose is announced: `aria-labelledby` if it has a visible label, otherwise `aria-label`.',
+			ja: 'ツールバーに名前を付け、何のための操作群か読み上げられるようにします。見えるラベルがあれば `aria-labelledby`、なければ `aria-label` を使います。'
 		}
 	],
 	misuse: [

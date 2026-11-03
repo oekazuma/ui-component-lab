@@ -3,7 +3,8 @@ import type { ComponentData } from '#lib/types.js';
 export default {
 	id: 'date-picker',
 	category: 'input',
-	names: { en: 'Date picker', ja: '日付ピッカー（デートピッカー）' },
+	names: { en: 'Date picker', ja: '日付ピッカー' },
+	searchTerms: ['デートピッカー'],
 	aliases: [
 		{ name: '日付ピッカー／カレンダー', source: 'デジタル庁デザインシステム', url: 'https://design.digital.go.jp/dads/components/date-picker/' }
 	],

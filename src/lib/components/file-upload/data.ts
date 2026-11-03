@@ -53,8 +53,8 @@ export default {
 			ja: '選んだファイルは番号付きリストにし、各行にファイル名・大きさ・解除ボタンを置きます。何も選んでいないときは「未選択」と表示します。'
 		},
 		{
-			en: 'The `accept` attribute only narrows what the file picker shows, and does not apply to dropped files. Check the type and size in the page, and on the server too.',
-			ja: '`accept` 属性はファイル選択画面での絞り込みにすぎず、ドロップしたファイルには効きません。ページの中で形式と大きさを確かめ、サーバー側でも確かめます。'
+			en: 'The `accept` attribute only narrows what the file picker shows, and does not validate files. Check the type and size in the page, and on the server too.',
+			ja: '`accept` 属性はファイル選択画面での絞り込みにすぎず、ファイルの検証はしません。ページの中で形式と大きさを確かめ、サーバー側でも確かめます。'
 		},
 		{
 			en: 'The GOV.UK Design System says to ask for an upload only if it is critical to delivering the service. It says to let people reuse a file they uploaded earlier in the same journey, and to write a specific error message for each problem, such as no file selected, the wrong file type or a file that is too large.',
@@ -102,7 +102,7 @@ export default {
 			checkedAt: '2026-10-20'
 		},
 		{
-			label: 'デジタル庁デザインシステムウェブサイト「ファイルアップロード／ドロップエリア」をもとに作成',
+			label: 'デジタル庁デザインシステムウェブサイト「ファイルアップロード／ドロップエリア（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/file-upload/usage/',
 			checkedAt: '2026-10-20'
 		},

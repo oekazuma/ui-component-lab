@@ -17,8 +17,8 @@ export default {
 	},
 	behavior: [
 		{
-			en: 'It has `role="alertdialog"`, so screen readers announce its title and message as soon as it opens.',
-			ja: '`role="alertdialog"` を持ち、開くとスクリーンリーダーがタイトルと本文をすぐに読み上げます。'
+			en: 'It has `role="alertdialog"`, which lets browsers and screen readers tell it apart from other dialogs, so they can treat it specially, for example with an alert sound. Its title and message are tied to it with `aria-labelledby` and `aria-describedby`.',
+			ja: '`role="alertdialog"` を持つので、ブラウザやスクリーンリーダーはほかのダイアログと区別でき、警告音を鳴らすなどの特別な扱いができます。タイトルと本文は `aria-labelledby` と `aria-describedby` で結びます。'
 		},
 		{
 			en: 'When it opens, focus goes to the least destructive button; in this demo, “Keep editing”.',
@@ -93,8 +93,8 @@ export default {
 		{
 			id: 'modal',
 			diff: {
-				en: 'An alert dialog is a modal for an urgent message that needs a response; screen readers announce it as an alert.',
-				ja: 'アラートダイアログは応答が必要な緊急のメッセージ用のモーダルで、スクリーンリーダーには警告として伝わります。'
+				en: 'An alert dialog is a modal for an urgent message that needs a response; its role lets browsers and screen readers tell it apart from other dialogs.',
+				ja: 'アラートダイアログは応答が必要な緊急のメッセージ用のモーダルで、ブラウザやスクリーンリーダーはその role でほかのダイアログと区別できます。'
 			}
 		},
 		{
