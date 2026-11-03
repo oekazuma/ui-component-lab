@@ -844,6 +844,64 @@ test('time picker: the Japanese demo has its own label, hint and error', async (
 	await expect(demo.locator('[aria-live="polite"]')).toHaveText('値: 10:00');
 });
 
+test('color picker: the label names a native color input that starts as a hex value shown as text and in the preview swatch', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/color-picker/');
+	const input = demo.getByLabel('Background color');
+	const swatch = demo.locator('.swatch');
+	await expect(input).toHaveAttribute('type', 'color');
+	await expect(input).toHaveValue('#ff8800');
+	await expect(demo.getByText('Value: #ff8800')).toBeVisible();
+	await expect(swatch).toHaveCSS('background-color', 'rgb(255, 136, 0)');
+	// 色見本は見た目だけで、値は文字が伝える。枠線で輪郭を保つ
+	await expect(swatch).toHaveAttribute('aria-hidden', 'true');
+	await expect(swatch).toHaveCSS('border-top-width', '1px');
+});
+
+test('color picker: setting a value updates the text and the preview swatch, and the suggestions are linked through list', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/color-picker/');
+	const input = demo.getByLabel('Background color');
+	await input.fill('#12ab34');
+	await expect(input).toHaveValue('#12ab34');
+	await expect(demo.getByText('Value: #12ab34')).toBeVisible();
+	await expect(demo.locator('.swatch')).toHaveCSS('background-color', 'rgb(18, 171, 52)');
+	await expect(demo.getByRole('status')).toHaveText('Background color: #12ab34');
+
+	const listId = await input.getAttribute('list');
+	expect(listId).toBeTruthy();
+	await expect(page.locator(`datalist[id="${listId}"] option`)).toHaveCount(4);
+	// 候補にない色も選べる
+	expect(await input.evaluate((el: HTMLInputElement) => [...el.list!.options].map((o) => o.value))).not.toContain('#12ab34');
+});
+
+test('color picker: the visible text follows input, and the hidden status only changes on change', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/color-picker/');
+	const input = demo.getByLabel('Background color');
+	const status = demo.getByRole('status');
+	await expect(status).toHaveText('');
+	// ピッカーを動かしている間は input だけが発火し続ける
+	await input.evaluate((el: HTMLInputElement) => {
+		el.value = '#00ff00';
+		el.dispatchEvent(new Event('input', { bubbles: true }));
+	});
+	await expect(demo.getByText('Value: #00ff00')).toBeVisible();
+	await expect(status).toHaveText('');
+	// 閉じたときに change が 1 回発火して、読み上げられる
+	await input.evaluate((el) => el.dispatchEvent(new Event('change', { bubbles: true })));
+	await expect(status).toHaveText('Background color: #00ff00');
+	// 状態表示は見えず、値の文字だけが見える
+	await expect(status).toHaveClass(/visually-hidden/);
+	await expect(demo.getByText('Value: #00ff00')).not.toHaveAttribute('aria-live');
+});
+
+test('color picker: the Japanese demo has its own label and value text', async ({ page }) => {
+	const demo = await openDemo(page, 'ja/components/color-picker/', /^デモ:/);
+	const input = demo.getByLabel('背景色');
+	await expect(demo.getByText('値: #ff8800')).toBeVisible();
+	await input.fill('#0000ff');
+	await expect(demo.getByText('値: #0000ff')).toBeVisible();
+	await expect(demo.locator('.swatch')).toHaveCSS('background-color', 'rgb(0, 0, 255)');
+});
+
 test('slider: shows the minimum and maximum under the ends of the track', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/slider/');
 	const r = (await demo.getByRole('slider', { name: 'Volume' }).boundingBox())!;

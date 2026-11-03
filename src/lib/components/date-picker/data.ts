@@ -117,6 +117,13 @@ export default {
 				en: 'A date picker chooses a day, usually from a calendar; a time picker chooses a time of day, in hours and minutes with no date.',
 				ja: '日付ピッカーは日付をカレンダーなどで選び、タイムピッカーは日付を含まない時刻を時と分で選びます。'
 			}
+		},
+		{
+			id: 'color-picker',
+			diff: {
+				en: 'A date picker chooses a day, usually from a calendar; a color picker chooses a color, usually from a swatch, a spectrum or presets.',
+				ja: '日付ピッカーは日付をカレンダーなどで選び、カラーピッカーは色を色見本やスペクトル、一覧から選びます。'
+			}
 		}
 	],
 	sources: [

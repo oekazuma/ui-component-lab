@@ -124,6 +124,13 @@ export default {
 				en: 'A text field takes any text, and the U.S. Web Design System prefers it for exact past times such as a time of birth; a time picker takes only times of day, typically in set increments such as 30 minutes.',
 				ja: 'テキストフィールドは自由な文字列を入れられ、U.S. Web Design System は出生時刻のような過去の正確な時刻にこちらを勧めていますが、タイムピッカーは30分刻みなど決まった刻みの時刻だけを受け取ります。'
 			}
+		},
+		{
+			id: 'color-picker',
+			diff: {
+				en: 'A text field takes any text, and React Aria’s ColorField is a text field for typing a hex or channel value; a color picker chooses a color from a swatch, a spectrum or presets, and the native input always holds a valid color.',
+				ja: 'テキストフィールドは自由な文字列を入れられ、React Aria の ColorField は16進数やチャンネルの値を入力するための入力欄ですが、カラーピッカーは色を色見本やスペクトル、一覧から選び、ネイティブの入力は必ず有効な色を持ちます。'
+			}
 		}
 	],
 	sources: [

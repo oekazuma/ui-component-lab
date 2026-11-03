@@ -184,6 +184,13 @@ export default {
 				en: 'A time picker takes only times of day, typically in set increments such as 30 minutes; a text field takes any text, and the U.S. Web Design System prefers it for exact past times such as a time of birth.',
 				ja: 'タイムピッカーは30分刻みなど決まった刻みの時刻だけを受け取り、テキストフィールドは自由な文字列を入れられ、U.S. Web Design System は出生時刻のような過去の正確な時刻にこちらを勧めています。'
 			}
+		},
+		{
+			id: 'color-picker',
+			diff: {
+				en: 'A time picker chooses a time of day, in hours and minutes with no date; a color picker chooses a color, usually from a swatch, a spectrum or presets.',
+				ja: 'タイムピッカーは日付を含まない時刻を時と分で選び、カラーピッカーは色を色見本やスペクトル、一覧から選びます。'
+			}
 		}
 	],
 	sources: [
