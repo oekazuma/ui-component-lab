@@ -124,6 +124,13 @@ export default {
 				en: 'A skip link at the very top jumps past the header to the main content; a back to top button returns to the top after reading.',
 				ja: 'スキップリンクはページの先頭からヘッダーを飛ばして本文へ移り、スクロールトップボタンは読み進めたあとに先頭へ戻ります。'
 			}
+		},
+		{
+			id: 'header',
+			diff: {
+				en: 'A skip link comes first on the page and lets keyboard users jump past the header to the main content; a header holds the site’s identity and navigation at the top of every page.',
+				ja: 'スキップリンクはページの最初に置いて、キーボードの利用者がヘッダーを飛ばして本文へ移れるようにし、ヘッダーは各ページの上端にサイトを示すものとナビゲーションを収めます。'
+			}
 		}
 	],
 	sources: [

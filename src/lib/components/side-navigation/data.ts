@@ -219,6 +219,13 @@ export default {
 				en: 'Side navigation lists the pages of a site or a section in a column beside the content; bottom navigation puts three to five top-level destinations in a bar along the bottom of a phone screen.',
 				ja: 'サイドナビゲーションはサイトやそのあるまとまりのページを内容の横の列に並べ、ボトムナビゲーションはスマートフォンの画面の下のバーに3〜5個の最上位の行き先を並べます。'
 			}
+		},
+		{
+			id: 'header',
+			diff: {
+				en: 'Side navigation lists the pages within one section in a column beside the content; a header holds the site’s main sections in a row across the top of every page.',
+				ja: 'サイドナビゲーションは、あるセクションの中のページを内容の横の列に並べ、ヘッダーは各ページの上端に、サイトの主なセクションを横一列に収めます。'
+			}
 		}
 	],
 	sources: [

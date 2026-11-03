@@ -136,6 +136,13 @@ export default {
 				en: 'A hamburger menu button keeps the destinations behind one button that opens the menu; bottom navigation shows them in a bar at the bottom of the screen, which the Digital Agency Design System no longer recommends.',
 				ja: 'ハンバーガーメニューボタンは行き先を1つのボタンの後ろに置いてメニューを開き、ボトムナビゲーションは行き先を画面の下のバーに見せます。デジタル庁デザインシステムは、ボトムナビゲーションを勧めていません。'
 			}
+		},
+		{
+			id: 'header',
+			diff: {
+				en: 'A hamburger menu button is one control that opens the menu when the links no longer fit; a header is the whole band at the top of a page that holds it.',
+				ja: 'ハンバーガーメニューボタンは、リンクが収まらないときにメニューを開く1つの部品で、ヘッダーはそれを収めるページの上端の帯全体です。'
+			}
 		}
 	],
 	sources: [

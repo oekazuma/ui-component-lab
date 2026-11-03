@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { componentIds } from './component-ids';
 import { openDemo } from './open-demo.ts';
 
@@ -1235,6 +1235,57 @@ test('cookie banner: the cookie settings button is never silent, whether the que
 	await expect(banner.getByRole('button', { name: 'Reject analytics cookies' })).toBeVisible();
 	await expect(status).toContainText('asks again');
 	await expect(settings).toBeFocused();
+});
+
+// ブラウザ自身のアクセシビリティツリーで、ページにある banner と contentinfo のランドマークの数を数える
+// （Playwright の getByRole は自前の計算なので、ブラウザの実際の結果とは別に確かめる）
+async function landmarkCounts(page: Page) {
+	const cdp = await page.context().newCDPSession(page);
+	const { nodes } = (await cdp.send('Accessibility.getFullAXTree')) as { nodes: { ignored?: boolean; role?: { value: string } }[] };
+	await cdp.detach();
+	const count = (role: string) => nodes.filter((n) => !n.ignored && n.role?.value === role).length;
+	return { banner: count('banner'), contentinfo: count('contentinfo') };
+}
+
+test('header: a labelled navigation with one link marked as the current page, which follows the link chosen', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/header/');
+	const nav = demo.getByRole('navigation', { name: 'Main' });
+	await expect(nav.getByRole('link')).toHaveText(['Home', 'Books', 'Events', 'Contact us']);
+	await expect(nav.locator('[aria-current="page"]')).toHaveText('Home');
+	await expect(demo.getByRole('heading', { level: 3 })).toHaveText('Home');
+	// 選ぶまでは何も読み上げない
+	await expect(demo.getByRole('status')).toHaveText('');
+
+	await nav.getByRole('link', { name: 'Events' }).click();
+	await expect(nav.locator('[aria-current="page"]')).toHaveText('Events');
+	await expect(nav.locator('[aria-current]')).toHaveCount(1);
+	await expect(demo.getByRole('heading', { level: 3 })).toHaveText('Events');
+	await expect(demo.getByRole('status')).toHaveText('Current page: Events');
+	await expect(page).toHaveURL(/\/en\/components\/header\/$/);
+
+	// サイト名はホームへ戻るが、ナビゲーションの「ホーム」と二重にならないよう、現在地の印は付けない
+	const site = demo.locator('header > .site a');
+	await site.click();
+	await expect(site).toHaveText('Sample Library');
+	await expect(site).not.toHaveAttribute('aria-current');
+	await expect(demo.getByRole('status')).toHaveText('Current page: Home');
+	// 文字のロゴは <h1> ではなく <em>
+	await expect(demo.locator('header > em.site')).toHaveCount(1);
+	await expect(demo.getByRole('heading', { level: 1 })).toHaveCount(0);
+	await expect(nav.locator('[aria-current="page"]')).toHaveText('Home');
+});
+
+test('header: inside the demo, the header is not a landmark and is not fixed', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/header/');
+	const header = demo.locator('header');
+	await expect(header).toHaveCount(1);
+	await expect(header).not.toHaveAttribute('role');
+	await expect(header).not.toHaveAttribute('aria-label');
+	await expect(header).not.toHaveAttribute('aria-labelledby');
+	await expect(demo.getByRole('banner')).toHaveCount(0);
+	// サイト自身の banner と contentinfo だけが残る
+	expect(await landmarkCounts(page)).toEqual({ banner: 1, contentinfo: 1 });
+	expect(await header.evaluate((el) => getComputedStyle(el).position)).toBe('static');
 });
 
 test('table of contents: a link scrolls only the article, focuses its heading, and is marked current', async ({ page }) => {

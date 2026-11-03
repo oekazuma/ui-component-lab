@@ -147,6 +147,13 @@ export default {
 				en: 'A mega menu is a wide panel of a section’s pages that opens from a horizontal menu on a wide screen; bottom navigation is a bar of three to five destinations along the bottom of a phone screen.',
 				ja: 'メガメニューは広い画面で水平メニューから開く、カテゴリのページをまとめて見せる幅の広いパネルで、ボトムナビゲーションはスマートフォンの画面の下にある3〜5個の行き先のバーです。'
 			}
+		},
+		{
+			id: 'header',
+			diff: {
+				en: 'A mega menu is a wide panel that opens from one of the main links to show many pages of that section; a header is the band at the top of a page that holds those links.',
+				ja: 'メガメニューは、主なリンクの1つから開いて、そのセクションの多くのページを見せる幅の広いパネルで、ヘッダーはそのリンクを収めるページの上端の帯です。'
+			}
 		}
 	],
 	sources: [
