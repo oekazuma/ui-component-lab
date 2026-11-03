@@ -1288,6 +1288,31 @@ test('header: inside the demo, the header is not a landmark and is not fixed', a
 	expect(await header.evaluate((el) => getComputedStyle(el).position)).toBe('static');
 });
 
+test('footer: a labelled navigation of links and a copyright line, and a link only shows where it would go', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/footer/');
+	const footer = demo.locator('footer');
+	const nav = footer.getByRole('navigation', { name: 'Site information' });
+	await expect(nav.getByRole('link')).toHaveText(['Privacy', 'Accessibility', 'Cookies', 'Terms and conditions']);
+	await expect(footer.locator('small')).toHaveText('© 2026 Sample Library');
+
+	await nav.getByRole('link', { name: 'Cookies' }).click();
+	await expect(demo.getByRole('status')).toHaveText('A real site would open “Cookies”');
+	await expect(page).toHaveURL(/\/en\/components\/footer\/$/);
+});
+
+test('footer: inside the demo, the footer is not a landmark and is not fixed', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/footer/');
+	const footer = demo.locator('footer');
+	await expect(footer).toHaveCount(1);
+	await expect(footer).not.toHaveAttribute('role');
+	await expect(footer).not.toHaveAttribute('aria-label');
+	await expect(footer).not.toHaveAttribute('aria-labelledby');
+	await expect(demo.getByRole('contentinfo')).toHaveCount(0);
+	// サイト自身の banner と contentinfo だけが残る
+	expect(await landmarkCounts(page)).toEqual({ banner: 1, contentinfo: 1 });
+	expect(await footer.evaluate((el) => getComputedStyle(el).position)).toBe('static');
+});
+
 test('table of contents: a link scrolls only the article, focuses its heading, and is marked current', async ({ page }) => {
 	const demo = await openDemo(page, 'en/components/table-of-contents/');
 	const toc = demo.getByRole('navigation', { name: 'Contents' });

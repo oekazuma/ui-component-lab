@@ -134,6 +134,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'footer',
+			diff: {
+				en: 'A header holds the site’s identity and main navigation at the top of every page; a footer holds information about the whole site, such as the copyright notice and policy links, at the bottom.',
+				ja: 'ヘッダーは各ページの上端にサイトを示すものと主なナビゲーションを収め、フッターは下端に、著作権の表示や方針へのリンクなど、サイト全体に関わる情報を収めます。'
+			}
+		},
+		{
 			id: 'skip-link',
 			diff: {
 				en: 'A header holds the site’s identity and navigation at the top of every page; a skip link comes before it and lets keyboard users jump past it to the main content.',
