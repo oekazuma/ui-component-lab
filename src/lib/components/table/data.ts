@@ -79,6 +79,10 @@ export default {
 		{
 			en: 'The U.S. Web Design System says a table is for data with a consistent structure, not for page layout or for long text in cells. It advises keeping the columns few, using one unit and format within a column, and adding sorting only to long tables whose data can be ordered, and never to tables with merged cells.',
 			ja: 'U.S. Web Design System は、テーブルを使うのは構造がそろったデータで、ページのレイアウトや、セルの中の長い文章には使わないとしています。列の数は少なくし、1つの列の中では単位と書式をそろえます。並べ替えは、データに順序を付けられる長いテーブルにだけ付け、セルを結合したテーブルには付けません。'
+		},
+		{
+			en: 'Decide what a wide table does on a narrow screen. The U.S. Web Design System offers a scrollable table for dense data, in a container with `tabindex="0"`, and a stacked table that collapses at narrow widths for readability.',
+			ja: '横に広い表を狭い画面でどう見せるかを決めます。U.S. Web Design System は、データの多い表には `tabindex="0"` を付けた入れ物で横にスクロールする形を、読みやすさのためには狭い幅で縦に積む形を用意しています。'
 		}
 	],
 	misuse: [

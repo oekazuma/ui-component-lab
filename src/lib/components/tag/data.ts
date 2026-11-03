@@ -97,6 +97,10 @@ export default {
 		{
 			en: 'For interactive tags, Material Design 3 has chips, which it sorts into four kinds. Its filter chip, which stands for a filter on a collection, matches the selectable tag, and its input chip, a piece of information the person entered, matches the removable tag. It says chips are not buttons: actions that move a task forward are buttons, and a chip label is 20 characters or fewer.',
 			ja: 'Material Design 3 では、操作できるタグに当たるものをチップといい、4種類に分けています。コレクションの絞り込みを表すフィルターチップは選べるタグに、利用者が入力した情報を表すインプットチップは外せるタグに当たります。チップはボタンではなく、作業を先へ進める操作はボタンにするとしています。チップのラベルは20文字以内にします。'
+		},
+		{
+			en: 'The remove button on a chip is a target of its own, so it needs the 24 × 24 CSS px or the spacing that WCAG 2.5.8 asks for. Nielsen Norman Group gives a dismiss button only 2 mm wide as an example of a target too small to tap.',
+			ja: 'チップの削除ボタンは、それ自体が独立したターゲットです。WCAG 2.5.8 が求める 24 × 24 CSS px か、十分な間隔が要ります。Nielsen Norman Group は、幅 2 mm しかない閉じるボタンを、小さすぎてタップしにくい例に挙げています。'
 		}
 	],
 	misuse: [
@@ -203,6 +207,16 @@ export default {
 			label: 'Material Design 3: Chips',
 			url: 'https://m3.material.io/components/chips/guidelines',
 			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'Understanding Success Criterion 2.5.8: Target Size (Minimum) (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html',
+			checkedAt: '2026-11-04'
+		},
+		{
+			label: 'Nielsen Norman Group: Touch Targets on Touchscreens',
+			url: 'https://www.nngroup.com/articles/touch-target-size/',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

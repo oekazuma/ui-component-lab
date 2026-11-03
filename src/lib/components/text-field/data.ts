@@ -64,6 +64,10 @@ export default {
 		{
 			en: 'The U.S. Web Design System says to avoid placeholder text, which vanishes once people type and often has too little contrast, and not to split one number, such as a phone number, across several fields. It also says to choose between disabled and read-only on purpose: a native disabled field cannot be reached with Tab and its value is not submitted, while a read-only field stays focusable and its value is submitted.',
 			ja: 'U.S. Web Design System は、入力し始めると消え、コントラストも足りないことが多いプレースホルダーを避けること、電話番号のように1つの番号を複数の欄に分けないことを求めています。無効（disabled）と読み取り専用（read-only）は意図して選びます。無効の欄は Tab キーで届かず、値も送信されません。読み取り専用の欄はフォーカスでき、値も送信されます。'
+		},
+		{
+			en: 'Bring up the right on-screen keyboard. The GOV.UK Design System sets `inputmode="numeric"` for whole numbers and `inputmode="decimal"` for numbers with decimal places. Because some devices cannot enter negative values on the on-screen keypad, it leaves out `inputmode` when negative numbers are allowed.',
+			ja: '内容に合う画面キーボードを出します。GOV.UK Design System は、整数には `inputmode="numeric"`、小数を含む数には `inputmode="decimal"` を指定します。画面のテンキーでマイナスを入力できない端末があるので、負の数を受け付けるときは `inputmode` を付けません。'
 		}
 	],
 	misuse: [
@@ -131,6 +135,20 @@ export default {
 				en: 'A text field takes any text, and React Aria’s ColorField is a text field for typing a hex or channel value; a color picker chooses a color from a swatch, a spectrum or presets, and the native input always holds a valid color.',
 				ja: 'テキストフィールドは自由な文字列を入れられ、React Aria の ColorField は16進数やチャンネルの値を入力するための入力欄ですが、カラーピッカーは色を色見本やスペクトル、一覧から選び、ネイティブの入力は必ず有効な色を持ちます。'
 			}
+		},
+		{
+			id: 'date-picker',
+			diff: {
+				en: 'A text field alone suits dates people already know, such as a birthday; a date picker adds a calendar for dates they schedule or choose by the day of the week.',
+				ja: 'テキストフィールドだけなら誕生日のように分かっている日付に向いていますが、日付ピッカーは、予定を入れる日や曜日で選ぶ日のためにカレンダーを添えます。'
+			}
+		},
+		{
+			id: 'number-input',
+			diff: {
+				en: 'A text field with `inputmode="numeric"` suits digits that are not amounts, such as a postal code; a number input is for counts that go up and down in small steps, such as a quantity.',
+				ja: 'テキストフィールドに `inputmode="numeric"` を付けると郵便番号のように量ではない数字に向いていますが、数値入力は数量のように小刻みに増減する数のためのものです。'
+			}
 		}
 	],
 	sources: [
@@ -183,6 +201,11 @@ export default {
 			label: 'U.S. Web Design System: Text input',
 			url: 'https://designsystem.digital.gov/components/text-input/',
 			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'MDN: inputmode',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

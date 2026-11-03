@@ -103,6 +103,13 @@ export default {
 				en: 'An alert dialog stops the user until they respond; an alert informs without interrupting.',
 				ja: 'アラートダイアログは応答するまで作業を止め、アラートは作業を中断させずに知らせます。'
 			}
+		},
+		{
+			id: 'toast',
+			diff: {
+				en: 'An alert dialog stops people and asks before an action that cannot be undone; a toast reports a result after the action has run and can offer Undo.',
+				ja: 'アラートダイアログは取り消せない操作の前に止めて確認しますが、トーストは操作のあとに結果を伝え、「元に戻す」を添えることもできます。'
+			}
 		}
 	],
 	sources: [

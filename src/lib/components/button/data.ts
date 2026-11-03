@@ -74,6 +74,18 @@ export default {
 		{
 			en: 'An `aria-label` hides the button’s content from screen readers, so a state shown only inside it, such as a check mark or a count, is not announced. Put that state in the name, or expose it another way such as `aria-pressed`.',
 			ja: '`aria-label` を付けると、ボタンの中身はスクリーンリーダーから隠れます。チェックの印や件数のように中身だけで示した状態は読み上げられないので、名前に含めるか、`aria-pressed` などの別の方法で伝えます。'
+		},
+		{
+			en: 'WCAG success criterion 2.5.8 Target Size (Minimum), at Level AA, asks for at least 24 × 24 CSS px. A smaller target can still pass with enough space: a circle 24 CSS px across, centered on it, must not touch another target or another small target’s circle.',
+			ja: 'WCAG の達成基準 2.5.8「ターゲットのサイズ（最低限）」（レベル AA）は、24 × 24 CSS px 以上を求めています。小さいターゲットでも、中心に置いた直径 24 CSS px の円が、ほかのターゲットや、ほかの小さいターゲットの円に触れなければ満たせます。'
+		},
+		{
+			en: 'Run the action on the `click` event, not on `mousedown` or `touchstart`. WCAG 2.5.2 Pointer Cancellation explains that `click` fires when the pointer is released, so people who touch the wrong button can move off it before lifting their finger.',
+			ja: '操作は `mousedown` や `touchstart` ではなく、`click` イベントで実行します。WCAG 2.5.2「ポインタのキャンセル」によると、`click` はポインターを離したときに起きるので、違うボタンに触れた人は、指を離す前にボタンの外へずらして取りやめられます。'
+		},
+		{
+			en: 'Before showing only an icon instead of a text label, check that the button’s purpose is still understood. Primer says to consider the audience and the context, and to add a tooltip with a text label.',
+			ja: '文字のラベルをやめてアイコンだけにする前に、それでもボタンの目的が伝わるかを確かめます。Primer は、使う人と場面を考えること、文字のラベルを入れたツールチップを付けることを求めています。'
 		}
 	],
 	misuse: [
@@ -243,6 +255,21 @@ export default {
 			label: 'Understanding Success Criterion 4.1.2: Name, Role, Value (WCAG 2.2)',
 			url: 'https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html',
 			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'Understanding Success Criterion 2.5.8: Target Size (Minimum) (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html',
+			checkedAt: '2026-11-04'
+		},
+		{
+			label: 'Understanding Success Criterion 2.5.2: Pointer Cancellation (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/pointer-cancellation.html',
+			checkedAt: '2026-11-04'
+		},
+		{
+			label: 'Primer: IconButton guidelines',
+			url: 'https://primer.style/product/components/icon-button/guidelines/',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

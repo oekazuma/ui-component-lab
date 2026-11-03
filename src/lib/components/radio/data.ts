@@ -67,6 +67,10 @@ export default {
 		{
 			en: 'If you build radio buttons with `role="radio"` instead of native ones, you have to add the keys yourself. APG has Tab move into and out of the group, and the arrow keys move to and check another option.',
 			ja: 'ネイティブのラジオボタンではなく `role="radio"` で作るなら、キー操作は自分で足します。APG では、Tab キーでグループへ出入りし、矢印キーで別の選択肢へ移って選びます。'
+		},
+		{
+			en: 'Tie the label to the circle with `<label>`. MDN explains that a label gives a larger hit area, which helps anyone trying to activate the input, including people on touch screens.',
+			ja: 'ラベルは `<label>` で丸に結び付けます。MDN によると、ラベルの分だけ押せる範囲が広がり、タッチ画面を使う人を含めて、入力欄を操作しやすくなります。'
 		}
 	],
 	misuse: [
@@ -147,6 +151,11 @@ export default {
 			label: 'GOV.UK Design System: Radios',
 			url: 'https://design-system.service.gov.uk/components/radios/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'MDN: <label>: The Label element',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

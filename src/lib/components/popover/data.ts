@@ -59,6 +59,16 @@ export default {
 			}
 		}
 	],
+	usage: [
+		{
+			en: 'Carbon tells its two kinds apart by how they open. A tooltip appears on hover or focus and holds brief information that is not interactive. Its toggletip, built on a popover, opens on click or Enter and stays open until dismissed, so it can hold buttons and other controls.',
+			ja: 'Carbon は開き方で 2 つを分けています。ツールチップはホバーかフォーカスで出て、操作できない短い情報を載せます。ポップオーバーをもとにしたトグルチップは、クリックか Enter で開いて閉じるまで残るので、ボタンなどの操作部品を置けます。'
+		},
+		{
+			en: 'Do not use one for critical information or for input required to finish a task. Carbon uses a modal for those.',
+			ja: '重要な情報や、作業を終えるのに必須の入力には使いません。Carbon はそうした場合にモーダルを使います。'
+		}
+	],
 	related: [
 		{
 			id: 'tooltip',

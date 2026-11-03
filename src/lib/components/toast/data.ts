@@ -118,6 +118,13 @@ export default {
 				en: 'A toast floats over the page, and one with only a message disappears on its own; an alert sits in the page content and stays until it is no longer needed or the user closes it.',
 				ja: 'トーストはページの上に浮かび、文字だけのものは自動で消えますが、アラートはページの中に置かれ、不要になるか利用者が閉じるまで残ります。'
 			}
+		},
+		{
+			id: 'alert-dialog',
+			diff: {
+				en: 'A toast reports a result after the action has run and can offer Undo; an alert dialog stops people and asks before an action that cannot be undone.',
+				ja: 'トーストは操作のあとに結果を伝え、「元に戻す」を添えることもできますが、アラートダイアログは取り消せない操作の前に止めて確認します。'
+			}
 		}
 	],
 	sources: [

@@ -49,6 +49,10 @@ export default {
 		{
 			en: 'Make the title describe the content. Avoid vague text like “Show more”, and do not switch it between “Open” and “Close”.',
 			ja: 'タイトルには中身が分かる文言を使います。「もっと見る」のような曖昧な文言や、「開く」「閉じる」の切り替えは避けます。'
+		},
+		{
+			en: 'For one or two short, less important pieces of content, the GOV.UK Design System prefers a details component to tabs or an accordion, because it is smaller and less prominent.',
+			ja: '短くて重要度の低いものが 1 つか 2 つなら、GOV.UK Design System はタブやアコーディオンより details コンポーネントを勧めています。小さくて目立ちにくいためです。'
 		}
 	],
 	misuse: [
@@ -137,6 +141,11 @@ export default {
 			label: 'WAI-ARIA APG: Button Pattern',
 			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
 			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'GOV.UK Design System: Tabs',
+			url: 'https://design-system.service.gov.uk/components/tabs/',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

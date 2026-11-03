@@ -56,6 +56,10 @@ export default {
 		{
 			en: 'Show the minimum and maximum next to the ends of the track, so people can tell the range without trying the slider.',
 			ja: '最小値と最大値を溝の両端に示し、動かしてみなくても範囲が分かるようにします。'
+		},
+		{
+			en: 'Use a slider when the range or a relative value matters more than the exact number, as with a volume control. For a precise number, the U.S. Web Design System says to use a regular text input.',
+			ja: 'スライダーは、音量のように、正確な数より範囲や相対的な大きさが大事なときに使います。正確な数を入れるなら、U.S. Web Design System は通常のテキスト入力を使うように求めています。'
 		}
 	],
 	misuse: [
@@ -124,6 +128,11 @@ export default {
 			label: 'Understanding Success Criterion 2.5.7: Dragging Movements (WCAG 2.2)',
 			url: 'https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'U.S. Web Design System: Range slider',
+			url: 'https://designsystem.digital.gov/components/range-slider/',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

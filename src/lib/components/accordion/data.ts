@@ -67,6 +67,10 @@ export default {
 		{
 			en: 'The U.S. Web Design System suits an accordion to cases where people need only a few pieces of the content, or where space is tight. It advises against one when most users need to see most of the information, or when there is too little content to be worth condensing, since an accordion adds cognitive load and interaction cost.',
 			ja: 'U.S. Web Design System は、内容のうち必要な部分が少しだけの場合や、場所が限られている場合にアコーディオンが向いているとしています。ほとんどの利用者が情報の大部分を見る必要がある場合や、まとめるほどの量がない場合は避けるよう勧めています。どの見出しを開くか判断する手間が増え、認知的な負担と操作の手間が増えるためです。'
+		},
+		{
+			en: 'For many pieces of content, the GOV.UK Design System suggests an accordion over tabs, because tabs fit fewer sections. When people view one section at a time or switch quickly, it suggests tabs, which do not push other sections down the page.',
+			ja: '内容の数が多いとき、GOV.UK Design System はタブよりアコーディオンを勧めています。タブには少しの区分しか収まらないためです。一度に 1 つの区分だけを見るときや、すばやく切り替えるときは、ほかの区分を下へ押し下げないタブを勧めています。'
 		}
 	],
 	misuse: [
@@ -167,6 +171,11 @@ export default {
 			label: 'U.S. Web Design System: Accordion',
 			url: 'https://designsystem.digital.gov/components/accordion/',
 			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'GOV.UK Design System: Tabs',
+			url: 'https://design-system.service.gov.uk/components/tabs/',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

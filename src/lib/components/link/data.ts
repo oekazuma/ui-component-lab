@@ -51,6 +51,10 @@ export default {
 		{
 			en: 'Give visited links their own color so users can see which pages they have already opened, especially on pages with many links.',
 			ja: '訪問済みのリンクには別の色を付け、すでに開いたページが分かるようにします。リンクの多いページでは特に役立ちます。'
+		},
+		{
+			en: 'WCAG 2.5.8 Target Size (Minimum) does not apply to a link inside a sentence, because its size depends on the text. A list of links gets no such exception, and Nielsen Norman Group says lists of links and stacked buttons often cause touch errors when they sit too close together.',
+			ja: 'WCAG 2.5.8「ターゲットのサイズ（最低限）」は、文の中のリンクには適用されません。大きさが文字で決まるためです。リンクを並べた一覧にはこの例外がありません。Nielsen Norman Group は、リンクの一覧や縦に積んだボタンは、間隔が狭いとタッチの誤操作がよく起きるとしています。'
 		}
 	],
 	misuse: [
@@ -173,6 +177,16 @@ export default {
 			label: 'GOV.UK Design System: Tabs',
 			url: 'https://design-system.service.gov.uk/components/tabs/',
 			checkedAt: '2026-11-02'
+		},
+		{
+			label: 'Understanding Success Criterion 2.5.8: Target Size (Minimum) (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html',
+			checkedAt: '2026-11-04'
+		},
+		{
+			label: 'Nielsen Norman Group: Touch Targets on Touchscreens',
+			url: 'https://www.nngroup.com/articles/touch-target-size/',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

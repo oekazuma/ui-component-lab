@@ -121,6 +121,14 @@ export default {
 		{
 			en: 'Keep the text on each slide short and explain the details on the linked page.',
 			ja: 'スライドの文字は短くし、詳しいことはリンク先で説明します。'
+		},
+		{
+			en: 'Try doing without one first. Nielsen Norman Group says people often scroll past carousels, and that a static hero image or putting the content into the page may be better. It adds that swiping through many frames is taxing on a phone, and that people struggle to recognize topics they have seen once a set exceeds about five.',
+			ja: 'まず、カルーセルなしで済まないかを考えます。Nielsen Norman Group は、カルーセルは読み飛ばされることが多く、静止した大きな画像や、内容をページに組み込むほうがよい場合があるとしています。スマートフォンで何枚もスワイプするのは負担で、5 枚ほどを超えると見た話題を見分けにくくなるとも述べています。'
+		},
+		{
+			en: 'Do not make swiping the only way to change slides. WCAG 2.5.1 Pointer Gestures gives the example of a news carousel that detects swipes and also has forward and backward buttons that work with a single tap.',
+			ja: 'スライドを替える手段をスワイプだけにしません。WCAG 2.5.1「ポインタのジェスチャ」は、スワイプを検出しつつ、1 回のタップで使える進むボタンと戻るボタンも置いたニュースのカルーセルを例に挙げています。'
 		}
 	],
 	misuse: [
@@ -224,6 +232,11 @@ export default {
 			label: 'デジタル庁デザインシステム HTML 実装例: carousel',
 			url: 'https://github.com/digital-go-jp/design-system-example-components-html/tree/main/src/components/carousel',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'Understanding Success Criterion 2.5.1: Pointer Gestures (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/pointer-gestures.html',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

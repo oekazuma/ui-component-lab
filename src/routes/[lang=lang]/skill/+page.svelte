@@ -49,7 +49,7 @@
 			flow: 'What happens',
 			flowSteps: [
 				'It reads your repository (framework, where components live, test commands) and loads this guide’s knowledge (`components.json`). Given a live URL whose source is here, it starts your development server.',
-				'For each component on the page, it checks the choice of component, misuses and deceptive patterns, and keyboard behavior.',
+				'For each component on the page, it checks the choice of component, misuses and deceptive patterns, keyboard behavior, and touch use at a phone size.',
 				'It shows the findings in a table, most worthwhile first, with deceptive patterns at the top, and asks which ones to plan. Without an answer, it plans about five, deceptive patterns included.',
 				'For each chosen finding, it writes a plan in `plans/`: where on the page and in the source, the evidence, the steps, and how to check the fix.',
 				'With `--issues`, it also files each plan as a GitHub issue.'
@@ -108,7 +108,7 @@
 			flow: '実行の流れ',
 			flowSteps: [
 				'リポジトリの技術（フレームワーク、部品の置き場所、テストのコマンド）を調べ、このサイトの知見（`components.json`）を読み込みます。本番の URL を渡され、ソースがこのリポジトリにあれば、開発サーバーを立ち上げます。',
-				'ページの部品ごとに、部品の選び方、避けたい使い方とディセプティブパターン、キー操作を確かめます。',
+				'ページの部品ごとに、部品の選び方、避けたい使い方とディセプティブパターン、キー操作、スマートフォンの大きさでのタッチ操作を確かめます。',
 				'指摘を効果の大きい順に表で見せ、どれを計画にするかを聞きます。ディセプティブパターンは先頭に出ます。答えがなければ、ディセプティブパターンを含めて5件ほどを計画にします。',
 				'選んだ指摘ごとに、ページとソースのどこを直すか、根拠、手順、直したあとの確かめ方を書いた計画を `plans/` に置きます。',
 				'`--issues` を付けたときは、計画を GitHub の issue にもします。'

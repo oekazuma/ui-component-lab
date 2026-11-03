@@ -55,6 +55,10 @@ export default {
 		{
 			en: 'When a single checkbox has to be checked to go on, such as agreeing to terms, say in the error what to do, such as “Select if you agree to the terms of use”.',
 			ja: '利用規約への同意のように、単独のチェックボックスにチェックがないと先へ進めないときは、「利用規約に同意する場合は、チェックを付けてください」のように、どうすればよいかをエラーに書きます。'
+		},
+		{
+			en: 'Tie the label to the box with `<label>`. MDN explains that a label gives a larger hit area, which helps anyone trying to activate the input, including people on touch screens.',
+			ja: 'ラベルは `<label>` でボックスに結び付けます。MDN によると、ラベルの分だけ押せる範囲が広がり、タッチ画面を使う人を含めて、入力欄を操作しやすくなります。'
 		}
 	],
 	misuse: [
@@ -171,6 +175,11 @@ export default {
 			label: 'Carbon Design System: Checkbox',
 			url: 'https://carbondesignsystem.com/components/checkbox/usage/',
 			checkedAt: '2026-10-22'
+		},
+		{
+			label: 'MDN: <label>: The Label element',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label',
+			checkedAt: '2026-11-04'
 		}
 	]
 } satisfies ComponentData;

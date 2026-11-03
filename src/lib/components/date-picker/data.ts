@@ -125,6 +125,13 @@ export default {
 				en: 'A date picker chooses a day, usually from a calendar; a color picker chooses a color, usually from a swatch, a spectrum or presets.',
 				ja: '日付ピッカーは日付をカレンダーなどで選び、カラーピッカーは色を色見本やスペクトル、一覧から選びます。'
 			}
+		},
+		{
+			id: 'text-field',
+			diff: {
+				en: 'A date picker adds a calendar for dates people schedule or choose by the day of the week; a text field alone suits dates they already know, such as a birthday.',
+				ja: '日付ピッカーは、予定を入れる日や曜日で選ぶ日のためにカレンダーを添えますが、誕生日のように分かっている日付にはテキストフィールドだけが向いています。'
+			}
 		}
 	],
 	sources: [

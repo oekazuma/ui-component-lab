@@ -98,6 +98,10 @@ export default {
 		{
 			en: 'Leave out actions that do not apply to the item instead of showing them dimmed.',
 			ja: 'その項目に使えない操作は、薄く表示せずに外します。'
+		},
+		{
+			en: 'A touch screen has no right-click. Apple says iPadOS reveals a context menu on a long press. Keep a visible control for the same actions, so people on touch screens can reach them too.',
+			ja: 'タッチ画面に右クリックはありません。Apple によると、iPadOS では長押しでコンテキストメニューを出します。タッチ画面を使う人も同じ操作にたどり着けるよう、見える操作部品を別に置きます。'
 		}
 	],
 	misuse: [

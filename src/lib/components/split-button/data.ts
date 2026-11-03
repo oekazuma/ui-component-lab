@@ -91,6 +91,10 @@ export default {
 		{
 			en: 'Material Design 3 keeps the main button’s label to one or two words, with an icon that matches the action. The button that opens the menu always shows the expand and collapse icon, which rotates when the menu is open, and the menu is aligned with that button where there is room.',
 			ja: 'Material Design 3 は、メインのボタンのラベルを1〜2語にし、操作に合うアイコンを添えます。メニューを開くボタンには常に展開・折りたたみを表すアイコンを使い、メニューが開くとこのアイコンが回転します。メニューは、余裕があれば、メニューを開くボタンに揃えて開きます。'
+		},
+		{
+			en: 'Carbon uses a combo button when screen space is limited and one of the actions has particular importance, usually in the page header. When all the actions are equally important, it uses a menu button.',
+			ja: 'Carbon は、画面の余裕が少なく、操作の 1 つが特に重要なときにコンボボタンを使います。多くはページのヘッダーに置きます。すべての操作の重要度が同じなら、メニューボタンを使います。'
 		}
 	],
 	related: [

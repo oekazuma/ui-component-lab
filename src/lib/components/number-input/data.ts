@@ -93,6 +93,13 @@ export default {
 				en: 'A number input is for a quantity that goes up and down; a one-time code is a string of digits, so it uses a text field with `inputmode="numeric"`.',
 				ja: '数値入力は増減させる量に使います。確認コードは数字の並びなので、`inputmode="numeric"` を付けたテキスト入力にします。'
 			}
+		},
+		{
+			id: 'text-field',
+			diff: {
+				en: 'A number input is for counts that go up and down in small steps, such as a quantity; a text field with `inputmode="numeric"` suits digits that are not amounts, such as a postal code.',
+				ja: '数値入力は数量のように小刻みに増減する数のためのものですが、`inputmode="numeric"` を付けたテキストフィールドは郵便番号のように量ではない数字に向いています。'
+			}
 		}
 	],
 	sources: [

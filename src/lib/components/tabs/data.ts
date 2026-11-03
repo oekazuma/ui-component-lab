@@ -92,6 +92,18 @@ export default {
 		{
 			en: 'Do not use ARIA tabs (`role="tab"`) for site navigation, step-by-step flows, filtering, or content users need to compare side by side. For tabs that move between pages, use a row of links styled as tabs (the link list).',
 			ja: 'ARIA のタブ（`role="tab"`）は、サイト内の移動、手順の進行、絞り込み、並べて比べたい内容には使いません。ページを移るタブにしたいときは、見た目だけをタブにしたリンクの並び（リンクリスト）にします。'
+		},
+		{
+			en: 'The GOV.UK Design System says tabs hide content and not everyone notices them. It says not to use them when people need to read everything in order or compare what is in different tabs. It says to test the content without tabs first: less content, separate pages, one page with headings, or a table of contents.',
+			ja: 'GOV.UK Design System は、タブは内容を隠すので、気づかない人もいるとしています。順に全部読む必要があるときや、タブの間で見比べる必要があるときは使わないように求めています。先にタブなしで試すように言い、内容を減らす、ページを分ける、見出しで区切って 1 ページに置く、目次を付けるという案を挙げています。'
+		},
+		{
+			en: 'Among tabs, accordions and details, GOV.UK suggests tabs when people view one section at a time or switch between sections quickly, because tabs do not push other sections down the page. An accordion fits many pieces of content, and details fits one or two short, less important pieces.',
+			ja: 'タブ、アコーディオン、details のうち、GOV.UK は、一度に 1 つの区分だけを見るときや区分をすばやく切り替えるときにはタブを勧めています。タブなら、ほかの区分を下へ押し下げないためです。内容の数が多いならアコーディオン、短くて重要度の低いものが 1 つか 2 つなら details が向いています。'
+		},
+		{
+			en: 'Avoid tabs that wrap onto a second line. GOV.UK says too many tabs or long labels make it harder to see the connection between the selected tab and its content.',
+			ja: 'タブが 2 行に折り返さないようにします。GOV.UK によると、タブが多すぎたりラベルが長すぎたりすると、選んだタブと内容のつながりが分かりにくくなります。'
 		}
 	],
 	misuse: [
