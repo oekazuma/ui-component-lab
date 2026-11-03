@@ -1581,3 +1581,65 @@ test('token field: tokens wrap inside the field at a narrow width, and the Japan
 	expect(overflow).toBe(false);
 	expect(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)).toBe(false);
 });
+
+test('floating action button: a named button runs the action and shows the result; a row only shows where it would go', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/floating-action-button/');
+	const fab = demo.getByRole('button', { name: 'New note', exact: true });
+	await expect(fab).toHaveCount(1);
+	await expect(demo.getByRole('status')).toHaveText('');
+	await fab.click();
+	await expect(demo.getByRole('status')).toHaveText('A real app would open a new note');
+
+	await demo.getByRole('link', { name: 'Meeting notes' }).click();
+	await expect(demo.getByRole('status')).toHaveText('A real app would open “Meeting notes”');
+	await expect(page).toHaveURL(/\/en\/components\/floating-action-button\/$/);
+});
+
+test('floating action button: stays inside the frame and in place while the list scrolls, and is not fixed to the page', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/floating-action-button/');
+	const fab = demo.getByRole('button', { name: 'New note' });
+	expect(await fab.evaluate((el) => getComputedStyle(el).position)).toBe('absolute');
+
+	const inside = async () => {
+		const f = (await fab.boundingBox())!;
+		const frame = (await demo.boundingBox())!;
+		const screen = (await demo.locator('.screen').boundingBox())!;
+		for (const outer of [frame, screen]) {
+			expect(f.x).toBeGreaterThanOrEqual(outer.x);
+			expect(f.y).toBeGreaterThanOrEqual(outer.y);
+			expect(f.x + f.width).toBeLessThanOrEqual(outer.x + outer.width);
+			expect(f.y + f.height).toBeLessThanOrEqual(outer.y + outer.height);
+		}
+		return f;
+	};
+	const before = await inside();
+
+	const list = demo.locator('ul');
+	await list.evaluate((el) => (el.scrollTop = el.scrollHeight));
+	expect(await list.evaluate((el) => el.scrollTop)).toBeGreaterThan(0);
+	expect(await inside()).toEqual(before);
+
+	// ページ自体をスクロールしても、ボタンは枠と一緒に動く（ページに固定されない）
+	await page.evaluate(() => window.scrollBy(0, 40));
+	await page.setViewportSize({ width: 320, height: 700 });
+	await inside();
+});
+
+test('floating action button: Tab reaches the button before the list, and no focused row is covered by it', async ({ page }) => {
+	const demo = await openDemo(page, 'en/components/floating-action-button/');
+	const fab = demo.getByRole('button', { name: 'New note' });
+	const rows = demo.getByRole('link');
+	await fab.focus();
+
+	const count = await rows.count();
+	expect(count).toBeGreaterThan(5);
+	for (let i = 0; i < count; i++) {
+		await page.keyboard.press('Tab');
+		await expect(rows.nth(i)).toBeFocused();
+		const f = (await fab.boundingBox())!;
+		const r = (await rows.nth(i).boundingBox())!;
+		// 完全に隠れないだけでなく、まったく重ならない（scroll-padding で、行がボタンの下から出る位置までスクロールする）
+		const overlaps = r.x < f.x + f.width && f.x < r.x + r.width && r.y < f.y + f.height && f.y < r.y + r.height;
+		expect(overlaps, `${await rows.nth(i).textContent()} overlaps the button`).toBe(false);
+	}
+});

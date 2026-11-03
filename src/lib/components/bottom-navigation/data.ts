@@ -199,6 +199,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'floating-action-button',
+			diff: {
+				en: 'Bottom navigation moves between a few top-level destinations in a bar along the bottom of the screen; a floating action button runs one main action and floats over the content.',
+				ja: 'ボトムナビゲーションは画面の下のバーで、いくつかの最上位の行き先の間を移り、フローティングアクションボタンは主な操作を1つ実行して内容の上に浮かびます。'
+			}
+		},
+		{
 			id: 'tabs',
 			diff: {
 				en: 'Bottom navigation moves between three to five top-level destinations along the bottom of a phone screen, with the current one marked; tabs switch between panels of related content inside one page.',

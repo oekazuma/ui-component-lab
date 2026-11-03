@@ -85,6 +85,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'floating-action-button',
+			diff: {
+				en: 'A back to top button has one job, returning to the top; a floating action button stands for the main action of a screen, such as creating something.',
+				ja: 'スクロールトップボタンは先頭へ戻ることだけを受け持ち、フローティングアクションボタンは何かを作るなど、画面の主な操作を受け持ちます。'
+			}
+		},
+		{
 			id: 'link',
 			diff: {
 				en: 'A back to top button only returns to the top of the current page; a link moves to any page or place.',

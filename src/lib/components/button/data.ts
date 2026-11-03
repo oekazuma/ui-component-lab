@@ -116,6 +116,13 @@ export default {
 	],
 	related: [
 		{
+			id: 'floating-action-button',
+			diff: {
+				en: 'A button runs any action in its place in the layout; a floating action button is a button for a screen’s main action that floats in front of the content and stays put as it scrolls.',
+				ja: 'ボタンはレイアウトの中の決まった場所でさまざまな操作を実行し、フローティングアクションボタンは画面の主な操作のためのボタンで、内容の手前に浮かんでスクロールしても動きません。'
+			}
+		},
+		{
 			id: 'link',
 			diff: {
 				en: 'A button runs an action on the current page; a link moves to another page or place.',
