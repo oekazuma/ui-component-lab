@@ -83,6 +83,13 @@ export default {
 				en: 'A disclosure is one toggle on its own; an accordion is a set of disclosures stacked under headings.',
 				ja: 'ディスクロージャーは単独の開閉部品で、それを見出し付きで縦に並べたものがアコーディオンです。'
 			}
+		},
+		{
+			id: 'toggle-button',
+			diff: {
+				en: 'A disclosure shows or hides content, and its button uses `aria-expanded`; a toggle button turns a setting or mode on or off and shows it with `aria-pressed`.',
+				ja: 'ディスクロージャーは内容を表示・非表示にして、そのボタンは `aria-expanded` で伝え、トグルボタンは設定やモードをオンかオフにして `aria-pressed` で伝えます。'
+			}
 		}
 	],
 	sources: [
@@ -124,6 +131,11 @@ export default {
 		{
 			label: 'デジタル庁デザインシステムウェブサイト「ディスクロージャー（使い方）」をもとに作成',
 			url: 'https://design.digital.go.jp/dads/components/disclosure/usage/',
+			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'WAI-ARIA APG: Button Pattern',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
 			checkedAt: '2026-11-03'
 		}
 	]

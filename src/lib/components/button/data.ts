@@ -66,6 +66,14 @@ export default {
 		{
 			en: 'Make the target at least 44 × 44 CSS px, the size WCAG success criterion 2.5.5 Target Size (Enhanced) asks for at Level AAA.',
 			ja: '押せる領域は44 × 44 CSS px 以上にします。WCAG の達成基準 2.5.5「ターゲットのサイズ（高度）」（レベル AAA）が求める大きさです。'
+		},
+		{
+			en: 'Setting `disabled` on a button that has focus, such as the one just pressed, drops focus to the page in Chrome and Firefox, and the button leaves the Tab order. To keep focus on it while showing that it cannot be used, use `aria-disabled="true"` and stop the action in your code.',
+			ja: 'フォーカス中のボタン（押したばかりのボタンなど）に `disabled` を付けると、Chrome と Firefox ではフォーカスがページ全体へ外れ、ボタンは Tab の順番からも外れます。フォーカスを保ったまま押せないことを示すなら、`aria-disabled="true"` を付け、操作が動かないようにコードで止めます。'
+		},
+		{
+			en: 'An `aria-label` hides the button’s content from screen readers, so a state shown only inside it, such as a check mark or a count, is not announced. Put that state in the name, or expose it another way such as `aria-pressed`.',
+			ja: '`aria-label` を付けると、ボタンの中身はスクリーンリーダーから隠れます。チェックの印や件数のように中身だけで示した状態は読み上げられないので、名前に含めるか、`aria-pressed` などの別の方法で伝えます。'
 		}
 	],
 	misuse: [
@@ -215,6 +223,26 @@ export default {
 			label: 'Deceptive Patterns: Confirmshaming',
 			url: 'https://www.deceptive.design/types/confirmshaming',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'WAI-ARIA APG: Developing a Keyboard Interface',
+			url: 'https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/',
+			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'MDN: aria-disabled',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled',
+			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'WAI-ARIA APG: Providing Accessible Names and Descriptions',
+			url: 'https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/',
+			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'Understanding Success Criterion 4.1.2: Name, Role, Value (WCAG 2.2)',
+			url: 'https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

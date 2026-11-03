@@ -30,6 +30,12 @@ export default {
 	keyboard: [
 		{ key: 'Enter / Space', action: { en: 'Presses or releases the button.', ja: 'ボタンを押すか、戻します。' } }
 	],
+	usage: [
+		{
+			en: 'APG defines a toggle button as a two-state button that is on or off. When only one of several can be chosen, libraries differ: MUI’s exclusive toggle buttons keep `aria-pressed`, while React Aria’s single-selection group turns them into `role="radio"` with `aria-checked`. This site’s segmented control demo uses native radio buttons.',
+			ja: 'APG は、トグルボタンをオンかオフの2つの状態を持つボタンと定めています。複数から1つだけ選ぶ形の作り方はライブラリによって違います。MUI の排他選択は `aria-pressed` のままで、React Aria の単一選択のグループは `role="radio"` と `aria-checked` に変えます。このサイトのセグメンテッドコントロールのデモは、ネイティブのラジオボタンを使っています。'
+		}
+	],
 	misuse: [
 		{
 			pattern: {
@@ -74,6 +80,13 @@ export default {
 				en: 'A toggle button turns a single option on or off; a segmented control picks one of several segments.',
 				ja: 'トグルボタンは1つの機能をオンかオフにし、セグメンテッドコントロールは複数の区画から1つを選びます。'
 			}
+		},
+		{
+			id: 'disclosure',
+			diff: {
+				en: 'A toggle button turns a setting or mode on or off and shows it with `aria-pressed`; a disclosure shows or hides content, and its button uses `aria-expanded`.',
+				ja: 'トグルボタンは設定やモードをオンかオフにして `aria-pressed` で伝え、ディスクロージャーは内容を表示・非表示にして、そのボタンは `aria-expanded` で伝えます。'
+			}
 		}
 	],
 	sources: [
@@ -91,6 +104,16 @@ export default {
 			label: 'Inclusive Components: Toggle Buttons',
 			url: 'https://inclusive-components.design/toggle-button/',
 			checkedAt: '2026-10-21'
+		},
+		{
+			label: 'React Aria: useToggleButtonGroup (source code)',
+			url: 'https://github.com/adobe/react-spectrum/blob/main/packages/react-aria/src/button/useToggleButtonGroup.ts',
+			checkedAt: '2026-11-03'
+		},
+		{
+			label: 'WAI-ARIA APG: Disclosure (Show/Hide) Pattern',
+			url: 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/',
+			checkedAt: '2026-11-03'
 		}
 	]
 } satisfies ComponentData;

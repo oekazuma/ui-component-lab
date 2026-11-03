@@ -63,6 +63,10 @@ export default {
 		{
 			en: 'Put the circle to the left of its label.',
 			ja: '丸はラベルの左に置きます。'
+		},
+		{
+			en: 'If you build radio buttons with `role="radio"` instead of native ones, you have to add the keys yourself. APG has Tab move into and out of the group, and the arrow keys move to and check another option.',
+			ja: 'ネイティブのラジオボタンではなく `role="radio"` で作るなら、キー操作は自分で足します。APG では、Tab キーでグループへ出入りし、矢印キーで別の選択肢へ移って選びます。'
 		}
 	],
 	misuse: [
