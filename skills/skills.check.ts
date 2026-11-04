@@ -24,6 +24,8 @@ for (const name of names) {
 	const description = field('description') ?? '';
 	if (!description || /^[>|]/.test(description) || description.length > 1024)
 		errors.push(`${name}: description must be one line of 1-1024 characters`);
+	// 引用符なしの YAML では `: ` が入れ子のマッピングになり、インストーラーがスキルごと読み飛ばす
+	if (/: | #/.test(description)) errors.push(`${name}: description must not contain ": " or " #"`);
 	if (field('license') !== 'MIT') errors.push(`${name}: frontmatter license is ${field('license')}`);
 	for (const file of readdirSync(new URL(`${name}/`, dir), { recursive: true, encoding: 'utf8' }).filter((f) => f.endsWith('.md'))) {
 		const base = new URL(`${name}/${file}`, dir);
